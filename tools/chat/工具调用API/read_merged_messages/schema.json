@@ -1,0 +1,48 @@
+{
+  "name": "read_merged_messages",
+  "description": "分页展开合并转发记录；内容是转发时保存的副本，不重新访问源会话。item_path 为从 0 开始的条目索引路径，可展开嵌套合并记录，最多 3 层。",
+  "inputSchema": {
+    "properties": {
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      },
+      "item_path": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Item Path"
+      }
+    },
+    "required": [
+      "message_id"
+    ],
+    "title": "read_merged_messagesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

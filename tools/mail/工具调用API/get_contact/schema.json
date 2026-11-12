@@ -1,0 +1,23 @@
+{
+  "name": "get_contact",
+  "description": "读取可见联系人及其全部地址、默认地址、所属范围和版本。",
+  "inputSchema": {
+    "properties": {
+      "contact_id": {
+        "title": "Contact Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "contact_id"
+    ],
+    "title": "get_contactArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

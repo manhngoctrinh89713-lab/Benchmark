@@ -1,0 +1,38 @@
+{
+  "name": "create_code_file",
+  "description": "创建真实代码、配置或文本文件，自动创建父目录且不覆盖；可选语法校验。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "validate_syntax": {
+        "default": false,
+        "title": "Validate Syntax",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "project_id",
+      "path",
+      "content"
+    ],
+    "title": "create_code_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "get_file_contents",
+  "description": "浏览已提交的文件或目录；默认读取默认分支，忽略工作区未提交修改。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "path": {
+        "default": "",
+        "title": "Path",
+        "type": "string"
+      },
+      "ref": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Ref"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "get_file_contentsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

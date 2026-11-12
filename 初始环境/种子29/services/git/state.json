@@ -1,0 +1,41 @@
+{
+  "now": "2026-11-03T14:00:00+08:00",
+  "current_user": "linxiao",
+  "sequence": 0,
+  "repositories": [
+    {
+      "id": "payment-notice",
+      "owner": "hezhou-pay",
+      "name": "payment-notice",
+      "private": true,
+      "default_branch": "main",
+      "description": "支付通知处理服务",
+      "required_approvals": 0,
+      "required_checks": [],
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/hezhou-pay/payment-notice.git",
+          "refs": {
+            "main": "3fe82a09ef27b5bdb19f28e660570cbf4143f04f",
+            "feature/verify-adapter": "b74d1ab2fe2a4c22642d69ff49dacb5751467849"
+          }
+        }
+      ]
+    }
+  ],
+  "push_events": [],
+  "issues": [],
+  "pull_requests": [],
+  "comments": [],
+  "users": [
+    {
+      "login": "linxiao",
+      "name": "林晓"
+    },
+    {
+      "login": "zhouning",
+      "name": "周宁"
+    }
+  ]
+}

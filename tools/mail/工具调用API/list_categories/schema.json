@@ -1,0 +1,23 @@
+{
+  "name": "list_categories",
+  "description": "列出账户分类的 ID、名称、颜色和版本。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "list_categoriesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

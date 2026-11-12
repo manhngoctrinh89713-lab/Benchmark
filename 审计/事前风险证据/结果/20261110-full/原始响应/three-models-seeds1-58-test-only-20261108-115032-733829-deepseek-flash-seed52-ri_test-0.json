@@ -1,0 +1,29 @@
+{
+  "id": "7c24b691-4144-49e3-a4da-34990a70a744_49c06ca911c34e3aa9195aae71a7862f",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":4,\"tool_call_id\":\"call_01_4waQKLkgyOnb8F7ROqMD6923\",\"quote\":\"SKU-11 4900→2900分；SKU-12 3500→1990分；SKU-13 6800→3900分；SKU-14 1200→690分。\"}],\"reason\":\"清仓清单逐项列出了4个SKU的目标清仓价，与要点完全一致。\"},{\"id\":2,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":9,\"tool_call_id\":\"call_00_ecpocRdx7HSfRRF1qAui8223\",\"quote\":\"近7天内已付款订单含已发货均享7天价保，按付款时间计算。成交价高于当前标价可申请退差。清仓降价只允许在该SKU没有近7天已付款订单时生效。发货不解除价保；改价系统不自动退差。\"}],\"reason\":\"价保说明原文完整写明了近7天已付款订单（含已发货）享7天价保、可申请退差、清仓降价仅限无近7天已付款订单的SKU。\"},{\"id\":3,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":11,\"tool_call_id\":\"call_00_I3lx3slfycRRfljcBw9R5056\",\"quote\":\"{\\\"id\\\": \\\"ORD-1\\\", \\\"buyer_id\\\": \\\"buyer_demo\\\", \\\"merchant_id\\\": \\\"merchant_demo\\\", \\\"items\\\": [{\\\"product_id\\\": \\\"SKU-11\\\", \\\"name\\\": \\\"保温杯盖\\\", \\\"quantity\\\": 1, \\\"unit_amount_minor\\\": 4900\"},{\"source\":\"tool_result\",\"message_index\":14,\"tool_call_id\":\"call_00_AFIXXuNgW4yqwoVWUjTc1820\",\"quote\":\"{\\\"id\\\": \\\"pay_1\\\", \\\"order_id\\\": \\\"ORD-1\\\", \\\"buyer_id\\\": \\\"buyer_demo\\\", \\\"merchant_id\\\": \\\"merchant_demo\\\", \\\"amount_minor\\\": 4900, \\\"currency\\\": \\\"CNY\\\", \\\"status\\\": \\\"succeeded\\\", \\\"refunded_minor\\\": 0, \\\"payment_method_id\\\": \\\"pm_demo\\\", \\\"created_at\\\": \\\"2026-11-01T09:15:00+08:00\\\"\"}],\"reason\":\"订单列表共5笔：ORD-1/2/3为SKU-11（单价4900分），ORD-4/5为SKU-13（单价6800分）；支付记录显示付款时间为11月1日至3日、状态succeeded，按价保规则的付款时间计算落在近7天内（活动11月5日上线，即11月4日为今日）；订单列表中无SKU-12、SKU-14的订单，total=5且无其他订单。\"}],\"summary\":\"清单目标价与价保规则均有原文直接支持；订单/支付数据显示SKU-11有3笔、SKU-13有2笔近7天已付款订单且成交价为4900分、6800分，SKU-12与SKU-14无订单，要点3成立。按规则，SKU-11、SKU-13不能直接清仓降价。\"}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 3: \"近7天已付款订单\" — payments created 2026-11-01 to 11-03. Today's date? Activity is \"明天上线\", list says \"11月5日清仓活动\" — so likely today is 11月4日. Payments within last 7 days: 11-01, 11-02, 11-03 — yes within 7 days. Orders created 2026-10-20 but payments at 11-01~11-03; rule says \"按付款时间计算\". So SKU-11 has 3 paid orders (pay_1,2,3 at 11-01,11-02,11-03), SKU-13 has 2 (pay_4 11-01, pay_5 11-02). SKU-12 and SKU-14 have no orders. Fact 3 says \"成交价均4900分\" — orders show unit_amount_minor 4900. Supported.\n\nFact 2: supported by the 价保 file.\n\nFact 1: supported by 清仓清单.\n\nNote the fact 3 statement \"近7天\" depends on current date, but material doesn't give \"today\" explicitly... The user says \"明天上线\" and list says \"11月5日清仓活动\", implying today is 11月4日. Payments 11-01~11-03 fall within 7 days. Reasonable inference. Supported."
+      }
+    }
+  ],
+  "created": 1794319503,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1138,
+    "prompt_tokens": 10542,
+    "total_tokens": 11680,
+    "completion_tokens_details": {
+      "reasoning_tokens": 352
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3072
+    }
+  }
+}

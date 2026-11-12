@@ -1,0 +1,23 @@
+{
+  "name": "pc_read_personal_file",
+  "description": "读取登记个人文件中的UTF-8文本及原始字节SHA-256。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "pc_read_personal_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

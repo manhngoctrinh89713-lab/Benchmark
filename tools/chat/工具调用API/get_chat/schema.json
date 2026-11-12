@@ -1,0 +1,28 @@
+{
+  "name": "get_chat",
+  "description": "读取会话详情、当前身份、成员状态及本地未读数；已退群仅返回退出时保存的群资料和自己保留的历史摘要。读取不标已读。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "include_last_message": {
+        "default": true,
+        "title": "Include Last Message",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "get_chatArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

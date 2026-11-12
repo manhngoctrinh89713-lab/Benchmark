@@ -1,0 +1,16 @@
+{
+  "id": "call_-7086074848690040481",
+  "name": "buyer__search_products",
+  "arguments": "{\"merchant_id\":\"merchant_a\",\"query\":\"人体工学\"}",
+  "started_at": "2026-11-11T19:36:11.266274+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"items\": [{\"id\": \"CHAIR-A\", \"merchant_id\": \"merchant_a\", \"name\": \"人体工学电脑椅 家用办公椅 护腰可躺\", \"description\": \"【久坐办公首选】双背分区支撑，自适应腰托跟着坐姿贴合腰椎；靠背加宽到 52cm，双层透气网布，夏天久坐也不闷汗。4D 扶手可上下、前后、左右调节，打字、开会、午休都能找到合适位置。坐垫是高回弹定型海绵，边缘做过圆角处理，久坐不压腿。椅背最大后仰 135°，支持无级锁定；三级认证气压棒，加厚五星脚，承重标称 150kg。整椅含头枕、腰托和伸缩脚踏，安装工具与图文说明书随箱发出，一般 30 分钟能装好。本店页面价即到手价，不参加平台跨店满减，也没有额外店铺券。\", \"kind\": \"physical\", \"currency\": \"CNY\", \"category\": \"家具\", \"policies\": {\"returnable\": true, \"exchangeable\": true, \"return_days\": 7, \"cancellation_allowed\": true, \"terms\": \"\", \"delivery_countries\": []}, \"active\": true, \"version\": 1, \"variants\": [{\"id\": \"CHAIR-A\", \"options\": {}, \"unit_amount_minor\": 119900, \"stock\": 5, \"active\": true, \"version\": 1}], \"unit_amount_minor\": 119900, \"stock\": 5}], \"total\": 1, \"next_offset\": null}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:36:11.273182+08:00"
+}

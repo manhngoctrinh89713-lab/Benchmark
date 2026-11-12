@@ -1,0 +1,228 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - uses: actions/cache@v5
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-python-env
+
+      - name: Run checks
+        run: make check
+
+  documentation:
+    name: Strict documentation build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-python-env
+
+      - name: Build documentation without warnings
+        run: make docs-test
+
+  artifacts:
+    name: Exact wheel and sdist verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-python-env
+
+      - name: Build release-format artifacts once
+        run: make build
+
+      - name: Verify the exact built artifacts
+        run: make verify-dist
+
+  container:
+    name: Container build and stdio smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Build and verify the runtime image
+        run: make container-check CONTAINER_IMAGE=mcp-email-server:ci
+
+  frontend:
+    name: Frontend build and drift check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: frontend/.nvmrc
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Set up the Python environment
+        uses: ./.github/actions/setup-python-env
+
+      - name: Build, test, and stage the frontend
+        run: make frontend
+
+      - name: Reject generated asset drift
+        run: git diff --exit-code -- frontend/embedded-assets.json mcp_email_server/web_ui/static
+
+  browser-e2e:
+    name: Real-browser management UI E2E
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: frontend/.nvmrc
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Set up the Python environment
+        uses: ./.github/actions/setup-python-env
+
+      - name: Build and verify the frontend
+        run: make frontend
+
+      - name: Install the locked Chromium runtime
+        run: cd frontend && npx playwright install --with-deps chromium
+
+      - name: Run real-browser management workflows
+        run: make test-browser
+
+  greenmail-e2e:
+    name: GreenMail E2E
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-python-env
+
+      - name: Run GreenMail E2E baseline
+        run: make test-e2e
+
+  windows-native:
+    name: Native Windows NTFS security and full runtime
+    runs-on: windows-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    env:
+      MCP_EMAIL_SERVER_REQUIRE_WINDOWS_SYMLINK_TESTS: "1"
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-python-env
+        with:
+          python-version: "3.13"
+
+      - name: Prepare a protected Windows test workspace
+        run: |
+          uv run --python 3.13 python - <<'PY'
+          import os
+          from pathlib import Path
+
+          from mcp_email_server.windows_security import ensure_private_parent
+
+          container = Path(os.environ["RUNNER_TEMP"]) / "mcp-email-server-tests"
+          ensure_private_parent(container / "placeholder")
+          values = {
+              "MCP_EMAIL_SERVER_CONFIG_PATH": (container / "config.toml").as_posix(),
+              "MCP_EMAIL_SERVER_WINDOWS_PYTEST_ROOT": (container / "pytest").as_posix(),
+          }
+          with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as environment:
+              for key, value in values.items():
+                  environment.write(f"{key}={value}\n")
+          PY
+
+      - name: Run the full Python suite on Windows
+        run: >-
+          uv run --python 3.13 python -m pytest --no-cov
+          --basetemp "$MCP_EMAIL_SERVER_WINDOWS_PYTEST_ROOT" tests
+
+      - name: Re-run native NTFS security cases with explicit reporting
+        run: >-
+          uv run --python 3.13 python -m pytest --no-cov -vv
+          --basetemp "$MCP_EMAIL_SERVER_WINDOWS_PYTEST_ROOT" tests/test_windows_security.py
+
+      - name: Check typing with Windows-only dependencies installed
+        run: uv run --python 3.13 python -m pyright
+
+  tests-and-type-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+      fail-fast: false
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-python-env
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run tests
+        run: uv run --python ${{ matrix.python-version }} python -m pytest tests --cov --cov-config=pyproject.toml --cov-report=xml
+
+      - name: Check typing
+        if: ${{ matrix.python-version == '3.13' }}
+        run: uv run --python ${{ matrix.python-version }} python -m pyright
+
+      - name: Upload coverage reports to Codecov with GitHub Action on Python 3.13
+        uses: codecov/codecov-action@v4
+        if: ${{ matrix.python-version == '3.13' }}

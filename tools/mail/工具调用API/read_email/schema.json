@@ -1,0 +1,28 @@
+{
+  "name": "read_email",
+  "description": "读取单封邮件正文、身份、收件人、附件元数据、会话和版本。读取不改变已读状态；收件人副本不显示密送名单。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_id": {
+        "title": "Email Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_id"
+    ],
+    "title": "read_emailArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

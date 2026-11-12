@@ -1,0 +1,66 @@
+{
+  "status": "scored",
+  "fingerprint": "17bb3de458d920ad3a42bbeeb7354ec6b6f7ad9b80b5cec5fa3116203673421c",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 20,
+            "tool_call_id": "call_-7101059611628658968",
+            "quote": "-<text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">9月12日 14:00—17:00 · 南区展厅</text>"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 20,
+            "tool_call_id": "call_-7101059611628658968",
+            "quote": "+<text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">9月12日 14:00—17:00 · 北区展厅</text>"
+          }
+        ],
+        "reason": "对 云帆/活动海报.svg 的 compare_files 显示 equal=false，diff 中删除行（本地）为“南区展厅”，新增行（共享盘）为“北区展厅”，且 diff 标题标明 --- 本地... +++ 共享盘...，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 21,
+            "tool_call_id": "call_-7101059611628658967",
+            "quote": "-<text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">报名截止 9月20日 23:59</text>"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 21,
+            "tool_call_id": "call_-7101059611628658967",
+            "quote": "+<text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">报名截止 9月25日 23:59</text>"
+          }
+        ],
+        "reason": "对 澄川/招募海报.svg 的 compare_files 显示 equal=false，删除行（本地）为“报名截止 9月20日 23:59”，新增行（共享盘）为“报名截止 9月25日 23:59”，支持该要点。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_-7101065280985494185",
+            "quote": "8月26日｜场地方回复：南区空调检修延续至月底，9月12日的场地单已落在北区展厅，接待人数不变。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_-7101065280985494185",
+            "quote": "9月18日｜表单关闭时间跟随这次排班，落在25日23:59；26日至27日由两位同事整理附件。"
+          }
+        ],
+        "reason": "read_multiple_files 读取的 云帆/执行记录.md 含“9月12日的场地单已落在北区展厅”，澄川/执行记录.md 含“表单关闭时间跟随这次排班，落在25日23:59”，且本地与共享盘副本 sha256 相同，与要点一致。"
+      }
+    ],
+    "summary": "三条要点均获材料支持：compare_files 的 diff 明确显示云帆海报本地“南区展厅”对共享盘“北区展厅”、澄川海报本地“9月20日 23:59”对共享盘“9月25日 23:59”；两份同目录执行记录分别写明“9月12日的场地单已落在北区展厅”和“表单关闭时间……落在25日23:59”，说明共享盘侧内容有执行记录依据。"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "delete_database",
+  "description": "删除指定数据库并记录删除前快照，按当前文件校验值核对目标。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "expected_sha256"
+    ],
+    "title": "delete_databaseArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

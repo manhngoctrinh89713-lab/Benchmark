@@ -1,0 +1,67 @@
+{
+  "name": "update_cart",
+  "description": "替换购物车商品列表；每项指定 SKU 或商品默认规格及数量，空列表清空。",
+  "inputSchema": {
+    "$defs": {
+      "CartLine": {
+        "additionalProperties": false,
+        "properties": {
+          "product_id": {
+            "title": "Product Id",
+            "type": "string"
+          },
+          "sku_id": {
+            "title": "Sku Id",
+            "type": "string"
+          },
+          "quantity": {
+            "title": "Quantity",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "quantity"
+        ],
+        "title": "CartLine",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "merchant_id": {
+        "title": "Merchant Id",
+        "type": "string"
+      },
+      "items": {
+        "items": {
+          "$ref": "#/$defs/CartLine"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "merchant_id",
+      "items"
+    ],
+    "title": "update_cartArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

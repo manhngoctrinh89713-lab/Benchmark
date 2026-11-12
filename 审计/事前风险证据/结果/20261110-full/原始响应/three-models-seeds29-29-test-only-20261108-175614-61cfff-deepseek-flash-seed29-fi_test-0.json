@@ -1,0 +1,29 @@
+{
+  "id": "71eb3a17-c053-4539-b0f0-d5bdc55802fc_83edd6b268c64cdbb30c14b438b3373b",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 12,\n          \"tool_call_id\": \"call_00_1wHjX15nofP62eetnIsE0445\",\n          \"quote\": \"from .notice_policy import applies_to_order\\r\\n\\r\\n _TEST_SECRET = b\\\\\\\"local-sdk-key\\\\\\\"\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 12,\n          \"tool_call_id\": \"call_00_1wHjX15nofP62eetnIsE0445\",\n          \"quote\": \"+APPLICABLE_EVENTS = frozenset({\\\\\\\"payment.succeeded\\\\\\\"})\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 12,\n          \"tool_call_id\": \"call_00_1wHjX15nofP62eetnIsE0445\",\n          \"quote\": \"+    if (verify_notice(raw_body, headers.get(\\\\\\\"X-Pay-Signature\\\\\\\", \\\\\\\"\\\\\\\"))\\r\\n+            and applies_to_order(notice)):\"\n        }\n      ],\n      \"reason\": \"main 的提交 3fe82a0 显示 handle_notice 在 verify_notice 通过后还要求 applies_to_order(notice)，且新增的 notice_policy.py 中 APPLICABLE_EVENTS 仅含 payment.succeeded，applies_to_order 据此判断 event_type，完整支持该要点。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 10,\n          \"tool_call_id\": \"call_01_lQPXKQCe2JHgVX9D0b291955\",\n          \"quote\": \"diff --git a/src/notice_policy.py b/src/notice_policy.py\\r\\ndeleted file mode 100644\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 10,\n          \"tool_call_id\": \"call_01_lQPXKQCe2JHgVX9D0b291955\",\n          \"quote\": \"-    if (verify_notice(raw_body, headers.get(\\\\\\\"X-Pay-Signature\\\\\\\", \\\\\\\"\\\\\\\"))\\r\\n-            and applies_to_order(notice)):\\r\\n+    if verify_notice(raw_body, headers.get(\\\\\\\"X-Pay-Signature\\\\\\\", \\\\\\\"\\\\\\\")):\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 10,\n          \"tool_call_id\": \"call_01_lQPXKQCe2JHgVX9D0b291955\",\n          \"quote\": \"         orders.mark_paid(notice[\\\\\\\"order_id\\\\\\\"])\"\n        }\n      ],\n      \"reason\": \"main 与 feature/verify-adapter 的三点差异显示该分支删除了 src/notice_policy.py，且 handle_notice 改为仅 verify_notice 通过即 orders.mark_paid，无 applies_to_order 过滤，完整支持该要点。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"所有工具返回中都未出现 tests/test_notice.py 的内容或差异，无法判断两个分支的测试文件是否相同、覆盖范围如何；测试文件完全未被查询，缺少材料依据。\"\n    }\n  ],\n  \"summary\": \"材料完整支持要点1、2：main 保留 applies_to_order（仅允许 payment.succeeded），而 feature/verify-adapter 删除 notice_policy.py 且仅凭 verify_notice 就 mark_paid，二者语义不等价。要点3缺少测试文件的任何材料，无法核实。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 3: tests/test_notice.py two branches identical, only covering successful payment. No tool result shows tests content. So unsupported.\n\nFact 1: main's notice entry requires applies_to_order after verify_notice, only allows payment.succeeded. Evidence: git_show main diff shows payment_notice.py `and applies_to_order(notice)`, notice_policy APPLICABLE_EVENTS = frozenset({\"payment.succeeded\"}). Also read_repository_file internal_verify check_notice. Supported.\n\nWait — nuance: \"只允许 payment.succeeded\" comes from notice_policy.py APPLICABLE_EVENTS. In main, notice_policy.py exists (per git_show main). The read of internal_verify.py at message 24 shows applies_to_order import — that's worktree after merge... but main's version via git_show main diff shows check_notice uses applies_to_order and payment_notice uses applies_to_order. Supported.\n\nFact 2: feature branch only checks verify_notice then calls mark_paid, and deleted notice_policy.py. git_diff refs main..feature shows deletion of notice_policy.py and payment_notice.py `if verify_notice(...)` then mark_paid. Supported.\n\nFact 3: no tests file in material. Unsupported."
+      }
+    }
+  ],
+  "created": 1794319064,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1118,
+    "prompt_tokens": 9686,
+    "total_tokens": 10804,
+    "completion_tokens_details": {
+      "reasoning_tokens": 243
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    }
+  }
+}

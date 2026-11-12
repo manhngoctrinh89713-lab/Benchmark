@@ -1,0 +1,38 @@
+{
+  "name": "resolve_cancellation_request",
+  "description": "审批取消申请；同意后取消未履约订单并发起退款，退款到账另行记录。",
+  "inputSchema": {
+    "properties": {
+      "request_id": {
+        "title": "Request Id",
+        "type": "string"
+      },
+      "approve": {
+        "title": "Approve",
+        "type": "boolean"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "request_id",
+      "approve",
+      "reason",
+      "idempotency_key"
+    ],
+    "title": "resolve_cancellation_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

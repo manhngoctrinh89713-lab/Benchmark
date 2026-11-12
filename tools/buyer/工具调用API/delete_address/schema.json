@@ -1,0 +1,23 @@
+{
+  "name": "delete_address",
+  "description": "删除地址簿中的地址，不修改已有订单。",
+  "inputSchema": {
+    "properties": {
+      "address_id": {
+        "title": "Address Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "address_id"
+    ],
+    "title": "delete_addressArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

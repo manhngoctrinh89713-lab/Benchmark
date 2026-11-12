@@ -1,0 +1,15 @@
+{
+  "name": "list_payment_methods",
+  "description": "列出支付方式及默认支付方式。",
+  "inputSchema": {
+    "properties": {},
+    "title": "list_payment_methodsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

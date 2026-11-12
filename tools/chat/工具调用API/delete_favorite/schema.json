@@ -1,0 +1,35 @@
+{
+  "name": "delete_favorite",
+  "description": "删除自己的收藏及其内容副本，不影响原消息、独立转发或工作区文件。",
+  "inputSchema": {
+    "properties": {
+      "favorite_id": {
+        "title": "Favorite Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "favorite_id"
+    ],
+    "title": "delete_favoriteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

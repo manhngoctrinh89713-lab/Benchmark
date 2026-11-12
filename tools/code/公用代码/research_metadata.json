@@ -1,0 +1,133 @@
+[
+  {
+    "repo": "wrale/mcp-server-tree-sitter",
+    "commit": "10c78c9d8aaf10d26ba550edbcdb822e87147bf8",
+    "stars_display": "309",
+    "observed_date": "2026-11-01",
+    "source_url": "https://github.com/wrale/mcp-server-tree-sitter",
+    "files": [
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/LICENSE",
+        "sha256": "267729650585a0669a70184a2c097c3be0d0c3e1a5ef85cfc77ce71a61a870b3"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/NOTICE",
+        "sha256": "8f31781940c51b35f5a30567843b57a6dba085837b5d2f8ab950159385335eaa"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/README.md",
+        "sha256": "740d91fb3f63ed62038e6b9454510ae6d5b402938143fd71cd60c1cef6e6e135"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/FEATURES.md",
+        "sha256": "bf33f7859279131b4075b199faba5594ee94625ad5ed9866004424918d8d58c7"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/pyproject.toml",
+        "sha256": "d842b44aa09fa543d9e30bba3824914549891ef5445bc49ab7a84e0613f42cef"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/tools/analysis.py",
+        "sha256": "3c4d5dcbf1b375a37bbca3c8c8ebf3d8cac276a2123dbcab14cc734edd6488dc"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/tools/file_operations.py",
+        "sha256": "0811e3554b65dbc09eb91b855500844097914a04623617a8668a5506e218f61c"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/tools/ast_operations.py",
+        "sha256": "71ede50449507b1449f368711e391b9e8342cb22312a3dfc158ade5c89c9ba98"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/registry.py",
+        "sha256": "56bbb2afb181d2731db7080d555b1b0bc91668c25ef1b5e12562a15a7817d064"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/python.py",
+        "sha256": "5d7ca9bdb3249323f1139f3d287bd097e2f4d479f43fcd0d4dcbdab04af87a44"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/javascript.py",
+        "sha256": "63d77e151f21b45867c441757f944b63a5154d1e301b1a5e3309ac8aabeb246c"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/typescript.py",
+        "sha256": "dd33022ea5da045dad7cb67745c41603b2d356c55c4de3b71ea8e3356c1b035d"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/go.py",
+        "sha256": "108d872abf60747c23798d171d945bd03303861060fd33f6703cbb28ffa49565"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/c.py",
+        "sha256": "a6af5b7e4a27387887b8eaeeb9645b9afc59ff5d470011a5dfb39135966a7bb8"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/cpp.py",
+        "sha256": "b8981df39c3d587ec3f2a1df2383817653c422389c33c04a8d83b63b8ada57ec"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/java.py",
+        "sha256": "b3910c031ca6671ddc10942ebb99daf7f0b5cd8734c85d3f180b9d42dac57255"
+      },
+      {
+        "path": "upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/rust.py",
+        "sha256": "b8419bb446bd941fd4a264c7fb997ffb36f4dd8c6acc0952627e04bf87cf5bfd"
+      }
+    ]
+  },
+  {
+    "repo": "oraios/serena",
+    "commit": "ede329aaf0c824bea75455a2926f01420d7aa620",
+    "stars_display": "31.0k",
+    "observed_date": "2026-11-01",
+    "source_url": "https://github.com/oraios/serena",
+    "files": [
+      {
+        "path": "upstream/oraios__serena/LICENSE",
+        "sha256": "6239f4be78ccff409aedfbce88ac89b26f488f76aac7ab199fb6876dc7fdeb4c"
+      },
+      {
+        "path": "upstream/oraios__serena/LICENSES/GPL-3.0-or-later.txt",
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+      },
+      {
+        "path": "upstream/oraios__serena/LICENSES/MIT.txt",
+        "sha256": "16017e50562bb112006f6f32d17ca989e0e573b011bd6790b642018b1c195b0c"
+      },
+      {
+        "path": "upstream/oraios__serena/README.md",
+        "sha256": "26c1db5a91658c4fb2d3bd43c4da5aa90fa0efb172a9175a959643c177a14823"
+      },
+      {
+        "path": "upstream/oraios__serena/src/serena/tools/symbol_tools.py",
+        "sha256": "7aeb397ee5107a71944e29c39b8f04d586b82a8d84640d260f75817273ae0e0e"
+      },
+      {
+        "path": "upstream/oraios__serena/src/serena/tools/file_tools.py",
+        "sha256": "abb253388cf430749dc23bb116a25e31c56681f39c3985a07d869bb8cfbb4903"
+      }
+    ]
+  },
+  {
+    "repo": "wonderwhy-er/DesktopCommanderMCP",
+    "commit": "9a171d1dae74de94bf07e6e13878006fb69fa600",
+    "stars_display": "10.2k",
+    "observed_date": "2026-11-01",
+    "source_url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+    "files": [
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/LICENSE",
+        "sha256": "e77cff545e0506903bf6a4bf29169fa40911eb76d70d239267df10c5c59370dd"
+      },
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/README.md",
+        "sha256": "a3feea8354f8552d52f9cafb10c552b72108f500ae97329f280d223e2c9467bd"
+      },
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/src/tools/edit.ts",
+        "sha256": "2adf00579def9d7337aeb684cecf7ccdc3db70ada57b6dd55957af67ef7de466"
+      }
+    ]
+  }
+]

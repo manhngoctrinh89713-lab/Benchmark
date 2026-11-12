@@ -1,0 +1,35 @@
+{
+  "name": "clear_draft",
+  "description": "清空自己的会话草稿；expected_version 可检查草稿是否变化，不影响已发送消息。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "clear_draftArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

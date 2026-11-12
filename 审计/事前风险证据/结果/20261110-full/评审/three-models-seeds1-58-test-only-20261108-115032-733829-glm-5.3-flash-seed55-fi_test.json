@@ -1,0 +1,28 @@
+{
+  "status": "scored",
+  "fingerprint": "0eda49533174c187c59e552cf6d4703826d07e99449329a8dea6f84c978abb4c",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101065933820522343",
+            "quote": "[\"T-1001\", \"Test payment migration\", \"u_lin\", \"ATLAS\", \"in_progress\", \"high\"], [\"T-1002\", \"Test checkout regression\", \"u_lin\", \"ATLAS\", \"done\", \"medium\"], [\"T-1003\", \"Test coupon rounding\", \"u_lin\", \"ATLAS\", \"done\", \"low\"], [\"T-1004\", \"Test address validation\", \"u_lin\", \"ATLAS\", \"done\", \"medium\"], [\"T-1005\", \"Test refund callback\", \"u_lin\", \"ATLAS\", \"done\", \"high\"], [\"T-1006\", \"Test order export\", \"u_lin\", \"ATLAS\", \"done\", \"low\"], [\"T-2001\", \"Test results review - release\", \"u_zhang\", \"ATLAS\", \"in_progress\", \"high\"], [\"T-2002\", \"Test data seed refresh\", \"u_zhang\", \"ATLAS\", \"done\", \"low\"], [\"T-3001\", \"Test env cleanup\", \"u_wang\", \"ATLAS\", \"blocked\", \"medium\"], [\"T-3002\", \"Test proxy timeout\", \"u_wang\", \"ATLAS\", \"done\", \"low\"]"
+          }
+        ],
+        "reason": "查询结果中标题以 Test 开头的恰好 10 条：T-1001~T-1006 owner 为 u_lin 共 6 条；T-2001、T-2002 owner 为 u_zhang 共 2 条，其中 T-2001 标题为“Test results review - release”且 status 为 in_progress；T-3001、T-3002 owner 为 u_wang 共 2 条，其中 T-3001 标题为“Test env cleanup”且 status 为 blocked。与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有读取过 `任务看板说明.md`，也没有任何返回内容说明 owner 字段代表任务负责人；建表语句仅显示 owner 列名，无法据此确认其含义。"
+      }
+    ],
+    "summary": "任务表查询结果完整支持 10 条 Test 标题任务的负责人与状态分布：u_lin 6 条、u_zhang 2 条（含 in_progress 的 Test results review - release）、u_wang 2 条（含 blocked 的 Test env cleanup）。但材料中从未读取《任务看板说明.md》，无法证实 owner 表示任务负责人。"
+  }
+}

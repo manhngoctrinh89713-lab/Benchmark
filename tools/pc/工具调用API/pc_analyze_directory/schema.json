@@ -1,0 +1,28 @@
+{
+  "name": "pc_analyze_directory",
+  "description": "分析登记磁盘内目录的真实场景文件大小、数量和大文件。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "pc_analyze_directoryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

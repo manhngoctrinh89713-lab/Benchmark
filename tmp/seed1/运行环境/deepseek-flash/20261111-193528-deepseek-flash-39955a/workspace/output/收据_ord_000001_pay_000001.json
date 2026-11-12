@@ -1,0 +1,15 @@
+{
+  "payment": {
+    "id": "pay_000001",
+    "buyer_id": "buyer_demo",
+    "merchant_id": "merchant_a",
+    "amount_minor": 119900,
+    "currency": "CNY",
+    "status": "succeeded",
+    "method_label": "银行卡 尾号5186",
+    "refunded_minor": 0,
+    "created_at": "2026-11-11T10:00:00+08:00",
+    "version": 1,
+    "order_id": "ord_000001"
+  }
+}

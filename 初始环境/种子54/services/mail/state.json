@@ -1,0 +1,134 @@
+{
+  "now": "2026-11-04T10:20:00+08:00",
+  "accounts": [
+    {
+      "account_name": "work",
+      "email_address": "operations@company.example.test",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "owner_id": "local-user",
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-d5c706d26a6240b6b7377a500964b44c",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-3380a1667d6c4ad6a0d80c8cfb34a686",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-4fafdb2c3a4b4fe382fa7f075022a8ad",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-2966396c01a64230a7c1ffdb5f25d12c",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-46f9c3f24c9d447fbbfcc6ebd43fed8b",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-3586147ee61d4f09ab615503aa620ed4",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ct_gideon",
+      "name": "Gideon",
+      "emails": [
+        "gideon@company.example.test"
+      ],
+      "organization": "平台组",
+      "notes": "Halcyon 接口交接人",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_gideon",
+      "message_id": "<m_gideon@mail.example.test>",
+      "account_name": "work",
+      "mailbox": "INBOX",
+      "from": "gideon@company.example.test",
+      "to": [
+        "operations@company.example.test"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Halcyon 交接材料更新",
+      "body": "保存的示例和当前接口指南不一致，麻烦整理一下交接材料，处理后给我一封简短说明。",
+      "timestamp": "2026-11-03T16:20:00+08:00",
+      "is_read": false,
+      "starred": false,
+      "attachments": [],
+      "version": 1,
+      "categories": [],
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-feceaf4dcb5943cbb4cb5432f10b02e3"
+    }
+  ],
+  "sent_events": [],
+  "current_actor": "local-user",
+  "sequence": 0,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "actors": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

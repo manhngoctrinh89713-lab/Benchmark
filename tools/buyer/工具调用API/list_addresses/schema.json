@@ -1,0 +1,26 @@
+{
+  "name": "list_addresses",
+  "description": "列出当前买家的收件地址。",
+  "inputSchema": {
+    "properties": {
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "list_addressesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

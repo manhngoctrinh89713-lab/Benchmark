@@ -1,0 +1,29 @@
+{
+  "id": "32142bd0-a2b8-447b-9d6a-2187c62711de_5833864054be4a88bf06afae82825928",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"工具返回中只有 backups/orders/ 目录列表和两次删除操作记录，未读取 `ops/archive-worker/runs/2026-11-01.json`，也没有任何关于备份类型（incremental）或父备份指向 orders_2026-10-31_0200.bak 的信息，材料完全不支持该要点。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有任何 `runs/*.json` 文件的内容，未出现备份类型 full/incremental 或父子备份链的信息；目录列表仅含 .bak 文件名与大小，无法据此推断备份类型和父备份关系。\"\n    }\n  ],\n  \"summary\": \"材料仅包含 backups/orders/ 的文件列表（含 2026-10-11 至 2026-11-01 的 .bak 文件与 catalog.json）以及删除 10-11、10-12 两个备份的记录，完全没有 ops/archive-worker/runs/ 下任何运行记录的内容，因此两条关于备份类型与父备份链的关键事实均无材料依据。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "The tool results only show directory listing and two deletions. There is no reading of ops/archive-worker/runs/*.json files. Key fact 1 claims the 2026-11-01 run is incremental with parent orders_2026-10-31_0200.bak — not supported by material. Key fact 2 also unsupported.\n\nBut wait — should I judge based only on material? Yes. Nothing in tool results mentions those json files. So both unsupported.\n\nHowever, maybe there's a nuance: key fact 1 contradicts user's claim that 11月1日 is a full backup. Regardless, no material supports it.\n\nEvidence arrays empty for unsupported."
+      }
+    }
+  ],
+  "created": 1794322829,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 448,
+    "prompt_tokens": 6934,
+    "total_tokens": 7382,
+    "completion_tokens_details": {
+      "reasoning_tokens": 150
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 2176
+    }
+  }
+}

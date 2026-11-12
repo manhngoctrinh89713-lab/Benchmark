@@ -1,0 +1,67 @@
+{
+  "name": "save_draft",
+  "description": "保存或替换自己的会话文本草稿，可带引用和@成员；不产生发送。修改和发送时检查当前会话条件，expected_version 使用草稿版本，首次创建为 0。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "quote_message_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Quote Message Id"
+      },
+      "mention_ids": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Mention Ids"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "chat_id",
+      "content"
+    ],
+    "title": "save_draftArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

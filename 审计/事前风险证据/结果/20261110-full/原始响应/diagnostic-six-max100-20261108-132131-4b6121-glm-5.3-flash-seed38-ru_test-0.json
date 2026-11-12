@@ -1,0 +1,29 @@
+{
+  "id": "86e79c76-71f2-416b-9260-5279ec40e672_a733dc21df1542bead15878db376e4ed",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 20, \"tool_call_id\": \"call_-7101065109186804063\", \"quote\": \"<text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">9月12日 14:00—17:00 · 南区展厅</text>\"},\n        {\"source\": \"tool_result\", \"message_index\": 20, \"tool_call_id\": \"call_-7101065109186804063\", \"quote\": \"<text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">9月12日 14:00—17:00 · 北区展厅</text>\"}\n      ],\n      \"reason\": \"读取两份活动海报的内容显示，本地/项目/品牌素材/云帆/活动海报.svg 写“南区展厅”，共享盘/团队素材/brand-assets/云帆/活动海报.svg 写“北区展厅”，且两者 sha256 不同，确为内容差异。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 20, \"tool_call_id\": \"call_-7101065109186804063\", \"quote\": \"<text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">报名截止 9月20日 23:59</text>\"},\n        {\"source\": \"tool_result\", \"message_index\": 20, \"tool_call_id\": \"call_-7101065109186804063\", \"quote\": \"<text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">报名截止 9月25日 23:59</text>\"}\n      ],\n      \"reason\": \"读取两份招募海报的内容显示，本地澄川/招募海报.svg 写“报名截止 9月20日 23:59”，共享盘版本写“报名截止 9月25日 23:59”，且 sha256 不同，符合要点。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 10, \"tool_call_id\": \"call_-7101065624582876304\", \"quote\": \"8月26日｜场地方回复：南区空调检修延续至月底，9月12日的场地单已落在北区展厅，接待人数不变。\"},\n        {\"source\": \"tool_result\", \"message_index\": 10, \"tool_call_id\": \"call_-7101065624582876304\", \"quote\": \"9月18日｜表单关闭时间跟随这次排班，落在25日23:59；26日至27日由两位同事整理附件。\"}\n      ],\n      \"reason\": \"批量读取执行记录显示，云帆/执行记录.md 记有“9月12日的场地单已落在北区展厅”，澄川/执行记录.md 记有“表单关闭时间跟随这次排班，落在25日23:59”，且本地与共享盘的执行记录内容及 sha256 相同，支持要点。\"\n    }\n  ],\n  \"summary\": \"三条要点均获支持：两份海报在本地与共享盘存在场地（南区/北区展厅）和截止时间（9月20日/25日）差异，而同目录执行记录中的条目分别印证了共享盘版本所依据的场地变更与排班调整。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Check key facts.\n\n1. 云帆/活动海报.svg: 本地 \"南区展厅\"，共享盘 \"北区展厅\" — supported by message 20 read results. Yes.\n\n2. 澄川/招募海报.svg: 本地 \"报名截止 9月20日 23:59\"，共享盘 \"报名截止 9月25日 23:59\" — supported by message 20. Yes.\n\n3. 同目录执行记录：云帆执行记录 \"9月12日的场地单已落在北区展厅\"；澄川执行记录 \"表单关闭时间跟随这次排班，落在25日23:59\" — supported by message 10 (read_multiple_files). Both in 云帆/执行记录.md and 澄川/执行记录.md, same on both sides. Fact says \"同目录执行记录分别记...\" — the quotes exist in the respective execution records. Yes, supported.\n\nQuote exactness: message 20 content includes escaped text; quote should be from result — I'll quote the plain substrings like \"9月12日 14:00—17:00 · 南区展厅\" which appear (as escaped in JSON but content is the raw). Fine."
+      }
+    }
+  ],
+  "created": 1794319219,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1197,
+    "prompt_tokens": 47032,
+    "total_tokens": 48229,
+    "completion_tokens_details": {
+      "reasoning_tokens": 278
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 2176
+    }
+  }
+}

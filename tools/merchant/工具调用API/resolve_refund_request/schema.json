@@ -1,0 +1,38 @@
+{
+  "name": "resolve_refund_request",
+  "description": "审批退款申请；同意后发起退款交易。",
+  "inputSchema": {
+    "properties": {
+      "request_id": {
+        "title": "Request Id",
+        "type": "string"
+      },
+      "approve": {
+        "title": "Approve",
+        "type": "boolean"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "request_id",
+      "approve",
+      "reason",
+      "idempotency_key"
+    ],
+    "title": "resolve_refund_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

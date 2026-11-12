@@ -1,0 +1,23 @@
+{
+  "name": "server_get_service",
+  "description": "读取服务启用/运行状态、主PID、依赖及磁盘配置与生效配置的哈希差异。",
+  "inputSchema": {
+    "properties": {
+      "service_id": {
+        "title": "Service Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_id"
+    ],
+    "title": "server_get_serviceArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

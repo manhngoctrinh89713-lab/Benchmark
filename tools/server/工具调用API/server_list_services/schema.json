@@ -1,0 +1,41 @@
+{
+  "name": "server_list_services",
+  "description": "按active/inactive/failed和名称搜索本服务器的systemd服务。",
+  "inputSchema": {
+    "properties": {
+      "state": {
+        "default": null,
+        "enum": [
+          "active",
+          "inactive",
+          "failed",
+          null
+        ],
+        "title": "State"
+      },
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "server_list_servicesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

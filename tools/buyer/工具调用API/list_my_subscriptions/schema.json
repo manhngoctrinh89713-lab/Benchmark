@@ -1,0 +1,26 @@
+{
+  "name": "list_my_subscriptions",
+  "description": "查询自己的订阅合同和待生效变更。",
+  "inputSchema": {
+    "properties": {
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "list_my_subscriptionsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

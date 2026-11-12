@@ -1,0 +1,54 @@
+{
+  "status": "scored",
+  "fingerprint": "bf594270c5fc2fd4417364bfa40e89a67e4fa2e819c479c0253f89dd656f81a3",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_KJkM2Pe4rbbW86G5zdt67670",
+            "quote": "{\"columns\": [\"id\", \"name\", \"identity_suffix\", \"birth_date\", \"phone\", \"merged_into\"], \"rows\": [[\"C901\", \"陈晨\", \"1127\", \"1988-03-14\", \"13921048312\", null], [\"C902\", \"陈晨\", \"6843\", \"1992-08-21\", \"13816702946\", null]"
+          }
+        ],
+        "reason": "customers 查询结果显示 C901 与 C902 姓名同为“陈晨”，identity_suffix 分别为 1127 与 6843，birth_date 分别为 1988-03-14 与 1992-08-21，phone 分别为 13921048312 与 13816702946，出生日期与手机号均不同，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_01_i1fV25G6EymX34tlsOBR0614",
+            "quote": "{\"columns\": [\"id\", \"debtor_id\", \"amount_minor\", \"settled_minor\"], \"rows\": [[\"AR-1048\", \"C902\", 840000, 0]"
+          }
+        ],
+        "reason": "invoice_items 查询结果显示 AR-1048 的 debtor_id 为 C902、amount_minor 为 840000、settled_minor 为 0，即金额 840000 分且未结清，与要点一致。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_KJkM2Pe4rbbW86G5zdt67670",
+            "quote": "[\"C903\", \"林悦\", \"2536\", \"1986-07-08\", \"13701825639\", null], [\"C904\", \"林悦\", \"2536\", \"1986-07-08\", \"13701825639\", null]"
+          }
+        ],
+        "reason": "customers 查询结果显示 C903 与 C904 的 name、identity_suffix、birth_date、phone 四个字段完全相同（林悦、2536、1986-07-08、13701825639），与要点一致。"
+      },
+      {
+        "id": 4,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具返回中没有任何读取 `crm/归并规则.md` 的记录，也未出现该文件内容或其中的归并规则表述，材料无法支持该要点。"
+      }
+    ],
+    "summary": "要点1、2、3均由 customers 与 invoice_items 的查询结果直接支持，可完整核对字段值。要点4涉及的 `crm/归并规则.md` 从未被读取，材料中无其内容，无法确认归并规则的表述。当前证据合计权重90。"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "update_my_order",
+  "description": "修改订单备注；未付款且未发货的订单可修改同一配送地区内的地址。",
+  "inputSchema": {
+    "$defs": {
+      "Address": {
+        "additionalProperties": false,
+        "properties": {
+          "address_line_1": {
+            "title": "Address Line 1",
+            "type": "string"
+          },
+          "country_code": {
+            "title": "Country Code",
+            "type": "string"
+          },
+          "address_line_2": {
+            "title": "Address Line 2",
+            "type": "string"
+          },
+          "admin_area_1": {
+            "title": "Admin Area 1",
+            "type": "string"
+          },
+          "admin_area_2": {
+            "title": "Admin Area 2",
+            "type": "string"
+          },
+          "postal_code": {
+            "title": "Postal Code",
+            "type": "string"
+          },
+          "recipient": {
+            "title": "Recipient",
+            "type": "string"
+          },
+          "phone": {
+            "title": "Phone",
+            "type": "string"
+          }
+        },
+        "required": [
+          "address_line_1",
+          "country_code"
+        ],
+        "title": "Address",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      },
+      "note": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Note"
+      },
+      "shipping_address": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Address"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "order_id"
+    ],
+    "title": "update_my_orderArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

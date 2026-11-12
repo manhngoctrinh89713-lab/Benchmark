@@ -1,0 +1,21 @@
+{
+  "status": "scored",
+  "fingerprint": "783e1345c082640b31381e04e036cc1d9024dca029e9e3290a0a693baa240f4a",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中只在 catalog.json 里出现 `ops/archive-worker/runs/2026-11-01.json` 作为 execution_record 路径，但从未读取该文件内容，没有任何关于备份类型（incremental）或父备份（orders_2026-10-31_0200.bak）的信息，无法支持该要点。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "catalog.json 仅列出各备份的执行记录路径、时间、大小与校验值，未包含 `2026-10-25.json`、`2026-10-26.json` 等运行记录的内容；材料中没有 full/incremental 类型或父备份链的信息，因此该要点不成立。"
+      }
+    ],
+    "summary": "材料仅包含目录清单与 catalog.json 元数据，其中只出现执行记录文件的路径，从未读取这些运行记录的内容，因而无法证明任何备份的类型（full/incremental）或父备份链。两条关键事实均缺少必要材料依据。"
+  }
+}

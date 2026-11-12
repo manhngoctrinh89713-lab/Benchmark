@@ -1,0 +1,48 @@
+{
+  "name": "rename_symbol",
+  "description": "仅Python：由Jedi计算项目内符号引用的跨文件重命名，先检查全部输出并检查语法，再作为一次修改发布；不重命名模块/文件。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "line": {
+        "title": "Line",
+        "type": "integer"
+      },
+      "column": {
+        "title": "Column",
+        "type": "integer"
+      },
+      "new_name": {
+        "title": "New Name",
+        "type": "string"
+      },
+      "dry_run": {
+        "default": false,
+        "title": "Dry Run",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "project_id",
+      "path",
+      "line",
+      "column",
+      "new_name"
+    ],
+    "title": "rename_symbolArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

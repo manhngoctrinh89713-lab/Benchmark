@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/Wh1isper/mcp-email-server",
+  "commit": "acbe0ec9981876f6cbb4e3a381295ca1b1113c33",
+  "archive_url": "https://codeload.github.com/Wh1isper/mcp-email-server/zip/acbe0ec9981876f6cbb4e3a381295ca1b1113c33",
+  "archive_sha256": "b3ed28037c593063758956e4626d21d2ce730e397c2b13fafc5b62afbe32999e",
+  "retrieved_date": "2026-11-01",
+  "license": "BSD-3-Clause",
+  "snapshot_path": "\u516c\u7528\u4ee3\u7801/upstream/Wh1isper__mcp-email-server",
+  "source_file": "\u516c\u7528\u4ee3\u7801/upstream/Wh1isper__mcp-email-server/mcp_email_server/emails/classic.py",
+  "extracted_symbol": "EmailClient._create_attachment_part",
+  "source_file_sha256": "222141d2039af3815b3783023d8ab7f391312c48897a6d5e71fca1c94c1e6e58",
+  "output": "\u516c\u7528\u4ee3\u7801/local_mail/mime_parts.py",
+  "output_sha256": "95d2261ee97991e94535b86b98d69b7a3dc48eeab902b103d89f2cc0c5642b80",
+  "adaptation": "Removed self and logger; otherwise retained attachment MIME construction."
+}

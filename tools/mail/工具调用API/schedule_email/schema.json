@@ -1,0 +1,45 @@
+{
+  "name": "schedule_email",
+  "description": "将完整草稿排队定时发送并消耗草稿；send_at 为未来的带时区 ISO8601 时间。排队固定正文、附件、显式地址、联系人及个人组解析结果；组织组到实际提交时展开。到期使用排队操作者当前授权，失败保留 failed 状态。查询不推进时间。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "draft_id": {
+        "title": "Draft Id",
+        "type": "string"
+      },
+      "send_at": {
+        "title": "Send At",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "draft_id",
+      "send_at"
+    ],
+    "title": "schedule_emailArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

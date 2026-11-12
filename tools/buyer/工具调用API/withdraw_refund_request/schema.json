@@ -1,0 +1,23 @@
+{
+  "name": "withdraw_refund_request",
+  "description": "撤回待审批的退款申请。",
+  "inputSchema": {
+    "properties": {
+      "request_id": {
+        "title": "Request Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "request_id"
+    ],
+    "title": "withdraw_refund_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

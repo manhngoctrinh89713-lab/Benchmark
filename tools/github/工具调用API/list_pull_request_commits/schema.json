@@ -1,0 +1,38 @@
+{
+  "name": "list_pull_request_commits",
+  "description": "列出 PR 当前分支相对基线包含的提交。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number"
+    ],
+    "title": "list_pull_request_commitsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

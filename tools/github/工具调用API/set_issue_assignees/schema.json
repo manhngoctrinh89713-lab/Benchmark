@@ -1,0 +1,36 @@
+{
+  "name": "set_issue_assignees",
+  "description": "替换 Issue 的指派人，空列表清除指派。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "assignees": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Assignees",
+        "type": "array"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number",
+      "assignees"
+    ],
+    "title": "set_issue_assigneesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

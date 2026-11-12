@@ -1,0 +1,40 @@
+{
+  "name": "server_write_file",
+  "description": "在登记挂载点创建或修改文本文件；服务配置沿用专用配置入口。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Sha256"
+      }
+    },
+    "required": [
+      "path",
+      "content"
+    ],
+    "title": "server_write_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-chat"
+version = "0.3.0"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.23,<2", "filelock>=3.20,<5"]
+
+[tool.setuptools]
+packages = ["local_chat", "local_chat.api", "local_chat.api.clear_chat_history", "local_chat.api.clear_draft", "local_chat.api.create_chat", "local_chat.api.delete_contact", "local_chat.api.delete_favorite", "local_chat.api.delete_message", "local_chat.api.delete_messages", "local_chat.api.dissolve_group", "local_chat.api.download_favorite_attachment", "local_chat.api.download_media", "local_chat.api.favorite_message", "local_chat.api.forward_favorite", "local_chat.api.forward_message", "local_chat.api.forward_messages", "local_chat.api.get_chat", "local_chat.api.get_contact", "local_chat.api.get_draft", "local_chat.api.get_favorite", "local_chat.api.get_group_announcement", "local_chat.api.get_message_context", "local_chat.api.get_profile", "local_chat.api.get_send_status", "local_chat.api.leave_chat", "local_chat.api.list_chat_members", "local_chat.api.list_chats", "local_chat.api.list_favorites", "local_chat.api.list_friend_requests", "local_chat.api.list_group_invitations", "local_chat.api.list_media", "local_chat.api.list_messages", "local_chat.api.list_pinned_messages", "local_chat.api.mark_read", "local_chat.api.read_merged_messages", "local_chat.api.read_message", "local_chat.api.recall_message", "local_chat.api.respond_friend_request", "local_chat.api.respond_group_invitation", "local_chat.api.save_draft", "local_chat.api.search_contacts", "local_chat.api.send_card", "local_chat.api.send_draft", "local_chat.api.send_file", "local_chat.api.send_friend_request", "local_chat.api.send_media", "local_chat.api.send_message", "local_chat.api.set_contact_blocked", "local_chat.api.set_group_administrator", "local_chat.api.set_group_announcement", "local_chat.api.set_group_nickname", "local_chat.api.set_message_pinned", "local_chat.api.transfer_group_owner", "local_chat.api.update_chat_members", "local_chat.api.update_chat_settings", "local_chat.api.update_contact", "local_chat.api.update_favorite", "local_chat.api.update_group", "local_chat.api.update_profile"]
+license-files = ["公用代码/licenses/*.txt"]
+
+[tool.setuptools.package-dir]
+local_chat = "公用代码/local_chat"
+"local_chat.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+local_chat = ["EXTRACTION.json"]
+"local_chat.api" = ["*/schema.json"]

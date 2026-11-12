@@ -1,0 +1,29 @@
+{
+  "id": "697de42e-bec1-4306-aeb7-2cfcf74e5e75_5ac7d05b39af460f86816e2d1c5fb36e",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":false,\"evidence\":[],\"reason\":\"工具返回中没有任何对工作区文件 `招聘/offer审批/周航-2026-11.md` 的读取或检索结果，材料完全没有涉及该文件内容，也未出现 11 月 2 日驳回、'该职级带宽上限 38,000 元' 批注或'当前批准额度 38,000 元'等信息。邮件中仅有 m002 提到'按 45k 提交了，薪酬委员会明天过会'，属提交而非批准，无法支持该要点。\"},{\"id\":2,\"supported\":false,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":15,\"tool_call_id\":\"call_-7101070984702063901\",\"quote\":\"本周会处理高级后端岗位的审批，请按最终额度发 offer。\"}],\"reason\":\"邮箱方面：对'周航''offer'的两次检索合计仅 m002、m003 两封，均显示 45k 仅为已提交、薪酬委员会尚未过会，未见获批记录，这部分倾向支持。但要点同时断言'审批记录'中也无记录，而材料中从未读取或检索任何审批记录文件，无法核实其内容，因此整体缺少关键条件，判为 unsupported。\"}],\"summary\":\"材料只包含两封邮件和一条联系人信息，未读取任何审批文件。45k 仅见'已提交、待薪酬委员会过会'，无获批证据；但关键事实所指的审批文件内容未被检索，驳回与 38k 上限等细节均无材料依据，故两条均不支持。\"}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key facts concern a file `招聘/offer审批/周航-2026-11.md`. No tool results show any file reads. The tool results only cover emails and contacts. So key fact 1 is unsupported (no file content retrieved). Key fact 2: \"邮箱与审批记录中没有 45k 获批或例外审批提交的记录\" — the emails searched show m002 (offer submitted at 45k, committee pending), m003 (committee will handle this week). No record of 45k approval or exception submission appears. But is the absence claim supported? The materials searched: search for 周航 and offer returned 2 emails total. But we don't know about 审批记录 (the file). The claim says \"邮箱与审批记录中都没有\" — the 审批记录 file wasn't read, so we can't confirm absence there. Partially supported for the mailbox part but not the approval record part. Under the standard, \"只支持其中一部分\" → unsupported.\n\nHmm, but is the email search sufficiently exhaustive to support \"邮箱中没有 45k 获批记录\"? Searches were limited (query 周航, query offer, limit 20). No comprehensive search for approval. But those returned totals of 1 and 2, suggesting exhaustiveness for those queries. Still, the fact requires both mailbox AND approval records. Since the approval record file wasn't examined, unsupported.\n\nAlso note key fact 1 says the file contains approval rejection details — nothing in materials supports that. Clearly unsupported.\n\nEvidence: for unsupported, can be empty array. But I could cite partial evidence? The spec says supported=true needs at least one evidence; false can be empty. I'll give empty or maybe partial quotes. Safer to give empty arrays for false, but I could include partial evidence with explanation. I'll include some evidence for id 2? The requirement says \"supported 为 true 时至少提供一条 evidence；为 false 时可以填空数组\" — so empty is fine. I'll include partial evidence anyway? Might confuse. I'll keep empty for id 1, and maybe include quote for id 2 showing mailbox search results found no approval... Actually the quoting must be verbatim from results. I can include the m002 body showing committee pending. But that doesn't prove absence. I'll keep empty arrays for both to be safe and explain in reason.\n\nActually, providing evidence for partial support may be informative but the field semantics is evidence supporting the fact. Since it doesn't fully support, empty is acceptable. I'll add quotes for id2 to show partial basis? The instruction: \"supported 为 true 时至少提供一条 evidence；为 false 时可以填空数组。\" — it doesn't forbid evidence on false. I'll include the search results showing only 2 emails with no approval to make it transparent. Hmm, absence can't be quoted. I'll include quote of m003 body \"本周会处理高级后端岗位的审批，请按最终额度发 offer。\" showing approval still pending. That's fine as partial.\n\nSummary under 200 chars."
+      }
+    }
+  ],
+  "created": 1794320838,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1060,
+    "prompt_tokens": 7893,
+    "total_tokens": 8953,
+    "completion_tokens_details": {
+      "reasoning_tokens": 663
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 7808
+    }
+  }
+}

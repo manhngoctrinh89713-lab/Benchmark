@@ -1,0 +1,1 @@
+{"timestamp": "2026-11-04T10:00:00+08:00", "service_id": "audit-logd.service", "priority": 6, "message": "audit collection started; output=/var/log/audit/current.log"}

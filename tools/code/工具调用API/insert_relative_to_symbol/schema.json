@@ -1,0 +1,65 @@
+{
+  "name": "insert_relative_to_symbol",
+  "description": "在完整行定义的before/after插入代码，适配同层缩进，默认检查语法；行内声明使用精确文本编辑。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "name_path": {
+        "title": "Name Path",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "position": {
+        "default": "after",
+        "title": "Position",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Sha256"
+      },
+      "dry_run": {
+        "default": false,
+        "title": "Dry Run",
+        "type": "boolean"
+      },
+      "validate_syntax": {
+        "default": true,
+        "title": "Validate Syntax",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "project_id",
+      "path",
+      "name_path",
+      "content"
+    ],
+    "title": "insert_relative_to_symbolArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

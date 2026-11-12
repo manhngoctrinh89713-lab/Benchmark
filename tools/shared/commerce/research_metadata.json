@@ -1,0 +1,110 @@
+[
+  {
+    "repo": "paypal/paypal-mcp-server",
+    "commit": "6b1ced271959d5ea53857502dc6e5ddef0cbc126",
+    "stars_display": "13",
+    "observed_date": "2026-11-01",
+    "source_url": "https://github.com/paypal/paypal-mcp-server",
+    "files": [
+      {
+        "path": "upstream/paypal__paypal-mcp-server/LICENSE",
+        "sha256": "f76647726361173606e705b193434669b29a72e1c55becfe53601a07197802a8"
+      },
+      {
+        "path": "upstream/paypal__paypal-mcp-server/README.md",
+        "sha256": "2844526907527f18a1071e857c8d1c52df7003b6297578bc32ed1bc54fdbc62c"
+      },
+      {
+        "path": "upstream/paypal__paypal-mcp-server/package.json",
+        "sha256": "d9b65c499001c7fe66b281d61f13ec6995650aa89a1e4d84a2b09d15d4a739f6"
+      },
+      {
+        "path": "upstream/paypal__paypal-mcp-server/src/index.ts",
+        "sha256": "f061c7446039b57ff3517baff9a6aff5ecbb526d57387310aac8a2214e5ba84c"
+      }
+    ]
+  },
+  {
+    "repo": "paypal/agent-toolkit",
+    "commit": "a3aa963960caf32912691a759879a8ce7a6018b2",
+    "stars_display": "198",
+    "observed_date": "2026-11-01",
+    "source_url": "https://github.com/paypal/agent-toolkit",
+    "files": [
+      {
+        "path": "upstream/paypal__agent-toolkit/LICENSE",
+        "sha256": "f76647726361173606e705b193434669b29a72e1c55becfe53601a07197802a8"
+      },
+      {
+        "path": "upstream/paypal__agent-toolkit/README.md",
+        "sha256": "b0339435661fb90b709d20158b06363fbbbfff51d0a96be0d463fabb15814275"
+      },
+      {
+        "path": "upstream/paypal__agent-toolkit/PROMPTS.md",
+        "sha256": "f4a4498107194623e9d1bcfe5a597fa73f993ef46eb750317a46c3d946c8b1af"
+      },
+      {
+        "path": "upstream/paypal__agent-toolkit/python/paypal_agent_toolkit/shared/orders/parameters.py",
+        "sha256": "2fc3b9874f27599530dd5a48a224fcebbc6f4b85c71f1237c15c2082fa720730"
+      },
+      {
+        "path": "upstream/paypal__agent-toolkit/python/paypal_agent_toolkit/shared/orders/payload_util.py",
+        "sha256": "426a673977a302a9b4c71edcac4c2cc0d3f62e18c9963a101b633e2513b7453c"
+      },
+      {
+        "path": "upstream/paypal__agent-toolkit/python/paypal_agent_toolkit/shared/orders/tool_handlers.py",
+        "sha256": "e8f694c0a844009e0efd6139d9f597e4ae5a5bd8b48094007fa926ab5f433d0c"
+      },
+      {
+        "path": "upstream/paypal__agent-toolkit/python/paypal_agent_toolkit/shared/subscriptions/parameters.py",
+        "sha256": "950f8364cb93b25c876aaa4a0c3c84791379477c616360d2e6af4f5face37553"
+      },
+      {
+        "path": "upstream/paypal__agent-toolkit/python/paypal_agent_toolkit/shared/subscriptions/tool_handlers.py",
+        "sha256": "7f947636b749838e2d1d940337c40fd57b61bfbfefa686368222f66fb1581a0a"
+      }
+    ]
+  },
+  {
+    "repo": "stripe/ai",
+    "commit": "85f3e2f62770ffd7b1739765df926ce2190d1b98",
+    "stars_display": "2.0k",
+    "observed_date": "2026-11-01",
+    "source_url": "https://github.com/stripe/ai",
+    "files": [
+      {
+        "path": "upstream/stripe__ai/LICENSE",
+        "sha256": "04460ff88cf26c5801e062b9b2847bfebd3f08c1432f97dc0124edfbbb6d671b"
+      },
+      {
+        "path": "upstream/stripe__ai/README.md",
+        "sha256": "67528cf1be02a93bb8567cbdda61531759a449cf0480f31c700ec837f82ba329"
+      },
+      {
+        "path": "upstream/stripe__ai/tools/typescript/MIGRATION.md",
+        "sha256": "2176ade3dfe6775442a7cd719417ffde13fa6145e5b3c66ac919e55d5e74ff45"
+      },
+      {
+        "path": "upstream/stripe__ai/tools/python/stripe_agent_toolkit/shared/mcp_client.py",
+        "sha256": "6bd8c0f11f0371efeaca3575391d696405e21c05d6433c165509ea4b8c76c23b"
+      },
+      {
+        "path": "upstream/stripe__ai/tools/python/stripe_agent_toolkit/shared/schema_utils.py",
+        "sha256": "d5d0cf75a6e85d17ccb3a6345d5245acf2663e6678f46eea640a1b19bd457a11"
+      }
+    ]
+  },
+  {
+    "repo": "shopify-apac-ts/shopify-ucp-demo-mcp",
+    "commit": "9ca8725edc347b2af1f17cb1f9e6d5fa7fd90f5b",
+    "stars_display": "2",
+    "observed_date": "2026-11-01",
+    "source_url": "https://github.com/shopify-apac-ts/shopify-ucp-demo-mcp",
+    "files": [
+      {
+        "path": "upstream/shopify-apac-ts__shopify-ucp-demo-mcp/README.md",
+        "sha256": "19505fea5cd4a4a37081a488f4ced3945b0ae8585fc1c888406a85c1af15b137"
+      }
+    ]
+  }
+]

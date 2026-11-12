@@ -1,0 +1,23 @@
+{
+  "name": "server_validate_service_config",
+  "description": "按场景声明的JSON/INI/ENV语法和必填字段规则校验真实配置；不运行服务二进制。",
+  "inputSchema": {
+    "properties": {
+      "service_id": {
+        "title": "Service Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_id"
+    ],
+    "title": "server_validate_service_configArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

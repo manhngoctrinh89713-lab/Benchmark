@@ -1,0 +1,33 @@
+{
+  "name": "restore_database",
+  "description": "用工作区内的 SQLite 备份替换已登记数据库，核对当前校验值及备份完整性。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "file_path": {
+        "title": "File Path",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "file_path",
+      "expected_sha256"
+    ],
+    "title": "restore_databaseArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

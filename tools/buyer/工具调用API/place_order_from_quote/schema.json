@@ -1,0 +1,33 @@
+{
+  "name": "place_order_from_quote",
+  "description": "按报价创建待付款订单；重新核对价格、库存、政策和优惠后预留库存三十分钟。",
+  "inputSchema": {
+    "properties": {
+      "quote_id": {
+        "title": "Quote Id",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      },
+      "note": {
+        "default": "",
+        "title": "Note",
+        "type": "string"
+      }
+    },
+    "required": [
+      "quote_id",
+      "idempotency_key"
+    ],
+    "title": "place_order_from_quoteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

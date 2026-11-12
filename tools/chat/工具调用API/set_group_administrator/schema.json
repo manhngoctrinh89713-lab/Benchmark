@@ -1,0 +1,45 @@
+{
+  "name": "set_group_administrator",
+  "description": "群主设置或撤销另一名当前成员的管理员身份；管理员不能改变群主身份。expected_version 使用群版本。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "user_id": {
+        "title": "User Id",
+        "type": "string"
+      },
+      "administrator": {
+        "title": "Administrator",
+        "type": "boolean"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "chat_id",
+      "user_id",
+      "administrator"
+    ],
+    "title": "set_group_administratorArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

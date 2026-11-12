@@ -1,0 +1,28 @@
+{
+  "name": "change_merchant_subscription",
+  "description": "立即取消、账期末取消或撤销待取消状态。",
+  "inputSchema": {
+    "properties": {
+      "subscription_id": {
+        "title": "Subscription Id",
+        "type": "string"
+      },
+      "operation": {
+        "title": "Operation",
+        "type": "string"
+      }
+    },
+    "required": [
+      "subscription_id",
+      "operation"
+    ],
+    "title": "change_merchant_subscriptionArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "set_delegate",
+  "description": "为已登记操作者设置邮箱委托，覆盖此人的既有授权；permissions 可含 read/write/send_as/send_on_behalf，各权限独立。仅邮箱所有者可管理，不提供租户级授权。expected_version 使用账户版本。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "actor_id": {
+        "title": "Actor Id",
+        "type": "string"
+      },
+      "permissions": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Permissions",
+        "type": "array"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "actor_id",
+      "permissions"
+    ],
+    "title": "set_delegateArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

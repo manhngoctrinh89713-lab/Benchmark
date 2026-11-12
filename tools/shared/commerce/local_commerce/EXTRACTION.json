@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/paypal/agent-toolkit",
+  "commit": "a3aa963960caf32912691a759879a8ce7a6018b2",
+  "license": "Apache-2.0",
+  "source": "upstream/paypal__agent-toolkit/python/paypal_agent_toolkit/shared/orders/payload_util.py",
+  "source_lines": [
+    5,
+    89
+  ],
+  "source_sha256": "426a673977a302a9b4c71edcac4c2cc0d3f62e18c9963a101b633e2513b7453c",
+  "output": "local_commerce/order_payload.py",
+  "output_sha256": "653c2b9859b9d0c19c89686d701045f33be2e014f8036dca974a8fe17f41f13f",
+  "changes": [
+    "Extract only parse_order_details and rename it build_order_payload",
+    "Use Decimal major units converted from validated integer minor units at call sites",
+    "No SDK, network, credentials, redirect handling or remote captures; output is a local order snapshot"
+  ],
+  "other_code": "New local role-bound commerce adapters, state transitions and persistence. Stripe/Shopify MCP interfaces are references, not copied remote backends."
+}

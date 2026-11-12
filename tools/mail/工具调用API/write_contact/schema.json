@@ -1,0 +1,77 @@
+{
+  "name": "write_contact",
+  "description": "创建或修改自己的个人联系人；传 contact_id 修改。emails 为明确邮箱地址，default_email 必须属于 emails，省略时用第一项。组织目录只读。",
+  "inputSchema": {
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "emails": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Emails",
+        "type": "array"
+      },
+      "contact_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Contact Id"
+      },
+      "default_email": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Default Email"
+      },
+      "organization": {
+        "default": "",
+        "title": "Organization",
+        "type": "string"
+      },
+      "remark": {
+        "default": "",
+        "title": "Remark",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "name",
+      "emails"
+    ],
+    "title": "write_contactArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

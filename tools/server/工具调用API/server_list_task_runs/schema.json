@@ -1,0 +1,38 @@
+{
+  "name": "server_list_task_runs",
+  "description": "查询计划任务的真实模型执行结果和失败信息。",
+  "inputSchema": {
+    "properties": {
+      "task_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Task Id"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "server_list_task_runsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

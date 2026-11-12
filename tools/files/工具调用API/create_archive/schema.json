@@ -1,0 +1,31 @@
+{
+  "name": "create_archive",
+  "description": "将选定文件或目录打包为 ZIP，归档内保留工作区相对路径。",
+  "inputSchema": {
+    "properties": {
+      "paths": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Paths",
+        "type": "array"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "paths",
+      "save_path"
+    ],
+    "title": "create_archiveArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

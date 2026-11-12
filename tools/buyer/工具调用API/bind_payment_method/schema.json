@@ -1,0 +1,28 @@
+{
+  "name": "bind_payment_method",
+  "description": "使用支付服务签发的凭证绑定支付方式。",
+  "inputSchema": {
+    "properties": {
+      "payment_token": {
+        "title": "Payment Token",
+        "type": "string"
+      },
+      "make_default": {
+        "default": false,
+        "title": "Make Default",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "payment_token"
+    ],
+    "title": "bind_payment_methodArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

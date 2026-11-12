@@ -1,0 +1,28 @@
+{
+  "name": "set_group_nickname",
+  "description": "修改自己在当前群中的群昵称，空字符串恢复使用个人昵称；不改变公开资料或他人的个人备注。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "nickname": {
+        "title": "Nickname",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id",
+      "nickname"
+    ],
+    "title": "set_group_nicknameArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

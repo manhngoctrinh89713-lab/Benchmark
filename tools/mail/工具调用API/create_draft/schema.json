@@ -1,0 +1,142 @@
+{
+  "name": "create_draft",
+  "description": "创建可未完成的草稿；可暂缺收件人、主题或正文。地址引用立即解析，附件立即保存字节快照。send_mode 为 send_as/send_on_behalf；创建草稿仅需 write，实际发送另行检查发送权限。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "recipients": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Recipients"
+      },
+      "subject": {
+        "default": "",
+        "title": "Subject",
+        "type": "string"
+      },
+      "body": {
+        "default": "",
+        "title": "Body",
+        "type": "string"
+      },
+      "cc": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Cc"
+      },
+      "bcc": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Bcc"
+      },
+      "html": {
+        "default": false,
+        "title": "Html",
+        "type": "boolean"
+      },
+      "attachments": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Attachments"
+      },
+      "in_reply_to": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "In Reply To"
+      },
+      "reply_to": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Reply To"
+      },
+      "from_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "From Address"
+      },
+      "send_mode": {
+        "default": "send_as",
+        "title": "Send Mode",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "create_draftArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

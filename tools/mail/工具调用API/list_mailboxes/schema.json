@@ -1,0 +1,23 @@
+{
+  "name": "list_mailboxes",
+  "description": "列出文件夹 ID、路径、层级、系统标识、版本及邮件/未读数量；Drafts 的数量包含独立草稿。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "list_mailboxesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "status": "scored",
+  "fingerprint": "a00f48e36de1db26ea23b0fcacd3eca7ea0393f41960d031d228da59a92fd619",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_078c665e565a4a69aeae7e26",
+            "quote": "[\"C901\", \"陈晨\", \"1127\", \"1988-03-14\", \"13921048312\", null], [\"C902\", \"陈晨\", \"6843\", \"1992-08-21\", \"13816702946\", null]"
+          }
+        ],
+        "reason": "查询结果直接显示 C901、C902 姓名均为“陈晨”，identity_suffix 分别为 1127、6843，birth_date 与 phone 均不同，完整支持该要点。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 11,
+            "tool_call_id": "call_85e22f0cb17d471ab8879fb6",
+            "quote": "[\"AR-1048\", \"C902\", 840000, 0]"
+          }
+        ],
+        "reason": "invoice_items 查询显示 AR-1048 的 debtor_id 为 C902、amount_minor 为 840000、settled_minor 为 0（未结清），完整支持该要点。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_078c665e565a4a69aeae7e26",
+            "quote": "[\"C903\", \"林悦\", \"2536\", \"1986-07-08\", \"13701825639\", null], [\"C904\", \"林悦\", \"2536\", \"1986-07-08\", \"13701825639\", null]"
+          }
+        ],
+        "reason": "查询结果中 C903 与 C904 的 name、identity_suffix、birth_date、phone 四个字段完全一致，完整支持该要点。"
+      },
+      {
+        "id": 4,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具结果中没有任何对 `crm/归并规则.md` 文件的读取或搜索记录，该文件内容未在材料中出现，无法证明其中写了归并的判定规则。"
+      }
+    ],
+    "summary": "材料完整支持 C901/C902 的身份字段差异（45）、AR-1048 归属 C902 且金额 840000 未结清（30）、C903/C904 四项身份字段完全一致（15）。但未读取 `crm/归并规则.md`，归并规则内容无材料依据（10 不支持）。得分 90。"
+  }
+}

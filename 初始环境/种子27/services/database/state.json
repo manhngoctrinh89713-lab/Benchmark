@@ -1,0 +1,11 @@
+{
+  "now": "2026-08-13T09:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "site-db",
+      "name": "驻场门禁与结算"
+    }
+  ],
+  "mutation_events": []
+}

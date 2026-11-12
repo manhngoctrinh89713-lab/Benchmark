@@ -1,0 +1,26 @@
+{
+  "name": "list_aftersales",
+  "description": "查询退换货申请和退件状态。",
+  "inputSchema": {
+    "properties": {
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "list_aftersalesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

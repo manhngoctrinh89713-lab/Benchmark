@@ -1,0 +1,28 @@
+{
+  "name": "delete_message",
+  "description": "仅从自己的本地历史删除一条消息或撤回提示；保留对方记录、收藏、独立转发副本和评测端发送记录。返回本地逐项删除结果。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id",
+      "message_id"
+    ],
+    "title": "delete_messageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

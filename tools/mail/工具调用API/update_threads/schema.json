@@ -1,0 +1,97 @@
+{
+  "name": "update_threads",
+  "description": "对指定会话当前包含的邮件执行移动、已读、星标或分类更改；返回调用时的成员快照和逐封执行结果，稍后加入会话的邮件不受影响。最多 100 个会话、500 封邮件。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "thread_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Thread Ids",
+        "type": "array"
+      },
+      "mailbox": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Mailbox"
+      },
+      "is_read": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Is Read"
+      },
+      "starred": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Starred"
+      },
+      "add_categories": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Add Categories"
+      },
+      "remove_categories": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Remove Categories"
+      }
+    },
+    "required": [
+      "account_name",
+      "thread_ids"
+    ],
+    "title": "update_threadsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

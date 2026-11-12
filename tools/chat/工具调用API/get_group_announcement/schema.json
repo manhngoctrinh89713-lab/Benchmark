@@ -1,0 +1,23 @@
+{
+  "name": "get_group_announcement",
+  "description": "读取群公告及版本；新成员可读取当前公告。已退出群只能读取退出时保存的公告快照。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "get_group_announcementArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

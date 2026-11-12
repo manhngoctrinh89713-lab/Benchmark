@@ -1,0 +1,23 @@
+{
+  "name": "create_directory",
+  "description": "创建目录及父目录，已存在目录返回created=false；不能对files根目录执行修改。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "create_directoryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

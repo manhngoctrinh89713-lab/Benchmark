@@ -1,0 +1,38 @@
+{
+  "name": "get_changes",
+  "description": "比较实际运行代码与初始模板，分页返回新增、修改、删除及哈希，可附unified diff，不依赖Git。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "include_diff": {
+        "default": false,
+        "title": "Include Diff",
+        "type": "boolean"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "project_id"
+    ],
+    "title": "get_changesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

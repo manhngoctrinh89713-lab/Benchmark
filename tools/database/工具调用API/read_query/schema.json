@@ -1,0 +1,55 @@
+{
+  "name": "read_query",
+  "description": "执行单条只读SQL，支持SELECT、WITH、JOIN、聚合、窗口函数。参数支持?列表或命名字典。返回columns与rows数组，保留重复列名；limit为1..1000，offset为0..10000。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "sql": {
+        "title": "Sql",
+        "type": "string"
+      },
+      "parameters": {
+        "anyOf": [
+          {
+            "items": {},
+            "type": "array"
+          },
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Parameters"
+      },
+      "limit": {
+        "default": 100,
+        "title": "Limit",
+        "type": "integer"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "db_id",
+      "sql"
+    ],
+    "title": "read_queryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

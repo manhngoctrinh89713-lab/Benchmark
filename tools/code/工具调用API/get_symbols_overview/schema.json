@@ -1,0 +1,38 @@
+{
+  "name": "get_symbols_overview",
+  "description": "用Tree-sitter返回函数、类、方法等定义的name_path和范围；name_path以/分隔，行号1起、字符列号0起。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 50,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "project_id",
+      "path"
+    ],
+    "title": "get_symbols_overviewArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

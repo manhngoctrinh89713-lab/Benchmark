@@ -1,0 +1,73 @@
+[
+  {
+    "repo": "modelcontextprotocol/servers-archived",
+    "commit": "9be4674d1ddf8c469e6461a27a337eeb65f76c2e",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/modelcontextprotocol__servers-archived/LICENSE",
+        "sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d"
+      },
+      {
+        "path": "upstream/modelcontextprotocol__servers-archived/src/sqlite/README.md",
+        "sha256": "5020f718e782560b5b6ea057f6c1dd247d06f68802ccbc1bb0e86cd8b09fea0d"
+      },
+      {
+        "path": "upstream/modelcontextprotocol__servers-archived/src/sqlite/src/mcp_server_sqlite/server.py",
+        "sha256": "f1355bbe08233914c21c277d45acfe91fc800b7dc0af2020f37be3c9564172e0"
+      },
+      {
+        "path": "upstream/modelcontextprotocol__servers-archived/src/sqlite/pyproject.toml",
+        "sha256": "6ca341092f2e6705c17dac685f89a381d9b0ea0fe070566f6e3f9a8c794e0db8"
+      }
+    ],
+    "stars_display": "305 (entire archived repository)",
+    "source_url": "https://github.com/modelcontextprotocol/servers-archived"
+  },
+  {
+    "repo": "jparkerweb/mcp-sqlite",
+    "commit": "e9d6e5f99757b02f3fce4c3e199b1552c76a46bf",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/jparkerweb__mcp-sqlite/LICENSE",
+        "sha256": "aba655ae235f8ca49099d75a9fa093aae51319a37541e660786f1dcf8800df5a"
+      },
+      {
+        "path": "upstream/jparkerweb__mcp-sqlite/README.md",
+        "sha256": "334917d14c36f07120278b8e4d36095889479b4216ebaf2360bab31a17a44890"
+      },
+      {
+        "path": "upstream/jparkerweb__mcp-sqlite/mcp-sqlite-server.js",
+        "sha256": "816269f2765829f8c337bedcc3a77c4e7aa7e2f865f40b18d16484f5d7bed27c"
+      }
+    ],
+    "stars_display": "130",
+    "source_url": "https://github.com/jparkerweb/mcp-sqlite"
+  },
+  {
+    "repo": "bytebase/dbhub",
+    "commit": "1f3fa031ed2c3f24b4f2259d3909548933fcd977",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/bytebase__dbhub/LICENSE",
+        "sha256": "4c4b71ccdeaea87bdde160d0fc1d4187e3f7495ca122b9bef78fa0175d9054ba"
+      },
+      {
+        "path": "upstream/bytebase__dbhub/README.md",
+        "sha256": "1d5125bc6275360d3ca9c6dc1366d8d0549408f279701a7b1b90461d74a18859"
+      },
+      {
+        "path": "upstream/bytebase__dbhub/src/tools/execute-sql.ts",
+        "sha256": "be889d6fa34d4e7318a75dd3de934e96c43f8013337b6745d47b2607431d90eb"
+      },
+      {
+        "path": "upstream/bytebase__dbhub/src/tools/search-objects.ts",
+        "sha256": "a281727c646682c765175b54832f5f71484e9be1aaf31578a7d1a72f47da7bad"
+      }
+    ],
+    "stars_display": "3.8k (approximate display)",
+    "source_url": "https://github.com/bytebase/dbhub"
+  }
+]

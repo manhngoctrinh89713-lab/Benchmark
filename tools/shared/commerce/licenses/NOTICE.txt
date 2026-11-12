@@ -1,0 +1,14 @@
+Local commerce MCP adapters
+
+The local order payload builder is adapted from PayPal Agent Toolkit:
+https://github.com/paypal/agent-toolkit
+Commit a3aa963960caf32912691a759879a8ce7a6018b2
+Original function: parse_order_details, shared/orders/payload_util.py
+License: Apache License, Version 2.0 (see paypal__agent-toolkit.txt)
+
+Modifications: extract and rename the payload builder; call it with Decimal
+values converted from validated integer minor units. The local adapters
+persist its output as order data and do not invoke the PayPal network API.
+
+Other provider snapshots are research references and are not linked into
+the runtime. See local_commerce/EXTRACTION.json for precise provenance.

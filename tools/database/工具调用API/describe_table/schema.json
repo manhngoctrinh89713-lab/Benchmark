@@ -1,0 +1,28 @@
+{
+  "name": "describe_table",
+  "description": "读取表或视图的列、生成列、外键、索引及建表SQL。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "table": {
+        "title": "Table",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "table"
+    ],
+    "title": "describe_tableArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

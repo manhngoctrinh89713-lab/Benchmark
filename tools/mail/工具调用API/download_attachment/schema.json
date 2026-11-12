@@ -1,0 +1,38 @@
+{
+  "name": "download_attachment",
+  "description": "按账户、邮件和附件 ID 下载原始附件字节。save_path 位于 workspace 内，相对路径从 workspace 解析；不覆盖已有文件。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_id": {
+        "title": "Email Id",
+        "type": "string"
+      },
+      "attachment_id": {
+        "title": "Attachment Id",
+        "type": "string"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_id",
+      "attachment_id",
+      "save_path"
+    ],
+    "title": "download_attachmentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

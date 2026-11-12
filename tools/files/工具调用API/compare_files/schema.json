@@ -1,0 +1,33 @@
+{
+  "name": "compare_files",
+  "description": "比较两份文件的字节内容，可返回 UTF-8 文本差异。",
+  "inputSchema": {
+    "properties": {
+      "source": {
+        "title": "Source",
+        "type": "string"
+      },
+      "destination": {
+        "title": "Destination",
+        "type": "string"
+      },
+      "include_diff": {
+        "default": false,
+        "title": "Include Diff",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "source",
+      "destination"
+    ],
+    "title": "compare_filesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

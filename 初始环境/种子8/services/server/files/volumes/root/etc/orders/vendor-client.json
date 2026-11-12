@@ -1,0 +1,22 @@
+{
+  "environment": "production",
+  "vendor": {
+    "endpoint": "https://api.haichuan-logistics.example/v2/orders",
+    "verify_tls": true,
+    "timeout_seconds": 25,
+    "retry_limit": 3,
+    "token_source": "credential-store:orders/vendor"
+  },
+  "queue": {
+    "topic": "order.dispatch",
+    "batch_size": 80,
+    "consumer_group": "orders-prod"
+  },
+  "logging": {
+    "level": "INFO",
+    "redact_fields": [
+      "access_token",
+      "recipient"
+    ]
+  }
+}

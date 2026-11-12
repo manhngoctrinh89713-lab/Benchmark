@@ -1,0 +1,28 @@
+{
+  "name": "send_friend_request",
+  "description": "向已知用户 ID 发起好友申请并附验证信息；同方向重复 pending 申请返回原申请。实际接受由目标用户决定，发起申请不建立好友关系。",
+  "inputSchema": {
+    "properties": {
+      "user_id": {
+        "title": "User Id",
+        "type": "string"
+      },
+      "message": {
+        "default": "",
+        "title": "Message",
+        "type": "string"
+      }
+    },
+    "required": [
+      "user_id"
+    ],
+    "title": "send_friend_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,382 @@
+# Getting Started
+
+This guide configures one email account and connects it to an MCP client over
+stdio. See [Configuration](configuration.md) for headless environments,
+multiple accounts, and advanced email server settings.
+
+## Requirements
+
+- Python 3.11 or later.
+- IMAP credentials for the email account.
+- SMTP credentials if the account must send email.
+- An MCP-compatible client.
+
+[`uv`](https://docs.astral.sh/uv/) is recommended because `uvx` can run the
+newest published PyPI package without a permanent installation.
+
+## Version availability
+
+This page documents the Local Email App V2 contract implemented by this source
+tree: the embedded React management UI, SQLite-backed managed catalogs, the
+`config` and `account` CLI commands, and a mail-only MCP catalog. Managed secrets
+use the same private SQLite database by default on Linux and Windows; macOS uses
+the system keyring.
+
+PyPI 0.16.0 and earlier do not contain that contract. Those releases use the
+legacy Gradio/TOML editor and MCP still exposes `add_email_account`. For a newer
+release, verify that its release notes include “Local Email App V2” before using
+the V2 instructions below. The `@latest` selector chooses the newest published
+package; it does not select this source branch.
+
+To run V2 from this checkout:
+
+```bash
+uv sync
+uv run mcp-email-server ui
+```
+
+For a published release whose notes include Local Email App V2:
+
+```bash
+uvx mcp-email-server@latest ui
+```
+
+Use the same source checkout or published release for both `ui` and `stdio`. Do
+not pair a V2 managed catalog with a pre-V2 MCP process.
+
+## Upgrading to Local Email App V2
+
+PyPI 0.16.0 and earlier expose the historical `add_email_account` MCP tool,
+which accepts account credentials and writes legacy TOML configuration. Local
+Email App V2 intentionally removes that tool; it is not renamed or replaced by
+another MCP management tool. Account and credential changes must be completed
+by the user through the authenticated loopback UI or interactive CLI.
+
+Before upgrading, remove prompts, automation, and client allowlist entries that
+invoke `add_email_account`. After upgrading, restart each MCP client so it
+refreshes `tools/list`; a stale caller will no longer find that tool.
+
+Existing TOML accounts remain available in `legacy` mode. To adopt managed mode,
+initialize the migration destination, preview and explicitly apply `config
+import-legacy`, test the accounts, and restart the MCP client when requested.
+Preparation keeps legacy selected. A complete successful import automatically
+selects managed mode when every source account type is supported; a failure or
+unsupported provider keeps legacy selected. Import never modifies the source
+TOML or its legacy keyring entries. The preview uses the effective
+legacy view, so a complete environment account and environment policy overrides
+are included with the same replacement/precedence rules used by legacy runtime.
+Credential values remain absent from preview and are read only during confirmed
+apply. Do not pass them through MCP or chat.
+
+### Upgrading an existing managed catalog
+
+Managed v3/v4/v5/v6 catalogs migrate to v7 on the first access by the new application.
+Existing configuration is preserved, and missing To-only cache fields are refreshed on demand;
+no account re-entry is required. Stop all older catalog users, keep a private
+consistent backup, and upgrade UI, CLI, and MCP together before restarting the
+clients. An older runtime cannot read v7, so a package-only downgrade is not a
+rollback. See the [managed upgrade steps](configuration.md#upgrading-a-managed-catalog-to-v7).
+Legacy TOML/environment users are not automatically switched to managed mode.
+
+## Configure an account with the UI
+
+Run one of the V2 commands in [Version availability](#version-availability).
+
+The foreground command binds exactly to `127.0.0.1` on an ephemeral port and
+opens one process-specific browser link. The link contains a one-time token in
+its URL fragment; the frontend removes the fragment before exchanging it for a
+local session. Keep the terminal open while using the UI. Use `--no-open` to
+suppress browser launch or `--port PORT` to request a fixed loopback port.
+
+On first use:
+
+1. after the one-time browser authentication, let the UI prepare
+   `managed.sqlite3` in the private directory shared by the legacy source and
+   its separate bootstrap sidecar; this authenticated
+   POST happens automatically only for a truly empty installation, while a
+   detected legacy source requires an explicit **Import existing settings**
+   preparation and review;
+2. stay in **Email accounts** and choose **Add your first account**. Enter the
+   email address and password. The UI derives a sender name and account nickname,
+   fills known Google, Microsoft, iCloud, Yahoo, Fastmail, and Zoho connection
+   settings, and otherwise suggests `imap.<email-domain>`. Review or override the
+   editable server, login, port, security, and certificate details when needed.
+   Outgoing mail and Sent-folder options remain optional;
+3. use **Password** on the saved account to rotate or remove that account's saved
+   password. A failed save leaves the current password authority unchanged.
+   Provider connectivity testing is intentionally not
+   available in the Web UI;
+4. under **Settings & help**, add recipient addresses or glob patterns (for
+   example `*@example.com`) and optional sender patterns as individual items.
+   `*` explicitly allows every recipient for sending, forwarding, and drafts.
+   No recipients disables sending and general saves; recipientless `save_draft`
+   is still allowed by its mutation grant. No senders leaves reading unrestricted;
+   choose global mutation permissions in this panel and inheritance or an
+   explicit override in the account editor. Omitted settings retain all five
+   write classes; choose an empty list for read-only. Set the optional draft
+   mailbox on the account only if special-use Drafts discovery is unavailable
+   or ambiguous;
+5. saved complete accounts are immediately usable by managed runtime; there is
+   no catalog activation or second save. Incomplete accounts remain visible in
+   diagnostics but do not hide complete accounts;
+6. restart every MCP client process after the UI reports that restart is
+   required.
+
+The UI has only two primary destinations: **Email accounts** for ordinary setup
+and per-account semantic tags, and **Settings & help** for importing earlier
+settings, sending/attachment safety, and bounded troubleshooting checks. The
+attachment settings distinguish saving files on the server from returning bytes
+through MCP for clients such as ChatGPT apps. Ordinary labels and errors use task language;
+storage and concurrency terms are kept out of the primary workflow. Account creation
+becomes available after the account list and inherited permissions finish loading.
+Optional
+settings are loaded only when their disclosure
+is opened. On Linux and Windows, managed credentials default to the private
+`managed_secret` table in the managed SQLite database. macOS uses the
+operating-system keyring. Managed mode never falls back to TOML plaintext. The
+interface is not a mail
+client and never exposes message content. The same cleanup and headless
+operations remain available through the managed CLI below.
+
+Advanced protocol commands are disabled by default. Most users should leave
+**Allow advanced protocol commands** unchecked under **Account permissions**;
+ordinary tools do not require it. Review [advanced access](configuration.md#advanced-protocol-access)
+before enabling its broader raw mailbox, expunge and message capabilities.
+
+## Configure an account with the managed CLI
+
+For an explicit SQLite-backed catalog, install the command at a stable path and
+run the direct workflow:
+
+```bash
+mcp-email-server config init \
+  --database ~/.config/mcp-email-server/catalog.sqlite3
+mcp-email-server account add work \
+  --email john@example.com \
+  --full-name "John Doe" \
+  --imap-host imap.example.com
+mcp-email-server account test work incoming
+```
+
+The account command reads the password through user-controlled terminal input
+without placing it in argv. `account test` is the retained low-level,
+agent-readable connectivity diagnostic; running it does not authorize any other
+management operation. Managed mode requires the platform filesystem-security profile described in
+[Security](security.md). POSIX uses owner/mode, no-follow, identity, and locking
+primitives. Windows requires an ordinary local fixed NTFS drive-letter path and
+uses handle-bound reparse/identity/DACL checks to protect both catalog state and
+managed secrets. Managed mode does not fall back to legacy TOML plaintext or
+weaker filesystem checks. Fresh initialization selects managed immediately unless existing v1
+configuration needs reviewed import. Restart the MCP client when `config status`
+reports that it is required. See
+[Managed CLI setup](configuration.md#managed-cli-setup) for SMTP, stdin,
+diagnostics, disablement, and switching back to legacy mode.
+
+## Configure the MCP client
+
+Add this server definition to the MCP client:
+
+```json
+{
+  "mcpServers": {
+    "mcp-email-server": {
+      "command": "uvx",
+      "args": ["mcp-email-server@latest", "stdio"]
+    }
+  }
+}
+```
+
+Restart the client after changing its configuration.
+
+The explicit JSON configuration above works with Claude Desktop and other
+clients that use the same `mcpServers` format. Account and credential management
+is intentionally absent from MCP; use the local UI or your own terminal.
+
+## Verify the connection
+
+After restarting the client:
+
+1. Ask it to list available email accounts. This calls
+   `list_available_accounts`; select an entry with `can_receive=true` and require
+   `can_send=true` before sending. If the list is empty, the agent should hand
+   setup back to you and must not ask for a credential.
+2. Ask it to list recent messages for the configured account. This calls
+   `list_emails_metadata`.
+3. If SMTP is configured through the managed workflow, make a non-destructive
+   connectivity check with `mcp-email-server account test ACCOUNT outgoing`
+   before asking the client to send. It authenticates, submits the configured
+   account email address in `MAIL FROM`, and resets the transaction without
+   `RCPT TO` or `DATA`; success does not prove final delivery. This CLI diagnostic
+   remains available even though the Web UI has no Test connection action or
+   route. Add the intended address to the allowed-recipient policy first; an empty recipient collection
+   disables sending. `send_email` is always present in the static MCP tool
+   catalog.
+
+If the account is listed but a mail operation fails, check the IMAP or SMTP
+host, port, TLS mode, username, and password. See
+[Troubleshooting](troubleshooting.md) for common failures.
+
+## Install a published V2 release permanently
+
+Use this path only for a release whose notes state that it includes Local Email
+App V2. Instead of `uvx`, install that package into a managed environment:
+
+```bash
+pip install mcp-email-server
+mcp-email-server ui
+```
+
+Then configure the client to invoke the installed executable:
+
+```json
+{
+  "mcpServers": {
+    "mcp-email-server": {
+      "command": "mcp-email-server",
+      "args": ["stdio"]
+    }
+  }
+}
+```
+
+If the executable is not on the client's `PATH`, replace
+`mcp-email-server` with the absolute path returned by:
+
+```bash
+which mcp-email-server
+```
+
+On Windows, use `where mcp-email-server` instead. Managed storage must remain on
+a local fixed NTFS drive under a validated parent directory; do not place the
+catalog or configuration authority directly in the volume root or on a UNC path,
+mapped network drive, FAT/exFAT volume, device namespace, or alternate data
+stream.
+
+## Run the official container image
+
+Release 1.6.2 and later publish Linux `amd64` and `arm64` images to the current
+canonical registry path:
+
+```text
+ghcr.io/wh1isper/mcp-email-server
+```
+
+Use a version tag for a controlled deployment or `latest` to follow the newest
+release:
+
+```bash
+docker pull ghcr.io/wh1isper/mcp-email-server:1.6.2
+docker run --rm ghcr.io/wh1isper/mcp-email-server:1.6.2 --version
+```
+
+The former `ghcr.io/ai-zerolab/mcp-email-server` package is historical and is
+not updated by the current repository. The image entrypoint is
+`mcp-email-server` and its default command is `stdio`. Keep stdin attached when
+using it from an MCP client:
+
+```json
+{
+  "mcpServers": {
+    "mcp-email-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--env-file",
+        "/absolute/path/to/mcp-email-server.env",
+        "ghcr.io/wh1isper/mcp-email-server:1.6.2"
+      ]
+    }
+  }
+}
+```
+
+The env file uses the variables described in
+[Configure without the UI](#configure-without-the-ui). Keep it outside the
+source tree, restrict its permissions, and do not pass credentials as Docker
+build arguments. Environment-only accounts do not require persistent container
+storage.
+
+For managed CLI configuration on a POSIX Docker host, bind a private host
+directory, run with the host user's numeric identity, and select an explicit
+container configuration path. This preserves the owner-only storage contract
+instead of creating root-owned host files:
+
+```bash
+install -d -m 700 "$HOME/.config/mcp-email-server-container"
+docker run --rm -it \
+  --user "$(id -u):$(id -g)" \
+  --env HOME=/config \
+  --env MCP_EMAIL_SERVER_CONFIG_PATH=/config/config.toml \
+  --mount "type=bind,src=$HOME/.config/mcp-email-server-container,dst=/config" \
+  ghcr.io/wh1isper/mcp-email-server:1.6.2 \
+  config init --database /config/managed.sqlite3
+```
+
+Reuse the same user, environment, and mount arguments for subsequent `account`
+and server commands. Do not bind a host directory owned by a different user;
+the managed storage preflight rejects it rather than weakening its ownership
+checks. The local management UI intentionally binds only to container loopback and is not made
+remote by publishing a Docker port; run the UI from a host installation or use
+the managed CLI inside the container.
+
+For Streamable HTTP, override the default command and configure the wildcard
+bind plus the exact external Host/Origin values:
+
+```bash
+docker run --rm -p 8000:8000 \
+  --env-file /absolute/path/to/mcp-email-server.env \
+  -e MCP_HOST=0.0.0.0 \
+  -e MCP_PORT=8000 \
+  -e MCP_ALLOWED_HOSTS='localhost:8000,127.0.0.1:8000' \
+  -e MCP_ALLOWED_ORIGINS='http://localhost:8000' \
+  ghcr.io/wh1isper/mcp-email-server:1.6.2 streamable-http
+```
+
+Review the reverse-proxy and authentication boundary in
+[Transports](transports.md#reverse-proxies) before exposing HTTP beyond the
+local machine. Maintainers can build and run the same image verification locally
+with `make container-check`.
+
+## Configure without the UI
+
+For containers, CI, and headless systems, pass account settings as environment
+variables in the MCP server definition. A minimal IMAP account looks like this:
+
+```json
+{
+  "mcpServers": {
+    "mcp-email-server": {
+      "command": "uvx",
+      "args": ["mcp-email-server@latest", "stdio"],
+      "env": {
+        "MCP_EMAIL_SERVER_ACCOUNT_NAME": "work",
+        "MCP_EMAIL_SERVER_EMAIL_ADDRESS": "john@example.com",
+        "MCP_EMAIL_SERVER_PASSWORD": "your-password",
+        "MCP_EMAIL_SERVER_IMAP_HOST": "imap.example.com"
+      }
+    }
+  }
+}
+```
+
+Add `MCP_EMAIL_SERVER_SMTP_HOST` to enable sending. See the complete
+[environment variable reference](configuration.md#environment-variable-reference)
+before deploying credentials this way.
+
+The password in this example remains plaintext in the MCP client configuration
+and process environment; `credential_storage` does not protect it. Prefer the
+client, CI, or container platform's secret injection mechanism. If a literal
+value is unavoidable, restrict the configuration file's permissions and keep
+it out of version control and diagnostic output. Environment-composited legacy
+accounts are runtime compatibility inputs; migrate them explicitly rather than
+pasting their secrets into chat or asking an MCP client to manage accounts.
+
+## Next steps
+
+- [Configure multiple accounts or advanced TLS settings](configuration.md)
+- [Review the available MCP tools](tools.md)
+- [Apply recipient or sender allowlists](security.md)
+- [Run an HTTP transport](transports.md)

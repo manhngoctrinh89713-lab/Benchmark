@@ -1,0 +1,28 @@
+{
+  "name": "get_release",
+  "description": "按tag读取本地模拟Release详情。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "tag": {
+        "title": "Tag",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "tag"
+    ],
+    "title": "get_releaseArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

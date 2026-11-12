@@ -1,0 +1,34 @@
+{
+  "status": "scored",
+  "fingerprint": "2b7bab2b7af72ef60128f95c13910a1a2bd5bd16e063e045e6105b8e086292cc",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_00_YnUAEhVrKwm7qtN9wx4m9421",
+            "quote": "2. 核销截止时间：2027-03-19T23:59:59+08:00。逾期作废，不支持延期。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 15,
+            "tool_call_id": "call_00_IsoT8lfhWsnw5MgjTS4m3263",
+            "quote": "2. 核销截止时间：2027-03-19T23:59:59+08:00。逾期作废，不支持延期。"
+          }
+        ],
+        "reason": "COF-V 商品描述与 policies.terms 中的正式使用规则均逐字写明核销截止时间为 2027-03-19T23:59:59+08:00，逾期作废、不支持延期，与要点一致。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "全部材料中没有任何读取 `周年庆采购/活动策划方案.md` 的工具调用或返回，也没有出现该文件内容；活动时间 2027-03-20 09:00 及 40 份咖啡当天到店核销的说法在材料中完全没有依据。"
+      }
+    ],
+    "summary": "要点1由 COF-V 商品描述及政策条款中的正式使用规则完整支持。要点2涉及的《周年庆采购/活动策划方案.md》未在任何工具返回中出现，材料未提供该文件内容，故活动时间与核销安排无依据。"
+  }
+}

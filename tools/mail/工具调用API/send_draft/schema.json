@@ -1,0 +1,40 @@
+{
+  "name": "send_draft",
+  "description": "按草稿保存的内容与地址提交发送，检查当前发送权限；成功后消耗草稿。组织组在提交时展开，外部投递需另有证据。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "draft_id": {
+        "title": "Draft Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "draft_id"
+    ],
+    "title": "send_draftArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

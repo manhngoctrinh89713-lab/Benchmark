@@ -1,0 +1,15 @@
+{
+  "name": "get_me",
+  "description": "读取场景当前用户的本地GitHub资料。",
+  "inputSchema": {
+    "properties": {},
+    "title": "get_meArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

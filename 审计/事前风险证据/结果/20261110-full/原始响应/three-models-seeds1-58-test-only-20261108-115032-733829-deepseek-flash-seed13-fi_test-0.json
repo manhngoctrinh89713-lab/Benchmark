@@ -1,0 +1,29 @@
+{
+  "id": "5685e41f-33ce-4042-9239-7912e531393a_a53bae721eb9435e88aa15375e4425f9",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_01_3ZpOVoBALdhL9Ni6Byj31510\",\n          \"quote\": \"\\\"rows\\\": [[\\\"M107\\\", 12500, null, \\\"pending\\\", \\\"integer\\\", \\\"null\\\"], [\\\"M218\\\", 8000, null, \\\"pending\\\", \\\"integer\\\", \\\"null\\\"], [\\\"M306\\\", 360, null, \\\"pending\\\", \\\"integer\\\", \\\"null\\\"]], \\\"row_count\\\": 3\"\n        }\n      ],\n      \"reason\": \"对 accounts 表的查询结果逐行给出三位会员的 legacy_balance 为 12500、8000、360，balance_minor 均为 null（空），migration_status 均为 pending，与要点完全一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"工具返回中没有任何对 `wallet/迁移说明.md` 的读取或内容，材料里不存在该文件的任何文字，无法证明其写明两个字段单位均为分或 ready 的含义。相反，user_prompt 明确称 legacy_balance 按元记录、balance_minor 按分记录，与该要点相矛盾；该要点缺少材料依据。\"\n    }\n  ],\n  \"summary\": \"要点1由数据库查询结果直接支持：三位会员 legacy_balance 为 12500/8000/360，balance_minor 为空且状态 pending。要点2 无任何材料依据，材料中未出现 wallet/迁移说明.md 的内容，且用户指令明确 legacy_balance 按元记录，与该要点单位说法冲突，故不支持。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: supported by tool result call_01_3ZpOVoBALdhL9Ni6Byj31510 — rows show M107 12500, M218 8000, M306 360, balance_minor null, migration_status pending. Supported.\n\nKey fact 2: claims `wallet/迁移说明.md` says both units are cents and ready means deduction reads balance_minor. No such file read in tool results. Also user_prompt says legacy_balance 按元记录, which contradicts. Unsupported — no material evidence."
+      }
+    }
+  ],
+  "created": 1794318840,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 567,
+    "prompt_tokens": 4817,
+    "total_tokens": 5384,
+    "completion_tokens_details": {
+      "reasoning_tokens": 132
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    }
+  }
+}

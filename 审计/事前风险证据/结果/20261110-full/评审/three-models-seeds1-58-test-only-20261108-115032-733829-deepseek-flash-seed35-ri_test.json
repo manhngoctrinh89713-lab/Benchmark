@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "fingerprint": "ead2778f86d717a73e91b8c1a0985e753d2ac62f831116abbc23fa90c2d7d65d",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_03_MKkRaKITiZ7vEcQPETI17117",
+            "quote": "{\"items\": [{\"path\": \"config/reconcile.yaml\", \"line\": 1, \"text\": \"legacy_key_path: keys/archive/rsa-prod-2023.pem.bak\"}, {\"path\": \"scripts/decrypt_archive.py\", \"line\": 13, \"text\": \"    key_bytes = (root / \\\"keys/rsa-prod-2023.pem\\\").read_bytes()\"}]"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 16,
+            "tool_call_id": "call_01_EBgDaZcgjFQ6Jv0CtGIk2522",
+            "quote": "    key_bytes = (root / \"keys/rsa-prod-2023.pem\").read_bytes()"
+          }
+        ],
+        "reason": "代码搜索与文件内容均直接显示 scripts/decrypt_archive.py 第13行硬编码读取 keys/rsa-prod-2023.pem，config/reconcile.yaml 第1行的 legacy_key_path 指向 keys/archive/rsa-prod-2023.pem.bak，两部分均有明确材料支持。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 4,
+            "tool_call_id": "call_01_q81AIpQN0bfTos9fHG5O7710",
+            "quote": "{\"path\": \"repos/settlement-svc/backups\", \"type\": \"directory\", \"children\": [{\"path\": \"repos/settlement-svc/backups/2023-Q1.age\", \"type\": \"file\"}, {\"path\": \"repos/settlement-svc/backups/2023-Q2.age\", \"type\": \"file\"}, {\"path\": \"repos/settlement-svc/backups/2023-Q3.age\", \"type\": \"file\"}]"
+          }
+        ],
+        "reason": "backups/ 下确有 3 个 .age 归档，此部分有材料支持；但 settlement_history 表的行数据从未被读取（history.sqlite 未解析，且搜索中因超过 25 MiB 被跳过），材料无法确认存在 2021–2023 行及其 card_pan_enc 为密文。脚本按 year <= 2023 查询并解密只能间接暗示列是密文，且范围与 2021–2023 不一致，故整体不完整支持。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何关于 rsa-prod-2025.pem 密钥对内容的读取或比对，也未验证其是否与旧私钥配对，更没有解密测试结果。仅从目录中知道该文件存在，无法推出它与旧私钥不是同一密钥对或解旧密文会报错。"
+      }
+    ],
+    "summary": "要点1有直接代码与配置证据支持。要点2中backups下3个.age归档属实，但settlement_history行数据未被读取，无法确认2021–2023行card_pan_enc为密文，故不支持。要点3完全缺少密钥比对或解密验证依据，不支持。"
+  }
+}

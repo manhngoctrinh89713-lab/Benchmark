@@ -1,0 +1,28 @@
+{
+  "name": "list_product_categories",
+  "description": "列出在售商品的分类。",
+  "inputSchema": {
+    "properties": {
+      "merchant_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Merchant Id"
+      }
+    },
+    "title": "list_product_categoriesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

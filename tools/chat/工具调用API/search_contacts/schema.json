@@ -1,0 +1,60 @@
+{
+  "name": "search_contacts",
+  "description": "按可见资料及自己的备注、标签搜索联系人；默认只列好友。friends_only=false 包含已知用户及当前共同群成员；支持 tag、blocked 和 offset 分页，limit 为 1..100。返回 items/total/next_offset。",
+  "inputSchema": {
+    "properties": {
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      },
+      "friends_only": {
+        "default": true,
+        "title": "Friends Only",
+        "type": "boolean"
+      },
+      "tag": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Tag"
+      },
+      "blocked": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Blocked"
+      }
+    },
+    "title": "search_contactsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

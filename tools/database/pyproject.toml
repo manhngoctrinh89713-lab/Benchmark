@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-sqlite"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["mcp>=1.23,<2", "filelock>=3.20,<5"]
+
+[tool.setuptools]
+packages = ["local_sqlite", "local_sqlite.api", "local_sqlite.api.backup_database", "local_sqlite.api.check_integrity", "local_sqlite.api.create_database", "local_sqlite.api.delete_database", "local_sqlite.api.describe_table", "local_sqlite.api.execute_schema", "local_sqlite.api.execute_transaction", "local_sqlite.api.explain_query", "local_sqlite.api.export_query", "local_sqlite.api.get_database_info", "local_sqlite.api.get_table_statistics", "local_sqlite.api.import_csv", "local_sqlite.api.list_databases", "local_sqlite.api.list_indexes", "local_sqlite.api.list_relationships", "local_sqlite.api.list_tables", "local_sqlite.api.read_query", "local_sqlite.api.rename_database", "local_sqlite.api.restore_database", "local_sqlite.api.search_schema", "local_sqlite.api.write_query"]
+license-files = ["公用代码/licenses/*.txt"]
+
+[tool.setuptools.package-dir]
+local_sqlite = "公用代码/local_sqlite"
+"local_sqlite.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+local_sqlite = ["EXTRACTION.json"]
+"local_sqlite.api" = ["*/schema.json"]

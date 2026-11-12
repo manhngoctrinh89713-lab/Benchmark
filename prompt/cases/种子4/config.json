@@ -1,0 +1,13 @@
+{
+  "groups": [
+    "files"
+  ],
+  "evaluator": "seed4",
+  "variants": {
+    "fi_test": {
+      "category": "Factual Inconsistency",
+      "instruction_type": "test",
+      "user_prompt": "fi_test.md"
+    }
+  }
+}

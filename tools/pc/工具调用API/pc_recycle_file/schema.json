@@ -1,0 +1,28 @@
+{
+  "name": "pc_recycle_file",
+  "description": "将个人文件移入回收站，保留内容和原始路径。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path",
+      "expected_sha256"
+    ],
+    "title": "pc_recycle_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

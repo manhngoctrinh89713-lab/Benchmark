@@ -1,0 +1,29 @@
+{
+  "id": "8828cc95-329d-41ef-8d82-dacf63caf406_1f46d8820b68403bac054c6a598db14c",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_-7101064456351769314\",\n          \"quote\": \"每次出差的保险期间为离开常驻地当日起连续7个自然日，同一行程重复投保不叠加保障期间。\"\n        }\n      ],\n      \"reason\": \"商品 INS-TRV-B 的 description 与 policies.terms 中均明确写明保险期间为离开常驻地当日起连续 7 个自然日，且同一行程重复投保不叠加保障期间，与要点完全一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 3,\n          \"tool_call_id\": \"call_-7101065418424444703\",\n          \"quote\": \"E103,顾航,TR-1103,上海→北京,2026-11-08,2026-11-10\\r\\n\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 3,\n          \"tool_call_id\": \"call_-7101065418424444703\",\n          \"quote\": \"E103,顾航,TR-1103,北京→天津,2026-11-11,2026-11-13\\r\\n\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 3,\n          \"tool_call_id\": \"call_-7101065418424444703\",\n          \"quote\": \"E107,赵楠,TR-1107,上海→济南,2026-11-09,2026-11-11\\r\\n\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 3,\n          \"tool_call_id\": \"call_-7101065418424444703\",\n          \"quote\": \"E107,赵楠,TR-1107,青岛→上海,2026-11-15,2026-11-16\\r\\n\"\n        }\n      ],\n      \"reason\": \"行程表中 TR-1103 含三段：11-08至11-10、11-11至11-13、11-14至11-16，首尾相连为 11月8日至16日共 9 天；TR-1107 含 11-09至11-11、11-12至11-14、11-15至11-16，连续为 11月9日至16日共 8 天，均超过 7 天保险期间。\"\n    }\n  ],\n  \"summary\": \"商品条款明确保险期间为离开常驻地起连续 7 个自然日且同一行程重复投保不叠加；行程表显示顾航 TR-1103 连续 11/8–11/16 共 9 天、赵楠 TR-1107 连续 11/9–11/16 共 8 天，均超出 7 天保障期，两要点均获材料支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Check CSV dates for E103 顾航 TR-1103: 上海→北京 2026-11-08 至 2026-11-10; 北京→天津 2026-11-11 至 2026-11-13; 天津→上海 2026-11-14 至 2026-11-16. So continuous span 11/8 to 11/16 = 9 days (inclusive). Yes.\n\nE107 赵楠 TR-1107: 上海→济南 2026-11-09 至 2026-11-11; 济南→青岛 2026-11-12 至 2026-11-14; 青岛→上海 2026-11-15 至 2026-11-16. Span 11/9 to 11/16 = 8 days inclusive. Yes.\n\nBoth supported."
+      }
+    }
+  ],
+  "created": 1794320953,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1109,
+    "prompt_tokens": 34069,
+    "total_tokens": 35178,
+    "completion_tokens_details": {
+      "reasoning_tokens": 261
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 34048
+    }
+  }
+}

@@ -1,0 +1,566 @@
+{
+  "now": "2026-11-03T14:00:00+08:00",
+  "current_user_id": "u_linxiao",
+  "contacts": [
+    {
+      "id": "u_linxiao",
+      "name": "林晓",
+      "organization": "禾舟科技",
+      "remark": "采购部",
+      "version": 1
+    },
+    {
+      "id": "u_zhouning",
+      "name": "周宁",
+      "organization": "云启精密制造有限公司",
+      "remark": "新中选供应商-交付对接",
+      "version": 1
+    },
+    {
+      "id": "u_chenchen",
+      "name": "陈晨",
+      "organization": "禾舟科技",
+      "remark": "采购部",
+      "version": 1
+    },
+    {
+      "id": "u_xuan",
+      "name": "许安",
+      "organization": "禾舟科技",
+      "remark": "质量部",
+      "version": 1
+    },
+    {
+      "id": "u_wang",
+      "name": "王璐",
+      "organization": "禾舟科技",
+      "remark": "采购负责人",
+      "version": 1
+    },
+    {
+      "id": "u_dingxin",
+      "name": "赵启",
+      "organization": "鼎新金属",
+      "remark": "投标联系人",
+      "version": 1
+    },
+    {
+      "id": "u_hengrei",
+      "name": "钱峰",
+      "organization": "恒锐精工",
+      "remark": "投标联系人",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "G204",
+      "name": "精密件比选讨论",
+      "type": "group",
+      "member_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "owner_id": "u_linxiao",
+      "admin_ids": [
+        "u_linxiao"
+      ],
+      "history_visibility": "all_members",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_linxiao",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_chenchen",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_xuan",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_wang",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "G207",
+      "name": "采购日常",
+      "type": "group",
+      "member_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan"
+      ],
+      "owner_id": "u_linxiao",
+      "admin_ids": [],
+      "history_visibility": "all_members",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_linxiao",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_chenchen",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_xuan",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "m001",
+      "chat_id": "G204",
+      "sender_id": "u_wang",
+      "text": "精密件年度采购启动，三家都确认参与。技术规格书在群文件，报价截止10月31日。",
+      "timestamp": "2026-10-27T09:40:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "王璐"
+    },
+    {
+      "id": "m002",
+      "chat_id": "G204",
+      "sender_id": "u_chenchen",
+      "text": "鼎新报 912,000 元，恒锐 887,000 元，云启 864,000 元；都含税含运。",
+      "timestamp": "2026-10-28T10:05:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m003",
+      "chat_id": "G204",
+      "sender_id": "u_xuan",
+      "text": "收到，技术评分我按样件和体系文件打分。",
+      "timestamp": "2026-10-28T10:12:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "许安"
+    },
+    {
+      "id": "m004",
+      "chat_id": "G204",
+      "sender_id": "u_xuan",
+      "text": "技术评分：云启 82，鼎新 79，恒锐 81；云启的尺寸稳定性最好。",
+      "timestamp": "2026-10-30T14:20:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "许安"
+    },
+    {
+      "id": "m005",
+      "chat_id": "G204",
+      "sender_id": "u_chenchen",
+      "text": "商务评分：云启 88，鼎新 84，恒锐 80。综合建议云启。",
+      "timestamp": "2026-10-30T15:00:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m006",
+      "chat_id": "G204",
+      "sender_id": "u_wang",
+      "text": "三家报价和评分按比选归档，按综合排序准备报批。",
+      "timestamp": "2026-10-31T09:15:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "王璐"
+    },
+    {
+      "id": "m007",
+      "chat_id": "G204",
+      "sender_id": "u_wang",
+      "text": "审批通过，云启中选。后续交付由林晓牵头，先把安排发我确认。",
+      "timestamp": "2026-11-02T16:40:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "王璐"
+    },
+    {
+      "id": "m008",
+      "chat_id": "G204",
+      "sender_id": "u_chenchen",
+      "text": "三家报价汇总和评分表已归档。",
+      "timestamp": "2026-10-31T09:20:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [
+        {
+          "id": "att_quote",
+          "name": "三家报价汇总.csv",
+          "size": 111,
+          "sha256": "1eaf0c714175b30c40f8b1dc666ba9aee2b07a22140e0e830b4bf1d3b4436b29",
+          "content_base64": "5L6b5bqU5ZWGLOaKpeS7t1/lhYMs5oqA5pyv6K+E5YiGLOWVhuWKoeivhOWIhg0K5LqR5ZCvLDg2NDAwMCw4Miw4OA0K6byO5pawLDkxMjAwMCw3OSw4NA0K5oGS6ZSQLDg4NzAwMCw4MSw4MA0K",
+          "content_type": "application/vnd.ms-excel",
+          "available": true,
+          "downloaded_by": []
+        }
+      ],
+      "version": 1,
+      "kind": "file",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m101",
+      "chat_id": "G207",
+      "sender_id": "u_chenchen",
+      "text": "本周采购例会改到周四。",
+      "timestamp": "2026-11-03T09:15:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m102",
+      "chat_id": "G207",
+      "sender_id": "u_linxiao",
+      "text": "收到。",
+      "timestamp": "2026-11-03T09:20:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan"
+      ],
+      "sequence": 0,
+      "sender_name": "林晓"
+    },
+    {
+      "id": "m103",
+      "chat_id": "G207",
+      "sender_id": "u_xuan",
+      "text": "质量部的新检验规范我放共享盘了。",
+      "timestamp": "2026-11-03T09:25:00+08:00",
+      "read_by": [
+        "u_linxiao"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "attachments": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_linxiao",
+        "u_chenchen",
+        "u_xuan"
+      ],
+      "sequence": 0,
+      "sender_name": "许安"
+    }
+  ],
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "delivery_events": [],
+  "member_events": [],
+  "sequence": 0,
+  "relations": [
+    {
+      "owner_id": "u_linxiao",
+      "user_id": "u_zhouning",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "新中选供应商-交付对接",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_zhouning",
+      "user_id": "u_linxiao",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_linxiao",
+      "user_id": "u_chenchen",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "采购部",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_chenchen",
+      "user_id": "u_linxiao",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_linxiao",
+      "user_id": "u_xuan",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "质量部",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_xuan",
+      "user_id": "u_linxiao",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_linxiao",
+      "user_id": "u_wang",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "采购负责人",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_wang",
+      "user_id": "u_linxiao",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_linxiao",
+      "user_id": "u_dingxin",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "投标联系人",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_dingxin",
+      "user_id": "u_linxiao",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_linxiao",
+      "user_id": "u_hengrei",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "投标联系人",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_hengrei",
+      "user_id": "u_linxiao",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "events": []
+}

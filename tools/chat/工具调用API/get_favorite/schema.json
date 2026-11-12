@@ -1,0 +1,48 @@
+{
+  "name": "get_favorite",
+  "description": "读取自己的收藏及内容元数据；合并记录分页展开，item_path 为嵌套条目索引路径。",
+  "inputSchema": {
+    "properties": {
+      "favorite_id": {
+        "title": "Favorite Id",
+        "type": "string"
+      },
+      "item_path": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Item Path"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "favorite_id"
+    ],
+    "title": "get_favoriteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

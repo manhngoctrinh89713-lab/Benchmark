@@ -1,0 +1,112 @@
+{
+  "now": "2026-11-02T10:30:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "澄川滤材",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_demo"
+    }
+  },
+  "products": {
+    "BOX23": {
+      "id": "BOX23",
+      "merchant_id": "merchant_demo",
+      "name": "清洁滤芯补充装",
+      "description": "每个销售单位为100件整箱；库存单位：箱",
+      "unit_amount_minor": 120000,
+      "currency": "CNY",
+      "stock": 24,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "BOX23": {
+      "id": "BOX23",
+      "product_id": "BOX23",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 120000,
+      "stock": 24,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

@@ -1,0 +1,18 @@
+{
+  "now": "2026-11-03T14:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "orders-prod",
+      "name": "orders-prod"
+    }
+  ],
+  "mutation_events": [],
+  "engine_options": {
+    "max_database_bytes": 134217728,
+    "query_timeout_seconds": 60,
+    "progress_calls": 100000,
+    "legacy_alter_table": true,
+    "compress_snapshots": true
+  }
+}

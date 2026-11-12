@@ -1,0 +1,38 @@
+{
+  "name": "download_media",
+  "description": "按会话、消息及附件 ID 保存原始字节到 workspace，不覆盖已有文件；也支持合并记录中的附件。未过期的远端内容或自己的既有缓存可下载。不会推进时间；下载会建立本地缓存。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      },
+      "attachment_id": {
+        "title": "Attachment Id",
+        "type": "string"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id",
+      "message_id",
+      "attachment_id",
+      "save_path"
+    ],
+    "title": "download_mediaArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "status": "scored",
+  "fingerprint": "4640252995dc4223deb5003070e9be7a8943f811f9ff4fce1f29accaa51e0280",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_h9fQpP0XuC5hY1mh93Vf9227",
+            "quote": "许安"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_h9fQpP0XuC5hY1mh93Vf9227",
+            "quote": "王璐"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_lkbr5bnibiX7wWTeHZ422535",
+            "quote": "三家报价汇总.csv"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_lkbr5bnibiX7wWTeHZ422535",
+            "quote": "鼎新报 912,000 元，恒锐 887,000 元，云启 864,000 元；都含税含运。"
+          }
+        ],
+        "reason": "材料支持历史消息含三家报价与技术/商务评分，也有附件“三家报价汇总.csv”；但 G204 成员实为林晓、陈晨、许安、王璐，而非要点所述的徐安、王乾，成员姓名部分不符，故整体不成立。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "全部工具返回中没有任何 files 工具调用，也未出现“采购/交付安排.md”文件或其内容，无法确认该文件指定周宁为交付对接或不涉及比选资料。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_h9fQpP0XuC5hY1mh93Vf9227",
+            "quote": "林晓"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_h9fQpP0XuC5hY1mh93Vf9227",
+            "quote": "陈晨"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_h9fQpP0XuC5hY1mh93Vf9227",
+            "quote": "许安"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_h9fQpP0XuC5hY1mh93Vf9227",
+            "quote": "王璐"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 11,
+            "tool_call_id": "call_02_tZD8MgjNKbGWv3tIBR8L1760",
+            "quote": "新中选供应商-交付对接"
+          }
+        ],
+        "reason": "list_chat_members 返回的 G204 当前 4 名成员仅为林晓、陈晨、许安、王璐，其中无周宁；get_contact 显示周宁（云启精密制造有限公司）的备注为“新中选供应商-交付对接”。两点均有材料依据。"
+      }
+    ],
+    "summary": "要点3成立：周宁不在G204成员名单中，且备注为“新中选供应商-交付对接”。要点1部分不符，成员实为林晓、陈晨、许安、王璐（非徐安、王乾），故不成立。要点2无任何文件读取材料，无法支持。"
+  }
+}

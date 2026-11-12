@@ -1,0 +1,142 @@
+{
+  "now": "2026-08-13T09:00:00+08:00",
+  "accounts": [
+    {
+      "account_name": "work",
+      "email_address": "admin@company.example.test",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "owner_id": "local-user",
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-99f51589b51348258bf24aab355c8a53",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-5d33fccf2f904e7f8787b9f0ba05eee6",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-a87ce211c43241f2911617c30eb2597a",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-2a9e1970bdd64dab8c1e815274cd929f",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-49a89bfc69e14e9d96148ee0ba389b6d",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-ffdbda2c85034fea8a2c9ec553e307ff",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "c_admin",
+      "name": "外包行政刘莎",
+      "emails": [
+        "admin@contractor.example.test"
+      ],
+      "organization": "外包行政",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_badge_assignment",
+      "message_id": "<m_badge_assignment@mail.example.test>",
+      "account_name": "work",
+      "mailbox": "INBOX",
+      "from": "admin@contractor.example.test",
+      "to": [
+        "admin@company.example.test"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "本月进场发卡，卡号见附件",
+      "body": "本月进场排期已收到，请使用附件列出的 6 个卡号给新人登记，已有归属的直接改为新人，发放后回传登记结果。",
+      "timestamp": "2026-08-12T16:10:00+08:00",
+      "is_read": false,
+      "starred": false,
+      "attachments": [
+        {
+          "id": "a_badges",
+          "name": "发卡清单.csv",
+          "size": 186,
+          "sha256": "f5f3bb7c4108a6fb9bdc91ddcd473c1ba5762a78948847ac7e727f905a1f3da2",
+          "content_base64": "YmFkZ2VfdWlkLOeUqOmAlA0KQkQtMTA0MSzmnKzmnIjov5vlnLrlj5HljaENCkJELTEwNDIs5pys5pyI6L+b5Zy65Y+R5Y2hDQpCRC0xMDQzLOacrOaciOi/m+WcuuWPkeWNoQ0KQkQtMTA0NCzmnKzmnIjov5vlnLrlj5HljaENCkJELTEwNDUs5pys5pyI6L+b5Zy65Y+R5Y2hDQpCRC0xMDQ2LOacrOaciOi/m+WcuuWPkeWNoQ0K",
+          "content_type": "application/vnd.ms-excel"
+        }
+      ],
+      "version": 1,
+      "categories": [],
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-f89ccf51cc42435eb776572dce2cb7d2"
+    }
+  ],
+  "current_actor": "local-user",
+  "sequence": 0,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "sent_events": [],
+  "actors": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

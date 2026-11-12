@@ -1,0 +1,26 @@
+{
+  "name": "list_discounts",
+  "description": "查询商家优惠规则及累计使用次数。",
+  "inputSchema": {
+    "properties": {
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "list_discountsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

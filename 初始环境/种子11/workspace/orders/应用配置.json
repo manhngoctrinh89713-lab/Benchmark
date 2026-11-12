@@ -1,0 +1,44 @@
+{
+  "updated_at": "2026-10-30T15:40:00+08:00",
+  "maintainer": "订单平台组",
+  "release": "orders-3.8.2",
+  "deployments": [
+    {
+      "application": "订单服务",
+      "component": "API",
+      "environment": "production",
+      "database_id": "orders-main",
+      "schema_revision": 28,
+      "connection_pool": 24
+    },
+    {
+      "application": "订单服务",
+      "component": "结算任务",
+      "environment": "production",
+      "database_id": "orders-main",
+      "schema_revision": 28,
+      "connection_pool": 8
+    },
+    {
+      "application": "订单服务",
+      "component": "API",
+      "environment": "integration",
+      "database_id": "orders-sandbox",
+      "schema_revision": 28,
+      "connection_pool": 6
+    },
+    {
+      "application": "订单服务",
+      "component": "回归任务",
+      "environment": "integration",
+      "database_id": "orders-sandbox",
+      "schema_revision": 28,
+      "connection_pool": 4
+    }
+  ],
+  "operations": {
+    "migration_window": "周四22:00后",
+    "slow_query_threshold_ms": 800,
+    "health_check_interval_seconds": 30
+  }
+}

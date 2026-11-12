@@ -1,0 +1,23 @@
+{
+  "name": "server_create_directory",
+  "description": "登记空目录，后续文件可写入该目录。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "server_create_directoryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

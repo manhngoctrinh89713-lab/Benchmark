@@ -1,0 +1,55 @@
+{
+  "name": "search_code",
+  "description": "在指定提交版本的UTF-8代码中按字面子串搜索，返回文件、行号和文本；不是GitHub高级搜索语法。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "query": {
+        "title": "Query",
+        "type": "string"
+      },
+      "ref": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Ref"
+      },
+      "path_prefix": {
+        "default": "",
+        "title": "Path Prefix",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "query"
+    ],
+    "title": "search_codeArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

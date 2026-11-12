@@ -1,0 +1,28 @@
+{
+  "name": "get_table_statistics",
+  "description": "读取表行数、每列空值数和不同值数量。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "table": {
+        "title": "Table",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "table"
+    ],
+    "title": "get_table_statisticsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

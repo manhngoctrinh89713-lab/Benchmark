@@ -1,0 +1,23 @@
+{
+  "name": "get_workbook_info",
+  "description": "查看XLSX工作表名称、可见性、行列范围和公式数量，不执行宏或外部链接。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "get_workbook_infoArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

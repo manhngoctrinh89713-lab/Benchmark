@@ -1,0 +1,60 @@
+{
+  "name": "replace_symbol_body",
+  "description": "替换唯一name_path对应的完整定义，包括签名、函数体及所含装饰器/导出包装；body提供完整定义。自动适配嵌套缩进，默认检查语法。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "name_path": {
+        "title": "Name Path",
+        "type": "string"
+      },
+      "body": {
+        "title": "Body",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Sha256"
+      },
+      "dry_run": {
+        "default": false,
+        "title": "Dry Run",
+        "type": "boolean"
+      },
+      "validate_syntax": {
+        "default": true,
+        "title": "Validate Syntax",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "project_id",
+      "path",
+      "name_path",
+      "body"
+    ],
+    "title": "replace_symbol_bodyArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

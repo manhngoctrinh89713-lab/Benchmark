@@ -1,0 +1,23 @@
+{
+  "name": "git_tags",
+  "description": "列出轻量和附注标签及其提交标识。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_tagsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

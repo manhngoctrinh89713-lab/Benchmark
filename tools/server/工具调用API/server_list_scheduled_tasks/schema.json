@@ -1,0 +1,26 @@
+{
+  "name": "server_list_scheduled_tasks",
+  "description": "列出目标机器的计划任务和下次执行时间。",
+  "inputSchema": {
+    "properties": {
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "server_list_scheduled_tasksArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,1254 @@
+from __future__ import annotations
+
+import asyncio
+import io
+import re
+import ssl
+from collections.abc import Iterator
+from contextlib import contextmanager
+from email.message import Message
+from email.mime.text import MIMEText
+from email.parser import BytesParser
+from email.policy import SMTP as SMTP_POLICY
+from email.policy import compat32
+from types import SimpleNamespace
+from typing import cast
+from unittest.mock import AsyncMock, MagicMock, patch
+
+import pytest
+from aiosmtplib.errors import SMTPNotSupported, SMTPRecipientRefused, SMTPResponseException
+from loguru import logger
+
+from mcp_email_server.application.mutations import FlagOperation, MutableEmailFlag
+from mcp_email_server.emails.classic import EmailClient, _classify_smtp_data_transport, _smtp_error_category
+
+
+def _imap(*, capabilities: tuple[str, ...] = ("IMAP4rev1", "UIDPLUS")) -> AsyncMock:
+    imap = AsyncMock()
+    imap.login.return_value = MagicMock(result="OK", lines=[])
+    imap.id.return_value = MagicMock(result="OK")
+    imap.select.return_value = ("OK", [])
+    imap.uid.return_value = ("OK", [])
+    imap.append.return_value = ("OK", [])
+    imap.list.return_value = ("OK", [])
+    imap.logout.return_value = ("BYE", [])
+    imap.protocol = SimpleNamespace(capabilities=capabilities, capability=AsyncMock())
+    return imap
+
+
+@pytest.mark.asyncio
+async def test_mark_read_transport_loss_is_unknown(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.side_effect = ConnectionError("lost after write")
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.mark_emails_as_read_with_outcome(["8"], allowed_senders=[])
+
+    assert result.outcomes[0].status == "unknown"
+    assert result.outcomes[0].detail == "store-unknown"
+    assert imap.uid.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_mark_read_explicit_rejection_is_failed(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.return_value = ("NO", [b"provider detail must not escape"])
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.mark_emails_as_read_with_outcome(["8"], allowed_senders=[])
+
+    assert result.outcomes[0].status == "failed"
+    assert result.outcomes[0].detail == "store-rejected"
+
+
+@pytest.mark.asyncio
+async def test_mark_read_disconnect_response_is_unknown(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.return_value = ("BYE", [])
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.mark_emails_as_read_with_outcome(["8"], allowed_senders=[])
+
+    assert (result.outcomes[0].status, result.outcomes[0].detail) == ("unknown", "store-unknown")
+
+
+@pytest.mark.asyncio
+async def test_set_email_flags_removes_multiple_flags_with_silent_store(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.set_email_flags_with_outcome(
+            ["8", "9"],
+            "remove",
+            [r"\Seen", r"\Flagged"],
+            mailbox="Archive",
+            allowed_senders=[],
+        )
+
+    assert result.targets("succeeded") == ["8", "9"]
+    assert [call.args for call in imap.uid.await_args_list] == [
+        ("store", "8", "-FLAGS.SILENT", r"(\Seen \Flagged)"),
+        ("store", "9", "-FLAGS.SILENT", r"(\Seen \Flagged)"),
+    ]
+    imap.select.assert_awaited_once_with('"Archive"')
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    ("operation", "store_operation"),
+    [("add", "+FLAGS.SILENT"), ("remove", "-FLAGS.SILENT")],
+)
+async def test_set_email_tags_adds_or_removes_keywords_with_silent_store(
+    email_server,
+    operation: str,
+    store_operation: str,
+) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.set_email_tags_with_outcome(
+            ["8", "9"],
+            cast(FlagOperation, operation),
+            ["$label4"],
+            "Archive",
+            [],
+            False,
+        )
+
+    assert result.targets("succeeded") == ["8", "9"]
+    assert [call.args for call in imap.uid.await_args_list] == [
+        ("store", "8", store_operation, "($label4)"),
+        ("store", "9", store_operation, "($label4)"),
+    ]
+    imap.select.assert_awaited_once_with('"Archive"')
+
+
+@pytest.mark.asyncio
+async def test_set_email_tags_rejects_empty_tags_before_connect(email_server) -> None:
+    client = EmailClient(email_server)
+    connect = AsyncMock()
+
+    with (
+        patch.object(client, "_connect_imap", connect),
+        pytest.raises(ValueError, match="tags must contain between 1 and"),
+    ):
+        await client.set_email_tags_with_outcome(["8"], "add", [], "INBOX", [], False)
+
+    connect.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    ("operation", "flags", "message"),
+    [
+        ("replace", [r"\Seen"], "operation must be"),
+        ("add", [], "flags must not be empty"),
+        (
+            "add",
+            [r"\Seen", r"\Flagged", r"\Answered", r"\Draft", r"\Seen"],
+            "flags must contain at most",
+        ),
+        ("remove", [1], "flags must contain strings"),
+        ("remove", [r"\Seen", r"\Seen"], "flags must not contain duplicates"),
+        ("add", [r"\Deleted"], "unsupported mutable email flag"),
+        ("remove", [r"\Recent"], "unsupported mutable email flag"),
+        ("add", ["ProviderKeyword"], "unsupported mutable email flag"),
+    ],
+)
+async def test_set_email_flags_rejects_invalid_contract_before_connect(
+    email_server,
+    operation: str,
+    flags: list[object],
+    message: str,
+) -> None:
+    client = EmailClient(email_server)
+    connect = AsyncMock()
+
+    with (
+        patch.object(client, "_connect_imap", connect),
+        pytest.raises(ValueError, match=message),
+    ):
+        await client.set_email_flags_with_outcome(
+            ["8"],
+            cast(FlagOperation, operation),
+            cast(list[MutableEmailFlag], flags),
+        )
+
+    connect.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+async def test_delete_store_disconnect_response_is_unknown_and_stops_before_expunge(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.return_value = ("BYE", [])
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.delete_emails_with_outcome(["8"], allowed_senders=[])
+
+    assert (result.outcomes[0].status, result.outcomes[0].detail) == ("unknown", "store-unknown")
+    assert [call.args[0] for call in imap.uid.await_args_list] == ["store"]
+
+
+@pytest.mark.asyncio
+async def test_delete_expunge_rejection_is_unknown_after_store(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+
+    async def uid(command: str, *_args: str):
+        return ("NO", []) if command == "expunge" else ("OK", [])
+
+    imap.uid.side_effect = uid
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.delete_emails_with_outcome(["8"], allowed_senders=[])
+
+    assert result.outcomes[0].status == "unknown"
+    assert result.outcomes[0].detail == "expunge-rejected"
+    assert [call.args[0] for call in imap.uid.await_args_list] == ["store", "expunge"]
+
+
+@pytest.mark.asyncio
+async def test_delete_expunge_disconnect_response_is_unknown_not_rejected(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+
+    async def uid(command: str, *_args: str):
+        return ("BYE", []) if command == "expunge" else ("OK", [])
+
+    imap.uid.side_effect = uid
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.delete_emails_with_outcome(["8"], allowed_senders=[])
+
+    assert (result.outcomes[0].status, result.outcomes[0].detail) == ("unknown", "expunge-unknown")
+
+
+@pytest.mark.asyncio
+async def test_delete_without_uidplus_fails_before_store(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap(capabilities=("IMAP4rev1",))
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.delete_emails_with_outcome(["8"], allowed_senders=[])
+
+    assert result.outcomes[0].status == "failed"
+    assert result.outcomes[0].detail == "uidplus-unavailable"
+    imap.uid.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+async def test_move_fallback_store_rejection_preserves_partial_fact_as_unknown(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+
+    async def uid(command: str, *_args: str):
+        return ("NO", []) if command == "store" else ("OK", [])
+
+    imap.uid.side_effect = uid
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.move_emails_with_outcome(["8"], "INBOX", "Archive", allowed_senders=[])
+
+    assert result.outcomes[0].status == "unknown"
+    assert result.outcomes[0].detail == "copy-succeeded-store-failed"
+    assert [call.args[0] for call in imap.uid.await_args_list] == ["copy", "store"]
+
+
+@pytest.mark.asyncio
+async def test_native_move_transport_loss_is_unknown(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap(capabilities=("IMAP4rev1", "UIDPLUS", "MOVE"))
+    imap.uid.side_effect = ConnectionError("result lost")
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.move_emails_with_outcome(["8"], "INBOX", "Archive", allowed_senders=[])
+
+    assert result.outcomes[0].status == "unknown"
+    assert result.outcomes[0].detail == "move-unknown"
+    assert imap.uid.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_native_move_disconnect_response_is_unknown(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap(capabilities=("IMAP4rev1", "UIDPLUS", "MOVE"))
+    imap.uid.return_value = ("BYE", [])
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.move_emails_with_outcome(["8"], "INBOX", "Archive", allowed_senders=[])
+
+    assert (result.outcomes[0].status, result.outcomes[0].detail) == ("unknown", "move-unknown")
+
+
+@pytest.mark.asyncio
+async def test_move_fallback_copy_disconnect_response_is_unknown_and_stops_uid(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.return_value = ("BYE", [])
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.move_emails_with_outcome(["8"], "INBOX", "Archive", allowed_senders=[])
+
+    assert (result.outcomes[0].status, result.outcomes[0].detail) == ("unknown", "copy-unknown")
+    assert [call.args[0] for call in imap.uid.await_args_list] == ["copy"]
+
+
+@pytest.mark.asyncio
+async def test_move_fallback_store_disconnect_preserves_copy_as_unknown(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.side_effect = [("OK", []), ("BYE", [])]
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.move_emails_with_outcome(["8"], "INBOX", "Archive", allowed_senders=[])
+
+    assert (result.outcomes[0].status, result.outcomes[0].detail) == (
+        "unknown",
+        "copy-succeeded-store-unknown",
+    )
+    assert [call.args[0] for call in imap.uid.await_args_list] == ["copy", "store"]
+
+
+@pytest.mark.asyncio
+async def test_append_transport_loss_is_unknown_and_not_replayed(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Draft", "body")
+    imap = _imap()
+    imap.append.side_effect = ConnectionError("result lost")
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        result = await client.append_to_mailbox_with_outcome(message, email_server, "Drafts")
+
+    assert result.status == "unknown"
+    assert result.message_id == message["Message-Id"]
+    assert result.mailbox == "Drafts"
+    assert imap.append.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_append_disconnect_response_is_unknown_not_retriable_failure(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Draft", "body")
+    imap = _imap()
+    imap.append.return_value = ("BYE", [])
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        result = await client.append_to_mailbox_with_outcome(message, email_server, "Drafts")
+
+    assert (result.status, result.detail) == ("unknown", "append-unknown")
+
+
+@pytest.mark.asyncio
+async def test_append_success_without_appenduid_does_not_invent_uid(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Draft", "body")
+    imap = _imap()
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        result = await client.append_to_mailbox_with_outcome(message, email_server, "Drafts")
+
+    assert result.status == "succeeded"
+    assert result.uid is None
+
+
+@pytest.mark.asyncio
+async def test_sent_copy_transport_loss_stops_after_one_append(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Sent", "body")
+    imap = _imap()
+    imap.append.side_effect = ConnectionError("result lost")
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        result = await client.append_to_sent_with_outcome(message, email_server, "Sent")
+
+    assert result.status == "unknown"
+    assert result.mailbox == "Sent"
+    assert imap.append.await_count == 1
+    assert imap.select.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_sent_copy_disconnect_response_is_unknown_and_not_replayed(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Sent", "body")
+    imap = _imap()
+    imap.append.return_value = ("BYE", [])
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        result = await client.append_to_sent_with_outcome(message, email_server, "Sent")
+
+    assert (result.status, result.mailbox, result.detail) == ("unknown", "Sent", "append-unknown")
+    assert imap.append.await_count == 1
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    "operation",
+    ("mailbox-outcome", "sent-outcome", "mailbox-legacy", "sent-legacy"),
+)
+async def test_all_imap_append_paths_serialize_messages_with_crlf(email_server, operation: str) -> None:
+    client = EmailClient(email_server)
+    message = MIMEText("line one\nline two\r\nline three\rline four", "plain", "us-ascii")
+    message["Message-Id"] = "<line-endings@example.test>"
+    imap = _imap()
+
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        if operation == "mailbox-outcome":
+            await client.append_to_mailbox_with_outcome(message, email_server, "Drafts")
+        elif operation == "sent-outcome":
+            await client.append_to_sent_with_outcome(message, email_server, "Sent")
+        elif operation == "mailbox-legacy":
+            await client.append_to_mailbox(message, email_server, "Drafts")
+        else:
+            await client.append_to_sent(message, email_server, "Sent")
+
+    payload = imap.append.await_args.args[0]
+    assert isinstance(payload, bytes)
+    assert b"\r\n" in payload
+    assert re.search(rb"(?<!\r)\n", payload) is None
+    assert re.search(rb"\r(?!\n)", payload) is None
+
+
+def _smtp() -> AsyncMock:
+    smtp = AsyncMock()
+    smtp.__aenter__.return_value = smtp
+    smtp.__aexit__.return_value = False
+    smtp.login.return_value = None
+    smtp.supports_extension = MagicMock(return_value=False)
+    return smtp
+
+
+def _smtp_message(content_transfer_encoding: str | None, payload: bytes) -> Message:
+    transfer_header = (
+        b""
+        if content_transfer_encoding is None
+        else f"Content-Transfer-Encoding: {content_transfer_encoding}\r\n".encode("ascii")
+    )
+    raw_message = (
+        b"From: sender@example.test\r\n"
+        b"To: recipient@example.test\r\n"
+        b"Subject: Subject\r\n"
+        b"Content-Type: application/octet-stream\r\n" + transfer_header + b"\r\n" + payload + b"\r\n"
+    )
+    return BytesParser(policy=compat32).parsebytes(raw_message)
+
+
+@pytest.mark.parametrize(
+    ("content_transfer_encoding", "payload", "expected"),
+    (
+        ("7bit", b"ASCII payload", "7bit"),
+        ("8bit", b"ASCII payload", "7bit"),
+        ("8bit", b"caf\xe9", "8bit"),
+        ("binary", b"ASCII payload", "binary"),
+        ("8bit", b"ASCII\x00payload", "binary"),
+        ("8bit", b"a" * 998, "7bit"),
+        ("8bit", b"a" * 999, "binary"),
+        (None, b"caf\xe9", "invalid"),
+        ("7bit", b"caf\xe9", "invalid"),
+        ("base64", b"caf\xe9", "invalid"),
+        ("quoted-printable", b"caf\xe9", "invalid"),
+    ),
+)
+def test_smtp_data_transport_classification(
+    content_transfer_encoding: str | None,
+    payload: bytes,
+    expected: str,
+) -> None:
+    message = _smtp_message(content_transfer_encoding, payload)
+
+    assert _classify_smtp_data_transport(message, message.as_bytes(policy=SMTP_POLICY)) == expected
+
+
+def test_smtp_data_transport_finds_nested_binary_leaf() -> None:
+    message = BytesParser(policy=compat32).parsebytes(
+        b"Content-Type: multipart/mixed; boundary=outer\r\n"
+        b"\r\n"
+        b"--outer\r\n"
+        b"Content-Type: application/octet-stream\r\n"
+        b"Content-Transfer-Encoding: binary\r\n"
+        b"\r\n"
+        b"ASCII payload\r\n"
+        b"--outer--\r\n"
+    )
+
+    assert _classify_smtp_data_transport(message, message.as_bytes(policy=SMTP_POLICY)) == "binary"
+
+
+@pytest.mark.parametrize(
+    ("outer_transfer_encoding", "expected"),
+    ((None, "invalid"), ("7bit", "invalid"), ("8bit", "8bit"), ("base64", "invalid")),
+)
+def test_smtp_data_transport_enforces_composite_cte_domain(
+    outer_transfer_encoding: str | None,
+    expected: str,
+) -> None:
+    transfer_header = (
+        b""
+        if outer_transfer_encoding is None
+        else f"Content-Transfer-Encoding: {outer_transfer_encoding}\r\n".encode("ascii")
+    )
+    message = BytesParser(policy=compat32).parsebytes(
+        b"Content-Type: multipart/mixed; boundary=outer\r\n" + transfer_header + b"\r\n"
+        b"--outer\r\n"
+        b"Content-Type: text/plain\r\n"
+        b"Content-Transfer-Encoding: 8bit\r\n"
+        b"\r\n"
+        b"caf\xe9\r\n"
+        b"--outer--\r\n"
+    )
+
+    assert _classify_smtp_data_transport(message, message.as_bytes(policy=SMTP_POLICY)) == expected
+
+
+@pytest.mark.asyncio
+async def test_smtp_raw_8bit_requires_extension_before_mail(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    message = _smtp_message("8bit", b"caf\xe9")
+    smtp = _smtp()
+
+    with (
+        patch.object(client, "compose_message", return_value=message),
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        result = await client.send_email_with_outcome(["recipient@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("failed", "smtp-8bitmime-required")]
+    assert result.sent_message is None
+    smtp.mail.assert_not_awaited()
+    smtp.rcpt.assert_not_awaited()
+    smtp.data.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+async def test_smtp_raw_8bit_uses_advertised_extension(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    message = _smtp_message("8bit", b"caf\xe9")
+    message["Reply-To"] = "回复@example.test"
+    smtp = _smtp()
+    advertised = {"8bitmime", "size", "smtputf8"}
+    smtp.supports_extension = MagicMock(side_effect=lambda name: name.casefold() in advertised)
+
+    with (
+        patch.object(client, "compose_message", return_value=message),
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        result = await client.send_email_with_outcome(["recipient@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("succeeded", None)]
+    message_bytes = smtp.data.await_args.args[0]
+    smtp.mail.assert_awaited_once_with(
+        "sender@example.test",
+        options=[f"SIZE={len(message_bytes)}", "SMTPUTF8", "BODY=8BITMIME"],
+        encoding="utf-8",
+    )
+    assert b"caf\xe9" in message_bytes
+
+
+@pytest.mark.asyncio
+async def test_smtp_7bit_message_does_not_request_8bitmime_only_because_it_is_advertised(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+    smtp.supports_extension = MagicMock(side_effect=lambda name: name.casefold() == "8bitmime")
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(["recipient@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("succeeded", None)]
+    smtp.mail.assert_awaited_once_with("sender@example.test", options=[], encoding="ascii")
+    assert smtp.data.await_args.args[0].isascii()
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("content_transfer_encoding", (None, "7bit", "base64", "quoted-printable"))
+async def test_smtp_mislabeled_raw_8bit_is_rejected_for_every_recipient_before_mail(
+    email_server,
+    content_transfer_encoding: str | None,
+) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    message = _smtp_message(content_transfer_encoding, b"caf\xe9")
+    smtp = _smtp()
+    smtp.supports_extension = MagicMock(side_effect=lambda name: name.casefold() == "8bitmime")
+
+    with (
+        patch.object(client, "compose_message", return_value=message),
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        result = await client.send_email_with_outcome(
+            ["to@example.test"],
+            "Subject",
+            "body",
+            cc=["cc@example.test"],
+            bcc=["bcc@example.test"],
+        )
+
+    assert [(item.target, item.status, item.detail) for item in result.outcomes] == [
+        ("to@example.test", "failed", "smtp-mime-transport-invalid"),
+        ("cc@example.test", "failed", "smtp-mime-transport-invalid"),
+        ("bcc@example.test", "failed", "smtp-mime-transport-invalid"),
+    ]
+    smtp.mail.assert_not_awaited()
+    smtp.rcpt.assert_not_awaited()
+    smtp.data.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    ("content_transfer_encoding", "payload"),
+    (
+        ("binary", b"ASCII payload"),
+        ("8bit", b"ASCII\x00payload"),
+        ("8bit", b"a" * 999),
+    ),
+)
+async def test_smtp_binary_data_is_rejected_before_mail_even_with_8bitmime(
+    email_server,
+    content_transfer_encoding: str,
+    payload: bytes,
+) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    message = _smtp_message(content_transfer_encoding, payload)
+    smtp = _smtp()
+    advertised = {"8bitmime", "binarymime", "chunking"}
+    smtp.supports_extension = MagicMock(side_effect=lambda name: name.casefold() in advertised)
+
+    with (
+        patch.object(client, "compose_message", return_value=message),
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        result = await client.send_email_with_outcome(["recipient@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("failed", "smtp-binarymime-unsupported")]
+    assert result.sent_message is None
+    smtp.mail.assert_not_awaited()
+    smtp.rcpt.assert_not_awaited()
+    smtp.data.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("bare_line_ending", (b"\n", b"\r"))
+async def test_smtp_bare_line_ending_is_rejected_before_mail(email_server, bare_line_ending: bytes) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    message = _smtp_message("8bit", b"ASCII payload")
+    replacement = b"ASCII" + bare_line_ending + b"payload\r\n"
+    message_bytes = message.as_bytes(policy=SMTP_POLICY).replace(b"ASCII payload\r\n", replacement)
+    smtp = _smtp()
+
+    with (
+        patch.object(client, "compose_message", return_value=message),
+        patch.object(message, "as_bytes", return_value=message_bytes),
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        result = await client.send_email_with_outcome(["recipient@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("failed", "smtp-binarymime-unsupported")]
+    smtp.mail.assert_not_awaited()
+    smtp.rcpt.assert_not_awaited()
+    smtp.data.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+async def test_smtp_uses_addr_spec_for_envelope_and_quoted_display_name_for_header(email_server) -> None:
+    client = EmailClient(
+        email_server,
+        sender='"sender@example.test" <sender@example.test>',
+        sender_address="sender@example.test",
+    )
+    smtp = _smtp()
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(["recipient@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("succeeded", None)]
+    smtp.mail.assert_awaited_once_with("sender@example.test", options=[], encoding="ascii")
+    message_bytes = smtp.data.await_args.args[0]
+    assert b'From: "sender@example.test" <sender@example.test>' in message_bytes
+
+
+@pytest.mark.asyncio
+async def test_smtp_partial_recipient_rejection_is_preserved(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+
+    async def rcpt(recipient: str, **_kwargs: str) -> None:
+        if recipient == "rejected@example.test":
+            raise SMTPRecipientRefused(550, "rejected", recipient)
+
+    smtp.rcpt.side_effect = rcpt
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(
+            ["accepted@example.test", "rejected@example.test"],
+            "Subject",
+            "body",
+        )
+
+    assert [item.status for item in result.outcomes] == ["succeeded", "failed"]
+    assert [item.detail for item in result.outcomes] == [None, "smtp-recipient-rejected"]
+    assert result.sent_message is not None
+    smtp.mail.assert_awaited_once()
+    assert smtp.rcpt.await_count == 2
+    smtp.data.assert_awaited_once()
+    assert b"Bcc:" not in smtp.data.await_args.args[0]
+
+
+@pytest.mark.asyncio
+async def test_smtp_accepted_data_reports_the_delivered_message_id(email_server) -> None:
+    """The composed Message-Id is the only handle a caller has on what was actually delivered."""
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(["one@example.test"], "Subject", "body")
+
+    assert [item.status for item in result.outcomes] == ["succeeded"]
+    assert result.message_id is not None
+    assert re.fullmatch(r"<[^<>@\s]+@[^<>@\s]+>", result.message_id)
+    assert f"Message-Id: {result.message_id}".encode() in smtp.data.await_args.args[0]
+
+
+@pytest.mark.asyncio
+async def test_smtp_data_transport_loss_reports_no_message_id(email_server) -> None:
+    """A lost DATA result leaves delivery unknown, so no identifier may be claimed for it."""
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+    smtp.data.side_effect = ConnectionError("result lost")
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(["one@example.test"], "Subject", "body")
+
+    assert [item.status for item in result.outcomes] == ["unknown"]
+    assert result.sent_message is None
+    assert result.message_id is None
+
+
+@pytest.mark.asyncio
+async def test_smtp_data_transport_loss_marks_accepted_recipients_unknown(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+    smtp.data.side_effect = ConnectionError("result lost")
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(
+            ["one@example.test", "two@example.test"],
+            "Subject",
+            "body",
+        )
+
+    assert [item.status for item in result.outcomes] == ["unknown", "unknown"]
+    assert [item.detail for item in result.outcomes] == ["smtp-data-unknown", "smtp-data-unknown"]
+    assert result.sent_message is None
+    smtp.data.assert_awaited_once()
+
+
+@pytest.mark.asyncio
+async def test_smtp_data_rejection_is_failed_not_unknown(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+    smtp.data.side_effect = SMTPResponseException(554, "rejected")
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(["one@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("failed", "smtp-data-rejected")]
+    assert result.sent_message is None
+
+
+@pytest.mark.asyncio
+async def test_smtp_data_cancellation_preserves_rcpt_rejection_and_marks_acceptance_unknown(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+
+    async def rcpt(recipient: str, **_kwargs: str) -> None:
+        if recipient == "rejected@example.test":
+            raise SMTPRecipientRefused(550, "rejected", recipient)
+
+    smtp.rcpt.side_effect = rcpt
+    smtp.data.side_effect = asyncio.CancelledError()
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(
+            ["accepted@example.test", "rejected@example.test"],
+            "Subject",
+            "body",
+        )
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [
+        ("unknown", "smtp-data-unknown"),
+        ("failed", "smtp-recipient-rejected"),
+    ]
+    assert result.sent_message is None
+
+
+@pytest.mark.asyncio
+async def test_smtp_rcpt_cancellation_stops_before_data_and_marks_remaining_not_attempted(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+    smtp.rcpt.side_effect = [None, asyncio.CancelledError()]
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(
+            ["one@example.test", "two@example.test", "three@example.test"],
+            "Subject",
+            "body",
+        )
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [
+        ("failed", "smtp-cancelled-before-data"),
+        ("failed", "smtp-cancelled-before-data"),
+        ("failed", "not-attempted"),
+    ]
+    smtp.data.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+async def test_smtp_context_exit_cancellation_does_not_erase_data_success(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+    smtp.__aexit__.side_effect = asyncio.CancelledError()
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(["one@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("succeeded", None)]
+    assert result.sent_message is not None
+
+
+@pytest.mark.asyncio
+async def test_smtp_context_exit_failure_does_not_erase_data_success(email_server) -> None:
+    client = EmailClient(email_server, sender="Sender <sender@example.test>")
+    smtp = _smtp()
+    smtp.__aexit__.side_effect = ConnectionError("quit failed")
+
+    with patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp):
+        result = await client.send_email_with_outcome(["one@example.test"], "Subject", "body")
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("succeeded", None)]
+    assert result.sent_message is not None
+
+
+@pytest.mark.asyncio
+async def test_mark_read_cancellation_preserves_partial_batch_and_stops(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.side_effect = [("OK", []), asyncio.CancelledError()]
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.mark_emails_as_read_with_outcome(["7", "8", "9"], allowed_senders=[])
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [
+        ("succeeded", None),
+        ("unknown", "store-unknown"),
+        ("failed", "not-attempted"),
+    ]
+    assert imap.uid.await_count == 2
+
+
+@pytest.mark.asyncio
+async def test_native_move_cancellation_is_unknown_and_stops_batch(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap(capabilities=("IMAP4rev1", "UIDPLUS", "MOVE"))
+    imap.uid.side_effect = asyncio.CancelledError()
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.move_emails_with_outcome(["8", "9"], "INBOX", "Archive", allowed_senders=[])
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [
+        ("unknown", "move-unknown"),
+        ("failed", "not-attempted"),
+    ]
+    assert imap.uid.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_move_fallback_store_cancellation_preserves_copy_and_stops(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.side_effect = [("OK", []), asyncio.CancelledError()]
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.move_emails_with_outcome(["8", "9"], "INBOX", "Archive", allowed_senders=[])
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [
+        ("unknown", "copy-succeeded-store-unknown"),
+        ("failed", "not-attempted"),
+    ]
+    assert [call.args[0] for call in imap.uid.await_args_list] == ["copy", "store"]
+
+
+@pytest.mark.asyncio
+async def test_delete_expunge_cancellation_is_unknown_after_store(email_server) -> None:
+    client = EmailClient(email_server)
+    imap = _imap()
+    imap.uid.side_effect = [("OK", []), asyncio.CancelledError()]
+    with patch.object(client, "_connect_imap", AsyncMock(return_value=imap)):
+        result = await client.delete_emails_with_outcome(["8"], allowed_senders=[])
+
+    assert [(item.status, item.detail) for item in result.outcomes] == [("unknown", "expunge-unknown")]
+    assert [call.args[0] for call in imap.uid.await_args_list] == ["store", "expunge"]
+
+
+@pytest.mark.asyncio
+async def test_append_cancellation_is_unknown_and_logout_cancellation_does_not_erase_it(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Draft", "body")
+    imap = _imap()
+    imap.append.side_effect = asyncio.CancelledError()
+    imap.logout.side_effect = asyncio.CancelledError()
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        result = await client.append_to_mailbox_with_outcome(message, email_server, "Drafts")
+
+    assert (result.status, result.detail) == ("unknown", "append-unknown")
+    assert imap.append.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_sent_copy_append_cancellation_is_unknown_and_not_replayed(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Sent", "body")
+    imap = _imap()
+    imap.append.side_effect = asyncio.CancelledError()
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        result = await client.append_to_sent_with_outcome(message, email_server, "Sent")
+
+    assert (result.status, result.mailbox, result.detail) == ("unknown", "Sent", "append-unknown")
+    assert imap.append.await_count == 1
+    assert imap.select.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_sent_copy_ignores_invalid_provider_derived_mailbox(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Sent", "body")
+    imap = _imap()
+    with (
+        patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)),
+        patch.object(client, "_find_sent_folder_by_flag", AsyncMock(return_value="Bad\r\nMailbox")),
+    ):
+        result = await client.append_to_sent_with_outcome(message, email_server)
+
+    assert result.status == "succeeded"
+    assert result.mailbox == "Sent"
+    assert imap.select.await_args.args == ('"Sent"',)
+
+
+@pytest.mark.asyncio
+async def test_append_ignores_malformed_appenduid_evidence(email_server) -> None:
+    client = EmailClient(email_server)
+    message = client.compose_message(["recipient@example.test"], "Draft", "body")
+    imap = _imap()
+    imap.append.return_value = ("OK", [b"[APPENDUID 123 7suffix] completed"])
+    with patch.object(client, "_connect_imap_server", AsyncMock(return_value=imap)):
+        result = await client.append_to_mailbox_with_outcome(message, email_server, "Drafts")
+
+    assert result.status == "succeeded"
+    assert result.uid is None
+
+
+def test_attachment_read_enforces_per_file_limit_at_compose_time(email_server, tmp_path) -> None:
+    client = EmailClient(email_server)
+    attachment = tmp_path / "large.bin"
+    attachment.write_bytes(b"12345")
+
+    with patch("mcp_email_server.emails.classic.MAX_ATTACHMENT_BYTES", 4):
+        with pytest.raises(ValueError, match="attachment exceeds"):
+            client.compose_message(
+                ["recipient@example.test"],
+                "Subject",
+                "body",
+                attachments=[str(attachment)],
+            )
+
+
+def test_attachment_read_enforces_total_limit_at_compose_time(email_server, tmp_path) -> None:
+    client = EmailClient(email_server)
+    first = tmp_path / "first.bin"
+    second = tmp_path / "second.bin"
+    first.write_bytes(b"1234")
+    second.write_bytes(b"5678")
+
+    with (
+        patch("mcp_email_server.emails.classic.MAX_ATTACHMENT_BYTES", 4),
+        patch("mcp_email_server.emails.classic.MAX_TOTAL_ATTACHMENT_BYTES", 7),
+    ):
+        with pytest.raises(ValueError, match="attachments exceed"):
+            client.compose_message(
+                ["recipient@example.test"],
+                "Subject",
+                "body",
+                attachments=[str(first), str(second)],
+            )
+
+
+_PRIVATE_SENDER = "private-sender@example.test"
+_PRIVATE_RECIPIENT = "private-recipient@example.test"
+_PRIVATE_BCC = "private-bcc@example.test"
+_PRIVATE_SUBJECT = "Private subject"
+_PRIVATE_BODY = "Private body"
+
+
+@contextmanager
+def _captured_smtp_logs(level: str = "WARNING") -> Iterator[io.StringIO]:
+    sink = io.StringIO()
+    sink_id = logger.add(sink, format="{level}:{message}", level=level)
+    try:
+        yield sink
+    finally:
+        logger.remove(sink_id)
+
+
+def _assert_smtp_log_redacted(captured: str, *extra: str) -> None:
+    sensitive_values = (
+        _PRIVATE_SENDER,
+        _PRIVATE_RECIPIENT,
+        _PRIVATE_BCC,
+        _PRIVATE_SUBJECT,
+        _PRIVATE_BODY,
+        "test_user",
+        "test_password",
+        "test.example.com",
+        *extra,
+    )
+    for value in sensitive_values:
+        assert value not in captured
+
+
+def _private_smtp_client(email_server) -> EmailClient:
+    return EmailClient(email_server, sender=f"Private Sender <{_PRIVATE_SENDER}>")
+
+
+async def _send_private_message(client: EmailClient):
+    return await client.send_email_with_outcome([_PRIVATE_RECIPIENT], _PRIVATE_SUBJECT, _PRIVATE_BODY)
+
+
+@pytest.mark.parametrize(
+    ("error", "expected"),
+    [
+        (TimeoutError("private timeout detail"), "timeout"),
+        (ConnectionError("private connection detail"), "connection"),
+        (ssl.SSLError("private TLS detail"), "tls"),
+        (OSError("private I/O detail"), "io"),
+        (RuntimeError("private unexpected detail"), "unexpected"),
+    ],
+)
+def test_smtp_error_category_is_bounded(error: Exception, expected: str) -> None:
+    assert _smtp_error_category(error) == expected
+
+
+@pytest.mark.parametrize(
+    ("smtp_method", "error", "expected_log", "expected_detail"),
+    [
+        (
+            "mail",
+            SMTPResponseException(554, b"private MAIL detail"),
+            "mail outcome=rejected code=554",
+            "smtp-mail-rejected",
+        ),
+        ("mail", SMTPNotSupported("private extension detail"), "mail outcome=unsupported", "smtp-mail-rejected"),
+        (
+            "mail",
+            ConnectionError("private MAIL transport detail"),
+            "mail outcome=unavailable category=connection",
+            "smtp-mail-unavailable",
+        ),
+        (
+            "rcpt",
+            SMTPRecipientRefused(550, b"private RCPT detail", _PRIVATE_RECIPIENT),
+            "rcpt outcome=rejected code=550",
+            "smtp-recipient-rejected",
+        ),
+        (
+            "rcpt",
+            ConnectionError("private RCPT transport detail"),
+            "rcpt outcome=unavailable category=connection",
+            "smtp-session-lost-before-data",
+        ),
+        (
+            "data",
+            SMTPResponseException(554, b"private DATA detail"),
+            "data outcome=rejected code=554",
+            "smtp-data-rejected",
+        ),
+        (
+            "data",
+            ConnectionError("private DATA transport detail"),
+            "data outcome=unknown category=connection",
+            "smtp-data-unknown",
+        ),
+    ],
+    ids=[
+        "mail-rejected",
+        "mail-unsupported",
+        "mail-transport",
+        "rcpt-rejected",
+        "rcpt-transport",
+        "data-rejected",
+        "data-transport",
+    ],
+)
+@pytest.mark.asyncio
+async def test_smtp_transaction_logs_bounded_phase_data(
+    email_server,
+    smtp_method: str,
+    error: Exception,
+    expected_log: str,
+    expected_detail: str,
+) -> None:
+    client = _private_smtp_client(email_server)
+    smtp = _smtp()
+    getattr(smtp, smtp_method).side_effect = error
+
+    with (
+        _captured_smtp_logs() as sink,
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        outcome = await _send_private_message(client)
+
+    captured = sink.getvalue()
+    assert f"SMTP phase={expected_log}" in captured
+    assert outcome.outcomes[0].detail == expected_detail
+    _assert_smtp_log_redacted(captured, str(error))
+
+
+@pytest.mark.parametrize(
+    ("phase", "error", "expected_log"),
+    [
+        ("connect", SMTPResponseException(421, b"private connect detail"), "connect outcome=rejected code=421"),
+        ("connect", ConnectionError("private connect transport"), "connect outcome=error category=connection"),
+        (
+            "authenticate",
+            SMTPResponseException(535, b"private authentication detail"),
+            "authenticate outcome=rejected code=535",
+        ),
+        (
+            "authenticate",
+            ConnectionError("private authentication transport"),
+            "authenticate outcome=error category=connection",
+        ),
+    ],
+    ids=["connect-rejected", "connect-transport", "auth-rejected", "auth-transport"],
+)
+@pytest.mark.asyncio
+async def test_smtp_setup_logs_preserve_phase_without_private_data(
+    email_server, phase: str, error: Exception, expected_log: str
+) -> None:
+    client = _private_smtp_client(email_server)
+    smtp = _smtp()
+    if phase == "connect":
+        smtp.__aenter__.side_effect = error
+    else:
+        smtp.login.side_effect = error
+
+    with (
+        _captured_smtp_logs() as sink,
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+        pytest.raises(type(error)),
+    ):
+        await _send_private_message(client)
+
+    captured = sink.getvalue()
+    assert f"SMTP phase={expected_log}" in captured
+    _assert_smtp_log_redacted(captured, str(error))
+
+
+@pytest.mark.asyncio
+async def test_smtp_debug_logs_phases_without_message_data(email_server) -> None:
+    client = _private_smtp_client(email_server)
+    smtp = _smtp()
+
+    with (
+        _captured_smtp_logs("DEBUG") as sink,
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        outcome = await _send_private_message(client)
+
+    captured = sink.getvalue()
+    assert outcome.outcomes[0].status == "succeeded"
+    assert "SMTP phase=connect outcome=succeeded" in captured
+    assert "SMTP phase=authenticate outcome=succeeded" in captured
+    assert "SMTP phase=message outcome=prepared" in captured
+    _assert_smtp_log_redacted(captured)
+
+
+@pytest.mark.parametrize(
+    ("error", "expected_log"),
+    [
+        (SMTPResponseException(450, b"private cleanup detail"), "cleanup outcome=rejected code=450"),
+        (RuntimeError("private cleanup runtime detail"), "cleanup outcome=error category=unexpected"),
+    ],
+    ids=["response", "unexpected"],
+)
+@pytest.mark.asyncio
+async def test_smtp_cleanup_failure_preserves_known_outcome_and_safe_log(
+    email_server, error: Exception, expected_log: str
+) -> None:
+    client = _private_smtp_client(email_server)
+    smtp = _smtp()
+    smtp.__aexit__.side_effect = error
+
+    with (
+        _captured_smtp_logs() as sink,
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        outcome = await _send_private_message(client)
+
+    captured = sink.getvalue()
+    assert outcome.outcomes[0].status == "succeeded"
+    assert f"SMTP phase={expected_log}" in captured
+    _assert_smtp_log_redacted(captured, str(error))
+
+
+@pytest.mark.asyncio
+async def test_smtp_cleanup_cancellation_preserves_known_outcome(email_server) -> None:
+    client = _private_smtp_client(email_server)
+    smtp = _smtp()
+    smtp.__aexit__.side_effect = asyncio.CancelledError
+
+    with (
+        _captured_smtp_logs("DEBUG") as sink,
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        outcome = await _send_private_message(client)
+
+    captured = sink.getvalue()
+    assert outcome.outcomes[0].status == "succeeded"
+    assert "SMTP phase=cleanup outcome=cancelled" in captured
+    _assert_smtp_log_redacted(captured)
+
+
+@pytest.mark.parametrize(
+    ("error", "expected_log"),
+    [
+        (SMTPResponseException(554, b"private send detail"), "send outcome=rejected code=554"),
+        (RuntimeError("private send runtime detail"), "send outcome=error category=unexpected"),
+    ],
+    ids=["response", "unexpected"],
+)
+@pytest.mark.asyncio
+async def test_legacy_send_failure_logs_safe_phase_and_reraises(
+    email_server, error: Exception, expected_log: str
+) -> None:
+    client = _private_smtp_client(email_server)
+    smtp = _smtp()
+    smtp.send_message.side_effect = error
+
+    with (
+        _captured_smtp_logs() as sink,
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+        pytest.raises(type(error)),
+    ):
+        await client.send_email(
+            [_PRIVATE_RECIPIENT],
+            _PRIVATE_SUBJECT,
+            _PRIVATE_BODY,
+            bcc=[_PRIVATE_BCC],
+        )
+
+    captured = sink.getvalue()
+    assert f"SMTP phase={expected_log}" in captured
+    _assert_smtp_log_redacted(captured, str(error))
+
+
+@pytest.mark.asyncio
+async def test_legacy_send_debug_logs_are_redacted(email_server) -> None:
+    client = _private_smtp_client(email_server)
+    smtp = _smtp()
+
+    with (
+        _captured_smtp_logs("DEBUG") as sink,
+        patch("mcp_email_server.emails.classic.aiosmtplib.SMTP", return_value=smtp),
+    ):
+        await client.send_email(
+            [_PRIVATE_RECIPIENT],
+            _PRIVATE_SUBJECT,
+            _PRIVATE_BODY,
+            bcc=[_PRIVATE_BCC],
+        )
+
+    captured = sink.getvalue()
+    assert "SMTP phase=send outcome=started" in captured
+    assert "SMTP phase=send outcome=succeeded" in captured
+    _assert_smtp_log_redacted(captured)

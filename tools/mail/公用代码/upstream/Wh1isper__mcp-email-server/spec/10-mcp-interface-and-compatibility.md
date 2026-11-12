@@ -1,0 +1,297 @@
+# 10. MCP Interface and Compatibility
+
+## Baseline
+
+MCP stdio is the supported managed mail-workflow interface. SSE and Streamable
+HTTP compatibility commands may remain available, but they do not weaken
+managed authority or create a remotely supported management plane. MCP Apps are
+not delivered in this milestone.
+
+The public MCP contract includes tool/resource names, descriptions, annotations,
+visibility, input schemas, output schemas where exposed, result literals and
+shapes, error categories, and transport behavior. These are compatibility
+surface, not incidental implementation details.
+
+## Static Catalog
+
+The tool and resource catalog is fixed for the process lifetime. A tool does not
+disappear when mode, account, policy, or provider capability makes a call
+unavailable. Instead, the application service checks current authority at call
+time and returns a bounded typed denial.
+
+`save_draft` is an independent tool, not a visibility-dependent alias for
+`save_to_mailbox`. Its schema exposes compose fields but no mailbox or flags;
+its destination and mutation authority are owned by specs 04 and 07. The complete
+catalog remains advertised for read-only and selectively granted accounts too.
+
+Junk/restore workflows reuse `move_emails`, not new spam/ham tool names. Its
+optional `destination_role="junk"` is mutually exclusive with the now-optional
+`destination_mailbox`; all previous valid explicit-destination calls remain
+valid. Source-mailbox/UID ownership and destination discovery are owned by
+spec 07. The catalog snapshot locks the additive input change, unchanged output
+schema, and role-based resolved-mailbox result wording.
+
+This preserves client discovery caches while ensuring a permissive startup state
+does not authorize a later effect. Tool list callbacks MUST NOT resolve secrets,
+contact providers, or scan mailboxes.
+
+A complete version-controlled contract snapshot/assertion covers every exported:
+
+- tool and resource name;
+- human description;
+- input and output JSON schema;
+- required/optional field and default;
+- enum and numeric/string/array bound;
+- annotations and visibility;
+- success and tagged partial-result shape.
+
+Tests fail on addition, removal, schema drift, or description drift unless the
+change is intentionally reviewed as a public contract change. MCP initialization
+advertises the installed `mcp-email-server` application version, never the MCP
+SDK dependency version, and raw protocol tests lock that identity.
+
+## General Email Protocol Commands
+
+Add one `email_command` tool without changing the existing 20 tool contracts,
+including standalone `create_mailbox`. This is a protocol executor, not a
+registry of business operations: UID COPY and other supported primitives do not
+require separate application workflows. Spec 04 owns admission; spec 07 owns
+effect and connection lifecycle rules.
+
+The input is `commands`, an ordered list of `{command, data?}`, optional
+`account_name` (required for execution), and `protocol` (`imap` by default or
+`smtp`). Each command is one untagged protocol line with no CR/LF or literal
+length marker; message payload is separate UTF-8 `data` for APPEND/DATA. Validate
+the complete request before obtaining authority. Reject unsupported commands,
+caller authentication/TLS/teardown, arbitrary endpoints, and malformed framing.
+Unknown extension support is not inferred from server CAPABILITY.
+
+A single `HELP` or `HELP <command>` is local and account-independent. Help is
+not forwarded to IMAP/SMTP and cannot be mixed with execution. It describes the
+actual supported syntax, state requirements, payloads, effects, and examples.
+The outer tool description teaches agent-directed discovery, account selection,
+call-scoped state, result interpretation, and no automatic replay. Dedicated
+tools remain the preferred convenience route when they cover a workflow.
+
+Return an envelope with `status` (`completed`, `stopped`, `unknown`), ordered
+`results`, `error`, and `warnings`. Each result identifies the input index and
+`ok`, `error`, `unknown`, or `not_attempted`, preserving protocol codes and
+bounded response order/literal boundaries. Binary response blocks are base64.
+Statuses describe protocol evidence, not fabricated per-message success or
+end-recipient SMTP delivery. An error does not undo earlier commands; missing
+completion after transmission is unknown. MCP isError is false only for
+completed requests, and text JSON agrees with structured content.
+
+Bound batches to 20 commands, command text to 64 KiB in total, input message data
+to 1 MiB in total, received command responses to 512 KiB per connection, and
+IMAP response blocks to 4,096. Canonical protocol results are capped at 3 MiB to
+leave room for both MCP representations and escaping under the 8 MiB final result
+boundary. Reuse the 2 MiB stdio frame and provider timeout boundaries.
+Oversized output stops subsequent commands without turning possible remote
+effects into safe-to-retry failures. Annotations conservatively advertise a
+potentially destructive, non-idempotent, open-world mutation.
+
+## Agent Discovery and Tool Hints
+
+Account discovery projects configuration models into one explicit non-secret
+DTO. Each item contains only `account_name`, `account_type`, `description`, an
+optional email identity, and `can_receive`/`can_send` capabilities. Description
+bytes have an application-owned 4 KiB ceiling and the output schema exposes the
+same structural bound. Text content, `structuredContent`, the account resource,
+and output schema describe the same
+fields; persistence models, timestamps, endpoints, masked credential objects,
+and provider internals do not cross this boundary. An empty list directs the
+agent to hand setup to the user-operated CLI/UI and never request credentials.
+
+Every tool publishes all four standard MCP annotation hints. They are reviewed
+against worst-case behavior across optional parameters:
+
+- local/remote discovery reads are read-only and idempotent; provider reads are
+  open-world while local authority reads are not;
+- `get_emails_content` is not marked read-only because `mark_as_read=true` can
+  change remote flags, but that flag effect is idempotent;
+- send and append are non-read-only, non-idempotent, open-world additions rather
+  than destructive replacement;
+- approved flag add/remove and the focused mark-read entry point are
+  non-destructive idempotent remote mutations; `\Deleted` is not accepted by
+  the generic flag tool;
+- delete, move, and archive are destructive, non-idempotent remote mutations;
+- attachment download is a non-idempotent filesystem write that may replace the
+  caller-selected destination, while attachment-content retrieval is a read-only
+  open-world provider read with no filesystem effect.
+
+Annotations are advisory planning and approval hints. They are never treated as
+an authorization, credential, policy, idempotency-proof, or safe-retry boundary;
+descriptions and typed unknown outcomes continue to forbid automatic replay after
+ambiguous effects.
+
+## No-secret and No-management Boundary
+
+No tool/resource schema in either mode contains a password, token, private key,
+secret value, reusable secret locator, set/rotate credential command, account
+writer, import command, or generic management RPC. No result exposes binding
+locators.
+
+The historical `add_email_account` tool is intentionally removed from the
+catalog. Host approval, HITL UI, annotations, or optional elicitation cannot
+prevent a secret-bearing tool argument from entering model/client/protocol logs
+and are not a portable credential channel. Interactive CLI and authenticated
+local Web UI are the supported replacements; optional agent integrations provide
+only the safe handoff defined in spec 11.
+
+## Tool Families
+
+The stable mail catalog may expose these compatibility families:
+
+- account/mailbox discovery;
+- metadata listing and querying;
+- body and attachment reads;
+- flag/read-state mutations;
+- semantic keyword discovery, filtering, and explicitly authorized tag
+  mutations;
+- save/append, move, archive, delete, and explicit mailbox creation;
+- SMTP send and sent-copy behavior.
+
+Exact names and schemas are owned by the checked contract snapshot. Their
+workflow semantics and safety are owned by specs 06 and 07. Account, policy,
+credential, import, doctor, agent-installation, and UI-session operations are not
+MCP tools.
+
+## Request and Result Bounds
+
+Every schema advertises enforceable structural bounds where MCP/JSON Schema can
+express them. Application services enforce them again for direct callers.
+MCP-specific ceilings include:
+
+- maximum serialized success/partial response bytes;
+- maximum mailbox items and aggregate mailbox-name/attribute bytes;
+- maximum per-item and aggregate metadata/body detail;
+- at most the centralized flag-count bound for configured or requested semantic
+  tags; embedded attachment content must fit the same canonical serialized-result
+  ceiling as every other MCP result;
+- maximum target IDs, recipients, headers, and message bytes;
+- maximum warnings, failures, unknown outcomes, and error-detail bytes;
+- bounded string lengths for account/description/mailbox/path/query fields;
+- canonical positive decimal ASCII UID patterns, ranges, and collection sizes,
+  revalidated at both application and low-level provider entry points;
+- maximum effective account and recipient/sender policy discovery cardinality;
+- command/provider deadlines where safely enforceable.
+
+Before returning, the adapter serializes or estimates with the canonical encoder
+and rejects, reduces, or returns the explicit process-private oversized-result
+handoff owned by spec 03 according to the documented result policy. It cannot
+return an unbounded Python value merely because request cardinality was bounded.
+Errors are shorter than the normal response ceiling and never include raw
+provider responses, SQL, traceback, secret, body, or unintended local path.
+
+The IMAP SEARCH pre-cardinality residual is documented in spec 06; after the
+response arrives, candidate count/bytes are checked before any fetch or MCP
+result construction.
+
+## Result Semantics
+
+Existing exact success literals remain exact where clients depend on them.
+Multi-target/effect workflows use tagged bounded per-item outcomes and preserve
+input order. They distinguish failure from unknown and provider success from
+local projection/sent-copy warnings.
+
+Errors caused by invalid input, policy denial, disabled/removed account, missing
+binding, provider capability, conflict, limit, timeout, unknown effect, busy,
+insecure storage, and internal failure map to stable safe categories. Framework
+validation errors are normalized when necessary so they do not leak internals or
+produce uncontrolled detail.
+
+## Stdio Correctness
+
+In stdio mode:
+
+- stdout contains MCP protocol frames only;
+- logs and diagnostics use stderr and obey redaction;
+- startup freezes and preflights authority before protocol serving;
+- malformed UTF-8/JSON and frames above the production-owned 2 MiB stdio
+  ceiling produce bounded, redacted handling without echoing input;
+- request cancellation is propagated to application checkpoints;
+- EOF, cancellation, initialization failure, and normal shutdown close all
+  constructed resources;
+- no browser UI, bootstrap token, HTTP route, or management server starts.
+
+A generic MCP client or raw JSON-RPC harness validates initialization, exact
+catalog serialization, malformed and oversized recovery, invocation,
+cancellation, idle and in-flight EOF, runtime cleanup, and stdout purity in
+addition to direct Python tests.
+
+## Compatibility and Evolution
+
+A public catalog change requires:
+
+1. update to the exact contract snapshot and relevant domain spec;
+2. compatibility and security analysis plus migration/release note;
+3. generic-client and GreenMail stdio validation;
+4. a versioned alternative when semantics cannot be changed compatibly, unless
+   retaining the old surface would preserve a material security flaw.
+
+Removal of `add_email_account` is the explicit security exception: preserving a
+credential-bearing MCP compatibility shim would violate the no-secret boundary.
+Release notes and agent/CLI/UI guidance provide migration rather than emulation.
+The V2 pre-release correction from polymorphic configuration output to the
+explicit account-discovery DTO, and the addition of reviewed annotations, are
+intentional catalog changes covered by exact snapshots and raw protocol tests;
+they do not change the no-management boundary.
+
+The current numeric message ID stays a compatibility field without claiming
+UIDVALIDITY provenance. Introducing an epoch-bound identifier is additive or
+versioned, never a silent reinterpretation.
+
+The full-content result additively exposes nullable `in_reply_to` and
+`references` fields. They are optional in the output schema, do not alter tool
+inputs, and are serialized as `null` when absent. Metadata-list output remains
+unchanged, so the addition does not imply indexed or persisted thread headers.
+Exact catalog, direct application, raw stdio, and GreenMail tests cover the new
+result shape. Clients that reject unknown output fields must update their result
+type before consuming this catalog revision.
+
+This delivery adds no `ui://` resources, MCP App metadata, embedded-app CSP, or
+host bridge calls. `get_attachment_content` is a transport-neutral MCP read tool
+that can be enabled for ChatGPT apps and other clients without a shared local
+filesystem; it does not turn this server into an MCP App or remote management
+plane.
+
+## Acceptance Criteria
+
+- **10-P1:** Exactly one `email_command` is added without changing the prior 20 tool
+  definitions. Its strict three-field input preserves JSON-looking strings,
+  rejects unknown arguments and command framing before authority access, and
+  provides local HELP without constructing a runtime. Ordered statuses and
+  literal blocks agree between JSON text and structured content; isError is
+  false only for completed sequences. Help documents syntax and limits, not a
+  promise of universal server extension support.
+
+1. A complete exact catalog snapshot covers names, descriptions, input/output
+   schemas, annotations, resources, visibility, and result shapes.
+2. Schemas and results in both modes contain no secret input, value, reusable
+   locator, or management operation; `add_email_account` is absent.
+3. Tool visibility is static while current mode, lifecycle, policy, binding, and
+   capability are enforced at invocation.
+4. Schema, application, provider-work, serialized-response, spill-artifact, and
+   error-detail bounds are tested at, below, and above each limit.
+5. Partial results preserve order and distinguish known failure, unknown effect,
+   provider success with local warning, and sent-copy outcome.
+6. Raw protocol tests prove application-version identity, stdout purity,
+   initialization/catalog behavior, malformed/oversized handling, cancellation,
+   EOF, and cleanup.
+7. GreenMail stdio E2E exercises representative read and mutation workflows
+   through actual MCP framing, not only helper calls.
+8. Every tool has reviewed read-only, destructive, idempotent, and open-world
+   hints, and account discovery text/structured/schema representations agree on
+   the explicit non-secret capability DTO.
+9. The catalog contains no MCP App, account/credential management, agent
+   installation, or graphical management resource.
+10. The catalog and raw stdio tests cover `list_email_tags`, tag-aware
+    `list_emails_metadata` and `get_emails_content`, `set_email_tags`, and
+    `get_attachment_content`, including defaults, semantic-name inputs,
+    annotations, schemas, one-copy embedded blob content, the global result
+    ceiling, and policy failures.
+11. The catalog and raw stdio tests cover `create_mailbox` as an additive,
+    non-destructive, idempotent, open-world tool whose structured result reports
+    the mailbox, a `created`/`already_exists`/`unknown` status, and
+    `reconciliation_needed`, with no change to existing tool schemas.

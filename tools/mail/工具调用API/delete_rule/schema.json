@@ -1,0 +1,40 @@
+{
+  "name": "delete_rule",
+  "description": "删除指定收件规则；不撤销该规则已经完成的操作。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "rule_id": {
+        "title": "Rule Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "rule_id"
+    ],
+    "title": "delete_ruleArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

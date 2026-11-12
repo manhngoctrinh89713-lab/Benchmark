@@ -1,0 +1,23 @@
+{
+  "name": "get_my_order",
+  "description": "读取订单成交快照、支付状态、履约状态及包裹。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id"
+    ],
+    "title": "get_my_orderArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

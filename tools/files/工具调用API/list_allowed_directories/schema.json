@@ -1,0 +1,15 @@
+{
+  "name": "list_allowed_directories",
+  "description": "返回本次运行唯一允许操作的files根目录及相对路径基准。",
+  "inputSchema": {
+    "properties": {},
+    "title": "list_allowed_directoriesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

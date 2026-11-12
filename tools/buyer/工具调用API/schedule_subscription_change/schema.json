@@ -1,0 +1,45 @@
+{
+  "name": "schedule_subscription_change",
+  "description": "保存下个账期生效的方案和数量，按当前方案条款固定新合同。",
+  "inputSchema": {
+    "properties": {
+      "subscription_id": {
+        "title": "Subscription Id",
+        "type": "string"
+      },
+      "plan_id": {
+        "title": "Plan Id",
+        "type": "string"
+      },
+      "quantity": {
+        "default": 1,
+        "title": "Quantity",
+        "type": "integer"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "subscription_id",
+      "plan_id"
+    ],
+    "title": "schedule_subscription_changeArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

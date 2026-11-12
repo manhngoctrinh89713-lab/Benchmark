@@ -1,0 +1,281 @@
+{
+  "platform": "linux",
+  "now": "2026-11-02T10:15:00+08:00",
+  "machine": {
+    "id": "orders_prod_02",
+    "hostname": "orders-prod-02",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 33285996544
+    },
+    {
+      "id": "data",
+      "mount": "/srv",
+      "total_bytes": 536870912000,
+      "base_used_bytes": 185757335552
+    }
+  ],
+  "backup_disk_id": "data",
+  "backup_roots": [
+    "/etc/orders",
+    "/etc/postgresql",
+    "/srv/orders"
+  ],
+  "journal_path": "/var/log/maintenance-journal.jsonl",
+  "services": {
+    "sshd.service": {
+      "id": "sshd.service",
+      "description": "SSH服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 22,
+      "config_format": "env",
+      "config_path": "/etc/ssh/local.env",
+      "process_name": "sshd",
+      "command": "/usr/bin/sshd",
+      "user": "root",
+      "memory_bytes": 16777216,
+      "requires": [],
+      "protected": true,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "PORT",
+          "type": "integer",
+          "min": 1,
+          "max": 65535
+        }
+      ],
+      "applied_config_sha256": "bd0c33c1188a41940ce0fd422992ede0a13b4000ca2c8a4950626ba848f35524"
+    },
+    "postgresql.service": {
+      "id": "postgresql.service",
+      "description": "订单接入本地状态数据库",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 100,
+      "config_format": "json",
+      "config_path": "/etc/postgresql/local.json",
+      "process_name": "postgres",
+      "command": "/usr/bin/postgres",
+      "user": "postgres",
+      "memory_bytes": 1073741824,
+      "requires": [],
+      "protected": false,
+      "supports_reload": false,
+      "config_rules": [
+        {
+          "key": "port",
+          "type": "integer",
+          "min": 1,
+          "max": 65535
+        },
+        {
+          "key": "data_dir",
+          "type": "text"
+        }
+      ],
+      "applied_config_sha256": "fd2c1fcb3efe133c5007239262495ff2f0b4ec336c73151212e6101a24e1a666"
+    },
+    "orders.service": {
+      "id": "orders.service",
+      "description": "生产订单接入与供应商同步",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 200,
+      "config_format": "json",
+      "config_path": "/etc/orders/vendor-client.json",
+      "process_name": "orders-worker",
+      "command": "/opt/orders/bin/worker --config /etc/orders/vendor-client.json",
+      "user": "app",
+      "memory_bytes": 402653184,
+      "requires": [
+        "postgresql.service"
+      ],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "vendor.verify_tls",
+          "type": "boolean"
+        },
+        {
+          "key": "vendor.endpoint",
+          "type": "text"
+        },
+        {
+          "key": "vendor.timeout_seconds",
+          "type": "integer",
+          "min": 1,
+          "max": 120
+        }
+      ],
+      "applied_config_sha256": "ab24f4855e01cfd4fc426423ced491c5a7e5890a97070acb0521ff1638d8eb96"
+    }
+  },
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {},
+  "processes": {
+    "1": {
+      "pid": 1,
+      "name": "init",
+      "command": "/sbin/init",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 4194304,
+      "protected": true,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": []
+    },
+    "22": {
+      "pid": 22,
+      "name": "sshd",
+      "command": "/usr/sbin/sshd -D",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 16777216,
+      "protected": true,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "sshd.service"
+    },
+    "100": {
+      "pid": 100,
+      "name": "postgres",
+      "command": "/usr/bin/postgres -D /srv/db",
+      "user": "postgres",
+      "status": "running",
+      "cpu_percent": 2.0,
+      "memory_bytes": 1073741824,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "postgresql.service"
+    },
+    "200": {
+      "pid": 200,
+      "name": "orders-worker",
+      "command": "/opt/orders/bin/worker --config /etc/orders/vendor-client.json",
+      "user": "app",
+      "status": "running",
+      "cpu_percent": 8.0,
+      "memory_bytes": 402653184,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "orders.service"
+    },
+    "301": {
+      "pid": 301,
+      "name": "node-exporter",
+      "command": "/usr/bin/node-exporter --web.listen-address=:9100",
+      "user": "metrics",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 25165824,
+      "protected": false,
+      "started_at": "2026-10-30T08:00:00+08:00",
+      "open_files": []
+    },
+    "302": {
+      "pid": 302,
+      "name": "queue-consumer",
+      "command": "/opt/orders/bin/queue-consumer --topic order.settled",
+      "user": "app",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 220200960,
+      "protected": false,
+      "started_at": "2026-10-30T08:00:00+08:00",
+      "open_files": []
+    },
+    "303": {
+      "pid": 303,
+      "name": "cron",
+      "command": "/usr/sbin/cron -f",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 9437184,
+      "protected": false,
+      "started_at": "2026-10-30T08:00:00+08:00",
+      "open_files": []
+    },
+    "304": {
+      "pid": 304,
+      "name": "fluent-bit",
+      "command": "/usr/bin/fluent-bit -c /etc/fluent-bit/orders.conf",
+      "user": "log",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 71303168,
+      "protected": false,
+      "started_at": "2026-10-30T08:00:00+08:00",
+      "open_files": []
+    },
+    "305": {
+      "pid": 305,
+      "name": "redis-server",
+      "command": "/usr/bin/redis-server 127.0.0.1:6379",
+      "user": "redis",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 130023424,
+      "protected": false,
+      "started_at": "2026-10-30T08:00:00+08:00",
+      "open_files": []
+    },
+    "306": {
+      "pid": 306,
+      "name": "chronyd",
+      "command": "/usr/sbin/chronyd -F 1",
+      "user": "chrony",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 7340032,
+      "protected": false,
+      "started_at": "2026-10-30T08:00:00+08:00",
+      "open_files": []
+    },
+    "307": {
+      "pid": 307,
+      "name": "nginx",
+      "command": "nginx: worker process",
+      "user": "www-data",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 35651584,
+      "protected": false,
+      "started_at": "2026-10-30T08:00:00+08:00",
+      "open_files": []
+    },
+    "308": {
+      "pid": 308,
+      "name": "backup-agent",
+      "command": "/opt/backup/agent --schedule daily",
+      "user": "backup",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 48234496,
+      "protected": false,
+      "started_at": "2026-10-30T08:00:00+08:00",
+      "open_files": []
+    }
+  },
+  "next_pid": 400,
+  "config_load_events": []
+}

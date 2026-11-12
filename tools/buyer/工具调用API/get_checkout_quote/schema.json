@@ -1,0 +1,23 @@
+{
+  "name": "get_checkout_quote",
+  "description": "读取已保存的结算条件和报价有效期。",
+  "inputSchema": {
+    "properties": {
+      "quote_id": {
+        "title": "Quote Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "quote_id"
+    ],
+    "title": "get_checkout_quoteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

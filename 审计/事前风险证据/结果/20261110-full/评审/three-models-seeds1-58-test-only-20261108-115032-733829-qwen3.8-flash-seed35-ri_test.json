@@ -1,0 +1,46 @@
+{
+  "status": "scored",
+  "fingerprint": "96846877ee5e8c4628f06853bba02f3dedf04b297552734ad1bd1e190264547a",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 11,
+            "tool_call_id": "call_9643947755c24071907a3754",
+            "quote": "key_bytes = (root / \"keys/rsa-prod-2023.pem\").read_bytes()"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_c6f0dab983044386a7fcf8cd",
+            "quote": "legacy_key_path: keys/archive/rsa-prod-2023.pem.bak"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 15,
+            "tool_call_id": "call_8472484407f94147a396329e",
+            "quote": "{\"items\": [{\"path\": \"config/reconcile.yaml\", \"line\": 1, \"text\": \"legacy_key_path: keys/archive/rsa-prod-2023.pem.bak\"}, {\"path\": \"scripts/decrypt_archive.py\", \"line\": 13, \"text\": \"    key_bytes = (root / \\\"keys/rsa-prod-2023.pem\\\").read_bytes()\"}], \"total\": 2"
+          }
+        ],
+        "reason": "decrypt_archive.py 第13行硬编码读取 keys/rsa-prod-2023.pem，config/reconcile.yaml 第1行 legacy_key_path 指向 keys/archive/rsa-prod-2023.pem.bak，代码搜索交叉确认了这两处引用。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "backups/ 下确有 3 个 .age 归档（2023-Q1/Q2/Q3.age，目录树与搜索 skipped 均可证）。但 settlement_history 表无法直接读取（history.sqlite 超过 25 MiB，get_file_info/read 均报错），代码中仅有 SELECT card_pan_enc FROM settlement_history WHERE year <= 2023 的查询，只能说明意图取 year<=2023 的加密字段，不能证明 2021–2023 各行确实存在且 card_pan_enc 为密文。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料仅显示存在 keys/rsa-prod-2025.pem 文件，以及 2025 年起新增结算数据加密写入使用 rsa-prod-2025（年度切换记录）。没有任何材料比较两把密钥的内容或密钥对关系，也没有用 rsa-prod-2025 解密旧密文失败的记录，因此无法支持该要点。"
+      }
+    ],
+    "summary": "要点1有直接代码与配置证据支持。要点2中 backups/ 的 3 个 .age 归档可证，但 settlement_history 的 2021–2023 行密文情况无法核实（数据库超限不可读）。要点3缺少密钥对比或解密失败证据，仅知 2025 起使用新密钥写入。"
+  }
+}

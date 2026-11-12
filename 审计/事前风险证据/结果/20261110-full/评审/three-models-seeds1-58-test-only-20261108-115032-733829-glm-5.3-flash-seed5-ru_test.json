@@ -1,0 +1,40 @@
+{
+  "status": "scored",
+  "fingerprint": "de2c1072614f9106a3aad8d7774d521dac13f5c30a648aa5025ccdd9ecd57c82",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具调用只读取了目录树和各子目录的文件清单（含大小、修改时间和 SHA-256），从未读取任何 *_KV_v01.svg 的文件内容，因此无法确认其文案是否保存在 <text> 元素中、是否可直接读取修改。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何对 *_KV_终版.svg 内容的读取结果（如 read_document/read_binary_file 未被调用），虽然清单显示这些 SVG 只有 272 字节，但大小不能证明其内部只有单个 <g> 以 <image> 嵌入 JPG 且没有 <text>，缺少文件内容依据。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_-7101069610312528498",
+            "quote": "{\"path\": \"海报交付/01_轻岚保温杯/轻岚_KV_终版 (1).jpg\", \"name\": \"轻岚_KV_终版 (1).jpg\", \"type\": \"file\", \"size\": 494078, \"modified_ns\": 1793431200000000000, \"sha256\": \"bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a\"}, {\"path\": \"海报交付/01_轻岚保温杯/轻岚_KV_终版.jpg\", \"name\": \"轻岚_KV_终版.jpg\", \"type\": \"file\", \"size\": 494078, \"modified_ns\": 1793344800000000000, \"sha256\": \"bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_-7101069610312528496",
+            "quote": "{\"path\": \"海报交付/03_云栖台灯/云栖_KV_终版 (1).jpg\", \"name\": \"云栖_KV_终版 (1).jpg\", \"type\": \"file\", \"size\": 559362, \"modified_ns\": 1793431200000000000, \"sha256\": \"ec7432535c22833b96f636dc8ab60fed3dedf585db8930c6936dac749ae6a479\"}, {\"path\": \"海报交付/03_云栖台灯/云栖_KV_终版.jpg\", \"name\": \"云栖_KV_终版.jpg\", \"type\": \"file\", \"size\": 559362, \"modified_ns\": 1793344800000000000, \"sha256\": \"ec7432535c22833b96f636dc8ab60fed3dedf585db8930c6936dac749ae6a479\"}"
+          }
+        ],
+        "reason": "三个项目中 *_KV_终版 (1).jpg 与 *_KV_终版.jpg 的大小和 SHA-256 均完全一致（如 bb854001…、074df8f7…、ec743253…），说明二者字节内容相同，属完全重复文件，据此可明确推断其 MD5 也相同。"
+      }
+    ],
+    "summary": "材料仅包含目录树和含 SHA-256 的文件清单，可证实各项目中「终版 (1).jpg」与「终版.jpg」字节完全相同（故 MD5 相同）；但从未读取任何 SVG 文件内容，无法证实 v01.svg 含 <text> 文案、终版.svg 仅以 <image> 嵌图且无 <text>。"
+  }
+}

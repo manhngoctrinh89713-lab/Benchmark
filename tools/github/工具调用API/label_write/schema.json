@@ -1,0 +1,64 @@
+{
+  "name": "label_write",
+  "description": "创建或更新标签，支持重命名并同步Issue/PR引用；颜色为不带#的六位十六进制。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "color": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Color"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Description"
+      },
+      "new_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "New Name"
+      }
+    },
+    "required": [
+      "repo_id",
+      "name"
+    ],
+    "title": "label_writeArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

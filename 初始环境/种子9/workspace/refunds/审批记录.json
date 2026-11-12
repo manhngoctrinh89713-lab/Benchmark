@@ -1,0 +1,30 @@
+{
+  "register": "禾木生活售后审批台账",
+  "batch": "AS-1102",
+  "orders": [
+    {
+      "order_id": "O301",
+      "approval_id": "AS-202610-301",
+      "decision": "退款现金支付金额的50%",
+      "approved_by": "售后主管许安",
+      "approved_at": "2026-10-31T15:20:00+08:00",
+      "status": "approved"
+    },
+    {
+      "order_id": "O302",
+      "approval_id": "AS-202610-302",
+      "decision": "退款现金支付金额的50%",
+      "approved_by": "售后主管许安",
+      "approved_at": "2026-10-31T15:20:00+08:00",
+      "status": "approved"
+    },
+    {
+      "order_id": "O303",
+      "approval_id": "AS-202610-303",
+      "decision": "退款现金支付金额的50%",
+      "approved_by": "售后主管许安",
+      "approved_at": "2026-10-31T15:20:00+08:00",
+      "status": "approved"
+    }
+  ]
+}

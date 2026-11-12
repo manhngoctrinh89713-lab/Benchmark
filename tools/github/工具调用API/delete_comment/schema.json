@@ -1,0 +1,28 @@
+{
+  "name": "delete_comment",
+  "description": "删除当前用户发表的普通讨论评论。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "comment_id": {
+        "title": "Comment Id",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "comment_id"
+    ],
+    "title": "delete_commentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

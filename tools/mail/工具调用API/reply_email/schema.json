@@ -1,0 +1,80 @@
+{
+  "name": "reply_email",
+  "description": "针对选定 email_id 生成回复，默认保存草稿；as_draft=false 立即发送。优先使用 Reply-To；回复已发送副本时使用原 To；reply_all 同时考虑原 To/Cc，排除自身并去重，密送不参与。可选择引用原文、附件和发送身份。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_id": {
+        "title": "Email Id",
+        "type": "string"
+      },
+      "body": {
+        "title": "Body",
+        "type": "string"
+      },
+      "reply_all": {
+        "default": false,
+        "title": "Reply All",
+        "type": "boolean"
+      },
+      "quote_original": {
+        "default": true,
+        "title": "Quote Original",
+        "type": "boolean"
+      },
+      "attachments": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Attachments"
+      },
+      "as_draft": {
+        "default": true,
+        "title": "As Draft",
+        "type": "boolean"
+      },
+      "send_mode": {
+        "default": "send_as",
+        "title": "Send Mode",
+        "type": "string"
+      },
+      "from_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "From Address"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_id",
+      "body"
+    ],
+    "title": "reply_emailArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

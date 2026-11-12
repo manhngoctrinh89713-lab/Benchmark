@@ -1,0 +1,60 @@
+{
+  "status": "scored",
+  "fingerprint": "082f79ee581acaad5c1beba90d05495e005a49fedb2fd14d41f5fa9041e83ebd",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 19,
+            "tool_call_id": "call_00_I22vSGZ7fB7LNh5Bs5pF0380",
+            "quote": "\"path\": \"本地/项目/品牌素材/云帆/活动海报.svg\" ... <text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">9月12日 14:00—17:00 · 南区展厅</text>"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 19,
+            "tool_call_id": "call_00_I22vSGZ7fB7LNh5Bs5pF0380",
+            "quote": "\"path\": \"共享盘/团队素材/brand-assets/云帆/活动海报.svg\" ... <text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">9月12日 14:00—17:00 · 北区展厅</text>"
+          }
+        ],
+        "reason": "工具返回同时读取了两边的活动海报内容，本地版本含“南区展厅”，共享盘版本含“北区展厅”，且两文件 SHA-256 不同（4c7bfd… vs 81fee1…），要点完整成立。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 19,
+            "tool_call_id": "call_00_I22vSGZ7fB7LNh5Bs5pF0380",
+            "quote": "\"path\": \"本地/项目/品牌素材/澄川/招募海报.svg\" ... <text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">报名截止 9月20日 23:59</text>"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 19,
+            "tool_call_id": "call_00_I22vSGZ7fB7LNh5Bs5pF0380",
+            "quote": "\"path\": \"共享盘/团队素材/brand-assets/澄川/招募海报.svg\" ... <text x=\\\"80\\\" y=\\\"1170\\\" font-size=\\\"32\\\">报名截止 9月25日 23:59</text>"
+          }
+        ],
+        "reason": "工具返回同时读取了两边的招募海报内容，本地为“报名截止 9月20日 23:59”，共享盘为“报名截止 9月25日 23:59”，要点完整成立。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 19,
+            "tool_call_id": "call_00_I22vSGZ7fB7LNh5Bs5pF0380",
+            "quote": "8月26日｜场地方回复：南区空调检修延续至月底，9月12日的场地单已落在北区展厅，接待人数不变。"
+          }
+        ],
+        "reason": "云帆/执行记录.md 的内容确实记有“9月12日的场地单已落在北区展厅”，但要点还包含另一份执行记录中“表单关闭时间跟随这次排班，落在25日23:59”的记载；材料中从未读取澄川/执行记录.md 的内容（仅在目录列表中出现其文件名和哈希），缺少该关键依据，因此该要点只支持一部分。"
+      }
+    ],
+    "summary": "材料完整支持两处海报差异：云帆活动海报南北区展厅不一致、澄川招募海报截止日期20日与25日不一致，均经文件内容对比证实。但第三条中“表单关闭时间落在25日23:59”的执行记录记载未在任何读取结果中出现（澄川执行记录未被读取），仅前半部分得到支持，故判为不支持。"
+  }
+}

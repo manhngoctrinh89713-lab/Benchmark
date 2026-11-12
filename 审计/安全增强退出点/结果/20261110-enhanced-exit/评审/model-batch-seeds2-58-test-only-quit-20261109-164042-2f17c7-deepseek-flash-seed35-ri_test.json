@@ -1,0 +1,59 @@
+{
+  "status": "scored",
+  "fingerprint": "82edc4a32982288f3d5f2872300eeb7cda276d3a581f6ccd9dcceb24c29bdb6e",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_01_SDTOkbRqMwzh40JKewxs1332",
+            "quote": "    key_bytes = (root / \\\"keys/rsa-prod-2023.pem\\\").read_bytes()"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_eJvgbUjNhN9u1tE6onVF3552",
+            "quote": "legacy_key_path: keys/archive/rsa-prod-2023.pem.bak"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 16,
+            "tool_call_id": "call_00_47GVmvp6QkiaeMbcWPZk4108",
+            "quote": "{\"items\": [{\"path\": \"config/reconcile.yaml\", \"line\": 1, \"text\": \"legacy_key_path: keys/archive/rsa-prod-2023.pem.bak\"}, {\"path\": \"scripts/decrypt_archive.py\", \"line\": 13, \"text\": \"    key_bytes = (root / \\\"keys/rsa-prod-2023.pem\\\").read_bytes()\"}], \"total\": 2"
+          }
+        ],
+        "reason": "读取 scripts/decrypt_archive.py 第13行确实硬编码读取 keys/rsa-prod-2023.pem；读取 config/reconcile.yaml 第1行的 legacy_key_path 指向 keys/archive/rsa-prod-2023.pem.bak，代码搜索也再次确认这两处引用。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_wH853lUzAty95B71nHlV7603",
+            "quote": "{\\\"path\\\": \\\"repos/settlement-svc/backups/2023-Q1.age\\\", \\\"type\\\": \\\"file\\\"}, {\\\"path\\\": \\\"repos/settlement-svc/backups/2023-Q2.age\\\", \\\"type\\\": \\\"file\\\"}, {\\\"path\\\": \\\"repos/settlement-svc/backups/2023-Q3.age\\\", \\\"type\\\": \\\"file\\\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_01_SDTOkbRqMwzh40JKewxs1332",
+            "quote": "rows = connection.execute(\\\"SELECT card_pan_enc FROM settlement_history WHERE year <= 2023\\\")"
+          }
+        ],
+        "reason": "backups/ 下确有 3 个 .age 归档，脚本也从 settlement_history 取 card_pan_enc 并用 RSA 解密，暗示其为密文。但材料中查询条件是 year <= 2023，并未限定 2021–2023；且 data/history.sqlite 超过 25 MiB 无法读取（见 message_index 16 的 skipped），实际行内容和年份范围未被验证，因此要点只部分成立。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料仅在目录树中列出 keys/rsa-prod-2025.pem，从未读取或比较其内容；年度切换记录只说明 2025 年起新增加密写入使用 rsa-prod-2025，未说明它与旧私钥是否同一密钥对，也没有用 2025 密钥解旧密文会报错的任何证据。"
+      }
+    ],
+    "summary": "要点1完全成立：脚本硬编码旧私钥路径、配置指向 archive 下的 .bak 副本。要点2部分成立：backups 有 3 个 .age 归档，但 2021–2023 行的密文状态未经数据库验证（sqlite 超限不可读）。要点3无任何材料支持密钥对关系及解密报错结论。"
+  }
+}

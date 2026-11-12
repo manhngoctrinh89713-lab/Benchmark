@@ -1,0 +1,29 @@
+{
+  "id": "9ef3f173-1d9f-48d0-9be8-0623929003bc_61aa86ac43cc4dd194de828952b10e5e",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 7,\n          \"tool_call_id\": \"call_3dc3313d0701465f9f872538\",\n          \"quote\": \"正式使用规则\\\\n1. 本券适用于购买门店的标准手冲咖啡，每张兑换一杯，不兑换现金。\\\\n2. 核销截止时间：2027-03-19T23:59:59+08:00。逾期作废，不支持延期。\"\n        }\n      ],\n      \"reason\": \"商品 COF-V（春季活动兑换券）的使用规则明确写明核销截止时间为 2027-03-19T23:59:59+08:00，逾期作废、不支持延期，与要点完全一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有任何工具调用读取或返回 `周年庆采购/活动策划方案.md` 的内容，也未提及活动时间为 2027-03-20 09:00 或 40 份咖啡在活动当天到店核销的安排。虽然订单确实购买了 40 张兑换券（见 message_index 17），但活动时间与核销计划缺乏材料依据，该文件是否存在也无从确认。\"\n    }\n  ],\n  \"summary\": \"要点1由商品 COF-V 的使用规则原文完整支持。要点2涉及的 `周年庆采购/活动策划方案.md` 在整个任务过程中未被读取或引用，其活动时间与当天核销安排均无材料依据，故不支持。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 2 references a file 周年庆采购/活动策划方案.md which is never read in tool results. So unsupported. Key fact 1: supported by the product terms in tool results."
+      }
+    }
+  ],
+  "created": 1794319370,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 470,
+    "prompt_tokens": 7848,
+    "total_tokens": 8318,
+    "completion_tokens_details": {
+      "reasoning_tokens": 44
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    }
+  }
+}

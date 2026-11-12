@@ -1,0 +1,1 @@
+from local_merchant.catalog import register_tools

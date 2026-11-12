@@ -1,0 +1,60 @@
+{
+  "name": "create_release",
+  "description": "创建本地Release，并在真实本地Git中创建缺失的轻量tag；不会推送；已有tag不可移动。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "tag": {
+        "title": "Tag",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "body": {
+        "default": "",
+        "title": "Body",
+        "type": "string"
+      },
+      "target": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Target"
+      },
+      "draft": {
+        "default": false,
+        "title": "Draft",
+        "type": "boolean"
+      },
+      "prerelease": {
+        "default": false,
+        "title": "Prerelease",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "repo_id",
+      "tag",
+      "name"
+    ],
+    "title": "create_releaseArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

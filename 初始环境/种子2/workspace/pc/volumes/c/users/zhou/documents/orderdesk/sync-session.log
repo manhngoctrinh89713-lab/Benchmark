@@ -1,0 +1,6 @@
+2026-11-02T10:02:07+08:00 INFO pid=7316 client=4.8.2 batch=orders-sync-20261102-1002 started
+2026-11-02T10:02:08+08:00 INFO source=华东店铺订单中心 destination=华东仓WMS total=24000 mode=legacy-batch
+2026-11-02T10:07:19+08:00 INFO processed=4800 pending_ack=4800
+2026-11-02T10:12:41+08:00 INFO processed=9630 pending_ack=9630
+2026-11-02T10:17:59+08:00 INFO processed=14620 total=24000 pending_ack=14620 checkpoint=uncommitted
+2026-11-02T10:18:00+08:00 INFO worker=active connection=wms-east-01 phase=send next_sequence=14621

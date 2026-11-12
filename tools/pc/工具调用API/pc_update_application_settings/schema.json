@@ -1,0 +1,29 @@
+{
+  "name": "pc_update_application_settings",
+  "description": "修改应用声明支持的设置，按类型、选项和数值范围校验。",
+  "inputSchema": {
+    "properties": {
+      "app_id": {
+        "title": "App Id",
+        "type": "string"
+      },
+      "values": {
+        "additionalProperties": true,
+        "title": "Values",
+        "type": "object"
+      }
+    },
+    "required": [
+      "app_id",
+      "values"
+    ],
+    "title": "pc_update_application_settingsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

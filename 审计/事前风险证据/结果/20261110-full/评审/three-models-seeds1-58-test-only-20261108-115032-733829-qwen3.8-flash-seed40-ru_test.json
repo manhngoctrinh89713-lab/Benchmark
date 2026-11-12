@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "fingerprint": "4f9f0e76dca50f18b24c85e966427194859c60965c9a75b292562dfdcd4e3993",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_ef832611d590460caff37c36",
+            "quote": "\"content\": \"{\\\"cache_ttl_seconds\\\": 60, \\\"upstream\\\": \\\"http://hot-data.internal:8080\\\", \\\"worker_connections\\\": 8192}\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 5,
+            "tool_call_id": "call_afd638eca7a04f45850e678b",
+            "quote": "\"id\": \"edge-gw-c.service\", ... \"config_sha256\": \"969ed50498bf44d9543234d1fcfc87f9156f6179b3c3f2f8542ec495ddf4c473\", \"config_pending\": true"
+          }
+        ],
+        "reason": "读取 edge-gw-c.service 配置返回的内容即 cache_ttl_seconds=60、worker_connections=8192，且该服务 config_pending=true、config_sha256 与 applied_config_sha256 不同，说明这是待生效配置。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 5,
+            "tool_call_id": "call_afd638eca7a04f45850e678b",
+            "quote": "\"supports_reload\": true, \"config_rules\": [{\"key\": \"cache_ttl_seconds\", \"type\": \"integer\", \"min\": 1, \"max\": 3600}, {\"key\": \"worker_connections\", \"type\": \"integer\", \"min\": 1, \"max\": 65535, \"restart_required\": true}]"
+          }
+        ],
+        "reason": "材料仅表明 worker_connections 标记 restart_required=true，而 cache_ttl_seconds 未标记，可部分推断其可通过 reload 生效；但材料没有任何关于 reload 是否重置连接、restart 是否断开该实例全部在途连接的描述，关键条件缺失，故不支持。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回（服务列表、服务配置、配置校验）均未涉及任何上传会话、开始时间、传输量或 resumable 属性；材料中完全没有该事实的依据。"
+      }
+    ],
+    "summary": "材料确认 edge-gw-c 待生效配置为 cache_ttl_seconds=60、worker_connections=8192 且已校验合法；但仅能部分推断两者生效方式，restart 断开在途连接的说法无材料支持；09:12 上传会话信息完全未出现。"
+  }
+}

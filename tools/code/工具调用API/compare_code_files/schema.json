@@ -1,0 +1,33 @@
+{
+  "name": "compare_code_files",
+  "description": "比较项目中两份代码的文本及校验值。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "source": {
+        "title": "Source",
+        "type": "string"
+      },
+      "destination": {
+        "title": "Destination",
+        "type": "string"
+      }
+    },
+    "required": [
+      "project_id",
+      "source",
+      "destination"
+    ],
+    "title": "compare_code_filesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "repository": "https://github.com/lharries/whatsapp-mcp",
+  "commit": "7d6a06dcdce1f01dfb24f60e1030d5efba9f3b88",
+  "license": "MIT",
+  "source": "公用代码/upstream/lharries__whatsapp-mcp/whatsapp-mcp-server/main.py",
+  "source_sha256": "5c9c59adcab09d6ee0bedfe2e9eb68c3dca47616cb669f096d16f714ad78f3a3",
+  "changes": [
+    "Remove module-level service and transport startup",
+    "Bind whatsapp_* calls to one injected ChatStore",
+    "Use WeChat-style local model; rename chat_jid parameter to chat_id",
+    "2026-11-07: replace historical adapters with generated registration shims and a local chat workbench; preserve upstream provenance for the original interfaces"
+  ],
+  "tools": [
+    {
+      "tool": "search_contacts",
+      "source_lines": [
+        22,
+        29
+      ],
+      "source_function_sha256": "42b4b322f8286216fb1ece34a530c830fff9272efaaab79eef16aa6acfd749df",
+      "output": "工具调用API/search_contacts/tool.py",
+      "output_sha256": "66b8414e1a61f8f6ac0793cfaeedc0546c22693192645ec6780fef7265e6fdc4",
+      "current_implementation": "Generated registration shim; behavior implemented by local_chat mixins"
+    },
+    {
+      "tool": "list_chats",
+      "source_lines": [
+        73,
+        96
+      ],
+      "source_function_sha256": "5cf2f0ce813610969e759098ce7100cc5daccd9fc14b07873c48086605f86e27",
+      "output": "工具调用API/list_chats/tool.py",
+      "output_sha256": "7ec50e35053f966758ab1004ad1d0bda35b5cc10adcff8bdf6e43c52d5b12860",
+      "current_implementation": "Generated registration shim; behavior implemented by local_chat mixins"
+    },
+    {
+      "tool": "get_chat",
+      "source_lines": [
+        99,
+        107
+      ],
+      "source_function_sha256": "b297c01c12e353d5fe59ec081076eafffbb543a48d89d9a70a5a6df4248cdbe0",
+      "output": "工具调用API/get_chat/tool.py",
+      "output_sha256": "fa0545424b4b935b6a2a6cffd013fa467e404d9989d57b3c26e12cd8a62453db",
+      "current_implementation": "Generated registration shim; behavior implemented by local_chat mixins"
+    },
+    {
+      "tool": "get_message_context",
+      "source_lines": [
+        142,
+        155
+      ],
+      "source_function_sha256": "492abc472cf6a17eed87202b00fa29d17cdda13515a50556b2db6e5615891c01",
+      "output": "工具调用API/get_message_context/tool.py",
+      "output_sha256": "17918b7a87e8f0142d3b4ac6a85f475652112cae7bb2428d0d41ca063ef37ed7",
+      "current_implementation": "Generated registration shim; behavior implemented by local_chat mixins"
+    }
+  ],
+  "other_tools": "WeChat-style local adapters; research references include xerlxzx/Wechat-MCP and lw396/wechat-mcp. No copied remote backend.",
+  "persistence": "Adapted from sibling 邮件/公用代码/local_mail/backend.py"
+}

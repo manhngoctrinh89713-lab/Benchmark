@@ -1,0 +1,33 @@
+{
+  "name": "get_message_context",
+  "description": "读取自己可见的指定消息及同会话前后文；before/after 为 0..50，前后文按时间正序，读取不标已读。",
+  "inputSchema": {
+    "properties": {
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      },
+      "before": {
+        "default": 5,
+        "title": "Before",
+        "type": "integer"
+      },
+      "after": {
+        "default": 5,
+        "title": "After",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "message_id"
+    ],
+    "title": "get_message_contextArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

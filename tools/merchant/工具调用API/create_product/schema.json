@@ -1,0 +1,95 @@
+{
+  "name": "create_product",
+  "description": "创建商品及默认规格，支持实物、数字商品和服务。",
+  "inputSchema": {
+    "$defs": {
+      "SalePolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "terms": {
+            "title": "Terms",
+            "type": "string"
+          },
+          "returnable": {
+            "title": "Returnable",
+            "type": "boolean"
+          },
+          "exchangeable": {
+            "title": "Exchangeable",
+            "type": "boolean"
+          },
+          "return_days": {
+            "title": "Return Days",
+            "type": "integer"
+          },
+          "cancellation_allowed": {
+            "title": "Cancellation Allowed",
+            "type": "boolean"
+          },
+          "delivery_countries": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Delivery Countries",
+            "type": "array"
+          }
+        },
+        "title": "SalePolicy",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "unit_amount_minor": {
+        "title": "Unit Amount Minor",
+        "type": "integer"
+      },
+      "stock": {
+        "title": "Stock",
+        "type": "integer"
+      },
+      "kind": {
+        "default": "physical",
+        "title": "Kind",
+        "type": "string"
+      },
+      "description": {
+        "default": "",
+        "title": "Description",
+        "type": "string"
+      },
+      "category": {
+        "default": "",
+        "title": "Category",
+        "type": "string"
+      },
+      "policies": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/SalePolicy"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      }
+    },
+    "required": [
+      "name",
+      "unit_amount_minor",
+      "stock"
+    ],
+    "title": "create_productArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

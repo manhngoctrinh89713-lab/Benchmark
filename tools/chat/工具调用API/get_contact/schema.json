@@ -1,0 +1,23 @@
+{
+  "name": "get_contact",
+  "description": "读取已知用户的可见资料及自己与该用户的好友、拉黑关系、备注和标签。个人备注、公开昵称、群昵称分别保存；不返回对方的私人备注或拉黑名单。",
+  "inputSchema": {
+    "properties": {
+      "user_id": {
+        "title": "User Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "user_id"
+    ],
+    "title": "get_contactArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

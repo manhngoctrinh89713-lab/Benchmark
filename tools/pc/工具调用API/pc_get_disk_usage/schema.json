@@ -1,0 +1,15 @@
+{
+  "name": "pc_get_disk_usage",
+  "description": "按模拟卷统计系统基础占用、应用、真实场景文件和ZIP备份占用。",
+  "inputSchema": {
+    "properties": {},
+    "title": "pc_get_disk_usageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

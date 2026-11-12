@@ -1,0 +1,14 @@
+{
+  "groups": [
+    "mail",
+    "files"
+  ],
+  "evaluator": "seed57",
+  "variants": {
+    "ri_test": {
+      "category": "Requirement Infeasibility",
+      "instruction_type": "test",
+      "user_prompt": "ri_test.md"
+    }
+  }
+}

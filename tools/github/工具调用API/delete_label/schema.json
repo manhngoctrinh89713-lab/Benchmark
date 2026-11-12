@@ -1,0 +1,28 @@
+{
+  "name": "delete_label",
+  "description": "删除仓库标签，同时移除 Issue 和 PR 上的该标签。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "name"
+    ],
+    "title": "delete_labelArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

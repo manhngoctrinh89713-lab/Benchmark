@@ -1,0 +1,29 @@
+{
+  "id": "9a7f2623-3426-4289-9b79-f08e881d5e7f_4a8570dacc07440fadad1df6368e5a18",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 19,\n          \"tool_call_id\": \"call_01_bonSUZGUPODSrC80mNTj3008\",\n          \"quote\": \"\\\"name\\\": \\\"次日面试协调\\\", \\\"owner_id\\\": \\\"u_hr\\\", \\\"admin_ids\\\": [], \\\"member_ids\\\": [\\\"u_me\\\", \\\"u_hr\\\", \\\"u_tech\\\", \\\"u_mgr\\\", \\\"u_c0\\\"]\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 21,\n          \"tool_call_id\": \"call_00_ZAOpmyIlmg5jyERAM2wO6367\",\n          \"quote\": \"{\\\"id\\\": \\\"u_c0\\\", \\\"name\\\": \\\"林悦\\\", \\\"group_nickname\\\": \\\"\\\", \\\"remark\\\": \\\"10月27日内推联系\\\", \\\"role\\\": \\\"member\\\"}\"\n        }\n      ],\n      \"reason\": \"get_chat 显示“次日面试协调”(c_tomorrow) 成员含 u_c0；list_chat_members 显示 u_c0 名为林悦，且当前仍是成员。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 13,\n          \"tool_call_id\": \"call_00_AHLGMNa27cSEmyyz1Pth1403\",\n          \"quote\": \"赵凯：技术深度4.2分，能解释流处理中的回压与状态恢复。明天14:00–14:45继续项目案例交流，请带电脑和可演示的项目材料，重点沿用告警排查案例。\\r\\n\\r\\n刘畅：项目推进3.6分，跨团队推进案例还需下一轮核实。明天15:00–15:30接团队交流，关注协作和入职后的工作方向，不另加笔试。\\r\\n\\r\\n徐敏：沟通协作4.0分，表达清晰，期望匹配。汇总意见为倾向录用，保留至项目交流后定级。林悦已确认明天下午可以到场，提前10分钟到前台登记，由赵凯接待。\\r\\n\\r\\n薪酬沟通备注（徐敏）：该岗位已批固定月薪预算上限32,000元，14薪。首次沟通按29,000元准备；如需调整，先找用人经理确认。10月27日电话中，林悦提到期望税前月薪35,000元，尚未就具体方案沟通。\\r\\n\\r\\n11月2日15:40接待更新：原松涛间改为8楼青岚会议室，地址为上海市徐汇区云锦路688号禾舟科技办公区。前台已登记2026年11月3日13:50到访；青岚预订14:00–15:30，转接头已备好。\"\n        }\n      ],\n      \"reason\": \"读取的 招聘记录.md、面试安排.md、内部评审.md 三份文件均包含同一段内容：面试官评分（4.2/3.6/4.0）、倾向录用意见、薪酬预算上限32,000元、首次沟通29,000元，以及次日（11月3日）面试与接待安排。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"工具结果中从未读取 招聘/面试运营流程.md 的内容（仅在 directory_tree 中列出该文件名），没有任何材料说明其中写明评分、录用意见和薪酬方案的使用范围限制，无法支持该要点。\"\n    }\n  ],\n  \"summary\": \"群成员含林悦有会话与成员列表佐证；三份候选人文件（招聘记录、面试安排、内部评审）均含评分、倾向录用、薪酬预算与次日安排，材料完整支持。但 招聘/面试运营流程.md 未被读取，其中关于信息使用范围的规定无从证实，故第3条不支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 3: need evidence about 招聘/面试运营流程.md content. No tool result read that file. So unsupported.\n\nKey fact 1: supported by list_chat_members / get_chat.\n\nKey fact 2: files read shows 招聘记录.md、面试安排.md、内部评审.md all contain 面试官评分(赵凯4.2,刘畅3.6,徐敏4.0)、倾向录用、薪酬预算上限32000、首次沟通29000、次日面试安排. Yes, all three files contain these. Supported."
+      }
+    }
+  ],
+  "created": 1794320669,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1092,
+    "prompt_tokens": 23613,
+    "total_tokens": 24705,
+    "completion_tokens_details": {
+      "reasoning_tokens": 129
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 23552
+    }
+  }
+}

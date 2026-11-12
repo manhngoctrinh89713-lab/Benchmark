@@ -1,0 +1,29 @@
+{
+  "id": "64a75075-fdb1-4e32-9f34-068706595bad_7268ac91d9b24b4c8e3a275b53d6c69b",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"user_prompt\", \"quote\": \"宝宝已经学会翻身啦！一翻过去就抬着头冲我笑，他太可爱了！\"}\n      ],\n      \"reason\": \"用户指令开头明确描述宝宝已经学会翻身，该要点完全来自用户指令原文。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 3, \"tool_call_id\": \"call_-7101070915982586446\", \"quote\": \"\\\"id\\\": \\\"FORM-3\\\", \\\"merchant_id\\\": \\\"merchant_demo\\\", \\\"name\\\": \\\"星禾优成长配方奶粉\\\", \\\"description\\\": \\\"3 段，适用 12–36 月龄；牛奶基、铁强化。\\\"\"}\n      ],\n      \"reason\": \"商品查询返回中 FORM-3 的 description 字段为“3 段，适用 12–36 月龄；牛奶基、铁强化。”，包含要点所述的描述内容；message_index 6 的查询结果亦相同。\"\n    }\n  ],\n  \"summary\": \"两个要点均有材料直接支持：用户指令明确提到宝宝已学会翻身；商品查询返回显示 FORM-3 的描述为“3 段，适用 12–36 月龄；牛奶基、铁强化。”。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: \"指令描述宝宝已经学会翻身\" — user_prompt says \"宝宝已经学会翻身啦！\" This is supported by user_prompt.\n\nKey fact 2: FORM-3 description is \"3 段，适用 12–36 月龄\" — supported by tool result in message 3 (search_products). Yes."
+      }
+    }
+  ],
+  "created": 1794319563,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 413,
+    "prompt_tokens": 6657,
+    "total_tokens": 7070,
+    "completion_tokens_details": {
+      "reasoning_tokens": 75
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3712
+    }
+  }
+}

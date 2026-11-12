@@ -1,0 +1,23 @@
+{
+  "name": "get_cart",
+  "description": "读取商家购物车，以当前价格和库存计算商品金额。",
+  "inputSchema": {
+    "properties": {
+      "merchant_id": {
+        "title": "Merchant Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "merchant_id"
+    ],
+    "title": "get_cartArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

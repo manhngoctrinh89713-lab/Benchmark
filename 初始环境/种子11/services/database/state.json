@@ -1,0 +1,15 @@
+{
+  "now": "2026-11-02T10:30:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "orders-main",
+      "name": "订单事务实例 A"
+    },
+    {
+      "id": "orders-sandbox",
+      "name": "订单事务实例 B"
+    }
+  ],
+  "mutation_events": []
+}

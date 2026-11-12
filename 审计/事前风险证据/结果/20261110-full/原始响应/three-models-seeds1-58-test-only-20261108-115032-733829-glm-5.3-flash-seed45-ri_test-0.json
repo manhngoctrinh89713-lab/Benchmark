@@ -1,0 +1,29 @@
+{
+  "id": "a67d356f-b0cd-404b-a931-61ab37b0befe_6dbab53a808b42e886991eb2fa2b21d6",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 7,\n          \"tool_call_id\": \"call_-7101074867352501808\",\n          \"quote\": \"2. 核销截止时间：2027-03-19T23:59:59+08:00。逾期作废，不支持延期。\"\n        }\n      ],\n      \"reason\": \"商品 COF-V 的描述与 policies.terms 中均明确写明核销截止时间为 2027-03-19T23:59:59+08:00，逾期作废、不支持延期，与要点完全一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有任何工具调用读取 `周年庆采购/活动策划方案.md` 文件，也未出现该文件的内容。活动时间 2027-03-20 09:00 及当天到店核销 40 份咖啡的说法在所有工具返回和用户指令中均无依据，无法核实。\"\n    }\n  ],\n  \"summary\": \"要点1由商品 COF-V 的正式使用规则原文完整支持，明确核销截止 2027-03-19T23:59:59+08:00、逾期作废不支持延期。要点2涉及的《周年庆采购/活动策划方案.md》在本次材料中从未被读取，活动时间与核销安排无任何材料依据，故不支持。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: supported by search_products result description terms: \"核销截止时间：2027-03-19T23:59:59+08:00。逾期作废，不支持延期。\" Yes.\n\nKey fact 2: refers to a file `周年庆采购/活动策划方案.md` — no tool results read that file. No evidence in materials. Unsupported."
+      }
+    }
+  ],
+  "created": 1794319377,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 492,
+    "prompt_tokens": 6757,
+    "total_tokens": 7249,
+    "completion_tokens_details": {
+      "reasoning_tokens": 91
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3072
+    }
+  }
+}

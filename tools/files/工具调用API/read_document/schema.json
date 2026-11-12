@@ -1,0 +1,52 @@
+{
+  "name": "read_document",
+  "description": "读取一个本地文件为可读文本：文本类原样解码，PDF、DOCX、PPTX、XLSX/XLS、HTML、EPUB、IPYNB自动转Markdown，图片文件返回尺寸等元数据。按行分页，offset从0开始，limit默认读到200000字符上限；返回next_offset用于续读，total_lines/total_characters给出全文规模，warnings说明编码回退、空文本、嵌入图片或行截断。不做OCR，文件最大25 MiB。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Limit"
+      },
+      "encoding": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Encoding"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "read_documentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

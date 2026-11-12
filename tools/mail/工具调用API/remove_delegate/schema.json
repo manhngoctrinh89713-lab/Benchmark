@@ -1,0 +1,40 @@
+{
+  "name": "remove_delegate",
+  "description": "移除指定操作者的邮箱委托，需 manage；不改变邮箱所有者权限。expected_version 使用账户版本。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "actor_id": {
+        "title": "Actor Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "actor_id"
+    ],
+    "title": "remove_delegateArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

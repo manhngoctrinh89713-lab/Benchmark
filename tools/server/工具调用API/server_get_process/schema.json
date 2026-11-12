@@ -1,0 +1,23 @@
+{
+  "name": "server_get_process",
+  "description": "读取场景PID详情、服务关联及资源，包含已终止进程。",
+  "inputSchema": {
+    "properties": {
+      "pid": {
+        "title": "Pid",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "pid"
+    ],
+    "title": "server_get_processArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

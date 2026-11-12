@@ -1,0 +1,23 @@
+{
+  "name": "clear_chat_history",
+  "description": "清空自己在指定会话中当前保留的本地记录，保留群成员身份、其他用户的记录、收藏和工作区已下载文件。后续新消息仍会正常接收。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "clear_chat_historyArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

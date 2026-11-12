@@ -1,0 +1,23 @@
+{
+  "name": "withdraw_aftersale",
+  "description": "撤回待处理的退换货申请。",
+  "inputSchema": {
+    "properties": {
+      "aftersale_id": {
+        "title": "Aftersale Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "aftersale_id"
+    ],
+    "title": "withdraw_aftersaleArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

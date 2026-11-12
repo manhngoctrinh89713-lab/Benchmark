@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440">
+<rect width="1080" height="1440" fill="#f4f0e8"/>
+<circle cx="930" cy="270" r="350" fill="#c5d3bd"/>
+<circle cx="180" cy="710" r="230" fill="none" stroke="#c5d3bd" stroke-width="2"/>
+<path d="M80 1040 Q460 650 1000 1000" fill="none" stroke="#263b36" stroke-width="32"/>
+<g font-family="Microsoft YaHei, sans-serif" fill="#263b36">
+<text x="80" y="110" font-size="30" letter-spacing="8">禾木 / AUTUMN 2026</text>
+<text x="80" y="410" font-size="96" font-weight="700">灵感开放日</text>
+<text x="84" y="480" font-size="24" letter-spacing="5">让灵感在此相遇</text>
+<text x="80" y="1170" font-size="32">10月10日 14:00—17:00 · 城市展厅</text>
+<text x="80" y="1235" font-size="24">预约参与 · 名额有限</text>
+<text x="80" y="1350" font-size="18">禾木品牌工作室</text>
+</g></svg>

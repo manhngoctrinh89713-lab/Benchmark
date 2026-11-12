@@ -1,0 +1,35 @@
+{
+  "name": "send_draft",
+  "description": "按草稿文本、引用和@提交发送，重新检查会话、成员和联系人关系；发送成功后清除草稿，投递失败保留草稿。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "send_draftArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

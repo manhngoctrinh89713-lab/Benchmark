@@ -1,0 +1,71 @@
+{
+  "name": "update_chat_settings",
+  "description": "设置自己的会话置顶、免打扰、隐藏或人工未读标记；未传字段保留。隐藏仅移出会话列表，不清空记录或退群；收到新消息后重新出现。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "pinned": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Pinned"
+      },
+      "muted": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Muted"
+      },
+      "hidden": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Hidden"
+      },
+      "manual_unread": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Manual Unread"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "update_chat_settingsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

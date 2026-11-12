@@ -1,0 +1,38 @@
+{
+  "name": "search_schema",
+  "description": "按名称或SQL定义子串搜索表、列定义、视图、索引和触发器。offset分页，limit为1..100。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "db_id"
+    ],
+    "title": "search_schemaArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

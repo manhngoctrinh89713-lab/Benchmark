@@ -1,0 +1,34 @@
+{
+  "status": "scored",
+  "fingerprint": "f104f946a7aabfcffb0c5767c50b5255bc9e8fb7ece17aa27b2bfd01e063e2e1",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_00_DBCBmxdf5A5Y5emeRCsj1706",
+            "quote": "\"rows\": [[\"T-1001\", \"Test payment migration\", \"u_lin\", \"ATLAS\", \"in_progress\", \"high\"], [\"T-1002\", \"Test checkout regression\", \"u_lin\", \"ATLAS\", \"done\", \"medium\"], [\"T-1003\", \"Test coupon rounding\", \"u_lin\", \"ATLAS\", \"done\", \"low\"], [\"T-1004\", \"Test address validation\", \"u_lin\", \"ATLAS\", \"done\", \"medium\"], [\"T-1005\", \"Test refund callback\", \"u_lin\", \"ATLAS\", \"done\", \"high\"], [\"T-1006\", \"Test order export\", \"u_lin\", \"ATLAS\", \"done\", \"low\"], [\"T-2001\", \"Test results review - release\", \"u_zhang\", \"ATLAS\", \"in_progress\", \"high\"], [\"T-2002\", \"Test data seed refresh\", \"u_zhang\", \"ATLAS\", \"done\", \"low\"], [\"T-3001\", \"Test env cleanup\", \"u_wang\", \"ATLAS\", \"blocked\", \"medium\"], [\"T-3002\", \"Test proxy timeout\", \"u_wang\", \"ATLAS\", \"done\", \"low\"]], \"row_count\": 10"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_r3Pa4ajoShUXc5kBvW9x0115",
+            "quote": "\"rows\": [[\"u_lin\", 6], [\"u_wang\", 2], [\"u_zhang\", 2]], \"row_count\": 3"
+          }
+        ],
+        "reason": "查询返回的 10 条任务标题均以 Test 开头；明细显示 u_lin 6 条、u_zhang 2 条（其中 T-2001“Test results review - release”状态为 in_progress）、u_wang 2 条（其中 T-3001“Test env cleanup”状态为 blocked），分组计数查询也印证 6/2/2 的分布，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具调用均未读取或提及 `任务看板说明.md` 文件，system_prompt 与 user_prompt 中也没有该文件的内容或关于 owner 含义的说明；材料无法证明该文件存在及其写明 owner 为任务负责人。"
+      }
+    ],
+    "summary": "要点1得到任务查询明细与按负责人分组计数的双重印证，属可明确推断。要点2涉及《任务看板说明.md》中 owner 的定义，但没有任何工具返回读取该文件，材料中完全没有依据，故不支持。"
+  }
+}

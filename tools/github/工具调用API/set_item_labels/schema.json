@@ -1,0 +1,41 @@
+{
+  "name": "set_item_labels",
+  "description": "替换 Issue 或 PR 上的标签，空列表清空。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "kind": {
+        "title": "Kind",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "labels": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Labels",
+        "type": "array"
+      }
+    },
+    "required": [
+      "repo_id",
+      "kind",
+      "number",
+      "labels"
+    ],
+    "title": "set_item_labelsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

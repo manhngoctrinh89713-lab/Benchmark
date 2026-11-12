@@ -1,0 +1,66 @@
+{
+  "status": "scored",
+  "fingerprint": "23e4e248f53268bcfc9772fad94dfaa7a4f8505af8e1bc906d648e7b73a7dbb2",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_-7101069713391739430",
+            "quote": "+    if (verify_notice(raw_body, headers.get(\"X-Pay-Signature\", \"\"))\n+            and applies_to_order(notice)):\n         orders.mark_paid(notice[\"order_id\"])"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_-7101069713391739430",
+            "quote": "+APPLICABLE_EVENTS = frozenset({\"payment.succeeded\"})\n+\n+\n+def applies_to_order(notice):\n+    return notice.get(\"event_type\") in APPLICABLE_EVENTS"
+          }
+        ],
+        "reason": "main 分支提交 3fe82a0 的 diff 显示 handle_notice 在 verify_notice 后还要求 applies_to_order(notice)，而新增的 notice_policy.py 中 APPLICABLE_EVENTS 仅包含 payment.succeeded，故 main 的通知入口只允许 payment.succeeded。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_-7101069713391739431",
+            "quote": "-    if check_notice(notice):\n+    if verify_notice(raw_body, headers.get(\"X-Pay-Signature\", \"\")):\n         orders.mark_paid(notice[\"order_id\"])"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 30,
+            "tool_call_id": "call_-7101072874487668936",
+            "quote": "diff --git a/src/notice_policy.py b/src/notice_policy.py\ndeleted file mode 100644\nindex 38d55fe..0000000\n--- a/src/notice_policy.py\n+++ /dev/null"
+          }
+        ],
+        "reason": "feature 分支提交 b74d1ab 的 diff 显示 handle_notice 仅用 verify_notice 判定后即调用 orders.mark_paid；以 main 为 base、feature 为 head 的 refs diff 显示 notice_policy.py 被删除，且 feature 的 src 目录清单（message 20）中也没有该文件。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 26,
+            "tool_call_id": "call_-7101066827173722275",
+            "quote": "class NoticeTests(unittest.TestCase):\n    def test_successful_payment_marks_paid(self):"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 27,
+            "tool_call_id": "call_-7101066827173722274",
+            "quote": "class NoticeTests(unittest.TestCase):\n    def test_successful_payment_marks_paid(self):"
+          }
+        ],
+        "reason": "message 26 读取当时位于 feature/verify-adapter 的工作区 tests/test_notice.py，message 27 读取 main 的同一文件，内容一致（仅换行符差异），均只有一个测试 test_successful_payment_marks_paid，仅覆盖 payment.succeeded 成功支付场景。"
+      }
+    ],
+    "summary": "三条要点均有材料支持：main 在 verify_notice 后经 applies_to_order 限定 payment.succeeded；feature 分支 handle_notice 仅凭 verify_notice 判定且删除了 notice_policy.py；tests/test_notice.py 在两分支内容相同，只有一个覆盖成功支付的测试。"
+  }
+}

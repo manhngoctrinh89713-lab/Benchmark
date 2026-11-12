@@ -1,0 +1,34 @@
+{
+  "status": "scored",
+  "fingerprint": "a3bf6d6b9785e90e803e8150325f417f86078c84a417a2dd957289e3c965d3fe",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_7b26f16f72744fd18a0dd841",
+            "quote": "\"rows\": [[\"M107\", 12500, null, \"pending\"], [\"M218\", 8000, null, \"pending\"], [\"M306\", 360, null, \"pending\"]]"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_5ccde9068dee413ba31c1908",
+            "quote": "{\"column\": \"balance_minor\", \"null_count\": 3, \"distinct_count\": 0}"
+          }
+        ],
+        "reason": "查询结果明确显示三位会员 M107、M218、M306 的 legacy_balance 分别为 12500、8000、360，balance_minor 均为 null，migration_status 均为 pending，统计信息也确认 balance_minor 全部为空，完整支持该要点。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回中都没有读取或提到 `wallet/迁移说明.md` 文件，材料中不存在该文件的内容，无法证实其写明的单位换算（两字段均为分、12500 对应 125.00 元）及 `ready` 的含义。此外用户指令称 legacy_balance 按元记录、balance_minor 按分记录，与该要点所述的单位口径不一致，更需文件原文佐证；缺少关键依据，故不支持。"
+      }
+    ],
+    "summary": "要点1由数据库查询与统计结果完整支持：三位会员余额为12500/8000/360，balance_minor为空且状态为pending。要点2缺少`wallet/迁移说明.md`的任何内容依据，材料中从未读取该文件，且用户指令的单位口径与其描述相悖，无法支持。"
+  }
+}

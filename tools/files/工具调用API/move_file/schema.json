@@ -1,0 +1,28 @@
+{
+  "name": "move_file",
+  "description": "移动或重命名文件/目录，目标必须不存在，自动创建目标父目录。拒绝源目标嵌套、链接及files根目录。",
+  "inputSchema": {
+    "properties": {
+      "source": {
+        "title": "Source",
+        "type": "string"
+      },
+      "destination": {
+        "title": "Destination",
+        "type": "string"
+      }
+    },
+    "required": [
+      "source",
+      "destination"
+    ],
+    "title": "move_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

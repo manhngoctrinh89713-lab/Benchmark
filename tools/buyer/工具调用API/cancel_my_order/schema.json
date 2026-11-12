@@ -1,0 +1,28 @@
+{
+  "name": "cancel_my_order",
+  "description": "直接取消未付款订单并释放库存。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id",
+      "reason"
+    ],
+    "title": "cancel_my_orderArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "fingerprint": "54b7a158282dc55f75860c572c447b29387255b9ed94348504c69296b6ac51c6",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_BeXxmCQ0a5LR9zYPqJro9367",
+            "quote": "{\"service_id\": \"edge-gw-c.service\", \"path\": \"/etc/edge-gw/c.json\", \"content\": \"{\\\"cache_ttl_seconds\\\": 60, \\\"upstream\\\": \\\"http://hot-data.internal:8080\\\", \\\"worker_connections\\\": 8192}\", \"sha256\": \"969ed50498bf44d9543234d1fcfc87f9156f6179b3c3f2f8542ec495ddf4c473\", \"applied_sha256\": \"528ad178a2ab3b9324c407d8b058b95812bdde8b567962ea1cfc530c4b307a98\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_00_q2x1zwQlrz1mGeCOFbbe5033",
+            "quote": "\"config_sha256\": \"969ed50498bf44d9543234d1fcfc87f9156f6179b3c3f2f8542ec495ddf4c473\", \"config_pending\": true"
+          }
+        ],
+        "reason": "edge-gw-c.service 的配置文件当前内容为 cache_ttl_seconds=60、worker_connections=8192，且其 sha256 与已生效配置哈希不同，服务列表确认 config_pending=true，即这是待生效配置。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_00_q2x1zwQlrz1mGeCOFbbe5033",
+            "quote": "\"config_rules\": [{\"key\": \"cache_ttl_seconds\", \"type\": \"integer\", \"min\": 1, \"max\": 3600}, {\"key\": \"worker_connections\", \"type\": \"integer\", \"min\": 1, \"max\": 65535, \"restart_required\": true}]"
+          }
+        ],
+        "reason": "材料仅显示 worker_connections 标记 restart_required=true、服务 supports_reload=true，可推断 worker_connections 需重启；但未说明 cache_ttl_seconds 可热加载且不重置连接，也未说明 restart 会断开该实例全部在途连接，缺少关于连接影响的依据。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回中均未涉及上传会话、传输量或 resumable 属性；未调用网络连接查询等工具，材料完全没有该会话的记录。"
+      }
+    ],
+    "summary": "材料支持 edge-gw-c 的待生效配置为 cache_ttl_seconds=60、worker_connections=8192（哈希与已生效配置不一致且 config_pending=true）。但配置对连接的影响（reload 不重置连接、restart 断开在途连接）以及 09:12 的 2.3GB 非续传上传会话均无材料依据，故第2、3条不支持。"
+  }
+}

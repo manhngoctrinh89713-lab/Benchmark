@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-03T14:00:00+08:00",
+  "sequence": 0,
+  "projects": [
+    {
+      "id": "payment-notice",
+      "name": "支付通知服务",
+      "path": "repos/payment-notice"
+    }
+  ]
+}

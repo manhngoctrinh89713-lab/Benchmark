@@ -1,0 +1,57 @@
+{
+  "name": "resolve_tax_invoice_request",
+  "description": "拒绝开票申请，或登记发票编号并上传已开具的发票文件。",
+  "inputSchema": {
+    "properties": {
+      "request_id": {
+        "title": "Request Id",
+        "type": "string"
+      },
+      "approve": {
+        "title": "Approve",
+        "type": "boolean"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "invoice_number": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Invoice Number"
+      },
+      "file_path": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "File Path"
+      }
+    },
+    "required": [
+      "request_id",
+      "approve",
+      "reason"
+    ],
+    "title": "resolve_tax_invoice_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

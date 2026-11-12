@@ -1,0 +1,23 @@
+{
+  "name": "pc_launch_application",
+  "description": "为已安装应用创建本地模拟进程；不执行其命令或程序。",
+  "inputSchema": {
+    "properties": {
+      "app_id": {
+        "title": "App Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "app_id"
+    ],
+    "title": "pc_launch_applicationArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

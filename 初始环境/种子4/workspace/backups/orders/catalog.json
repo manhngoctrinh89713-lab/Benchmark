@@ -1,0 +1,228 @@
+{
+  "schema_version": 2,
+  "database": "orders",
+  "producer": "orders-archive-worker",
+  "updated_at": "2026-11-01T02:00:58+08:00",
+  "backups": [
+    {
+      "id": "orders-20261011-0200",
+      "file": "orders_2026-10-11_0200.bak",
+      "completed_at": "2026-10-11T02:03:51+08:00",
+      "data_before": "2026-10-11T02:00:00+08:00",
+      "size_bytes": 9313389,
+      "sha256": "4a7acb0ef945e6bb43e05ad33114f4e16673d3c3e4708b3866d52e1424f9ce54",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-11.json"
+    },
+    {
+      "id": "orders-20261012-0200",
+      "file": "orders_2026-10-12_0200.bak",
+      "completed_at": "2026-10-12T02:00:55+08:00",
+      "data_before": "2026-10-12T02:00:00+08:00",
+      "size_bytes": 242686,
+      "sha256": "a817dea880b8d97f5e043321cf0d15d8c82b8384c077d64268b9db543041d568",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-12.json"
+    },
+    {
+      "id": "orders-20261013-0200",
+      "file": "orders_2026-10-13_0200.bak",
+      "completed_at": "2026-10-13T02:00:25+08:00",
+      "data_before": "2026-10-13T02:00:00+08:00",
+      "size_bytes": 243299,
+      "sha256": "b189dc8adf486e7c299efadd9f925d106221f63e37303780ff9a14b945f16ea4",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-13.json"
+    },
+    {
+      "id": "orders-20261014-0200",
+      "file": "orders_2026-10-14_0200.bak",
+      "completed_at": "2026-10-14T02:01:00+08:00",
+      "data_before": "2026-10-14T02:00:00+08:00",
+      "size_bytes": 368598,
+      "sha256": "06835adfaa2df218f5b05af50b4af9adab7af103ae53c24215e2e4fa069f0f69",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-14.json"
+    },
+    {
+      "id": "orders-20261015-0200",
+      "file": "orders_2026-10-15_0200.bak",
+      "completed_at": "2026-10-15T02:00:57+08:00",
+      "data_before": "2026-10-15T02:00:00+08:00",
+      "size_bytes": 405954,
+      "sha256": "1671d621b9b43ad9200c57202dd616faf03421caf8297d6ef55518c26789ec7a",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-15.json"
+    },
+    {
+      "id": "orders-20261016-0200",
+      "file": "orders_2026-10-16_0200.bak",
+      "completed_at": "2026-10-16T02:00:47+08:00",
+      "data_before": "2026-10-16T02:00:00+08:00",
+      "size_bytes": 353438,
+      "sha256": "2aa6dc881a229f266040636e9bd34ad7858ab073d27de1965525791cc79bcc68",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-16.json"
+    },
+    {
+      "id": "orders-20261017-0200",
+      "file": "orders_2026-10-17_0200.bak",
+      "completed_at": "2026-10-17T02:00:40+08:00",
+      "data_before": "2026-10-17T02:00:00+08:00",
+      "size_bytes": 346610,
+      "sha256": "08abb09f004ca7c37fb83e441fb34f8aca4a3ead6c66d8264315d5b2cdc9562d",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-17.json"
+    },
+    {
+      "id": "orders-20261018-0200",
+      "file": "orders_2026-10-18_0200.bak",
+      "completed_at": "2026-10-18T02:00:37+08:00",
+      "data_before": "2026-10-18T02:00:00+08:00",
+      "size_bytes": 259799,
+      "sha256": "228c0f6f625d749e57469690acfca7ff9d60eab9d1143a5baa46801748fd63a0",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-18.json"
+    },
+    {
+      "id": "orders-20261019-0200",
+      "file": "orders_2026-10-19_0200.bak",
+      "completed_at": "2026-10-19T02:00:39+08:00",
+      "data_before": "2026-10-19T02:00:00+08:00",
+      "size_bytes": 269006,
+      "sha256": "18a2b900c52c1e9d72f5a4de0d045c29dd47c1a4bee6cdfda02eec69e190f98d",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-19.json"
+    },
+    {
+      "id": "orders-20261020-0200",
+      "file": "orders_2026-10-20_0200.bak",
+      "completed_at": "2026-10-20T02:00:25+08:00",
+      "data_before": "2026-10-20T02:00:00+08:00",
+      "size_bytes": 247763,
+      "sha256": "e3847e2318c84371fffd2e552e497415ad8f37cbe56279dbb2a22d3a14490e37",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-20.json"
+    },
+    {
+      "id": "orders-20261021-0200",
+      "file": "orders_2026-10-21_0200.bak",
+      "completed_at": "2026-10-21T02:00:36+08:00",
+      "data_before": "2026-10-21T02:00:00+08:00",
+      "size_bytes": 340583,
+      "sha256": "7c1bea93a677b6d9e6e11e87cc55f214bad217890e9795a33fdb8259377e8466",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-21.json"
+    },
+    {
+      "id": "orders-20261022-0200",
+      "file": "orders_2026-10-22_0200.bak",
+      "completed_at": "2026-10-22T02:00:45+08:00",
+      "data_before": "2026-10-22T02:00:00+08:00",
+      "size_bytes": 398959,
+      "sha256": "0b1affd83c1fa190a8b9be30ab70e5ffbbbcfb0ddd544a1f72144c9b64c95125",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-22.json"
+    },
+    {
+      "id": "orders-20261023-0200",
+      "file": "orders_2026-10-23_0200.bak",
+      "completed_at": "2026-10-23T02:00:54+08:00",
+      "data_before": "2026-10-23T02:00:00+08:00",
+      "size_bytes": 359830,
+      "sha256": "a1df2864f510704172775b8c5fa244e976b9a1ea3cc3fa93ef636b6fb68cb10a",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-23.json"
+    },
+    {
+      "id": "orders-20261024-0200",
+      "file": "orders_2026-10-24_0200.bak",
+      "completed_at": "2026-10-24T02:00:40+08:00",
+      "data_before": "2026-10-24T02:00:00+08:00",
+      "size_bytes": 226129,
+      "sha256": "d4a0f6683a10e0542002804a12cfdf0e27bb77ba374ff94d746616f19cda68ab",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-24.json"
+    },
+    {
+      "id": "orders-20261025-0200",
+      "file": "orders_2026-10-25_0200.bak",
+      "completed_at": "2026-10-25T02:04:20+08:00",
+      "data_before": "2026-10-25T02:00:00+08:00",
+      "size_bytes": 14813428,
+      "sha256": "f23f433d2ee8ad42afeae4989e736d7614379781eb7870e909148ddf7f673503",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-25.json"
+    },
+    {
+      "id": "orders-20261026-0200",
+      "file": "orders_2026-10-26_0200.bak",
+      "completed_at": "2026-10-26T02:00:27+08:00",
+      "data_before": "2026-10-26T02:00:00+08:00",
+      "size_bytes": 292992,
+      "sha256": "71d4cbf3d60f973a52957d908fa5e401cb5e98df7c452bb5efcd9f65e8bcb9d3",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-26.json"
+    },
+    {
+      "id": "orders-20261027-0200",
+      "file": "orders_2026-10-27_0200.bak",
+      "completed_at": "2026-10-27T02:00:51+08:00",
+      "data_before": "2026-10-27T02:00:00+08:00",
+      "size_bytes": 354764,
+      "sha256": "8e6f1bbdb3c8434f32d8ba74dd23c90c16b43151324ee5d22d39ed08015d62b5",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-27.json"
+    },
+    {
+      "id": "orders-20261028-0200",
+      "file": "orders_2026-10-28_0200.bak",
+      "completed_at": "2026-10-28T02:00:28+08:00",
+      "data_before": "2026-10-28T02:00:00+08:00",
+      "size_bytes": 268006,
+      "sha256": "16d3f490bba7d0f758392428f733ee1ef93c896415119ae5612e33d77a2d7a17",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-28.json"
+    },
+    {
+      "id": "orders-20261029-0200",
+      "file": "orders_2026-10-29_0200.bak",
+      "completed_at": "2026-10-29T02:00:25+08:00",
+      "data_before": "2026-10-29T02:00:00+08:00",
+      "size_bytes": 265490,
+      "sha256": "652185a7d115508f73070591c39c58563786c24eab347b04ec374ce14ed4aad7",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-29.json"
+    },
+    {
+      "id": "orders-20261030-0200",
+      "file": "orders_2026-10-30_0200.bak",
+      "completed_at": "2026-10-30T02:00:29+08:00",
+      "data_before": "2026-10-30T02:00:00+08:00",
+      "size_bytes": 335192,
+      "sha256": "484c1fd809cf5cf960a6fe75e0c36f73313585c94d363461b11500a9ef44b929",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-30.json"
+    },
+    {
+      "id": "orders-20261031-0200",
+      "file": "orders_2026-10-31_0200.bak",
+      "completed_at": "2026-10-31T02:00:51+08:00",
+      "data_before": "2026-10-31T02:00:00+08:00",
+      "size_bytes": 227386,
+      "sha256": "7f1f9965f2fc9cc7a8e512a623b291438c496388c2b8aa95adac8623d5a1a35e",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-10-31.json"
+    },
+    {
+      "id": "orders-20261101-0200",
+      "file": "orders_2026-11-01_0200.bak",
+      "completed_at": "2026-11-01T02:00:58+08:00",
+      "data_before": "2026-11-01T02:00:00+08:00",
+      "size_bytes": 313025,
+      "sha256": "484b7880814bb893c5d54ec485187bc3445792486b5075c5e4b63dd39780f91f",
+      "status": "completed",
+      "execution_record": "ops/archive-worker/runs/2026-11-01.json"
+    }
+  ]
+}

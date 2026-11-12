@@ -1,0 +1,49 @@
+{
+  "name": "forward_messages",
+  "description": "选择同一会话的最多 100 条消息，按原时间顺序逐条或合并转发到最多 20 个目标；merged=true 生成聊天记录消息。目标逐项返回状态，某目标失败不回滚其他成功发送。源内容无效时在发送前报错；附件合计最多 50 MiB，合并嵌套最多 3 层。",
+  "inputSchema": {
+    "properties": {
+      "source_chat_id": {
+        "title": "Source Chat Id",
+        "type": "string"
+      },
+      "message_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Message Ids",
+        "type": "array"
+      },
+      "target_chat_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Target Chat Ids",
+        "type": "array"
+      },
+      "merged": {
+        "default": false,
+        "title": "Merged",
+        "type": "boolean"
+      },
+      "title": {
+        "default": "聊天记录",
+        "title": "Title",
+        "type": "string"
+      }
+    },
+    "required": [
+      "source_chat_id",
+      "message_ids",
+      "target_chat_ids"
+    ],
+    "title": "forward_messagesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

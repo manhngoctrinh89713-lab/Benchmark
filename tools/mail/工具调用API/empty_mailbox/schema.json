@@ -1,0 +1,33 @@
+{
+  "name": "empty_mailbox",
+  "description": "清空指定文件夹当前邮件，默认移入 Trash；permanent=true 永久删除。不删除文件夹或子文件夹，不处理独立草稿。最多 500 封，逐项返回结果。清空 Trash 时须使用 permanent=true。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "mailbox": {
+        "title": "Mailbox",
+        "type": "string"
+      },
+      "permanent": {
+        "default": false,
+        "title": "Permanent",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "account_name",
+      "mailbox"
+    ],
+    "title": "empty_mailboxArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

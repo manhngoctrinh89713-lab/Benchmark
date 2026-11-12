@@ -1,0 +1,15 @@
+{
+  "name": "get_sales_summary",
+  "description": "按货币汇总成功支付、已到账退款和净收入。",
+  "inputSchema": {
+    "properties": {},
+    "title": "get_sales_summaryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

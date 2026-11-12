@@ -1,0 +1,57 @@
+{
+  "name": "git_rebase",
+  "description": "变基当前本地分支。operation=start/continue/skip/abort；start需upstream，可用onto指定新基线，rebase_merges=true重建合并拓扑，默认线性重放。开始前须工作区干净且无进行中操作。冲突返回conflicts，编辑文件并git_add后continue；skip会丢弃当前重放提交，abort恢复变基前状态。不会自动fetch或push。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "operation": {
+        "default": "start",
+        "title": "Operation",
+        "type": "string"
+      },
+      "upstream": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Upstream"
+      },
+      "onto": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Onto"
+      },
+      "rebase_merges": {
+        "default": false,
+        "title": "Rebase Merges",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_rebaseArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

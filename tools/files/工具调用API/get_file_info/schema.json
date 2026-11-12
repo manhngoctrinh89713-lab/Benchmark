@@ -1,0 +1,23 @@
+{
+  "name": "get_file_info",
+  "description": "读取文件或目录元数据；文件返回原字节SHA-256。文件最大25 MiB。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "get_file_infoArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

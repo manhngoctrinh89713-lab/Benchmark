@@ -1,0 +1,38 @@
+{
+  "name": "list_code_files",
+  "description": "分页列出项目文件；pattern为区分大小写的相对路径glob，跳过Git、虚拟环境和依赖目录。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "pattern": {
+        "default": "*",
+        "title": "Pattern",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 50,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "project_id"
+    ],
+    "title": "list_code_filesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

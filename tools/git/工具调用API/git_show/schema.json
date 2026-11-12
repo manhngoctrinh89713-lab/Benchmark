@@ -1,0 +1,28 @@
+{
+  "name": "git_show",
+  "description": "查看指定提交内容及差异。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "revision": {
+        "default": "HEAD",
+        "title": "Revision",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_showArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "now": "2026-11-01T09:00:00+08:00",
+  "sequence": 0,
+  "projects": [
+    {
+      "id": "python_demo",
+      "name": "Python计算示例",
+      "path": "projects/python_demo"
+    },
+    {
+      "id": "web_demo",
+      "name": "多语言代码示例",
+      "path": "projects/web_demo"
+    }
+  ]
+}

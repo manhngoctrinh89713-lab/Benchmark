@@ -1,0 +1,40 @@
+{
+  "name": "create_mailbox",
+  "description": "创建单个自定义文件夹；parent_id 可指定父文件夹 ID，未指定时建在根目录。name 为不含斜杠的单个名称。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "parent_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Parent Id"
+      }
+    },
+    "required": [
+      "account_name",
+      "name"
+    ],
+    "title": "create_mailboxArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

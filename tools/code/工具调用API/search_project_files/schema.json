@@ -1,0 +1,50 @@
+{
+  "name": "search_project_files",
+  "description": "按相对路径通配符和扩展名查询项目文件。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "pattern": {
+        "title": "Pattern",
+        "type": "string"
+      },
+      "extension": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Extension"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 50,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "project_id",
+      "pattern"
+    ],
+    "title": "search_project_filesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "list_relationships",
+  "description": "列出表之间的外键关系及更新、删除行为。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id"
+    ],
+    "title": "list_relationshipsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

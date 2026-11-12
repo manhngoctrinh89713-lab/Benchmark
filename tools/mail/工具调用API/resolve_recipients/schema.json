@@ -1,0 +1,26 @@
+{
+  "name": "resolve_recipients",
+  "description": "解析明确邮箱地址、contact:<联系人ID>、group:<群组ID> 并去重；多地址联系人使用默认地址。个人组立即展开，组织组保留群组地址并按权限显示成员；外部地址的目录状态为 unknown。",
+  "inputSchema": {
+    "properties": {
+      "recipients": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Recipients",
+        "type": "array"
+      }
+    },
+    "required": [
+      "recipients"
+    ],
+    "title": "resolve_recipientsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

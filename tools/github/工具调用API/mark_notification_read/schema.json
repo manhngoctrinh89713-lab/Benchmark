@@ -1,0 +1,23 @@
+{
+  "name": "mark_notification_read",
+  "description": "将属于当前用户的本地通知标记为已读。",
+  "inputSchema": {
+    "properties": {
+      "notification_id": {
+        "title": "Notification Id",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "notification_id"
+    ],
+    "title": "mark_notification_readArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

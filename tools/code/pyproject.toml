@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-code"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["mcp>=1.23,<2", "filelock>=3.20,<5", "tree-sitter==0.25.2", "tree-sitter-language-pack==0.13.0", "jedi==0.19.2"]
+
+[tool.setuptools]
+packages = ["local_code", "local_code.api", "local_code.api.apply_workspace_edit", "local_code.api.compare_code_files", "local_code.api.create_code_file", "local_code.api.delete_code_file", "local_code.api.diagnose_project", "local_code.api.find_references", "local_code.api.find_symbol", "local_code.api.get_changes", "local_code.api.get_diagnostics", "local_code.api.get_project_info", "local_code.api.get_symbols_overview", "local_code.api.insert_relative_to_symbol", "local_code.api.list_code_files", "local_code.api.list_projects", "local_code.api.move_code_file", "local_code.api.read_code", "local_code.api.rename_symbol", "local_code.api.replace_lines", "local_code.api.replace_symbol_body", "local_code.api.replace_text", "local_code.api.search_code", "local_code.api.search_project_files"]
+license-files = ["公用代码/licenses/*.txt"]
+
+[tool.setuptools.package-dir]
+local_code = "公用代码/local_code"
+"local_code.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+local_code = ["EXTRACTION.json", "symbol_queries.json"]
+"local_code.api" = ["*/schema.json"]

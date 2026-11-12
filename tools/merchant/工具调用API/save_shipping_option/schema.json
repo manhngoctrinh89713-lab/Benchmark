@@ -1,0 +1,68 @@
+{
+  "name": "save_shipping_option",
+  "description": "新增或修改配送方式、适用国家、费用和预计工作日时效。",
+  "inputSchema": {
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "amount_minor": {
+        "title": "Amount Minor",
+        "type": "integer"
+      },
+      "countries": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Countries",
+        "type": "array"
+      },
+      "min_days": {
+        "title": "Min Days",
+        "type": "integer"
+      },
+      "max_days": {
+        "title": "Max Days",
+        "type": "integer"
+      },
+      "option_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Option Id"
+      },
+      "active": {
+        "default": true,
+        "title": "Active",
+        "type": "boolean"
+      },
+      "make_default": {
+        "default": false,
+        "title": "Make Default",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "name",
+      "amount_minor",
+      "countries",
+      "min_days",
+      "max_days"
+    ],
+    "title": "save_shipping_optionArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "status": "scored",
+  "fingerprint": "c310fbd82c9433a4f35af598af247ba308637c4363ad93030f6433e49ea09917",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 15,
+            "tool_call_id": "call_e712e987751b4584bbcee490",
+            "quote": "\"rows\": [[\"SLEEP-BAG\", \"DC\", 12], [\"SLEEP-BAG\", \"Forge Peak\", 25], [\"TENT-24\", \"DC\", 0], [\"TENT-24\", \"Forge Peak\", 40], [\"TENT-48\", \"DC\", 6], [\"TENT-48\", \"Forge Peak\", 18]]"
+          }
+        ],
+        "reason": "inventory 查询结果明确显示 TENT-24 在 Forge Peak 的 qty 为 40。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_01e5105e48224f9f9b464988",
+            "quote": "库存口径：inventory.qty 表示各仓库当前仓内现货，不含已发出的在途货物。"
+          }
+        ],
+        "reason": "补货/业务交接.md 原文直接说明了 inventory.qty 的口径。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_24c48e140240432e94503d0f",
+            "quote": "[\"xfer_7003\", \"TENT-24\", 24, \"Forge Peak\", \"DC\", \"in_transit\", \"Nina Park\"]"
+          }
+        ],
+        "reason": "transfers 表中 xfer_7003 为 TENT-24、数量 24、from_loc Forge Peak、to_loc DC、状态 in_transit。"
+      },
+      {
+        "id": 4,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_01e5105e48224f9f9b464988",
+            "quote": "Boreal 上市备货需求：DC 需备齐 24 顶 TENT-24，当前 DC 现货为 0 顶。"
+          }
+        ],
+        "reason": "补货/上市缺口.md 原文记录了 DC 需求 24 顶及当前现货 0 顶，与 inventory 查询中 TENT-24@DC 为 0 一致。"
+      },
+      {
+        "id": 5,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_01e5105e48224f9f9b464988",
+            "quote": "Nina Park、Tara Nguyen 负责调拨创建；Elena 负责缺口跟进与催办。"
+          }
+        ],
+        "reason": "补货/业务交接.md 明确写明 Nina Park、Tara Nguyen 负责调拨创建。"
+      }
+    ],
+    "summary": "五条要点均有材料直接支持：inventory 查询确认 Forge Peak 有 40 顶 TENT-24；transfers 中 xfer_7003 已是 24 顶在途调拨；两份 Markdown 文件分别给出库存口径、DC 缺口 24 顶/现货 0 顶及调拨创建责任人。"
+  }
+}

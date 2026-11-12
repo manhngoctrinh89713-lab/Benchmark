@@ -1,0 +1,23 @@
+{
+  "name": "get_send_status",
+  "description": "查询自己发出消息的 sent/failed 状态及可见错误，表示服务接收结果；不提供对方阅读回执，read_status 保持 unknown。",
+  "inputSchema": {
+    "properties": {
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "message_id"
+    ],
+    "title": "get_send_statusArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

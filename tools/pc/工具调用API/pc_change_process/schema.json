@@ -1,0 +1,33 @@
+{
+  "name": "pc_change_process",
+  "description": "挂起、恢复或终止指定模拟进程；保护系统进程，不使用宿主机PID。",
+  "inputSchema": {
+    "properties": {
+      "pid": {
+        "title": "Pid",
+        "type": "integer"
+      },
+      "operation": {
+        "enum": [
+          "terminate",
+          "suspend",
+          "resume"
+        ],
+        "title": "Operation",
+        "type": "string"
+      }
+    },
+    "required": [
+      "pid",
+      "operation"
+    ],
+    "title": "pc_change_processArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

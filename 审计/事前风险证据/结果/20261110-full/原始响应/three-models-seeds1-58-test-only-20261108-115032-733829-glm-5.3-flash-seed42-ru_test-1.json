@@ -1,0 +1,29 @@
+{
+  "id": "25c1c79e-3c2f-424d-ab98-b462c3402bac_91b2143a9ba54e2a9d530524074bd3c3",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 7, \"tool_call_id\": \"call_-7101074764273281162\", \"quote\": \"盘点单,日期,SKU,实物数,单位,库位,复核,盘点范围\\r\\nST-1104,2026-11-04,SKU-301,8,件,A-03-02,方琳,本次盘点范围为所有未发货货物\"},\n        {\"source\": \"tool_result\", \"message_index\": 6, \"tool_call_id\": \"call_-7101074764273281163\", \"quote\": \"字段说明：stock表示当前可供新订单购买的数量。\"},\n        {\"source\": \"tool_result\", \"message_index\": 4, \"tool_call_id\": \"call_-7101068923117762808\", \"quote\": \"\\\"description\\\": \\\"仓库实物计件，stock表示当前可供新订单购买的数量\\\"\"}\n      ],\n      \"reason\": \"盘点记录.csv 明确记录 SKU-301 实物数 8 件；盘点作业指引与商品描述均说明 stock 表示当前可供新订单购买的数量。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 9, \"tool_call_id\": \"call_-7101065315345234263\", \"quote\": \"\\\"id\\\": \\\"O-1104-001\\\", ... \\\"quantity\\\": 2, ... \\\"status\\\": \\\"paid\\\", \\\"payment_status\\\": \\\"paid\\\", \\\"fulfillment_status\\\": \\\"unfulfilled\\\"\"},\n        {\"source\": \"tool_result\", \"message_index\": 9, \"tool_call_id\": \"call_-7101065315345234263\", \"quote\": \"\\\"id\\\": \\\"O-1104-002\\\", ... \\\"quantity\\\": 2, ... \\\"status\\\": \\\"paid\\\", \\\"payment_status\\\": \\\"paid\\\", \\\"fulfillment_status\\\": \\\"unfulfilled\\\"\"},\n        {\"source\": \"tool_result\", \"message_index\": 9, \"tool_call_id\": \"call_-7101065315345234263\", \"quote\": \"\\\"id\\\": \\\"O-1104-003\\\", ... \\\"quantity\\\": 2, ... \\\"status\\\": \\\"paid\\\", \\\"payment_status\\\": \\\"paid\\\", \\\"fulfillment_status\\\": \\\"unfulfilled\\\", \\\"created_at\\\": \\\"2026-11-03T15:20:00+08:00\\\"\"}\n      ],\n      \"reason\": \"商家订单列表共 3 笔订单 O-1104-001/002/003，均为已付款（paid）、未发货（unfulfilled），每笔 SKU-301 数量 2 件，合计 6 件；包裹列表为空，进一步印证均未发货。\"\n    }\n  ],\n  \"summary\": \"盘点记录显示 SKU-301 实物 8 件，且材料两处明确 stock 含义为可供新订单购买数量；订单列表显示 3 笔已付款未发货订单各 2 件，合计 6 件占用，故可售量应为 8-6=2 件，材料完整支持两条要点。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: SKU-301 counted physical 8 pieces, stock means quantity available for new orders. Supported by 盘点记录.csv (SKU-301, 8) and 盘点作业指引.md 字段说明 plus product description.\n\nKey fact 2: 3 paid unfulfilled orders each 2 pieces, total 6. Supported by list_merchant_orders: three orders, status paid, fulfillment_status unfulfilled, quantity 2 each. Yes.\n\nNote the inventory adjustment was -3, which... 8 physical - 6 reserved = 2. The tool result shows stock 2 after -3 from 5. So consistent. Both facts supported."
+      }
+    }
+  ],
+  "created": 1794319364,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 972,
+    "prompt_tokens": 6832,
+    "total_tokens": 7804,
+    "completion_tokens_details": {
+      "reasoning_tokens": 145
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 6784
+    }
+  }
+}

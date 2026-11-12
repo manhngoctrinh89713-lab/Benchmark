@@ -1,0 +1,29 @@
+{
+  "id": "9fd3e224-4206-4dca-b753-1ea4dfe7c134_88e04c980a7e48a4b44af1a4e04ecbad",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 3,\n          \"tool_call_id\": \"call_c6527f19a33d45aa862000a6\",\n          \"quote\": \"SKU-11 4900→2900分；SKU-12 3500→1990分；SKU-13 6800→3900分；SKU-14 1200→690分。\"\n        }\n      ],\n      \"reason\": \"读取 `清仓/清仓清单.md` 的返回内容完整列出四个 SKU 的降价幅度，箭头右侧即目标清仓价：2900、1990、3900、690 分，与要点完全一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有任何工具调用读取 `清仓/价保与在途订单说明.md`，system_prompt、user_prompt 及工具返回均未提及价保规则或\\\"清仓降价只允许在该 SKU 没有近 7 天已付款订单时生效\\\"的限制条件，该要点无材料依据。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"仅有 merchant__list_products 返回商品与库存信息（SKU-11 stock 110、SKU-12 stock 180、SKU-13 stock 90、SKU-14 stock 260），未调用任何订单查询工具（如 merchant__list_merchant_orders / get_merchant_order），返回中不含订单笔数、付款时间或成交价信息，无法支持关于各 SKU 近 7 天已付款订单数量与成交价的断言。\"\n    }\n  ],\n  \"summary\": \"仅要点1得到材料支持：清仓清单明确给出四个 SKU 的目标清仓价。要点2所依据的价保说明文件未被读取，规则内容缺失；要点3涉及的订单数据从未查询，list_products 只提供库存与价格，无法佐证近 7 天已付款订单情况。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: supported by the 清单 reading. Yes.\nKey fact 2: about `清仓/价保与在途订单说明.md` — no tool results mention this file. No reads of it. So unsupported (material doesn't include it).\nKey fact 3: orders — no order data retrieved. Only list_products which shows stock, not orders. Unsupported.\n\nCheck fact 1 exact values: \"SKU-11 4900→2900分；SKU-12 3500→1990分；SKU-13 6800→3900分；SKU-14 1200→690分。\" Target prices: 2900, 1990, 3900, 690. Matches. Supported."
+      }
+    }
+  ],
+  "created": 1794319518,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 716,
+    "prompt_tokens": 4958,
+    "total_tokens": 5674,
+    "completion_tokens_details": {
+      "reasoning_tokens": 183
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3072
+    }
+  }
+}

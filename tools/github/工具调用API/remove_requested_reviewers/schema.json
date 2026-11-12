@@ -1,0 +1,36 @@
+{
+  "name": "remove_requested_reviewers",
+  "description": "移除 PR 的待评审人。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "reviewers": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Reviewers",
+        "type": "array"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number",
+      "reviewers"
+    ],
+    "title": "remove_requested_reviewersArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

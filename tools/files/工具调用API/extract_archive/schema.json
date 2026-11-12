@@ -1,0 +1,33 @@
+{
+  "name": "extract_archive",
+  "description": "将 ZIP 解压到指定目录；预先检查全部目标、重复项和大小后统一提交。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "destination": {
+        "title": "Destination",
+        "type": "string"
+      },
+      "overwrite": {
+        "default": false,
+        "title": "Overwrite",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "path",
+      "destination"
+    ],
+    "title": "extract_archiveArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

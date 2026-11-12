@@ -1,0 +1,48 @@
+{
+  "name": "create_subscription_plan",
+  "description": "创建订阅方案，配置价格、账期、试用天数和条款。",
+  "inputSchema": {
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "unit_amount_minor": {
+        "title": "Unit Amount Minor",
+        "type": "integer"
+      },
+      "interval": {
+        "default": "month",
+        "title": "Interval",
+        "type": "string"
+      },
+      "interval_count": {
+        "default": 1,
+        "title": "Interval Count",
+        "type": "integer"
+      },
+      "trial_days": {
+        "default": 0,
+        "title": "Trial Days",
+        "type": "integer"
+      },
+      "terms": {
+        "default": "",
+        "title": "Terms",
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "unit_amount_minor"
+    ],
+    "title": "create_subscription_planArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

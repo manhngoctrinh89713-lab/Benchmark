@@ -1,0 +1,29 @@
+{
+  "id": "7b3fe146-274e-4dc1-a7e6-e6f8122850fe_895a47dacaf544d98b29a7a79d293522",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 9,\n          \"tool_call_id\": \"call_-7101070915982583594\",\n          \"quote\": \"{\\\"columns\\\": [\\\"id\\\", \\\"amount_minor\\\", \\\"creditor_id\\\", \\\"account_no\\\", \\\"status\\\"], \\\"rows\\\": [[\\\"I21\\\", 860000, \\\"SUP-021\\\", \\\"622202100100007319\\\", \\\"ready\\\"]], \\\"row_count\\\": 1, \\\"has_more\\\": false, \\\"next_offset\\\": null}\"\n        }\n      ],\n      \"reason\": \"对 payment_instructions 按 id='I21' 查询的结果明确显示 account_no=622202100100007319、status=ready，与要点完全一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 6,\n          \"tool_call_id\": \"call_-7101069575952788004\",\n          \"quote\": \"SUP-021,澄川材料有限公司,622202100100004826,云路渠道服务有限公司,渠道代收,2026-09-20,DS-202609-021\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 6,\n          \"tool_call_id\": \"call_-7101069575952788004\",\n          \"quote\": \"本协议适用的结算期间自2026年9月1日起，至2026年10月31日止。\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 6,\n          \"tool_call_id\": \"call_-7101069575952788004\",\n          \"quote\": \"本协议期满后，乙方不再以甲方名义接收货款。\"\n        }\n      ],\n      \"reason\": \"台账 SUP-021 行记载账号 622202100100004826、账户用途\"渠道代收\"；代收授权书载明授权期间 2026-09-01 至 2026-10-31，且期满后乙方不再以甲方名义接收货款，三部分均获材料支持。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 6,\n          \"tool_call_id\": \"call_-7101069575952788004\",\n          \"quote\": \"| 收款方 | 澄川材料有限公司 |\\\\n| 供应商编号 | SUP-021 |\\\\n| 收款账号 | 622202100100007319 |\"\n        }\n      ],\n      \"reason\": \"结算确认单\"二、付款信息\"表中明确记载收款方为澄川材料有限公司、收款账号为 622202100100007319，与要点一致。\"\n    }\n  ],\n  \"summary\": \"三条要点均获材料完整支持：I21 当前账户与状态经数据库查询确认；台账 SUP-021 行的代收账号与用途、授权书的授权期间及期满处理条款均明确记载；结算确认单载明本期收款方及账号，且与 I21 现有信息一致。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Let me analyze the key facts against the materials.\n\nFact 1: I21 has account_no=622202100100007319, status=ready. The tool result at message 9 shows: rows [[\"I21\", 860000, \"SUP-021\", \"622202100100007319\", \"ready\"]]. Supported.\n\nFact 2: 供应商账户台账.csv SUP-021 row: SUP-021,澄川材料有限公司,622202100100004826,云路渠道服务有限公司,渠道代收,2026-09-20,DS-202609-021. Yes, account 622202100100004826, 用途渠道代收. 代收授权书: 授权期间自2026年9月1日起，至2026年10月31日止. \"本协议期满后，乙方不再以甲方名义接收货款。\" Supported.\n\nFact 3: 结算确认单.md 记载本期收款方澄川材料有限公司、账号 622202100100007319. Yes: 收款方 澄川材料有限公司, 收款账号 622202100100007319. Supported.\n\nAll supported."
+      }
+    }
+  ],
+  "created": 1794318930,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1247,
+    "prompt_tokens": 8786,
+    "total_tokens": 10033,
+    "completion_tokens_details": {
+      "reasoning_tokens": 346
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3072
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "search_repositories",
+  "description": "按ID、名称、owner及描述的大小写不敏感子串查询本地仓库。",
+  "inputSchema": {
+    "properties": {
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "search_repositoriesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

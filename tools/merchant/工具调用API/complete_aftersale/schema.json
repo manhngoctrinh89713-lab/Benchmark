@@ -1,0 +1,52 @@
+{
+  "name": "complete_aftersale",
+  "description": "收到退件后按成交金额发起退款，或为原规格创建换货包裹。",
+  "inputSchema": {
+    "properties": {
+      "aftersale_id": {
+        "title": "Aftersale Id",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      },
+      "carrier": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Carrier"
+      },
+      "tracking_number": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Tracking Number"
+      }
+    },
+    "required": [
+      "aftersale_id",
+      "idempotency_key"
+    ],
+    "title": "complete_aftersaleArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

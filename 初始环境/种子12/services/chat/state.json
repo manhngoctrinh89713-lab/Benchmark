@@ -1,0 +1,424 @@
+{
+  "now": "2026-11-02T10:30:00+08:00",
+  "current_user_id": "u_me",
+  "contacts": [
+    {
+      "id": "u_me",
+      "name": "周宁",
+      "organization": "禾舟科技",
+      "remark": "行政",
+      "version": 1
+    },
+    {
+      "id": "u_print",
+      "name": "打印店小陈",
+      "organization": "云锦图文",
+      "remark": "楼下打印装订店",
+      "version": 1
+    },
+    {
+      "id": "u_hr",
+      "name": "徐敏",
+      "organization": "禾舟科技",
+      "remark": "人事",
+      "version": 1
+    },
+    {
+      "id": "u_it",
+      "name": "赵凯",
+      "organization": "禾舟科技",
+      "remark": "IT支持",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "c_print",
+      "name": "打印店小陈",
+      "type": "direct",
+      "member_ids": [
+        "u_me",
+        "u_print"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_print",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_admin",
+      "name": "行政日常",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_hr",
+        "u_it"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_it",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "m000",
+      "chat_id": "c_print",
+      "sender_id": "u_print",
+      "text": "上次的访客登记表已经取走了。",
+      "timestamp": "2026-11-02T09:10:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_print"
+      ],
+      "sequence": 0,
+      "sender_name": "打印店小陈"
+    },
+    {
+      "id": "m001",
+      "chat_id": "c_print",
+      "sender_id": "u_me",
+      "text": "收到，谢谢。",
+      "timestamp": "2026-11-02T09:13:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_print"
+      ],
+      "sequence": 0,
+      "sender_name": "周宁"
+    },
+    {
+      "id": "m002",
+      "chat_id": "c_print",
+      "sender_id": "u_print",
+      "text": "这周还有装订吗？店里胶装和骑马钉都能做。",
+      "timestamp": "2026-11-02T09:16:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_print"
+      ],
+      "sequence": 0,
+      "sender_name": "打印店小陈"
+    },
+    {
+      "id": "m003",
+      "chat_id": "c_print",
+      "sender_id": "u_me",
+      "text": "有份合同，稍后把打印版发您。",
+      "timestamp": "2026-11-02T09:19:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_print"
+      ],
+      "sequence": 0,
+      "sender_name": "周宁"
+    },
+    {
+      "id": "m004",
+      "chat_id": "c_print",
+      "sender_id": "u_print",
+      "text": "好的，黑白双面、两份胶装，封面用普通白卡对吗？",
+      "timestamp": "2026-11-02T09:22:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_print"
+      ],
+      "sequence": 0,
+      "sender_name": "打印店小陈"
+    },
+    {
+      "id": "m005",
+      "chat_id": "c_print",
+      "sender_id": "u_me",
+      "text": "是的，送到楼下后我来取。",
+      "timestamp": "2026-11-02T09:25:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_print"
+      ],
+      "sequence": 0,
+      "sender_name": "周宁"
+    },
+    {
+      "id": "m006",
+      "chat_id": "c_admin",
+      "sender_id": "u_hr",
+      "text": "本月设备服务合同文本已完成法务确认。",
+      "timestamp": "2026-11-02T09:28:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_it"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m007",
+      "chat_id": "c_admin",
+      "sender_id": "u_me",
+      "text": "今天安排装订归档。",
+      "timestamp": "2026-11-02T09:31:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_it"
+      ],
+      "sequence": 0,
+      "sender_name": "周宁"
+    },
+    {
+      "id": "m008",
+      "chat_id": "c_admin",
+      "sender_id": "u_hr",
+      "text": "前台耗材还剩两盒纸，月底再补。",
+      "timestamp": "2026-11-02T09:34:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_it"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m009",
+      "chat_id": "c_admin",
+      "sender_id": "u_me",
+      "text": "已登记采购。",
+      "timestamp": "2026-11-02T09:37:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_it"
+      ],
+      "sequence": 0,
+      "sender_name": "周宁"
+    }
+  ],
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "delivery_events": [],
+  "sequence": 0,
+  "relations": [
+    {
+      "owner_id": "u_me",
+      "user_id": "u_print",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "楼下打印装订店",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_print",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_hr",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "人事",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_hr",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_it",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "IT支持",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_it",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "events": [],
+  "member_events": []
+}

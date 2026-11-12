@@ -1,0 +1,62 @@
+{
+  "name": "deliver_order_item",
+  "description": "交付数字商品或服务，保存接收邮箱、授权说明和可选文件快照。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      },
+      "line_id": {
+        "title": "Line Id",
+        "type": "string"
+      },
+      "quantity": {
+        "title": "Quantity",
+        "type": "integer"
+      },
+      "description": {
+        "title": "Description",
+        "type": "string"
+      },
+      "file_path": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "File Path"
+      },
+      "expires_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expires At"
+      }
+    },
+    "required": [
+      "order_id",
+      "line_id",
+      "quantity",
+      "description"
+    ],
+    "title": "deliver_order_itemArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

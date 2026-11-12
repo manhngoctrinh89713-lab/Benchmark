@@ -1,0 +1,40 @@
+{
+  "name": "adjust_sku_inventory",
+  "description": "增减指定规格的可售库存，已下单库存另行保留。",
+  "inputSchema": {
+    "properties": {
+      "sku_id": {
+        "title": "Sku Id",
+        "type": "string"
+      },
+      "delta": {
+        "title": "Delta",
+        "type": "integer"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "sku_id",
+      "delta"
+    ],
+    "title": "adjust_sku_inventoryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

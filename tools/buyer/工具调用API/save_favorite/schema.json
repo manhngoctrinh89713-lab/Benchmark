@@ -1,0 +1,28 @@
+{
+  "name": "save_favorite",
+  "description": "收藏或取消收藏商品。",
+  "inputSchema": {
+    "properties": {
+      "product_id": {
+        "title": "Product Id",
+        "type": "string"
+      },
+      "saved": {
+        "default": true,
+        "title": "Saved",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "product_id"
+    ],
+    "title": "save_favoriteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

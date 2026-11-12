@@ -1,0 +1,23 @@
+{
+  "name": "get_project_info",
+  "description": "读取项目文件数量、语言分布和配置文件位置。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "project_id"
+    ],
+    "title": "get_project_infoArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

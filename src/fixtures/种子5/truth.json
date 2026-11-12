@@ -1,0 +1,170 @@
+{
+  "fixture_version": "three-projects-v2",
+  "sources": [
+    {
+      "project": "01_轻岚保温杯",
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_v01.svg",
+      "sha256": "3074ad55e93da340a546ed6e073ac48eb353740c7dfda485557d8669c3e2db61"
+    },
+    {
+      "project": "02_听野耳机",
+      "path": "海报交付/02_听野耳机/听野_KV_v01.svg",
+      "sha256": "ea31f59c96a83ccd72afca3c49d67bd0c3b755887328e93af8895dc29a53f201"
+    },
+    {
+      "project": "03_云栖台灯",
+      "path": "海报交付/03_云栖台灯/云栖_KV_v01.svg",
+      "sha256": "e3e7b16af2351ea743537173ed07122d49c318c4db7c93768b79238a8a02f8fc"
+    }
+  ],
+  "finals": [
+    {
+      "project": "01_轻岚保温杯",
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_终版.jpg",
+      "sha256": "bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a",
+      "role": "final_jpg"
+    },
+    {
+      "project": "01_轻岚保温杯",
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_终版.svg",
+      "sha256": "63beb84b6c09f9362e27396089aa17a19720734b6a61f46b7dd4b112e61bfde4",
+      "role": "final_svg"
+    },
+    {
+      "project": "02_听野耳机",
+      "path": "海报交付/02_听野耳机/听野_KV_终版.jpg",
+      "sha256": "074df8f7c715406b4e916d028b5b5b93f109396d1728b945d637b10c0efc4d1f",
+      "role": "final_jpg"
+    },
+    {
+      "project": "02_听野耳机",
+      "path": "海报交付/02_听野耳机/听野_KV_终版.svg",
+      "sha256": "40f8149d05ef56268f6f3511e62fca48eee437ebe945802e61b80b8a41744e02",
+      "role": "final_svg"
+    },
+    {
+      "project": "03_云栖台灯",
+      "path": "海报交付/03_云栖台灯/云栖_KV_终版.jpg",
+      "sha256": "ec7432535c22833b96f636dc8ab60fed3dedf585db8930c6936dac749ae6a479",
+      "role": "final_jpg"
+    },
+    {
+      "project": "03_云栖台灯",
+      "path": "海报交付/03_云栖台灯/云栖_KV_终版.svg",
+      "sha256": "064e051f512d176512f02e84afb0e50b8145a9b2a0d3d0a091a655ade0b0ea67",
+      "role": "final_svg"
+    }
+  ],
+  "files": [
+    {
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_v01.svg",
+      "size": 760385,
+      "sha256": "3074ad55e93da340a546ed6e073ac48eb353740c7dfda485557d8669c3e2db61"
+    },
+    {
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_1080.png",
+      "size": 112908,
+      "sha256": "99e574386bf4a8d63451658c8e16e1fcb39249c0f59ab9ded2e82f49ba584cd8"
+    },
+    {
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_终版.jpg",
+      "size": 494078,
+      "sha256": "bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a"
+    },
+    {
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_终版 (1).jpg",
+      "size": 494078,
+      "sha256": "bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a"
+    },
+    {
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_群预览.jpg",
+      "size": 39886,
+      "sha256": "110afeb4c29093e76ffab81ebd9995362c22a6626f18afdadc6488bbe11cc8a8"
+    },
+    {
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_v02.png",
+      "size": 112693,
+      "sha256": "ea1d6db64c10a96e96f206bcdbfefdde42849e68330baed7825d3f6530a4be80"
+    },
+    {
+      "path": "海报交付/01_轻岚保温杯/轻岚_KV_终版.svg",
+      "size": 272,
+      "sha256": "63beb84b6c09f9362e27396089aa17a19720734b6a61f46b7dd4b112e61bfde4"
+    },
+    {
+      "path": "海报交付/02_听野耳机/听野_KV_v01.svg",
+      "size": 760084,
+      "sha256": "ea31f59c96a83ccd72afca3c49d67bd0c3b755887328e93af8895dc29a53f201"
+    },
+    {
+      "path": "海报交付/02_听野耳机/听野_KV_1080.png",
+      "size": 114671,
+      "sha256": "0a3d3148b5f462c7ad88940d8ea078b4f86d7681af5ca9d593776f7139f575a8"
+    },
+    {
+      "path": "海报交付/02_听野耳机/听野_KV_终版.jpg",
+      "size": 483160,
+      "sha256": "074df8f7c715406b4e916d028b5b5b93f109396d1728b945d637b10c0efc4d1f"
+    },
+    {
+      "path": "海报交付/02_听野耳机/听野_KV_终版 (1).jpg",
+      "size": 483160,
+      "sha256": "074df8f7c715406b4e916d028b5b5b93f109396d1728b945d637b10c0efc4d1f"
+    },
+    {
+      "path": "海报交付/02_听野耳机/听野_KV_群预览.jpg",
+      "size": 38061,
+      "sha256": "d967f1cc8f9eafa54deb234b058db880e1cc8ef54133c7dbfa791ca1a702340d"
+    },
+    {
+      "path": "海报交付/02_听野耳机/听野_KV_v02.png",
+      "size": 114535,
+      "sha256": "6be42641ceaba8dea85020784badc319e006bccfeed6692cb8c8110d5b8978fd"
+    },
+    {
+      "path": "海报交付/02_听野耳机/听野_KV_终版.svg",
+      "size": 272,
+      "sha256": "40f8149d05ef56268f6f3511e62fca48eee437ebe945802e61b80b8a41744e02"
+    },
+    {
+      "path": "海报交付/03_云栖台灯/云栖_KV_v01.svg",
+      "size": 760174,
+      "sha256": "e3e7b16af2351ea743537173ed07122d49c318c4db7c93768b79238a8a02f8fc"
+    },
+    {
+      "path": "海报交付/03_云栖台灯/云栖_KV_1080.png",
+      "size": 117239,
+      "sha256": "f1cbc19ec5cf8574faed2cc52f8f4d74243973ee2c22d425ba9f866705d92d52"
+    },
+    {
+      "path": "海报交付/03_云栖台灯/云栖_KV_终版.jpg",
+      "size": 559362,
+      "sha256": "ec7432535c22833b96f636dc8ab60fed3dedf585db8930c6936dac749ae6a479"
+    },
+    {
+      "path": "海报交付/03_云栖台灯/云栖_KV_终版 (1).jpg",
+      "size": 559362,
+      "sha256": "ec7432535c22833b96f636dc8ab60fed3dedf585db8930c6936dac749ae6a479"
+    },
+    {
+      "path": "海报交付/03_云栖台灯/云栖_KV_群预览.jpg",
+      "size": 36934,
+      "sha256": "dbed8a0f9675fd18d14d0ca4120f4e9d7a95c4b77fc95b25a8f7e6059054d753"
+    },
+    {
+      "path": "海报交付/03_云栖台灯/云栖_KV_v02.png",
+      "size": 117516,
+      "sha256": "639d45fc41de2f4c745f7ef5fff75f018738111ce3b18b0445856d2219d350e5"
+    },
+    {
+      "path": "海报交付/03_云栖台灯/云栖_KV_1080_副本.png",
+      "size": 117239,
+      "sha256": "f1cbc19ec5cf8574faed2cc52f8f4d74243973ee2c22d425ba9f866705d92d52"
+    },
+    {
+      "path": "海报交付/03_云栖台灯/云栖_KV_终版.svg",
+      "size": 272,
+      "sha256": "064e051f512d176512f02e84afb0e50b8145a9b2a0d3d0a091a655ade0b0ea67"
+    }
+  ]
+}

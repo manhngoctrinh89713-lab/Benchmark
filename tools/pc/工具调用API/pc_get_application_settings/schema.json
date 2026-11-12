@@ -1,0 +1,23 @@
+{
+  "name": "pc_get_application_settings",
+  "description": "读取应用设置及环境提供的可修改设置定义。",
+  "inputSchema": {
+    "properties": {
+      "app_id": {
+        "title": "App Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "app_id"
+    ],
+    "title": "pc_get_application_settingsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,80 @@
+"""Explicit public commerce tool catalog."""
+from mcp.types import ToolAnnotations
+
+TOOLS = {
+    'bind_payment_method': ('使用支付服务签发的凭证绑定支付方式。', False),
+    'cancel_my_order': ('直接取消未付款订单并释放库存。', False),
+    'cancel_subscription_change': ('清除尚未生效的订阅方案变更。', False),
+    'change_my_subscription': ('立即取消、账期末取消或撤销账期末取消：cancel_now/cancel_at_period_end/resume。', False),
+    'checkout_cart': ('按当前默认配送条件直接创建待付款订单，并核对预期总额。', False),
+    'confirm_shipment_receipt': ('记录买家确认收货，与承运方的投递记录分别保存。', False),
+    'create_checkout_quote': ('保存选定购物车商品的结算报价，有效期十五分钟，不预留库存。', False),
+    'delete_address': ('删除地址簿中的地址，不修改已有订单。', False),
+    'delete_billing_profile': ('删除开票资料，既有申请保留原资料快照。', False),
+    'download_delivery': ('下载有效数字交付的文件快照。', False),
+    'download_receipt': ('将已成功支付的收据保存为 JSON 文件。', False),
+    'download_refund_receipt': ('将已成功到账退款的凭证保存为 JSON 文件。', False),
+    'download_tax_invoice': ('下载商家已开具的税务发票文件。', False),
+    'get_buyer_profile': ('读取当前买家的资料、默认地址及已绑定支付方式。', True),
+    'get_cart': ('读取商家购物车，以当前价格和库存计算商品金额。', True),
+    'get_checkout_quote': ('读取已保存的结算条件和报价有效期。', True),
+    'get_my_order': ('读取订单成交快照、支付状态、履约状态及包裹。', True),
+    'get_my_subscription': ('读取订阅合同、访问有效期、扣款方式和账单。', True),
+    'get_product': ('读取商品当前规格、价格、库存和销售退换政策。', True),
+    'list_addresses': ('列出当前买家的收件地址。', True),
+    'list_available_plans': ('列出可购买的订阅方案及价格、周期和试用期。', True),
+    'list_billing_profiles': ('列出保存的开票资料。', True),
+    'list_favorites': ('列出收藏商品及其当前销售状态。', True),
+    'list_merchants': ('按名称查询商家及其货币、配送和公开信息。', True),
+    'list_my_aftersales': ('查询退换货申请、退件及处理结果。', True),
+    'list_my_cancellation_requests': ('查询订单取消申请及处理结果。', True),
+    'list_my_deliveries': ('查询数字商品和服务的交付记录、接收人、有效期与授权状态。', True),
+    'list_my_invoices': ('查询订阅应付账单，账单与税务发票分别保存。', True),
+    'list_my_orders': ('分页查询自己的订单，可按订单状态筛选。', True),
+    'list_my_payments': ('查询支付尝试及退款累计金额。', True),
+    'list_my_refund_requests': ('查询退款申请与商家的审批结果。', True),
+    'list_my_refunds': ('查询退款交易的处理中、成功和失败状态。', True),
+    'list_my_shipments': ('查询订单各包裹的商品数量、物流事件和签收信息。', True),
+    'list_my_subscriptions': ('查询自己的订阅合同和待生效变更。', True),
+    'list_my_tax_invoices': ('查询开票申请、已开票信息和处理状态。', True),
+    'list_payment_methods': ('列出支付方式及默认支付方式。', True),
+    'list_product_categories': ('列出在售商品的分类。', True),
+    'list_shipping_options': ('列出商家当前可用的配送方式、费用和预计时效。', True),
+    'pay_invoice': ('支付开放的订阅账单，成功后更新已付费访问周期。', False),
+    'pay_order': ('支付待付款订单，返回本次支付尝试的独立状态。', False),
+    'place_order_from_quote': ('按报价创建待付款订单；重新核对价格、库存、政策和优惠后预留库存三十分钟。', False),
+    'reorder': ('把历史订单的规格和数量加入当前购物车，使用当前商品状态和价格。', False),
+    'request_aftersale': ('按订单行及数量申请退货退款或换货，并保存证明文件快照。', False),
+    'request_order_cancellation': ('为已付款但未履约的订单提交取消申请，由商家处理。', False),
+    'request_refund': ('向商家申请退还指定支付的部分或全部可退金额。', False),
+    'request_tax_invoice': ('为成功支付申请税务发票，固定当次开票资料。', False),
+    'save_address': ('新增或修改地址；已保存的报价和订单继续使用原有地址快照。', False),
+    'save_billing_profile': ('新增或修改开票抬头、税号、地址和接收邮箱。', False),
+    'save_favorite': ('收藏或取消收藏商品。', False),
+    'schedule_subscription_change': ('保存下个账期生效的方案和数量，按当前方案条款固定新合同。', False),
+    'search_products': ('按商家、分类、类型、价格和库存组合查询在售商品，支持排序与分页。', True),
+    'set_cart_item': ('增加或修改一个购物车规格的数量，零表示移除。', False),
+    'set_default_address': ('设置后续购买使用的默认地址。', False),
+    'set_default_payment_method': ('设置默认支付方式，不改变已有订阅的扣款方式。', False),
+    'set_subscription_payment_method': ('修改订阅后续自动扣款使用的支付方式。', False),
+    'submit_return_shipment': ('为获准的退换货提交退件物流信息。', False),
+    'subscribe_plan': ('以当前方案条款建立订阅合同；有试用期时在试用结束后开始扣款。', False),
+    'unbind_payment_method': ('停用绑定的支付方式；使用该方式的订阅需要另行更换。', False),
+    'update_aftersale': ('修改待处理售后申请的说明和证明文件。', False),
+    'update_buyer_profile': ('更新买家的姓名、联系邮箱和电话。', False),
+    'update_cart': ('替换购物车商品列表；每项指定 SKU 或商品默认规格及数量，空列表清空。', False),
+    'update_my_order': ('修改订单备注；未付款且未发货的订单可修改同一配送地区内的地址。', False),
+    'withdraw_aftersale': ('撤回待处理的退换货申请。', False),
+    'withdraw_cancellation_request': ('撤回尚未处理的订单取消申请。', False),
+    'withdraw_refund_request': ('撤回待审批的退款申请。', False),
+}
+
+
+def register_tool(server, store, name):
+    description, readonly = TOOLS[name]
+    server.tool(name=name, description=description, annotations=ToolAnnotations(readOnlyHint=readonly, destructiveHint=not readonly, idempotentHint=readonly, openWorldHint=False))(getattr(store, name))
+
+
+def register_tools(server, store):
+    for name in TOOLS:
+        register_tool(server, store, name)

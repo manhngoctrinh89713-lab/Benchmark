@@ -1,0 +1,36 @@
+{
+  "name": "server_change_service",
+  "description": "模拟start/stop/restart/reload/enable/disable，联动进程和日志；启动校验配置及依赖。",
+  "inputSchema": {
+    "properties": {
+      "service_id": {
+        "title": "Service Id",
+        "type": "string"
+      },
+      "operation": {
+        "enum": [
+          "start",
+          "stop",
+          "restart",
+          "reload",
+          "enable",
+          "disable"
+        ],
+        "title": "Operation",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_id",
+      "operation"
+    ],
+    "title": "server_change_serviceArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

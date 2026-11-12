@@ -1,0 +1,36 @@
+{
+  "name": "copy_emails",
+  "description": "将指定邮件复制到同一账户的目标文件夹；逐项返回新 copy_id。副本获得新资源 ID，保留原 Message-ID、内容、附件和会话，原邮件保留。最多 500 封。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Email Ids",
+        "type": "array"
+      },
+      "mailbox": {
+        "title": "Mailbox",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_ids",
+      "mailbox"
+    ],
+    "title": "copy_emailsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-pc"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["benchmark-local-maintenance==0.2.0"]
+
+[tool.setuptools]
+packages = ["local_pc", "local_pc.api", "local_pc.api.pc_analyze_directory", "local_pc.api.pc_change_process", "local_pc.api.pc_clean_cache", "local_pc.api.pc_copy_personal_file", "local_pc.api.pc_create_backup", "local_pc.api.pc_delete_backup", "local_pc.api.pc_delete_personal_file", "local_pc.api.pc_delete_recycled_file", "local_pc.api.pc_delete_scheduled_task", "local_pc.api.pc_delete_startup_item", "local_pc.api.pc_get_application_settings", "local_pc.api.pc_get_disk_usage", "local_pc.api.pc_get_environment_variables", "local_pc.api.pc_get_process", "local_pc.api.pc_get_system_info", "local_pc.api.pc_launch_application", "local_pc.api.pc_list_applications", "local_pc.api.pc_list_backups", "local_pc.api.pc_list_cache_locations", "local_pc.api.pc_list_personal_files", "local_pc.api.pc_list_processes", "local_pc.api.pc_list_recycle_bin", "local_pc.api.pc_list_scheduled_tasks", "local_pc.api.pc_list_startup_items", "local_pc.api.pc_list_task_runs", "local_pc.api.pc_manage_application", "local_pc.api.pc_move_personal_file", "local_pc.api.pc_read_personal_file", "local_pc.api.pc_recycle_file", "local_pc.api.pc_restore_backup", "local_pc.api.pc_restore_recycled_file", "local_pc.api.pc_save_scheduled_task", "local_pc.api.pc_save_startup_item", "local_pc.api.pc_set_environment_variable", "local_pc.api.pc_set_startup_item", "local_pc.api.pc_update_application_settings", "local_pc.api.pc_verify_backup", "local_pc.api.pc_write_personal_file"]
+
+[tool.setuptools.package-dir]
+local_pc = "公用代码/local_pc"
+"local_pc.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+"local_pc.api" = ["*/schema.json"]

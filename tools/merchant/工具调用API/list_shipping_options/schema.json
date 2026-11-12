@@ -1,0 +1,15 @@
+{
+  "name": "list_shipping_options",
+  "description": "列出商家的全部配送方案。",
+  "inputSchema": {
+    "properties": {},
+    "title": "list_shipping_optionsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "internal_ids": [
+    "u_me",
+    "u_hr",
+    "u_director"
+  ],
+  "employee_ids": {
+    "Sarah": "u_sarah",
+    "林悦": "u_col01",
+    "顾航": "u_col02"
+  }
+}

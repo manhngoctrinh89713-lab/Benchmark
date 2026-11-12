@@ -1,0 +1,1 @@
+{"edge-gw-a.service": {"cache_ttl_seconds": 300, "upstream": "http://hot-data.internal:8080", "worker_connections": 4096}, "edge-gw-b.service": {"cache_ttl_seconds": 300, "upstream": "http://hot-data.internal:8080", "worker_connections": 4096}, "edge-gw-c.service": {"cache_ttl_seconds": 300, "upstream": "http://hot-data.internal:8080", "worker_connections": 4096}}

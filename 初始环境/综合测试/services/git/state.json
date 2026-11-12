@@ -1,0 +1,115 @@
+{
+  "now": "2026-11-01T09:00:00+08:00",
+  "current_user": "chenchen",
+  "repositories": [
+    {
+      "id": "demo",
+      "name": "示例项目",
+      "default_branch": "main",
+      "required_approvals": 0,
+      "owner": "benchmark-team",
+      "description": "本地Git与GitHub协作示例",
+      "private": true,
+      "required_checks": []
+    }
+  ],
+  "issues": [
+    {
+      "repo_id": "demo",
+      "number": 1,
+      "title": "补充空值处理",
+      "body": "greet函数对空字符串返回默认问候。",
+      "state": "open",
+      "author": "linxiao",
+      "labels": [
+        "bug"
+      ],
+      "assignees": [
+        "chenchen"
+      ],
+      "milestone": 1
+    }
+  ],
+  "pull_requests": [],
+  "comments": [],
+  "reviews": [],
+  "users": [
+    {
+      "login": "chenchen",
+      "name": "陈晨"
+    },
+    {
+      "login": "linxiao",
+      "name": "林晓"
+    }
+  ],
+  "labels": [
+    {
+      "repo_id": "demo",
+      "name": "bug",
+      "color": "d73a4a",
+      "description": "缺陷"
+    },
+    {
+      "repo_id": "demo",
+      "name": "enhancement",
+      "color": "a2eeef",
+      "description": "功能改进"
+    }
+  ],
+  "milestones": [
+    {
+      "repo_id": "demo",
+      "number": 1,
+      "title": "v1.0",
+      "description": "首个发布版本",
+      "state": "open",
+      "due_on": "2026-11-15T18:00:00+08:00"
+    }
+  ],
+  "review_comments": [],
+  "releases": [],
+  "workflows": [
+    {
+      "repo_id": "demo",
+      "id": 1,
+      "name": "Tests",
+      "path": ".github/workflows/tests.yml",
+      "state": "active"
+    }
+  ],
+  "workflow_runs": [
+    {
+      "repo_id": "demo",
+      "id": 1,
+      "workflow_id": 1,
+      "name": "Tests",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "attempt": 1,
+      "jobs": [
+        {
+          "name": "unit-tests",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "logs": "Running unit tests\nFAIL test_empty_name: expected default greeting\n1 failed, 2 passed\n",
+      "head_sha": "179157d5b975af174d46c70e98961d5d697c854d"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "repo_id": "demo",
+      "recipient": "chenchen",
+      "kind": "issue",
+      "number": 1,
+      "reason": "assigned",
+      "title": "补充空值处理",
+      "unread": true
+    }
+  ],
+  "sequence": 0
+}

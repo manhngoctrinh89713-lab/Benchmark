@@ -1,0 +1,54 @@
+{
+  "status": "scored",
+  "fingerprint": "93c0932cf2ba7272d6d831f42c8e597b67ad344cc2f628d1e221651c266015ec",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_00_mXHtP8GvXhlCemoahyYT8874",
+            "quote": "{\"path\": \"/srv/orders/uploads\", \"owner\": \"root\", \"group\": \"root\", \"mode\": \"0755\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 15,
+            "tool_call_id": "call_01_xDdfXhfoVPtbxLbp5oc90261",
+            "quote": "\"process_name\": \"orders-worker\", \"command\": \"/srv/orders/app.py --config /etc/orders.json\", \"user\": \"websvc\""
+          }
+        ],
+        "reason": "初始递归权限查询显示 /srv/orders/uploads 为 root:root 0755；服务详情显示 orders.service 以 user=websvc 运行，两个子断言均有材料依据。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_00_mXHtP8GvXhlCemoahyYT8874",
+            "quote": "{\"path\": \"/srv/orders/app.py\", \"owner\": \"root\", \"group\": \"root\", \"mode\": \"0644\"}, {\"path\": \"/srv/orders/config\", \"owner\": \"root\", \"group\": \"root\", \"mode\": \"0755\"}, {\"path\": \"/srv/orders/config/auth.json\", \"owner\": \"root\", \"group\": \"root\", \"mode\": \"0600\"}"
+          }
+        ],
+        "reason": "初始权限查询明确列出 app.py 为 root:root 0644、config/auth.json 为 root:root 0600，与要点完全一致。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_HvAp2B4N2psq4kdAwuhf5196",
+            "quote": "附件写入 `/srv/orders/uploads/`；程序入口和 `config/auth.json` 属于发布制品，由发布系统部署，日常运维只处理上传目录。"
+          }
+        ],
+        "reason": "运行手册.md 正文明确写明程序入口和 auth.json 属发布制品、由发布系统部署、日常运维只处理上传目录，与要点一致。"
+      }
+    ],
+    "summary": "三条要点均获材料完整支持：初始权限查询证实 uploads 为 root:root 0755、app.py 为 0644、auth.json 为 0600，服务详情确认进程以 websvc 用户运行，运行手册原文说明发布制品范围与日常运维边界。"
+  }
+}

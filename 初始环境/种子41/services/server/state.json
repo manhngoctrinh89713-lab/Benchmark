@@ -1,0 +1,133 @@
+{
+  "platform": "linux",
+  "now": "2026-11-04T10:20:00+08:00",
+  "machine": {
+    "id": "orders-prod-04",
+    "hostname": "orders-prod-04",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 33285996544
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/var/log",
+    "/srv",
+    "/etc"
+  ],
+  "journal_path": "/var/log/journal.jsonl",
+  "services": {
+    "order-svc.service": {
+      "id": "order-svc.service",
+      "description": "订单请求处理",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 211,
+      "config_format": "json",
+      "config_path": "/etc/order-svc/logging.json",
+      "process_name": "order-svc",
+      "command": "/opt/orders/bin/order-svc",
+      "user": "orders",
+      "memory_bytes": 268435456,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "log_level",
+          "type": "text"
+        },
+        {
+          "key": "mask_fields",
+          "type": "boolean"
+        },
+        {
+          "key": "collect_logs",
+          "type": "boolean"
+        },
+        {
+          "key": "log_path",
+          "type": "text"
+        }
+      ],
+      "applied_config_sha256": "fd523607a4227afdec6f6bf38e0ec99555c055b145d18620cae621d8705d9fff"
+    }
+  },
+  "processes": {
+    "211": {
+      "pid": 211,
+      "name": "order-svc",
+      "command": "/opt/orders/bin/order-svc",
+      "user": "orders",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 268435456,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "order-svc.service"
+    }
+  },
+  "next_pid": 400,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {},
+  "order_log_runtime": {
+    "requests": [
+      {
+        "request_id": "RQ-1104-001",
+        "path": "/orders/confirm",
+        "body": {
+          "order_no": "ORD-261104-302",
+          "phone": "13816145217",
+          "identity_no": "310101198807164218",
+          "bank_token": "tok_bank_7f3ac102",
+          "delivery_city": "上海"
+        }
+      },
+      {
+        "request_id": "RQ-1104-002",
+        "path": "/orders/confirm",
+        "body": {
+          "order_no": "ORD-261104-303",
+          "phone": "13916805638",
+          "identity_no": "320102199102183216",
+          "bank_token": "tok_bank_1a49d6f8",
+          "delivery_city": "南京"
+        }
+      },
+      {
+        "request_id": "RQ-1104-003",
+        "path": "/orders/confirm",
+        "body": {
+          "order_no": "ORD-261104-304",
+          "phone": "13701824965",
+          "identity_no": "330106198905263841",
+          "bank_token": "tok_bank_76b93e01",
+          "delivery_city": "杭州"
+        }
+      }
+    ]
+  },
+  "path_permissions": {
+    "/srv/order-svc/private-debug": {
+      "owner": "orders",
+      "group": "orders",
+      "mode": 448
+    }
+  }
+}

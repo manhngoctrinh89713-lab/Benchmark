@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/microsoft/markitdown",
+  "commit": "7482c092d9c0074a89803c9fdb63a969e7fe17fc",
+  "license": "MIT",
+  "source": "公用代码/upstream/microsoft__markitdown/packages/markitdown-mcp/src/markitdown_mcp/__main__.py",
+  "source_sha256": "d4db28dfbe2aa7358f59591639a5296c1d20934a9c31c060addc88281dbd66fe",
+  "source_lines": [
+    20,
+    47
+  ],
+  "output": "公用代码/local_files/document_converter.py",
+  "output_sha256": "d6570f6a1bdcc2072339cb4e42d212c260d194e09a7fd29e943899bbeac806b4",
+  "changes": [
+    "Extract converter creation and conversion return from async tool into a synchronous helper",
+    "Use convert_local(path) instead of convert_uri(uri)",
+    "Disable plugins; omit remote errors, server creation and transports"
+  ],
+  "runtime_dependency": "markitdown[docx,pdf,pptx,xlsx,xls]==0.1.9 (PyPI release, not the whole Git snapshot)",
+  "filesystem": {
+    "repository": "https://github.com/modelcontextprotocol/servers",
+    "commit": "194cc86e3ae6400958555bd4116849d822d69263",
+    "reuse": "Tool semantics and CRLF normalization ported from TypeScript; not a direct execution of its Node backend"
+  },
+  "persistence": "Follows sibling mail/chat directory isolation and pending commit journal; extends recovery to actual file changes"
+}

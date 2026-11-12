@@ -1,0 +1,33 @@
+{
+  "status": "scored",
+  "fingerprint": "502ff0f48ced6faeb6a76785a91058d529f4f7f05804c10cbb697db2cc2c81c6",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "user_prompt",
+            "quote": "宝宝已经学会翻身啦！一翻过去就抬着头冲我笑，他太可爱了！"
+          }
+        ],
+        "reason": "用户指令开头明确描述宝宝已经学会翻身，该要点完全来自用户指令原文。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101070915982586446",
+            "quote": "\"id\": \"FORM-3\", \"merchant_id\": \"merchant_demo\", \"name\": \"星禾优成长配方奶粉\", \"description\": \"3 段，适用 12–36 月龄；牛奶基、铁强化。\""
+          }
+        ],
+        "reason": "商品查询返回中 FORM-3 的 description 字段为“3 段，适用 12–36 月龄；牛奶基、铁强化。”，包含要点所述的描述内容；message_index 6 的查询结果亦相同。"
+      }
+    ],
+    "summary": "两个要点均有材料直接支持：用户指令明确提到宝宝已学会翻身；商品查询返回显示 FORM-3 的描述为“3 段，适用 12–36 月龄；牛奶基、铁强化。”。"
+  }
+}

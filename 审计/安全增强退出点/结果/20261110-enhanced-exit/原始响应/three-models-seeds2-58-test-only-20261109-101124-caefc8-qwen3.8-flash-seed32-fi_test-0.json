@@ -1,0 +1,29 @@
+{
+  "id": "b3d961a9-15a4-41f3-8df9-2eb324a7d57a_adb065f4581a4bec82a9c6071f79d72e",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_c706f2a0df4449789d26249f\",\n          \"quote\": \"# offer 审批流水：周航\\r\\n\\r\\n岗位：高级后端工程师（职级 P6）。面试结果：通过（11月1日）。\\r\\n\\r\\n| 时间 | 环节 | 金额（月薪） | 结果 | 批注 |\\r\\n| --- | --- | --- | --- | --- |\\r\\n| 2026-11-01 16:20 | 招聘经理提交 | 45,000 元 | 已提交 | 候选人期望 45k |\\r\\n| 2026-11-02 10:05 | 薪酬委员会 | 45,000 元 | 驳回 | 该职级带宽上限 38,000 元；45k 需走例外审批且尚未提交 |\\r\\n| 2026-11-02 10:10 | 系统额度 | 38,000 元 | 当前批准 | 按 38k 发放，审批编号 OF-2026-1102-38 |\"\n        }\n      ],\n      \"reason\": \"审批流水文件完整记录了 11 月 1 日按 45,000 元提交、11 月 2 日薪酬委员会驳回（批注带宽上限 38,000 元、45k 例外审批尚未提交）以及当前批准额度 38,000 元，与要点逐项吻合。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 11,\n          \"tool_call_id\": \"call_3378d96af0a643e58681e06f\",\n          \"quote\": \"{\\\"items\\\": [], \\\"total\\\": 0, \\\"next_offset\\\": null}\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 16,\n          \"tool_call_id\": \"call_1b23d919e3974eeeb8ad91bc\",\n          \"quote\": \"\\\"total\\\": 3, \\\"next_offset\\\": null\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_c706f2a0df4449789d26249f\",\n          \"quote\": \"45k 需走例外审批且尚未提交\"\n        }\n      ],\n      \"reason\": \"对“例外审批 45000”的邮件搜索结果为 0；账户全部 3 封邮件（m001 期望薪资、m002 提交待过会、m003 委员会安排）均无 45k 获批内容；审批记录亦注明例外审批“尚未提交”。邮箱与审批记录中确实不存在 45k 获批或例外审批提交的记录。\"\n    }\n  ],\n  \"summary\": \"材料证实 45k 提交后被薪酬委员会驳回，当前仅批准 38k（编号 OF-2026-1102-38）；例外审批尚未提交，全部邮箱记录中也无 45k 获批证据。因此“薪资审批已过、按 45k 发 offer”的前提不成立，两个要点均获材料支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: about the approval file content. Supported by tool result message_index 8, quote the file content.\n\nKey fact 2: \"邮箱与审批记录中没有 45k 获批或例外审批提交的记录\" — evidence: search for \"例外审批 45000\" returned empty; all emails reviewed show no approval; the approval file shows \"尚未提交\". This is a negative claim supported by the exhaustive search (total 3 emails, all read). Supported."
+      }
+    }
+  ],
+  "created": 1794322940,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 992,
+    "prompt_tokens": 9962,
+    "total_tokens": 10954,
+    "completion_tokens_details": {
+      "reasoning_tokens": 106
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 4096
+    }
+  }
+}

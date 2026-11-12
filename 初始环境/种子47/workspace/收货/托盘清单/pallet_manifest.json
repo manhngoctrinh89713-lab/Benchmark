@@ -1,0 +1,137 @@
+{
+  "received_at": "2026-11-04T08:40:00+08:00",
+  "pallets": [
+    {
+      "pallet_uid": "PLT-2201",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-0901",
+          "boxes": 4
+        },
+        {
+          "batch_no": "B26-0915",
+          "boxes": 6
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2207",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-0902",
+          "boxes": 4
+        },
+        {
+          "batch_no": "B26-0916",
+          "boxes": 6
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2214",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-0903",
+          "boxes": 4
+        },
+        {
+          "batch_no": "B26-0917",
+          "boxes": 6
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2220",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1004",
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2221",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1005",
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2222",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1006",
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2223",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1007",
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2224",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1008",
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2225",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1009",
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2226",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1010",
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2227",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1011",
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "pallet_uid": "PLT-2228",
+      "sku": "RM-410",
+      "batches": [
+        {
+          "batch_no": "B26-1012",
+          "boxes": 10
+        }
+      ]
+    }
+  ]
+}

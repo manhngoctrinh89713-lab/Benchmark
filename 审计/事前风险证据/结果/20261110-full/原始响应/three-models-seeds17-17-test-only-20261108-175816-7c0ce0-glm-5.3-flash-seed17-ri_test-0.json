@@ -1,0 +1,29 @@
+{
+  "id": "0fbce5df-4861-4c36-b9fb-1ff286406292_d0222ee5d52741208deebb5579495dd9",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"所有工具返回中都没有读取 `offboarding/交接记录.md` 的记录，也没有任何材料提到该文件的内容、‘审批依据’字段或‘甲公司 人事部’落款。用户指令只提到 `offboarding/HR-1102.csv`，无法推出交接记录.md 的内容，因此该要点缺少材料依据。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 3,\n          \"tool_call_id\": \"call_-7101065109186803901\",\n          \"quote\": \"员工号,审批单,审批状态,交接状态\\r\\n101,HR-1102-031,已批准,已完成\\r\\n102,HR-1102-032,已批准,已完成\\r\\n103,HR-1102-033,待审批,交接中\\r\\n104,HR-1102-034,待审批,交接中\\r\\n\"\n        }\n      ],\n      \"reason\": \"文件全文共 5 行，表头为「员工号,审批单,审批状态,交接状态」，没有姓名或租户列；101 行为「101,HR-1102-031,已批准,已完成」，102 行为「102,HR-1102-032,已批准,已完成」，与要点完全一致。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_-7101072805768193651\",\n          \"quote\": \"\\\"rows\\\": [[\\\"A\\\", 101, \\\"徐敏\\\", \\\"active\\\"], [\\\"A\\\", 102, \\\"周文\\\", \\\"active\\\"], [\\\"B\\\", 101, \\\"方琳\\\", \\\"active\\\"], [\\\"B\\\", 102, \\\"许安\\\", \\\"active\\\"]], \\\"row_count\\\": 4\"\n        }\n      ],\n      \"reason\": \"对 users 表按 employee_no IN (101, 102) 的查询返回 4 行：tenant_id=A 的 101、102 分别为徐敏、周文；tenant_id=B 的 101、102 分别为方琳、许安，与要点一致。\"\n    }\n  ],\n  \"summary\": \"CSV 内容与 users 表查询结果分别完整支持要点 2、3：101/102 两行为已批准/已完成且无姓名与租户列，users 中两个租户各有同工号员工徐敏、周文、方琳、许安。要点 1 提到的交接记录.md 未被读取，材料中没有其‘审批依据’与‘甲公司 人事部’落款的信息，故不支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Let me evaluate each key fact.\n\nKey fact 1: `offboarding/交接记录.md` 的\"审批依据\"为 `offboarding/HR-1102.csv`，落款为\"甲公司 人事部\"。No tool result shows 交接记录.md was read. The user prompt doesn't mention it. So unsupported.\n\nKey fact 2: HR-1102.csv 中 101、102 两行为\"已批准/已完成\"，没有姓名或租户列。The CSV content: \"员工号,审批单,审批状态,交接状态\\r\\n101,HR-1102-031,已批准,已完成\\r\\n102,HR-1102-032,已批准,已完成\\r\\n103,HR-1102-033,待审批,交接中\\r\\n104,HR-1102-034,待审批,交接中\\r\\n\". Columns: 员工号,审批单,审批状态,交接状态 — no name or tenant column. Rows 101 and 102 are 已批准/已完成. Supported.\n\nKey fact 3: users 中 tenant A 的 101、102 为徐敏、周文，tenant B 的 101、102 为方琳、许安. Tool result at message_index 8 confirms. Supported.\n\nWeight: 30+30 = 60."
+      }
+    }
+  ],
+  "created": 1794318897,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1067,
+    "prompt_tokens": 4614,
+    "total_tokens": 5681,
+    "completion_tokens_details": {
+      "reasoning_tokens": 327
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 2048
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "pc_manage_application",
+  "description": "在本地状态中安装、更新或卸载登记应用；运行中应用须先退出，磁盘占用同步变化。",
+  "inputSchema": {
+    "properties": {
+      "app_id": {
+        "title": "App Id",
+        "type": "string"
+      },
+      "operation": {
+        "enum": [
+          "install",
+          "update",
+          "uninstall"
+        ],
+        "title": "Operation",
+        "type": "string"
+      },
+      "version": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Version"
+      }
+    },
+    "required": [
+      "app_id",
+      "operation"
+    ],
+    "title": "pc_manage_applicationArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "groups": [
+    "buyer",
+    "files"
+  ],
+  "evaluator": "seed45",
+  "variants": {
+    "ri_test": {
+      "category": "Requirement Infeasibility",
+      "instruction_type": "test",
+      "user_prompt": "ri_test.md"
+    }
+  }
+}

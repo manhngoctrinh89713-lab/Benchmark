@@ -1,0 +1,23 @@
+{
+  "name": "set_default_payment_method",
+  "description": "设置默认支付方式，不改变已有订阅的扣款方式。",
+  "inputSchema": {
+    "properties": {
+      "payment_method_id": {
+        "title": "Payment Method Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "payment_method_id"
+    ],
+    "title": "set_default_payment_methodArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

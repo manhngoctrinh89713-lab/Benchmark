@@ -1,0 +1,43 @@
+{
+  "name": "list_media",
+  "description": "分页查询本地可见消息中的文件和媒体元数据，包含合并记录内的附件；query 匹配文件名。分别显示服务器是否可下载 available 和是否已有本地缓存 saved_locally。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Chat Id"
+      },
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "list_mediaArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

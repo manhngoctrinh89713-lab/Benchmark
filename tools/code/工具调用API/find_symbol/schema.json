@@ -1,0 +1,55 @@
+{
+  "name": "find_symbol",
+  "description": "在文件或项目内按name_path的子串查找定义，可返回源码；解析失败文件在skipped中报告。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "path": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Path"
+      },
+      "include_body": {
+        "default": false,
+        "title": "Include Body",
+        "type": "boolean"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "project_id",
+      "name"
+    ],
+    "title": "find_symbolArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

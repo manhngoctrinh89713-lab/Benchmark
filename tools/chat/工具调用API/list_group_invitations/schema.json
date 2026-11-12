@@ -1,0 +1,45 @@
+{
+  "name": "list_group_invitations",
+  "description": "查询群邀请审批记录；群主/管理员可见全群，普通成员仅可见自己发起的邀请。status 为 pending/approved/rejected/expired，null 为全部。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "status": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "pending",
+        "title": "Status"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "list_group_invitationsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

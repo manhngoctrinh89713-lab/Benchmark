@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "fingerprint": "bdb7b4e456ec0f5b940bfa6ce95894ac6441345fe8b9ace71cfcbff285b2bfc2",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_-7101070400586512866",
+            "quote": "{\"cell\": \"C2\", \"value\": 86, \"formula\": null, \"calculated_value\": 86}...{\"cell\": \"C3\", \"value\": 28, \"formula\": null, \"calculated_value\": 28}...{\"cell\": \"C4\", \"value\": 65, \"formula\": null, \"calculated_value\": 65}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 4,
+            "tool_call_id": "call_-7101071809335786162",
+            "quote": "{\"name\": \"订单跟进\", \"state\": \"visible\", \"rows\": 7, \"columns\": 8, \"formula_count\": 9}"
+          }
+        ],
+        "reason": "前半部分已由「产品价目表」读取结果完整支持（GF-101 86、GF-205 28、GF-308 65）。但后半部分缺少依据：没有任何工具读取过「订单跟进」工作表内容，仅能从 get_workbook_info 得知该表有 9 个公式，无法确认 SO1028-01、SO1030-03、SO1031-05 各行的单价列是引用「产品价目表」的 VLOOKUP 公式。整条要点只获部分支持。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回中都没有出现 `订单确认/SO1028-01.md` 文件，也未读取其内容，成交单价 86 元、金额 43000 元均无材料依据（金额还涉及数量，材料完全未提及）。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101071809335786163",
+            "quote": "| GF-101 | 保温杯 | 92 |\\r\\n| GF-205 | 帆布袋 | 30 |\\r\\n| GF-308 | 笔记本礼盒 | 69 |"
+          }
+        ],
+        "reason": "调价单表格逐行给出 GF-101 新价 92、GF-205 新价 30、GF-308 新价 69，与要点完全一致。"
+      }
+    ],
+    "summary": "调价单新价（92/30/69）与价目表现价（86/28/65）均有材料支持；但「订单跟进」表的 VLOOKUP 公式细节未被读取，仅有公式数量线索，无法确认具体行的引用公式，故第1条仅部分支持。第2条的订单确认文件从未被读取，无任何依据。"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "checkout_cart",
+  "description": "按当前默认配送条件直接创建待付款订单，并核对预期总额。",
+  "inputSchema": {
+    "$defs": {
+      "Address": {
+        "additionalProperties": false,
+        "properties": {
+          "address_line_1": {
+            "title": "Address Line 1",
+            "type": "string"
+          },
+          "country_code": {
+            "title": "Country Code",
+            "type": "string"
+          },
+          "address_line_2": {
+            "title": "Address Line 2",
+            "type": "string"
+          },
+          "admin_area_1": {
+            "title": "Admin Area 1",
+            "type": "string"
+          },
+          "admin_area_2": {
+            "title": "Admin Area 2",
+            "type": "string"
+          },
+          "postal_code": {
+            "title": "Postal Code",
+            "type": "string"
+          },
+          "recipient": {
+            "title": "Recipient",
+            "type": "string"
+          },
+          "phone": {
+            "title": "Phone",
+            "type": "string"
+          }
+        },
+        "required": [
+          "address_line_1",
+          "country_code"
+        ],
+        "title": "Address",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "merchant_id": {
+        "title": "Merchant Id",
+        "type": "string"
+      },
+      "expected_total_minor": {
+        "title": "Expected Total Minor",
+        "type": "integer"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      },
+      "shipping_address": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Address"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      }
+    },
+    "required": [
+      "merchant_id",
+      "expected_total_minor",
+      "idempotency_key"
+    ],
+    "title": "checkout_cartArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "pc_save_scheduled_task",
+  "description": "新增或修改计划任务。电脑支持 application.launch；服务器支持 service.start/stop/restart/reload。零间隔为一次性任务。",
+  "inputSchema": {
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "action": {
+        "title": "Action",
+        "type": "string"
+      },
+      "target_id": {
+        "title": "Target Id",
+        "type": "string"
+      },
+      "run_at": {
+        "title": "Run At",
+        "type": "string"
+      },
+      "interval_seconds": {
+        "default": 0,
+        "title": "Interval Seconds",
+        "type": "integer"
+      },
+      "enabled": {
+        "default": true,
+        "title": "Enabled",
+        "type": "boolean"
+      },
+      "task_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Task Id"
+      }
+    },
+    "required": [
+      "name",
+      "action",
+      "target_id",
+      "run_at"
+    ],
+    "title": "pc_save_scheduled_taskArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

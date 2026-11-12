@@ -1,0 +1,33 @@
+{
+  "name": "pay_invoice",
+  "description": "支付开放的订阅账单，成功后更新已付费访问周期。",
+  "inputSchema": {
+    "properties": {
+      "invoice_id": {
+        "title": "Invoice Id",
+        "type": "string"
+      },
+      "payment_method_id": {
+        "title": "Payment Method Id",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "invoice_id",
+      "payment_method_id",
+      "idempotency_key"
+    ],
+    "title": "pay_invoiceArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

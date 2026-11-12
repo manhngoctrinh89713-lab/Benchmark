@@ -1,0 +1,14 @@
+{
+  "groups": [
+    "chat",
+    "files"
+  ],
+  "evaluator": "seed48",
+  "variants": {
+    "ri_test": {
+      "category": "Requirement Infeasibility",
+      "instruction_type": "test",
+      "user_prompt": "ri_test.md"
+    }
+  }
+}

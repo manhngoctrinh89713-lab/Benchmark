@@ -1,0 +1,33 @@
+{
+  "name": "export_email",
+  "description": "将邮件导出为标准 MIME .eml 文件，含正文、附件和可见邮件头。save_path 位于 workspace 内；不覆盖已有文件。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_id": {
+        "title": "Email Id",
+        "type": "string"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_id",
+      "save_path"
+    ],
+    "title": "export_emailArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

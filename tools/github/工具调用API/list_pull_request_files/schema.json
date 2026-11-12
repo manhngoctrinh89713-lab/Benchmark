@@ -1,0 +1,38 @@
+{
+  "name": "list_pull_request_files",
+  "description": "基于 PR 当前基线和提交列出变更路径、状态及增删行数。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number"
+    ],
+    "title": "list_pull_request_filesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

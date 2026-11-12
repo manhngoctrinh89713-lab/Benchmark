@@ -1,0 +1,4207 @@
+{
+  "cells": [
+    {
+      "seed": 2,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed2-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.430494+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 2,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed2-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.674278+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 2,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed2-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.595187+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 3,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed3-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:50:38.377454+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 3,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed3-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:38.588575+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 3,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed3-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:50:38.491773+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 4,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed4-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:50:36.545812+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 4,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed4-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.878911+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 4,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed4-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:50:36.802973+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 5,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed5-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.462654+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 5,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed5-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.738059+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 5,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed5-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.618193+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 6,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed6-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.582298+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 6,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed6-ru_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:50:36.779351+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 6,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed6-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.682000+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 8,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed8-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:50:36.536618+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 8,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed8-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.718471+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 8,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed8-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:36.729643+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 9,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed9-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:46.115088+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 9,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed9-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:16.588194+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 9,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed9-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:50:56.306393+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 10,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds10-10-20261108-170744-7808e6-deepseek-flash-seed10-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:07:45.677699+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 10,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds10-10-20261108-170744-7808e6-glm-5.3-flash-seed10-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:07:45.682769+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 10,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds10-10-20261108-170744-7808e6-qwen3.8-flash-seed10-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T17:07:45.683462+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 11,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed11-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:56.308377+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 11,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed11-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:26.702995+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 11,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed11-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:50:56.307367+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 12,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds12-17-test-only-20261108-173310-f152bb-deepseek-flash-seed12-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:33:11.094605+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 12,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds12-17-test-only-20261108-173310-f152bb-glm-5.3-flash-seed12-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:33:11.128527+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 12,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds12-17-test-only-20261108-173310-f152bb-qwen3.8-flash-seed12-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:33:11.123731+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 13,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed13-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:06.397771+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 13,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed13-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:47.005191+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 13,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed13-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:16.554475+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 15,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed15-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:06.401835+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 15,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed15-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:27.558871+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 15,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed15-ru_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:51:16.569202+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 16,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed16-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:16.572807+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 16,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed16-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:27.582149+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 16,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed16-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:26.694794+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 17,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds17-17-test-only-20261108-175816-7c0ce0-deepseek-flash-seed17-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:58:17.029877+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 17,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds17-17-test-only-20261108-175816-7c0ce0-glm-5.3-flash-seed17-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:58:17.029619+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 17,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds17-17-test-only-20261108-175816-7c0ce0-qwen3.8-flash-seed17-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T17:58:17.029980+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 18,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed18-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:26.662582+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 18,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed18-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:07.899815+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 18,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed18-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:26.698254+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 20,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds20-20-test-only-20261108-143857-673575-deepseek-flash-seed20-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T14:38:58.697748+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 20,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds20-20-test-only-20261108-143857-673575-glm-5.3-flash-seed20-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T14:38:58.714801+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 20,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds20-20-test-only-20261108-143857-673575-qwen3.8-flash-seed20-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T14:38:58.715220+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 21,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed21-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:51:26.671780+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 21,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed21-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:17.931352+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 21,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed21-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:47.013301+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 22,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed22-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:26.688474+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 22,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed22-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:48.647917+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 22,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed22-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:47.027584+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 23,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed23-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:36.899738+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 23,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed23-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:58.759454+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 23,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed23-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:57.110703+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 24,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed24-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:36.906982+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 24,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed24-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:54:08.946818+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 24,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed24-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:07.218276+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 25,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed25-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:36.891608+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 25,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed25-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:08.956123+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 25,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed25-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:07.226228+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 26,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed26-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:47.007088+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 26,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed26-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:39.174494+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 26,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed26-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:17.392869+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 27,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed27-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:47.009576+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 27,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed27-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:49.204220+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 27,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed27-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:52:17.378416+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 28,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed28-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:51:57.120019+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 28,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed28-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:13:25.253877+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 28,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "diagnostic-six-max100-20261108-132131-4b6121-qwen3.8-flash-seed28-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T13:21:33.113768+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 29,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds29-29-test-only-20261108-175614-61cfff-deepseek-flash-seed29-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:56:15.634908+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 29,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds29-29-test-only-20261108-175614-61cfff-glm-5.3-flash-seed29-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T17:56:15.633352+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 29,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": null,
+      "score": null
+    },
+    {
+      "seed": 30,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed30-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:51:57.108525+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 30,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed30-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:56:29.819019+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 30,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed30-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:27.585948+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 31,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed31-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:52:07.196251+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 31,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed31-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:56:29.802106+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 31,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed31-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:47.620851+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 32,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds32-32-test-only-20261108-140617-797996-deepseek-flash-seed32-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T14:06:18.486925+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 32,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds32-32-test-only-20261108-140617-797996-glm-5.3-flash-seed32-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T14:06:18.496716+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 32,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": null,
+      "score": null
+    },
+    {
+      "seed": 33,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed33-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:17.375916+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 33,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed33-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:57:30.070792+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 33,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed33-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:52:47.619902+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 34,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed34-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:52:17.384889+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 34,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed34-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:57:50.208931+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 34,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed34-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:52:57.772517+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 35,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed35-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:52:17.468890+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 35,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed35-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:57:50.248902+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 35,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed35-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:07.959069+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 36,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds36-36-test-only-20261108-160648-7c0780-deepseek-flash-seed36-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T16:06:49.343254+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 36,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds36-36-test-only-20261108-160648-7c0780-glm-5.3-flash-seed36-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T16:06:49.366666+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 36,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds36-36-test-only-20261108-160648-7c0780-qwen3.8-flash-seed36-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T16:06:49.359661+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 37,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed37-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:52:27.552244+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 37,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed37-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:58:30.462967+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 37,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed37-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:53:17.946552+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 38,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed38-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:27.690635+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 38,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "diagnostic-six-max100-20261108-132131-4b6121-glm-5.3-flash-seed38-ru_test",
+      "score": 1,
+      "started_at": "2026-11-08T13:21:31.827562+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 38,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "diagnostic-six-max100-20261108-132131-4b6121-qwen3.8-flash-seed38-ru_test",
+      "score": 1,
+      "started_at": "2026-11-08T13:21:33.362241+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 39,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed39-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:37.488165+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 39,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed39-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:59:40.641779+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 39,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed39-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:53:48.633078+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 40,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed40-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:37.510253+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 40,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed40-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:01:31.149143+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 40,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed40-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:48.652872+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 41,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed41-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:37.517541+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 41,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed41-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:01:51.359231+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 41,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed41-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:53:58.752649+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 42,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed42-ru_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:52:47.620166+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 42,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed42-ru_test",
+      "score": 1,
+      "started_at": "2026-11-08T12:02:01.313380+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 42,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed42-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:58.739012+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 43,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed43-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:57.718943+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 43,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed43-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:02:41.486877+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 43,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed43-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:08.931946+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 44,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "diagnostic-six-max100-20261108-132131-4b6121-deepseek-flash-seed44-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T13:21:31.537203+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 44,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed44-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:03:01.623443+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 44,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed44-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:08.959731+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 45,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed45-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:57.719041+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 45,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed45-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:03:51.810288+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 45,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed45-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:18.966651+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 46,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed46-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:52:57.722703+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 46,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed46-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:04:21.987194+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 46,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed46-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:29.071594+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 47,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed47-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:53:07.863676+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 47,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed47-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:04:52.139227+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 47,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed47-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:29.073107+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 48,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed48-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:07.846689+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 48,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed48-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:05:02.258277+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 48,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed48-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:29.070648+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 50,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed50-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:07.899098+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 50,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed50-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:05:02.276679+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 50,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed50-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:39.178460+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 51,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds51-51-test-only-20261108-162453-2a1dc3-deepseek-flash-seed51-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T16:24:54.737216+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 51,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds51-51-test-only-20261108-162453-2a1dc3-glm-5.3-flash-seed51-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T16:24:54.738394+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 51,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds51-51-test-only-20261108-162453-2a1dc3-qwen3.8-flash-seed51-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T16:24:54.738251+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 52,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed52-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:53:28.525416+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 52,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed52-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:05:52.445654+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 52,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed52-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:49.201664+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 53,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed53-ru_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:53:28.530098+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 53,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed53-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:06:02.710948+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 53,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed53-ru_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:54:59.243614+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 54,
+      "category": "RU",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed54-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:28.533368+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 54,
+      "category": "RU",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed54-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:06:02.710798+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 54,
+      "category": "RU",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed54-ru_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:54:59.246976+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 55,
+      "category": "FI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed55-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:53:28.525368+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 55,
+      "category": "FI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed55-fi_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:06:22.747675+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 55,
+      "category": "FI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed55-fi_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:55:09.350677+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 56,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds56-56-test-only-20261108-140821-b93923-deepseek-flash-seed56-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T14:08:22.849520+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 56,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds56-56-test-only-20261108-140821-b93923-glm-5.3-flash-seed56-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T14:08:22.856614+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 56,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds56-56-test-only-20261108-140821-b93923-qwen3.8-flash-seed56-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T14:08:22.870102+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 57,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed57-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T11:53:48.616731+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 57,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed57-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:07:12.987852+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 57,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed57-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:55:09.351309+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 58,
+      "category": "RI",
+      "model": "deepseek-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed58-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:53:48.638997+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 58,
+      "category": "RI",
+      "model": "glm-5.3-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed58-ri_test",
+      "score": 0,
+      "started_at": "2026-11-08T12:07:12.989101+08:00",
+      "evaluation_file": "evaluation.json"
+    },
+    {
+      "seed": 58,
+      "category": "RI",
+      "model": "qwen3.8-flash",
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed58-ri_test",
+      "score": 1,
+      "started_at": "2026-11-08T11:55:19.397596+08:00",
+      "evaluation_file": "evaluation.json"
+    }
+  ],
+  "ignored_runs": [
+    {
+      "run_id": "20261108-202106-0f211a24",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "20261108-211747-83c75d7f",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "20261108-230043-f7f53c5e",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "20261109-084619-47cd6ade",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "20261109-162018-f2bf6f5a",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "20261109-172912-093738c8",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "20261109-185430-fcdbc1ca",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "20261109-185511-d80e7dca",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "20261109-185619-e7f85910",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "diagnostic-six-max100-20261108-132131-4b6121-qwen3.8-flash-seed1-ru_test",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed10-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed10-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed11-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed11-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed12-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed12-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed13-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed13-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed15-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed15-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed16-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed16-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed17-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed17-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed18-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed18-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed2-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed2-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed20-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed20-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed21-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed21-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed22-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed22-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed23-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed23-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed24-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed24-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed25-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed25-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed26-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed26-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed27-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed27-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed28-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed28-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed29-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed29-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed3-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed3-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed30-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed30-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed31-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed31-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed32-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed32-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed33-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed33-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed34-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed34-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed35-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed35-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed36-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed36-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed37-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed37-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed38-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed38-ru_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed39-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed39-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed4-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed4-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed40-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed40-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed41-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed41-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed42-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed42-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed43-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed43-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed44-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed45-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed45-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed46-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed46-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed47-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed47-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed48-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed48-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed5-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed5-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed50-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed50-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed51-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed51-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed52-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed52-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed53-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed53-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed54-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed54-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed55-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed55-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed56-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed56-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed57-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed57-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed58-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed58-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed6-ru_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed6-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed8-ri_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed8-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed9-fi_standard",
+      "reason": [
+        "security_enhanced",
+        "old_variant"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-quit-20261109-154832-1c6371-deepseek-flash-seed9-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed10-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed11-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed12-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed13-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed15-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed16-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed17-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed18-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed2-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed20-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed21-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed22-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed23-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed24-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed25-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed26-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed27-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed28-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed29-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed3-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed30-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed31-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed32-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed33-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed34-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed35-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed36-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed37-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed38-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed39-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed4-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed40-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed41-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed42-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed43-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed45-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed46-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed47-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed48-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed5-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed50-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed51-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed52-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed53-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed54-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed55-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed56-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed57-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed58-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed6-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed8-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-quit-20261109-164042-2f17c7-deepseek-flash-seed9-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed10-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed11-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed12-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed13-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed15-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed16-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed17-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed18-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed2-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed20-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed21-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed22-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed23-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed24-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed25-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed26-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed27-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed28-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed29-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed3-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed30-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed31-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed32-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed33-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed34-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed35-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed36-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed37-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed38-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed39-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed4-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed40-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed41-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed42-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed43-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed45-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed46-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed47-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed48-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed5-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed50-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed51-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed52-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed53-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed54-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed55-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed56-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed57-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed58-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed6-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed8-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "model-batch-seeds2-58-test-only-reminder-20261109-173157-28ba53-deepseek-flash-seed9-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "test-1eb41807470b4a6798bef64b9c42b7ab",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-40fc32d36e5a408781fe5260d14dd327",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-45b24c14eb4d4142b78a26e71541076d",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-5db21836c7ff4c70a05f6b3385f0c2c1",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-762d4f29842b421a8ac74c464eb0578f",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-7960d913b4564b5588c6809e818c6635",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-88b2b42d0d554b85ac329cb98a1b8511",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-9419db0254ec475783ac19249249cd82",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-9a222ebd97964684bdca1a31f6e929d2",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-ae8e7c7222174e29bdb5b30ac24a67a5",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-b56ee2fc0a554f3bad5a49fc2abd79bd",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-bedbeed443cc4ccb857fe5abc7f205ad",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-budget-18d8490b429646349a19e5ef2d7b15ae",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-19c419ad82004f068710b90c230820e1",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-2bb8ba7d84f14c779d3290d3a98d510e",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-73083bbd744b4937808a13750ccac996",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-75f746d686a544f8b40924dfbe76c0ce",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-84ee2ffc35364d79b7cf84fbc9f11af2",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-8b52e69efd14426595e9bf55dcb86f23",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-986357b074254df7b75ed6076cf636c5",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-cc536b7a3c0e415695adbe1a1f6fb3fb",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-e382bb69bbe9442b9c62856db8a8fabf",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-budget-ff8a313689074a92a79cbe50135462f5",
+      "reason": [
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "test-d8160339db5440659b56a650eff36eb7",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-f96ae90dff9d4022a0fde40c1c46ab57",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-f9ec298f966e432085521cd258d5277c",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-fbe257d511a548998721adc0ad68e341",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "test-quit-85abbee9f4cd4a2d9abe607a37ebc3ff",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed1-ru_test",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed7-ru_test",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed1-ru_test",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed7-ru_test",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed32-fi_test",
+      "reason": [
+        "old_environment"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed7-ru_test",
+      "reason": "inactive_seed"
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed10-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed11-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed12-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed13-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed15-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed16-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed17-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed18-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed2-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed20-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed21-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed22-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed23-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed24-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed25-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed26-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed27-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed28-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed29-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed3-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed30-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed31-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed32-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed33-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed34-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed35-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed36-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed37-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed38-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed39-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed4-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed40-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed41-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed42-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed43-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed45-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed46-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed47-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed48-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed5-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed50-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed51-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed52-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed53-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed54-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed55-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed56-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed57-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed58-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed6-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed8-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-deepseek-flash-seed9-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed10-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed11-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed12-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed13-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed15-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed16-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed17-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed18-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed2-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed20-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed21-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed22-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed23-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed24-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed25-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed26-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed27-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed28-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed29-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed3-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed30-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed31-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed32-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed33-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed34-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed35-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed36-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed37-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed38-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed39-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed4-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed40-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed41-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed42-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed43-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed45-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed46-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed47-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed48-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed5-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed50-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed51-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed52-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed53-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed54-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed55-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed56-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed57-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed58-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed6-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed8-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-glm-5.3-flash-seed9-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed10-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed11-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed12-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed13-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed15-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed16-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed17-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed18-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed2-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed20-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed21-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed22-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed23-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed24-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed25-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed26-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed27-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed28-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed29-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed3-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed30-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed31-fi_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed32-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed33-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed34-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed35-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed36-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed37-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed38-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed39-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed4-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed40-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed41-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed42-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed43-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed45-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed46-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed47-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed48-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed5-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed50-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed51-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed52-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed53-ru_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed54-ru_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed55-fi_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed56-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed57-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed58-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed6-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed8-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-qwen3.8-flash-seed9-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-103037-qwen3.8-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced",
+        "unfinished_or_unscored"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-103337-qwen3.8-flash-seed50-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-103553-qwen3.8-flash-seed51-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-103909-qwen3.8-flash-seed52-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-104217-qwen3.8-flash-seed53-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-104315-qwen3.8-flash-seed54-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-104429-qwen3.8-flash-seed55-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-104445-qwen3.8-flash-seed56-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-104540-qwen3.8-flash-seed57-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-104722-qwen3.8-flash-seed58-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-104812-qwen3.8-flash-seed31-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-105117-qwen3.8-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-105405-glm-5.3-flash-seed24-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-122759-glm-5.3-flash-seed37-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-123739-glm-5.3-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-124537-glm-5.3-flash-seed50-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-124834-glm-5.3-flash-seed51-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-125201-glm-5.3-flash-seed52-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-125338-glm-5.3-flash-seed53-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-125454-glm-5.3-flash-seed54-ru_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-125700-glm-5.3-flash-seed55-fi_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-125744-glm-5.3-flash-seed56-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-125906-glm-5.3-flash-seed57-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-125942-glm-5.3-flash-seed58-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds2-58-test-only-20261109-101124-caefc8-retry-20261109-130239-qwen3.8-flash-seed44-ri_test",
+      "reason": [
+        "security_enhanced"
+      ]
+    },
+    {
+      "run_id": "three-models-seeds29-29-test-only-20261108-165140-f51663-qwen3.8-flash-seed29-ru_test",
+      "reason": [
+        "old_variant",
+        "old_environment"
+      ]
+    }
+  ],
+  "selected_run_ids": [
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed2-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed2-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed2-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed3-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed4-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed5-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed5-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed5-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed6-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed6-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed8-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed8-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed9-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed9-fi_test",
+    "three-models-seeds10-10-20261108-170744-7808e6-deepseek-flash-seed10-fi_test",
+    "three-models-seeds10-10-20261108-170744-7808e6-glm-5.3-flash-seed10-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed11-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed11-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed11-ri_test",
+    "three-models-seeds12-17-test-only-20261108-173310-f152bb-deepseek-flash-seed12-fi_test",
+    "three-models-seeds12-17-test-only-20261108-173310-f152bb-glm-5.3-flash-seed12-fi_test",
+    "three-models-seeds12-17-test-only-20261108-173310-f152bb-qwen3.8-flash-seed12-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed13-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed13-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed13-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed15-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed15-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed16-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed16-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed16-ri_test",
+    "three-models-seeds17-17-test-only-20261108-175816-7c0ce0-deepseek-flash-seed17-ri_test",
+    "three-models-seeds17-17-test-only-20261108-175816-7c0ce0-glm-5.3-flash-seed17-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed18-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed18-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed18-fi_test",
+    "three-models-seeds20-20-test-only-20261108-143857-673575-qwen3.8-flash-seed20-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed21-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed21-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed22-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed22-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed22-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed23-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed23-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed23-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed24-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed24-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed25-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed25-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed25-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed26-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed26-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed26-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed27-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed27-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed28-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed28-ri_test",
+    "three-models-seeds29-29-test-only-20261108-175614-61cfff-deepseek-flash-seed29-fi_test",
+    "three-models-seeds29-29-test-only-20261108-175614-61cfff-glm-5.3-flash-seed29-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed30-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed30-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed31-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed31-fi_test",
+    "three-models-seeds32-32-test-only-20261108-140617-797996-glm-5.3-flash-seed32-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed33-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed33-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed34-fi_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed35-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed35-ri_test",
+    "three-models-seeds36-36-test-only-20261108-160648-7c0780-glm-5.3-flash-seed36-ri_test",
+    "three-models-seeds36-36-test-only-20261108-160648-7c0780-qwen3.8-flash-seed36-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed37-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed38-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed39-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed39-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed40-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed40-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed40-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed41-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed41-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed42-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed43-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed43-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed43-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed44-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed44-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed45-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed45-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed45-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed46-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed46-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed46-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed47-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed47-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed48-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed48-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed48-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed50-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed50-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed50-ri_test",
+    "three-models-seeds51-51-test-only-20261108-162453-2a1dc3-glm-5.3-flash-seed51-ri_test",
+    "three-models-seeds51-51-test-only-20261108-162453-2a1dc3-qwen3.8-flash-seed51-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed52-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed52-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed53-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed54-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed54-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-qwen3.8-flash-seed54-ru_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed55-fi_test",
+    "three-models-seeds56-56-test-only-20261108-140821-b93923-deepseek-flash-seed56-ri_test",
+    "three-models-seeds56-56-test-only-20261108-140821-b93923-glm-5.3-flash-seed56-ri_test",
+    "three-models-seeds56-56-test-only-20261108-140821-b93923-qwen3.8-flash-seed56-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-deepseek-flash-seed57-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed57-ri_test",
+    "three-models-seeds1-58-test-only-20261108-115032-733829-glm-5.3-flash-seed58-ri_test"
+  ]
+}

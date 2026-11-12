@@ -1,0 +1,79 @@
+{
+  "name": "set_auto_reply",
+  "description": "设置自动回复；内部按邮箱主地址同域判断，外部受众 external_audience 为 none/contacts/all。start_at/end_at 为带时区 ISO8601，有效范围左闭右开；省略则该端不限。每次设置重置回复历史，有效配置内每个地址最多回复一次，自动邮件及 Trash/Junk 不回复。启用需要 write 和 send_as。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "enabled": {
+        "title": "Enabled",
+        "type": "boolean"
+      },
+      "body": {
+        "default": "",
+        "title": "Body",
+        "type": "string"
+      },
+      "external_body": {
+        "default": "",
+        "title": "External Body",
+        "type": "string"
+      },
+      "external_audience": {
+        "default": "none",
+        "title": "External Audience",
+        "type": "string"
+      },
+      "start_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Start At"
+      },
+      "end_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "End At"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "enabled"
+    ],
+    "title": "set_auto_replyArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

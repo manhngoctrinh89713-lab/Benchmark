@@ -1,0 +1,15 @@
+{
+  "name": "get_merchant_profile",
+  "description": "读取当前商家资料。",
+  "inputSchema": {
+    "properties": {},
+    "title": "get_merchant_profileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

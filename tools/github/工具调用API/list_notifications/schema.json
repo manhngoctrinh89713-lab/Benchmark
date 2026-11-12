@@ -1,0 +1,43 @@
+{
+  "name": "list_notifications",
+  "description": "列出当前用户的本地预置通知，可筛选仓库及未读状态。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Repo Id"
+      },
+      "unread_only": {
+        "default": true,
+        "title": "Unread Only",
+        "type": "boolean"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "list_notificationsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

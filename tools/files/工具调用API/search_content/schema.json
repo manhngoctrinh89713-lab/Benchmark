@@ -1,0 +1,48 @@
+{
+  "name": "search_content",
+  "description": "递归搜索UTF-8文本正文的字面子串，返回路径、行号和匹配行。二进制或不能读取的文件在skipped中报告；Office/PDF请先转换为Markdown再搜索。匹配行最多返回2000字符。",
+  "inputSchema": {
+    "properties": {
+      "query": {
+        "title": "Query",
+        "type": "string"
+      },
+      "path": {
+        "default": ".",
+        "title": "Path",
+        "type": "string"
+      },
+      "pattern": {
+        "default": "*",
+        "title": "Pattern",
+        "type": "string"
+      },
+      "case_sensitive": {
+        "default": false,
+        "title": "Case Sensitive",
+        "type": "boolean"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "query"
+    ],
+    "title": "search_contentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

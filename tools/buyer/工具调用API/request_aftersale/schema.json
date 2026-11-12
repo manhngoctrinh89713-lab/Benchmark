@@ -1,0 +1,77 @@
+{
+  "name": "request_aftersale",
+  "description": "按订单行及数量申请退货退款或换货，并保存证明文件快照。",
+  "inputSchema": {
+    "$defs": {
+      "OrderLineQuantity": {
+        "additionalProperties": false,
+        "properties": {
+          "line_id": {
+            "title": "Line Id",
+            "type": "string"
+          },
+          "quantity": {
+            "title": "Quantity",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "line_id",
+          "quantity"
+        ],
+        "title": "OrderLineQuantity",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      },
+      "kind": {
+        "title": "Kind",
+        "type": "string"
+      },
+      "items": {
+        "items": {
+          "$ref": "#/$defs/OrderLineQuantity"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "paths": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Paths"
+      }
+    },
+    "required": [
+      "order_id",
+      "kind",
+      "items",
+      "reason"
+    ],
+    "title": "request_aftersaleArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

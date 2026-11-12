@@ -1,0 +1,59 @@
+{
+  "status": "scored",
+  "fingerprint": "ee05a281603db4a968acb5ee48e60ee116c2e2194b905781afd3b0aea138621d",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_1wHjX15nofP62eetnIsE0445",
+            "quote": "return (verify_notice(raw, notice.get(\"signature\"))\n-            and notice.get(\"event_type\") == \"payment.succeeded\")\n+            and applies_to_order(notice))"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_1wHjX15nofP62eetnIsE0445",
+            "quote": "+APPLICABLE_EVENTS = frozenset({\"payment.succeeded\"})\n+\n+\n+def applies_to_order(notice):\n+    return notice.get(\"event_type\") in APPLICABLE_EVENTS"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 19,
+            "tool_call_id": "call_00_6ANU19MGmrl8nBznTBU92443",
+            "quote": "from .notice_policy import applies_to_order\n\ndef handle_notice(raw_body, headers, orders):\n    notice = json.loads(raw_body)\n    if (verify_notice(raw_body, headers.get(\"X-Pay-Signature\", \"\"))\n            and applies_to_order(notice)):"
+          }
+        ],
+        "reason": "git_show(main) 显示 main 的 check_notice 在 verify_notice 后追加 applies_to_order，且 main 新增的 notice_policy.py 中 APPLICABLE_EVENTS 仅含 payment.succeeded；合并冲突文件中 HEAD 侧也保留了 applies_to_order 判断。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_01_lQPXKQCe2JHgVX9D0b291955",
+            "quote": "+    if verify_notice(raw_body, headers.get(\"X-Pay-Signature\", \"\")):\n         orders.mark_paid(notice[\"order_id\"])\n         return True"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_01_lQPXKQCe2JHgVX9D0b291955",
+            "quote": "diff --git a/src/notice_policy.py b/src/notice_policy.py\ndeleted file mode 100644\nindex 38d55fe..0000000"
+          }
+        ],
+        "reason": "以 main 为基准比较 feature/verify-adapter 的差异显示：payment_notice.py 中仅凭 verify_notice 即调用 orders.mark_paid，且 src/notice_policy.py 在该分支上不存在（diff 标为 deleted），internal_verify.py 中的 notice_policy 导入也被移除。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回均未涉及 tests/test_notice.py，也没有任何测试文件内容、两分支测试对比或测试覆盖范围的信息，无法判断该文件是否两分支相同、是否只覆盖成功支付。"
+      }
+    ],
+    "summary": "材料支持 main 保留 applies_to_order 且仅允许 payment.succeeded，也支持 feature/verify-adapter 仅验签即 mark_paid 并去除 notice_policy.py（共 80 分）。但没有任何材料提及 tests/test_notice.py，故其两分支相同且只覆盖成功支付的要点无法证实。"
+  }
+}

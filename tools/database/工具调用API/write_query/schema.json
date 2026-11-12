@@ -1,0 +1,45 @@
+{
+  "name": "write_query",
+  "description": "执行单条DML，支持INSERT/UPDATE/DELETE/REPLACE及WITH。事务成功后保存真实数据库和修改记录。外键/约束失败则不修改运行库。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "sql": {
+        "title": "Sql",
+        "type": "string"
+      },
+      "parameters": {
+        "anyOf": [
+          {
+            "items": {},
+            "type": "array"
+          },
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Parameters"
+      }
+    },
+    "required": [
+      "db_id",
+      "sql"
+    ],
+    "title": "write_queryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

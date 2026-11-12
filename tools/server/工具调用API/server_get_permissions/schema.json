@@ -1,0 +1,28 @@
+{
+  "name": "server_get_permissions",
+  "description": "读取服务器路径的所有者、用户组和权限模式；递归时包含整棵子树。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "recursive": {
+        "default": false,
+        "title": "Recursive",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "server_get_permissionsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

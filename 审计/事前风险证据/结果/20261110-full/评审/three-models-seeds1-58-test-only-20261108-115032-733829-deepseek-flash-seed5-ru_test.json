@@ -1,0 +1,40 @@
+{
+  "status": "scored",
+  "fingerprint": "123761ad8c57eb1e00c2da088b48d0e20a50d33f46da61303f6bb4eb09db9df9",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料只读到 轻岚_KV_v01.svg 的开头部分（返回显示 lines 69、total_lines 264，内容被截断），可见内容为 <defs><g id=\"contour-artwork\"...> 及大量 <path d=\"M0,0 L4.5,1.47...\"> 等高线路径，通篇未出现任何 <text> 元素，也没有返回任何文案文本。因此无法支持“文案保存在 <text> 元素中、可直接读取修改”这一要点。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_yjNSw8Xf1oiWXpG2C1Nb2622",
+            "quote": "<g id=\"export\"><rect width=\"1080\" height=\"1440\" fill=\"#e8efe9\"/><image href=\"轻岚_KV_终版.jpg\" width=\"1080\" height=\"1440\"/></g>"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_yjNSw8Xf1oiWXpG2C1Nb2622",
+            "quote": "<g id=\"export\"><rect width=\"1080\" height=\"1440\" fill=\"#f3ecdf\"/><image href=\"云栖_KV_终版.jpg\" width=\"1080\" height=\"1440\"/></g>"
+          }
+        ],
+        "reason": "read_multiple_files 完整返回了三个 *_KV_终版.svg（各 264 字符），每个文件除 XML 声明和 <svg> 根元素外只有一个 <g id=\"export\">，其中以 <image href=\"*_KV_终版.jpg\"> 嵌入终版 JPG，全文没有 <text> 元素，与要点完全吻合。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中 list_directory 只给出了 SHA-256：轻岚两文件均为 bb854001ac467e...、听野均为 074df8f7c715...、云栖均为 ec7432535c22...，且大小相同，可认定字节完全一致；但要点限定为“MD5 相同”，材料从未提供或计算 MD5 校验值，缺少该具体数值的依据，故不成立。"
+      }
+    ],
+    "summary": "材料确认三个终版SVG均为单一<g>并以<image>嵌入终版JPG且无<text>，要点2成立；v01.svg仅读到截断的轮廓<path>内容，未见<text>，要点1不成立；重复文件仅提供SHA-256一致，未提供MD5，要点3不成立。"
+  }
+}

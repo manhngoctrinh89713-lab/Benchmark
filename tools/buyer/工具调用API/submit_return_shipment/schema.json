@@ -1,0 +1,33 @@
+{
+  "name": "submit_return_shipment",
+  "description": "为获准的退换货提交退件物流信息。",
+  "inputSchema": {
+    "properties": {
+      "aftersale_id": {
+        "title": "Aftersale Id",
+        "type": "string"
+      },
+      "carrier": {
+        "title": "Carrier",
+        "type": "string"
+      },
+      "tracking_number": {
+        "title": "Tracking Number",
+        "type": "string"
+      }
+    },
+    "required": [
+      "aftersale_id",
+      "carrier",
+      "tracking_number"
+    ],
+    "title": "submit_return_shipmentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

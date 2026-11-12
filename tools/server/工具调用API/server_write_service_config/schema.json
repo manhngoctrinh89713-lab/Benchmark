@@ -1,0 +1,33 @@
+{
+  "name": "server_write_service_config",
+  "description": "按原文件哈希保存待生效配置；允许先保存错误配置，校验及reload/restart另行调用。",
+  "inputSchema": {
+    "properties": {
+      "service_id": {
+        "title": "Service Id",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_id",
+      "content",
+      "expected_sha256"
+    ],
+    "title": "server_write_service_configArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

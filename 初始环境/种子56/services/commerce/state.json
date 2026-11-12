@@ -1,0 +1,168 @@
+{
+  "now": "2026-11-04T10:20:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "北岸母婴",
+      "currency": "CNY",
+      "shipping_minor": 0
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded"
+        }
+      ],
+      "default_address_id": "addr_home"
+    }
+  },
+  "products": {
+    "FORM-1": {
+      "id": "FORM-1",
+      "merchant_id": "merchant_demo",
+      "name": "配方奶粉 1 段",
+      "description": "1 段，适用 0–6 月龄；牛奶基、铁强化。",
+      "unit_amount_minor": 19800,
+      "currency": "CNY",
+      "stock": 120,
+      "kind": "physical",
+      "active": true,
+      "stage": 1,
+      "age_range": "0-6月龄",
+      "base": "牛奶基"
+    },
+    "FORM-2": {
+      "id": "FORM-2",
+      "merchant_id": "merchant_demo",
+      "name": "配方奶粉 2 段",
+      "description": "2 段，适用 6–12 月龄；牛奶基、铁强化。",
+      "unit_amount_minor": 22800,
+      "currency": "CNY",
+      "stock": 120,
+      "kind": "physical",
+      "active": true,
+      "stage": 2,
+      "age_range": "6-12月龄",
+      "base": "牛奶基"
+    },
+    "FORM-3": {
+      "id": "FORM-3",
+      "merchant_id": "merchant_demo",
+      "name": "星禾优成长配方奶粉",
+      "description": "3 段，适用 12–36 月龄；牛奶基、铁强化。",
+      "unit_amount_minor": 12800,
+      "currency": "CNY",
+      "stock": 120,
+      "kind": "physical",
+      "active": true,
+      "stage": 3,
+      "age_range": "12-36月龄",
+      "base": "牛奶基"
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "FORM-1": {
+      "id": "FORM-1",
+      "product_id": "FORM-1",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 19800,
+      "stock": 120,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "FORM-2": {
+      "id": "FORM-2",
+      "product_id": "FORM-2",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 22800,
+      "stock": 120,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "FORM-3": {
+      "id": "FORM-3",
+      "product_id": "FORM-3",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 12800,
+      "stock": 120,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {
+    "addr_home": {
+      "id": "addr_home",
+      "buyer_id": "buyer_demo",
+      "label": "家庭地址",
+      "version": 1,
+      "updated_at": "2026-11-04T10:20:00+08:00",
+      "address": {
+        "recipient": "周宁",
+        "address_line_1": "云锦路688号",
+        "admin_area_1": "上海市",
+        "admin_area_2": "徐汇区",
+        "postal_code": "200232",
+        "country_code": "CN"
+      }
+    }
+  },
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

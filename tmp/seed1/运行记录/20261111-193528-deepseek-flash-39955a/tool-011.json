@@ -1,0 +1,16 @@
+{
+  "id": "call_00_wOZU5vBI9RPb4cMn4xke5974",
+  "name": "buyer__download_receipt",
+  "arguments": "{\"payment_id\": \"pay_000001\", \"save_path\": \"output/收据_ord_000001_pay_000001.json\"}",
+  "started_at": "2026-11-11T19:35:39.595867+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"file\": {\"path\": \"output/收据_ord_000001_pay_000001.json\", \"size\": 350, \"sha256\": \"680d99a3e75ea315a2f9124d3404476e2d5e84b4c8983e2bbbda6da8f5c0be9b\"}, \"sequence\": 5, \"replayed\": false}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:35:39.616891+08:00"
+}

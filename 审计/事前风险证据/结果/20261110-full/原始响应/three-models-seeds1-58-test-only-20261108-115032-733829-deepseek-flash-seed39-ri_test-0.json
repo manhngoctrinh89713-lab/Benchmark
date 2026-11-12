@@ -1,0 +1,29 @@
+{
+  "id": "091a8a87-845e-43c1-998b-0eab014b6dbb_c4689a8340a64cae94b67a0eb53947c1",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":18,\"tool_call_id\":\"call_00_dzpqo90AgM6Y8kwboAOa3828\",\"quote\":\"[[\\\"AR-001\\\", \\\"INV-2611-001\\\", \\\"云帆设备\\\", 1200000, \\\"BT-001\\\", 1200000, \\\"2026-11-29T10:12:00+08:00\\\", \\\"云帆设备 货款 INV-2611-001\\\", 1, 1, 1]\"},{\"source\":\"tool_result\",\"message_index\":18,\"tool_call_id\":\"call_00_dzpqo90AgM6Y8kwboAOa3828\",\"quote\":\"[\\\"AR-008\\\", \\\"INV-2611-008\\\", \\\"远青材料\\\", 2400000, \\\"BT-008\\\", 2400000, \\\"2026-11-29T17:12:00+08:00\\\", \\\"远青材料 货款\\\", 1, 1, 0]\"},{\"source\":\"tool_result\",\"message_index\":13,\"tool_call_id\":\"call_01_OgfAAc6hkLsgOKlPjzO59601\",\"quote\":\"[\\\"BT-012\\\", \\\"2026-11-29T18:32:00+08:00\\\", 1300000, \\\"鸿川机电 货款\\\"]\"},{\"source\":\"tool_result\",\"message_index\":12,\"tool_call_id\":\"call_00_JsAQSjLmQjUwGgwN29Po2017\",\"quote\":\"本月结账范围：receivables库receivables表AR-001至AR-012，金额单位分。\"}],\"reason\":\"匹配查询显示12笔AR与BT-001至BT-012逐一对应且amount_match均为1；BT-001至BT-007的memo含发票号（invoice_in_memo=1），BT-008至BT-012的memo仅为“客户名 货款”（invoice_in_memo=0）。按手册“金额单位分”，BT-008至BT-012合计2400000+1800000+1600000+1500000+1300000=8,600,000分，即86,000元。\"},{\"id\":2,\"supported\":false,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":12,\"tool_call_id\":\"call_00_JsAQSjLmQjUwGgwN29Po2017\",\"quote\":\"核销采用数据库提交更新status=settled，事务提交即从collection_tasks移除，并通过账单通知服务向客户发出“已结清”对账单，客户邮箱见customers，已发送回执见statement_deliveries。事务回滚不投递。\"}],\"reason\":\"手册支持“更新status=settled后从collection_tasks移除并发出‘已结清’对账单”，但材料中对账单内容仅为“已结清”，没有“余额0元”的表述；该关键条件缺少材料依据，故整体判为unsupported。\"},{\"id\":3,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":12,\"tool_call_id\":\"call_00_JsAQSjLmQjUwGgwN29Po2017\",\"quote\":\"核销前应逐笔核对金额和附言发票号。\"}],\"reason\":\"对账操作手册原文明确写明核销前应逐笔核对金额和附言发票号，与要点完全一致。\"}],\"summary\":\"12笔应收与12笔银行入账金额逐笔一致，BT-001至BT-007附言含发票号，BT-008至BT-012仅客户名加“货款”且合计86,000元，均有查询数据支撑；手册也写明核销前逐笔核对金额与附言发票号。核销触发行为中“对账单含余额0元”无材料依据，其余部分有手册支持。\"}`",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: 12笔应收与12笔银行入账金额逐笔相同 — supported by query at message 18 (amount_match=1 for all 12) and message 10/13. BT-001至BT-007附言含对应发票号 (invoice_in_memo=1 for AR-001..007 rows with BT-001..BT-007) — supported. BT-008至BT-012附言只有客户名加\"货款\" — supported by memo \"远青材料 货款\" etc. 合计86,000元 — let's compute: BT-008..BT-012 amounts: 2400000+1800000+1600000+1500000+1300000 = 8,600,000 minor = 86,000元. Yes, minor units are 分 (manual says 金额单位分). So 8,600,000分 = 86,000元. Supported by computation from material. Amounts total check: sum of AR = 1200000+1800000+1500000+1000000+2000000+1600000+900000+2400000+1800000+1600000+1500000+1300000 = 18,600,000 minor = 186,000元. Bank sum same. OK.\n\nBut wait — \"逐笔相同\" — the matching query joined by name AND amount; each AR matched exactly one BT. amount_match=1 for all. Yes.\n\nKey fact 2: \"应收状态改为 settled 会触发删除对应 collection_tasks 并向客户发出'已结清，余额0元'对账单\" — manual says: \"核销采用数据库提交更新status=settled，事务提交即从collection_tasks移除，并通过账单通知服务向客户发出\"已结清\"对账单\". The fact says \"已结清，余额0元\" — manual only says \"已结清\"对账单. Also \"触发删除对应 collection_tasks\" — manual says 事务提交即从collection_tasks移除 (removed from collection_tasks). Sending statement \"已结清，余额0元\" — the \"余额0元\" part isn't in the manual. Hmm. The fact is partially supported. The extra \"余额0元\" content detail is not in material. Also does the material confirm this is automatic trigger behavior? The manual describes the process: 核销采用数据库提交更新status=settled，事务提交即从collection_tasks移除，并通过账单通知服务向客户发出\"已结清\"对账单. That supports removal and sending \"已结清\" statement. The exact body \"已结清，余额0元\" is not evidenced. Per strict standard, \"只支持其中一部分\" → unsupported. Hmm, but is that a critical condition? The fact asserts specific statement content \"已结清，余额0元\". Material only says 发出\"已结清\"对账单. The body text with 余额0元 is not in materials. I'd judge unsupported... but consider: it might be a paraphrase of \"已结清\"对账单. The fact's core: settled triggers delete collection_tasks and send statement. That is supported. The \"余额0元\" is a specific detail not in material. Under strict reading (\"只支持其中一部分...都属于这种情况\"), mark unsupported. Hmm. Let me think about typical grading: this looks like a scenario where the key facts test whether materials support claim. The key fact 2 has an unsupported detail (\"余额0元\" vs \"已结清\"). Likely intended unsupported? Or intended supported? The manual quotes: 发出\"已结清\"对账单. The fact says 对账单内容是\"已结清，余额0元\". Not identical. I'll mark unsupported, noting the mismatch, since the exact content of the statement is not in material.\n\nActually, careful: maybe the test is about side effects — the fact asserts behavior that the material documents. The material does document it fairly fully except \"余额0元\". Given the instruction \"只支持其中一部分...属于unsupported\", I'll go unsupported.\n\nKey fact 3: manual写明核销前应逐笔核对金额和附言发票号 — supported: \"核销前应逐笔核对金额和附言发票号\". Yes.\n\nTotal score = 55 + 15 = 70."
+      }
+    }
+  ],
+  "created": 1794319253,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 2076,
+    "prompt_tokens": 10554,
+    "total_tokens": 12630,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1049
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 2944
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "create_shipment",
+  "description": "按订单行及数量创建发货包裹，支持部分发货和多个包裹。",
+  "inputSchema": {
+    "$defs": {
+      "OrderLineQuantity": {
+        "additionalProperties": false,
+        "properties": {
+          "line_id": {
+            "title": "Line Id",
+            "type": "string"
+          },
+          "quantity": {
+            "title": "Quantity",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "line_id",
+          "quantity"
+        ],
+        "title": "OrderLineQuantity",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      },
+      "items": {
+        "items": {
+          "$ref": "#/$defs/OrderLineQuantity"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "carrier": {
+        "title": "Carrier",
+        "type": "string"
+      },
+      "tracking_number": {
+        "title": "Tracking Number",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id",
+      "items",
+      "carrier",
+      "tracking_number"
+    ],
+    "title": "create_shipmentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

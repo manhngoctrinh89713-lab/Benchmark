@@ -1,0 +1,28 @@
+{
+  "name": "list_attachments",
+  "description": "列出邮件附件 ID、文件名、类型、字节数及哈希，不返回附件字节。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_id": {
+        "title": "Email Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_id"
+    ],
+    "title": "list_attachmentsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

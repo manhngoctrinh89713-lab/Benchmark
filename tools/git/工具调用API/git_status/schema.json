@@ -1,0 +1,23 @@
+{
+  "name": "git_status",
+  "description": "读取真实Git工作区和暂存区状态。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_statusArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

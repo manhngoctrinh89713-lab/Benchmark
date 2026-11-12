@@ -1,0 +1,33 @@
+{
+  "name": "list_archive",
+  "description": "列出 ZIP 归档中的文件、目录和解压大小。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 100,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "list_archiveArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

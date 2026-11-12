@@ -1,0 +1,23 @@
+{
+  "name": "get_repository",
+  "description": "读取仓库的平台元数据、可见性、默认分支和合并要求。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "get_repositoryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "dissolve_group",
+  "description": "群主解散群聊，全部成员停止后续发言、接收和群管理，保留各自已有本地历史；待审批邀请记为 expired。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "dissolve_groupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

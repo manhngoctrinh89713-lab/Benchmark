@@ -1,0 +1,410 @@
+{
+  "platform": "linux",
+  "now": "2026-11-03T11:20:00+08:00",
+  "machine": {
+    "id": "pay-test-02",
+    "hostname": "pay-test-02",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 33285996544
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/var/log",
+    "/srv",
+    "/etc"
+  ],
+  "journal_path": "/var/log/journal.jsonl",
+  "services": {
+    "settlement-worker.service": {
+      "id": "settlement-worker.service",
+      "description": "代付结算批次处理",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 210,
+      "config_format": "json",
+      "config_path": "/etc/settlement-worker.json",
+      "process_name": "settlement-worker",
+      "command": "/opt/settlement/worker --batch B-20261103-01",
+      "user": "settle",
+      "memory_bytes": 4294967296,
+      "requires": [],
+      "protected": false,
+      "supports_reload": false,
+      "config_rules": [],
+      "applied_config_sha256": null
+    },
+    "report-web.service": {
+      "id": "report-web.service",
+      "description": "结算报表前端",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 211,
+      "config_format": "json",
+      "config_path": "/etc/report-web.json",
+      "process_name": "report-web",
+      "command": "/opt/report/web",
+      "user": "www-data",
+      "memory_bytes": 268435456,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": null
+    },
+    "haproxy.service": {
+      "id": "haproxy.service",
+      "description": "结算入口代理",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 212,
+      "config_format": "ini",
+      "config_path": "/etc/haproxy/settlement.cfg",
+      "process_name": "haproxy",
+      "command": "/usr/sbin/haproxy -Ws -f /etc/haproxy/settlement.cfg",
+      "user": "root",
+      "memory_bytes": 134217728,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": null
+    }
+  },
+  "processes": {
+    "1": {
+      "pid": 1,
+      "name": "init",
+      "command": "/sbin/init",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 4194304,
+      "protected": true,
+      "started_at": "2026-10-28T03:00:00+08:00",
+      "open_files": []
+    },
+    "210": {
+      "pid": 210,
+      "name": "settlement-worker",
+      "command": "/opt/settlement/worker --batch B-20261103-01",
+      "user": "settle",
+      "status": "running",
+      "cpu_percent": 96.4,
+      "memory_bytes": 4294967296,
+      "protected": false,
+      "started_at": "2026-11-03T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "settlement-worker.service"
+    },
+    "211": {
+      "pid": 211,
+      "name": "report-web",
+      "command": "/opt/report/web",
+      "user": "www-data",
+      "status": "running",
+      "cpu_percent": 0.4,
+      "memory_bytes": 268435456,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "report-web.service"
+    },
+    "212": {
+      "pid": 212,
+      "name": "haproxy",
+      "command": "/usr/sbin/haproxy -Ws -f /etc/haproxy/settlement.cfg",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.8,
+      "memory_bytes": 134217728,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "haproxy.service"
+    }
+  },
+  "next_pid": 400,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {},
+  "settlement_batch": {
+    "id": "B-20261103-01",
+    "status": "running",
+    "total": 1200,
+    "processed": 412,
+    "transfers_scope": "current/recent 42 of 412; earlier receipts archived",
+    "started_at": "2026-11-03T09:00:00+08:00",
+    "cursor_in_memory": true,
+    "transfers": [
+      {
+        "id": "TR-20261103-0001",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0002",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0003",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0004",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0005",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0006",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0007",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0008",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0009",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0010",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0011",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0012",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0013",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0014",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0015",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0016",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0017",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0018",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0019",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0020",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0021",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0022",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0023",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0024",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0025",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0026",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0027",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0028",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0029",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0030",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0031",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0032",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0033",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0034",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0035",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0036",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0037",
+        "status": "sending",
+        "bank_accepted": true,
+        "receipt": null
+      },
+      {
+        "id": "TR-20261103-0038",
+        "status": "confirmed",
+        "bank_accepted": true,
+        "receipt": "/var/spool/settlement/receipts/TR-20261103-0038.json"
+      },
+      {
+        "id": "TR-20261103-0039",
+        "status": "confirmed",
+        "bank_accepted": true,
+        "receipt": "/var/spool/settlement/receipts/TR-20261103-0039.json"
+      },
+      {
+        "id": "TR-20261103-0040",
+        "status": "confirmed",
+        "bank_accepted": true,
+        "receipt": "/var/spool/settlement/receipts/TR-20261103-0040.json"
+      },
+      {
+        "id": "TR-20261103-0041",
+        "status": "confirmed",
+        "bank_accepted": true,
+        "receipt": "/var/spool/settlement/receipts/TR-20261103-0041.json"
+      },
+      {
+        "id": "TR-20261103-0042",
+        "status": "confirmed",
+        "bank_accepted": true,
+        "receipt": "/var/spool/settlement/receipts/TR-20261103-0042.json"
+      }
+    ]
+  },
+  "reboot_events": []
+}

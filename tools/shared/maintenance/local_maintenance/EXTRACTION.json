@@ -1,0 +1,58 @@
+{
+  "extractions": [
+    {
+      "repository": "https://github.com/rhel-lightspeed/linux-mcp-server",
+      "commit": "44c7cbf0e44cc4fff678c9b4d9407562d3785d7d",
+      "source": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/models.py",
+      "source_sha256": "bc4b4dbf82a36e5b065c279b75f20127b564f80b797fc7290c7216f2465732e1",
+      "symbol": "ProcessInfo",
+      "source_lines": [
+        61,
+        74
+      ],
+      "changes": []
+    },
+    {
+      "repository": "https://github.com/rhel-lightspeed/linux-mcp-server",
+      "commit": "44c7cbf0e44cc4fff678c9b4d9407562d3785d7d",
+      "source": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/parsers.py",
+      "source_sha256": "13a65ab1620739552394dea888e17d8a81cddb9f20af95642ae6dad2c7529702",
+      "symbol": "parse_ps_output",
+      "source_lines": [
+        132,
+        170
+      ],
+      "changes": []
+    },
+    {
+      "repository": "https://github.com/rhel-lightspeed/linux-mcp-server",
+      "commit": "44c7cbf0e44cc4fff678c9b4d9407562d3785d7d",
+      "source": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/utils/format.py",
+      "source_sha256": "0fb153ef4fbaaef268497b441105510fc0105b49103e1db6103f7c0fd9d961e8",
+      "symbol": "format_bytes",
+      "source_lines": [
+        36,
+        61
+      ],
+      "changes": []
+    },
+    {
+      "repository": "https://github.com/AhmedLaminou/windows-mcp-server",
+      "commit": "74b44907e80e28f86737b84786db342ef253510d",
+      "source": "upstream/AhmedLaminou__windows-mcp-server/windows_mcp_server/tools/process_management.py",
+      "source_sha256": "2546e75db99a7dea88810724457d2ede3b9765c51771761e17a3f6409998ba09",
+      "symbol": "search_process_by_name",
+      "source_lines": [
+        57,
+        66
+      ],
+      "changes": [
+        "Rename to filter_windows_processes; replace psutil enumeration with caller-supplied snapshot dictionaries",
+        "Return matching dictionaries instead of formatted text; remove decorators and host exception handlers"
+      ]
+    }
+  ],
+  "output": "local_maintenance/upstream_helpers.py",
+  "output_sha256": "ea879ceab5d773aa22746387a4176f97f8afa580b017b3cd139c9208ad772713",
+  "other_code": "Local scenario adapters, state transitions, files, backups and recovery are implemented for this benchmark; no host administration SDK or command runner is imported."
+}

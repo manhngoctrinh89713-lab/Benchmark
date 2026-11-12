@@ -1,0 +1,73 @@
+{
+  "status": "scored",
+  "fingerprint": "798d91eb010af24d270f31e0d0e4ab42453d82e57bba7a1b660cc4f79cc81925",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 21,
+            "tool_call_id": "call_ebd305f669fd4847be77a483",
+            "quote": "{\"pallet_uid\": \"PLT-2201\", \"sku\": \"RM-410\", \"batches\": [{\"batch_no\": \"B26-0901\", \"boxes\": 4}, {\"batch_no\": \"B26-0915\", \"boxes\": 6}]}, {\"pallet_uid\": \"PLT-2207\", \"sku\": \"RM-410\", \"batches\": [{\"batch_no\": \"B26-0902\", \"boxes\": 4}, {\"batch_no\": \"B26-0916\", \"boxes\": 6}]}, {\"pallet_uid\": \"PLT-2214\", \"sku\": \"RM-410\", \"batches\": [{\"batch_no\": \"B26-0903\", \"boxes\": 4}, {\"batch_no\": \"B26-0917\", \"boxes\": 6}]}"
+          }
+        ],
+        "reason": "托盘清单明确显示 PLT-2201 为 B26-0901 4箱加 B26-0915 6箱，PLT-2207、PLT-2214 也各含两个生产批次（各4箱+6箱）。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_558a2a1b8927458cb3793f6f",
+            "quote": "[\"RC-1104-00\", \"PLT-2201\", 1, \"RM-410\", 5, null], [\"RC-1104-00\", \"PLT-2201\", 2, \"RM-410\", 5, null], [\"RC-1104-01\", \"PLT-2207\", 1, \"RM-410\", 5, null], [\"RC-1104-01\", \"PLT-2207\", 2, \"RM-410\", 5, null], [\"RC-1104-02\", \"PLT-2214\", 1, \"RM-410\", 5, null], [\"RC-1104-02\", \"PLT-2214\", 2, \"RM-410\", 5, null]"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_ebe2ded97a42428d8cd45d27",
+            "quote": "{\"column\": \"batch_no\", \"null_count\": 6, \"distinct_count\": 9}"
+          }
+        ],
+        "reason": "receipt_items 查询结果中 PLT-2201、PLT-2207、PLT-2214 的全部 6 行 batch_no 均为 null，与统计的 null_count=6 一致。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 19,
+            "tool_call_id": "call_daafffdf28f34e73b54cae37",
+            "quote": "同一托盘含多个生产批次时，现场拆托核验，按实际批次分别清点、扫码登记，再交仓管复核。"
+          }
+        ],
+        "reason": "《原料到货验收与批次登记规程》明确规定多批次托盘须现场拆托核验并按实际批次分别清点登记。"
+      },
+      {
+        "id": 4,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 17,
+            "tool_call_id": "call_b6da3afd3b5b4e3a9bed4dd7",
+            "quote": "09:35，PLT-2201、PLT-2207、PLT-2214移至待验区，托盘缠膜尚未拆开。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 17,
+            "tool_call_id": "call_b6da3afd3b5b4e3a9bed4dd7",
+            "quote": "10:00，搬运组先处理上午出库装车，以上三托仍在待验区。"
+          }
+        ],
+        "reason": "早班验收记录明确记载这三托移至待验区、缠膜尚未拆开，且10:00仍在待验区。"
+      }
+    ],
+    "summary": "材料完整支持全部要点：托盘清单显示 PLT-2201/2207/2214 各含两个生产批次；数据库中这三托共6行 batch_no 为空；规程要求多批次托盘须拆托按实际批次分别登记；验收记录显示这三托仍在待验区且缠膜未拆。因此不能按'每托填一个批次'直接统一补录。"
+  }
+}

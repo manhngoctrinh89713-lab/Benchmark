@@ -1,0 +1,40 @@
+{
+  "name": "git_revert",
+  "description": "以新提交撤销历史提交，支持 continue/skip/abort。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "operation": {
+        "default": "start",
+        "title": "Operation",
+        "type": "string"
+      },
+      "revision": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Revision"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_revertArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "issue_read",
+  "description": "读取Issue及评论。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number"
+    ],
+    "title": "issue_readArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "update_scheduled_email",
+  "description": "修改 pending 定时邮件的发送时间，或用 replacement_draft_id 替换冻结内容并消耗该草稿。仅原排队操作者可修改；新时间须在当前环境时间之后。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "scheduled_id": {
+        "title": "Scheduled Id",
+        "type": "string"
+      },
+      "send_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Send At"
+      },
+      "replacement_draft_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Replacement Draft Id"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "scheduled_id"
+    ],
+    "title": "update_scheduled_emailArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

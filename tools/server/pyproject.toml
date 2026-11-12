@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-server"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["benchmark-local-maintenance==0.2.0"]
+
+[tool.setuptools]
+packages = ["local_server", "local_server.api", "local_server.api.server_analyze_directory", "local_server.api.server_change_service", "local_server.api.server_copy_file", "local_server.api.server_create_backup", "local_server.api.server_create_directory", "local_server.api.server_delete_backup", "local_server.api.server_delete_file", "local_server.api.server_delete_scheduled_task", "local_server.api.server_get_disk_usage", "local_server.api.server_get_environment_variables", "local_server.api.server_get_permissions", "local_server.api.server_get_process", "local_server.api.server_get_service", "local_server.api.server_get_system_info", "local_server.api.server_list_backups", "local_server.api.server_list_directory", "local_server.api.server_list_network_connections", "local_server.api.server_list_processes", "local_server.api.server_list_scheduled_tasks", "local_server.api.server_list_services", "local_server.api.server_list_task_runs", "local_server.api.server_move_file", "local_server.api.server_prune_logs", "local_server.api.server_query_logs", "local_server.api.server_read_file", "local_server.api.server_read_service_config", "local_server.api.server_reboot", "local_server.api.server_remove_directory", "local_server.api.server_restore_backup", "local_server.api.server_save_scheduled_task", "local_server.api.server_set_environment_variable", "local_server.api.server_set_permissions", "local_server.api.server_signal_process", "local_server.api.server_validate_service_config", "local_server.api.server_verify_backup", "local_server.api.server_write_file", "local_server.api.server_write_service_config"]
+
+[tool.setuptools.package-dir]
+local_server = "公用代码/local_server"
+"local_server.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+"local_server.api" = ["*/schema.json"]

@@ -1,0 +1,16 @@
+{
+  "id": "call_-7086068835735823384",
+  "name": "buyer__set_cart_item",
+  "arguments": "{\"merchant_id\":\"merchant_a\",\"quantity\":1,\"sku_id\":\"CHAIR-A\"}",
+  "started_at": "2026-11-11T19:36:14.102283+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"cart\": {\"id\": \"buyer_demo__merchant_a\", \"buyer_id\": \"buyer_demo\", \"merchant_id\": \"merchant_a\", \"version\": 1, \"items\": [{\"sku_id\": \"CHAIR-A\", \"product_id\": \"CHAIR-A\", \"quantity\": 1, \"name\": \"人体工学电脑椅 家用办公椅 护腰可躺\", \"kind\": \"physical\", \"options\": {}, \"unit_amount_minor\": 119900, \"available\": true, \"sku_version\": 1, \"product_version\": 1}], \"updated_at\": \"2026-11-11T10:00:00+08:00\", \"currency\": \"CNY\", \"subtotal_minor\": 119900, \"shipping_minor\": 0, \"total_minor\": 119900, \"available\": true}, \"sequence\": 1, \"replayed\": false}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:36:14.111994+08:00"
+}

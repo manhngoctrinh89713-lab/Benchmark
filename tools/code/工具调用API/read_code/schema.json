@@ -1,0 +1,45 @@
+{
+  "name": "read_code",
+  "description": "读取真实UTF-8代码/配置文件，可指定从1开始的闭区间行号，返回原字节sha256。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "start_line": {
+        "default": 1,
+        "title": "Start Line",
+        "type": "integer"
+      },
+      "end_line": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "End Line"
+      }
+    },
+    "required": [
+      "project_id",
+      "path"
+    ],
+    "title": "read_codeArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

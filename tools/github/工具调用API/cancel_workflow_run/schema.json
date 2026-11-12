@@ -1,0 +1,28 @@
+{
+  "name": "cancel_workflow_run",
+  "description": "请求取消正在排队或运行的工作流；最终结果由执行器回报。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "run_id": {
+        "title": "Run Id",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "run_id"
+    ],
+    "title": "cancel_workflow_runArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

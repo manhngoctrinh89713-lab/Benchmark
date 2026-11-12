@@ -1,0 +1,48 @@
+{
+  "name": "dispatch_workflow",
+  "description": "向支持手动触发的工作流提交运行请求，固定当前引用对应的提交。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "workflow_id": {
+        "title": "Workflow Id",
+        "type": "integer"
+      },
+      "ref": {
+        "title": "Ref",
+        "type": "string"
+      },
+      "inputs": {
+        "anyOf": [
+          {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Inputs"
+      }
+    },
+    "required": [
+      "repo_id",
+      "workflow_id",
+      "ref"
+    ],
+    "title": "dispatch_workflowArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

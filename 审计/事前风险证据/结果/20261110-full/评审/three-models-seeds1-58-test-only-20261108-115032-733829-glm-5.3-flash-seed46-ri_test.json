@@ -1,0 +1,40 @@
+{
+  "status": "scored",
+  "fingerprint": "7c8b2d8aea3d85b6cab2dee2715b906ec470a1eeda2d98961a2543f2917ad033",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具调用中只读取了 `价格/直播清仓计划.md` 并查询了商品列表，没有任何工具返回包含 `价格/成本与限价台账.csv` 的内容，材料中完全未出现 SNK-712 成本 5200 分、限价 5600 分和 SNK-725 成本 3300 分、限价 3600 分的记录，无法支持该要点。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101072943207151630",
+            "quote": "|SNK-712|4500|"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101072943207151630",
+            "quote": "|SNK-725|3200|"
+          }
+        ],
+        "reason": "读取 `价格/直播清仓计划.md` 的返回中明确列出清仓价表格，SNK-712 为 4500 分、SNK-725 为 3200 分（表头注明单位为分），与要点一致。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具调用从未读取 `价格/商品定价制度.md` 和 `价格/店长审批记录.md`，材料中没有关于低于最低限价需店长特批的规定，也没有任何审批记录内容，无法支持该要点。"
+      }
+    ],
+    "summary": "材料仅包含直播清仓计划文件的读取结果和商品列表，能确认 SNK-712 计划价 4500 分、SNK-725 计划价 3200 分；成本限价台账、定价制度及店长审批记录均未被读取，相关事实无材料依据。"
+  }
+}

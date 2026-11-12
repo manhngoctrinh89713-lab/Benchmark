@@ -1,0 +1,23 @@
+{
+  "name": "get_database_info",
+  "description": "查询SQLite版本、文件大小、页数、页大小及数据库SHA-256。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id"
+    ],
+    "title": "get_database_infoArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

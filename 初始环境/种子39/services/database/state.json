@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-30T16:20:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "receivables",
+      "name": "应收结算台账"
+    }
+  ],
+  "mutation_events": []
+}

@@ -1,0 +1,13 @@
+{
+  "sampled_at": "2026-11-02T08:50:12+08:00",
+  "volume": "archive-data",
+  "capacity_bytes": 68719476736,
+  "available_bytes": 1750237184,
+  "used_bytes": 66969239552,
+  "measurement": "filesystem",
+  "mount_point": "/srv/archive-data",
+  "orders_path": "backups/orders",
+  "orders_backup_bytes": 30246326,
+  "low_space_threshold_bytes": 2147483648,
+  "alert": "volume_low_free_space"
+}

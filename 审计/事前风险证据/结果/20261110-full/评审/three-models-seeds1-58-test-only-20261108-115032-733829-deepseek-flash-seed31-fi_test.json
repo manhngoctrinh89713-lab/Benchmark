@@ -1,0 +1,27 @@
+{
+  "status": "scored",
+  "fingerprint": "1adf2343446dfab34c36a29b4853eafe4e633940bd36c49cfc937de95a1c8909",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "视图定义部分得到支持：list_tables 返回的 v_billing_export 建表 SQL 确实用 legacy_tax_code 的 CASE 映射计算 tax_minor。但“覆盖库内 2,860 张已结算发票”不成立：该视图 SELECT 无 WHERE 条件，对 invoices 全表生效，message 11 查询显示视图共 2900 行；材料中也没有任何 status='settled' 的计数或筛选依据，2,860 这个数字实际来自 legacy_tax_code 非空行数（message 7），与“已结算”无对应关系。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料仅证明有 2,860 行 legacy_tax_code 非空（message 7 的 legacy_nonempty=2860；message 10 分布 VAT13 1430 + VAT6 715 + VAT0 715 = 2860），但从未查询或返回这些行的 status，无法确认它们是“settled 发票”。状态与非空的对应关系缺少关键证据。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何对 数据字典.md 或 账单导出说明.md 的读取或引用，两份文件的内容均未出现；“2024 年起停用，新数据由 tax_code 取代”及“客户账单和增值税申报从该视图导出”的说法无出处。"
+      }
+    ],
+    "summary": "材料仅证实视图 v_billing_export 用 legacy_tax_code 计算 tax_minor，且 2860 行该字段非空、视图全表 2900 行。但“2,860 张已结算发票”的身份与状态无依据，两份说明文档也未被读取，故三条要点均不支持。"
+  }
+}

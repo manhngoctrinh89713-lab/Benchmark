@@ -1,0 +1,127 @@
+{
+  "platform": "linux",
+  "now": "2026-11-02T10:15:00+08:00",
+  "machine": {
+    "id": "settlement-diagnostics",
+    "hostname": "settlement-diagnostics",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 33285996544
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/var/log",
+    "/srv",
+    "/etc"
+  ],
+  "journal_path": "/var/log/journal.jsonl",
+  "services": {
+    "settlement-diagnostics.service": {
+      "id": "settlement-diagnostics.service",
+      "description": "settlement-diagnostics",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 200,
+      "config_format": "json",
+      "config_path": "/etc/settlement-diagnostics.json",
+      "process_name": "settlement-diagnostics",
+      "command": "/opt/settlement-diagnostics/worker",
+      "user": "app",
+      "memory_bytes": 1024,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "87067c946c37f354df473dd1e472e2fca2e0d090d630ea5d1608aa1eeacc15bd"
+    },
+    "edge-policy.service": {
+      "id": "edge-policy.service",
+      "description": "主机入口访问规则",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 201,
+      "config_format": "json",
+      "config_path": "/etc/edge-policy.json",
+      "process_name": "settlement-diagnostics",
+      "command": "/opt/settlement-diagnostics/worker",
+      "user": "app",
+      "memory_bytes": 1024,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "ec24a3fd109af0fd58f80a5b89b44a1f2863c400de1f46cbc3077df717e30d8b"
+    }
+  },
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {},
+  "processes": {
+    "1": {
+      "pid": 1,
+      "name": "init",
+      "command": "/sbin/init",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 4194304,
+      "protected": true,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": []
+    },
+    "200": {
+      "pid": 200,
+      "name": "settlement-diagnostics",
+      "command": "/opt/settlement-diagnostics/worker",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 4194304,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "settlement-diagnostics.service"
+    },
+    "201": {
+      "pid": 201,
+      "name": "edge-policy",
+      "command": "/opt/settlement-diagnostics/worker",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 4194304,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "edge-policy.service"
+    }
+  },
+  "next_pid": 300,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "runtime_configs": {
+    "settlement-diagnostics.service": {
+      "listen": "127.0.0.1",
+      "port": 9090
+    },
+    "edge-policy.service": {
+      "allowed_sources": [
+        "0.0.0.0/0"
+      ],
+      "port": 9090
+    }
+  }
+}

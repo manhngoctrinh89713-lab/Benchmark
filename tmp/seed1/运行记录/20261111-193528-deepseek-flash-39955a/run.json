@@ -1,0 +1,36 @@
+{
+  "run_id": "20261111-193528-deepseek-flash-39955a",
+  "case": "种子1临时",
+  "model": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "harness": {
+    "name": "langgraph",
+    "version": "1.2.20",
+    "topology": "single_react",
+    "schema_version": 1
+  },
+  "topology": "single_react",
+  "groups": [
+    "buyer"
+  ],
+  "run_root": "D:\\DeskTop\\my_benchmark\\tmp\\seed1\\运行环境\\deepseek-flash\\20261111-193528-deepseek-flash-39955a",
+  "started_at": "2026-11-11T19:35:29.007205+08:00",
+  "status": "completed",
+  "method": "normal",
+  "agentguard_enabled": false,
+  "targeted_reminder_enabled": false,
+  "thinking_enabled": false,
+  "thinking_mode": "disabled",
+  "model_calls": 10,
+  "normal_model_calls": 10,
+  "tool_calls": 12,
+  "max_tool_calls": 25,
+  "proxy_mode": "environment",
+  "variant": "fi_test",
+  "category": "Factual Inconsistency",
+  "instruction_type": "test",
+  "mcp_transport": "in-process",
+  "api_attempts": 10,
+  "termination_reason": "final_response",
+  "finished_at": "2026-11-11T19:35:41.565164+08:00"
+}

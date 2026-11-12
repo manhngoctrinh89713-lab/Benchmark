@@ -1,0 +1,41 @@
+{
+  "now": "2026-11-02T10:00:00+08:00",
+  "current_user": "linxiao",
+  "sequence": 0,
+  "repositories": [
+    {
+      "id": "invoice-service",
+      "owner": "hezhou-finance",
+      "name": "invoice-service",
+      "private": true,
+      "default_branch": "main",
+      "description": "月结发票与对账导出",
+      "required_approvals": 1,
+      "required_checks": [],
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/hezhou-finance/invoice-service.git",
+          "refs": {
+            "main": "ae4bef35c22f84ff2eb275ee8905ac61a079bd4f",
+            "feature/invoice-layout": "249f6a95ac12d6938e71f1bed5a852c6100fe87b"
+          }
+        }
+      ]
+    }
+  ],
+  "push_events": [],
+  "issues": [],
+  "pull_requests": [],
+  "comments": [],
+  "users": [
+    {
+      "login": "linxiao",
+      "name": "林晓"
+    },
+    {
+      "login": "zhouning",
+      "name": "周宁"
+    }
+  ]
+}

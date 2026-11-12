@@ -1,0 +1,52 @@
+{
+  "name": "git_diff",
+  "description": "查看真实Git差异，mode为unstaged/staged/refs；refs需base和head。禁用external diff和textconv。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "mode": {
+        "default": "unstaged",
+        "title": "Mode",
+        "type": "string"
+      },
+      "base": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Base"
+      },
+      "head": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Head"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_diffArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

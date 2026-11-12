@@ -1,0 +1,45 @@
+{
+  "name": "delete_mailbox",
+  "description": "删除自定义文件夹及子文件夹；默认将子树内邮件移入 Trash，恢复时进入 INBOX；permanent=true 同时永久删除这些邮件。系统文件夹不可删除。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "mailbox": {
+        "title": "Mailbox",
+        "type": "string"
+      },
+      "permanent": {
+        "default": false,
+        "title": "Permanent",
+        "type": "boolean"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "mailbox"
+    ],
+    "title": "delete_mailboxArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

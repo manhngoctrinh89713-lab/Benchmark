@@ -1,0 +1,43 @@
+{
+  "name": "update_aftersale",
+  "description": "修改待处理售后申请的说明和证明文件。",
+  "inputSchema": {
+    "properties": {
+      "aftersale_id": {
+        "title": "Aftersale Id",
+        "type": "string"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "paths": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Paths"
+      }
+    },
+    "required": [
+      "aftersale_id",
+      "reason"
+    ],
+    "title": "update_aftersaleArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

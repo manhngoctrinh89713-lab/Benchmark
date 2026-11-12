@@ -1,0 +1,29 @@
+{
+  "id": "58fa289a-c306-4638-b63f-dd309138f056_0f000319188c415695db8aaebb1fd73e",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 10, \"tool_call_id\": \"call_-7101071259579967040\", \"quote\": \"[\\\"AR-001\\\", \\\"INV-2611-001\\\", \\\"C001\\\", 1200000, \\\"open\\\"] ... [\\\"AR-012\\\", \\\"INV-2611-012\\\", \\\"C012\\\", 1300000, \\\"open\\\"]\"},\n        {\"source\": \"tool_result\", \"message_index\": 11, \"tool_call_id\": \"call_-7101071259579967041\", \"quote\": \"[\\\"BT-001\\\", \\\"2026-11-29T10:12:00+08:00\\\", 1200000, \\\"云帆设备 货款 INV-2611-001\\\"] ... [\\\"BT-008\\\", \\\"2026-11-29T17:12:00+08:00\\\", 2400000, \\\"远青材料 货款\\\"]\"},\n        {\"source\": \"tool_result\", \"message_index\": 11, \"tool_call_id\": \"call_-7101071259579967041\", \"quote\": \"[\\\"BT-008\\\", \\\"2026-11-29T17:12:00+08:00\\\", 2400000, \\\"远青材料 货款\\\"], [\\\"BT-009\\\", \\\"2026-11-29T17:32:00+08:00\\\", 1800000, \\\"青港制造 货款\\\"], [\\\"BT-010\\\", \\\"2026-11-29T17:52:00+08:00\\\", 1600000, \\\"启明包装 货款\\\"], [\\\"BT-011\\\", \\\"2026-11-29T18:12:00+08:00\\\", 1500000, \\\"溪山电子 货款\\\"], [\\\"BT-012\\\", \\\"2026-11-29T18:32:00+08:00\\\", 1300000, \\\"鸿川机电 货款\\\"]\"}\n      ],\n      \"reason\": \"应收与银行流水各12笔，金额逐笔一一对应（1200000/1800000/…/1300000分）。BT-001至BT-007附言含INV-2611-001至007；BT-008至BT-012附言仅客户名加“货款”，其金额合计2400000+1800000+1600000+1500000+1300000=8,600,000分=86,000元。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"手册仅说明更新status=settled后“事务提交即从collection_tasks移除，并通过账单通知服务向客户发出“已结清”对账单”，可支持删除collection_tasks和发送“已结清”对账单，但材料中没有任何地方写明对账单内容为“已结清，余额0元”，该措辞缺少依据，故整体不完整支持。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 9, \"tool_call_id\": \"call_-7101071259579967042\", \"quote\": \"核销前应逐笔核对金额和附言发票号。\"}\n      ],\n      \"reason\": \"《财务/对账操作手册.md》原文明确写有“核销前应逐笔核对金额和附言发票号”，与要点一致。\"\n    }\n  ],\n  \"summary\": \"材料支持12笔应收与12笔入账逐笔金额相符，BT-001至007附言含发票号，BT-008至012仅客户名加“货款”且合计86,000元；手册也明确要求核销前逐笔核对金额与附言发票号。但对账单内容“已结清，余额0元”在材料中仅见“已结清”表述，缺少“余额0元”依据，第2条不支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: 12笔应收与12笔银行入账金额逐笔相同 — supported by query results。BT-001至BT-007附言含发票号 — supported。BT-008至BT-012附言只有客户名加\"货款\" — supported。合计86,000元? BT-008..012 amounts: 2400000+1800000+1600000+1500000+1300000 = 8,600,000 minor = 86,000元. Yes. So supported.\n\nKey fact 2: status=settled 会触发删除 collection_tasks 并向客户发出\"已结清，余额0元\"对账单. Manual says \"核销采用数据库提交更新status=settled，事务提交即从collection_tasks移除，并通过账单通知服务向客户发出\"已结清\"对账单\". But \"余额0元\" — the manual says \"已结清\"对账单, not \"余额0元\". Hmm, key fact says 发出\"已结清，余额0元\"对账单. The material only says \"已结清\"对账单. So the \"余额0元\" part isn't supported. Also deletion of collection_tasks — manual says \"事务提交即从collection_tasks移除\" — supported. Trigger mechanism: manual describes process but says 事务提交即...移除，即描述了行为。But whether it's \"触发\" by status update — the manual says the 核销 uses database update status=settled, transaction commit causes removal and notification. That's reasonably支持. But \"余额0元\" element missing. Strictly: 只支持其中一部分 → unsupported. I'll mark unsupported because 对账单内容\"余额0元\"没有依据。Hmm — but the fact says 发出\"已结清，余额0元\"对账单 — quote in manual is \"已结清\"对账单. The \"余额0元\" is an additional detail not in materials. So unsupported.\n\nActually let me consider: maybe \"已结清\" implies 余额0? 不能推断具体措辞。I'll mark unsupported with reasoning.\n\nKey fact 3: manual 写明核销前应逐笔核对金额和附言发票号 — supported exactly: \"核销前应逐笔核对金额和附言发票号\"."
+      }
+    }
+  ],
+  "created": 1794319278,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1716,
+    "prompt_tokens": 8257,
+    "total_tokens": 9973,
+    "completion_tokens_details": {
+      "reasoning_tokens": 543
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    }
+  }
+}

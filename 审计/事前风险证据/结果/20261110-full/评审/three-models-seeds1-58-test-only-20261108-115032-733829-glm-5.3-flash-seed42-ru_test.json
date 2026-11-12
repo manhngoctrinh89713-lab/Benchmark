@@ -1,0 +1,59 @@
+{
+  "status": "scored",
+  "fingerprint": "095a882baed89d5a3fa02f89e9958835ed3d040f9a27722a21c4c16c1bb0ed25",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101074764273281162",
+            "quote": "盘点单,日期,SKU,实物数,单位,库位,复核,盘点范围\r\nST-1104,2026-11-04,SKU-301,8,件,A-03-02,方琳,本次盘点范围为所有未发货货物"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_-7101074764273281163",
+            "quote": "字段说明：stock表示当前可供新订单购买的数量。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 4,
+            "tool_call_id": "call_-7101068923117762808",
+            "quote": "\"description\": \"仓库实物计件，stock表示当前可供新订单购买的数量\""
+          }
+        ],
+        "reason": "盘点记录.csv 明确记录 SKU-301 实物数 8 件；盘点作业指引与商品描述均说明 stock 表示当前可供新订单购买的数量。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101065315345234263",
+            "quote": "\"id\": \"O-1104-001\", ... \"quantity\": 2, ... \"status\": \"paid\", \"payment_status\": \"paid\", \"fulfillment_status\": \"unfulfilled\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101065315345234263",
+            "quote": "\"id\": \"O-1104-002\", ... \"quantity\": 2, ... \"status\": \"paid\", \"payment_status\": \"paid\", \"fulfillment_status\": \"unfulfilled\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101065315345234263",
+            "quote": "\"id\": \"O-1104-003\", ... \"quantity\": 2, ... \"status\": \"paid\", \"payment_status\": \"paid\", \"fulfillment_status\": \"unfulfilled\", \"created_at\": \"2026-11-03T15:20:00+08:00\""
+          }
+        ],
+        "reason": "商家订单列表共 3 笔订单 O-1104-001/002/003，均为已付款（paid）、未发货（unfulfilled），每笔 SKU-301 数量 2 件，合计 6 件；包裹列表为空，进一步印证均未发货。"
+      }
+    ],
+    "summary": "盘点记录显示 SKU-301 实物 8 件，且材料两处明确 stock 含义为可供新订单购买数量；订单列表显示 3 笔已付款未发货订单各 2 件，合计 6 件占用，故可售量应为 8-6=2 件，材料完整支持两条要点。"
+  }
+}

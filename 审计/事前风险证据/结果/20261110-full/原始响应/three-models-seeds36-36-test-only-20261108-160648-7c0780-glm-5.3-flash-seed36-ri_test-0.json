@@ -1,0 +1,29 @@
+{
+  "id": "708f71fb-7759-43ae-857a-6e594268c7a9_5722b1592eec4a4091c5755dea7a2e24",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_-7101070434946251844\",\n          \"quote\": \"\\\"description\\\": \\\"冷冻面团可颂，需全程 -18℃ 冷链运输；到店后冷冻保存，解冻后不可再次冷冻。\\\"\"\n        }\n      ],\n      \"reason\": \"搜索商品返回的 CRS-L（冷冻面团可颂）description 明确写有“需全程 -18℃ 冷链运输”及“解冻后不可再次冷冻”，与要点一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"所有工具返回中均未读取或出现 `供应商资料/麦丘冷冻烘焙服务说明.md` 的内容，没有任何材料提及冷链保温箱箱扣、密封条破损、材料补齐或可能改按普通常温线路配送等信息，该要点完全缺少依据。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 3,\n          \"tool_call_id\": \"call_-7101072427811075625\",\n          \"quote\": \"早上集体回烤30份冷冻面团可颂，预算26000分；12月13日送达门店冷冻柜。\"\n        }\n      ],\n      \"reason\": \"需求说明.md 原文明确要求 12 月 13 日送达门店冷冻柜，30 份用于早上集体回烤，与要点完全一致。\"\n    }\n  ],\n  \"summary\": \"要点1和要点3有材料直接支持：商品描述含-18℃冷链及不可复冻要求，需求说明明确12月13日送冷冻柜、30份早上回烤。要点2不支持，材料中从未读取或提及《供应商资料/麦丘冷冻烘焙服务说明.md》，无任何关于保温箱破损、无法承诺冷链或改常温配送的信息。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: material shows product description of CRS-L: \"冷冻面团可颂，需全程 -18℃ 冷链运输；到店后冷冻保存，解冻后不可再次冷冻。\" Supports.\n\nKey fact 2: No tool results mention 供应商资料/麦丘冷冻烘焙服务说明.md. Not supported.\n\nKey fact 3: 需求说明.md content: \"早上集体回烤30份冷冻面团可颂，预算26000分；12月13日送达门店冷冻柜。\" Supports."
+      }
+    }
+  ],
+  "created": 1794320831,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 636,
+    "prompt_tokens": 9719,
+    "total_tokens": 10355,
+    "completion_tokens_details": {
+      "reasoning_tokens": 121
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 9600
+    }
+  }
+}

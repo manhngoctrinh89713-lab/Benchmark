@@ -1,0 +1,413 @@
+# 12. Delivery, Validation, and Evolution
+
+## Purpose
+
+This document turns the domain acceptance criteria into release gates and keeps
+traceability centralized. Detailed specs remain normative contracts and do not
+carry implementation-status labels or per-file evidence diaries.
+
+A requirement is complete only when implementation, automated verification,
+published user documentation, packaged artifacts, and independent review agree.
+Passing unit tests alone is not completion.
+
+## Verification Matrix
+
+The delivery maintains a reviewable matrix using the following ownership. Exact
+file names may evolve, but every row must have concrete code and test references
+before release.
+
+| Contract area                                      | Owning spec            | Required evidence                                                                               |
+| -------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
+| foreground process and trust boundaries            | 01                     | startup/shutdown, fail-closed, and route/transport tests                                        |
+| identities, revisions, outcomes, bounds vocabulary | 02                     | domain purity and invariant tests                                                               |
+| layers, late secrets, resource/transaction scopes  | 03                     | import/architecture, isolation, lifecycle, and transaction tests                                |
+| mode, catalog/account/policy/import lifecycle      | 04                     | application + CLI + UI contract and crash/conflict tests                                        |
+| secret rotation/removal/cleanup/redaction          | 05                     | atomic activation, unchanged-authority failure, leakage, and parity tests                       |
+| mailbox/index/body/attachment reads                | 06                     | provider fakes, exact datetime boundaries, SQLite, filesystem race, bounds, and GreenMail tests |
+| mutations and independent effects                  | 07                     | capability, ambiguity, cancellation, no-bare-expunge, SMTP/sent-copy tests                      |
+| schema, WAL/SHM security, retention/rebuild        | 08                     | exact schema/migration, POSIX + native Windows pre-open race, concurrency, corruption tests     |
+| loopback UI security and packaging                 | 09                     | backend, frontend, real-browser, artifact, and no-Node tests                                    |
+| exact MCP contract and stdio behavior              | 10                     | catalog snapshot, raw protocol, generic client, and GreenMail E2E                               |
+| semantic keyword configuration and tag workflows   | 04, 06, 07, 08, 09, 10 | legacy/managed persistence, UI, provider/projection, mutation, catalog, and GreenMail E2E       |
+| embedded attachment content                        | 04, 06, 10             | independent policy, MIME matrix, one-copy/global-result bounds, raw protocol, and GreenMail E2E |
+| agent integration and safe setup handoff           | 11                     | Codex/Claude Code install fixtures, scenario, drift, and no-secret tests                        |
+| release artifacts and container delivery           | 12                     | exact source/version, restricted image, raw stdio, multi-platform, and publication gates        |
+
+### Attachment retrieval interoperability gate
+
+Spec 06 attachment-root selection and export semantics are implemented in
+`emails/classic.py` and shared by the download and embedded-content services.
+`tests/test_email_attachments.py` covers top-level attachments, empty payloads,
+structured `.eml`/multipart exports, subtree shadowing, exact Unicode filename
+precedence and normalized fallback. `tests/e2e/test_stdio_greenmail.py` verifies
+listing, both MCP transfer modes, decoded bytes/MIME-tree preservation and unread
+state through real SMTP/IMAP. Published behavior is documented in `docs/tools.md`.
+Existing application, artifact, MCP and native Windows suites remain the policy,
+size-limit, serialized-result and filesystem-security gates.
+
+### Protocol command delivery gate
+
+The accepted executor contract is owned by specs 04, 07, and 10. Before release,
+verify account opt-in default/round-trip/migration and CLI/UI parity; exact
+preservation of the existing 20 MCP definitions plus one tool; local HELP without
+secrets/network; real stdio SELECT/UID COPY and an additional unwrapped primitive;
+APPEND and SMTP DATA framing; Unicode mailbox names; independent call/account
+state; stop-on-error, revocation, cancellation, receive bounds, unknown outcomes,
+no replay, no implicit cleanup expunge, and metadata invalidation.
+
+Run normal check/test/docs/GreenMail gates and relevant frontend/browser/artifact
+gates for the account editor. Verify the locked and declared minimum MCP SDK
+boundary. Record a separate model-driven HELP/COPY smoke result if available;
+protocol tests alone do not prove agent discovery quality.
+
+Protocol acceptance traceability (this branch, not an already released version):
+
+| Acceptance | Implementation                                                                                                                                                          | Verification                                                                                                                                                                | Published documentation                                                       |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| 04-P1      | `config.py`, `managed.py`, `application/management.py`, `adapters/{authority,management,protocol}.py`, `cli.py`, `web_ui/`, `frontend/src/components/AccountsPanel.tsx` | `tests/test_protocol_commands.py`, `test_managed_cli.py`, `test_web_ui_management.py`, account editor unit tests and `frontend/e2e/local-management.spec.ts`                | `docs/configuration.md`, `security.md`, `transports.md`, `getting-started.md` |
+| 07-P1      | `application/protocol.py`, `adapters/protocol.py`, `metadata_index.py`                                                                                                  | `tests/test_protocol_commands.py` loopback IMAP/SMTP, cancellation, limits, late secret and revocation tests; `test_metadata_index.py`; `tests/e2e/test_stdio_greenmail.py` | `docs/tools.md`, `security.md`, `troubleshooting.md`                          |
+| 08-P1      | `managed.py` exact v7 schema and transactional v3/v4/v5/v6 migration                                                                                                    | `tests/test_managed_catalog.py`, `test_mutation_class_policy.py`, `test_protocol_commands.py` v5 migration and rollback                                                     | `docs/configuration.md`, `security.md`, `troubleshooting.md`                  |
+| 10-P1      | `app.py`, `application/protocol.py`, `runtime.py`                                                                                                                       | `tests/fixtures/mcp_catalog.json`, `test_protocol_commands.py`, `test_stdio_protocol.py`, `test_mcp_tools.py`, GreenMail                                                    | `docs/tools.md`                                                               |
+
+Independent protocol review identified one SMTP parser ambiguity: a malformed or
+overlong final reply must be `unknown`, not a confirmed rejection. The adapter
+now treats only 4xx/5xx exception replies as confirmed rejection, with loopback
+regressions for malformed and overlong replies after DATA. No other material
+findings remained in that review.
+
+A separate model-assisted smoke discovered the tool from its schema/description,
+called local HELP and HELP UID COPY, and constructed a validated SELECT/UID COPY
+request preserving originals. This verifies discovery and request planning, not
+provider execution; actual copying is covered independently by GreenMail. The
+smoke's UID-versus-sequence wording friction was resolved by displaying `uid-set`
+in UID help signatures.
+
+Local delivery verification on 2026-10-12: `make check`, `make docs-test`,
+`make frontend` (48 unit tests), `make test-browser` (3 browser scenarios),
+`make test-e2e` (20 GreenMail tests), and `make test` (1,770 passed, 38 skipped;
+88.07% coverage) passed. The full Python suite includes sdist/wheel inventory,
+Node-free rebuild, isolated-install UI smoke and asset-drift checks. The protocol,
+MCP catalog and raw stdio suites also passed with MCP 1.23.0 in an isolated
+environment (152 tests; one dependency forward-reference warning). Local tests
+ran on Linux; native Windows execution remains the repository CI gate.
+
+### Mutation-class policy delivery gate
+
+This accepted alternative to #209 is not declared shipped by this specification.
+Before release, link concrete implementation and verification for:
+
+| Contract                                                                                                     | Owner  | Implementation/doc surfaces                                                                                           | Required verification                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------ | ------ | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fixed-five read/write defaults for new and old settings; global/account inheritance and explicit replacement | 04     | `config.py`, `application/accounts.py`, catalog/import, `cli.py`, frontend grant editors; configuration/security docs | omitted/null/empty/subset/unknown cases, round-trip and legacy/managed parity                                                                |
+| Optional account draft destination                                                                           | 04     | account DTO/persistence/editor; configuration/getting-started docs                                                    | configured exact name and unique special-use discovery; missing/ambiguous mailbox failure without creation/guessing                          |
+| Effect grants and fresh checks                                                                               | 07     | mutation service/provider adapters; tools/security docs                                                               | every class and explicit/implicit mark-read; revocation at independent effects; sender/recipient constraints; no bare expunge under organize |
+| Independent draft tool and common MIME APPEND                                                                | 07, 10 | `app.py`, `application/mutations.py`, `adapters/mutations.py`, shared MIME append; tools/guides docs                  | static complete catalog, no draft mailbox/flags inputs, recipientless and supplied-recipient cases, MIME/UTF-8/attachments/APPEND ambiguity  |
+| Narrow successful-message Sent copy under send, not append                                                   | 07     | `application/mutations.py`, `adapters/mutations.py`; tools/security docs                                              | send-only copy succeeds, failed/unknown SMTP has no copy, revoke send before copy, copy failure preserves SMTP success                       |
+| Management convenience and parity                                                                            | 09     | CLI/UI; transports/troubleshooting docs                                                                               | inheritance vs explicit empty editor and conflict handling; documented CLI fields match implemented options                                  |
+
+Compatibility verification additionally covers full-grant APPEND with
+`\Deleted`, append-only denial before provider access and after grant revocation,
+and ordinary APPEND without `delete`. Schema verification covers both v3/v4
+sources, unchanged accounts/policy/secrets/revisions, rollback after partial v5
+DDL, and idempotent reopen. Published v5 upgrade instructions must explain
+coordinated restart, private consistent backups, and package-only downgrade
+incompatibility. Concrete regression coverage belongs in
+`tests/test_mutation_class_policy.py`, `tests/test_managed_catalog.py`, and the
+GreenMail stdio suite.
+
+Unit, catalog-contract, frontend, strict documentation, and GreenMail checks must
+be recorded by the integrating reviewer. This table states required evidence,
+not an assertion that those checks have passed.
+
+### Junk/restore workflow delivery gate
+
+The #254 workflow is absorbed through `move_emails` without adding public tool
+names. Spec 07 owns its behavior; spec 10 owns the additive input contract.
+`application/mutations.py`, `adapters/mutations.py`, `emails/classic.py`, and
+`app.py` must agree with `docs/tools.md`. Regression coverage in
+`tests/test_junk_move.py`, the catalog snapshot/MCP tests, and GreenMail must
+prove selectable unique discovery with special-use priority and common-name
+fallback, explicit source ownership, newly listed destination UIDs on restore,
+selector validation, unchanged explicit-move results, organize revocation,
+stale-UID outcomes, discovery/effect timeouts, and projection-failure behavior.
+
+### Mailbox creation delivery gate
+
+`create_mailbox` adds one public tool name. Spec 07 owns its effect semantics
+under `organize`; spec 10 owns the additive catalog contract. `app.py`,
+`application/mutations.py`, `adapters/mutations.py`, and `emails/classic.py`
+must agree with `docs/tools.md` and `docs/security.md`. Regression coverage in
+`tests/test_create_mailbox.py`, `tests/test_mutation_class_policy.py`, the
+catalog snapshot/MCP tests, and GreenMail must prove exact-name and nested
+creation, modified UTF-7 names, idempotent `already_exists` from LIST and
+`[ALREADYEXISTS]`, bounded failures, unknown-without-replay timeouts, name
+validation (including trailing-delimiter rejection before CREATE using the
+requested namespace's delimiter, and flat-namespace preservation), organize
+denial and revocation, and that move/archive/Junk/draft paths still never create
+a mailbox. This gate states required evidence, not an
+assertion that those checks have passed.
+
+## Checked Delivery References
+
+The following checked-in matrix records evidence for this implementation branch;
+it is not a claim about an already released version. An acceptance-ID range
+enumerates every criterion in that inclusive range. The final review disposition
+is updated only after the independent review has examined the complete diff.
+
+| Acceptance IDs | Production references                                                                                                         | Verification references                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Published documentation                                                                                              | Review disposition                                   |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| 01.1-01.5      | `mcp_email_server/bootstrap.py`, `runtime.py`, `cli.py`, `web_ui/server.py`                                                   | `tests/test_bootstrap.py`, `test_runtime_lifecycle.py`, `test_managed_runtime_and_fences.py`, `test_web_ui_server.py`                                                                                                                                                                                                                                                                                                                                                                                                              | `docs/getting-started.md`, `security.md`, `transports.md`                                                            | Independent review: no unresolved material findings  |
+| 02.1-02.6      | `mcp_email_server/emails/models.py`, `application/limits.py`, `application/{reads,metadata,mutations}.py`                     | `tests/test_models.py`, `test_application_limits.py`, `test_application_{management,reads}.py`, `test_mutation_application.py`                                                                                                                                                                                                                                                                                                                                                                                                     | `docs/configuration.md`, `security.md`, `tools.md`                                                                   | Independent review: no unresolved material findings  |
+| 03.1-03.9      | `mcp_email_server/application/`, `adapters/{authority,management}.py`, `runtime.py`, `large_results.py`                       | `tests/test_application_*.py`, `test_*_adapters.py`, `test_large_results.py`, `test_runtime_lifecycle.py`                                                                                                                                                                                                                                                                                                                                                                                                                          | `docs/configuration.md`, `security.md`, `validation.md`                                                              | Independent review: no unresolved material findings  |
+| 04.1-04.8      | `mcp_email_server/config.py`, `managed.py`, `application/management.py`, `adapters/management.py`, `cli.py`, `web_ui/app.py`  | `tests/test_managed_catalog.py`, `test_managed_cli.py`, `test_application_management.py`, `test_management_adapters.py`, `test_web_ui_management.py`                                                                                                                                                                                                                                                                                                                                                                               | `docs/getting-started.md`, `configuration.md`, `security.md`, `troubleshooting.md`                                   | Independent review: no unresolved material findings  |
+| 05.1-05.8      | `mcp_email_server/keyring_store.py`, `managed.py`, `application/management.py`, `adapters/authority.py`                       | `tests/test_keyring_store.py`, `test_application_management.py`, `test_managed_catalog.py`, `test_managed_runtime_and_fences.py`, `test_web_ui_security.py`                                                                                                                                                                                                                                                                                                                                                                        | `docs/configuration.md`, `security.md`, `troubleshooting.md`                                                         | Independent review: no unresolved material findings  |
+| 06.1-06.8      | `mcp_email_server/metadata_index.py`, `application/{metadata,reads}.py`, `adapters/{metadata,reads}.py`, `emails/classic.py`  | `tests/test_metadata_*.py`, `test_imap_non_ascii_search.py`, `test_netease_imap_search.py` (real SQLite repeated To queries, old complete/partial rows, append-only updates), `test_metadata_index.py` (To migration, concurrent open, rollback), `test_metadata_snapshot_limit.py`, `test_metadata_refresh_batches.py` (epoch-bound resume, connection cancellation, redacted failure logs), `test_read_*.py`, `test_email_client.py`, `test_email_attachments.py`, `test_rfc_interoperability.py`, `e2e/test_stdio_greenmail.py` | `docs/tools.md`, `guides.md`, `security.md`, `validation.md`, `configuration.md`, `troubleshooting.md`               | Independent review: no unresolved material findings  |
+| 07.1-07.13     | `mcp_email_server/application/{management,mutations}.py`, `adapters/{management,mutations}.py`, `emails/classic.py`, `app.py` | `tests/test_{application_management,management_adapters,email_client,classic_handler,mutation_*,mcp_tools}.py`, `test_rfc_interoperability.py`, `test_scoped_expunge_regression.py`, `test_email_attachments.py`, `test_stdio_protocol.py`, `test_save_to_{mailbox,sent}.py`, `e2e/test_stdio_greenmail.py`                                                                                                                                                                                                                        | `docs/configuration.md`, `tools.md`, `guides.md`, `security.md`, `troubleshooting.md`                                | Independent review: no unresolved material findings  |
+| 07.15          | `mcp_email_server/application/mutations.py`, `adapters/mutations.py`, `emails/classic.py`                                     | `tests/test_create_mailbox.py`, `test_mutation_class_policy.py`, `e2e/test_stdio_greenmail.py`                                                                                                                                                                                                                                                                                                                                                                                                                                     | `docs/tools.md`, `security.md`, `guides.md`                                                                          | Reviewed with trailing-delimiter regression coverage |
+| 08.1-08.10     | `mcp_email_server/managed.py`, `metadata_index.py`, `large_results.py`, `adapters/reads.py`                                   | `tests/test_managed_catalog.py`, `test_metadata_index.py`, `test_large_results.py`, `test_read_adapters.py`                                                                                                                                                                                                                                                                                                                                                                                                                        | `docs/configuration.md`, `security.md`, `troubleshooting.md`                                                         | Pending independent review                           |
+| 09.1-09.8      | `mcp_email_server/web_ui/`, `frontend/`, `dev/build_frontend.py`, `Makefile`                                                  | `tests/test_web_ui_*.py`, `test_packaging.py`, `frontend/src/*.test.tsx`, `frontend/src/components/*.test.tsx`, `frontend/e2e/local-management.spec.ts`                                                                                                                                                                                                                                                                                                                                                                            | `docs/getting-started.md`, `configuration.md`, `security.md`, `transports.md`, `troubleshooting.md`, `validation.md` | Independent review: no unresolved material findings  |
+| 10.1-10.8      | `mcp_email_server/app.py`, `stdio.py`, `application/limits.py`, `large_results.py`                                            | `tests/fixtures/mcp_catalog.json`, `tests/test_mcp_tools.py`, `test_stdio_protocol.py`, `test_large_results.py`, `e2e/test_stdio_greenmail.py`                                                                                                                                                                                                                                                                                                                                                                                     | `docs/tools.md`, `transports.md`, `validation.md`                                                                    | Independent review: no unresolved material findings  |
+| 10.11          | `mcp_email_server/app.py`, `emails/models.py`                                                                                 | `tests/fixtures/mcp_catalog.json`, `tests/test_create_mailbox.py`, `test_mcp_tools.py`, `test_stdio_protocol.py`, `test_junk_move.py`                                                                                                                                                                                                                                                                                                                                                                                              | `docs/tools.md`                                                                                                      | Reviewed with trailing-delimiter regression coverage |
+| 11.1-11.8      | `plugins/mcp-email-server/`, `.agents/plugins/marketplace.json`, `.claude-plugin/marketplace.json`, `mcp_email_server/cli.py` | `tests/test_agent_integrations.py`, `test_cli.py`, `test_web_ui_server.py`                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `docs/guides.md`, `getting-started.md`, `security.md`                                                                | Independent review: no unresolved material findings  |
+
+For each normative acceptance item, the implementation review records:
+
+```text
+contract ID or heading
+owning spec
+production code reference
+unit/contract/security test reference
+E2E reference where applicable
+published docs reference
+review disposition
+```
+
+The matrix may live in test manifests or a maintained section of this document,
+but it MUST be checked in, reviewable, and free of claims unsupported by the
+current branch.
+
+## Test Layers
+
+### Domain and application
+
+Use injected fakes to cover validation, revisions, ordering, bounds, authority
+changes, late secret resolution, typed outcomes, cancellation checkpoints, and
+external-effect planning. Direct service tests prove adapters are not the only
+defense.
+
+### Infrastructure and security
+
+Cover concrete SQLite schema/migrations, DB/WAL/SHM/lock preflight, permissions
+or DACLs, links/reparse points and replacement races, Linux/Windows
+`managed_secret` transaction atomicity, macOS system-keyring/SecretStore
+failures, unchanged binding authority after failed
+saves, provider protocol edge cases including exact SEARCH/LIST/literal8 framing
+and internationalized-message capability negotiation, attachment no-follow
+behavior, bounded parser/provider payloads, and redaction on unexpected failures. Windows
+filesystem-security evidence runs on a real local NTFS volume and is not
+satisfied by mocks.
+
+### Interface contracts
+
+- MCP: complete catalog snapshot, application-version identity, reviewed tool
+  annotations, text/structured discovery equivalence, and raw protocol behavior.
+  Recipient policy evidence links `tests/test_mutation_application.py`,
+  `tests/test_mcp_tools.py`, and `tests/e2e/test_stdio_greenmail.py` to the
+  [configuration policy contract](04-configuration-and-managed-catalog.md):
+  empty-policy denial before provider effects, explicit glob authorization,
+  To/CC/BCC checks, current-policy revalidation, discovery wording, and
+  managed/legacy stdio behavior. `tests/test_config.py`,
+  `tests/test_application_management.py`, `tests/test_management_adapters.py`,
+  and `tests/test_managed_cli.py` cover glob canonicalization and persistence.
+  Published
+  upgrade guidance lives in `docs/security.md` and `docs/troubleshooting.md`.
+- CLI: command help/options, confirmations, user-controlled stdin secrets, one
+  parsed schema-version-1 JSON envelope for every finite command, typed errors
+  with fixed safe messages, post-operation revisions/restart state,
+  conflict/cleanup results, path-free agent diagnostics, and no-secret output.
+- Web backend: exact routes including absence of provider-connectivity routes,
+  authentication/session/CSRF/Host/Origin/CORS, headers, rate limits,
+  body/response limits, bounded error categories with fixed safe messages, and
+  access logs limited to fixed operation id, bounded method, status, and
+  duration.
+- Frontend: lint, typecheck, component/unit tests, email/password-first account
+  flow, folded advanced and optional outgoing settings, no connection preview,
+  individual allowlist-item editing and distinct empty semantics, hidden no-action
+  empty/settled status, secret-state clearing, conflict review, accessibility semantics,
+  and deterministic production build.
+- Agent integration: canonical skill validation, bounded JSON status/doctor
+  parsing without deriving command authority, one shared Codex/Claude Code
+  `.mcp.json` declaration, independent plugin/application version lifecycles,
+  safe handoff scenarios, and forbidden secret/bootstrap-token behavior.
+
+### End to end
+
+GreenMail tests exercise real IMAP/SMTP through MCP stdio, including restart,
+managed selection, read/mutation evidence, exact same-day timezone-aware
+`INTERNALDATE` filtering before total and pagination, RFC 5321/RFC 5322 sender
+separation when a display name contains address-special characters, and ordinary
+ASCII APPEND/search behavior. Deterministic protocol tests additionally exercise
+quoted/grouped RFC 5322 addresses, MIME attachment subtrees, charset failure and
+legacy CJK superset decoding,
+exact IMAP LIST and multi-literal SEARCH framing, SMTPUTF8 decisions, SMTP DATA
+7-bit/8-bit/binary transport classification, and RFC 6855 APPEND because the
+GreenMail fixture does not advertise every extension. The E2E
+path also includes an authenticated outgoing
+`MAIL FROM`/`RSET` check that submits no message, rotation, disablement, and explicit
+import. Browser E2E starts the installed UI process and exercises bootstrap,
+management workflows, refresh/logout/stale tabs, conflict, and shutdown.
+
+E2E must not use a developer keyring or real user config. Test fixtures have
+bounded cleanup and never print sentinel secrets. A dedicated native Windows
+E2E path covers managed bootstrap/catalog selection, private SQLite secret
+binding, stdio startup, local UI startup, attachment materialization, and
+oversized-result spill on the runner's local NTFS workspace.
+
+## Required Release Gates
+
+Before delivery, all of the following pass from a clean checkout:
+
+1. supported Python matrix (3.11 through 3.14 unless project support changes),
+   rerun from the exact peeled release-tag commit after the isolated release job
+   deterministically stamps its canonical `X.Y.Z` value (accepting an optional
+   `v` tag prefix) into only Python package metadata and the matching editable
+   lock entry;
+2. formatting, lint, type checking, lock consistency, and full Python tests with
+   combined in-process/subprocess statement-and-branch coverage at or above the
+   configured 80% aggregate threshold, plus an 80% changed-line Codecov target;
+3. documentation strict build and link/cross-reference validation;
+4. GreenMail stdio E2E;
+5. frontend `npm ci`, lint, typecheck, unit tests, and production build;
+6. Web backend security suite and real-browser E2E;
+7. focused security regressions for secrets, exact Host/Origin/CSRF/bootstrap,
+   safe Web access logs and fixed error messages, SQLite pre-open sidecars,
+   scoped expunge, attachment races, and bounds;
+8. clean sdist and wheel build with exact content verification and license/notice
+   checks;
+9. wheel rebuilt from the sdist in an environment without Node/npm/network
+   frontend access, with matching required static-asset manifest/hashes;
+10. isolated wheel install and PTY-backed `mcp-email-server ui --no-open
+--port 0` bootstrap/authenticated asset/status smoke;
+11. PTY-backed local-wheel `uvx` smoke including bootstrap/authenticated
+    asset/status access and graceful termination;
+12. Codex and Claude Code integration install/update/remove fixtures, shared
+    MCP-declaration drift, independent version lifecycles, current-channel launch,
+    and no-secret handoff scenarios;
+13. independent architecture, correctness, and security review with all material
+    findings resolved or explicitly accepted by the maintainer;
+14. a dedicated `windows-latest` job running the full Python suite plus native
+    NTFS security tests for file/directory symlinks, junctions, hard links,
+    DACL/owner policy, lock contention and killed-process release, concurrent
+    replacement, pre/post-replace termination, complete-old-or-new atomicity,
+    stale cleanup, managed/keyring/stdio/UI/attachment/spill flows, and early
+    rejection of unsupported path/filesystem classes; junction coverage must not
+    depend on Developer Mode, while unavailable symlink privilege is reported
+    distinctly rather than silently converting all reparse coverage to mocks;
+15. restricted container-context and runtime-content checks, native image build,
+    exact release-version identity, raw stdio initialization/catalog smoke, and
+    Linux `amd64`/`arm64` publication from the same stamped release commit;
+16. clean git tree after generated-asset drift and all checks.
+
+CI and release publishing invoke the same authoritative artifact build/verify
+workflow. Release cannot publish an artifact that skipped the supported Python
+matrix, frontend build, notices, from-sdist reconstruction, authenticated
+installed/`uvx` UI smoke, container smoke, or asset verification. The release
+workflow pins and verifies the peeled tag commit, deterministically stamps only
+application package and lock metadata from the canonical tag, then builds
+`dist/` once and verifies the native runtime image in an unprivileged validation
+job. It records Python artifact checksums and gives the credential-bearing Python
+publish job only those unchanged verified bytes. A separately scoped
+`packages: write` job stamps the same exact commit and publishes the multi-platform
+container under the canonical repository owner only after all validation jobs
+succeed. Plugin metadata is not part of application release stamping.
+
+## Artifact Contract
+
+The wheel contains only runtime Python/package resources and the complete
+prebuilt local UI. The sdist contains the Python source, build metadata, required
+scripts, container definition, frontend source and lockfile, notices, and the
+same prebuilt UI needed for a Node-free wheel or local container build. The
+runtime container contains only the non-editable installed environment and
+required operating-system runtime packages; repository configuration, source,
+tests, caches, and build inputs remain outside the image.
+
+Artifact verification rejects:
+
+- missing index or referenced assets;
+- stale/unreferenced generated chunks;
+- missing third-party notices/license material;
+- repository-relative runtime assumptions;
+- unexpected source maps, debug artifacts, secrets, test traces, or browser
+  recordings;
+- Gradio remnants when the replacement is complete;
+- MCP App bundles or metadata in this delivery;
+- any PEP 517 step that invokes Node or downloads frontend dependencies.
+
+Runtime assets are read via `importlib.resources`. If extraction context is
+needed, its lifetime covers the server and is released on shutdown.
+
+## Documentation Gates
+
+Implementation changes update all affected user documentation in the same
+change:
+
+- README and getting started for mode/UI launch and restart behavior;
+- configuration for catalog, accounts, policy, credential and import lifecycle;
+- security for secret boundaries, loopback bootstrap/session, exact attachment
+  path, SQLite files/sidecars, and transport posture;
+- tools for the exact mail-only MCP contract, removal of account-add, and
+  migration to CLI/UI;
+- agent integration guidance for verified Codex/Claude Code install, shared
+  local MCP launch, safe credential handoff, independent version lifecycles,
+  update, and removal;
+- transports for stdio baseline and local UI non-transport status;
+- troubleshooting for doctor/cleanup, conflicts, insecure files, provider
+  ambiguity, ports/browser, and artifact startup;
+- validation for reproducible release and E2E commands.
+
+Docs MUST distinguish accepted target behavior from released-version behavior
+until the implementation ships. They do not claim that loopback alone is auth,
+that attachments are confined to an approved workspace, or that public numeric
+IDs carry listing epoch.
+
+## Evolution Rules
+
+A change to authority, persistent schema, secret lifecycle, public MCP contract,
+UI trust model, provider-effect semantics, or cross-cutting limits requires an
+accepted spec change before implementation. The owning document changes; other
+specs link rather than duplicate.
+
+After a managed catalog or MCP contract is released, versioned migration is
+required for incompatible changes. This pre-release managed-catalog redesign has
+no current V2 users and makes no general compatibility promise for development
+schemas, but exact schema v3 is explicitly supported as the sole migration source
+for v4. Explicit import from legacy TOML, environment, and keyring sources remains
+available. Security properties cannot be weakened through a compatibility flag
+without explicit threat analysis and maintainer acceptance.
+
+Deferred items such as MCP Apps, remote UI, hard purge, online backup/restore,
+OAuth, epoch-bound public IDs, QRESYNC, or background sync require separate
+scope, authority, security, migration, and acceptance designs. Their future
+possibility does not add placeholders or generic abstractions now.
+
+## Acceptance Criteria
+
+1. Every acceptance item in specs 01-11 has concrete production, test, docs, and
+   review references in the checked delivery matrix.
+2. The entire Python/frontend/security/E2E/docs gate passes from a clean checkout
+   and leaves no uncommitted generated drift.
+3. Published wheel and sdist pass exact content checks; a wheel rebuilt from the
+   sdist and the installed/`uvx` UI work without Node or frontend network access;
+   the restricted runtime container passes version, content, and raw MCP smoke.
+4. CI and release use the same verified artifact paths and publish only Python or
+   multi-platform container artifacts that passed their applicable gates.
+5. Independent review finds no unresolved material correctness, authorization,
+   secret, persistence, provider-effect, packaging, or test-adequacy issue.
+6. User documentation and README match implemented Windows/POSIX behavior,
+   supported local-NTFS boundaries, remediation, and validation commands and
+   contain none of the rejected overclaims named above.
+7. Native Windows evidence is produced on a real NTFS runner for the required
+   reparse, ACL, lock, replacement, crash, cleanup, and atomic-write cases; mock
+   tests alone cannot satisfy the gate.
+8. Future incompatible or deferred work cannot ship by silently changing this
+   contract; it receives an owning spec and migration/compatibility decision.

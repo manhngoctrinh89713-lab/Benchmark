@@ -1,0 +1,57 @@
+{
+  "name": "git_merge",
+  "description": "合并提交或分支到当前本地分支。operation=start/continue/abort；start需source，ff_mode=ff/no-ff/ff-only，message可选。开始前须无进行中操作且工作区干净。冲突返回conflicts并保留现场，编辑文件、git_add后continue，也可abort。不会自动fetch或push。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "operation": {
+        "default": "start",
+        "title": "Operation",
+        "type": "string"
+      },
+      "source": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Source"
+      },
+      "message": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Message"
+      },
+      "ff_mode": {
+        "default": "ff",
+        "title": "Ff Mode",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_mergeArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "delete_contact",
+  "description": "单方面删除好友关系，保留既有本地聊天记录和共同群成员身份；expected_version 使用关系版本。再次私聊须重新建立好友关系。",
+  "inputSchema": {
+    "properties": {
+      "user_id": {
+        "title": "User Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "user_id"
+    ],
+    "title": "delete_contactArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

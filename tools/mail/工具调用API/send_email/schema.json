@@ -1,0 +1,135 @@
+{
+  "name": "send_email",
+  "description": "提交新邮件并保存至 Sent；支持 To/Cc/Bcc、HTML、Reply-To、附件和代理发送。收件人可为明确邮箱地址、contact:<联系人ID>、group:<群组ID>；联系人和个人组立即解析，组织组在提交时展开。附件从 workspace 读取并保存字节快照。in_reply_to 使用父邮件 message_id。send_mode 为 send_as 或 send_on_behalf，后者同时显示实际 Sender。返回提交 ID 和已有状态；外部收件人无送达证据时保持 unknown。重复调用会重复发送。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "recipients": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Recipients",
+        "type": "array"
+      },
+      "subject": {
+        "title": "Subject",
+        "type": "string"
+      },
+      "body": {
+        "title": "Body",
+        "type": "string"
+      },
+      "cc": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Cc"
+      },
+      "bcc": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Bcc"
+      },
+      "html": {
+        "default": false,
+        "title": "Html",
+        "type": "boolean"
+      },
+      "attachments": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Attachments"
+      },
+      "in_reply_to": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "In Reply To"
+      },
+      "reply_to": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Reply To"
+      },
+      "from_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "From Address"
+      },
+      "send_mode": {
+        "default": "send_as",
+        "title": "Send Mode",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name",
+      "recipients",
+      "subject",
+      "body"
+    ],
+    "title": "send_emailArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

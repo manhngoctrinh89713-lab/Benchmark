@@ -1,0 +1,14 @@
+{
+  "now": "2026-11-01T09:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "sales",
+      "name": "示例销售数据"
+    },
+    {
+      "id": "inventory",
+      "name": "示例库存数据"
+    }
+  ]
+}

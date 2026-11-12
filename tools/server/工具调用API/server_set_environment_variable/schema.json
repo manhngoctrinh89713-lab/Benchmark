@@ -1,0 +1,40 @@
+{
+  "name": "server_set_environment_variable",
+  "description": "设置环境变量，null 删除变量；修改影响后续新建进程。",
+  "inputSchema": {
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "value": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Value"
+      },
+      "scope": {
+        "default": "user",
+        "title": "Scope",
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "value"
+    ],
+    "title": "server_set_environment_variableArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

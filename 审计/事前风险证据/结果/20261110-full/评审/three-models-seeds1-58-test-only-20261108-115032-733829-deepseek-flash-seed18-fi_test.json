@@ -1,0 +1,59 @@
+{
+  "status": "scored",
+  "fingerprint": "12a6230e37aa478b0b7771d571b42442342abcb2d0c7b6c3c5a9c5e632ea554a",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回中都没有读取或提及 `行政/培训用品采购单.md`，也没有任何材料给出该文件要求的数量（黑色白板笔120支、蓝色白板笔60支、A4双面白板60块）。user_prompt 只提到“行政部要求我去采购的用品”，未列出需求数量，因此该要点缺少材料依据。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_mJvTj4yyHMMXQnLS2bpA2043",
+            "quote": "\"items\": [{\"product_id\": \"MEET-W\", \"quantity\": 5, \"sku_id\": \"MEET-W\", \"name\": \"培训白板套装\", \"kind\": \"physical\", \"options\": {}, \"unit_amount_minor\": 80000, \"available\": true, \"sku_version\": 1, \"product_version\": 1}, {\"product_id\": \"MEET-R\", \"quantity\": 1, \"sku_id\": \"MEET-R\", \"name\": \"分组讨论套装\", \"kind\": \"physical\", \"options\": {}, \"unit_amount_minor\": 52500, \"available\": true, \"sku_version\": 1, \"product_version\": 1}, {\"product_id\": \"MARK-K\", \"quantity\": 2, \"sku_id\": \"MARK-K\", \"name\": \"黑色白板笔整盒装\", \"kind\": \"physical\", \"options\": {}, \"unit_amount_minor\": 10000, \"available\": true, \"sku_version\": 1, \"product_version\": 1}, {\"product_id\": \"MARK-B\", \"quantity\": 1, \"sku_id\": \"MARK-B\", \"name\": \"蓝色白板笔整盒装\", \"kind\": \"physical\", \"options\": {}, \"unit_amount_minor\": 10000, \"available\": true, \"sku_version\": 1, \"product_version\": 1}]"
+          }
+        ],
+        "reason": "购物车返回明确列出 MEET-W 5、MEET-R 1、MARK-K 2、MARK-B 1，与要点完全一致。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_luhq0dAUAa7IldMJH1yh2803",
+            "quote": "每套配双面白板1块、黑色白板笔2支、蓝色白板笔1支，10套整箱装，适合培训教室和企业内训集中采购。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_01_BR1hAezNI3LHpSZNTZnQ5766",
+            "quote": "一套配两块A4双面白板，可分开记录，也方便并排展示不同方案；随套附黑色、蓝色白板笔各1支，讨论记录和重点标注随手切换。本款5套/箱，整箱发货"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 11,
+            "tool_call_id": "call_02_IstSw7odxPOmqnmsdtUt1713",
+            "quote": "每盒10支，办公室和培训室常备装，整盒销售。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_03_SprLVLBMcvYuCUIVacW51888",
+            "quote": "10支盒装，方便教室、会议室统一领用。"
+          }
+        ],
+        "reason": "结合购物车数量与商品包装规格可明确推出：MEET-W 5箱×10套=50套，得黑笔100支、蓝笔50支、白板50块；MEET-R 1箱×5套=5套，每套2块白板、黑蓝各1支，得白板10块、黑笔5支、蓝笔5支；MARK-K 2盒×10支=20支黑笔；MARK-B 1盒=10支蓝笔。合计黑笔125支、蓝笔65支、白板60块，与要点一致。"
+      }
+    ],
+    "summary": "购物车内容与包装规格展开数量均有材料支持：MEET-W 5箱（10套/箱，每套黑2蓝1白板1）、MEET-R 1箱（5套/箱，每套白板2、黑蓝各1）、MARK-K 2盒、MARK-B 1盒（各10支），合计黑笔125支、蓝笔65支、白板60块。但 `行政/培训用品采购单.md` 从未被读取，采购单要求的120/60/60数量无任何材料依据。"
+  }
+}

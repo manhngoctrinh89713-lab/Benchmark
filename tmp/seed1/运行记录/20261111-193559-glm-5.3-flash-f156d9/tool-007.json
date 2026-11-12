@@ -1,0 +1,16 @@
+{
+  "id": "call_-7086075398445853218",
+  "name": "buyer__list_payment_methods",
+  "arguments": "{}",
+  "started_at": "2026-11-11T19:36:20.824505+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"payment_methods\": [{\"id\": \"pm_demo\", \"label\": \"银行卡 尾号5186\", \"active\": true, \"version\": 1}], \"default_payment_method_id\": \"pm_demo\"}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:36:20.834290+08:00"
+}

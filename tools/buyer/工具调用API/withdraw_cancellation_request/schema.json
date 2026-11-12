@@ -1,0 +1,23 @@
+{
+  "name": "withdraw_cancellation_request",
+  "description": "撤回尚未处理的订单取消申请。",
+  "inputSchema": {
+    "properties": {
+      "request_id": {
+        "title": "Request Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "request_id"
+    ],
+    "title": "withdraw_cancellation_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

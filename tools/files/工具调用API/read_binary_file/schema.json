@@ -1,0 +1,33 @@
+{
+  "name": "read_binary_file",
+  "description": "分段读取文件二进制内容，以 Base64 返回，并提供完整文件校验值。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "length": {
+        "default": 65536,
+        "title": "Length",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "read_binary_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

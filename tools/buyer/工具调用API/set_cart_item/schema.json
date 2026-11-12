@@ -1,0 +1,45 @@
+{
+  "name": "set_cart_item",
+  "description": "增加或修改一个购物车规格的数量，零表示移除。",
+  "inputSchema": {
+    "properties": {
+      "merchant_id": {
+        "title": "Merchant Id",
+        "type": "string"
+      },
+      "sku_id": {
+        "title": "Sku Id",
+        "type": "string"
+      },
+      "quantity": {
+        "title": "Quantity",
+        "type": "integer"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "merchant_id",
+      "sku_id",
+      "quantity"
+    ],
+    "title": "set_cart_itemArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

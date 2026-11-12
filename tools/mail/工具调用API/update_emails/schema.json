@@ -1,0 +1,97 @@
+{
+  "name": "update_emails",
+  "description": "批量移动邮件或设置已读、星标及分类；最多 500 个唯一 email_id。每封独立执行，返回逐项结果，失败项不回滚成功项。mailbox 使用 ID 或完整路径，移到 Archive 即归档，移到 Trash 即删除；移动保持邮件 ID。分类参数为分类 ID。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Email Ids",
+        "type": "array"
+      },
+      "mailbox": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Mailbox"
+      },
+      "is_read": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Is Read"
+      },
+      "starred": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Starred"
+      },
+      "add_categories": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Add Categories"
+      },
+      "remove_categories": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Remove Categories"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_ids"
+    ],
+    "title": "update_emailsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

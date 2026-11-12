@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-03T14:00:00+08:00",
+  "sequence": 0,
+  "projects": [
+    {
+      "id": "settlement-svc",
+      "name": "结算服务",
+      "path": "repos/settlement-svc"
+    }
+  ]
+}

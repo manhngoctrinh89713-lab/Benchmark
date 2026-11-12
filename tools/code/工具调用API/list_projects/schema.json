@@ -1,0 +1,15 @@
+{
+  "name": "list_projects",
+  "description": "查看本轮可操作的代码项目、真实根目录、结构分析和语义分析支持的语言。",
+  "inputSchema": {
+    "properties": {},
+    "title": "list_projectsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

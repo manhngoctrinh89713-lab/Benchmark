@@ -1,0 +1,38 @@
+{
+  "name": "refund_payment",
+  "description": "为成功支付发起部分或全部退款，退款到账由支付服务另行记录。",
+  "inputSchema": {
+    "properties": {
+      "payment_id": {
+        "title": "Payment Id",
+        "type": "string"
+      },
+      "amount_minor": {
+        "title": "Amount Minor",
+        "type": "integer"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "payment_id",
+      "amount_minor",
+      "reason",
+      "idempotency_key"
+    ],
+    "title": "refund_paymentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

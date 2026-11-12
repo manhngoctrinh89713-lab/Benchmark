@@ -1,0 +1,10 @@
+.venv/
+.archive/
+__pycache__/
+.pytest_cache/
+node_modules/
+*.egg-info/
+runs/
+运行记录/*/
+运行记录/.runner.lock
+运行环境/*/

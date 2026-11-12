@@ -1,0 +1,23 @@
+{
+  "name": "server_delete_backup",
+  "description": "删除本地备份归档及登记，释放模拟磁盘空间。",
+  "inputSchema": {
+    "properties": {
+      "backup_id": {
+        "title": "Backup Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "backup_id"
+    ],
+    "title": "server_delete_backupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

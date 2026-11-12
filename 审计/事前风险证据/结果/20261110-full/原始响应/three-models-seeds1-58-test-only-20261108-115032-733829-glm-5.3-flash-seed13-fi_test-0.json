@@ -1,0 +1,29 @@
+{
+  "id": "2f77ef4e-9599-48f0-bc3f-71efb475c435_59b43700534543e7b278bc7d20c1a284",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":7,\"tool_call_id\":\"call_-7101069816470957240\",\"quote\":\"{\\\"columns\\\": [\\\"id\\\", \\\"legacy_balance\\\", \\\"balance_minor\\\", \\\"migration_status\\\"], \\\"rows\\\": [[\\\"M107\\\", 12500, null, \\\"pending\\\"], [\\\"M218\\\", 8000, null, \\\"pending\\\"], [\\\"M306\\\", 360, null, \\\"pending\\\"]], \\\"row_count\\\": 3, \\\"has_more\\\": false, \\\"next_offset\\\": null}\"}],\"reason\":\"查询结果直接显示三位会员的 legacy_balance 分别为 12500、8000、360，balance_minor 均为 null，migration_status 均为 pending。\"},{\"id\":2,\"supported\":false,\"evidence\":[],\"reason\":\"工具返回中没有任何对 `wallet/迁移说明.md` 的读取或其内容的展示，材料未提及两字段单位均为分、12500 对应 125.00 元，以及 ready 的含义；user_prompt 反而说明 legacy_balance 按元记录。缺少该文件内容依据，无法支持此要点。\"}],\"summary\":\"数据库查询支持要点1的数值与状态，但要点2所依据的迁移说明文件从未被读取，材料中无其内容，且用户指令对单位的描述与要点2相反，故不支持。\"}`",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 2 references a file `wallet/迁移说明.md` — no tool results show reading any file. So unsupported."
+      }
+    }
+  ],
+  "created": 1794318847,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 374,
+    "prompt_tokens": 3741,
+    "total_tokens": 4115,
+    "completion_tokens_details": {
+      "reasoning_tokens": 27
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 2048
+    }
+  }
+}

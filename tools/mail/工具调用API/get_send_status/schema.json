@@ -1,0 +1,28 @@
+{
+  "name": "get_send_status",
+  "description": "查询提交记录及已有投递证据。accepted 表示已接受，delivered/bounced/partial 表示已记录的结果；unknown 表示该收件人尚无证据。隐藏群组成员不通过状态查询公开。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "submission_id": {
+        "title": "Submission Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name",
+      "submission_id"
+    ],
+    "title": "get_send_statusArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

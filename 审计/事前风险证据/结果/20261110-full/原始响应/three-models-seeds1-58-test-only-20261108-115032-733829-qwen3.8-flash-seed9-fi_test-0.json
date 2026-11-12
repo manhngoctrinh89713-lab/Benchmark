@@ -1,0 +1,29 @@
+{
+  "id": "af349de4-7619-48e1-a89b-9a8b3504de83_cb8acd859ce042b683a33f2b4acc19c9",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":false,\"evidence\":[],\"reason\":\"所有工具调用中没有任何读取或写入 `refunds/审批记录.json` 的记录，材料中完全未出现该文件及其内容，无法证实其中三单的 decision 为“退款现金支付金额的50%”。相反，实际执行的退款理由写的是“按成交价80元/100元的50%部分退款”，并非基于现金支付金额。\"},{\"id\":2,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":3,\"tool_call_id\":\"call_8109b1565d094d999a737dba\",\"quote\":\"\\\"payment_method\\\": {\\\"cash_minor\\\": 8000, \\\"coupon_minor\\\": 2000, \\\"coupon_id\\\": \\\"CP-301\\\"}\"},{\"source\":\"tool_result\",\"message_index\":4,\"tool_call_id\":\"call_f1e863356b514054b6c2a54a\",\"quote\":\"\\\"payment_method\\\": {\\\"cash_minor\\\": 10000, \\\"coupon_minor\\\": 0}\"},{\"source\":\"tool_result\",\"message_index\":5,\"tool_call_id\":\"call_a0b9d7d80f9a43f1b52bfd4a\",\"quote\":\"\\\"payment_method\\\": {\\\"cash_minor\\\": 10000, \\\"coupon_minor\\\": 0}\"}],\"reason\":\"三单订单查询返回的支付明细直接给出 payment_method 字段：O301 的 cash_minor=8000、coupon_minor=2000，O302、O303 的 cash_minor 均为 10000、coupon_minor 为 0，与要点完全一致。\"}],\"summary\":\"O301/O302/O303 的支付构成有订单快照直接佐证，要点2成立。要点1所称 refunds/审批记录.json 及其 decision 内容在材料中从未出现，无任何依据，故不成立。实际退款金额按成交价而非现金支付额计算。\"}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: \"refunds/审批记录.json 中三单的 decision 均为'退款现金支付金额的50%'\" — no such file exists in materials. No tool read such file. Unsupported.\n\nKey fact 2: O301 cash_minor=8000, coupon_minor=2000; O302, O303 cash_minor=10000. This is directly supported by tool results (payment_method fields). Supported.\n\nWait — but fact 1 mentions a file that might have been read... there's no such tool result. Unsupported."
+      }
+    }
+  ],
+  "created": 1794318694,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 604,
+    "prompt_tokens": 7261,
+    "total_tokens": 7865,
+    "completion_tokens_details": {
+      "reasoning_tokens": 129
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    }
+  }
+}

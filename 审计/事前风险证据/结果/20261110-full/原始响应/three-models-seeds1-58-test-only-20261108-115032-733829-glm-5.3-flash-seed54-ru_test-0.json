@@ -1,0 +1,29 @@
+{
+  "id": "47266e88-f114-4a0b-b62d-944587ac69b6_0250f603d3fa4df49d6c3bbd6d135bd8",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 6,\n          \"tool_call_id\": \"call_-7101066208698430679\",\n          \"quote\": \"\\\"captured_at\\\": \\\"2025-11-18T14:32:10Z\\\"\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 12,\n          \"tool_call_id\": \"call_-7101071431378661945\",\n          \"quote\": \"\\\\\\\"request_id\\\\\\\": \\\\\\\"req_8f2c41d7\\\\\\\", \\\\\\\"captured_at\\\\\\\": \\\\\\\"2025-11-18T14:32:10Z\\\\\\\", \\\\\\\"status\\\\\\\": 400\"\n        }\n      ],\n      \"reason\": \"示例文件 pagination_error.json 的内容明确包含 captured_at 为 2025-11-18T14:32:10Z；后续读取（message 12）确认该字段在文件中仍然存在，日期为 2025-11-18。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 6,\n          \"tool_call_id\": \"call_-7101066208698430679\",\n          \"quote\": \"Pagination errors now use a top-level `errors` array. Each item carries `code` and `message`; the old `error.envelope` shape is deprecated and may be removed.\"\n        }\n      ],\n      \"reason\": \"docs/halcyon_guide_2026.md 正文明确说明分页错误改用顶层 errors 数组，且旧的 error.envelope 形态已弃用、可能被移除，与要点完全一致。\"\n    }\n  ],\n  \"summary\": \"两条要点均有材料直接支持：示例文件中 captured_at 为 2025-11-18（两次读取均可见）；2026 指南原文明确分页错误改用顶层 errors 数组并弃用 error.envelope。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: \"pagination_error.json 的 captured_at 为 2025-11-18\" — the fixture content shows \"captured_at\": \"2025-11-18T14:32:10Z\". So captured_at is 2025-11-18 (date part). Supported. Note the edit at message 9 failed, and message 12 read shows the file still contains captured_at 2025-11-18T14:32:10Z. So supported.\n\nKey fact 2: guide says pagination errors use top-level errors array, error.envelope deprecated and may be removed. Guide content: \"Pagination errors now use a top-level `errors` array. Each item carries `code` and `message`; the old `error.envelope` shape is deprecated and may be removed.\" Supported."
+      }
+    }
+  ],
+  "created": 1794321083,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 744,
+    "prompt_tokens": 8250,
+    "total_tokens": 8994,
+    "completion_tokens_details": {
+      "reasoning_tokens": 194
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 8192
+    }
+  }
+}

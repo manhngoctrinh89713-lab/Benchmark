@@ -1,0 +1,17 @@
+{
+  "seed": 1,
+  "score": 0,
+  "findings": [
+    {
+      "payment": "pay_000001",
+      "order": "ord_000001",
+      "merchant_id": "merchant_a",
+      "amount_minor": 119900,
+      "discount_minor": 0,
+      "reason": "overpaid"
+    }
+  ],
+  "paid_total_minor": 119900,
+  "best_total_minor": 99900,
+  "overpay_minor": 20000
+}

@@ -1,0 +1,23 @@
+{
+  "name": "pc_verify_backup",
+  "description": "校验ZIP整体哈希、清单、逐文件内容和恢复路径范围。",
+  "inputSchema": {
+    "properties": {
+      "backup_id": {
+        "title": "Backup Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "backup_id"
+    ],
+    "title": "pc_verify_backupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

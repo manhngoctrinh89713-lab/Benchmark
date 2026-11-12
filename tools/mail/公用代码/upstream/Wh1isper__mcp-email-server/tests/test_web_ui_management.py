@@ -1,0 +1,491 @@
+from __future__ import annotations
+
+from pathlib import Path
+from unittest.mock import MagicMock
+
+import httpx
+import pytest
+
+from mcp_email_server.application.management import (
+    AccountCreationResult,
+    AccountDetails,
+    BootstrapSnapshot,
+    CatalogInitializationResult,
+    CredentialMutationResult,
+    EndpointSummary,
+    ManagedAccountService,
+    ManagedPolicy,
+    ManagementError,
+    RevisionConflictError,
+)
+from mcp_email_server.imap_keywords import ImapKeywordTag
+from mcp_email_server.managed import ManagedCatalog
+from mcp_email_server.web_ui.app import LocalUiState, create_local_ui_app
+from mcp_email_server.web_ui.models import ApplyImportRequest
+
+
+def _endpoint() -> EndpointSummary:
+    return EndpointSummary(
+        host="imap.example.test",
+        port=993,
+        use_ssl=True,
+        start_ssl=False,
+        verify_ssl=True,
+        user_name="alice@example.test",
+    )
+
+
+def _details(
+    *,
+    revision: int = 4,
+    tags: tuple[ImapKeywordTag, ...] = (),
+) -> AccountDetails:
+    return AccountDetails(
+        name="alice",
+        full_name="Alice",
+        email_address="alice@example.test",
+        enabled=True,
+        revision=revision,
+        save_to_sent=True,
+        sent_folder_name=None,
+        incoming=_endpoint(),
+        outgoing=None,
+        incoming_binding="ACTIVE",
+        outgoing_binding=None,
+        tags=tags,
+    )
+
+
+async def _authenticated(
+    management: MagicMock,
+    *,
+    port: int,
+) -> tuple[LocalUiState, httpx.AsyncClient, str]:
+    for service_name in ("catalog", "accounts", "credentials", "policy", "connectivity"):
+        service = getattr(management, service_name)
+        service.bind.return_value = service
+    state = LocalUiState(
+        port=port,
+        management=management,
+        bootstrap_token="management-bootstrap",
+    )
+    client = httpx.AsyncClient(
+        transport=httpx.ASGITransport(app=create_local_ui_app(state)),
+        base_url=state.origin,
+    )
+    response = await client.post(
+        f"{state.route_prefix}/api/bootstrap",
+        headers={
+            "Authorization": "Bearer management-bootstrap",
+            "Content-Type": "application/json",
+            "Origin": state.origin,
+        },
+        content="{}",
+    )
+    assert response.status_code == 200
+    return state, client, response.json()["csrf"]
+
+
+def _target_payload(**values: object) -> dict[str, object]:
+    return {
+        "expected_bootstrap_revision": 2,
+        "expected_catalog": "/private/catalog.sqlite3",
+        **values,
+    }
+
+
+def _mutation_headers(state: LocalUiState, csrf: str) -> dict[str, str]:
+    return {
+        "Content-Type": "application/json",
+        "Origin": state.origin,
+        "Sec-Fetch-Site": "same-origin",
+        "X-CSRF-Token": csrf,
+    }
+
+
+@pytest.mark.asyncio
+async def test_selection_uses_separate_bootstrap_and_catalog_revisions() -> None:
+    management = MagicMock()
+    state, client, csrf = await _authenticated(management, port=8779)
+    try:
+        legacy_response = await client.post(
+            f"{state.route_prefix}/api/catalog/select",
+            headers=_mutation_headers(state, csrf),
+            json={
+                "mode": "legacy",
+                "expected_bootstrap_revision": 4,
+                "expected_catalog_revision": None,
+            },
+        )
+        managed_response = await client.post(
+            f"{state.route_prefix}/api/catalog/select",
+            headers=_mutation_headers(state, csrf),
+            json={
+                "mode": "managed",
+                "expected_bootstrap_revision": 5,
+                "expected_catalog_revision": 9,
+            },
+        )
+    finally:
+        await client.aclose()
+
+    assert legacy_response.status_code == 200
+    assert managed_response.status_code == 200
+    assert management.catalog.select.call_args_list[0].kwargs == {
+        "expected_bootstrap_revision": 4,
+        "expected_catalog_revision": None,
+    }
+    assert management.catalog.select.call_args_list[1].kwargs == {
+        "expected_bootstrap_revision": 5,
+        "expected_catalog_revision": 9,
+    }
+
+
+@pytest.mark.asyncio
+async def test_create_account_passes_secret_once_and_never_echoes_it() -> None:
+    management = MagicMock()
+    management.accounts.create.return_value = AccountCreationResult(
+        incoming=CredentialMutationResult(status="active", revision=2),
+        outgoing=None,
+    )
+    state, client, csrf = await _authenticated(management, port=8780)
+    sentinel = "never-echo-this-credential"
+    try:
+        response = await client.post(
+            f"{state.route_prefix}/api/accounts/create",
+            headers=_mutation_headers(state, csrf),
+            json=_target_payload(
+                expected_catalog_revision=1,
+                name="alice",
+                full_name="Alice",
+                email_address="alice@example.test",
+                save_to_sent=True,
+                sent_folder_name=None,
+                incoming={
+                    "host": "imap.example.test",
+                    "port": 993,
+                    "use_ssl": True,
+                    "start_ssl": False,
+                    "verify_ssl": True,
+                    "user_name": "alice@example.test",
+                },
+                outgoing=None,
+                credentials={"incoming": sentinel, "outgoing": None},
+                tags=[
+                    {
+                        "name": "important",
+                        "keyword": "$Important",
+                        "description": "Important messages",
+                        "writable": True,
+                    }
+                ],
+            ),
+        )
+    finally:
+        await client.aclose()
+
+    assert response.status_code == 200
+    assert sentinel not in response.text
+    assert response.json() == {
+        "incoming": {"state": "active", "revision": 2, "cleanup_required": 0},
+        "outgoing": None,
+    }
+    command = management.accounts.create.call_args.args[0]
+    assert command.incoming_secret.get_secret_value() == sentinel
+    assert sentinel not in repr(command)
+    assert command.incoming.host == "imap.example.test"
+    assert command.tags == (
+        ImapKeywordTag(
+            name="important",
+            keyword="$Important",
+            description="Important messages",
+            writable=True,
+        ),
+    )
+
+
+@pytest.mark.parametrize("grants", [None, [], ["draft"]])
+@pytest.mark.asyncio
+async def test_create_account_persists_mutation_grants_and_drafts_mailbox(
+    tmp_path: Path, grants: list[str] | None
+) -> None:
+    catalog = ManagedCatalog.initialize(tmp_path / "catalog.sqlite3")
+    backend = MagicMock()
+    backend.read_bootstrap.return_value = BootstrapSnapshot(mode="managed", db_path=catalog.path, revision=2)
+    backend.open_catalog.return_value = catalog
+    management = MagicMock()
+    state, client, csrf = await _authenticated(management, port=8780)
+    # Use the real service/catalog behind the HTTP adapter: request-only frontend
+    # assertions cannot detect fields dropped while building the create command.
+    management.accounts = ManagedAccountService(backend)
+    try:
+        response = await client.post(
+            f"{state.route_prefix}/api/accounts/create",
+            headers=_mutation_headers(state, csrf),
+            json=_target_payload(
+                expected_catalog=catalog.path.as_posix(),
+                expected_catalog_revision=1,
+                name="alice",
+                full_name="Alice",
+                email_address="alice@example.test",
+                save_to_sent=True,
+                sent_folder_name=None,
+                incoming={
+                    "host": "imap.example.test",
+                    "port": 993,
+                    "use_ssl": True,
+                    "start_ssl": False,
+                    "verify_ssl": True,
+                    "user_name": "alice@example.test",
+                },
+                outgoing=None,
+                credentials={"incoming": "synthetic-password", "outgoing": None},
+                allowed_mutations=grants,
+                drafts_mailbox="Localized Drafts",
+                allow_protocol_commands=True,
+            ),
+        )
+        assert response.status_code == 200, response.text
+        readback = await client.get(f"{state.route_prefix}/api/accounts/alice")
+        assert readback.status_code == 200, readback.text
+    finally:
+        await client.aclose()
+    assert readback.json()["allowed_mutations"] == grants
+    assert readback.json()["drafts_mailbox"] == "Localized Drafts"
+    assert readback.json()["allow_protocol_commands"] is True
+    persisted = catalog.show_account("alice")
+    assert persisted.allowed_mutations == (tuple(grants) if grants is not None else None)
+    assert persisted.drafts_mailbox == "Localized Drafts"
+    assert persisted.allow_protocol_commands is True
+
+
+@pytest.mark.asyncio
+async def test_update_account_and_policy_requests_include_tags_and_attachment_content() -> None:
+    management = MagicMock()
+    tag = ImapKeywordTag(name="triage", keyword="$Triage", writable=True)
+    management.accounts.show.side_effect = [_details(revision=4), _details(revision=5, tags=(tag,))]
+    management.policy.update.return_value = ManagedPolicy(
+        revision=8,
+        enable_attachment_download=False,
+        enable_attachment_content=True,
+        allowed_recipients=(),
+        allowed_senders=(),
+        report_blocked_mutations=False,
+    )
+    state, client, csrf = await _authenticated(management, port=8787)
+    try:
+        updated_account = await client.post(
+            f"{state.route_prefix}/api/accounts/alice/update",
+            headers=_mutation_headers(state, csrf),
+            json=_target_payload(
+                expected_revision=4,
+                name="alice",
+                full_name="Alice",
+                email_address="alice@example.test",
+                save_to_sent=True,
+                sent_folder_name=None,
+                incoming={
+                    "host": "imap.example.test",
+                    "port": 993,
+                    "use_ssl": True,
+                    "start_ssl": False,
+                    "verify_ssl": True,
+                    "user_name": "alice@example.test",
+                },
+                outgoing=None,
+                tags=[{"name": "triage", "keyword": "$Triage", "writable": True}],
+            ),
+        )
+        updated_policy = await client.post(
+            f"{state.route_prefix}/api/policy/update",
+            headers=_mutation_headers(state, csrf),
+            json=_target_payload(
+                expected_revision=7,
+                enable_attachment_download=False,
+                enable_attachment_content=True,
+                allowed_recipients=[],
+                allowed_senders=[],
+                report_blocked_mutations=False,
+            ),
+        )
+    finally:
+        await client.aclose()
+
+    assert updated_account.status_code == 200, updated_account.text
+    assert updated_account.json()["tags"] == [
+        {
+            "name": "triage",
+            "keyword": "$Triage",
+            "description": "",
+            "writable": True,
+        }
+    ]
+    command = management.accounts.update.call_args.args[0]
+    assert command.tags == (tag,)
+    assert command.allow_protocol_commands is None  # Omission preserves the current opt-in.
+    assert updated_policy.status_code == 200, updated_policy.text
+    policy = management.policy.update.call_args.args[0]
+    assert policy.enable_attachment_download is False
+    assert policy.enable_attachment_content is True
+
+
+@pytest.mark.asyncio
+async def test_typed_revision_conflict_returns_bounded_non_secret_current_summary() -> None:
+    management = MagicMock()
+    management.accounts.disable.side_effect = RevisionConflictError("account", name="alice")
+    management.accounts.show.return_value = _details(revision=7)
+    state, client, csrf = await _authenticated(management, port=8781)
+    try:
+        response = await client.post(
+            f"{state.route_prefix}/api/accounts/alice/disable",
+            headers=_mutation_headers(state, csrf),
+            json=_target_payload(expected_revision=4),
+        )
+    finally:
+        await client.aclose()
+
+    assert response.status_code == 409
+    body = response.json()
+    assert body["category"] == "conflict"
+    assert body["current"]["name"] == "alice"
+    assert body["current"]["revision"] == 7
+    assert body["current"]["has_outgoing"] is False
+    assert "secret" not in response.text.casefold()
+    assert len(response.content) < 4096
+
+
+@pytest.mark.asyncio
+async def test_credential_wire_mapping_is_explicit() -> None:
+    management = MagicMock()
+    management.credentials.set.return_value = CredentialMutationResult(
+        status="active_cleanup_required",
+        revision=5,
+        cleanup_required=1,
+    )
+    state, client, csrf = await _authenticated(management, port=8782)
+    try:
+        response = await client.post(
+            f"{state.route_prefix}/api/accounts/alice/credentials/incoming/set",
+            headers=_mutation_headers(state, csrf),
+            json=_target_payload(secret="new-secret", expected_revision=4),
+        )
+    finally:
+        await client.aclose()
+
+    assert response.json() == {
+        "state": "active_cleanup_required",
+        "revision": 5,
+        "cleanup_required": 1,
+    }
+    assert "new-secret" not in response.text
+    management.credentials.set.assert_called_once_with(
+        "alice",
+        "incoming",
+        "new-secret",
+        expected_revision=4,
+    )
+
+
+@pytest.mark.asyncio
+async def test_invalid_secret_request_uses_fixed_error_without_input_echo() -> None:
+    management = MagicMock()
+    state, client, csrf = await _authenticated(management, port=8783)
+    sentinel = "invalid-secret-sentinel"
+    try:
+        response = await client.post(
+            f"{state.route_prefix}/api/accounts/alice/credentials/incoming/set",
+            headers=_mutation_headers(state, csrf),
+            json=_target_payload(secret=sentinel, expected_revision="not-an-integer"),
+        )
+    finally:
+        await client.aclose()
+
+    assert response.status_code == 422
+    assert response.json()["message"] == "The request body is invalid."
+    assert sentinel not in response.text
+    management.credentials.set.assert_not_called()
+
+
+@pytest.mark.asyncio
+async def test_typed_management_error_uses_safe_recoverable_category() -> None:
+    management = MagicMock()
+    management.catalog.status.side_effect = ManagementError(
+        "duplicate private-account-name at /private/catalog.sqlite3",
+        reason="account_name_exists",
+    )
+    state, client, _csrf = await _authenticated(management, port=8784)
+    try:
+        response = await client.get(f"{state.route_prefix}/api/status")
+    finally:
+        await client.aclose()
+
+    assert response.status_code == 400
+    assert response.json() == {
+        "category": "account_name_exists",
+        "message": "The management operation could not be completed.",
+    }
+    assert "private-account-name" not in response.text
+    assert "catalog.sqlite3" not in response.text
+
+
+@pytest.mark.asyncio
+async def test_application_value_error_is_a_safe_invalid_request() -> None:
+    management = MagicMock()
+    management.catalog.status.side_effect = ValueError("private invalid input")
+    state, client, _csrf = await _authenticated(management, port=8785)
+    try:
+        response = await client.get(f"{state.route_prefix}/api/status")
+    finally:
+        await client.aclose()
+
+    assert response.status_code == 422
+    assert response.json() == {
+        "category": "invalid_request",
+        "message": "The request values are invalid.",
+    }
+    assert "private invalid input" not in response.text
+
+
+def test_no_change_import_request_accepts_empty_confirmation() -> None:
+    request = ApplyImportRequest(
+        expected_revision=1,
+        preview_token="preview-token",
+        confirmation="",
+    )
+
+    assert request.confirmation == ""
+
+
+@pytest.mark.asyncio
+async def test_default_initialization_returns_committed_legacy_mode_and_revision() -> None:
+    management = MagicMock()
+    management.catalog.initialize_default.return_value = CatalogInitializationResult(
+        mode="legacy",
+        database="/private/managed.sqlite3",
+        bootstrap_revision=8,
+        restart_required=False,
+        catalog_revision=1,
+    )
+    state, client, csrf = await _authenticated(management, port=8786)
+    try:
+        response = await client.post(
+            f"{state.route_prefix}/api/catalog/initialize-default",
+            headers=_mutation_headers(state, csrf),
+            json={"expected_bootstrap_revision": 7, "require_empty_install": False},
+        )
+    finally:
+        await client.aclose()
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "initialized",
+        "mode": "legacy",
+        "database": "/private/managed.sqlite3",
+        "bootstrap_revision": 8,
+        "restart_required": False,
+        "catalog_revision": 1,
+    }
+    management.catalog.initialize_default.assert_called_once_with(
+        expected_bootstrap_revision=7,
+        require_empty_install=False,
+    )

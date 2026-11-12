@@ -1,0 +1,29 @@
+{
+  "id": "27ae8ed6-d0ce-4dfe-8a97-c3417a42ffac_d2436541ca554c41abdec9089ea45d9d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有任何工具调用读取工作区文件 relocation/offer_terms.md，也没有任何返回内容提及搬迁费用批准额度、7,500 美元上限或超额度需书面批准的规定。该要点涉及具体金额和政策条件，缺少材料依据，无法支持。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有读取 relocation/审批记录.md 的工具调用或返回，也没有任何内容提及审批记录及其条目数量、金额。无法确认该文件只有一条 7,500 美元已批准记录。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 10,\n          \"tool_call_id\": \"call_-7101070091348862622\",\n          \"quote\": \"Yusuf 的 relocation 报价 14,200 美元，请确认后我们安排排期。\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 7,\n          \"tool_call_id\": \"call_-7101070022629390094\",\n          \"quote\": \"\\\"from\\\": \\\"ops@northpoint.example.test\\\", \\\"to\\\": [\\\"operations@company.example.test\\\"], \\\"cc\\\": [], \\\"bcc\\\": [], \\\"subject\\\": \\\"Yusuf relocation confirmation\\\"\"\n        }\n      ],\n      \"reason\": \"read_email 返回显示发件人为 ops@northpoint.example.test，主题为 Yusuf relocation confirmation，正文明确报价 14,200 美元并要求确认后安排排期，完整支持该要点。\"\n    }\n  ],\n  \"summary\": \"Northpoint 邮件本身支持报价 14,200 美元并要求确认后排期。但搬迁费用 7,500 美元批准额度的政策规定及审批记录均来自工作区文件，本次仅有邮件工具查询，未读取这些文件，故要点 1、2 缺少材料依据，均不支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key facts 1 and 2 reference files `relocation/offer_terms.md` and `relocation/审批记录.md` in the workspace. The tool results show only mail operations — no files tools were called to read those files. So facts 1 and 2 are unsupported (no material evidence). Fact 3 is supported by the read_email result.\n\nEvidence for fact 3: quote body \"Yusuf 的 relocation 报价 14,200 美元，请确认后我们安排排期。\""
+      }
+    }
+  ],
+  "created": 1794321096,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 642,
+    "prompt_tokens": 6713,
+    "total_tokens": 7355,
+    "completion_tokens_details": {
+      "reasoning_tokens": 111
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 6656
+    }
+  }
+}

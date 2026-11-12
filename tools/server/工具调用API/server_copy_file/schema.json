@@ -1,0 +1,33 @@
+{
+  "name": "server_copy_file",
+  "description": "复制常规文件到新路径，保留源文件且不覆盖目标。",
+  "inputSchema": {
+    "properties": {
+      "source": {
+        "title": "Source",
+        "type": "string"
+      },
+      "destination": {
+        "title": "Destination",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "source",
+      "destination",
+      "expected_sha256"
+    ],
+    "title": "server_copy_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

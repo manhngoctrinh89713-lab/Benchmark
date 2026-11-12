@@ -1,0 +1,33 @@
+{
+  "name": "pc_move_personal_file",
+  "description": "移动或重命名个人文件，核对源文件且不覆盖目标。",
+  "inputSchema": {
+    "properties": {
+      "source": {
+        "title": "Source",
+        "type": "string"
+      },
+      "destination": {
+        "title": "Destination",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "source",
+      "destination",
+      "expected_sha256"
+    ],
+    "title": "pc_move_personal_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "request_reviewers",
+  "description": "为打开的PR追加评审者；不能请求作者本人评审；只记录本地请求，不发送通知。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "reviewers": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Reviewers",
+        "type": "array"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number",
+      "reviewers"
+    ],
+    "title": "request_reviewersArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

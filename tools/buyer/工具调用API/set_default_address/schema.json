@@ -1,0 +1,23 @@
+{
+  "name": "set_default_address",
+  "description": "设置后续购买使用的默认地址。",
+  "inputSchema": {
+    "properties": {
+      "address_id": {
+        "title": "Address Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "address_id"
+    ],
+    "title": "set_default_addressArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

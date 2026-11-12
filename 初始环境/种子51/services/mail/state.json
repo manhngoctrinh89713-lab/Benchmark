@@ -1,0 +1,145 @@
+{
+  "now": "2026-12-03T10:20:00+08:00",
+  "accounts": [
+    {
+      "account_name": "work",
+      "email_address": "operations@company.example.test",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "owner_id": "local-user",
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-b87bf3b574db45c29f8fdb8def955a48",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-1851a292d2d744349e4fa03584e493f5",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-9840541db02e4e28a6a3bfa445606a8e",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-038b83e10a61466db1b7d83e9e1a12c9",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-9ba9781381e6492eba89bd2dfe800805",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-0f70ac9fcb7e41c6b504f07907b32533",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ct_audit",
+      "name": "陈蕾",
+      "emails": [
+        "chenlei@hengzheng-audit.example.test"
+      ],
+      "organization": "衡正会计师事务所",
+      "notes": "季度外部审计项目对接",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1
+    },
+    {
+      "id": "ct_finance",
+      "name": "许安",
+      "emails": [
+        "xuan@company.example.test"
+      ],
+      "organization": "财务部",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_audit",
+      "message_id": "<m_audit@mail.example.test>",
+      "account_name": "work",
+      "mailbox": "INBOX",
+      "from": "chenlei@hengzheng-audit.example.test",
+      "to": [
+        "operations@company.example.test"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "第四季度审计进场取证安排",
+      "body": "请按贵司归档规范准备会计凭证取证材料，并附期间和凭证清单，进场后由项目组核对。",
+      "timestamp": "2026-12-02T15:30:00+08:00",
+      "is_read": false,
+      "starred": false,
+      "attachments": [],
+      "version": 1,
+      "categories": [],
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-390a5258921c4223acf132002faba29c"
+    }
+  ],
+  "sent_events": [],
+  "current_actor": "local-user",
+  "sequence": 0,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "actors": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

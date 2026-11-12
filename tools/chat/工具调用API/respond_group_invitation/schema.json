@@ -1,0 +1,40 @@
+{
+  "name": "respond_group_invitation",
+  "description": "群主或管理员批准/拒绝 pending 邀请；批准时邀请者仍须在群，批准后才实际加入。批准前不授予消息访问。",
+  "inputSchema": {
+    "properties": {
+      "invitation_id": {
+        "title": "Invitation Id",
+        "type": "string"
+      },
+      "approve": {
+        "title": "Approve",
+        "type": "boolean"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "invitation_id",
+      "approve"
+    ],
+    "title": "respond_group_invitationArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

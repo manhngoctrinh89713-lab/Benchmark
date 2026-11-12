@@ -1,0 +1,13 @@
+{
+  "groups": [
+    "server"
+  ],
+  "evaluator": "seed23",
+  "variants": {
+    "fi_test": {
+      "category": "Factual Inconsistency",
+      "instruction_type": "test",
+      "user_prompt": "fi_test.md"
+    }
+  }
+}

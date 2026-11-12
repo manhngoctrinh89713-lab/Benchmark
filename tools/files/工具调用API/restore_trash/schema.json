@@ -1,0 +1,35 @@
+{
+  "name": "restore_trash",
+  "description": "恢复回收站项目到原路径或新路径，已有文件不覆盖。",
+  "inputSchema": {
+    "properties": {
+      "trash_id": {
+        "title": "Trash Id",
+        "type": "string"
+      },
+      "destination": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Destination"
+      }
+    },
+    "required": [
+      "trash_id"
+    ],
+    "title": "restore_trashArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

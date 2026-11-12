@@ -1,0 +1,362 @@
+"""
+File and file system-related tools, specifically for
+  * listing directory contents
+  * reading files
+  * creating files
+  * editing at the file level
+"""
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+from typing import TYPE_CHECKING, Literal, cast
+
+from serena.tools import EditingToolWithDiagnostics, Tool, ToolMarkerOptional
+
+if TYPE_CHECKING:
+    from serena.repl.api.edit_api import EditApi
+    from serena.repl.api.fs_api import FsApi
+
+
+class EditApiMixin:
+    """
+    Mixin for tools which delegate to the editing API.
+    The API is imported locally, since the API module refers to the tools (as corresponding tools).
+    """
+
+    def _api(self) -> "EditApi":
+        from serena.repl.api.edit_api import EditApi
+
+        tool = cast(Tool, cast(object, self))
+        return EditApi(tool.agent)
+
+
+class FsApiMixin:
+    """
+    Mixin for tools which delegate to the file system API.
+    The API is imported locally, since the API module refers to the tools (as corresponding tools).
+    """
+
+    def _api(self) -> "FsApi":
+        from serena.repl.api.fs_api import FsApi
+
+        tool = cast(Tool, cast(object, self))
+        return FsApi(tool.agent)
+
+
+class ReadFileTool(Tool, FsApiMixin):
+    """
+    Reads a file within the project directory.
+    """
+
+    def apply(self, relative_path: str, start_line: int = 0, end_line: int | None = None, max_answer_chars: int = -1) -> str:
+        """
+        Reads the given file or a chunk of it.
+
+        :param relative_path: the relative path to the file to read
+        :param start_line: the 0-based index of the first line to be retrieved, negative values count from the end of the file.
+        :param end_line: the 0-based index of the last line to be retrieved (inclusive). If None, read until the end of the file.
+        :param max_answer_chars: if the file (chunk) is longer than this number of characters,
+            no content will be returned. Don't adjust unless there is really no other way to get the content
+            required for the task.
+        :return: the full text of the file at the given relative path
+        """
+        return self._api().read_file(relative_path, start_line, end_line, max_answer_chars).represent()
+
+
+class CreateTextFileTool(EditingToolWithDiagnostics, FsApiMixin):
+    """
+    Creates/overwrites a file in the project directory.
+    """
+
+    def apply(self, relative_path: str, content: str) -> str:
+        """
+        Write a new file or overwrite an existing file with the given content.
+
+        :param relative_path: the relative path to the file to create
+        :param content: the (appropriately encoded) content to write to the file
+        :return: a message indicating success or failure
+        """
+        with self.diagnostics_context(relative_path) as diagnostics_context:
+            return diagnostics_context.format_result(self._api().create_text_file(relative_path, content))
+
+
+class ListDirTool(Tool, FsApiMixin):
+    """
+    Lists files and directories in the given directory (optionally with recursion).
+    """
+
+    def apply(self, relative_path: str, recursive: bool, skip_ignored_files: bool = False, max_answer_chars: int = -1) -> str:
+        """
+        Lists files and directories in the given directory (optionally with recursion).
+
+        :param relative_path: the relative path to the directory to list; pass "." to scan the project root
+        :param recursive: whether to scan subdirectories recursively
+        :param skip_ignored_files: whether to skip files and directories that are ignored
+        :param max_answer_chars: if the output is longer than this number of characters,
+            no content will be returned. -1 means the default value from the config will be used.
+            Don't adjust unless there is really no other way to get the content required for the task.
+        :return: a JSON object with the names of directories and files within the given directory
+        """
+        try:
+            return self._api().list_dir(relative_path, recursive, skip_ignored_files, max_answer_chars).represent()
+        except FileNotFoundError as e:
+            return self._to_json({"error": str(e), "project_root": self.get_project_root()})
+
+
+class FindFileTool(Tool, FsApiMixin):
+    """
+    Finds files in the given relative paths
+    """
+
+    def apply(self, file_mask: str, relative_path: str, skip_ignored_files: bool = False) -> str:
+        """
+        Finds files matching the given file mask within the given relative path
+
+        :param file_mask: the filename or file mask (using the wildcards * or ?) to search for
+        :param relative_path: the relative path to the directory to search in; pass "." to scan the project root
+        :param skip_ignored_files: whether to skip ignored files/directories
+        :return: a JSON object with the list of matching files
+        """
+        return self._to_json({"files": self._api().find_file(file_mask, relative_path, skip_ignored_files=skip_ignored_files)})
+
+
+class ReplaceContentTool(EditingToolWithDiagnostics, EditApiMixin):
+    """
+    Replaces content in a file (optionally using regular expressions).
+    """
+
+    def apply(
+        self,
+        relative_path: str,
+        needle: str,
+        repl: str,
+        mode: Literal["literal", "regex"],
+        allow_multiple_occurrences: bool = False,
+    ) -> str:
+        r"""
+        Replaces one or more occurrences of a given pattern in a file with new content.
+
+        VERY IMPORTANT: The "regex" mode allows very large sections of code to be replaced WITHOUT
+        quoting them fully: use a needle of the form "beginning.*?end-of-text-to-be-replaced" with
+        wildcards instead of pasting the exact original text — shorter, cheaper, and you cannot make
+        mistakes, because an ambiguous match returns an error you can refine, so wildcards are safe.
+        Prefer regex mode with suitable wildcards for long multi-line replacements; use the
+        symbol-level editors when replacing a whole method/class.
+
+        :param relative_path: the relative path to the file
+        :param needle: the string or regex pattern to search for.
+            If `mode` is "literal", this string will be matched exactly.
+            If `mode` is "regex", this string will be treated as a regular expression (syntax of Python's `re` module,
+            with flags DOTALL and MULTILINE enabled).
+        :param repl: the replacement string (verbatim).
+            If mode is "regex", the string can contain backreferences to matched groups in the needle regex,
+            specified using the syntax $!1, $!2, etc. for groups 1, 2, etc.
+        :param mode: either "literal" or "regex", specifying how the `needle` parameter is to be interpreted.
+        :param allow_multiple_occurrences: whether to allow matching and replacing multiple occurrences.
+            If false and multiple occurrences are found, an error will be returned
+        """
+        with self.diagnostics_context(relative_path) as diagnostics_context:
+            return diagnostics_context.format_result(
+                self._api().replace_content(relative_path, needle, repl, mode, allow_multiple_occurrences=allow_multiple_occurrences)
+            )
+
+
+class ReplaceInFilesTool(EditingToolWithDiagnostics, EditApiMixin):
+    """
+    Replaces occurrences of a pattern across multiple files, with dry-run preview and per-occurrence selection.
+    """
+
+    def apply(
+        self,
+        needle: str,
+        repl: str,
+        mode: Literal["literal", "regex"],
+        relative_path: str = "",
+        paths_include_glob: str = "",
+        paths_exclude_glob: str = "",
+        dry_run: bool = False,
+        occurrence_ids: list[str] | None = None,
+        expected_count: int = -1,
+        max_answer_chars: int = -1,
+    ) -> str:
+        r"""
+        Replaces occurrences of a pattern across multiple files in ONE call.
+
+        This is the preferred tool for repeated small edits (renames, import swaps, annotation changes,
+        path prefixes) spanning several files or many places in one file: one call with a SHORT pattern
+        replaces many single-file replacements with long disambiguating needles.
+
+        Recommended protocol whenever there is ANY risk of unintended replacements:
+        1. Call with dry_run=True: every prospective change is returned as a minimal line diff with an
+           occurrence id; nothing is modified.
+        2. Call again with dry_run=False, passing the ids you want in occurrence_ids (omit it to apply
+           all). You pick the desired replacements from the list - no counting, no needle-crafting.
+
+        For clearly unambiguous bulk replacements you may skip the dry run; pass expected_count as a
+        guard. If the actual number of matches differs, NOTHING is changed and the diff list is
+        returned, so a failed guard costs one call and gives you the dry-run output to select from.
+
+        :param needle: the string (mode "literal") or regular expression (mode "regex"; Python `re`
+            syntax with DOTALL and MULTILINE) to search for
+        :param repl: the replacement string. In regex mode, backreferences to matched groups can be
+            specified as $!1, $!2, etc.
+        :param mode: either "literal" or "regex", specifying how `needle` is to be interpreted
+        :param relative_path: only consider this file or directory (default: the whole project)
+        :param paths_include_glob: optional glob (relative to the project root, e.g. "src/**/*.java")
+            restricting which files are considered
+        :param paths_exclude_glob: optional glob of files to exclude; takes precedence over the include glob
+        :param dry_run: if True, do not modify anything; return the prospective changes as a list of
+            diffs with occurrence ids
+        :param occurrence_ids: optional list of occurrence ids (obtained from a dry run) to which the
+            replacement is restricted; if any id is unknown or stale, NOTHING is changed. If omitted,
+            all occurrences are replaced.
+        :param expected_count: optional guard for calls without occurrence_ids: the number of
+            occurrences you expect to be replaced. If the actual count differs, nothing is changed and
+            the list of prospective changes is returned. -1 disables the guard.
+        :param max_answer_chars: if the output exceeds this many characters, a shortened version is
+            returned. -1 uses the configured default.
+        :return: in a dry run, the prospective changes; otherwise a summary of the applied replacements
+        """
+        api = self._api()
+        if dry_run:
+            return api.replace_in_files(
+                needle, repl, mode, relative_path, paths_include_glob, paths_exclude_glob, dry_run=True, max_answer_chars=max_answer_chars
+            ).represent()
+        with self.diagnostics_context() as diagnostics_context:
+            result = api.replace_in_files(
+                needle,
+                repl,
+                mode,
+                relative_path,
+                paths_include_glob,
+                paths_exclude_glob,
+                occurrence_ids=occurrence_ids,
+                expected_count=expected_count,
+                max_answer_chars=max_answer_chars,
+            )
+            assert isinstance(result, str)
+            return diagnostics_context.format_result(result)
+
+
+class DeleteLinesTool(EditingToolWithDiagnostics, ToolMarkerOptional, EditApiMixin):
+    """
+    Deletes a range of lines within a file.
+    """
+
+    def apply(
+        self,
+        relative_path: str,
+        start_line: int,
+        end_line: int,
+    ) -> str:
+        """
+        Deletes the given lines in the file.
+        Requires that the same range of lines was previously read using the `read_file` tool to verify correctness
+        of the operation.
+
+        :param relative_path: the relative path to the file
+        :param start_line: the 0-based index of the first line to be deleted
+        :param end_line: the 0-based index of the last line to be deleted
+        """
+        with self.diagnostics_context(relative_path) as diagnostics_context:
+            return diagnostics_context.format_result(self._api().delete_lines(relative_path, start_line, end_line))
+
+
+class ReplaceLinesTool(EditingToolWithDiagnostics, ToolMarkerOptional, EditApiMixin):
+    """
+    Replaces a range of lines within a file with new content.
+    """
+
+    def apply(
+        self,
+        relative_path: str,
+        start_line: int,
+        end_line: int,
+        content: str,
+    ) -> str:
+        """
+        Replaces the given range of lines in the given file.
+        Requires that the same range of lines was previously read using the `read_file` tool to verify correctness
+        of the operation.
+
+        :param relative_path: the relative path to the file
+        :param start_line: the 0-based index of the first line to be deleted
+        :param end_line: the 0-based index of the last line to be deleted
+        :param content: the content to insert
+        """
+        with self.diagnostics_context(relative_path) as diagnostics_context:
+            return diagnostics_context.format_result(self._api().replace_lines(relative_path, start_line, end_line, content))
+
+
+class InsertAtLineTool(EditingToolWithDiagnostics, ToolMarkerOptional, EditApiMixin):
+    """
+    Inserts content at a given line in a file.
+    """
+
+    def apply(
+        self,
+        relative_path: str,
+        line: int,
+        content: str,
+    ) -> str:
+        """
+        Inserts the given content at the given line in the file, pushing existing content of the line down.
+        In general, symbolic insert operations like insert_after_symbol or insert_before_symbol should be preferred if you know which
+        symbol you are looking for.
+        However, this can also be useful for small targeted edits of the body of a longer symbol (without replacing the entire body).
+
+        :param relative_path: the relative path to the file
+        :param line: the 0-based index of the line to insert content at
+        :param content: the content to be inserted
+        """
+        with self.diagnostics_context(relative_path) as diagnostics_context:
+            return diagnostics_context.format_result(self._api().insert_at_line(relative_path, line, content))
+
+
+class SearchForPatternTool(Tool, FsApiMixin):
+    def apply(
+        self,
+        substring_pattern: str,
+        context_lines_before: int = 0,
+        context_lines_after: int = 0,
+        paths_include_glob: str = "",
+        paths_exclude_glob: str = "",
+        relative_path: str = "",
+        restrict_search_to_code_files: bool = False,
+        skip_ignored_files: bool = True,
+        multiline: bool = True,
+        max_answer_chars: int = -1,
+    ) -> str:
+        """
+        Searches for a regex pattern across project files, returning whole matched lines (plus optional context).
+        Prefer symbolic operations if you know which symbols you are looking for!
+
+        :param substring_pattern: regular expression to search for.
+        :param context_lines_before: number of context lines to include before each match.
+        :param context_lines_after: number of context lines to include after each match.
+        :param paths_include_glob: optional glob (relative to project root, e.g. ``"src/**/*.ts"``) restricting which files are searched.
+        :param paths_exclude_glob: optional glob to exclude files; takes precedence over `paths_include_glob`.
+        :param relative_path: restricts the search to this file or subdirectory of the project root
+        :param restrict_search_to_code_files: whether to search only (non-ignored) files containing analyzable code symbols
+            (useful when looking for class/method definitions); otherwise also search non-code files.
+        :param skip_ignored_files: whether to skip ignored sub-paths (default: True)
+        :param multiline: whether to apply multi-line matching (default: True), enabling the flags re.DOTALL and re.MULTILINE
+        :param max_answer_chars: if the output exceeds this many characters, a progressively shortened summary is returned instead.
+            ``-1`` uses the configured default.
+        :return: A mapping from file paths to matched consecutive lines (0-based line numbers).
+        """
+        return (
+            self._api()
+            .search_for_pattern(
+                substring_pattern,
+                context_lines_before=context_lines_before,
+                context_lines_after=context_lines_after,
+                paths_include_glob=paths_include_glob,
+                paths_exclude_glob=paths_exclude_glob,
+                relative_path=relative_path,
+                restrict_search_to_code_files=restrict_search_to_code_files,
+                skip_ignored_files=skip_ignored_files,
+                multiline=multiline,
+                max_answer_chars=max_answer_chars,
+            )
+            .represent()
+        )

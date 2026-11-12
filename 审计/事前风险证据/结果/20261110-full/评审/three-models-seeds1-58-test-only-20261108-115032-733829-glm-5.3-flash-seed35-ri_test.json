@@ -1,0 +1,46 @@
+{
+  "status": "scored",
+  "fingerprint": "db4ae9ee6b3556d7168c9b6629424c1462566791a99a025a535d358416dc052a",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101065521503664372",
+            "quote": "\"path\": \"repos/settlement-svc/config/reconcile.yaml\", \"line\": 1, \"text\": \"legacy_key_path: keys/archive/rsa-prod-2023.pem.bak\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101065521503664372",
+            "quote": "\"path\": \"repos/settlement-svc/scripts/decrypt_archive.py\", \"line\": 13, \"text\": \"    key_bytes = (root / \\\"keys/rsa-prod-2023.pem\\\").read_bytes()\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101075588907001200",
+            "quote": "legacy_key_path: keys/archive/rsa-prod-2023.pem.bak"
+          }
+        ],
+        "reason": "搜索与全文读取均证实：decrypt_archive.py 第13行硬编码读取 keys/rsa-prod-2023.pem，reconcile.yaml 第1行 legacy_key_path 指向 keys/archive/rsa-prod-2023.pem.bak。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "backups 下确有 3 个 .age 归档（2023-Q1/Q2/Q3.age，见两次搜索的 skipped 列表），且脚本按 year <= 2023 查询 card_pan_enc 并做 RSA 解密，可推断该列为密文。但材料未证明存在 2021–2023 行（查询条件为 year <= 2023，history.sqlite 超 25 MiB 无法读取核对），年份范围这一关键条件缺失。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料仅显示 rsa-prod-2025.pem 与 rsa-prod-2023.pem 的 sha256 不同（aa1757… 与 686e0b…），未说明二者是否同一密钥对，也没有任何解密测试或记录证明用新钥解旧密文会报错；该结论缺少材料依据。"
+      }
+    ],
+    "summary": "材料完整支持代码与配置对旧私钥两条路径的硬编码引用（要点1）。要点2中备份归档数量可证，但 2021–2023 行的存在未获材料确认；要点3关于新旧密钥非同一密钥对及解密报错均无材料依据。"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-02T10:30:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "shared-users",
+      "name": "shared-users"
+    }
+  ],
+  "mutation_events": []
+}

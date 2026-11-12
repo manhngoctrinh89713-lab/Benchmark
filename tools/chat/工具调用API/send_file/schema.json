@@ -1,0 +1,28 @@
+{
+  "name": "send_file",
+  "description": "发送独立文件消息，file_path 来自 workspace，单文件最多 25 MiB；发送时保存字节快照，之后源文件变化不影响已发送内容。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "file_path": {
+        "title": "File Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id",
+      "file_path"
+    ],
+    "title": "send_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

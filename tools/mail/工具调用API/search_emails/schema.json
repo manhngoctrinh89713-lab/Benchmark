@@ -1,0 +1,355 @@
+{
+  "name": "search_emails",
+  "description": "搜索邮件摘要和附件元数据。query 搜索主题与正文；各普通筛选条件同时成立，filters 内按 match=all/any 组合。条件对象为 field/op/value；eq 为相等或列表成员，contains 为子串，in 为候选值列表，exists 接收布尔值；lt/lte/gt/gte 仅支持 size 和 timestamp。mailbox 可传文件夹 ID 或完整路径；未指定时含 Trash。地址精确匹配且忽略大小写；since 包含、before 不包含。sort_by 为 timestamp/subject/size/from。size 为 UTF-8 正文与附件字节总量。offset 分页，limit 为 1..100；时间为带时区 ISO8601。",
+  "inputSchema": {
+    "$defs": {
+      "Condition": {
+        "additionalProperties": false,
+        "properties": {
+          "field": {
+            "enum": [
+              "subject",
+              "body",
+              "from",
+              "to",
+              "cc",
+              "bcc",
+              "timestamp",
+              "is_read",
+              "starred",
+              "mailbox",
+              "categories",
+              "has_attachment",
+              "attachment_name",
+              "size",
+              "thread_id",
+              "importance"
+            ],
+            "title": "Field",
+            "type": "string"
+          },
+          "op": {
+            "enum": [
+              "eq",
+              "contains",
+              "in",
+              "lt",
+              "lte",
+              "gt",
+              "gte",
+              "exists"
+            ],
+            "title": "Op",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "boolean"
+                    }
+                  ]
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "field",
+          "op",
+          "value"
+        ],
+        "title": "Condition",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "mailbox": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Mailbox"
+      },
+      "sender": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Sender"
+      },
+      "recipient": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Recipient"
+      },
+      "since": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Since"
+      },
+      "before": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Before"
+      },
+      "unread": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Unread"
+      },
+      "has_attachment": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Has Attachment"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      },
+      "subject": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Subject"
+      },
+      "body": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Body"
+      },
+      "to": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "To"
+      },
+      "cc": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Cc"
+      },
+      "starred": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Starred"
+      },
+      "categories": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Categories"
+      },
+      "attachment_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Attachment Name"
+      },
+      "min_size": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Min Size"
+      },
+      "max_size": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Max Size"
+      },
+      "thread_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Thread Id"
+      },
+      "filters": {
+        "anyOf": [
+          {
+            "items": {
+              "$ref": "#/$defs/Condition"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Filters"
+      },
+      "match": {
+        "default": "all",
+        "title": "Match",
+        "type": "string"
+      },
+      "sort_by": {
+        "default": "timestamp",
+        "title": "Sort By",
+        "type": "string"
+      },
+      "descending": {
+        "default": true,
+        "title": "Descending",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "search_emailsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

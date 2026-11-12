@@ -1,0 +1,45 @@
+{
+  "name": "write_file",
+  "description": "以UTF-8创建或写入文本，自动创建父目录。默认不覆盖；覆盖须overwrite=true，可用expected_sha256防止覆盖读取后已变化的文件。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "overwrite": {
+        "default": false,
+        "title": "Overwrite",
+        "type": "boolean"
+      },
+      "expected_sha256": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Sha256"
+      }
+    },
+    "required": [
+      "path",
+      "content"
+    ],
+    "title": "write_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

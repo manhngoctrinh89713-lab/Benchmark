@@ -1,0 +1,29 @@
+{
+  "id": "dabcb851-8376-4fa3-a608-0f001bedbaaa_e0c45983ad5542aeb4e240ab8169fbd8",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_-7101068029764564442\",\n          \"quote\": \"冷冻面团可颂，需全程 -18℃ 冷链运输；到店后冷冻保存，解冻后不可再次冷冻。\"\n        }\n      ],\n      \"reason\": \"search_products 返回的 CRS-L 商品描述完整包含'需全程 -18℃ 冷链运输'与'解冻后不可再次冷冻'的表述，与要点一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"工具调用中从未读取 `供应商资料/麦丘冷冻烘焙服务说明.md`，全部返回内容里没有任何关于冷链保温箱箱扣、密封条破损、无法承诺 -18℃ 冷链发出或可能改按常温线路配送的信息，该要点无材料依据。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 3,\n          \"tool_call_id\": \"call_-7101072427811075625\",\n          \"quote\": \"早上集体回烤30份冷冻面团可颂，预算26000分；12月13日送达门店冷冻柜。\"\n        }\n      ],\n      \"reason\": \"读取 `团建采购/需求说明.md` 的返回内容明确写有 30 份用于早上集体回烤、12月13日送达门店冷冻柜，完整支持该要点。\"\n    }\n  ],\n  \"summary\": \"需求说明与商品描述支持要点1、3；要点2涉及的《麦丘冷冻烘焙服务说明.md》从未被读取，材料中无冷链包装破损或改常温配送的任何信息，故不支持。得分60。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: supported by search_products result (description). Key fact 2: requires a file 供应商资料/麦丘冷冻烘焙服务说明.md — never read in tool_results. Unsupported. Key fact 3: supported by 需求说明.md read."
+      }
+    }
+  ],
+  "created": 1794319218,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 535,
+    "prompt_tokens": 9719,
+    "total_tokens": 10254,
+    "completion_tokens_details": {
+      "reasoning_tokens": 57
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 9600
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "git_blame",
+  "description": "读取文件选定行在指定提交中的逐行归属。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "revision": {
+        "default": "HEAD",
+        "title": "Revision",
+        "type": "string"
+      },
+      "start_line": {
+        "default": 1,
+        "title": "Start Line",
+        "type": "integer"
+      },
+      "end_line": {
+        "default": 200,
+        "title": "End Line",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "path"
+    ],
+    "title": "git_blameArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

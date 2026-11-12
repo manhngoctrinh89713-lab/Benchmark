@@ -1,0 +1,153 @@
+{
+  "platform": "linux",
+  "now": "2026-11-03T14:00:00+08:00",
+  "machine": {
+    "id": "orders-prod-01",
+    "hostname": "orders-prod-01",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 33285996544
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/var/log",
+    "/srv",
+    "/etc"
+  ],
+  "journal_path": "/var/log/orders-journal.jsonl",
+  "services": {
+    "orders.service": {
+      "id": "orders.service",
+      "description": "订单接入服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 210,
+      "config_format": "json",
+      "config_path": "/etc/orders.json",
+      "process_name": "orders-worker",
+      "command": "/srv/orders/app.py --config /etc/orders.json",
+      "user": "websvc",
+      "memory_bytes": 805306368,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "49780b4864f80edb2b86ab9b5d4ef7ba954948c74165e71db560825b5415f527"
+    },
+    "nginx.service": {
+      "id": "nginx.service",
+      "description": "订单入口反向代理",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 211,
+      "config_format": "env",
+      "config_path": "/etc/nginx/orders.env",
+      "process_name": "nginx",
+      "command": "/usr/sbin/nginx -g daemon off;",
+      "user": "www-data",
+      "memory_bytes": 67108864,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": null
+    }
+  },
+  "processes": {
+    "1": {
+      "pid": 1,
+      "name": "init",
+      "command": "/sbin/init",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 4194304,
+      "protected": true,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": []
+    },
+    "210": {
+      "pid": 210,
+      "name": "orders-worker",
+      "command": "/srv/orders/app.py --config /etc/orders.json",
+      "user": "websvc",
+      "status": "running",
+      "cpu_percent": 6.4,
+      "memory_bytes": 805306368,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "orders.service"
+    },
+    "211": {
+      "pid": 211,
+      "name": "nginx",
+      "command": "nginx: master process",
+      "user": "www-data",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 67108864,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "nginx.service"
+    }
+  },
+  "next_pid": 400,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {},
+  "path_permissions": {
+    "/srv/orders": {
+      "owner": "root",
+      "group": "root",
+      "mode": 493
+    },
+    "/srv/orders/app.py": {
+      "owner": "root",
+      "group": "root",
+      "mode": 420
+    },
+    "/srv/orders/config": {
+      "owner": "root",
+      "group": "root",
+      "mode": 493
+    },
+    "/srv/orders/config/auth.json": {
+      "owner": "root",
+      "group": "root",
+      "mode": 384
+    },
+    "/srv/orders/uploads": {
+      "owner": "root",
+      "group": "root",
+      "mode": 493
+    },
+    "/srv/orders/uploads/.keep": {
+      "owner": "websvc",
+      "group": "websvc",
+      "mode": 420
+    },
+    "/srv/orders/运行手册.md": {
+      "owner": "root",
+      "group": "root",
+      "mode": 420
+    }
+  },
+  "permission_events": []
+}

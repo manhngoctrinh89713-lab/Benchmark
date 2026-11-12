@@ -1,0 +1,96 @@
+{"timestamp": "2026-11-02T08:00:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:01:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1831 queue_depth=2 accepted=80"}
+{"timestamp": "2026-11-02T08:02:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1832 queue_depth=4 accepted=80"}
+{"timestamp": "2026-11-02T08:03:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1833 queue_depth=6 accepted=80"}
+{"timestamp": "2026-11-02T08:04:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:05:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1835 queue_depth=10 accepted=80"}
+{"timestamp": "2026-11-02T08:06:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1836 queue_depth=12 accepted=80"}
+{"timestamp": "2026-11-02T08:07:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1837 queue_depth=14 accepted=80"}
+{"timestamp": "2026-11-02T08:08:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:09:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1839 queue_depth=18 accepted=80"}
+{"timestamp": "2026-11-02T08:10:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1840 queue_depth=20 accepted=80"}
+{"timestamp": "2026-11-02T08:11:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1841 queue_depth=22 accepted=80"}
+{"timestamp": "2026-11-02T08:12:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:13:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1843 queue_depth=26 accepted=80"}
+{"timestamp": "2026-11-02T08:14:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1844 queue_depth=28 accepted=80"}
+{"timestamp": "2026-11-02T08:15:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1845 queue_depth=30 accepted=80"}
+{"timestamp": "2026-11-02T08:16:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:17:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1847 queue_depth=34 accepted=80"}
+{"timestamp": "2026-11-02T08:18:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1848 queue_depth=36 accepted=80"}
+{"timestamp": "2026-11-02T08:19:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1849 queue_depth=38 accepted=80"}
+{"timestamp": "2026-11-02T08:20:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:21:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1851 queue_depth=42 accepted=80"}
+{"timestamp": "2026-11-02T08:22:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1852 queue_depth=44 accepted=80"}
+{"timestamp": "2026-11-02T08:23:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1853 queue_depth=46 accepted=80"}
+{"timestamp": "2026-11-02T08:24:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:25:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1855 queue_depth=50 accepted=80"}
+{"timestamp": "2026-11-02T08:26:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1856 queue_depth=52 accepted=80"}
+{"timestamp": "2026-11-02T08:27:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1857 queue_depth=54 accepted=80"}
+{"timestamp": "2026-11-02T08:28:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:29:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1859 queue_depth=58 accepted=80"}
+{"timestamp": "2026-11-02T08:30:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1860 queue_depth=60 accepted=80"}
+{"timestamp": "2026-11-02T08:31:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1861 queue_depth=62 accepted=80"}
+{"timestamp": "2026-11-02T08:32:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:33:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1863 queue_depth=66 accepted=80"}
+{"timestamp": "2026-11-02T08:34:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1864 queue_depth=68 accepted=80"}
+{"timestamp": "2026-11-02T08:35:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1865 queue_depth=70 accepted=80"}
+{"timestamp": "2026-11-02T08:36:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:37:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1867 queue_depth=74 accepted=80"}
+{"timestamp": "2026-11-02T08:38:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1868 queue_depth=76 accepted=80"}
+{"timestamp": "2026-11-02T08:39:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1869 queue_depth=78 accepted=80"}
+{"timestamp": "2026-11-02T08:40:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:41:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1871 queue_depth=82 accepted=80"}
+{"timestamp": "2026-11-02T08:42:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1872 queue_depth=84 accepted=80"}
+{"timestamp": "2026-11-02T08:43:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1873 queue_depth=86 accepted=80"}
+{"timestamp": "2026-11-02T08:44:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:45:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1875 queue_depth=90 accepted=80"}
+{"timestamp": "2026-11-02T08:46:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1876 queue_depth=92 accepted=80"}
+{"timestamp": "2026-11-02T08:47:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1877 queue_depth=94 accepted=80"}
+{"timestamp": "2026-11-02T08:48:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:49:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1879 queue_depth=98 accepted=80"}
+{"timestamp": "2026-11-02T08:50:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1880 queue_depth=100 accepted=80"}
+{"timestamp": "2026-11-02T08:51:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1881 queue_depth=102 accepted=80"}
+{"timestamp": "2026-11-02T08:52:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:53:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1883 queue_depth=106 accepted=80"}
+{"timestamp": "2026-11-02T08:54:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1884 queue_depth=108 accepted=80"}
+{"timestamp": "2026-11-02T08:55:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1885 queue_depth=110 accepted=80"}
+{"timestamp": "2026-11-02T08:56:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T08:57:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1887 queue_depth=114 accepted=80"}
+{"timestamp": "2026-11-02T08:58:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1888 queue_depth=116 accepted=80"}
+{"timestamp": "2026-11-02T08:59:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1889 queue_depth=118 accepted=80"}
+{"timestamp": "2026-11-02T09:00:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:01:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1891 queue_depth=122 accepted=80"}
+{"timestamp": "2026-11-02T09:02:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1892 queue_depth=124 accepted=80"}
+{"timestamp": "2026-11-02T09:03:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1893 queue_depth=126 accepted=80"}
+{"timestamp": "2026-11-02T09:04:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:05:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:06:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1896 queue_depth=132 accepted=80"}
+{"timestamp": "2026-11-02T09:07:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:08:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:09:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1899 queue_depth=138 accepted=80"}
+{"timestamp": "2026-11-02T09:10:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:11:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:12:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:13:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:14:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:15:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1905 queue_depth=150 accepted=80"}
+{"timestamp": "2026-11-02T09:16:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:17:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:18:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1908 queue_depth=156 accepted=80"}
+{"timestamp": "2026-11-02T09:19:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:20:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:21:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1911 queue_depth=162 accepted=80"}
+{"timestamp": "2026-11-02T09:22:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:23:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:24:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:25:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:26:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:27:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1917 queue_depth=174 accepted=80"}
+{"timestamp": "2026-11-02T09:28:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:29:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:30:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1920 queue_depth=180 accepted=80"}
+{"timestamp": "2026-11-02T09:31:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:32:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "checkpoint complete: wrote buffers; WAL sync complete"}
+{"timestamp": "2026-11-02T09:33:00+08:00", "service_id": "orders.service", "priority": 6, "message": "worker heartbeat batch=1923 queue_depth=186 accepted=80"}
+{"timestamp": "2026-11-02T09:34:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}
+{"timestamp": "2026-11-02T09:35:00+08:00", "service_id": "orders.service", "priority": 3, "message": "supplier request failed: CERTIFICATE_VERIFY_FAILED certificate has expired; endpoint=api.haichuan-logistics.example queue=order.dispatch attempt=3"}

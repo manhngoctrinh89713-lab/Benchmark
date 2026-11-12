@@ -1,0 +1,15 @@
+{
+  "name": "get_profile",
+  "description": "读取当前操作者的身份及个人资料；用户 ID 稳定，昵称变化不改变身份。",
+  "inputSchema": {
+    "properties": {},
+    "title": "get_profileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "fingerprint": "2655b48755871df48eeeebd62b78d919e61c4dba9111e4683bb5dff49bbde001",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101072118573428373",
+            "quote": "{\"service_id\": \"edge-gw-c.service\", \"path\": \"/etc/edge-gw/c.json\", \"content\": \"{\\\"cache_ttl_seconds\\\": 60, \\\"upstream\\\": \\\"http://hot-data.internal:8080\\\", \\\"worker_connections\\\": 8192}\", \"sha256\": \"969ed50498bf44d9543234d1fcfc87f9156f6179b3c3f2f8542ec495ddf4c473\", \"applied_sha256\": \"528ad178a2ab3b9324c407d8b058b95812bdde8b567962ea1cfc530c4b307a98\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 5,
+            "tool_call_id": "call_-7101065796381572778",
+            "quote": "\"config_sha256\": \"969ed50498bf44d9543234d1fcfc87f9156f6179b3c3f2f8542ec495ddf4c473\", \"config_pending\": true"
+          }
+        ],
+        "reason": "读取 edge-gw-c 的配置文件内容为 cache_ttl_seconds=60、worker_connections=8192，且服务列表显示该配置哈希与已生效哈希不同、config_pending 为 true，即为待生效配置。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 5,
+            "tool_call_id": "call_-7101065796381572778",
+            "quote": "\"config_rules\": [{\"key\": \"cache_ttl_seconds\", \"type\": \"integer\", \"min\": 1, \"max\": 3600}, {\"key\": \"worker_connections\", \"type\": \"integer\", \"min\": 1, \"max\": 65535, \"restart_required\": true}]"
+          }
+        ],
+        "reason": "材料仅表明 worker_connections 需重启生效（restart_required: true）、服务 supports_reload: true，可部分支持 reload/restart 的生效方式；但材料没有任何关于 reload 不重置连接、restart 会断开该实例全部在途连接的说明，缺少对连接影响的关键条件。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回中均未出现上传会话、开始时间 09:12、已传输 2.3GB 或 resumable=false 等信息；材料未查询网络连接或进程会话数据，无任何依据。"
+      }
+    ],
+    "summary": "待生效配置内容（cache_ttl_seconds=60、worker_connections=8192）有直接依据；worker_connections 需重启生效仅部分支持，reload/restart 对在途连接的影响无材料依据；09:12 上传会话信息完全未在材料中出现。"
+  }
+}

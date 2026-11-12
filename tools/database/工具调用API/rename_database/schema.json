@@ -1,0 +1,28 @@
+{
+  "name": "rename_database",
+  "description": "修改数据库显示名称，数据库 ID 和 SQL 内容保持稳定。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "name"
+    ],
+    "title": "rename_databaseArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

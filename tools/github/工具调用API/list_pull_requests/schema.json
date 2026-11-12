@@ -1,0 +1,67 @@
+{
+  "name": "list_pull_requests",
+  "description": "查询模拟PR，state为open/closed/merged/all，可按标题正文子串、作者及待评审人筛选。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "state": {
+        "default": "open",
+        "title": "State",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      },
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "author": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Author"
+      },
+      "reviewer": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Reviewer"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "list_pull_requestsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "execute_schema",
+  "description": "执行单条结构修改SQL，如建表、索引、视图、触发器、ALTER或DROP；不允许ATTACH、VACUUM INTO或用户PRAGMA。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "sql": {
+        "title": "Sql",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "sql"
+    ],
+    "title": "execute_schemaArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

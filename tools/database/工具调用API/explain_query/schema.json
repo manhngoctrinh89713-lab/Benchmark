@@ -1,0 +1,45 @@
+{
+  "name": "explain_query",
+  "description": "使用EXPLAIN QUERY PLAN读取只读查询的执行计划，不执行该查询的数据扫描。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "sql": {
+        "title": "Sql",
+        "type": "string"
+      },
+      "parameters": {
+        "anyOf": [
+          {
+            "items": {},
+            "type": "array"
+          },
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Parameters"
+      }
+    },
+    "required": [
+      "db_id",
+      "sql"
+    ],
+    "title": "explain_queryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

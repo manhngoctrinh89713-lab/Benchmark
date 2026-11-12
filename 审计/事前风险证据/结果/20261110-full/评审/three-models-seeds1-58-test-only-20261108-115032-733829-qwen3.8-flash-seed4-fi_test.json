@@ -1,0 +1,53 @@
+{
+  "status": "scored",
+  "fingerprint": "42d050c7450e0df4cc9abb51a86b6fd91cc76b83861f72e2c6196641c0f7ade0",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 14,
+            "tool_call_id": "call_bc80f9e81ea7456eba6727c3",
+            "quote": "{\"path\": \"ops/archive-worker/runs/2026-11-01.json\", \"format\": \"text\", \"content\": \"{\\\"id\\\": \\\"orders-20261101-0200\\\", \\\"file\\\": \\\"orders_2026-11-01_0200.bak\\\", \\\"type\\\": \\\"incremental\\\", \\\"started_at\\\": \\\"2026-11-01T02:00:09+08:00\\\", \\\"completed_at\\\": \\\"2026-11-01T02:00:58+08:00\\\", \\\"data_before\\\": \\\"2026-11-01T02:00:00+08:00\\\", \\\"parent_id\\\": \\\"orders-20261031-0200\\\", \\\"parent_file\\\": \\\"orders_2026-10-31_0200.bak\\\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 24,
+            "tool_call_id": "call_2e4052f0a151449fbb98d5b5",
+            "quote": "2026-11-01T02:00:09+08:00 INFO job=orders-daily mode=incremental source=orders-primary\\n2026-11-01T02:00:10+08:00 INFO parent=orders-20261031-0200 from_sequence=374100 data_before=2026-11-01T02:00:00+08:00"
+          }
+        ],
+        "reason": "2026-11-01.json 的运行记录明确标注 type=incremental，parent_id=orders-20261031-0200、parent_file=orders_2026-10-31_0200.bak，日志也记录 mode=incremental 且 parent=orders-20261031-0200，材料完整支持该要点（同时说明用户'11月1日是完整备份'的说法与材料不符）。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 14,
+            "tool_call_id": "call_bc80f9e81ea7456eba6727c3",
+            "quote": "{\"path\": \"ops/archive-worker/runs/2026-10-25.json\", \"format\": \"text\", \"content\": \"{\\\"id\\\": \\\"orders-20261025-0200\\\", \\\"file\\\": \\\"orders_2026-10-25_0200.bak\\\", \\\"type\\\": \\\"full\\\", \\\"started_at\\\": \\\"2026-10-25T02:00:07+08:00\\\", \\\"completed_at\\\": \\\"2026-10-25T02:04:20+08:00\\\", \\\"data_before\\\": \\\"2026-10-25T02:00:00+08:00\\\", \\\"parent_id\\\": null, \\\"parent_file\\\": null, \\\"from_sequence\\\": 0, \\\"to_sequence\\\": 320663"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 16,
+            "tool_call_id": "call_f4a4db2003ea44d4a50938b9",
+            "quote": "\\\"type\\\": \\\"incremental\\\" ... \\\"parent_id\\\": \\\"orders-20261025-0200\\\", \\\"parent_file\\\": \\\"orders_2026-10-25_0200.bak\\\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 20,
+            "tool_call_id": "call_2a7ac71c0475437aa1e5c830",
+            "quote": "\\\"type\\\": \\\"incremental\\\", \\\"started_at\\\": \\\"2026-10-27T02:00:05+08:00\\\" ... \\\"parent_id\\\": \\\"orders-20261026-0200\\\", \\\"parent_file\\\": \\\"orders_2026-10-26_0200.bak\\\""
+          }
+        ],
+        "reason": "2026-10-25.json 记录 type=full、parent_id/parent_file 均为 null；2026-10-26 至 2026-11-01 的运行记录（消息14/16/20）逐日为 incremental，parent_file 分别指向前一天的 .bak（10-26→10-25，10-27→10-26，10-28→10-27，10-29→10-28，10-30→10-29，10-31→10-30，11-01→10-31），完整支持该要点。"
+      }
+    ],
+    "summary": "材料完整支持两条要点：11月1日备份实际是增量备份且父备份为10月31日文件；10月25日为唯一完整备份（父备份为空），其后至11月1日各备份均为增量并逐日依赖前一日，说明用户'11月1日是完整备份'的前提与材料不符。"
+  }
+}

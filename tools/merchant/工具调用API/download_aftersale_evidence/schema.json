@@ -1,0 +1,33 @@
+{
+  "name": "download_aftersale_evidence",
+  "description": "下载买家提交的售后证明文件快照。",
+  "inputSchema": {
+    "properties": {
+      "aftersale_id": {
+        "title": "Aftersale Id",
+        "type": "string"
+      },
+      "evidence_index": {
+        "title": "Evidence Index",
+        "type": "integer"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "aftersale_id",
+      "evidence_index",
+      "save_path"
+    ],
+    "title": "download_aftersale_evidenceArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

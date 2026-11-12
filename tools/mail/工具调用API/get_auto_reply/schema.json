@@ -1,0 +1,23 @@
+{
+  "name": "get_auto_reply",
+  "description": "读取自动回复启用状态、内部/外部正文、外部受众、有效时间和版本。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "get_auto_replyArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

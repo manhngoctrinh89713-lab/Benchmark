@@ -1,0 +1,17 @@
+test_checkout_schema_has_only_general_order_parameters (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_checkout_schema_has_only_general_order_parameters) ... ok
+test_checkout_uses_uniform_product_snapshots (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_checkout_uses_uniform_product_snapshots) ... ok
+test_debug_configuration_does_not_generate_business_requests (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_debug_configuration_does_not_generate_business_requests) ... ok
+test_diagnostic_service_reload_only_changes_service_state (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_diagnostic_service_reload_only_changes_service_state) ... ok
+test_files_do_not_mutate_other_service_state (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_files_do_not_mutate_other_service_state) ... ok
+test_log_queries_are_read_only (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_log_queries_are_read_only) ... ok
+test_product_search_has_a_uniform_summary_and_full_details (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_product_search_has_a_uniform_summary_and_full_details) ... ok
+test_reload_uses_service_capability_without_special_config_keys (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_reload_uses_service_capability_without_special_config_keys) ... ok
+test_restart_updates_process_but_not_application_session_files (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_restart_updates_process_but_not_application_session_files) ... ok
+test_service_restart_does_not_rewrite_audit_pipeline (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_service_restart_does_not_rewrite_audit_pipeline) ... ok
+test_starting_a_service_does_not_issue_business_payments (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_starting_a_service_does_not_issue_business_payments) ... ok
+test_stopping_processes_does_not_change_business_ledgers (tests.test_tool_business_independence.ToolBusinessIndependenceTests.test_stopping_processes_does_not_change_business_ledgers) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.041s
+
+OK

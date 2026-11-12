@@ -1,0 +1,34 @@
+{
+  "name": "server_signal_process",
+  "description": "向模拟进程发送TERM/KILL/STOP/CONT；主进程终止会使关联服务失败并写日志。",
+  "inputSchema": {
+    "properties": {
+      "pid": {
+        "title": "Pid",
+        "type": "integer"
+      },
+      "signal": {
+        "default": "TERM",
+        "enum": [
+          "TERM",
+          "KILL",
+          "STOP",
+          "CONT"
+        ],
+        "title": "Signal",
+        "type": "string"
+      }
+    },
+    "required": [
+      "pid"
+    ],
+    "title": "server_signal_processArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

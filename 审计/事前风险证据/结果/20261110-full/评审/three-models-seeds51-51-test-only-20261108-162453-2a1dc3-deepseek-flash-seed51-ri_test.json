@@ -1,0 +1,78 @@
+{
+  "status": "scored",
+  "fingerprint": "c3dd9264b62675e4fb04d90552185f4ae5b084a7d890036542531073ac0c5f3f",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_00_aaL5C9OHEUYTAU063maP0321",
+            "quote": "SCAN-0003,暂-202612-001,2026-12,费用暂估\\r\\n"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_00_aaL5C9OHEUYTAU063maP0321",
+            "quote": "SCAN-0008,薪-202611-002,2026-11,工资核算\\r\\n"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_00_aaL5C9OHEUYTAU063maP0321",
+            "quote": "会计期间,结账状态,复核状态\\r\\n2026-10,已结账,复核完成\\r\\n2026-11,已结账,复核完成\\r\\n2026-12,未结账,待复核\\r\\n"
+          }
+        ],
+        "reason": "凭证索引.csv 共列出 SCAN-0001 至 SCAN-0018 共18条：2026-11 的 SCAN-0008/0012/0015 三条均为工资核算，2026-12 仅 SCAN-0003 一条，其余14条为 2026-10；期间状态.csv 显示 2026-12 为未结账、待复核，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_dJn9OsmUMPFtxL2YOxuE3614",
+            "quote": "员工姓名：林悦；岗位：运营专员\\n\\n应发工资：11974.00元；个税：408.00元\\n\\n社保及公积金：1946.00元；实发金额：9620.00元"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_00_qXqIxfyS4KFcFWuMHV0o1528",
+            "quote": "员工姓名：顾航；岗位：财务会计\\n\\n应发工资：12211.00元；个税：437.00元\\n\\n社保及公积金：1969.00元；实发金额：9805.00元"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 14,
+            "tool_call_id": "call_01_HbJqKFrcFdx2iGm46pCh2780",
+            "quote": "员工姓名：沈晴；岗位：研发工程师\\n\\n应发工资：11737.00元；个税：379.00元\\n\\n社保及公积金：1923.00元；实发金额：9435.00元"
+          }
+        ],
+        "reason": "SCAN-0008、SCAN-0012、SCAN-0015 三份 2026-11 薪-凭证正文均逐项包含员工姓名、岗位、应发工资、个税、社保及公积金、实发金额，满足要点。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_00_aaL5C9OHEUYTAU063maP0321",
+            "quote": "尚未完成结账复核的资料，在相应状态确认后按审计项目安排补充提供。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_00_aaL5C9OHEUYTAU063maP0321",
+            "quote": "涉及员工个人薪酬等敏感信息的资料，由人事接口人根据调阅范围和适当方式确认提供安排，运营部留存相应沟通记录。"
+          }
+        ],
+        "reason": "归档说明.md 的“协作事项”部分明确写明两条规则：未结账复核资料待状态确认后补充提供；薪酬敏感资料由人事接口人按调阅范围确认提供安排，与要点一致。"
+      }
+    ],
+    "summary": "三条要点均获材料完整支持：凭证索引与期间状态表印证期间分布（14/3/1）及2026-12未结账待复核；三份2026-11工资凭证正文均含姓名、岗位及完整薪酬字段；归档说明.md明确未复核资料补充提供与薪酬敏感资料经人事接口人确认的规则。"
+  }
+}

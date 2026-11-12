@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-mail"
+version = "0.2.0"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.23,<2", "filelock>=3.20,<5", "pydantic>=2.11,<3", "typing-extensions>=4.12"]
+
+[tool.setuptools.packages.find]
+where = ["公用代码", "."]
+include = ["local_mail*", "工具调用API*"]
+namespaces = false
+
+[tool.setuptools]
+license-files = ["公用代码/licenses/*.txt"]
+
+[tool.setuptools.package-data]
+local_mail = ["EXTRACTION.json"]
+

@@ -1,0 +1,31 @@
+{
+  "name": "git_add",
+  "description": "暂存指定路径；传[\".\"]暂存全部。路径相对仓库，按字面匹配。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "paths": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Paths",
+        "type": "array"
+      }
+    },
+    "required": [
+      "repo_id",
+      "paths"
+    ],
+    "title": "git_addArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

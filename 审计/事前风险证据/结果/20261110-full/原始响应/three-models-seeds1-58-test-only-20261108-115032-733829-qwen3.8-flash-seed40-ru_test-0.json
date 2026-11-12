@@ -1,0 +1,29 @@
+{
+  "id": "6b2adeb0-d2cc-4cb0-9c97-5ccce32a748d_35616d729a274deb8a64cfa6366bebd6",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 7,\n          \"tool_call_id\": \"call_ef832611d590460caff37c36\",\n          \"quote\": \"\\\"content\\\": \\\"{\\\\\\\"cache_ttl_seconds\\\\\\\": 60, \\\\\\\"upstream\\\\\\\": \\\\\\\"http://hot-data.internal:8080\\\\\\\", \\\\\\\"worker_connections\\\\\\\": 8192}\\\"\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 5,\n          \"tool_call_id\": \"call_afd638eca7a04f45850e678b\",\n          \"quote\": \"\\\"id\\\": \\\"edge-gw-c.service\\\", ... \\\"config_sha256\\\": \\\"969ed50498bf44d9543234d1fcfc87f9156f6179b3c3f2f8542ec495ddf4c473\\\", \\\"config_pending\\\": true\"\n        }\n      ],\n      \"reason\": \"读取 edge-gw-c.service 配置返回的内容即 cache_ttl_seconds=60、worker_connections=8192，且该服务 config_pending=true、config_sha256 与 applied_config_sha256 不同，说明这是待生效配置。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 5,\n          \"tool_call_id\": \"call_afd638eca7a04f45850e678b\",\n          \"quote\": \"\\\"supports_reload\\\": true, \\\"config_rules\\\": [{\\\"key\\\": \\\"cache_ttl_seconds\\\", \\\"type\\\": \\\"integer\\\", \\\"min\\\": 1, \\\"max\\\": 3600}, {\\\"key\\\": \\\"worker_connections\\\", \\\"type\\\": \\\"integer\\\", \\\"min\\\": 1, \\\"max\\\": 65535, \\\"restart_required\\\": true}]\"\n        }\n      ],\n      \"reason\": \"材料仅表明 worker_connections 标记 restart_required=true，而 cache_ttl_seconds 未标记，可部分推断其可通过 reload 生效；但材料没有任何关于 reload 是否重置连接、restart 是否断开该实例全部在途连接的描述，关键条件缺失，故不支持。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"所有工具返回（服务列表、服务配置、配置校验）均未涉及任何上传会话、开始时间、传输量或 resumable 属性；材料中完全没有该事实的依据。\"\n    }\n  ],\n  \"summary\": \"材料确认 edge-gw-c 待生效配置为 cache_ttl_seconds=60、worker_connections=8192 且已校验合法；但仅能部分推断两者生效方式，restart 断开在途连接的说法无材料支持；09:12 上传会话信息完全未出现。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "We need to judge three facts.\n\nFact 1: pending config cache_ttl_seconds=60, worker_connections=8192 for edge-gw-c. Supported by tool result message 7.\n\nFact 2: cache_ttl_seconds reloadable hot without resetting connections; worker_connections only restart, restart drops all in-flight connections. Material shows config_rules: cache_ttl_seconds integer min/max (no restart_required), worker_connections restart_required: true. supports_reload: true. But \"reload热加载且不重置连接\" — the rules don't explicitly say reload doesn't reset connections; it's inferable that cache_ttl_seconds doesn't require restart. \"restart会断开该实例全部在途连接\" — not stated in material. There's no connection session info except fact 3 which is about upload session. So partially supported. The requirement says unsupported if only partially supported. Hmm. The claim \"cache_ttl_seconds可reload热加载且不重置连接\" — material says worker_connections has restart_required: true while cache_ttl_seconds doesn't, and supports_reload true. That's inferable that cache_ttl can be reloaded. But \"不重置连接\" and \"restart会断开全部在途连接\" are not in material. So unsupported.\n\nFact 3: an upload session at 09:12 with 2.3GB transferred and resumable=false. Not in any material. Unsupported. No network connections query done. So unsupported.\n\nWeight sum: 25."
+      }
+    }
+  ],
+  "created": 1794319303,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1015,
+    "prompt_tokens": 4429,
+    "total_tokens": 5444,
+    "completion_tokens_details": {
+      "reasoning_tokens": 308
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 1920
+    }
+  }
+}

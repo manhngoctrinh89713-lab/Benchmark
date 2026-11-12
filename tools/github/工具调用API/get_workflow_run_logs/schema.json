@@ -1,0 +1,38 @@
+{
+  "name": "get_workflow_run_logs",
+  "description": "按行分页读取预置Actions日志；offset从0开始，limit为1..1000。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "run_id": {
+        "title": "Run Id",
+        "type": "integer"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 100,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "run_id"
+    ],
+    "title": "get_workflow_run_logsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

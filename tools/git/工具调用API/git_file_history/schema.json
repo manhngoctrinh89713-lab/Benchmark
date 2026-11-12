@@ -1,0 +1,38 @@
+{
+  "name": "git_file_history",
+  "description": "查询文件历史，跟踪单文件重命名。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "revision": {
+        "default": "HEAD",
+        "title": "Revision",
+        "type": "string"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "path"
+    ],
+    "title": "git_file_historyArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

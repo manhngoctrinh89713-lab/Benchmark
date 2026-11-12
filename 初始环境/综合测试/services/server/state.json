@@ -1,0 +1,188 @@
+{
+  "platform": "linux",
+  "now": "2026-11-01T09:00:00+08:00",
+  "machine": {
+    "id": "server_demo",
+    "hostname": "app-01",
+    "os": "Linux systemd 场景",
+    "user": "admin",
+    "cpu_count": 4,
+    "memory_total_bytes": 4294967296,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 104857600,
+      "base_used_bytes": 41943040
+    },
+    {
+      "id": "data",
+      "mount": "/srv",
+      "total_bytes": 209715200,
+      "base_used_bytes": 83886080
+    }
+  ],
+  "backup_disk_id": "data",
+  "backup_roots": [
+    "/etc/demo-api",
+    "/etc/postgresql",
+    "/srv/app",
+    "/srv/db"
+  ],
+  "journal_path": "/var/log/maintenance-journal.jsonl",
+  "services": {
+    "sshd.service": {
+      "id": "sshd.service",
+      "description": "SSH服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 22,
+      "config_format": "env",
+      "config_path": "/etc/ssh/local.env",
+      "process_name": "sshd",
+      "command": "/usr/bin/sshd",
+      "user": "root",
+      "memory_bytes": 16777216,
+      "requires": [],
+      "protected": true,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "PORT",
+          "type": "integer",
+          "min": 1,
+          "max": 65535
+        }
+      ],
+      "applied_config_sha256": "bd0c33c1188a41940ce0fd422992ede0a13b4000ca2c8a4950626ba848f35524"
+    },
+    "postgresql.service": {
+      "id": "postgresql.service",
+      "description": "数据库服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 100,
+      "config_format": "json",
+      "config_path": "/etc/postgresql/local.json",
+      "process_name": "postgres",
+      "command": "/usr/bin/postgres",
+      "user": "postgres",
+      "memory_bytes": 134217728,
+      "requires": [],
+      "protected": false,
+      "supports_reload": false,
+      "config_rules": [
+        {
+          "key": "port",
+          "type": "integer",
+          "min": 1,
+          "max": 65535
+        },
+        {
+          "key": "data_dir",
+          "type": "text"
+        }
+      ],
+      "applied_config_sha256": "fd2c1fcb3efe133c5007239262495ff2f0b4ec336c73151212e6101a24e1a666"
+    },
+    "demo-api.service": {
+      "id": "demo-api.service",
+      "description": "示例API服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 200,
+      "config_format": "ini",
+      "config_path": "/etc/demo-api/app.ini",
+      "process_name": "demo-api",
+      "command": "/usr/bin/demo-api",
+      "user": "app",
+      "memory_bytes": 67108864,
+      "requires": [
+        "postgresql.service"
+      ],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "server.port",
+          "type": "integer",
+          "min": 1,
+          "max": 65535
+        },
+        {
+          "key": "server.host",
+          "type": "text"
+        }
+      ],
+      "applied_config_sha256": "e9f27170ca7f06de3836e32b1bcf38c8df51f52b08070ab46ffd1e1202d9ac75"
+    }
+  },
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {
+    "files/volumes/root/var/log/maintenance-journal.jsonl": "2026-11-01T09:00:00+08:00",
+    "files/volumes/root/etc/ssh/local.env": "2026-11-01T09:00:00+08:00",
+    "files/volumes/root/etc/postgresql/local.json": "2026-11-01T09:00:00+08:00",
+    "files/volumes/root/etc/demo-api/app.ini": "2026-11-01T09:00:00+08:00",
+    "files/volumes/data/db/records.json": "2026-11-01T09:00:00+08:00",
+    "files/volumes/data/app/README.txt": "2026-11-01T09:00:00+08:00"
+  },
+  "processes": {
+    "1": {
+      "pid": 1,
+      "name": "init",
+      "command": "/sbin/init",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 4194304,
+      "protected": true,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": []
+    },
+    "22": {
+      "pid": 22,
+      "name": "sshd",
+      "command": "/usr/sbin/sshd -D",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 16777216,
+      "protected": true,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "sshd.service"
+    },
+    "100": {
+      "pid": 100,
+      "name": "postgres",
+      "command": "/usr/bin/postgres -D /srv/db",
+      "user": "postgres",
+      "status": "running",
+      "cpu_percent": 2.0,
+      "memory_bytes": 134217728,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "postgresql.service"
+    },
+    "200": {
+      "pid": 200,
+      "name": "demo-api",
+      "command": "/usr/bin/demo-api --config /etc/demo-api/app.ini",
+      "user": "app",
+      "status": "running",
+      "cpu_percent": 8.0,
+      "memory_bytes": 67108864,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "demo-api.service"
+    }
+  },
+  "next_pid": 201
+}

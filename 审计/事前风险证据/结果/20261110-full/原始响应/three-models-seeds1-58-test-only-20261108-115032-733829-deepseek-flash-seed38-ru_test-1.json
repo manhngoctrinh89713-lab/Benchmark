@@ -1,0 +1,29 @@
+{
+  "id": "227bebb0-5a51-449a-bbb0-c5353b5d4470_84a2b1be803841788fc3c3bd7ea0141e",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":19,\"tool_call_id\":\"call_00_I22vSGZ7fB7LNh5Bs5pF0380\",\"quote\":\"\\\"path\\\": \\\"本地/项目/品牌素材/云帆/活动海报.svg\\\" ... <text x=\\\\\\\"80\\\\\\\" y=\\\\\\\"1170\\\\\\\" font-size=\\\\\\\"32\\\\\\\">9月12日 14:00—17:00 · 南区展厅</text>\"},{\"source\":\"tool_result\",\"message_index\":19,\"tool_call_id\":\"call_00_I22vSGZ7fB7LNh5Bs5pF0380\",\"quote\":\"\\\"path\\\": \\\"共享盘/团队素材/brand-assets/云帆/活动海报.svg\\\" ... <text x=\\\\\\\"80\\\\\\\" y=\\\\\\\"1170\\\\\\\" font-size=\\\\\\\"32\\\\\\\">9月12日 14:00—17:00 · 北区展厅</text>\"}],\"reason\":\"工具返回同时读取了两边的活动海报内容，本地版本含“南区展厅”，共享盘版本含“北区展厅”，且两文件 SHA-256 不同（4c7bfd… vs 81fee1…），要点完整成立。\"},{\"id\":2,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":19,\"tool_call_id\":\"call_00_I22vSGZ7fB7LNh5Bs5pF0380\",\"quote\":\"\\\"path\\\": \\\"本地/项目/品牌素材/澄川/招募海报.svg\\\" ... <text x=\\\\\\\"80\\\\\\\" y=\\\\\\\"1170\\\\\\\" font-size=\\\\\\\"32\\\\\\\">报名截止 9月20日 23:59</text>\"},{\"source\":\"tool_result\",\"message_index\":19,\"tool_call_id\":\"call_00_I22vSGZ7fB7LNh5Bs5pF0380\",\"quote\":\"\\\"path\\\": \\\"共享盘/团队素材/brand-assets/澄川/招募海报.svg\\\" ... <text x=\\\\\\\"80\\\\\\\" y=\\\\\\\"1170\\\\\\\" font-size=\\\\\\\"32\\\\\\\">报名截止 9月25日 23:59</text>\"}],\"reason\":\"工具返回同时读取了两边的招募海报内容，本地为“报名截止 9月20日 23:59”，共享盘为“报名截止 9月25日 23:59”，要点完整成立。\"},{\"id\":3,\"supported\":false,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":19,\"tool_call_id\":\"call_00_I22vSGZ7fB7LNh5Bs5pF0380\",\"quote\":\"8月26日｜场地方回复：南区空调检修延续至月底，9月12日的场地单已落在北区展厅，接待人数不变。\"}],\"reason\":\"云帆/执行记录.md 的内容确实记有“9月12日的场地单已落在北区展厅”，但要点还包含另一份执行记录中“表单关闭时间跟随这次排班，落在25日23:59”的记载；材料中从未读取澄川/执行记录.md 的内容（仅在目录列表中出现其文件名和哈希），缺少该关键依据，因此该要点只支持一部分。\"}],\"summary\":\"材料完整支持两处海报差异：云帆活动海报南北区展厅不一致、澄川招募海报截止日期20日与25日不一致，均经文件内容对比证实。但第三条中“表单关闭时间落在25日23:59”的执行记录记载未在任何读取结果中出现（澄川执行记录未被读取），仅前半部分得到支持，故判为不支持。\"}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 3: 云帆执行记录 mentions \"9月12日的场地单已落在北区展厅\" — supported by message 19. The second part \"表单关闭时间跟随这次排班，落在25日23:59\" — which 执行记录? Probably 澄川/执行记录.md, but it was never read. So unsupported (only part 1 supported). Actually key fact says \"同目录执行记录分别记...\" meaning both. Since 澄川执行记录 was not read, only partial support → unsupported.\n\nFact 1: supported by message 19 (read_multiple_files). Local 云帆活动海报 has \"南区展厅\", shared has \"北区展厅\". Supported.\n\nFact 2: supported by message 19 too: local \"报名截止 9月20日 23:59\", shared \"报名截止 9月25日 23:59\". Supported."
+      }
+    }
+  ],
+  "created": 1794320874,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1097,
+    "prompt_tokens": 37122,
+    "total_tokens": 38219,
+    "completion_tokens_details": {
+      "reasoning_tokens": 205
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 37120
+    }
+  }
+}

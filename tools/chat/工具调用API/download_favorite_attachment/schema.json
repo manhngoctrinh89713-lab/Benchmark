@@ -1,0 +1,33 @@
+{
+  "name": "download_favorite_attachment",
+  "description": "从自己的收藏副本下载附件，包括合并记录内附件，save_path 位于 workspace；不覆盖已有文件，不受原消息过期、撤回或删除影响。",
+  "inputSchema": {
+    "properties": {
+      "favorite_id": {
+        "title": "Favorite Id",
+        "type": "string"
+      },
+      "attachment_id": {
+        "title": "Attachment Id",
+        "type": "string"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "favorite_id",
+      "attachment_id",
+      "save_path"
+    ],
+    "title": "download_favorite_attachmentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

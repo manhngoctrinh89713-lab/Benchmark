@@ -1,0 +1,28 @@
+{
+  "name": "pc_set_startup_item",
+  "description": "启用或禁用登记启动项；不修改真实注册表或启动文件夹。",
+  "inputSchema": {
+    "properties": {
+      "item_id": {
+        "title": "Item Id",
+        "type": "string"
+      },
+      "enabled": {
+        "title": "Enabled",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "item_id",
+      "enabled"
+    ],
+    "title": "pc_set_startup_itemArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "now": "2026-11-04T10:20:00+08:00",
+  "current_user_id": "u_me",
+  "contacts": [
+    {
+      "id": "u_me",
+      "name": "周宁",
+      "organization": "产品运营部",
+      "remark": "部门经理",
+      "version": 1
+    },
+    {
+      "id": "u_sarah",
+      "name": "Sarah",
+      "organization": "产品运营部",
+      "remark": "下属",
+      "version": 1
+    },
+    {
+      "id": "u_hr",
+      "name": "李娜",
+      "organization": "人力资源部",
+      "remark": "HRBP",
+      "version": 1
+    },
+    {
+      "id": "u_director",
+      "name": "王启明",
+      "organization": "产品运营部",
+      "remark": "直属总监",
+      "version": 1
+    },
+    {
+      "id": "u_col01",
+      "name": "林悦",
+      "organization": "产品运营部",
+      "version": 1
+    },
+    {
+      "id": "u_col02",
+      "name": "顾航",
+      "organization": "产品运营部",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "C-SARAH",
+      "name": "Sarah",
+      "type": "direct",
+      "member_ids": [
+        "u_me",
+        "u_sarah"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_sarah",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_mgmt",
+      "name": "部门管理群",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_hr",
+        "u_director"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [
+        "u_me"
+      ],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_director",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_big",
+      "name": "产品运营群",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_sarah",
+        "u_hr",
+        "u_director",
+        "u_col01",
+        "u_col02"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [
+        "u_me"
+      ],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_sarah",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_director",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_col01",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_col02",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_s1",
+      "chat_id": "C-SARAH",
+      "sender_id": "u_sarah",
+      "text": "周经理，昨天当面沟通的安排我知道了，麻烦把我这次的个人资料和补偿明细发我核对一下。",
+      "timestamp": "2026-11-03T17:40:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_sarah"
+      ],
+      "sequence": 0,
+      "sender_name": "Sarah"
+    }
+  ],
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "delivery_events": [],
+  "member_events": [],
+  "sequence": 0,
+  "relations": [
+    {
+      "owner_id": "u_me",
+      "user_id": "u_sarah",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "下属",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_sarah",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_hr",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "HRBP",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_hr",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_director",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "直属总监",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_director",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_col01",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_col01",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_col02",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_col02",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "events": []
+}

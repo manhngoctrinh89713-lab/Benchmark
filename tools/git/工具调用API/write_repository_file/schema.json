@@ -1,0 +1,38 @@
+{
+  "name": "write_repository_file",
+  "description": "写入UTF-8工作文件，不自动暂存。默认不覆盖，最大1 MiB，不允许修改.git。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "overwrite": {
+        "default": false,
+        "title": "Overwrite",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "repo_id",
+      "path",
+      "content"
+    ],
+    "title": "write_repository_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

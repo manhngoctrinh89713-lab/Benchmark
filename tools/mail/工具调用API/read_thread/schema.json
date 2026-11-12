@@ -1,0 +1,38 @@
+{
+  "name": "read_thread",
+  "description": "按 thread_id 分页读取会话邮件及可见参与人，按时间正序；每封邮件仍保持独立内容和状态。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "thread_id": {
+        "title": "Thread Id",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "account_name",
+      "thread_id"
+    ],
+    "title": "read_threadArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "server_move_file",
+  "description": "移动常规文件，不覆盖目标；服务配置和日志通过各自入口管理。",
+  "inputSchema": {
+    "properties": {
+      "source": {
+        "title": "Source",
+        "type": "string"
+      },
+      "destination": {
+        "title": "Destination",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "source",
+      "destination",
+      "expected_sha256"
+    ],
+    "title": "server_move_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

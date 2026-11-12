@@ -1,0 +1,23 @@
+{
+  "name": "list_my_deliveries",
+  "description": "查询数字商品和服务的交付记录、接收人、有效期与授权状态。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id"
+    ],
+    "title": "list_my_deliveriesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

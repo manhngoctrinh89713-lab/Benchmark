@@ -1,0 +1,38 @@
+{
+  "name": "read_multiple_files",
+  "description": "批量读取1..20个文件，文本、PDF、DOCX、PPTX、XLSX/XLS、HTML与图片均可，单文件错误不影响其余。返回items，失败项含error；各文件内容合计最多200000字符。",
+  "inputSchema": {
+    "properties": {
+      "paths": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Paths",
+        "type": "array"
+      },
+      "encoding": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Encoding"
+      }
+    },
+    "required": [
+      "paths"
+    ],
+    "title": "read_multiple_filesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

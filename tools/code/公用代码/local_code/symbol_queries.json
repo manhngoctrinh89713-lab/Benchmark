@@ -1,0 +1,41 @@
+{
+  "python": {
+    "functions": "\n        (function_definition\n            name: (identifier) @function.name\n            parameters: (parameters) @function.params\n            body: (block) @function.body) @function.def\n    ",
+    "classes": "\n        (class_definition\n            name: (identifier) @class.name\n            body: (block) @class.body) @class.def\n    "
+  },
+  "javascript": {
+    "functions": "\n        (function_declaration\n            name: (identifier) @function.name\n            parameters: (formal_parameters) @function.params\n            body: (statement_block) @function.body) @function.def\n\n        (arrow_function\n            parameters: (formal_parameters) @function.params\n            body: (_) @function.body) @function.def\n    \n(method_definition name: (property_identifier) @method.name body: (statement_block) @method.body) @method.def\n",
+    "classes": "\n        (class_declaration\n            name: (identifier) @class.name\n            body: (class_body) @class.body) @class.def\n    "
+  },
+  "typescript": {
+    "functions": "\n        (function_declaration\n            name: (identifier) @function.name\n            parameters: (formal_parameters) @function.params\n            body: (statement_block) @function.body) @function.def\n\n        (arrow_function\n            parameters: (formal_parameters) @function.params\n            body: (_) @function.body) @function.def\n\n        (method_definition\n            name: (property_identifier) @method.name\n            parameters: (formal_parameters) @method.params\n            body: (statement_block) @method.body) @method.def\n    ",
+    "classes": "\n        (class_declaration\n            name: (type_identifier) @class.name\n            body: (class_body) @class.body) @class.def\n    ",
+    "interfaces": "\n        (interface_declaration\n            name: (type_identifier) @interface.name\n            body: (interface_body) @interface.body) @interface.def\n\n        (type_alias_declaration\n            name: (type_identifier) @alias.name\n            value: (_) @alias.value) @alias.def\n    "
+  },
+  "go": {
+    "functions": "\n        (function_declaration\n            name: (identifier) @function.name\n            parameters: (parameter_list) @function.params\n            body: (block) @function.body) @function.def\n\n        (method_declaration\n            name: (field_identifier) @method.name\n            parameters: (parameter_list) @method.params\n            body: (block) @method.body) @method.def\n    ",
+    "structs": "\n        (type_declaration\n            (type_spec\n                name: (type_identifier) @struct.name\n                type: (struct_type) @struct.body)) @struct.def\n\n        (type_declaration\n            (type_spec\n                name: (type_identifier) @type.name\n                type: (_) @type.body)) @type.def\n    ",
+    "interfaces": "\n        (type_declaration\n            (type_spec\n                name: (type_identifier) @interface.name\n                type: (interface_type) @interface.body)) @interface.def\n    "
+  },
+  "c": {
+    "functions": "\n        (function_definition\n            declarator: (function_declarator\n                declarator: (identifier) @function.name)) @function.def\n\n        (declaration\n            declarator: (function_declarator\n                declarator: (identifier) @function.name)) @function.decl\n    ",
+    "structs": "\n        (struct_specifier\n            name: (type_identifier) @struct.name) @struct.def\n\n        (union_specifier\n            name: (type_identifier) @union.name) @union.def\n\n        (enum_specifier\n            name: (type_identifier) @enum.name) @enum.def\n    "
+  },
+  "cpp": {
+    "functions": "\n        (function_definition\n            declarator: (function_declarator\n                declarator: (identifier) @function.name)) @function.def\n\n        (declaration\n            declarator: (function_declarator\n                declarator: (identifier) @function.name)) @function.decl\n\n        (function_definition\n            declarator: (function_declarator\n                declarator: (field_identifier) @method.name)) @method.def\n    ",
+    "classes": "\n        (class_specifier\n            name: (type_identifier) @class.name) @class.def\n    ",
+    "structs": "\n        (struct_specifier\n            name: (type_identifier) @struct.name) @struct.def\n\n        (union_specifier\n            name: (type_identifier) @union.name) @union.def\n\n        (enum_specifier\n            name: (type_identifier) @enum.name) @enum.def\n    "
+  },
+  "java": {
+    "functions": "\n        (method_declaration\n            name: (identifier) @function.name\n            parameters: (formal_parameters) @function.params\n            body: (block) @function.body) @function.def\n\n        (constructor_declaration\n            name: (identifier) @constructor.name\n            parameters: (formal_parameters) @constructor.params\n            body: (constructor_body) @constructor.body) @constructor.def\n    ",
+    "classes": "\n        (class_declaration\n            name: (identifier) @class.name\n            body: (class_body) @class.body) @class.def\n    ",
+    "interfaces": "\n        (interface_declaration\n            name: (identifier) @interface.name\n            body: (interface_body) @interface.body) @interface.def\n    ",
+    "enums": "\n        (enum_declaration\n            name: (identifier) @enum.name\n            body: (enum_body) @enum.body) @enum.def\n    "
+  },
+  "rust": {
+    "functions": "\n        (function_item\n            name: (identifier) @function.name\n            parameters: (parameters) @function.params\n            body: (block) @function.body) @function.def\n    ",
+    "structs": "\n        (struct_item\n            name: (type_identifier) @struct.name\n            body: (field_declaration_list) @struct.body) @struct.def\n    ",
+    "enums": "\n        (enum_item\n            name: (type_identifier) @enum.name\n            body: (enum_variant_list) @enum.body) @enum.def\n    ",
+    "traits": "\n        (trait_item\n            name: (type_identifier) @trait.name) @trait.def\n    "
+  }
+}

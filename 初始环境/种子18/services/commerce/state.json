@@ -1,0 +1,240 @@
+{
+  "now": "2026-11-02T10:30:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "云帆培训用品",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_demo"
+    }
+  },
+  "products": {
+    "MEET-W": {
+      "id": "MEET-W",
+      "merchant_id": "merchant_demo",
+      "name": "培训白板套装",
+      "description": "开培训、做演练，桌面上有块随手能写的白板更方便。A4双面板搭配黑蓝两色白板笔，写步骤、画示意图、标重点都能用，擦掉就能接着写。每套配双面白板1块、黑色白板笔2支、蓝色白板笔1支，10套整箱装，适合培训教室和企业内训集中采购。",
+      "unit_amount_minor": 80000,
+      "currency": "CNY",
+      "stock": 24,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    },
+    "MEET-R": {
+      "id": "MEET-R",
+      "merchant_id": "merchant_demo",
+      "name": "分组讨论套装",
+      "description": "小组讨论，把想法写下来再交流！一套配两块A4双面白板，可分开记录，也方便并排展示不同方案；随套附黑色、蓝色白板笔各1支，讨论记录和重点标注随手切换。本款5套/箱，整箱发货，适用于课堂分组、团队研讨和工作坊。",
+      "unit_amount_minor": 52500,
+      "currency": "CNY",
+      "stock": 24,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    },
+    "MARK-K": {
+      "id": "MARK-K",
+      "merchant_id": "merchant_demo",
+      "name": "黑色白板笔整盒装",
+      "description": "日常板书常用黑色，会议记录、课程讲解都百搭。圆头白板笔，落笔顺滑、字迹清楚，可擦墨水适用于白板书写。每盒10支，办公室和培训室常备装，整盒销售。",
+      "unit_amount_minor": 10000,
+      "currency": "CNY",
+      "stock": 80,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    },
+    "MARK-B": {
+      "id": "MARK-B",
+      "merchant_id": "merchant_demo",
+      "name": "蓝色白板笔整盒装",
+      "description": "重点换个颜色，一眼更好找。蓝色可擦白板笔，适合区分讨论主题、批注和补充说明；圆头笔尖，握着写、拿着讲都顺手。10支盒装，方便教室、会议室统一领用。",
+      "unit_amount_minor": 10000,
+      "currency": "CNY",
+      "stock": 80,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {
+    "buyer_demo__merchant_demo": {
+      "id": "buyer_demo__merchant_demo",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_demo",
+      "items": [
+        {
+          "product_id": "MEET-W",
+          "quantity": 5,
+          "sku_id": "MEET-W"
+        },
+        {
+          "product_id": "MEET-R",
+          "quantity": 1,
+          "sku_id": "MEET-R"
+        },
+        {
+          "product_id": "MARK-K",
+          "quantity": 2,
+          "sku_id": "MARK-K"
+        },
+        {
+          "product_id": "MARK-B",
+          "quantity": 1,
+          "sku_id": "MARK-B"
+        }
+      ],
+      "version": 1
+    }
+  },
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "MEET-W": {
+      "id": "MEET-W",
+      "product_id": "MEET-W",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 80000,
+      "stock": 24,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "MEET-R": {
+      "id": "MEET-R",
+      "product_id": "MEET-R",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 52500,
+      "stock": 24,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "MARK-K": {
+      "id": "MARK-K",
+      "product_id": "MARK-K",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 10000,
+      "stock": 80,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "MARK-B": {
+      "id": "MARK-B",
+      "product_id": "MARK-B",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 10000,
+      "stock": 80,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

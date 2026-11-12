@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "fingerprint": "94558f42e56b119bec08ed5e181e9e676984cf8055d97a76b697d858b4fe74ac",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 5,
+            "tool_call_id": "call_2da3616e8ea44ac190a9497e",
+            "quote": "{\"pid\": 210, \"name\": \"orders-worker\", \"command\": \"/srv/orders/app.py --config /etc/orders.json\", \"user\": \"websvc\", \"status\": \"running\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_bfb35e84059b44eca26d2ead",
+            "quote": "{\"path\": \"/srv/orders/uploads\", \"owner\": \"root\", \"group\": \"root\", \"mode\": \"0755\"}"
+          }
+        ],
+        "reason": "进程列表显示 orders-worker（orders.service）以 websvc 用户运行；权限查询显示 /srv/orders/uploads 为 root:root 0755，两部分均有材料依据。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_bfb35e84059b44eca26d2ead",
+            "quote": "{\"path\": \"/srv/orders/app.py\", \"owner\": \"root\", \"group\": \"root\", \"mode\": \"0644\"}, {\"path\": \"/srv/orders/config\", \"owner\": \"root\", \"group\": \"root\", \"mode\": \"0755\"}, {\"path\": \"/srv/orders/config/auth.json\", \"owner\": \"root\", \"group\": \"root\", \"mode\": \"0600\"}"
+          }
+        ],
+        "reason": "权限递归查询直接列出 app.py 为 root:root 0644、config/auth.json 为 root:root 0600。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料仅在权限查询中显示 /srv/orders/运行手册.md 存在（root:root 0644），但没有任何工具调用读取该文件内容，无法证实其中写明程序入口和 auth.json 属发布制品、由发布系统部署、日常运维只处理上传目录等表述。"
+      }
+    ],
+    "summary": "前两条要点由权限递归查询和进程/服务查询完整支持，均能确认 websvc 运行身份及 app.py、config/auth.json、uploads 的属主与权限。第三条涉及《运行手册.md》的内容，材料中仅有该文件的元数据，未读取其正文，故不支持。"
+  }
+}

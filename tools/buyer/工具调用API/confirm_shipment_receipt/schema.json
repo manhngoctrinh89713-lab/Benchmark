@@ -1,0 +1,23 @@
+{
+  "name": "confirm_shipment_receipt",
+  "description": "记录买家确认收货，与承运方的投递记录分别保存。",
+  "inputSchema": {
+    "properties": {
+      "shipment_id": {
+        "title": "Shipment Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "shipment_id"
+    ],
+    "title": "confirm_shipment_receiptArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "name": "update_product",
+  "description": "修改商品资料和销售政策；价格参数修改默认规格，已有订单保留成交快照。",
+  "inputSchema": {
+    "$defs": {
+      "SalePolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "terms": {
+            "title": "Terms",
+            "type": "string"
+          },
+          "returnable": {
+            "title": "Returnable",
+            "type": "boolean"
+          },
+          "exchangeable": {
+            "title": "Exchangeable",
+            "type": "boolean"
+          },
+          "return_days": {
+            "title": "Return Days",
+            "type": "integer"
+          },
+          "cancellation_allowed": {
+            "title": "Cancellation Allowed",
+            "type": "boolean"
+          },
+          "delivery_countries": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Delivery Countries",
+            "type": "array"
+          }
+        },
+        "title": "SalePolicy",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "product_id": {
+        "title": "Product Id",
+        "type": "string"
+      },
+      "name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Name"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Description"
+      },
+      "unit_amount_minor": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Unit Amount Minor"
+      },
+      "active": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Active"
+      },
+      "category": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Category"
+      },
+      "policies": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/SalePolicy"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "product_id"
+    ],
+    "title": "update_productArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

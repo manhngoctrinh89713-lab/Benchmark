@@ -1,0 +1,40 @@
+{
+  "name": "pc_write_personal_file",
+  "description": "创建或更新个人文本文件；更新必须提供原字节哈希以防覆盖其他修改。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Sha256"
+      }
+    },
+    "required": [
+      "path",
+      "content"
+    ],
+    "title": "pc_write_personal_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

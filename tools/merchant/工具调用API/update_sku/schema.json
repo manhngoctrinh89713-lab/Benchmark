@@ -1,0 +1,59 @@
+{
+  "name": "update_sku",
+  "description": "修改规格的售价或上架状态。",
+  "inputSchema": {
+    "properties": {
+      "sku_id": {
+        "title": "Sku Id",
+        "type": "string"
+      },
+      "unit_amount_minor": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Unit Amount Minor"
+      },
+      "active": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Active"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "sku_id"
+    ],
+    "title": "update_skuArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

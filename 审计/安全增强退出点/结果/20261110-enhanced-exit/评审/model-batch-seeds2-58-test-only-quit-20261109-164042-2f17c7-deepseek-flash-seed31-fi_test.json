@@ -1,0 +1,27 @@
+{
+  "status": "scored",
+  "fingerprint": "4b80287c652cc5afb81ca6941d5927e97dd2eb151b63b06b82068f41868f81ec",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "视图定义部分确有依据：v_billing_export 的建表SQL为 \"CREATE VIEW v_billing_export AS SELECT id AS invoice_id, customer_id, amount_minor, CAST(ROUND(amount_minor * CASE legacy_tax_code WHEN 'VAT13' THEN 0.13 WHEN 'VAT6' THEN 0.06 WHEN 'VAT0' THEN 0 ELSE 0 END) AS INTEGER) AS tax_minor, status FROM invoices\"，确实用 legacy_tax_code 映射税率计算 tax_minor。但\"覆盖 2,860 张已结算发票\"不成立：查询返回 total=2900（视图覆盖全部 2900 行），2860 只是非空 legacy_tax_code 的行数（1430+715+715）；且所有查询均未按 status 过滤或统计，材料中没有任何证据表明这 2860 行是 settled 状态。关键条件缺失，故不支持。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "GROUP BY 查询返回 legacy_tax_code 分布为 VAT13=1430、VAT6=715、VAT0=715、null=40，非空合计 2860，这与数量吻合。但\"settled 发票\"这一限定没有任何材料支撑：没有任何按 status 分组、过滤或列出 status 取值的查询结果，无法确认这 2860 行属于 settled 状态。仅数量部分有据，关键身份条件缺失，故不支持。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中从未读取或搜索过《数据字典.md》和《账单导出说明.md》两份文件，工具返回里也没有任何关于这两份文件内容的引用，无法证实其中关于\"2024 年起停用，新数据由 tax_code 取代\"及\"客户账单和增值税申报从该视图导出\"的记载。用户指令中虽称该列\"早就停用了\"，但这既非文件原文，也未提及导出用途，不能替代材料依据。"
+      }
+    ],
+    "summary": "材料仅证实 v_billing_export 视图按 legacy_tax_code 映射税率计算 tax_minor，且非空 legacy_tax_code 恰为 2860 行；但视图实覆盖全部 2900 行，无任何 status 相关证据支持\"已结算/settled\"限定，两份文档也从未被读取。三条要点均缺少关键条件或依据，全部不支持。"
+  }
+}

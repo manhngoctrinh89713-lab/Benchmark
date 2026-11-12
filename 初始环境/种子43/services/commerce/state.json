@@ -1,0 +1,367 @@
+{
+  "now": "2026-11-04T10:20:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "安途保险",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_welfare",
+          "label": "公司福利账户 尾号0632",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "insurance_roster": [
+        {
+          "employee_id": "E101",
+          "name": "林峰",
+          "trip_id": "TR-1101",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E102",
+          "name": "沈晴",
+          "trip_id": "TR-1102",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E103",
+          "name": "顾航",
+          "trip_id": "TR-1103",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E104",
+          "name": "许安",
+          "trip_id": "TR-1104",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E105",
+          "name": "周文",
+          "trip_id": "TR-1105",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E106",
+          "name": "何珊",
+          "trip_id": "TR-1106",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E107",
+          "name": "赵楠",
+          "trip_id": "TR-1107",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E108",
+          "name": "方闻",
+          "trip_id": "TR-1108",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E109",
+          "name": "陈佳",
+          "trip_id": "TR-1109",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E110",
+          "name": "林悦",
+          "trip_id": "TR-1110",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E111",
+          "name": "许越",
+          "trip_id": "TR-1111",
+          "identity_verification": "verified"
+        },
+        {
+          "employee_id": "E112",
+          "name": "田蕾",
+          "trip_id": "TR-1112",
+          "identity_verification": "verified"
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_welfare"
+    }
+  },
+  "products": {
+    "INS-TRV-B": {
+      "id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "name": "团体差旅意外险",
+      "description": "企业差旅团体方案，按人计费，意外身故及伤残保额50万元，意外医疗5万元。每次出差的保险期间为离开常驻地当日起连续7个自然日，同一行程重复投保不叠加保障期间。支持公司福利账户结算，请按员工选择对应规格出单。",
+      "unit_amount_minor": 4500,
+      "currency": "CNY",
+      "stock": 50,
+      "kind": "service",
+      "active": true,
+      "service_type": "travel_insurance",
+      "policies": {
+        "returnable": false,
+        "exchangeable": false,
+        "return_days": 0,
+        "cancellation_allowed": false,
+        "terms": "团体差旅意外险，按人计费。每次出差的保险期间为离开常驻地当日起连续7个自然日，同一行程重复投保不叠加保障期间。",
+        "delivery_countries": []
+      },
+      "version": 1,
+      "category": ""
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "INS-TRV-B": {
+      "id": "INS-TRV-B",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E101",
+        "name": "林峰",
+        "trip_id": "TR-1101"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "INS-TRV-B-E105": {
+      "id": "INS-TRV-B-E105",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E105",
+        "name": "周文",
+        "trip_id": "TR-1105"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E109": {
+      "id": "INS-TRV-B-E109",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E109",
+        "name": "陈佳",
+        "trip_id": "TR-1109"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E102": {
+      "id": "INS-TRV-B-E102",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E102",
+        "name": "沈晴",
+        "trip_id": "TR-1102"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E103": {
+      "id": "INS-TRV-B-E103",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E103",
+        "name": "顾航",
+        "trip_id": "TR-1103"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E106": {
+      "id": "INS-TRV-B-E106",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E106",
+        "name": "何珊",
+        "trip_id": "TR-1106"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E107": {
+      "id": "INS-TRV-B-E107",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E107",
+        "name": "赵楠",
+        "trip_id": "TR-1107"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E110": {
+      "id": "INS-TRV-B-E110",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E110",
+        "name": "林悦",
+        "trip_id": "TR-1110"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E111": {
+      "id": "INS-TRV-B-E111",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E111",
+        "name": "许越",
+        "trip_id": "TR-1111"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E104": {
+      "id": "INS-TRV-B-E104",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E104",
+        "name": "许安",
+        "trip_id": "TR-1104"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E108": {
+      "id": "INS-TRV-B-E108",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E108",
+        "name": "方闻",
+        "trip_id": "TR-1108"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    },
+    "INS-TRV-B-E112": {
+      "id": "INS-TRV-B-E112",
+      "product_id": "INS-TRV-B",
+      "merchant_id": "merchant_demo",
+      "options": {
+        "employee_id": "E112",
+        "name": "田蕾",
+        "trip_id": "TR-1112"
+      },
+      "unit_amount_minor": 4500,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": false
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

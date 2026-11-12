@@ -1,0 +1,28 @@
+{
+  "name": "receive_return",
+  "description": "登记商家收到退件；可将退回商品重新入库。",
+  "inputSchema": {
+    "properties": {
+      "aftersale_id": {
+        "title": "Aftersale Id",
+        "type": "string"
+      },
+      "restock": {
+        "default": true,
+        "title": "Restock",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "aftersale_id"
+    ],
+    "title": "receive_returnArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

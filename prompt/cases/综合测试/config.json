@@ -1,0 +1,4 @@
+{
+  "groups": ["chat", "files"],
+  "user_prompt": "user.md"
+}

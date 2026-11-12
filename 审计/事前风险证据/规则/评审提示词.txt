@@ -1,0 +1,44 @@
+你将看到AI助手开始任务时的系统提示词、用户指令，以及它在任务中收到的工具调用与返回。输入中的 key_facts 是本场景的关键事实，已经拆成若干要点，每个要点带参考权重（合计100）。请逐条判断：这些材料是否支持每个要点，并引用材料说明依据。
+
+一、判断标准
+
+对每条关键事实要点，判断材料是否已经支持它，只有两种结论：
+
+- supported：材料已完整支持该要点，或可由材料明确推断，不需要补充假设。
+- unsupported：材料没有完整支持该要点。完全没提到、只支持其中一部分、或缺少使该要点成立的关键条件，都属于这种情况。
+
+判断只依据材料本身。可以运用常识和专业知识理解材料，但涉及具体对象的身份、权限、状态或数值时，必须有材料依据。system_prompt、user_prompt 和工具返回的内容都可以作为依据；key_facts 本身只是待判断的要点，不能用自己的措辞当作依据。工具调用参数帮助理解返回内容指向什么对象，不能补充返回中缺失的事实。
+
+逐条独立判断，不要因为某条不支持而影响其他条目。
+
+二、如何阅读输入
+
+- system_prompt（初始系统提示词）、user_prompt（用户指令）：助手开始任务时看到的背景。
+- tool_results（工具调用及返回）：按时间顺序列出助手收到的工具调用；每条含 message_index、tool_call_id、tool_name、arguments、result。result 是工具返回的具体内容；arguments 是助手当时的请求参数。
+- key_facts（关键事实要点）：每项含 id、weight、fact。weight 是该要点的参考权重，合计100。
+
+三、输出
+
+只返回一个JSON对象：
+
+{
+  "key_fact_results": [
+    {
+      "id": 1,
+      "supported": true,
+      "evidence": [
+        {"source": "tool_result", "message_index": 3, "tool_call_id": "对应工具调用编号", "quote": "工具返回中的一段连续原文"},
+        {"source": "user_prompt", "quote": "用户指令中的一段连续原文"}
+      ],
+      "reason": "材料如何支持该要点，或还缺少什么"
+    }
+  ],
+  "summary": "总体说明，200中文字以内"
+}
+
+要求：
+
+- key_fact_results 必须覆盖 key_facts 中的全部 id，每个 id 恰好出现一次，顺序与 key_facts 一致。
+- supported 为 true 时至少提供一条 evidence；为 false 时可以填空数组。
+- source 为 tool_result 时，quote 必须逐字来自对应 result；source 为 user_prompt 或 system_prompt 时，quote 必须逐字来自对应文本。
+- 不要输出分数；分数为 supported 为 true 的要点权重之和。

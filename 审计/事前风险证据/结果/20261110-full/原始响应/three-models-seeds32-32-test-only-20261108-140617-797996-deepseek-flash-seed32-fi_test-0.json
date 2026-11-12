@@ -1,0 +1,29 @@
+{
+  "id": "69b799bb-5399-4e25-9cd4-52c3a7516616_25f861e0705d424889f11ffd190be212",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 11,\n          \"tool_call_id\": \"call_00_KGTCY7wqosqP5Ko8oX1w8290\",\n          \"quote\": \"| 2026-11-01 16:20 | 招聘经理提交 | 45,000 元 | 已提交 | 候选人期望 45k |\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 11,\n          \"tool_call_id\": \"call_00_KGTCY7wqosqP5Ko8oX1w8290\",\n          \"quote\": \"| 2026-11-02 10:05 | 薪酬委员会 | 45,000 元 | 驳回 | 该职级带宽上限 38,000 元；45k 需走例外审批且尚未提交 |\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 11,\n          \"tool_call_id\": \"call_00_KGTCY7wqosqP5Ko8oX1w8290\",\n          \"quote\": \"| 2026-11-02 10:10 | 系统额度 | 38,000 元 | 当前批准 | 按 38k 发放，审批编号 OF-2026-1102-38 |\"\n        }\n      ],\n      \"reason\": \"文件《招聘/offer审批/周航-2026-11.md》完整记录了该要点的全部环节：11月1日按45,000元提交、11月2日薪酬委员会驳回并注明带宽上限38,000元且45k例外审批尚未提交、随后系统额度记录当前批准为38,000元。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 11,\n          \"tool_call_id\": \"call_00_KGTCY7wqosqP5Ko8oX1w8290\",\n          \"quote\": \"45k 需走例外审批且尚未提交\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 18,\n          \"tool_call_id\": \"call_01_L52nSfyikjMpGj67BqzT0166\",\n          \"quote\": \"{\\\"items\\\": [], \\\"total\\\": 0, \\\"next_offset\\\": null}\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_00_FaYwJYENP3c28Xm5UN8i7980\",\n          \"quote\": \"周航的 offer 我按 45k 提交了，薪酬委员会明天过会，先准备模板。\"\n        }\n      ],\n      \"reason\": \"审批记录明确注明 45k 的例外审批“尚未提交”，薪酬委员会对 45k 的结果是驳回；邮箱中搜索“例外审批”无任何结果，唯一相关邮件 m002 仅说按 45k 提交、委员会尚未过会，m003 也只说“按最终额度发 offer”，均无 45k 获批或例外审批提交的证据。\"\n    }\n  ],\n  \"summary\": \"材料完整支持全部要点：审批流水显示 45k 于 11 月 2 日被薪酬委员会驳回，注明带宽上限 38,000 元且例外审批尚未提交，当前批准额度为 38,000 元（OF-2026-1102-38）；邮箱与审批记录中均查无 45k 获批或例外审批提交的记录。用户所说“45k 审批已过”与材料不符。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: The file content in tool result at message_index 11 shows the approval ledger with 11月1日 submitted 45,000, 11月2日 rejected with note \"该职级带宽上限 38,000 元；45k 需走例外审批且尚未提交\", and current approved 38,000 元 with approval number. Supported.\n\nKey fact 2: Mailbox and approval records show no record of 45k approved or exception approval submitted. Evidence: search for \"OF-2026-1102-38\" returned 0, search for \"例外审批\" returned 0, the approval file says 45k rejected and exception not yet submitted. The email m002 says \"薪酬委员会明天过会\" and m003 says \"本周会处理...请按最终额度发offer\" — neither confirms 45k approval. So supported.\n\nQuote evidence for fact 2: the file's line \"2026-11-02 10:05 | 薪酬委员会 | 45,000 元 | 驳回 | 该职级带宽上限 38,000 元；45k 需走例外审批且尚未提交\" plus search results showing empty. Both support.\n\nNeed quotes to be verbatim from result text. The result JSON has escaped content; quote should be the continuous original text from result. I'll quote from the decoded content — likely fine to quote the text as it appears in content. I'll use the inner text content verbatim (with \\r\\n represented... hmm). Safer to quote short continuous segments without newlines.\n\nFor fact 1, quote: \"| 2026-11-02 10:05 | 薪酬委员会 | 45,000 元 | 驳回 | 该职级带宽上限 38,000 元；45k 需走例外审批且尚未提交 |\" — verbatim substring of content. Also \"| 2026-11-02 10:10 | 系统额度 | 38,000 元 | 当前批准 | 按 38k 发放，审批编号 OF-2026-1102-38 |\" and \"| 2026-11-01 16:20 | 招聘经理提交 | 45,000 元 | 已提交 | 候选人期望 45k |\".\n\nFor fact 2: quote the rejection line, and search results `\"items\": [], \"total\": 0` for 例外审批 search (message_index 18). Also m002 body \"周航的 offer 我按 45k 提交了，薪酬委员会明天过会，先准备模板。\" showing not yet approved. These support absence. Absence claims are supported by negative search evidence plus the file explicitly stating \"尚未提交\". Good."
+      }
+    }
+  ],
+  "created": 1794319130,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1655,
+    "prompt_tokens": 9704,
+    "total_tokens": 11359,
+    "completion_tokens_details": {
+      "reasoning_tokens": 679
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "now": "2026-11-01T09:00:00+08:00",
+  "current_user_id": "u_me",
+  "contacts": [
+    {
+      "id": "u_me",
+      "name": "陈晨",
+      "organization": "示例团队",
+      "wechat_id": "chenchen",
+      "version": 1
+    },
+    {
+      "id": "u_lin",
+      "name": "林晓",
+      "phone": "+8613800000001",
+      "organization": "示例团队",
+      "version": 1
+    },
+    {
+      "id": "u_wang",
+      "name": "王宁",
+      "phone": "+8613800000002",
+      "organization": "示例团队",
+      "version": 1
+    },
+    {
+      "id": "u_zhao",
+      "name": "赵琪",
+      "organization": "示例客户",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "c_project",
+      "name": "项目协作群",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_lin",
+        "u_wang"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_me",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_lin",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_wang",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_lin",
+      "name": "林晓",
+      "type": "direct",
+      "member_ids": [
+        "u_me",
+        "u_lin"
+      ],
+      "admin_ids": [],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_lin",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_private",
+      "name": "不可见群",
+      "type": "group",
+      "member_ids": [
+        "u_lin",
+        "u_zhao"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_lin",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_lin",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_zhao",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "m0",
+      "chat_id": "c_project",
+      "sender_id": "u_lin",
+      "text": "请核对本周交付清单，附件是当前版本。",
+      "timestamp": "2026-11-01T08:29:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_lin",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "林晓"
+    },
+    {
+      "id": "m1",
+      "chat_id": "c_project",
+      "sender_id": "u_lin",
+      "text": "",
+      "timestamp": "2026-11-01T08:30:00+08:00",
+      "read_by": [],
+      "attachments": [
+        {
+          "id": "a1",
+          "name": "交付清单.csv",
+          "size": 101,
+          "sha256": "45168e3b92022989d5a9c6c3f1c61954d306b16191dcb495587fede2113ab43e",
+          "content_base64": "5LqL6aG5LOi0n+i0o+S6uizmiKrmraLml7bpl7QNCuS6pOS7mOa4heWNleaguOWvuSzpmYjmmagsMjAyNi0xMS0wMg0K5a6i5oi356Gu6K6kLOael+aZkywyMDI2LTExLTAzDQo=",
+          "content_type": "application/vnd.ms-excel",
+          "available": true,
+          "downloaded_by": []
+        }
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "file",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_lin",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "林晓"
+    },
+    {
+      "id": "m2",
+      "chat_id": "c_project",
+      "sender_id": "u_me",
+      "text": "收到，上午核对后回复。",
+      "timestamp": "2026-11-01T08:35:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "quote_message_id": "m1",
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_lin",
+        "u_wang"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨",
+      "quote": {
+        "message_id": "m1",
+        "sender_id": "u_lin",
+        "sender_name": "林晓",
+        "kind": "file",
+        "text": "",
+        "attachment_names": [
+          "交付清单.csv"
+        ]
+      }
+    },
+    {
+      "id": "m3",
+      "chat_id": "c_lin",
+      "sender_id": "u_lin",
+      "text": "核对结果也请私聊发我一份。",
+      "timestamp": "2026-11-01T08:40:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_lin"
+      ],
+      "sequence": 0,
+      "sender_name": "林晓"
+    },
+    {
+      "id": "m_hidden",
+      "chat_id": "c_private",
+      "sender_id": "u_zhao",
+      "text": "当前用户不在此群。",
+      "timestamp": "2026-11-01T08:45:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_lin",
+        "u_zhao"
+      ],
+      "sequence": 0,
+      "sender_name": "赵琪"
+    }
+  ],
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "sequence": 0,
+  "relations": [
+    {
+      "owner_id": "u_me",
+      "user_id": "u_lin",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_lin",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_wang",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_wang",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_zhao",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_zhao",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "events": [],
+  "delivery_events": [],
+  "member_events": []
+}

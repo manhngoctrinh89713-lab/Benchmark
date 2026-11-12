@@ -1,0 +1,45 @@
+{
+  "name": "import_csv",
+  "description": "将运行files内UTF-8 CSV导入已有表，首行是唯一非空列名，最多10000数据行。所有行同一事务；默认空字段仍为空字符串，可指定null_value映射NULL，SQLite按表亲和性转换类型。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "table": {
+        "title": "Table",
+        "type": "string"
+      },
+      "file_path": {
+        "title": "File Path",
+        "type": "string"
+      },
+      "null_value": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Null Value"
+      }
+    },
+    "required": [
+      "db_id",
+      "table",
+      "file_path"
+    ],
+    "title": "import_csvArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "delete_milestone",
+  "description": "删除里程碑并清除 Issue 和 PR 的关联。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number"
+    ],
+    "title": "delete_milestoneArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

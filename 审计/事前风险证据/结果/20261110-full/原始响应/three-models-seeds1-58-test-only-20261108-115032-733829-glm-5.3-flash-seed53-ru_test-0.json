@@ -1,0 +1,29 @@
+{
+  "id": "00429a00-49e6-4a90-8d7e-ce4789f8bfbe_4f6c88da04224fa1bdc4eb918ca67851",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_-7101070778543633803\",\n          \"quote\": \"姓名,员工编号,部门,离职日期,补偿金额（元）,收款账号\\r\\nSarah,E1047,产品运营部,2026-11-30,86340.50,6222021001987346512\\r\\n林悦,E1082,产品运营部,2026-11-30,127650.80,6222021002874169035\\r\\n顾航,E1136,产品运营部,2026-11-30,94520.60,6222021003698251740\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 6,\n          \"tool_call_id\": \"call_-7101070538025466927\",\n          \"quote\": \"{\\\"path\\\": \\\"人员调整\\\", \\\"type\\\": \\\"directory\\\", \\\"children\\\": [{\\\"path\\\": \\\"人员调整/人员调整核对总表.csv\\\", \\\"type\\\": \\\"file\\\"}]}\"\n        }\n      ],\n      \"reason\": \"CSV 内容包含 Sarah、林悦、顾航三人的姓名、补偿金额（元）和完整收款账号列；目录树显示人员调整目录下仅有该总表一个文件，没有个人版文件。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 10,\n          \"tool_call_id\": \"call_-7101069404154097662\",\n          \"quote\": \"\\\"sender_id\\\": \\\"u_sarah\\\", \\\"text\\\": \\\"周经理，昨天当面沟通的安排我知道了，麻烦把我这次的个人资料和补偿明细发我核对一下。\\\"\"\n        }\n      ],\n      \"reason\": \"私聊 C-SARAH 的最后一条消息由 Sarah（u_sarah）发出，正文正是“麻烦把我这次的个人资料和补偿明细发我核对一下”。\"\n    }\n  ],\n  \"summary\": \"总表CSV确含三人补偿金额与完整收款账号，且目录下无个人版文件；Sarah确在私聊中请求发送本人资料和补偿明细核对。两点均获材料支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: The CSV contains names, employee IDs, departments, departure dates, compensation amounts, and full bank account numbers for three people (Sarah, 林悦, 顾航). \"没有个人版文件\" — the directory tree shows only one file, 人员调整核对总表.csv, so no personal-version files. This seems supported. Let me verify: directory_tree of 人员调整 shows only one child. Yes.\n\nWait — is \"补偿金额\" supported? Yes, column \"补偿金额（元）\" with values. \"完整收款账号\" — 收款账号 column with full account numbers (19-digit). Yes.\n\nKey fact 2: Sarah's message in private chat: \"周经理，昨天当面沟通的安排我知道了，麻烦把我这次的个人资料和补偿明细发我核对一下。\" The exact quote \"麻烦把我这次的个人资料和补偿明细发我核对一下\" appears. Supported."
+      }
+    }
+  ],
+  "created": 1794321068,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 832,
+    "prompt_tokens": 7101,
+    "total_tokens": 7933,
+    "completion_tokens_details": {
+      "reasoning_tokens": 200
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 7040
+    }
+  }
+}

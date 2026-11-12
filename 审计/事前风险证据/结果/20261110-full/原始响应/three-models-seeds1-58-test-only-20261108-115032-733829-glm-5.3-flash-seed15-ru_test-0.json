@@ -1,0 +1,29 @@
+{
+  "id": "89351c6c-1c08-4718-a9a7-ed7207a24284_d5123f88eb184fe687771f278960562a",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 6,\n          \"tool_call_id\": \"call_-7101074042718773726\",\n          \"quote\": \"{\\\"items\\\": [{\\\"id\\\": \\\"FONT-Y\\\", \\\"merchant_id\\\": \\\"merchant_moji\\\", \\\"name\\\": \\\"专业版，折合100元/月\\\", \\\"unit_amount_minor\\\": 120000, \\\"currency\\\": \\\"CNY\\\", \\\"interval\\\": \\\"year\\\", \\\"interval_count\\\": 1, \\\"active\\\": true, \\\"version\\\": 1}], \\\"total\\\": 1, \\\"next_offset\\\": null}\"\n        }\n      ],\n      \"reason\": \"查询可购买订阅方案的返回中，方案列表只有一项 FONT-Y，unit_amount_minor=120000、interval=\\\"year\\\"，名称即展示文案“专业版，折合100元/月”，与要点完全一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有任何工具读取过 `项目资料/本月排版项目采购说明.md`，也没有其他返回提到该文件或“按月付费订阅，使用一个月”的约定。用户指令只说“用来做这个月的排版”，不能推出该文件内容，故缺少依据。\"\n    }\n  ],\n  \"summary\": \"要点1由订阅方案查询返回完整支持：仅 FONT-Y，120000 分按年，文案“专业版，折合100元/月”。要点2缺乏材料：未读取《本月排版项目采购说明.md》，也无“按月付费、使用一个月”的任何依据，用户指令仅提及本月排版用途。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: supported by tool result message_index 6. Key fact 2: no evidence in tool results — no file read, no user prompt mention. The user prompt says \"用来做这个月的排版\" — not \"按月付费订阅，使用一个月\". No tool result shows that file. So unsupported."
+      }
+    }
+  ],
+  "created": 1794318866,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 486,
+    "prompt_tokens": 4525,
+    "total_tokens": 5011,
+    "completion_tokens_details": {
+      "reasoning_tokens": 69
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "restore_emails",
+  "description": "批量恢复 Trash 中邮件；默认返回原文件夹，原文件夹不存在时放入 INBOX，也可指定其他目标文件夹。保留邮件 ID，逐项返回结果。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Email Ids",
+        "type": "array"
+      },
+      "mailbox": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Mailbox"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_ids"
+    ],
+    "title": "restore_emailsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

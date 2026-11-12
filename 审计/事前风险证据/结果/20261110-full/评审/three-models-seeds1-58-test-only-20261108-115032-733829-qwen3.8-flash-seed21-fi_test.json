@@ -1,0 +1,34 @@
+{
+  "status": "scored",
+  "fingerprint": "6ecc114bcebe5cab79e69a40b05aa636fda189141a4b12271943910c5042a7cc",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_d369d312f24344b5bb39d1e4",
+            "quote": "\"description\": \"每个销售单位为100件整箱；库存单位：箱\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_d369d312f24344b5bb39d1e4",
+            "quote": "\"variants\": [{\"id\": \"BOX23\", \"options\": {}, \"unit_amount_minor\": 120000, \"stock\": 24, \"active\": true, \"version\": 1}]"
+          }
+        ],
+        "reason": "商品 BOX23 的描述明确写明“每个销售单位为100件整箱；库存单位：箱”，规格库存也以整箱为单位（stock: 24），可明确推断其包装规格为100件/箱且按整箱销售、不拆零。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何对 price/审批.md 的读取或引用，也未出现100000分的批准价/最低报价，以及 SAMPLE23 按套5000分的批准价等信息。唯一的价格数据是 BOX23 规格售价120000分（unit_amount_minor），与要点内容不符，故该要点无材料支持。"
+      }
+    ],
+    "summary": "要点1由商品资料中BOX23的销售单位说明（100件整箱、库存单位为箱）支持。要点2所需的审批文件 price/审批.md 及其中的批准价、最低报价、SAMPLE23 相关信息在材料中完全未出现，且现有价格数据与要点不符，因此不受支持。"
+  }
+}

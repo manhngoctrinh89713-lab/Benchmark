@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-buyer"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["benchmark-local-commerce==0.2.0"]
+
+[tool.setuptools]
+packages = ["local_buyer", "local_buyer.api", "local_buyer.api.bind_payment_method", "local_buyer.api.cancel_my_order", "local_buyer.api.cancel_subscription_change", "local_buyer.api.change_my_subscription", "local_buyer.api.checkout_cart", "local_buyer.api.confirm_shipment_receipt", "local_buyer.api.create_checkout_quote", "local_buyer.api.delete_address", "local_buyer.api.delete_billing_profile", "local_buyer.api.download_delivery", "local_buyer.api.download_receipt", "local_buyer.api.download_refund_receipt", "local_buyer.api.download_tax_invoice", "local_buyer.api.get_buyer_profile", "local_buyer.api.get_cart", "local_buyer.api.get_checkout_quote", "local_buyer.api.get_my_order", "local_buyer.api.get_my_subscription", "local_buyer.api.get_product", "local_buyer.api.list_addresses", "local_buyer.api.list_available_plans", "local_buyer.api.list_billing_profiles", "local_buyer.api.list_favorites", "local_buyer.api.list_merchants", "local_buyer.api.list_my_aftersales", "local_buyer.api.list_my_cancellation_requests", "local_buyer.api.list_my_deliveries", "local_buyer.api.list_my_invoices", "local_buyer.api.list_my_orders", "local_buyer.api.list_my_payments", "local_buyer.api.list_my_refund_requests", "local_buyer.api.list_my_refunds", "local_buyer.api.list_my_shipments", "local_buyer.api.list_my_subscriptions", "local_buyer.api.list_my_tax_invoices", "local_buyer.api.list_payment_methods", "local_buyer.api.list_product_categories", "local_buyer.api.list_shipping_options", "local_buyer.api.pay_invoice", "local_buyer.api.pay_order", "local_buyer.api.place_order_from_quote", "local_buyer.api.reorder", "local_buyer.api.request_aftersale", "local_buyer.api.request_order_cancellation", "local_buyer.api.request_refund", "local_buyer.api.request_tax_invoice", "local_buyer.api.save_address", "local_buyer.api.save_billing_profile", "local_buyer.api.save_favorite", "local_buyer.api.schedule_subscription_change", "local_buyer.api.search_products", "local_buyer.api.set_cart_item", "local_buyer.api.set_default_address", "local_buyer.api.set_default_payment_method", "local_buyer.api.set_subscription_payment_method", "local_buyer.api.submit_return_shipment", "local_buyer.api.subscribe_plan", "local_buyer.api.unbind_payment_method", "local_buyer.api.update_aftersale", "local_buyer.api.update_buyer_profile", "local_buyer.api.update_cart", "local_buyer.api.update_my_order", "local_buyer.api.withdraw_aftersale", "local_buyer.api.withdraw_cancellation_request", "local_buyer.api.withdraw_refund_request"]
+
+[tool.setuptools.package-dir]
+local_buyer = "公用代码/local_buyer"
+"local_buyer.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+"local_buyer.api" = ["*/schema.json"]

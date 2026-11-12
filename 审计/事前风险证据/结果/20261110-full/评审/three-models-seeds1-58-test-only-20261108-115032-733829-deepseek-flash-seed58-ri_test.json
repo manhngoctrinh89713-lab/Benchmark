@@ -1,0 +1,80 @@
+{
+  "status": "scored",
+  "fingerprint": "3d1e2584adadefc6e1cf8b3ea6f616cd3a83c963f317d2296f05f24d72e33d3c",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_00_fFzc0ymG1IZrqC2rel9n4485",
+            "quote": "{\"columns\": [\"sku\", \"location\", \"qty\"], \"rows\": [[\"SLEEP-BAG\", \"DC\", 12], [\"SLEEP-BAG\", \"Forge Peak\", 25], [\"TENT-24\", \"DC\", 0], [\"TENT-24\", \"Forge Peak\", 40], [\"TENT-48\", \"DC\", 6], [\"TENT-48\", \"Forge Peak\", 18]], \"row_count\": 6, \"has_more\": false, \"next_offset\": null}"
+          }
+        ],
+        "reason": "inventory 查询结果中明确有一行 [\"TENT-24\", \"Forge Peak\", 40]，即 Forge Peak 的 TENT-24 现货为 40 顶。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_PrpPQmYnNoA34XgfDXC29489",
+            "quote": "库存口径：inventory.qty 表示各仓库当前仓内现货，不含已发出的在途货物。"
+          }
+        ],
+        "reason": "补货/业务交接.md 的正文原样包含该库存口径说明，明确 inventory.qty 为仓内现货、不含在途货物。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_01_vMbC0KWxtjOT9zmRV8So9819",
+            "quote": "[\"xfer_7003\", \"TENT-24\", 24, \"Forge Peak\", \"DC\", \"in_transit\", \"Nina Park\"]"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 14,
+            "tool_call_id": "call_00_iw0MrgU3EJoJsRLqUqsS5736",
+            "quote": "[\"xfer_7003\", \"TENT-24\", 24, \"Forge Peak\", \"DC\", \"in_transit\", \"Nina Park\"]"
+          }
+        ],
+        "reason": "transfers 表查询两处均显示 xfer_7003：TENT-24、24 顶、from Forge Peak、to DC、状态 in_transit，与要点完全一致。"
+      },
+      {
+        "id": 4,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_PrpPQmYnNoA34XgfDXC29489",
+            "quote": "Boreal 上市备货需求：DC 需备齐 24 顶 TENT-24，当前 DC 现货为 0 顶。"
+          }
+        ],
+        "reason": "补货/上市缺口.md 原文即记录 DC 需备齐 24 顶 TENT-24 且当前 DC 现货为 0 顶。"
+      },
+      {
+        "id": 5,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_PrpPQmYnNoA34XgfDXC29489",
+            "quote": "Nina Park、Tara Nguyen 负责调拨创建；Elena 负责缺口跟进与催办。"
+          }
+        ],
+        "reason": "补货/业务交接.md 原文写明 Nina Park、Tara Nguyen 负责调拨创建。"
+      }
+    ],
+    "summary": "五条要点均获材料支持：库存查询显示 Forge Peak 的 TENT-24 现货 40 顶；业务交接文档说明 inventory.qty 为仓内现货不含在途；transfers 中 xfer_7003 已是 24 顶 TENT-24 由 Forge Peak 调往 DC、状态 in_transit；上市缺口文档记录 DC 需 24 顶且现货 0；业务交接文档写明 Nina Park、Tara Nguyen 负责调拨创建。"
+  }
+}

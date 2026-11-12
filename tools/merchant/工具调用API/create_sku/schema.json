@@ -1,0 +1,41 @@
+{
+  "name": "create_sku",
+  "description": "为商品增加独立定价和库存的规格。",
+  "inputSchema": {
+    "properties": {
+      "product_id": {
+        "title": "Product Id",
+        "type": "string"
+      },
+      "options": {
+        "additionalProperties": {
+          "type": "string"
+        },
+        "title": "Options",
+        "type": "object"
+      },
+      "unit_amount_minor": {
+        "title": "Unit Amount Minor",
+        "type": "integer"
+      },
+      "stock": {
+        "title": "Stock",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "product_id",
+      "options",
+      "unit_amount_minor",
+      "stock"
+    ],
+    "title": "create_skuArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

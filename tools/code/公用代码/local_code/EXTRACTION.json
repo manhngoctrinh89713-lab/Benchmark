@@ -1,0 +1,87 @@
+{
+  "repository": "https://github.com/wrale/mcp-server-tree-sitter",
+  "commit": "10c78c9d8aaf10d26ba550edbcdb822e87147bf8",
+  "license": "MIT",
+  "sources": [
+    {
+      "source": "公用代码/upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/python.py",
+      "sha256": "5d7ca9bdb3249323f1139f3d287bd097e2f4d479f43fcd0d4dcbdab04af87a44",
+      "lines": [
+        3,
+        40
+      ]
+    },
+    {
+      "source": "公用代码/upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/javascript.py",
+      "sha256": "63d77e151f21b45867c441757f944b63a5154d1e301b1a5e3309ac8aabeb246c",
+      "lines": [
+        3,
+        36
+      ]
+    },
+    {
+      "source": "公用代码/upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/typescript.py",
+      "sha256": "dd33022ea5da045dad7cb67745c41603b2d356c55c4de3b71ea8e3356c1b035d",
+      "lines": [
+        3,
+        50
+      ]
+    },
+    {
+      "source": "公用代码/upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/go.py",
+      "sha256": "108d872abf60747c23798d171d945bd03303861060fd33f6703cbb28ffa49565",
+      "lines": [
+        3,
+        48
+      ]
+    },
+    {
+      "source": "公用代码/upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/c.py",
+      "sha256": "a6af5b7e4a27387887b8eaeeb9645b9afc59ff5d470011a5dfb39135966a7bb8",
+      "lines": [
+        3,
+        36
+      ]
+    },
+    {
+      "source": "公用代码/upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/cpp.py",
+      "sha256": "b8981df39c3d587ec3f2a1df2383817653c422389c33c04a8d83b63b8ada57ec",
+      "lines": [
+        3,
+        50
+      ]
+    },
+    {
+      "source": "公用代码/upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/java.py",
+      "sha256": "b3910c031ca6671ddc10942ebb99daf7f0b5cd8734c85d3f180b9d42dac57255",
+      "lines": [
+        3,
+        50
+      ]
+    },
+    {
+      "source": "公用代码/upstream/wrale__mcp-server-tree-sitter/src/mcp_server_tree_sitter/language/templates/rust.py",
+      "sha256": "b8419bb446bd941fd4a264c7fb997ffb36f4dd8c6acc0952627e04bf87cf5bfd",
+      "lines": [
+        3,
+        44
+      ]
+    }
+  ],
+  "output": "公用代码/local_code/symbol_queries.json",
+  "output_sha256": "c0ec2a4d2a4d8a71e144e4046c6b04ef2543f67b123ea6850ee1005d191bbc6e",
+  "changes": [
+    "Select definition queries for eight languages; TSX uses TypeScript queries",
+    "Correct C++ method node, Java interface/constructor bodies and TypeScript interface body for pinned grammar",
+    "Add JavaScript method definition query",
+    "Omit original server, registration, caching, prompts and runtime"
+  ],
+  "persistence": {
+    "source": "公用代码/internal_sources/file_store.py",
+    "source_sha256": "eec5dc8deadf2acd9df190f85997182e857cafe1d7404d5f009ad3244fb20bcc",
+    "output": "公用代码/local_code/state_core.py",
+    "output_sha256": "cd44103876609a0cb7a942aafc9751a66870cd5fc0aa2cf06325fa4b6f59e61c",
+    "reuse": "Project-owned sibling file module initialization, file boundary checks, snapshots and pending recovery, renamed CodeState"
+  },
+  "other_code": "New adapters; Jedi supplies Python static references/refactoring. Serena and Desktop Commander provide interface references only; no Serena application code is linked or copied into runtime."
+}

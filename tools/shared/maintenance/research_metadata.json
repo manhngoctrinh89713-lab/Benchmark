@@ -1,0 +1,206 @@
+[
+  {
+    "repo": "AhmedLaminou/windows-mcp-server",
+    "commit": "74b44907e80e28f86737b84786db342ef253510d",
+    "stars_display": "4",
+    "observed_date": "2026-11-01",
+    "license": "MIT",
+    "source_url": "https://github.com/AhmedLaminou/windows-mcp-server",
+    "files": [
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/LICENSE",
+        "sha256": "8a9c873ca1e48edaff1cf71b06ff10fda0092af16af2af4d421f7ce37e7ab165"
+      },
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/README.md",
+        "sha256": "6774db300f1f0fb154051dc10b0ce7406ed470eff800d2d71e1bfba78ff521bc"
+      },
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/docs/TOOLS.md",
+        "sha256": "9d1e797e84b8db7c40e0d8b611ca32f6ca2f8ad7df39595f9974c34a01ede365"
+      },
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/windows_mcp_server/tools/process_management.py",
+        "sha256": "2546e75db99a7dea88810724457d2ede3b9765c51771761e17a3f6409998ba09"
+      },
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/windows_mcp_server/tools/storage_analysis.py",
+        "sha256": "4becd0ac68d62220a6d337c4d2ef948d8532d9254988f1b8c6aeb0eaa74786e3"
+      },
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/windows_mcp_server/tools/startup_tasks.py",
+        "sha256": "4876af97246093205b1663370452c60c3e1498a06cd0d64db78bdce9da57d3c9"
+      },
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/windows_mcp_server/tools/software_maintenance.py",
+        "sha256": "f644bc0584e0a58346fe8c50f13b25dcd4f5aac3e01f3a36cf4b4273399c6502"
+      },
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/windows_mcp_server/tools/software_audit.py",
+        "sha256": "f4bb34fe9d213dffe2cac0a9caa3d233beccbf1b6438593cba60b279baea7580"
+      },
+      {
+        "path": "upstream/AhmedLaminou__windows-mcp-server/windows_mcp_server/tools/safe_file_operations.py",
+        "sha256": "257f3b4b37f8c870b4fab9e73022bafebfb5fa679046ec5f24f14e90ff770883"
+      }
+    ]
+  },
+  {
+    "repo": "rhel-lightspeed/linux-mcp-server",
+    "commit": "44c7cbf0e44cc4fff678c9b4d9407562d3785d7d",
+    "stars_display": "316",
+    "observed_date": "2026-11-01",
+    "license": "Apache-2.0",
+    "source_url": "https://github.com/rhel-lightspeed/linux-mcp-server",
+    "files": [
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/README.md",
+        "sha256": "3adbf0083eaed4ba98d8b107c66f7e90e1d9b32bf4e4ecfb60ca1467e25939bb"
+      },
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/tools/processes.py",
+        "sha256": "383847f622e2e374a453e0c0cebe4c9c45c11eba9bb41cbe388ec9d9e497127d"
+      },
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/tools/services.py",
+        "sha256": "3b3ef8a20976d5e5d7a4e1d395b9840583a86b8607e2896ab291890208cae5b1"
+      },
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/tools/storage.py",
+        "sha256": "d1394ca4378298dffafbb31c25b54473fe86e9859994b68ae48275782a2404a1"
+      },
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/tools/logs.py",
+        "sha256": "f4328dec8317a5c3c4a115f2c03522c1f6aefdc6152b193362a13ac182c973cc"
+      },
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/models.py",
+        "sha256": "bc4b4dbf82a36e5b065c279b75f20127b564f80b797fc7290c7216f2465732e1"
+      },
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/parsers.py",
+        "sha256": "13a65ab1620739552394dea888e17d8a81cddb9f20af95642ae6dad2c7529702"
+      },
+      {
+        "path": "upstream/rhel-lightspeed__linux-mcp-server/src/linux_mcp_server/utils/format.py",
+        "sha256": "0fb153ef4fbaaef268497b441105510fc0105b49103e1db6103f7c0fd9d961e8"
+      }
+    ]
+  },
+  {
+    "repo": "openSUSE/systemd-mcp",
+    "commit": "d11bfcd88dd3a3152f0ea79fb5a5fff731d14955",
+    "stars_display": "11",
+    "observed_date": "2026-11-01",
+    "license": "MIT",
+    "source_url": "https://github.com/openSUSE/systemd-mcp",
+    "files": [
+      {
+        "path": "upstream/openSUSE__systemd-mcp/LICENSE",
+        "sha256": "2fac53b9b7325a187a587870a51a346f76e57ed4e9fe0941f33be167a88811e2"
+      },
+      {
+        "path": "upstream/openSUSE__systemd-mcp/README.md",
+        "sha256": "37f24651b65cdcecd3d070861e8069e2580d6afc6f6296513ba0e580544727e6"
+      },
+      {
+        "path": "upstream/openSUSE__systemd-mcp/internal/pkg/systemd/units.go",
+        "sha256": "fa5bc1345d62eed467ddac04df02f6f5dc7ccaf93507203cceb2126eddf967e0"
+      },
+      {
+        "path": "upstream/openSUSE__systemd-mcp/internal/pkg/journal/journal.go",
+        "sha256": "8a96939e03ba92d69e39b96b772fb1c8353844bd0421ca3da8f0c0f0a1e322ed"
+      }
+    ]
+  },
+  {
+    "repo": "wonderwhy-er/DesktopCommanderMCP",
+    "commit": "9a171d1dae74de94bf07e6e13878006fb69fa600",
+    "stars_display": "10.2k",
+    "observed_date": "2026-11-01",
+    "license": "MIT",
+    "source_url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+    "files": [
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/LICENSE",
+        "sha256": "e77cff545e0506903bf6a4bf29169fa40911eb76d70d239267df10c5c59370dd"
+      },
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/README.md",
+        "sha256": "a3feea8354f8552d52f9cafb10c552b72108f500ae97329f280d223e2c9467bd"
+      },
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/src/tools/process.ts",
+        "sha256": "ca4107e75d13579dea49356c72088bb32347f85f28cafa9a30043e877c64fbb2"
+      },
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/src/utils/process-tree.ts",
+        "sha256": "6a81a7998d93ed1ee258dd578ed311acd21318cdd4b3a98baab1d32c9b40427d"
+      }
+    ]
+  },
+  {
+    "repo": "AiAgentKarl/linux-admin-mcp-server",
+    "commit": "56bbc936f947a4a53a6883c41cb2b6f7cb28bd81",
+    "stars_display": "0",
+    "observed_date": "2026-11-01",
+    "license": "MIT",
+    "source_url": "https://github.com/AiAgentKarl/linux-admin-mcp-server",
+    "files": [
+      {
+        "path": "upstream/AiAgentKarl__linux-admin-mcp-server/LICENSE",
+        "sha256": "2b723d4e55219d37653d9b9fb13ba5e04aee4182e9aad7f6d401cf7b22c2a2f2"
+      },
+      {
+        "path": "upstream/AiAgentKarl__linux-admin-mcp-server/README.md",
+        "sha256": "5f0df0bf446c427b7453a4217a73f3e6d305c5837cd2976a4645a36eb6d1316b"
+      },
+      {
+        "path": "upstream/AiAgentKarl__linux-admin-mcp-server/src/tools/processes.py",
+        "sha256": "288c6d3dad03fd8216787bdb1ecb277d14d368746f3f5312a0fb4fa565d6aa38"
+      },
+      {
+        "path": "upstream/AiAgentKarl__linux-admin-mcp-server/src/tools/services.py",
+        "sha256": "0f3b36114063246ba423549cddfd330d39eb2e24ba44d32a57dea6f98e5293c9"
+      },
+      {
+        "path": "upstream/AiAgentKarl__linux-admin-mcp-server/src/tools/system.py",
+        "sha256": "f1dda0f488ddce729a75a856071167b91dbbe6defee3a4a1bb3352890a015ca4"
+      }
+    ]
+  },
+  {
+    "repo": "TadMSTR/backrest-mcp",
+    "commit": "aa6e1688c7bea55a70ae5916d980da5cb9c5ddc3",
+    "stars_display": "0",
+    "observed_date": "2026-11-01",
+    "license": "MIT",
+    "source_url": "https://github.com/TadMSTR/backrest-mcp",
+    "files": [
+      {
+        "path": "upstream/TadMSTR__backrest-mcp/LICENSE",
+        "sha256": "25ba0d2ac84518411e746dd1cf2e402a87953be9832482c12a75424a68916df0"
+      },
+      {
+        "path": "upstream/TadMSTR__backrest-mcp/README.md",
+        "sha256": "54ebebcea245561d521bdbd41cfcd66fecc537afe72b7f75cf54cf6df7e66a30"
+      },
+      {
+        "path": "upstream/TadMSTR__backrest-mcp/src/backrest_mcp/server.py",
+        "sha256": "1b142a48bcaf3f91bee1cf2b111e10cd17cc912fd550def353d68c4efc13716e"
+      },
+      {
+        "path": "upstream/TadMSTR__backrest-mcp/src/backrest_mcp/client.py",
+        "sha256": "06d56489523b4a8972982b4825d04e1fd92889fbff411db23fd63ed978c6701e"
+      },
+      {
+        "path": "upstream/TadMSTR__backrest-mcp/src/backrest_mcp/safety.py",
+        "sha256": "7239ab35059e99a91df1f4beda8454ea8ff3d72250166df7d79a62059f227cc8"
+      }
+    ]
+  }
+]

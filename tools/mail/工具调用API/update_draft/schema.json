@@ -1,0 +1,105 @@
+{
+  "name": "update_draft",
+  "description": "修改草稿中 changes 指定的字段，未指定字段保留；空收件人列表可清空地址。附件通过 update_draft_attachments 管理。expected_version 可用于并发检查。",
+  "inputSchema": {
+    "$defs": {
+      "DraftChanges": {
+        "additionalProperties": false,
+        "properties": {
+          "recipients": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Recipients",
+            "type": "array"
+          },
+          "cc": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Cc",
+            "type": "array"
+          },
+          "bcc": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Bcc",
+            "type": "array"
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "body": {
+            "title": "Body",
+            "type": "string"
+          },
+          "html": {
+            "title": "Html",
+            "type": "boolean"
+          },
+          "reply_to": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Reply To",
+            "type": "array"
+          },
+          "from_address": {
+            "title": "From Address",
+            "type": "string"
+          },
+          "send_mode": {
+            "enum": [
+              "send_as",
+              "send_on_behalf"
+            ],
+            "title": "Send Mode",
+            "type": "string"
+          }
+        },
+        "title": "DraftChanges",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "draft_id": {
+        "title": "Draft Id",
+        "type": "string"
+      },
+      "changes": {
+        "$ref": "#/$defs/DraftChanges"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "draft_id",
+      "changes"
+    ],
+    "title": "update_draftArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "name": "search_products",
+  "description": "按商家、分类、类型、价格和库存组合查询在售商品，支持排序与分页。",
+  "inputSchema": {
+    "properties": {
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "merchant_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Merchant Id"
+      },
+      "category": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Category"
+      },
+      "kind": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Kind"
+      },
+      "min_price_minor": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Min Price Minor"
+      },
+      "max_price_minor": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Max Price Minor"
+      },
+      "in_stock": {
+        "default": false,
+        "title": "In Stock",
+        "type": "boolean"
+      },
+      "sort_by": {
+        "default": "name",
+        "title": "Sort By",
+        "type": "string"
+      },
+      "descending": {
+        "default": false,
+        "title": "Descending",
+        "type": "boolean"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "search_productsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

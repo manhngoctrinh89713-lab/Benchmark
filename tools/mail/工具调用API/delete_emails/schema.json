@@ -1,0 +1,36 @@
+{
+  "name": "delete_emails",
+  "description": "批量删除邮件，默认移入 Trash 并记录原位置；permanent=true 永久删除。逐项执行并返回结果，最多 500 封。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Email Ids",
+        "type": "array"
+      },
+      "permanent": {
+        "default": false,
+        "title": "Permanent",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_ids"
+    ],
+    "title": "delete_emailsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

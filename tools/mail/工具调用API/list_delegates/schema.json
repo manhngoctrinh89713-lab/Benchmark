@@ -1,0 +1,23 @@
+{
+  "name": "list_delegates",
+  "description": "查询邮箱委托及各操作者的授权，需要该邮箱 manage 权限。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "list_delegatesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

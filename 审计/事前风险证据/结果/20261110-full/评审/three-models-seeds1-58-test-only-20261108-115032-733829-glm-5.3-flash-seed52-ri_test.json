@@ -1,0 +1,34 @@
+{
+  "status": "scored",
+  "fingerprint": "9050fd28c670e82fc17fc6cc9e4cfc57700f33a272185804f973b787fb453e48",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101066002540000272",
+            "quote": "SKU-11 4900→2900分；SKU-12 3500→1990分；SKU-13 6800→3900分；SKU-14 1200→690分。"
+          }
+        ],
+        "reason": "清仓清单原文列出的箭头后数值即目标清仓价，与要点中的 2900/1990/3900/690 分完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中从未读取或提及 `清仓/价保与在途订单说明.md`，仅有 `清仓/清仓清单.md` 的内容；关于 7 天价保、退差及降价前置条件的规则在现有材料中完全没有依据。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具只调用了 files__read_document 和 merchant__list_products，返回的是商品与库存信息，没有任何订单查询（如 merchant__list_merchant_orders）结果，无法得知各 SKU 近 7 天已付款订单的笔数与成交价。"
+      }
+    ],
+    "summary": "材料仅支持清仓清单中的 4 个目标价（要点1）。要点2 所依据的价保说明文件未在任何调用中出现，要点3 所需的订单数据也未查询，均无材料支持。"
+  }
+}

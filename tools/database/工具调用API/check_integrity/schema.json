@@ -1,0 +1,23 @@
+{
+  "name": "check_integrity",
+  "description": "执行数据库完整性及外键检查，返回ok、integrity和foreign_key_violations。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id"
+    ],
+    "title": "check_integrityArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

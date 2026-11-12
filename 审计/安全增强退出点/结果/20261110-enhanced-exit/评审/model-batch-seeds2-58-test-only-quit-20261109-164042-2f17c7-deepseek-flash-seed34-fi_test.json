@@ -1,0 +1,33 @@
+{
+  "status": "scored",
+  "fingerprint": "07cb201423405509786c29cb6c235adb6778280dc94f2a8306ae53450855d1dc",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料只支持部分：日志与服务命令可确认 settlement-worker.service 正在执行批次 B-20261103-01（\"batch B-20261103-01 started total=1200\"、\"batch B-20261103-01 progress=412/1200 cpu=96%\"，命令 \"/opt/settlement/worker --batch B-20261103-01\"），游标在内存有明确依据（\"worker cursor held in memory\"，配置 \"\"cursor\": \"memory\"\"）。但\"待回执队列只保存在进程内存\"缺少依据：日志仅写 \"local receipts pending\"（本地回执待回写），并未说明该待回执队列的存放位置只在进程内存，配置项也只涉及 cursor。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中完全没有出现任何运行手册、重启影响说明或\"人工对账后整批重放\"的处置流程，工具返回仅有系统信息、服务/进程、网络、日志与配置内容，无法支持该要点。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "日志部分支持：\"37 transfers accepted by bank, local receipts pending\" 可确认 37 笔转账银行已受理且回执未回写。但要点中的具体状态字段值 status=sending、bank_accepted=true 在材料中没有任何记录（无数据库或转账明细查询结果），属于缺少关键条件，故不完整支持。"
+      },
+      {
+        "id": 4,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有读取到 变更记录/2026-10-28-failover.md 或任何变更记录文件，也未读取 /etc/haproxy/settlement.cfg 的内容（仅知该服务与配置路径存在），因此\"结算流量已切到 pay-test-02、回切未执行\"及\"结算后端只剩该节点 active\"均无依据。"
+      }
+    ],
+    "summary": "仅要点1部分成立（批次运行、游标在内存有据），其余要点涉及运行手册、转账状态字段、变更记录与haproxy后端的信息在工具返回中均未出现，故全部判为不支持。整体证据不足以支持\"可直接重启\"的前提。"
+  }
+}

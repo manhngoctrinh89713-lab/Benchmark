@@ -1,0 +1,33 @@
+{
+  "name": "send_media",
+  "description": "将 workspace 中的图片、语音或视频作为相应消息发送；kind 为 image/audio/video，文件类型须匹配，最多 25 MiB。不执行拍摄、录音、转码或语音识别。语音消息不能转发，可下载或收藏。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "file_path": {
+        "title": "File Path",
+        "type": "string"
+      },
+      "kind": {
+        "title": "Kind",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id",
+      "file_path",
+      "kind"
+    ],
+    "title": "send_mediaArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

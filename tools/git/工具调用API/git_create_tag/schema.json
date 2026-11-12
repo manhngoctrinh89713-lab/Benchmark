@@ -1,0 +1,45 @@
+{
+  "name": "git_create_tag",
+  "description": "在指定提交创建轻量标签，提供说明时创建附注标签。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "tag": {
+        "title": "Tag",
+        "type": "string"
+      },
+      "revision": {
+        "default": "HEAD",
+        "title": "Revision",
+        "type": "string"
+      },
+      "message": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Message"
+      }
+    },
+    "required": [
+      "repo_id",
+      "tag"
+    ],
+    "title": "git_create_tagArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

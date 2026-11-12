@@ -1,0 +1,40 @@
+{
+  "name": "respond_friend_request",
+  "description": "接受或拒绝发给自己的 pending 好友申请；接受后双方建立好友关系。已拉黑的联系人须先解除拉黑。",
+  "inputSchema": {
+    "properties": {
+      "request_id": {
+        "title": "Request Id",
+        "type": "string"
+      },
+      "accept": {
+        "title": "Accept",
+        "type": "boolean"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "request_id",
+      "accept"
+    ],
+    "title": "respond_friend_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

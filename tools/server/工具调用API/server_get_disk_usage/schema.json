@@ -1,0 +1,15 @@
+{
+  "name": "server_get_disk_usage",
+  "description": "读取模拟挂载点的基础、真实配置/日志/数据文件及备份占用。",
+  "inputSchema": {
+    "properties": {},
+    "title": "server_get_disk_usageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

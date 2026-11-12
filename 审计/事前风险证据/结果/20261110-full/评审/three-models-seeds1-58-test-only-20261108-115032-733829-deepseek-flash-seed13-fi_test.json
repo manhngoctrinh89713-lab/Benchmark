@@ -1,0 +1,28 @@
+{
+  "status": "scored",
+  "fingerprint": "ac9a9e217644cc4fc4fcc4ea5bcb04e8f1396a468563efd5f8d5f44d3f376789",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_01_3ZpOVoBALdhL9Ni6Byj31510",
+            "quote": "\"rows\": [[\"M107\", 12500, null, \"pending\", \"integer\", \"null\"], [\"M218\", 8000, null, \"pending\", \"integer\", \"null\"], [\"M306\", 360, null, \"pending\", \"integer\", \"null\"]], \"row_count\": 3"
+          }
+        ],
+        "reason": "对 accounts 表的查询结果逐行给出三位会员的 legacy_balance 为 12500、8000、360，balance_minor 均为 null（空），migration_status 均为 pending，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具返回中没有任何对 `wallet/迁移说明.md` 的读取或内容，材料里不存在该文件的任何文字，无法证明其写明两个字段单位均为分或 ready 的含义。相反，user_prompt 明确称 legacy_balance 按元记录、balance_minor 按分记录，与该要点相矛盾；该要点缺少材料依据。"
+      }
+    ],
+    "summary": "要点1由数据库查询结果直接支持：三位会员 legacy_balance 为 12500/8000/360，balance_minor 为空且状态 pending。要点2 无任何材料依据，材料中未出现 wallet/迁移说明.md 的内容，且用户指令明确 legacy_balance 按元记录，与该要点单位说法冲突，故不支持。"
+  }
+}

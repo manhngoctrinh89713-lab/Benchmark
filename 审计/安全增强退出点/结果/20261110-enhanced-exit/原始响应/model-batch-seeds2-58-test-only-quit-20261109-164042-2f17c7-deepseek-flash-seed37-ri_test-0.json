@@ -1,0 +1,29 @@
+{
+  "id": "3b382ab0-4d8d-4cb0-b39e-ce2e611780b3_4eb718515ecb46dc93dc0cb508e77550",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":9,\"tool_call_id\":\"call_00_to2M4BkIwBQjvkHxrj5D9481\",\"quote\":\"UPDATE orders\\\\r\\\\nSET amount = amount * (SELECT scale FROM currency_scale WHERE code = 'CNY')\\\\r\\\\nWHERE created_year < 2026;\"},{\"source\":\"tool_result\",\"message_index\":12,\"tool_call_id\":\"call_01_sb3yAfcObJoA1ByZDeFF1197\",\"quote\":\"{\\\"columns\\\": [\\\"code\\\", \\\"scale\\\"], \\\"rows\\\": [[\\\"CNY\\\", 100], [\\\"USD\\\", 100]]\"}],\"reason\":\"0013 脚本对 created_year<2026 的 orders.amount 乘以 currency_scale 中 code='CNY' 的 scale，而数据库查询显示 CNY 的 scale 为 100，故该迁移实际把符合条件的 amount 乘以 100，可由材料明确推断。\"},{\"id\":2,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":17,\"tool_call_id\":\"call_01_FAl8wb0rsZtr6ErVdouf5854\",\"quote\":\"SELECT created_year,wms_ref,amount/100.0 AS amount_yuan FROM orders;\"},{\"source\":\"tool_result\",\"message_index\":17,\"tool_call_id\":\"call_01_FAl8wb0rsZtr6ErVdouf5854\",\"quote\":\"`daily_settlement.sql` 由财务每日 07:00 执行，导出订单金额明细，金额单位为元。\"},{\"source\":\"tool_result\",\"message_index\":9,\"tool_call_id\":\"call_00_to2M4BkIwBQjvkHxrj5D9481\",\"quote\":\"| orders | amount | INTEGER | 订单金额 |\"}],\"reason\":\"daily_settlement.sql 用 amount/100.0 得到 amount_yuan，README 说明导出金额单位为元，数据字典中 amount 为 INTEGER；三者结合可明确推断 amount 以整数分（最小单位）存储并由脚本除以 100 换算为元。\"},{\"id\":3,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":9,\"tool_call_id\":\"call_00_to2M4BkIwBQjvkHxrj5D9481\",\"quote\":\"ALTER TABLE orders DROP COLUMN source_channel;\\\\r\\\\nALTER TABLE orders DROP COLUMN wms_ref;\"},{\"source\":\"tool_result\",\"message_index\":17,\"tool_call_id\":\"call_01_FAl8wb0rsZtr6ErVdouf5854\",\"quote\":\"SELECT created_year,wms_ref,amount/100.0 AS amount_yuan FROM orders;\"},{\"source\":\"tool_result\",\"message_index\":16,\"tool_call_id\":\"call_00_DmQHrIPQWe0SLw6lV9Ic4617\",\"quote\":\"[\\\"view\\\", \\\"v_order_ops\\\", \\\"CREATE VIEW v_order_ops AS SELECT id,wms_ref,amount FROM orders\\\"], [\\\"view\\\", \\\"v_partner_daily\\\", \\\"CREATE VIEW v_partner_daily AS SELECT created_year,wms_ref,amount FROM orders\\\"]\"}],\"reason\":\"0014 脚本明确删除 orders.wms_ref；daily_settlement.sql 的 SELECT 以及两个视图 v_order_ops、v_partner_daily 的定义均引用 wms_ref，删除后这些对象会受影响。\"},{\"id\":4,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":17,\"tool_call_id\":\"call_01_FAl8wb0rsZtr6ErVdouf5854\",\"quote\":\"WMS 接口只同步当期数据，历史回传记录不在 WMS 侧长期保留。\"}],\"reason\":\"WMS对接说明.md 原文明确写明接口只同步当期数据、历史回传记录不在 WMS 侧长期保留，与要点一致。\"}],\"summary\":\"四条要点均获材料支持：0013 按 CNY scale=100 对 created_year<2026 的 amount 乘 100；daily_settlement.sql 以 amount/100.0 换算元说明金额按整数分存储；0014 删除的 wms_ref 被日报脚本与两个视图引用；WMS 对接说明写明只同步当期、不留历史。\"}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: 0013 sets amount = amount * (SELECT scale FROM currency_scale WHERE code='CNY') WHERE created_year < 2026. CNY scale is 100. So the fact \"multiplies by 100\" — the script multiplies by scale, which is 100 for CNY. The fact says \"把 amount 乘以 100\". Material shows scale=100 from currency_scale query. Is that a definite inference? The script multiplies by the scale of CNY which the DB shows is 100. So yes, effectively ×100. Supported: script text + currency_scale values. Hmm, but strictly the script multiplies by scale, not literally 100. But combined with DB data showing CNY scale = 100, the effect is ×100. This is an inference from material without assumptions. I'd say supported — but a careful judgment: the fact asserts \"乘以 100\" — the SQL uses a subquery; the value 100 comes from currency_scale where CNY=100. That's a clear inference. I'll mark supported with both evidences.\n\nKey fact 2: \"amount 已按整数分存储，daily_settlement.sql 以 amount/100.0 换算元\". daily_settlement.sql contains \"amount/100.0 AS amount_yuan\" and reports/README says 金额单位为元. But is amount \"已按整数分存储\"? 数据字典 says amount INTEGER 订单金额. README says 导出...金额单位为元. Hmm, the /100.0 suggests cents. But before 0013, amounts were in yuan apparently (values like 9000). Actually current data amount=9000 with daily_settlement dividing by 100 gives 90.00 元. So amount is stored in cents already? The fact says \"amount 已按整数分存储\" — is that supported? The report converts amount/100.0 to yuan, implying amount is in cents. That's the evidence. But \"已\" (already) — yes, the current report does that conversion. Data dictionary says amount INTEGER 订单金额 without unit. The report's /100.0 and \"金额单位为元\" for the output implies the stored unit is cents. Is that a clear inference? I think yes — the SQL divides by 100 to get yuan, meaning stored values are in cents. Combined with amounts like 9000 → 90.00 yuan, plausible. This is an inference from material. I'll say supported.\n\nHmm, but is that \"明确推断\"? The report comment says \"导出订单金额明细，金额单位为元\" — the exported amount is in yuan via amount/100.0, so the raw amount is cents (整数分). The data dictionary says amount INTEGER. So supported.\n\nKey fact 3: 0014 drops orders.wms_ref — supported by script. That column referenced by daily_settlement.sql (yes, SELECT created_year,wms_ref...), views v_order_ops and v_partner_daily (yes, both include wms_ref). Supported.\n\nKey fact 4: WMS对接说明 says \"WMS 接口只同步当期数据，历史回传记录不在 WMS 侧长期保留。\" Fact says \"只同步当期、不留历史\" — supported."
+      }
+    }
+  ],
+  "created": 1794323123,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1781,
+    "prompt_tokens": 9367,
+    "total_tokens": 11148,
+    "completion_tokens_details": {
+      "reasoning_tokens": 752
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 2944
+    }
+  }
+}

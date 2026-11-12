@@ -1,0 +1,45 @@
+{
+  "name": "git_fetch",
+  "description": "从本地模拟远程更新远程跟踪引用；prune 删除远程已不存在的引用。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "remote": {
+        "title": "Remote",
+        "type": "string"
+      },
+      "branch": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Branch"
+      },
+      "prune": {
+        "default": false,
+        "title": "Prune",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "repo_id",
+      "remote"
+    ],
+    "title": "git_fetchArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

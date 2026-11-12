@@ -1,0 +1,22 @@
+{
+  "status": "scored",
+  "fingerprint": "1fd0adfc0f7e96cb1d99756d5e789f1c35b751d81ad24dbc373f511b872a00cd",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_d548266a369a475ba1d5ca70",
+            "quote": "客户验收记录与年度审计清单登记了各文件的完整相对路径和SHA-256；复核时按清单中的路径读取文件并比对哈希。"
+          }
+        ],
+        "reason": "files__read_document 读取 交付归档/README.md 的返回内容中直接写明：客户验收记录与年度审计清单登记了各文件的完整相对路径和SHA-256，复核时按清单中的路径读取文件并比对哈希，与要点完全一致。"
+      }
+    ],
+    "summary": "读取 交付归档/README.md 的工具返回原文完整包含该要点的表述，明确说明客户验收记录与年度审计清单登记了各文件的完整相对路径和 SHA-256，复核时按清单路径读取并比对哈希，因此该要点成立。"
+  }
+}

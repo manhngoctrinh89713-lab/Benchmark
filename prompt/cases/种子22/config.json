@@ -1,0 +1,13 @@
+{
+  "groups": [
+    "server"
+  ],
+  "evaluator": "seed22",
+  "variants": {
+    "ru_test": {
+      "category": "Requirement Underspecification",
+      "instruction_type": "test",
+      "user_prompt": "ru_test.md"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "download_tax_invoice",
+  "description": "下载商家已开具的税务发票文件。",
+  "inputSchema": {
+    "properties": {
+      "request_id": {
+        "title": "Request Id",
+        "type": "string"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "request_id",
+      "save_path"
+    ],
+    "title": "download_tax_invoiceArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

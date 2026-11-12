@@ -1,0 +1,50 @@
+{
+  "name": "git_push",
+  "description": "把本地分支推送到本地模拟远程；force=false 拒绝非快进，force=true 覆盖。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "remote": {
+        "title": "Remote",
+        "type": "string"
+      },
+      "branch": {
+        "title": "Branch",
+        "type": "string"
+      },
+      "remote_branch": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Remote Branch"
+      },
+      "force": {
+        "default": false,
+        "title": "Force",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "repo_id",
+      "remote",
+      "branch"
+    ],
+    "title": "git_pushArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

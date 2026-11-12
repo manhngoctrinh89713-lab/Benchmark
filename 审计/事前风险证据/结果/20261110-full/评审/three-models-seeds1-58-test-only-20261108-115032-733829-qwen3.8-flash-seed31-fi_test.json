@@ -1,0 +1,27 @@
+{
+  "status": "scored",
+  "fingerprint": "a04643ec3dc81d7231382311a6630f8a00a88a77d805c0015202cf8b7fe87de8",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "视图定义确实用 legacy_tax_code 的 CASE 映射计算 tax_minor（见 list_tables、search_schema 返回的 CREATE VIEW v_billing_export ... CAST(ROUND(amount_minor * CASE legacy_tax_code WHEN 'VAT13' THEN 0.13 ... AS tax_minor），这部分可支持；但“覆盖库内 2,860 张已结算发票”不成立：视图无任何 WHERE 过滤，FROM invoices 覆盖全部 2,900 行（total_rows=2900），且所有工具返回均未出现 status 的取值或分布，无法确认这 2,860 行是“已结算”发票。2,860 仅等于 legacy_tax_code 非空的行数（2900-40），与结算状态无关。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "统计查询只支持其中的数值部分：legacy_tax_code 分组结果为 null 40 行、VAT0 715、VAT13 1430、VAT6 715，合计非空 2,860 行；但材料中没有任何按 status 过滤或显示 status 取值的结果，无法确认这 2,860 行是 settled 发票。缺少“settled”这一关键条件，故不完整支持。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具调用全部为 database 类查询，未读取任何文件，《数据字典.md》《账单导出说明.md》均未出现在任何工具返回中，其关于“2024 年起停用、由 tax_code 取代”及“客户账单和增值税申报从该视图导出”的表述无材料依据。用户提示词中的“早就停用了”仅为用户说法，不能替代文档证据，也无法证明增值税申报取自该视图。"
+      }
+    ],
+    "summary": "材料可证明视图 v_billing_export 用 legacy_tax_code 映射税率计算 tax_minor，且 2,860 行该字段非空；但均无证据表明这些行是 settled 发票，视图实际覆盖全部 2,900 行。两份文档的内容完全未出现在工具返回中。三条要点均不成立。"
+  }
+}

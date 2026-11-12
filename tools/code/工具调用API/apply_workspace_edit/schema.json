@@ -1,0 +1,42 @@
+{
+  "name": "apply_workspace_edit",
+  "description": "一次整体修改1..100个文件；每项path、content和可选expected_sha256。content字符串创建/覆盖，null删除。目标不得重复或嵌套；全部检查通过才发布。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "changes": {
+        "items": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "title": "Changes",
+        "type": "array"
+      },
+      "dry_run": {
+        "default": false,
+        "title": "Dry Run",
+        "type": "boolean"
+      },
+      "validate_syntax": {
+        "default": false,
+        "title": "Validate Syntax",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "project_id",
+      "changes"
+    ],
+    "title": "apply_workspace_editArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

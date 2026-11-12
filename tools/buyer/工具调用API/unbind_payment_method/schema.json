@@ -1,0 +1,23 @@
+{
+  "name": "unbind_payment_method",
+  "description": "停用绑定的支付方式；使用该方式的订阅需要另行更换。",
+  "inputSchema": {
+    "properties": {
+      "payment_method_id": {
+        "title": "Payment Method Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "payment_method_id"
+    ],
+    "title": "unbind_payment_methodArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

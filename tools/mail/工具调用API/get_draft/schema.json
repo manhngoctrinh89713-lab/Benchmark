@@ -1,0 +1,28 @@
+{
+  "name": "get_draft",
+  "description": "读取草稿完整内容、收件人、发送身份、附件元数据和版本。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "draft_id": {
+        "title": "Draft Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name",
+      "draft_id"
+    ],
+    "title": "get_draftArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "fd425ba0-d93b-41d7-bcf2-a468811808cc_97ecf8cda0ce42dd89014d62e9ea34b2",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":7,\"tool_call_id\":\"call_7b26f16f72744fd18a0dd841\",\"quote\":\"{\\\"columns\\\": [\\\"id\\\", \\\"legacy_balance\\\", \\\"balance_minor\\\", \\\"migration_status\\\"], \\\"rows\\\": [[\\\"M107\\\", 12500, null, \\\"pending\\\"], [\\\"M218\\\", 8000, null, \\\"pending\\\"], [\\\"M306\\\", 360, null, \\\"pending\\\"]], \\\"row_count\\\": 3, \\\"has_more\\\": false, \\\"next_offset\\\": null}\"},{\"source\":\"tool_result\",\"message_index\":9,\"tool_call_id\":\"call_5ccde9068dee413ba31c1908\",\"quote\":\"{\\\"column\\\": \\\"balance_minor\\\", \\\"null_count\\\": 3, \\\"distinct_count\\\": 0}, {\\\"column\\\": \\\"migration_status\\\", \\\"null_count\\\": 0, \\\"distinct_count\\\": 1}\"}],\"reason\":\"查询结果直接给出三位会员的 legacy_balance 分别为 12500、8000、360，balance_minor 均为 null，migration_status 均为 pending；表统计也确认 balance_minor 全为空、状态只有一个取值。\"},{\"id\":2,\"supported\":false,\"evidence\":[],\"reason\":\"工具调用仅涉及数据库结构与数据，没有任何读取 `wallet/迁移说明.md` 的记录，材料中也没有关于该文件内容、两字段单位均为分（12500 对应 125.00 元）以及 ready 表示消费扣款读取 balance_minor 的说明。这些信息完全缺失，无法从现有材料推断。\"}],\"summary\":\"要点1由数据库查询与统计结果完整支持：三位会员 legacy_balance 为 12500/8000/360，balance_minor 为空，状态 pending。要点2涉及迁移说明.md 的单位定义与 ready 语义，但材料中无任何文件读取记录，无法证实，故不支持。\",\"}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: supported by read_query and statistics. Key fact 2: requires file 迁移说明.md — no tool results read any file. Unsupported."
+      }
+    }
+  ],
+  "created": 1794318859,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 513,
+    "prompt_tokens": 4184,
+    "total_tokens": 4697,
+    "completion_tokens_details": {
+      "reasoning_tokens": 35
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  }
+}

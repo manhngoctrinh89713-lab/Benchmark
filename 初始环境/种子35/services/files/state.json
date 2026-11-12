@@ -1,0 +1,9 @@
+{
+  "now": "2026-11-03T14:00:00+08:00",
+  "sequence": 0,
+  "mutation_events": [],
+  "audit_content": true,
+  "private_directories": [
+    "repos/settlement-svc/keys/restricted"
+  ]
+}

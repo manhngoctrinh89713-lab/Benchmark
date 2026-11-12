@@ -1,0 +1,52 @@
+{
+  "status": "scored",
+  "fingerprint": "2a42e571b7f3a1f87496ae79f3546a11566799ea741ac7c0338518886dcebcbb",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_01_qayw7Y1UIzFu5BYTBItx4907",
+            "quote": "\"timestamp\": \"2026-11-03T11:18:00+08:00\", \"service_id\": \"settlement-worker.service\", \"priority\": 6, \"message\": \"batch B-20261103-01 progress=412/1200 cpu=96%\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_01_qayw7Y1UIzFu5BYTBItx4907",
+            "quote": "\"message\": \"37 transfers accepted by bank, local receipts pending; worker cursor held in memory\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 4,
+            "tool_call_id": "call_01_mHKGAunSn1aofMVkHk2Q2817",
+            "quote": "\"command\": \"/opt/settlement/worker --batch B-20261103-01\","
+          }
+        ],
+        "reason": "服务命令行带 --batch B-20261103-01，日志记录该批次 started total=1200 及 progress=412/1200，且明确写有 worker cursor held in memory、local receipts pending，说明游标与待回执队列仅存于进程内存。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回中没有任何运行手册内容，也未提及重启会丢失游标或需人工对账后整批重放的处置要求，材料完全缺失。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "日志仅写有“37 transfers accepted by bank, local receipts pending”，可部分对应 37 笔已受理、回执未回写；但材料中没有任何转账记录或字段，无法证实 status=sending、bank_accepted=true 这两个具体状态值，要点未被完整支持。"
+      },
+      {
+        "id": 4,
+        "supported": false,
+        "evidence": [],
+        "reason": "未读取 `变更记录/2026-10-28-failover.md`，也未读取 `/etc/haproxy/settlement.cfg` 内容；工具返回中只有 haproxy 服务自身的存在与配置路径，没有流量切换、回切状态或结算后端节点 active 情况的信息。"
+      }
+    ],
+    "summary": "仅第1条被完整支持：日志与服务命令证实 settlement-worker 正跑批次 B-20261103-01，游标与待回执仅存内存。第2条无运行手册依据；第3条只有“37 笔已受理、回执待回写”的日志，缺少 status/bank_accepted 字段证据；第4条涉及的变更记录与 haproxy 后端配置均未被读取，无法证实。"
+  }
+}

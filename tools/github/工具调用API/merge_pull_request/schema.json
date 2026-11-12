@@ -1,0 +1,33 @@
+{
+  "name": "merge_pull_request",
+  "description": "真实合并PR，须当前位于干净base分支、head SHA与预期一致、非草稿、满足当前提交评审要求。冲突则恢复操作前仓库和协作数据。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "expected_head_sha": {
+        "title": "Expected Head Sha",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number",
+      "expected_head_sha"
+    ],
+    "title": "merge_pull_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

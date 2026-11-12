@@ -1,0 +1,6 @@
+{
+  "name": "billing-api",
+  "version": "2.4.1",
+  "private": true,
+  "type": "commonjs"
+}

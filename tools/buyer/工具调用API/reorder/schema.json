@@ -1,0 +1,23 @@
+{
+  "name": "reorder",
+  "description": "把历史订单的规格和数量加入当前购物车，使用当前商品状态和价格。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id"
+    ],
+    "title": "reorderArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

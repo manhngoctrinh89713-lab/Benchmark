@@ -1,0 +1,277 @@
+{
+  "now": "2026-11-01T09:00:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "星河商店",
+      "currency": "CNY",
+      "shipping_minor": 500,
+      "version": 1
+    },
+    "merchant_other": {
+      "id": "merchant_other",
+      "name": "海风数码",
+      "currency": "USD",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "林舟",
+      "email": "lin@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "本地成功支付方式",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        },
+        {
+          "id": "pm_declined",
+          "label": "本地拒付支付方式",
+          "outcome": "declined",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_demo"
+    },
+    "buyer_other": {
+      "id": "buyer_other",
+      "name": "陈雨",
+      "email": "chen@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_other",
+          "label": "第二买家支付方式",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_other"
+    }
+  },
+  "products": {
+    "prod_notebook": {
+      "id": "prod_notebook",
+      "merchant_id": "merchant_demo",
+      "name": "纸质笔记本",
+      "description": "A5横线笔记本",
+      "unit_amount_minor": 2500,
+      "currency": "CNY",
+      "stock": 10,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    },
+    "prod_ebook": {
+      "id": "prod_ebook",
+      "merchant_id": "merchant_demo",
+      "name": "电子手册",
+      "description": "本地数字交付示例",
+      "unit_amount_minor": 990,
+      "currency": "CNY",
+      "stock": 100,
+      "kind": "digital",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    },
+    "prod_hidden": {
+      "id": "prod_hidden",
+      "merchant_id": "merchant_demo",
+      "name": "已下架商品",
+      "description": "展示下架状态",
+      "unit_amount_minor": 1000,
+      "currency": "CNY",
+      "stock": 1,
+      "kind": "physical",
+      "active": false,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    },
+    "prod_other": {
+      "id": "prod_other",
+      "merchant_id": "merchant_other",
+      "name": "数字素材",
+      "description": "第二商家商品",
+      "unit_amount_minor": 500,
+      "currency": "USD",
+      "stock": 10,
+      "kind": "digital",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {
+    "plan_demo": {
+      "id": "plan_demo",
+      "merchant_id": "merchant_demo",
+      "name": "月度会员",
+      "unit_amount_minor": 1900,
+      "currency": "CNY",
+      "interval": "month",
+      "interval_count": 1,
+      "active": true,
+      "version": 1
+    },
+    "plan_other": {
+      "id": "plan_other",
+      "merchant_id": "merchant_other",
+      "name": "Weekly assets",
+      "unit_amount_minor": 300,
+      "currency": "USD",
+      "interval": "week",
+      "interval_count": 1,
+      "active": true,
+      "version": 1
+    }
+  },
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "prod_notebook": {
+      "id": "prod_notebook",
+      "product_id": "prod_notebook",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 2500,
+      "stock": 10,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "prod_ebook": {
+      "id": "prod_ebook",
+      "product_id": "prod_ebook",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 990,
+      "stock": 100,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "prod_hidden": {
+      "id": "prod_hidden",
+      "product_id": "prod_hidden",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 1000,
+      "stock": 1,
+      "active": false,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "prod_other": {
+      "id": "prod_other",
+      "product_id": "prod_other",
+      "merchant_id": "merchant_other",
+      "options": {},
+      "unit_amount_minor": 500,
+      "stock": 10,
+      "active": true,
+      "currency": "USD",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 500,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    },
+    "shipping_merchant_other": {
+      "id": "shipping_merchant_other",
+      "merchant_id": "merchant_other",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

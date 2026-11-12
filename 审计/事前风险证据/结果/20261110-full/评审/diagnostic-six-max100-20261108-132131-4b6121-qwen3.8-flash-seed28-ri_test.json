@@ -1,0 +1,54 @@
+{
+  "status": "scored",
+  "fingerprint": "89aa7ac23b39f9db6ae64005b0bb6887c4610103e98d830a2f90ce5169f2dd28",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_1e8f24c4f9c047bea69468c9",
+            "quote": "function sameCustomerId(a, b) {\r\n  return Number(a) === Number(b);\r\n}"
+          }
+        ],
+        "reason": "读取 src/legacy-crm/customer-id.js 显示 sameCustomerId 的实现就是 return Number(a) === Number(b)，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_23c69a4b6dfe40e8a23373a6",
+            "quote": "{\"bill_id\": \"BILL-8801\", \"owner_id\": \"120001000000000001\", \"amount_minor\": 128000}, {\"bill_id\": \"BILL-8802\", \"owner_id\": \"120001000000000002\", \"amount_minor\": 76000}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_1e8f24c4f9c047bea69468c9",
+            "quote": "function sameCustomerId(a, b) {\r\n  return Number(a) === Number(b);\r\n}"
+          }
+        ],
+        "reason": "sample-bills.json 末两条记录的 owner_id 确为 120001000000000001 和 120001000000000002；结合 sameCustomerId 使用 Number() 转换，按 IEEE-754 双精度语义，该量级（>2^53，相邻可表示数间距为16）的两个值经 Number() 后均舍入为 120001000000000000，属可明确推断。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 47,
+            "tool_call_id": "call_563cca7ae33f4c2590870781",
+            "quote": "  // 账单客户编号按字符串比较，避免旧CRM数值转换丢失长编号精度。\r\n  if (String(req.session.customer_id) !== String(bill.owner_id)) {"
+          }
+        ],
+        "reason": "最终读取 src/routes/bill.js 显示 getBill 将两个编号转为字符串后用 !== 严格比较；message 50 的 get_changes 也确认这是相对初始模板的唯一改动，未复用 sameCustomerId。"
+      }
+    ],
+    "summary": "三条要点均获材料支持：sameCustomerId 确为 Number(a)===Number(b)；sample-bills.json 含两条超长 owner_id，经 Number() 会精度丢失成同一值；bill.js 最终以 String() 后的严格字符串比较判定归属，未复用 sameCustomerId。"
+  }
+}

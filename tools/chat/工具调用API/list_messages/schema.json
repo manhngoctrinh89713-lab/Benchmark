@@ -1,0 +1,144 @@
+{
+  "name": "list_messages",
+  "description": "组合查询自己的本地消息；支持会话、正文、发送人、时间、类型、附件、文件名、@对象和未读。所有筛选条件同时成立，默认时间倒序，offset 分页、limit 为 1..100。kind 为 text/file/image/audio/video/link/contact/location/merged/system。时间需带时区，since 包含、before 不包含。读取不标已读。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Chat Id"
+      },
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "sender_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Sender Id"
+      },
+      "since": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Since"
+      },
+      "before": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Before"
+      },
+      "has_attachment": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Has Attachment"
+      },
+      "unread": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Unread"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      },
+      "kind": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Kind"
+      },
+      "attachment_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Attachment Name"
+      },
+      "mentioned_user_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Mentioned User Id"
+      },
+      "descending": {
+        "default": true,
+        "title": "Descending",
+        "type": "boolean"
+      }
+    },
+    "title": "list_messagesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

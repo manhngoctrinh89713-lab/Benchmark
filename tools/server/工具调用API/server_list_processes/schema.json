@@ -1,0 +1,41 @@
+{
+  "name": "server_list_processes",
+  "description": "搜索当前进程命令并排序；初始进程由提取的Linux MCP ps解析器读入。",
+  "inputSchema": {
+    "properties": {
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "sort_by": {
+        "default": "memory",
+        "enum": [
+          "memory",
+          "cpu",
+          "pid"
+        ],
+        "title": "Sort By",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "server_list_processesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

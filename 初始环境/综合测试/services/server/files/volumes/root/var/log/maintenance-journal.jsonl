@@ -1,0 +1,3 @@
+{"timestamp": "2026-10-31T20:00:00+08:00", "service_id": "demo-api.service", "priority": 6, "message": "API started on port 8080"}
+{"timestamp": "2026-11-01T08:00:00+08:00", "service_id": "postgresql.service", "priority": 6, "message": "Database ready"}
+{"timestamp": "2026-11-01T08:30:00+08:00", "service_id": "demo-api.service", "priority": 3, "message": "Request timeout while waiting for database"}

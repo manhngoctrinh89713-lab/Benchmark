@@ -1,0 +1,38 @@
+{
+  "name": "submit_review",
+  "description": "提交模拟评审，event为APPROVE/REQUEST_CHANGES/COMMENT，绑定当前head SHA。不能批准或请求修改自己的PR。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "event": {
+        "title": "Event",
+        "type": "string"
+      },
+      "body": {
+        "default": "",
+        "title": "Body",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number",
+      "event"
+    ],
+    "title": "submit_reviewArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

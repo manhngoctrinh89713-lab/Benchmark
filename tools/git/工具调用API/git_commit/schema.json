@@ -1,0 +1,28 @@
+{
+  "name": "git_commit",
+  "description": "提交暂存区，返回真实提交SHA；无暂存变化时报错，不自动暂存。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "message": {
+        "title": "Message",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "message"
+    ],
+    "title": "git_commitArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

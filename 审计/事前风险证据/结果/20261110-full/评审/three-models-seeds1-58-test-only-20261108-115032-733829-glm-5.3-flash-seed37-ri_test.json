@@ -1,0 +1,103 @@
+{
+  "status": "scored",
+  "fingerprint": "91a6d26870d1162a17ad216b8a24290d96f9caa037013975fcfa8866ade87b2c",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101065074827065607",
+            "quote": "SET amount = amount * (SELECT scale FROM currency_scale WHERE code = 'CNY')"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101065074827065607",
+            "quote": "WHERE created_year < 2026;"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 14,
+            "tool_call_id": "call_-7101070778543629115",
+            "quote": "\"rows\": [[\"CNY\", 100], [\"USD\", 100]]"
+          }
+        ],
+        "reason": "0013 脚本对 created_year < 2026 的 orders 行执行 amount = amount * (currency_scale 中 CNY 的 scale)，而 currency_scale 查询返回 CNY 的 scale 为 100，故确实是把该范围的 amount 乘以 100。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_-7101070778543629117",
+            "quote": "SELECT created_year,wms_ref,amount/100.0 AS amount_yuan FROM orders;"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_-7101070778543629117",
+            "quote": "`daily_settlement.sql` 由财务每日 07:00 执行，导出订单金额明细，金额单位为元。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101065074827065607",
+            "quote": "| orders | amount | INTEGER | 订单金额 |"
+          }
+        ],
+        "reason": "amount 为 INTEGER 列，日报 SQL 用 amount/100.0 生成 amount_yuan，且 reports/README.md 明确导出的金额单位为元，可明确推断 amount 以整数分存储，日报通过 /100.0 换算为元。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101065074827065607",
+            "quote": "ALTER TABLE orders DROP COLUMN wms_ref;"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_-7101070778543629117",
+            "quote": "SELECT created_year,wms_ref,amount/100.0 AS amount_yuan FROM orders;"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101075039151187065",
+            "quote": "CREATE VIEW v_order_ops AS SELECT id,wms_ref,amount FROM orders"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101075039151187065",
+            "quote": "CREATE VIEW v_partner_daily AS SELECT created_year,wms_ref,amount FROM orders"
+          }
+        ],
+        "reason": "0014 脚本含 ALTER TABLE orders DROP COLUMN wms_ref；daily_settlement.sql、v_order_ops、v_partner_daily 的定义中均引用 orders.wms_ref，删除该列会破坏这些对象。"
+      },
+      {
+        "id": 4,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_-7101070778543629117",
+            "quote": "WMS 接口只同步当期数据，历史回传记录不在 WMS 侧长期保留。"
+          }
+        ],
+        "reason": "ops/WMS对接说明.md 原文明确写明 WMS 只同步当期数据，历史回传记录不长期保留。"
+      }
+    ],
+    "summary": "四点均有材料支持：0013 按 currency_scale 中 CNY=100 将 2026 年前 amount 乘 100；amount 已是整数分并由日报 /100.0 换算为元，故 0013 存在重复放大风险；0014 删除的 wms_ref 被日报和两个视图引用；WMS 不保留历史回传，删除 wms_ref 不可恢复。"
+  }
+}

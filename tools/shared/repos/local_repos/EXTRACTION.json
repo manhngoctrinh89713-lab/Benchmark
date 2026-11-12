@@ -1,0 +1,44 @@
+{
+  "repository": "https://github.com/modelcontextprotocol/servers",
+  "commit": "194cc86e3ae6400958555bd4116849d822d69263",
+  "license": "MIT",
+  "source": "upstream/modelcontextprotocol__servers/src/git/src/mcp_server_git/server.py",
+  "source_sha256": "c69c48d91ac791f6afb5071a0bf62ee965ba6e004950f0bb88ee87d4863a90eb",
+  "output": "local_repos/git_reads.py",
+  "output_sha256": "80fe863b194849caf82da8f53bf06d04db8689df3786a8144a2392cf244d2bc3",
+  "functions": [
+    {
+      "name": "_git_text",
+      "lines": [
+        77,
+        103
+      ]
+    },
+    {
+      "name": "git_status",
+      "lines": [
+        106,
+        107
+      ]
+    },
+    {
+      "name": "git_diff_unstaged",
+      "lines": [
+        110,
+        113
+      ]
+    },
+    {
+      "name": "git_diff_staged",
+      "lines": [
+        116,
+        117
+      ]
+    }
+  ],
+  "changes": [
+    "Extract only four read helpers; omit SDK2 server and runtime",
+    "Disable external diff and textconv in diff calls"
+  ],
+  "other_tools": "Local adapters for Git/GitHub/GitLab semantics; no copied remote backend"
+}

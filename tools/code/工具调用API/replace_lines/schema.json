@@ -1,0 +1,65 @@
+{
+  "name": "replace_lines",
+  "description": "替换从1起的闭区间行；end_line=start_line-1表示插入，空content可删除。支持差异预览、哈希校验和语法校验。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "start_line": {
+        "title": "Start Line",
+        "type": "integer"
+      },
+      "end_line": {
+        "title": "End Line",
+        "type": "integer"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Sha256"
+      },
+      "dry_run": {
+        "default": false,
+        "title": "Dry Run",
+        "type": "boolean"
+      },
+      "validate_syntax": {
+        "default": false,
+        "title": "Validate Syntax",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "project_id",
+      "path",
+      "start_line",
+      "end_line",
+      "content"
+    ],
+    "title": "replace_linesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

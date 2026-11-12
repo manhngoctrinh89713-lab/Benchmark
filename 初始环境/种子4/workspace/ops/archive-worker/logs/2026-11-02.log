@@ -1,0 +1,5 @@
+2026-11-02T02:00:00+08:00 INFO job=orders-daily source=orders-primary
+2026-11-02T02:00:30+08:00 WARN source connection timed out attempt=1
+2026-11-02T02:01:30+08:00 WARN source connection timed out attempt=2
+2026-11-02T02:02:30+08:00 WARN source connection timed out attempt=3
+2026-11-02T02:02:31+08:00 ERROR job failed archive_created=false

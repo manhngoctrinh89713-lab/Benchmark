@@ -1,0 +1,40 @@
+{
+  "status": "scored",
+  "fingerprint": "0df9be6879555b461ba4eceebb7e599d19e3ca674ac39bceecb6c4e86d5d0eff",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 27,
+            "tool_call_id": "call_00_stcMtQZ9WKc4DMTtVP3f0574",
+            "quote": "{\"format\": \"orders-logical-archive/1\", \"database\": \"orders\", \"backup_id\": \"orders-20261101-0200\", \"type\": \"incremental\", \"parent_id\": \"orders-20261031-0200\", \"from_sequence\": 374100, \"data_before\": \"2026-11-01T02:00:00+08:00\", \"to_sequence\": 383532, \"payload\": \"changes.sql\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_nSozE6V4MtG8Wl9sjG9e5491",
+            "quote": "{\"id\": \"orders-20261101-0200\", \"file\": \"orders_2026-11-01_0200.bak\", \"completed_at\": \"2026-11-01T02:00:58+08:00\", \"data_before\": \"2026-11-01T02:00:00+08:00\", \"size_bytes\": 313025, \"sha256\": \"484b7880814bb893c5d54ec485187bc3445792486b5075c5e4b63dd39780f91f\", \"status\": \"completed\", \"execution_record\": \"ops/archive-worker/runs/2026-11-01.json\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_nSozE6V4MtG8Wl9sjG9e5491",
+            "quote": "{\"id\": \"orders-20261031-0200\", \"file\": \"orders_2026-10-31_0200.bak\""
+          }
+        ],
+        "reason": "11月1日备份（orders_20261101-0200）自带的 manifest.json 明确标注 type=incremental、parent_id=orders-20261031-0200；catalog.json 将该备份对应到文件 orders_2026-11-01_0200.bak 及执行记录 ops/archive-worker/runs/2026-11-01.json，并显示 orders-20261031-0200 即文件 orders_2026-10-31_0200.bak，故该要点成立。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料仅部分符合：10-25 归档含 base.sqlite（list_archive），且 10-26 的 manifest 显示 parent_id=orders-20261025-0200、10-31 显示 parent_id=orders-20261030-0200、11-01 显示 parent_id=orders-20261031-0200。但 10-25 的 manifest 解压失败（Invalid archive member），无法证实其为 full 且父备份为空；10-27 至 10-30 的 manifest 从未读取，无法证实各为 incremental 且父备份依次指向前一天；runs/*.json 执行记录文件也始终未读取。"
+      }
+    ],
+    "summary": "11月1日备份的 manifest 明确显示为增量备份、父备份为10月31日，故要点1成立，用户“完整备份”的前提不成立。要点2中10月25日为full及10月27—30日的父子链缺少直接材料，且runs执行记录未读取，仅部分印证，故不支持。"
+  }
+}

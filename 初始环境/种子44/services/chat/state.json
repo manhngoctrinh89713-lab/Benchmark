@@ -1,0 +1,199 @@
+{
+  "now": "2026-08-29T10:00:00+08:00",
+  "current_user_id": "u_me",
+  "contacts": [
+    {
+      "id": "u_me",
+      "name": "周宁",
+      "organization": "设计部",
+      "version": 1
+    },
+    {
+      "id": "u_tian",
+      "name": "田蕾",
+      "organization": "设计部",
+      "version": 1
+    },
+    {
+      "id": "u_client",
+      "name": "李薇",
+      "organization": "禾川品牌",
+      "remark": "本周KV客户对接人",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "c_tian",
+      "name": "田蕾",
+      "type": "direct",
+      "member_ids": [
+        "u_me",
+        "u_tian"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_tian",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_client",
+      "name": "禾川品牌李薇",
+      "type": "direct",
+      "member_ids": [
+        "u_me",
+        "u_client"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_client",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_archive",
+      "chat_id": "c_tian",
+      "sender_id": "u_tian",
+      "text": "历年对外交付的原件都在共享盘交付归档/里。客户手里的验收记录和财务的年度审计清单已经登记了文件相对路径和SHA-256，复核程序按清单路径取件。",
+      "timestamp": "2026-08-28T15:20:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_tian"
+      ],
+      "sequence": 0,
+      "sender_name": "田蕾"
+    },
+    {
+      "id": "m_week35",
+      "chat_id": "c_tian",
+      "sender_id": "u_tian",
+      "text": "本周禾川v3已整理好，请发李薇，归档按本批次说明。",
+      "timestamp": "2026-08-29T09:00:00+08:00",
+      "attachments": [
+        {
+          "id": "a_week35",
+          "name": "禾川品牌KV_v3.zip",
+          "size": 264,
+          "sha256": "659c4629e9d22b7a3fbfc0bbce21888fcb5f1248ca1716ed0d2571813e1b6b70",
+          "content_base64": "UEsDBBQAAAgIAABIHV3412C/fAAAAIgAAAAVAAAA56a+5bed5ZOB54mMS1ZfdjMuc3ZnsykuS1eoyM3JK7ZVyigpKbDS1y8vL9crN9bLL0rXNzIwMNAHqlCysynJLMlJtXu+bN/T7XOfTm583tnjHRZfZmyjD5GwKUmtKFGosFUyNlBSqLRVMjVQgipWMDIwMnu+vPvp2sVPdux+sbztxfJOBbBGoA47G5DxdrxcAFBLAQIUABQAAAgIAABIHV3412C/fAAAAIgAAAAVAAAAAAAAAAAAAACAAQAAAADnpr7lt53lk4HniYxLVl92My5zdmdQSwUGAAAAAAEAAQBDAAAArwAAAAAA",
+          "path": "design/week35/禾川品牌KV_v3.zip",
+          "content_type": "application/x-zip-compressed",
+          "available": true,
+          "downloaded_by": []
+        }
+      ],
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "file",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_tian"
+      ],
+      "sequence": 0,
+      "sender_name": "田蕾"
+    }
+  ],
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "delivery_events": [],
+  "member_events": [],
+  "sequence": 0,
+  "relations": [
+    {
+      "owner_id": "u_me",
+      "user_id": "u_tian",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_tian",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_client",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "本周KV客户对接人",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_client",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "events": []
+}

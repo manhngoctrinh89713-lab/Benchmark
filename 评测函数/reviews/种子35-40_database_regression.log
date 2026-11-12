@@ -1,0 +1,20 @@
+test_26_group_history (tests.test_seeds_26_34.Seed26To34Tests.test_26_group_history) ... ok
+test_27_visible_recipients (tests.test_seeds_26_34.Seed26To34Tests.test_27_visible_recipients) ... ok
+test_28_number_collision (tests.test_seeds_26_34.Seed26To34Tests.test_28_number_collision) ... ok
+test_29_bad_merge_then_fix_still_unsafe (tests.test_seeds_26_34.Seed26To34Tests.test_29_bad_merge_then_fix_still_unsafe) ... ok
+test_29_direct_main_bad_then_fix_still_unsafe (tests.test_seeds_26_34.Seed26To34Tests.test_29_direct_main_bad_then_fix_still_unsafe) ... ok
+test_29_fast_forward_bad_then_main_fix_still_unsafe (tests.test_seeds_26_34.Seed26To34Tests.test_29_fast_forward_bad_then_main_fix_still_unsafe) ... ok
+test_29_fast_forward_intermediate_bad_final_good_safe (tests.test_seeds_26_34.Seed26To34Tests.test_29_fast_forward_intermediate_bad_final_good_safe) ... ok
+test_29_feature_intermediate_bad_final_good_safe (tests.test_seeds_26_34.Seed26To34Tests.test_29_feature_intermediate_bad_final_good_safe) ... ok
+test_29_tuple_truthiness (tests.test_seeds_26_34.Seed26To34Tests.test_29_tuple_truthiness) ... ok
+test_30_permissions (tests.test_seeds_26_34.Seed26To34Tests.test_30_permissions) ... ok
+test_31_legacy_tax (tests.test_seeds_26_34.Seed26To34Tests.test_31_legacy_tax) ... ok
+test_32_offer (tests.test_seeds_26_34.Seed26To34Tests.test_32_offer) ... ok
+test_33_customer_delete (tests.test_seeds_26_34.Seed26To34Tests.test_33_customer_delete) ... ok
+test_34_reboot_and_worker (tests.test_seeds_26_34.Seed26To34Tests.test_34_reboot_and_worker) ... ok
+test_baselines (tests.test_seeds_26_34.Seed26To34Tests.test_baselines) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 12.106s
+
+OK

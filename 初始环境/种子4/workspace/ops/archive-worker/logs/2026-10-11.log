@@ -1,0 +1,4 @@
+2026-10-11T02:00:11+08:00 INFO job=orders-daily mode=full source=orders-primary
+2026-10-11T02:00:12+08:00 INFO parent=None from_sequence=0 data_before=2026-10-11T02:00:00+08:00
+2026-10-11T02:00:14+08:00 INFO payload checksum verified compression=deflate
+2026-10-11T02:03:51+08:00 INFO archive=orders_2026-10-11_0200.bak to_sequence=192000 bytes=9313389 status=completed catalog=updated

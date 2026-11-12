@@ -1,0 +1,32 @@
+{
+  "name": "update_repository_visibility",
+  "description": "设置仓库可见性；public 公开、private 私有。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "visibility": {
+        "enum": [
+          "public",
+          "private"
+        ],
+        "title": "Visibility",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "visibility"
+    ],
+    "title": "update_repository_visibilityArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

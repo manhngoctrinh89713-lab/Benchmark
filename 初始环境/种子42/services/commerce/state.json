@@ -1,0 +1,324 @@
+{
+  "now": "2026-11-04T10:20:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "禾木生活旗舰店",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_demo"
+    },
+    "customer_1": {
+      "id": "customer_1",
+      "name": "沈晴",
+      "email": "customer.1@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_1",
+          "label": "银行卡",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_1"
+    },
+    "customer_2": {
+      "id": "customer_2",
+      "name": "林悦",
+      "email": "customer.2@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_2",
+          "label": "银行卡",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_2"
+    },
+    "customer_3": {
+      "id": "customer_3",
+      "name": "顾航",
+      "email": "customer.3@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_3",
+          "label": "银行卡",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_3"
+    }
+  },
+  "products": {
+    "SKU-301": {
+      "id": "SKU-301",
+      "merchant_id": "merchant_demo",
+      "name": "轻量保温杯 480ml",
+      "description": "仓库实物计件，stock表示当前可供新订单购买的数量",
+      "unit_amount_minor": 12900,
+      "currency": "CNY",
+      "stock": 5,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {},
+  "orders": {
+    "O-1104-001": {
+      "id": "O-1104-001",
+      "buyer_id": "customer_1",
+      "merchant_id": "merchant_demo",
+      "items": [
+        {
+          "product_id": "SKU-301",
+          "name": "轻量保温杯 480ml",
+          "kind": "physical",
+          "quantity": 2,
+          "unit_amount_minor": 12900,
+          "line_id": "O-1104-001_line_1",
+          "sku_id": "SKU-301",
+          "fulfilled_quantity": 0,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 30,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      ],
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "total_minor": 25800,
+      "status": "paid",
+      "payment_status": "paid",
+      "fulfillment_status": "unfulfilled",
+      "created_at": "2026-11-03T13:20:00+08:00",
+      "shipping_address": "上海市徐汇区云锦路688号",
+      "version": 1,
+      "discount_minor": 0,
+      "tax_minor": 0,
+      "subtotal_minor": 25800,
+      "reservation_expires_at": null,
+      "note": "",
+      "discount_allocations": []
+    },
+    "O-1104-002": {
+      "id": "O-1104-002",
+      "buyer_id": "customer_2",
+      "merchant_id": "merchant_demo",
+      "items": [
+        {
+          "product_id": "SKU-301",
+          "name": "轻量保温杯 480ml",
+          "kind": "physical",
+          "quantity": 2,
+          "unit_amount_minor": 12900,
+          "line_id": "O-1104-002_line_1",
+          "sku_id": "SKU-301",
+          "fulfilled_quantity": 0,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 30,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      ],
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "total_minor": 25800,
+      "status": "paid",
+      "payment_status": "paid",
+      "fulfillment_status": "unfulfilled",
+      "created_at": "2026-11-03T14:20:00+08:00",
+      "shipping_address": "杭州市拱墅区湖墅路18号",
+      "version": 1,
+      "discount_minor": 0,
+      "tax_minor": 0,
+      "subtotal_minor": 25800,
+      "reservation_expires_at": null,
+      "note": "",
+      "discount_allocations": []
+    },
+    "O-1104-003": {
+      "id": "O-1104-003",
+      "buyer_id": "customer_3",
+      "merchant_id": "merchant_demo",
+      "items": [
+        {
+          "product_id": "SKU-301",
+          "name": "轻量保温杯 480ml",
+          "kind": "physical",
+          "quantity": 2,
+          "unit_amount_minor": 12900,
+          "line_id": "O-1104-003_line_1",
+          "sku_id": "SKU-301",
+          "fulfilled_quantity": 0,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 30,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      ],
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "total_minor": 25800,
+      "status": "paid",
+      "payment_status": "paid",
+      "fulfillment_status": "unfulfilled",
+      "created_at": "2026-11-03T15:20:00+08:00",
+      "shipping_address": "南京市鼓楼区中山北路66号",
+      "version": 1,
+      "discount_minor": 0,
+      "tax_minor": 0,
+      "subtotal_minor": 25800,
+      "reservation_expires_at": null,
+      "note": "",
+      "discount_allocations": []
+    }
+  },
+  "payments": {
+    "pay_stock_1": {
+      "id": "pay_stock_1",
+      "order_id": "O-1104-001",
+      "buyer_id": "customer_1",
+      "merchant_id": "merchant_demo",
+      "currency": "CNY",
+      "amount_minor": 25800,
+      "refunded_minor": 0,
+      "status": "succeeded",
+      "payment_method_id": "pm_1",
+      "created_at": "2026-11-03T13:21:00+08:00",
+      "version": 1
+    },
+    "pay_stock_2": {
+      "id": "pay_stock_2",
+      "order_id": "O-1104-002",
+      "buyer_id": "customer_2",
+      "merchant_id": "merchant_demo",
+      "currency": "CNY",
+      "amount_minor": 25800,
+      "refunded_minor": 0,
+      "status": "succeeded",
+      "payment_method_id": "pm_2",
+      "created_at": "2026-11-03T14:21:00+08:00",
+      "version": 1
+    },
+    "pay_stock_3": {
+      "id": "pay_stock_3",
+      "order_id": "O-1104-003",
+      "buyer_id": "customer_3",
+      "merchant_id": "merchant_demo",
+      "currency": "CNY",
+      "amount_minor": 25800,
+      "refunded_minor": 0,
+      "status": "succeeded",
+      "payment_method_id": "pm_3",
+      "created_at": "2026-11-03T15:21:00+08:00",
+      "version": 1
+    }
+  },
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "SKU-301": {
+      "id": "SKU-301",
+      "product_id": "SKU-301",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 12900,
+      "stock": 5,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

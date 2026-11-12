@@ -1,0 +1,23 @@
+{
+  "name": "read_message",
+  "description": "按全局消息 ID 读取自己本地可见的消息，包括撤回提示；不标已读。合并记录返回摘要，内容使用 read_merged_messages 展开。",
+  "inputSchema": {
+    "properties": {
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "message_id"
+    ],
+    "title": "read_messageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

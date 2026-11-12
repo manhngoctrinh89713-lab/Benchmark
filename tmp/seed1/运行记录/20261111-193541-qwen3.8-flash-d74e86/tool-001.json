@@ -1,0 +1,16 @@
+{
+  "id": "call_e9323da968b24fdaa08685ab",
+  "name": "buyer__list_merchants",
+  "arguments": "{\"query\": \"平台A\"}",
+  "started_at": "2026-11-11T19:35:43.764831+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"items\": [{\"id\": \"merchant_a\", \"name\": \"平台A·星汇优选\", \"currency\": \"CNY\", \"shipping_minor\": 0}], \"total\": 1, \"next_offset\": null}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:35:43.774268+08:00"
+}

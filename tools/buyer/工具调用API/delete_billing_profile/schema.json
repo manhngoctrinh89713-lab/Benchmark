@@ -1,0 +1,23 @@
+{
+  "name": "delete_billing_profile",
+  "description": "删除开票资料，既有申请保留原资料快照。",
+  "inputSchema": {
+    "properties": {
+      "profile_id": {
+        "title": "Profile Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "profile_id"
+    ],
+    "title": "delete_billing_profileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

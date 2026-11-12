@@ -1,0 +1,23 @@
+{
+  "name": "pc_delete_backup",
+  "description": "删除一个本地ZIP备份和记录，释放模拟备份磁盘空间。",
+  "inputSchema": {
+    "properties": {
+      "backup_id": {
+        "title": "Backup Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "backup_id"
+    ],
+    "title": "pc_delete_backupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

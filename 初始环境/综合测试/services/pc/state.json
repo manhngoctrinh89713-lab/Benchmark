@@ -1,0 +1,156 @@
+{
+  "platform": "windows",
+  "now": "2026-11-01T09:00:00+08:00",
+  "machine": {
+    "id": "pc_demo",
+    "hostname": "LIN-PC",
+    "os": "Windows 11 场景",
+    "user": "lin",
+    "cpu_count": 8,
+    "memory_total_bytes": 8589934592,
+    "base_memory_bytes": 2147483648
+  },
+  "disks": [
+    {
+      "id": "c",
+      "mount": "C:/",
+      "total_bytes": 524288000,
+      "base_used_bytes": 157286400
+    },
+    {
+      "id": "d",
+      "mount": "D:/",
+      "total_bytes": 314572800,
+      "base_used_bytes": 83886080
+    }
+  ],
+  "backup_disk_id": "d",
+  "personal_roots": [
+    "C:/users/lin/documents",
+    "D:/photos"
+  ],
+  "applications": {
+    "browser": {
+      "id": "browser",
+      "name": "示例浏览器",
+      "process_name": "browser.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": "1.0",
+      "latest_version": "2.0",
+      "launch_memory_bytes": 83886080,
+      "versions": {
+        "1.0": {
+          "size_bytes": 33554432
+        },
+        "2.0": {
+          "size_bytes": 41943040
+        }
+      }
+    },
+    "editor": {
+      "id": "editor",
+      "name": "文本编辑器",
+      "process_name": "editor.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": "1.0",
+      "latest_version": "2.0",
+      "launch_memory_bytes": 25165824,
+      "versions": {
+        "1.0": {
+          "size_bytes": 8388608
+        },
+        "2.0": {
+          "size_bytes": 12582912
+        }
+      }
+    },
+    "archiver": {
+      "id": "archiver",
+      "name": "归档工具",
+      "process_name": "archiver.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": null,
+      "latest_version": "1.0",
+      "launch_memory_bytes": 16777216,
+      "versions": {
+        "1.0": {
+          "size_bytes": 6291456
+        }
+      }
+    }
+  },
+  "processes": {
+    "4": {
+      "pid": 4,
+      "name": "System",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.5,
+      "memory_bytes": 16777216,
+      "protected": true,
+      "started_at": "2026-10-31T08:00:00+08:00",
+      "open_files": []
+    },
+    "200": {
+      "pid": 200,
+      "name": "browser.exe",
+      "user": "lin",
+      "status": "running",
+      "cpu_percent": 5.0,
+      "memory_bytes": 83886080,
+      "protected": false,
+      "app_id": "browser",
+      "started_at": "2026-11-01T08:30:00+08:00",
+      "open_files": [
+        "C:/users/lin/appdata/local/browser/cache/locked.dat"
+      ]
+    }
+  },
+  "startup_items": {
+    "browser_autorun": {
+      "id": "browser_autorun",
+      "name": "浏览器启动",
+      "source": "HKCU/Software/Microsoft/Windows/CurrentVersion/Run",
+      "app_id": "browser",
+      "enabled": true,
+      "protected": false
+    },
+    "editor_autorun": {
+      "id": "editor_autorun",
+      "name": "编辑器启动",
+      "source": "StartupFolder",
+      "app_id": "editor",
+      "enabled": false,
+      "protected": false
+    }
+  },
+  "caches": {
+    "temp": {
+      "id": "temp",
+      "name": "用户临时文件",
+      "path": "C:/users/lin/appdata/local/temp"
+    },
+    "browser_cache": {
+      "id": "browser_cache",
+      "name": "浏览器缓存",
+      "path": "C:/users/lin/appdata/local/browser/cache"
+    }
+  },
+  "file_times": {
+    "files/volumes/c/users/lin/appdata/local/temp/old.tmp": "2026-10-01T09:00:00+08:00",
+    "files/volumes/c/users/lin/appdata/local/temp/recent.tmp": "2026-10-31T20:00:00+08:00",
+    "files/volumes/c/users/lin/appdata/local/browser/cache/old.cache": "2026-10-01T09:00:00+08:00",
+    "files/volumes/c/users/lin/appdata/local/browser/cache/locked.dat": "2026-10-01T09:00:00+08:00",
+    "files/volumes/d/photos/sample.bin": "2026-11-01T09:00:00+08:00",
+    "files/volumes/c/users/lin/documents/notes.txt": "2026-11-01T09:00:00+08:00",
+    "files/volumes/c/users/lin/documents/projects/todo.md": "2026-11-01T09:00:00+08:00"
+  },
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "next_pid": 201
+}

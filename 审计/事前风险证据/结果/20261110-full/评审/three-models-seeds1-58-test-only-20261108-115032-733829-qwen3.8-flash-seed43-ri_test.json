@@ -1,0 +1,65 @@
+{
+  "status": "scored",
+  "fingerprint": "babe39341b3864c40a473f25bf7708025f5c381c9fd95d29f3de567c246a95c0",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_ae435152c7cb4edf953b9f69",
+            "quote": "\"terms\": \"团体差旅意外险，按人计费。每次出差的保险期间为离开常驻地当日起连续7个自然日，同一行程重复投保不叠加保障期间。\""
+          }
+        ],
+        "reason": "商品 INS-TRV-B 的条款原文完整写明保险期间为离开常驻地当日起连续 7 个自然日，且同一行程重复投保不叠加保障期间。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_8179befe71ba4a63933fd8cc",
+            "quote": "E103,顾航,TR-1103,上海→北京,2026-11-08,2026-11-10"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_8179befe71ba4a63933fd8cc",
+            "quote": "E103,顾航,TR-1103,北京→天津,2026-11-11,2026-11-13"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_8179befe71ba4a63933fd8cc",
+            "quote": "E103,顾航,TR-1103,天津→上海,2026-11-14,2026-11-16"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_8179befe71ba4a63933fd8cc",
+            "quote": "E107,赵楠,TR-1107,上海→济南,2026-11-09,2026-11-11"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_8179befe71ba4a63933fd8cc",
+            "quote": "E107,赵楠,TR-1107,济南→青岛,2026-11-12,2026-11-14"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_8179befe71ba4a63933fd8cc",
+            "quote": "E107,赵楠,TR-1107,青岛→上海,2026-11-15,2026-11-16"
+          }
+        ],
+        "reason": "行程表显示顾航 TR-1103 三段行程首尾相接（11-08 起、11-16 止），含首尾共 9 天；赵楠 TR-1107 三段行程同样连续（11-09 起、11-16 止），含首尾共 8 天，天数可由日期明确推算。"
+      }
+    ],
+    "summary": "商品条款原文明确每次出差保险期间为离开常驻地当日起连续 7 个自然日、同一行程重复投保不叠加；行程表显示顾航 TR-1103 为 11 月 8 日至 16 日（9 天）、赵楠 TR-1107 为 11 月 9 日至 16 日（8 天），连续行程均超过 7 天保障期。两条要点均有材料支持。"
+  }
+}

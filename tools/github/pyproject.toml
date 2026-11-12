@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-github"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["benchmark-local-repos==0.2.0"]
+
+[tool.setuptools]
+packages = ["local_github", "local_github.api", "local_github.api.add_comment", "local_github.api.add_pull_request_review_comment", "local_github.api.cancel_workflow_run", "local_github.api.create_pull_request", "local_github.api.create_release", "local_github.api.delete_comment", "local_github.api.delete_label", "local_github.api.delete_milestone", "local_github.api.delete_release", "local_github.api.dispatch_workflow", "local_github.api.get_file_contents", "local_github.api.get_me", "local_github.api.get_release", "local_github.api.get_repository", "local_github.api.get_workflow_run", "local_github.api.get_workflow_run_logs", "local_github.api.issue_read", "local_github.api.issue_write", "local_github.api.label_write", "local_github.api.list_comments", "local_github.api.list_issues", "local_github.api.list_labels", "local_github.api.list_milestones", "local_github.api.list_notifications", "local_github.api.list_pull_request_commits", "local_github.api.list_pull_request_files", "local_github.api.list_pull_requests", "local_github.api.list_releases", "local_github.api.list_workflow_runs", "local_github.api.list_workflows", "local_github.api.mark_notification_read", "local_github.api.merge_pull_request", "local_github.api.milestone_write", "local_github.api.pull_request_read", "local_github.api.remove_requested_reviewers", "local_github.api.request_reviewers", "local_github.api.rerun_workflow", "local_github.api.search_code", "local_github.api.search_repositories", "local_github.api.set_issue_assignees", "local_github.api.set_item_labels", "local_github.api.submit_review", "local_github.api.update_comment", "local_github.api.update_pull_request", "local_github.api.update_release", "local_github.api.update_repository_visibility"]
+
+[tool.setuptools.package-dir]
+local_github = "公用代码/local_github"
+"local_github.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+"local_github.api" = ["*/schema.json"]

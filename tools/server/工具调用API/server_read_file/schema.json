@@ -1,0 +1,23 @@
+{
+  "name": "server_read_file",
+  "description": "读取登记挂载点内的UTF-8场景文件、大小和哈希；最多200000字节。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "server_read_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

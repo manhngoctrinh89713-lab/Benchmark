@@ -1,0 +1,36 @@
+{
+  "name": "search_contacts",
+  "description": "按姓名、地址、组织或备注子串搜索可见通讯录，空 query 列出全部；scope 为 all/personal/organization。个人联系人可管理，组织目录只读；分页 limit 为 1..100。",
+  "inputSchema": {
+    "properties": {
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      },
+      "scope": {
+        "default": "all",
+        "title": "Scope",
+        "type": "string"
+      }
+    },
+    "title": "search_contactsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

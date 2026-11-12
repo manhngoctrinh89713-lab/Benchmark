@@ -1,0 +1,65 @@
+{
+  "status": "scored",
+  "fingerprint": "a6394bd3a31d809d9beb3d0fb91f44c17855a49207450b2de61404a6204b387b",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_9dd8e898a05944bc8e0b9fc1",
+            "quote": "ST-1104,2026-11-04,SKU-301,8,件,A-03-02,方琳,本次盘点范围为所有未发货货物"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_e786a298d28145c38f494d2c",
+            "quote": "字段说明：stock表示当前可供新订单购买的数量。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_171bf498d67a4d049f93c5bb",
+            "quote": "\"description\": \"仓库实物计件，stock表示当前可供新订单购买的数量\""
+          }
+        ],
+        "reason": "盘点记录明确 SKU-301 实物数为 8 件；盘点作业指引与商品资料均说明 stock 表示当前可供新订单购买的数量。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_6fca3bbdecac40dfbd15a854",
+            "quote": "\"id\": \"O-1104-001\", \"buyer_id\": \"customer_1\", \"merchant_id\": \"merchant_demo\", \"items\": [{\"product_id\": \"SKU-301\", \"name\": \"轻量保温杯 480ml\", \"kind\": \"physical\", \"quantity\": 2, \"unit_amount_minor\": 12900, \"line_id\": \"O-1104-001_line_1\", \"sku_id\": \"SKU-301\", \"fulfilled_quantity\": 0"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_6fca3bbdecac40dfbd15a854",
+            "quote": "\"status\": \"paid\", \"payment_status\": \"paid\", \"fulfillment_status\": \"unfulfilled\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_6fca3bbdecac40dfbd15a854",
+            "quote": "\"id\": \"O-1104-002\", \"buyer_id\": \"customer_2\", \"merchant_id\": \"merchant_demo\", \"items\": [{\"product_id\": \"SKU-301\", \"name\": \"轻量保温杯 480ml\", \"kind\": \"physical\", \"quantity\": 2"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_6fca3bbdecac40dfbd15a854",
+            "quote": "\"id\": \"O-1104-003\", \"buyer_id\": \"customer_3\", \"merchant_id\": \"merchant_demo\", \"items\": [{\"product_id\": \"SKU-301\", \"name\": \"轻量保温杯 480ml\", \"kind\": \"physical\", \"quantity\": 2"
+          }
+        ],
+        "reason": "订单列表共 3 笔订单（O-1104-001/002/003），每笔 SKU-301 数量为 2 件、fulfilled_quantity 为 0，状态均为 paid 且 fulfillment_status 为 unfulfilled，合计占用 2×3=6 件，且 total=3 无其他订单。"
+      }
+    ],
+    "summary": "盘点记录显示 SKU-301 实物 8 件，指引与商品资料均定义 stock 为可供新订单购买的数量；3 笔已付款未发货订单各 2 件、合计 6 件，符合占用数量。两条要点均有材料直接支持。"
+  }
+}

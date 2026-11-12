@@ -1,0 +1,33 @@
+{
+  "name": "git_rename_branch",
+  "description": "重命名本地分支，目标名称已存在时失败。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "branch": {
+        "title": "Branch",
+        "type": "string"
+      },
+      "new_name": {
+        "title": "New Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "branch",
+      "new_name"
+    ],
+    "title": "git_rename_branchArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

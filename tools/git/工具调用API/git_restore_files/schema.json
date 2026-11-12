@@ -1,0 +1,41 @@
+{
+  "name": "git_restore_files",
+  "description": "用指定提交恢复选定文件的工作区内容，可同时恢复暂存区。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "paths": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Paths",
+        "type": "array"
+      },
+      "revision": {
+        "default": "HEAD",
+        "title": "Revision",
+        "type": "string"
+      },
+      "restore_index": {
+        "default": false,
+        "title": "Restore Index",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "repo_id",
+      "paths"
+    ],
+    "title": "git_restore_filesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

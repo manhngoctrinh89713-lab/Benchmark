@@ -1,0 +1,33 @@
+{
+  "name": "list_rules",
+  "description": "按 priority 升序、同优先级按 ID 列出收件规则。规则仅由新入站邮件触发，查询不会运行规则。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "list_rulesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

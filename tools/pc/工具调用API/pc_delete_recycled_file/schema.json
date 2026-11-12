@@ -1,0 +1,23 @@
+{
+  "name": "pc_delete_recycled_file",
+  "description": "永久删除回收站文件并释放空间。",
+  "inputSchema": {
+    "properties": {
+      "item_id": {
+        "title": "Item Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "item_id"
+    ],
+    "title": "pc_delete_recycled_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

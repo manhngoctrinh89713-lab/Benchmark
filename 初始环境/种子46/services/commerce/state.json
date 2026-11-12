@@ -1,0 +1,178 @@
+{
+  "now": "2026-11-04T10:30:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "禾木食品",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_demo"
+    }
+  },
+  "products": {
+    "SNK-701": {
+      "id": "SNK-701",
+      "merchant_id": "merchant_demo",
+      "name": "坚果礼盒",
+      "description": "临期清仓批次，保质期至2026-11-30",
+      "unit_amount_minor": 8900,
+      "currency": "CNY",
+      "stock": 240,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    },
+    "SNK-712": {
+      "id": "SNK-712",
+      "merchant_id": "merchant_demo",
+      "name": "曲奇饼干箱",
+      "description": "临期清仓批次，保质期至2026-11-28",
+      "unit_amount_minor": 6500,
+      "currency": "CNY",
+      "stock": 180,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    },
+    "SNK-725": {
+      "id": "SNK-725",
+      "merchant_id": "merchant_demo",
+      "name": "果干组合装",
+      "description": "临期清仓批次，保质期至2026-12-01",
+      "unit_amount_minor": 4200,
+      "currency": "CNY",
+      "stock": 300,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "mutation_events": [],
+  "skus": {
+    "SNK-701": {
+      "id": "SNK-701",
+      "product_id": "SNK-701",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 8900,
+      "stock": 240,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "SNK-712": {
+      "id": "SNK-712",
+      "product_id": "SNK-712",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 6500,
+      "stock": 180,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "SNK-725": {
+      "id": "SNK-725",
+      "product_id": "SNK-725",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 4200,
+      "stock": 300,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

@@ -1,0 +1,33 @@
+{
+  "name": "forward_message",
+  "description": "把自己可见且支持转发的消息复制到另一个会话，生成新消息并保存内容快照；不继承原消息的引用或@。语音和系统通知不可转发，已撤回或本地删除内容不可转发。",
+  "inputSchema": {
+    "properties": {
+      "source_chat_id": {
+        "title": "Source Chat Id",
+        "type": "string"
+      },
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      },
+      "target_chat_id": {
+        "title": "Target Chat Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "source_chat_id",
+      "message_id",
+      "target_chat_id"
+    ],
+    "title": "forward_messageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

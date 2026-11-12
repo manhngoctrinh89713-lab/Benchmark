@@ -1,0 +1,28 @@
+{
+  "name": "git_checkout",
+  "description": "切换已有本地分支，要求工作区和暂存区干净。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "branch": {
+        "title": "Branch",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "branch"
+    ],
+    "title": "git_checkoutArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

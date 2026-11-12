@@ -1,0 +1,28 @@
+{
+  "name": "delete_file",
+  "description": "删除文件或空目录；非空目录须recursive=true。操作限files内部；不存在的路径按空操作处理。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "recursive": {
+        "default": false,
+        "title": "Recursive",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "delete_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

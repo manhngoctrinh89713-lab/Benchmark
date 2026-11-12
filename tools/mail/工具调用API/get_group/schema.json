@@ -1,0 +1,28 @@
+{
+  "name": "get_group",
+  "description": "读取可见群组；include_members=true 时按成员可见权限返回成员列表。组织群组只读；个人组由本人管理。",
+  "inputSchema": {
+    "properties": {
+      "group_id": {
+        "title": "Group Id",
+        "type": "string"
+      },
+      "include_members": {
+        "default": true,
+        "title": "Include Members",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "group_id"
+    ],
+    "title": "get_groupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

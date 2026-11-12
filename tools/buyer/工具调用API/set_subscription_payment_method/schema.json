@@ -1,0 +1,28 @@
+{
+  "name": "set_subscription_payment_method",
+  "description": "修改订阅后续自动扣款使用的支付方式。",
+  "inputSchema": {
+    "properties": {
+      "subscription_id": {
+        "title": "Subscription Id",
+        "type": "string"
+      },
+      "payment_method_id": {
+        "title": "Payment Method Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "subscription_id",
+      "payment_method_id"
+    ],
+    "title": "set_subscription_payment_methodArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

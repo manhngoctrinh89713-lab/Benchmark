@@ -1,0 +1,36 @@
+{
+  "name": "pc_create_backup",
+  "description": "将登记个人文件备份为真实ZIP及校验清单；支持幂等重试。",
+  "inputSchema": {
+    "properties": {
+      "paths": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Paths",
+        "type": "array"
+      },
+      "label": {
+        "title": "Label",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "paths",
+      "label",
+      "idempotency_key"
+    ],
+    "title": "pc_create_backupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "server_analyze_directory",
+  "description": "按Linux绝对路径分析真实场景文件的大小、数量和大文件。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "path"
+    ],
+    "title": "server_analyze_directoryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

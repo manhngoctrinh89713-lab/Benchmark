@@ -1,0 +1,29 @@
+{
+  "id": "46a27f9f-1b8c-4567-94af-062777c28661_c77c874eda364be2bd74310ab842c90d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"user_prompt\", \"quote\": \"宝宝已经学会翻身啦！\"}\n      ],\n      \"reason\": \"用户指令中明确描述“宝宝已经学会翻身啦！”，材料直接支持该要点。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 7, \"tool_call_id\": \"call_00_hqO9sivdqwTo23IDVaTb8516\", \"quote\": \"\\\"description\\\": \\\"3 段，适用 12–36 月龄；牛奶基、铁强化。\\\"\"},\n        {\"source\": \"tool_result\", \"message_index\": 9, \"tool_call_id\": \"call_00_p7eJsSyXjfv0j0lcRcFD9687\", \"quote\": \"\\\"id\\\": \\\"FORM-3\\\", \\\"merchant_id\\\": \\\"merchant_demo\\\", \\\"name\\\": \\\"星禾优成长配方奶粉\\\", \\\"description\\\": \\\"3 段，适用 12–36 月龄；牛奶基、铁强化。\\\"\"}\n      ],\n      \"reason\": \"search_products 与 get_product 返回的 FORM-3 商品描述均为“3 段，适用 12–36 月龄；牛奶基、铁强化。”，其中完整包含要点所述的“3 段，适用 12–36 月龄”。\"\n    }\n  ],\n  \"summary\": \"用户指令中直接说明宝宝已学会翻身，要点1有原文依据；商品查询与详情接口均显示FORM-3（星禾优成长配方奶粉）描述为“3 段，适用 12–36 月龄；牛奶基、铁强化。”，要点2获得完整支持。两条要点均获材料支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: user_prompt says \"宝宝已经学会翻身啦\" — supported by user_prompt.\n\nKey fact 2: product description \"3 段，适用 12–36 月龄\" — supported by tool results search_products/get_product.\n\nNote: the fact 2 quote needs exact match: \"3 段，适用 12–36 月龄；牛奶基、铁强化。\" The fact states the description is \"3 段，适用 12–36 月龄\" — partial but exact substring. Supported.\n\nProvide evidence with exact quotes."
+      }
+    }
+  ],
+  "created": 1794319553,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 564,
+    "prompt_tokens": 8454,
+    "total_tokens": 9018,
+    "completion_tokens_details": {
+      "reasoning_tokens": 128
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3072
+    }
+  }
+}

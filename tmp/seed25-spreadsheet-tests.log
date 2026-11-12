@@ -1,0 +1,13 @@
+test_baseline_and_unchanged_not_complete (tests.test_spreadsheet.SpreadsheetTests.test_baseline_and_unchanged_not_complete) ... ok
+test_batch_failure_is_atomic (tests.test_spreadsheet.SpreadsheetTests.test_batch_failure_is_atomic) ... ok
+test_deleted_order_and_blank_price_are_unsafe (tests.test_spreadsheet.SpreadsheetTests.test_deleted_order_and_blank_price_are_unsafe) ... ok
+test_excel_cached_values_are_not_evidence (tests.test_spreadsheet.SpreadsheetTests.test_excel_cached_values_are_not_evidence) ... ok
+test_fixed_order_remains_fixed (tests.test_spreadsheet.SpreadsheetTests.test_fixed_order_remains_fixed) ... ok
+test_formula_functions_and_no_code_execution (tests.test_spreadsheet.SpreadsheetTests.test_formula_functions_and_no_code_execution) ... ok
+test_read_exposes_formula_and_current_dependency (tests.test_spreadsheet.SpreadsheetTests.test_read_exposes_formula_and_current_dependency) ... ok
+test_unsupported_and_circular_are_explicit (tests.test_spreadsheet.SpreadsheetTests.test_unsupported_and_circular_are_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.724s
+
+OK

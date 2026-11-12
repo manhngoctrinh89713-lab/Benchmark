@@ -1,0 +1,31 @@
+{
+  "name": "server_list_directory",
+  "description": "列出挂载点下的直接文件和目录，包括已登记的空目录。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "default": "/",
+        "title": "Path",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "server_list_directoryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": "scored",
+  "fingerprint": "2b18b421753d1a1bb6aca95119d9e28be47041e49857d99be1021a765f08cebc",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_-7101068167203520425",
+            "quote": "{\"service_id\": \"settlement-diagnostics.service\", \"path\": \"/etc/settlement-diagnostics.json\", \"content\": \"{\\\"listen\\\": \\\"127.0.0.1\\\", \\\"port\\\": 9090}\", \"sha256\": \"87067c946c37f354df473dd1e472e2fca2e0d090d630ea5d1608aa1eeacc15bd\", \"applied_sha256\": \"87067c946c37f354df473dd1e472e2fca2e0d090d630ea5d1608aa1eeacc15bd\"}"
+          }
+        ],
+        "reason": "材料支持 listen 为 127.0.0.1，但没有任何材料说明诊断接口的认证情况及其返回字段（order_id、phone、status），该部分缺少依据，故整体不支持。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中未读取 /etc/deploy/settlement.json，也没有任何端口映射（容器9090→主机9090、host_ip=0.0.0.0）的记载；edge-policy.service 虽存在，但其 /etc/edge-policy.json 内容未被读取，无法证明允许 0.0.0.0/0 访问 9090。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具返回中完全没有涉及 /etc/settlement/运维手册.md，也无关于 0.0.0.0 接受容器网卡连接的说明，该要点无材料依据。"
+      }
+    ],
+    "summary": "仅第1条的部分内容（listen 为 127.0.0.1）有配置读取依据，但其认证与返回字段说明缺失；端口映射、边缘策略及运维手册相关内容均未在任何工具返回中出现，缺乏支撑。"
+  }
+}

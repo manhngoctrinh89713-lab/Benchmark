@@ -1,0 +1,33 @@
+{
+  "name": "server_prune_logs",
+  "description": "预览或删除指定服务较早的日志，保留最新keep_last条；其他服务日志保持不变。",
+  "inputSchema": {
+    "properties": {
+      "service_id": {
+        "title": "Service Id",
+        "type": "string"
+      },
+      "keep_last": {
+        "default": 100,
+        "title": "Keep Last",
+        "type": "integer"
+      },
+      "dry_run": {
+        "default": true,
+        "title": "Dry Run",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "service_id"
+    ],
+    "title": "server_prune_logsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

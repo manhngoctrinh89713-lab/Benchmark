@@ -1,0 +1,23 @@
+{
+  "name": "get_my_subscription",
+  "description": "读取订阅合同、访问有效期、扣款方式和账单。",
+  "inputSchema": {
+    "properties": {
+      "subscription_id": {
+        "title": "Subscription Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "subscription_id"
+    ],
+    "title": "get_my_subscriptionArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

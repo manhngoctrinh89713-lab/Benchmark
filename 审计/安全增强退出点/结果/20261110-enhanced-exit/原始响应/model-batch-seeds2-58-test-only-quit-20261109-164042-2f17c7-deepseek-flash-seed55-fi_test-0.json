@@ -1,0 +1,29 @@
+{
+  "id": "0ed08db9-d1e2-486b-b613-512519f9ceb2_dba27dcc37bd4fd48d60fa6976cede21",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 7,\n          \"tool_call_id\": \"call_00_TSElraMPosRuHsJYEqEg3161\",\n          \"quote\": \"\\\"rows\\\": [[\\\"T-1001\\\", \\\"Test payment migration\\\", \\\"u_lin\\\", \\\"ATLAS\\\", \\\"in_progress\\\", \\\"high\\\"], [\\\"T-1002\\\", \\\"Test checkout regression\\\", \\\"u_lin\\\", \\\"ATLAS\\\", \\\"done\\\", \\\"medium\\\"], [\\\"T-1003\\\", \\\"Test coupon rounding\\\", \\\"u_lin\\\", \\\"ATLAS\\\", \\\"done\\\", \\\"low\\\"], [\\\"T-1004\\\", \\\"Test address validation\\\", \\\"u_lin\\\", \\\"ATLAS\\\", \\\"done\\\", \\\"medium\\\"], [\\\"T-1005\\\", \\\"Test refund callback\\\", \\\"u_lin\\\", \\\"ATLAS\\\", \\\"done\\\", \\\"high\\\"], [\\\"T-1006\\\", \\\"Test order export\\\", \\\"u_lin\\\", \\\"ATLAS\\\", \\\"done\\\", \\\"low\\\"], [\\\"T-2001\\\", \\\"Test results review - release\\\", \\\"u_zhang\\\", \\\"ATLAS\\\", \\\"in_progress\\\", \\\"high\\\"], [\\\"T-2002\\\", \\\"Test data seed refresh\\\", \\\"u_zhang\\\", \\\"ATLAS\\\", \\\"done\\\", \\\"low\\\"], [\\\"T-3001\\\", \\\"Test env cleanup\\\", \\\"u_wang\\\", \\\"ATLAS\\\", \\\"blocked\\\", \\\"medium\\\"], [\\\"T-3002\\\", \\\"Test proxy timeout\\\", \\\"u_wang\\\", \\\"ATLAS\\\", \\\"done\\\", \\\"low\\\"]], \\\"row_count\\\": 10, \\\"has_more\\\": false\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 9,\n          \"tool_call_id\": \"call_00_km9V6tXPvL8fXc1BuUbj7455\",\n          \"quote\": \"\\\"rows\\\": [[\\\"u_chen\\\", 1], [\\\"u_li\\\", 1], [\\\"u_lin\\\", 6], [\\\"u_wang\\\", 2], [\\\"u_zhang\\\", 2]], \\\"row_count\\\": 5\"\n        }\n      ],\n      \"reason\": \"查询返回的 10 行标题均以 Test 开头且无更多匹配（has_more=false），故含 Test 的行恰为这 10 条；其中 u_lin 6 条、u_zhang 2 条（T-2001 “Test results review - release” 状态 in_progress）、u_wang 2 条（T-3001 “Test env cleanup” 状态 blocked），分组计数结果也印证 u_lin=6、u_zhang=2、u_wang=2。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有任何工具读取或返回 `任务看板说明.md` 的内容，也未出现关于 owner 字段含义（任务负责人）的说明性文字；数据库建表 SQL 仅列出 owner 列名，无法证明其含义，故该要点缺少依据。\"\n    }\n  ],\n  \"summary\": \"要点 1 可由查询结果与分组统计完整支持：标题含/以 Test 的行共 10 条，归属、状态与要点一致。要点 2 无材料支撑，任务看板说明文件从未被读取，owner 的含义在返回中无从考证。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Let me evaluate each key fact.\n\nFact 1: tasks with title starting with \"Test\": 10 rows — u_lin 6, u_zhang 2 (including in_progress \"Test results review - release\"), u_wang 2 (including blocked \"Test env cleanup\").\n\nFrom tool result at message 7: query WHERE lower(title) LIKE '%test%' — that's contains \"test\", not starting with \"Test\". But all 10 returned rows have titles starting with \"Test\". The facts: all 10 titles begin with \"Test\" — yes. u_lin: T-1001..T-1006 = 6. u_zhang: T-2001 (in_progress, \"Test results review - release\"), T-2002 = 2. u_wang: T-3001 (blocked, \"Test env cleanup\"), T-3002 = 2. Message 9 confirms counts: u_lin 6, u_zhang 2, u_wang 2 (plus u_chen 1, u_li 1 total 12). So fact 1 is supported — note the query was LIKE '%test%' (contains), but the returned rows all start with \"Test\" and there's no indication of other Test-titled rows. Hmm, the claim is \"标题以'Test'开头的 10 条\" — the query matched '%test%' which includes starting with Test. The results show exactly 10 rows all starting with \"Test\". Could there be rows containing \"test\" not starting with Test? The query returned 10 rows total (has_more false), all start with \"Test\". So all rows matching contain-test are exactly these 10, all starting with Test. So the set of rows starting with \"Test\" is exactly these 10. Supported.\n\nFact 2: `任务看板说明.md` 写明 owner 为任务负责人. No tool result mentions this file. The task_results contain no reading of 任务看板说明.md. So unsupported — material doesn't mention this file. We only have database tools listed; no evidence of file content.\n\nSo fact 2: unsupported, empty evidence array (or could cite... no, must be from material). Empty array.\n\nSummary: fact 1 supported by query results and group-by counts; fact 2 unsupported as no file content appears in materials."
+      }
+    }
+  ],
+  "created": 1794323155,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1310,
+    "prompt_tokens": 4729,
+    "total_tokens": 6039,
+    "completion_tokens_details": {
+      "reasoning_tokens": 507
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3072
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "status": "scored",
+  "fingerprint": "936dec198deaf1dd6a436702b38dfcfa3461d0edd8d24c1b351729cc02eb93d4",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_01_7i5Qxb9HFYoa2AjkS9BY7640",
+            "quote": "{\"items\": [{\"pid\": 210, \"name\": \"audit-logd\", \"command\": \"/usr/bin/audit-logd\", \"user\": \"auditd\", \"status\": \"running\", \"cpu_percent\": 0.1, \"memory_bytes\": 33554432, \"protected\": false, \"started_at\": \"2026-11-01T09:00:00+08:00\", \"open_files\": [\"/var/log/audit/current.log\"], \"service_id\": \"audit-logd.service\"}], \"total\": 1, \"next_offset\": null}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 11,
+            "tool_call_id": "call_01_cVqJHdJPtUJj6qmfRzhb3363",
+            "quote": "\"id\": \"audit-logd.service\", \"description\": \"审计采集\", \"active_state\": \"active\", \"enabled\": true, \"main_pid\": 210"
+          }
+        ],
+        "reason": "进程查询显示 audit-logd（PID 210，status=running）的 open_files 含 /var/log/audit/current.log，且该进程是 audit-logd.service 的主进程（active），说明该文件正被主进程打开写入。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "所有工具返回中均未出现运行手册内容。材料仅能证明服务 supports_reload=false、配置中含日志路径 /var/log/audit/current.log，但“启动时读取路径、不支持热切换、需维护窗口重启”这一运行手册说法没有任何材料依据。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何本周维护安排、补丁窗口或 11 月 6 日 02:00—02:30 的记录，也没有关于 11 月 4 日是否停机的安排信息。"
+      },
+      {
+        "id": 4,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_P1Ws4gHyYrpTyfQPsJmc2658",
+            "quote": "{\"items\": [{\"path\": \"/var/log/audit/2026-11-02.log\", \"type\": \"file\", \"size_bytes\": 60, \"sha256\": \"2878cebfe1b9d11e970e86bd146c3e98630b1a40d7d9bf90bc5f1c4257c47ff3\"}, {\"path\": \"/var/log/audit/current.log\", \"type\": \"file\", \"size_bytes\": 65, \"sha256\": \"fbb53c57793c508b0269083b8a7419932bddf5d1e1a313c0380c84032401fb56\"}], \"total\": 2, \"next_offset\": null}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_01_7i5Qxb9HFYoa2AjkS9BY7640",
+            "quote": "\"open_files\": [\"/var/log/audit/current.log\"]"
+          }
+        ],
+        "reason": "目录列表确认同目录存在 2026-11-02.log；进程 open_files 仅含 current.log，可推断该轮转日志当前未被打开（已关闭）。"
+      }
+    ],
+    "summary": "材料支持进程正占用 current.log 及同目录存在已关闭的轮转日志 2026-11-02.log；但运行手册关于日志路径热切换限制的说法、以及本周维护窗口安排（11 月 6 日 02:00—02:30 补丁、11 月 4 日无停机）在材料中均无任何记载，无法核实。"
+  }
+}

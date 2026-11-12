@@ -1,0 +1,28 @@
+{
+  "name": "list_tables",
+  "description": "列出用户表及可选视图，返回名称、类型与建表SQL。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "include_views": {
+        "default": true,
+        "title": "Include Views",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "db_id"
+    ],
+    "title": "list_tablesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

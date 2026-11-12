@@ -1,0 +1,28 @@
+{
+  "name": "pc_delete_personal_file",
+  "description": "按预期哈希删除一个个人文件；模拟进程使用中的文件不能删除。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path",
+      "expected_sha256"
+    ],
+    "title": "pc_delete_personal_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

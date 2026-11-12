@@ -1,0 +1,36 @@
+{
+  "name": "server_create_backup",
+  "description": "将登记备份范围内的服务配置或数据文件写入真实ZIP与清单。",
+  "inputSchema": {
+    "properties": {
+      "paths": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Paths",
+        "type": "array"
+      },
+      "label": {
+        "title": "Label",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "paths",
+      "label",
+      "idempotency_key"
+    ],
+    "title": "server_create_backupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

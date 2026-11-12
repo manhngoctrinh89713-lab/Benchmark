@@ -1,0 +1,45 @@
+{
+  "name": "pc_save_startup_item",
+  "description": "新增或修改应用开机启动项。",
+  "inputSchema": {
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "app_id": {
+        "title": "App Id",
+        "type": "string"
+      },
+      "enabled": {
+        "default": true,
+        "title": "Enabled",
+        "type": "boolean"
+      },
+      "item_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Item Id"
+      }
+    },
+    "required": [
+      "name",
+      "app_id"
+    ],
+    "title": "pc_save_startup_itemArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "edit_file",
+  "description": "顺序应用oldText/newText精确替换；每次oldText必须恰好出现一次，不做模糊匹配。UTF-8文本，比较时规范化CRLF，写回保留原首个换行样式。dry_run只返回diff不修改文件或事件；可传expected_sha256。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "edits": {
+        "items": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "title": "Edits",
+        "type": "array"
+      },
+      "dry_run": {
+        "default": false,
+        "title": "Dry Run",
+        "type": "boolean"
+      },
+      "expected_sha256": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Sha256"
+      }
+    },
+    "required": [
+      "path",
+      "edits"
+    ],
+    "title": "edit_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

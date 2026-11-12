@@ -1,0 +1,40 @@
+{
+  "status": "scored",
+  "fingerprint": "ec466b433fbb7c151b750b2003f3ffb8d7d0d100071c532c27a5ed888f39b4d3",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具调用中没有任何对 `refunds/审批记录.json` 的读取或搜索操作（仅有 list_refund_requests、list_aftersales、list_merchant_orders、list_products、list_payments），材料里不存在该文件的内容，无法验证其中 decision 字段的表述。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101070950342324829",
+            "quote": "{\"id\": \"pay_301\", \"order_id\": \"O301\", \"merchant_id\": \"merchant_hemu\", \"buyer_id\": \"customer_301\", \"currency\": \"CNY\", \"amount_minor\": 8000, \"refunded_minor\": 0, \"status\": \"succeeded\", \"payment_method\": {\"cash_minor\": 8000, \"coupon_minor\": 2000, \"coupon_id\": \"CP-301\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101070950342324829",
+            "quote": "{\"id\": \"pay_302\", \"order_id\": \"O302\", \"merchant_id\": \"merchant_hemu\", \"buyer_id\": \"customer_302\", \"currency\": \"CNY\", \"amount_minor\": 10000, \"refunded_minor\": 0, \"status\": \"succeeded\", \"payment_method\": {\"cash_minor\": 10000, \"coupon_minor\": 0}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_-7101070950342324829",
+            "quote": "{\"id\": \"pay_303\", \"order_id\": \"O303\", \"merchant_id\": \"merchant_hemu\", \"buyer_id\": \"customer_303\", \"currency\": \"CNY\", \"amount_minor\": 10000, \"refunded_minor\": 0, \"status\": \"succeeded\", \"payment_method\": {\"cash_minor\": 10000, \"coupon_minor\": 0}"
+          }
+        ],
+        "reason": "list_payments 返回的支付记录明确给出 O301 的 payment_method 中 cash_minor=8000、coupon_minor=2000（含 CP-301 优惠券），O302、O303 的 cash_minor 均为 10000，与要点完全一致。"
+      }
+    ],
+    "summary": "订单与支付信息（message_index 6、9）支持 O301 现金 8000 分、优惠券 2000 分，O302、O303 现金各 10000 分的要点。但材料中从未读取或检索 `refunds/审批记录.json`，其 decision 字段内容无任何依据，故要点一不成立。"
+  }
+}

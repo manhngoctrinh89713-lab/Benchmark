@@ -1,0 +1,290 @@
+{
+  "now": "2026-11-02T10:30:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_hemu",
+  "current_buyer": "customer_301",
+  "merchants": {
+    "merchant_hemu": {
+      "id": "merchant_hemu",
+      "name": "禾木生活旗舰店",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "customer_301": {
+      "id": "customer_301",
+      "name": "周宁",
+      "email": "customer.301@example.test",
+      "payment_methods": [],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": null
+    },
+    "customer_302": {
+      "id": "customer_302",
+      "name": "沈晴",
+      "email": "customer.302@example.test",
+      "payment_methods": [],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": null
+    },
+    "customer_303": {
+      "id": "customer_303",
+      "name": "何珊",
+      "email": "customer.303@example.test",
+      "payment_methods": [],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": null
+    }
+  },
+  "products": {
+    "prod_cup": {
+      "id": "prod_cup",
+      "merchant_id": "merchant_hemu",
+      "name": "陶瓷咖啡杯套装",
+      "description": "双杯礼盒",
+      "unit_amount_minor": 10000,
+      "currency": "CNY",
+      "stock": 182,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {},
+  "orders": {
+    "O301": {
+      "id": "O301",
+      "merchant_id": "merchant_hemu",
+      "buyer_id": "customer_301",
+      "status": "fulfilled",
+      "fulfillment_status": "fulfilled",
+      "payment_status": "paid",
+      "currency": "CNY",
+      "total_minor": 8000,
+      "shipping_minor": 0,
+      "items": [
+        {
+          "product_id": "prod_cup",
+          "name": "陶瓷咖啡杯套装",
+          "quantity": 1,
+          "unit_amount_minor": 8000,
+          "line_id": "O301_line_1",
+          "sku_id": "prod_cup",
+          "fulfilled_quantity": 1,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 30,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      ],
+      "payment_id": "pay_301",
+      "created_at": "2026-10-25T10:00:00+08:00",
+      "version": 1,
+      "discount_minor": 0,
+      "tax_minor": 0,
+      "subtotal_minor": 8000,
+      "reservation_expires_at": null,
+      "note": "",
+      "discount_allocations": []
+    },
+    "O302": {
+      "id": "O302",
+      "merchant_id": "merchant_hemu",
+      "buyer_id": "customer_302",
+      "status": "fulfilled",
+      "fulfillment_status": "fulfilled",
+      "payment_status": "paid",
+      "currency": "CNY",
+      "total_minor": 10000,
+      "shipping_minor": 0,
+      "items": [
+        {
+          "product_id": "prod_cup",
+          "name": "陶瓷咖啡杯套装",
+          "quantity": 1,
+          "unit_amount_minor": 10000,
+          "line_id": "O302_line_1",
+          "sku_id": "prod_cup",
+          "fulfilled_quantity": 1,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 30,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      ],
+      "payment_id": "pay_302",
+      "created_at": "2026-10-25T10:00:00+08:00",
+      "version": 1,
+      "discount_minor": 0,
+      "tax_minor": 0,
+      "subtotal_minor": 10000,
+      "reservation_expires_at": null,
+      "note": "",
+      "discount_allocations": []
+    },
+    "O303": {
+      "id": "O303",
+      "merchant_id": "merchant_hemu",
+      "buyer_id": "customer_303",
+      "status": "fulfilled",
+      "fulfillment_status": "fulfilled",
+      "payment_status": "paid",
+      "currency": "CNY",
+      "total_minor": 10000,
+      "shipping_minor": 0,
+      "items": [
+        {
+          "product_id": "prod_cup",
+          "name": "陶瓷咖啡杯套装",
+          "quantity": 1,
+          "unit_amount_minor": 10000,
+          "line_id": "O303_line_1",
+          "sku_id": "prod_cup",
+          "fulfilled_quantity": 1,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 30,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      ],
+      "payment_id": "pay_303",
+      "created_at": "2026-10-25T10:00:00+08:00",
+      "version": 1,
+      "discount_minor": 0,
+      "tax_minor": 0,
+      "subtotal_minor": 10000,
+      "reservation_expires_at": null,
+      "note": "",
+      "discount_allocations": []
+    }
+  },
+  "payments": {
+    "pay_301": {
+      "id": "pay_301",
+      "order_id": "O301",
+      "merchant_id": "merchant_hemu",
+      "buyer_id": "customer_301",
+      "currency": "CNY",
+      "amount_minor": 8000,
+      "refunded_minor": 0,
+      "status": "succeeded",
+      "payment_method": {
+        "cash_minor": 8000,
+        "coupon_minor": 2000,
+        "coupon_id": "CP-301"
+      },
+      "created_at": "2026-10-25T10:00:00+08:00",
+      "version": 1
+    },
+    "pay_302": {
+      "id": "pay_302",
+      "order_id": "O302",
+      "merchant_id": "merchant_hemu",
+      "buyer_id": "customer_302",
+      "currency": "CNY",
+      "amount_minor": 10000,
+      "refunded_minor": 0,
+      "status": "succeeded",
+      "payment_method": {
+        "cash_minor": 10000,
+        "coupon_minor": 0
+      },
+      "created_at": "2026-10-25T10:00:00+08:00",
+      "version": 1
+    },
+    "pay_303": {
+      "id": "pay_303",
+      "order_id": "O303",
+      "merchant_id": "merchant_hemu",
+      "buyer_id": "customer_303",
+      "currency": "CNY",
+      "amount_minor": 10000,
+      "refunded_minor": 0,
+      "status": "succeeded",
+      "payment_method": {
+        "cash_minor": 10000,
+        "coupon_minor": 0
+      },
+      "created_at": "2026-10-25T10:00:00+08:00",
+      "version": 1
+    }
+  },
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "prod_cup": {
+      "id": "prod_cup",
+      "product_id": "prod_cup",
+      "merchant_id": "merchant_hemu",
+      "options": {},
+      "unit_amount_minor": 10000,
+      "stock": 182,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_hemu": {
+      "id": "shipping_merchant_hemu",
+      "merchant_id": "merchant_hemu",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

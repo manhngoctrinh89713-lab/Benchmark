@@ -1,0 +1,22 @@
+{
+  "status": "scored",
+  "fingerprint": "3b29a47fc9b37ecce4cd20ac869b87475968fca790845f1f491e8a5ddd563914",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_rEdslJTwzLO00E5AJDQU3187",
+            "quote": "收款银行：云海银行上海分行\n\n银行账号：6222026600004817359\n\n乙方经办人身份证号码：310101199204163218"
+          }
+        ],
+        "reason": "材料只能支持要点的后半部分：read_document 提取的第 4 页文本层中确实保留了完整的银行账号和个人身份证号码。但材料完全没有关于'黑色矩形遮盖'的任何信息——read_document 只返回文本转换结果（不做 OCR，也未返回页面视觉元素、遮盖图形等元数据），因此无法确认这些号码被黑色矩形遮盖、以及遮盖仅限于矩形。该要点缺少关键视觉条件，整体判定为 unsupported。"
+      }
+    ],
+    "summary": "文件第4页文本层确实保留完整银行账号与身份证号，可由读取内容证实；但材料中无任何关于'黑色矩形遮盖'的视觉信息，PDF读取仅返回文本，故该要点整体不成立。"
+  }
+}

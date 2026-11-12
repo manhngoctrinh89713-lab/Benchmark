@@ -1,0 +1,16 @@
+{
+  "id": "call_00_JAMB1uVMveECghmehvMZ6315",
+  "name": "buyer__list_shipping_options",
+  "arguments": "{\"merchant_id\": \"merchant_a\", \"country_code\": \"CN\"}",
+  "started_at": "2026-11-11T19:35:32.257029+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"shipping_options\": [{\"id\": \"ship_merchant_a\", \"merchant_id\": \"merchant_a\", \"name\": \"标准快递\", \"amount_minor\": 0, \"countries\": [], \"min_days\": 3, \"max_days\": 5, \"active\": true, \"version\": 1, \"default\": true}, {\"id\": \"shipping_merchant_a\", \"merchant_id\": \"merchant_a\", \"name\": \"Standard\", \"amount_minor\": 0, \"countries\": [], \"min_days\": 3, \"max_days\": 7, \"active\": true, \"version\": 1, \"default\": true}]}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:35:32.261725+08:00"
+}

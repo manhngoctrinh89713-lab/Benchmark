@@ -1,0 +1,29 @@
+{
+  "id": "4e61c079-754d-4c20-8149-e98092117b29_266b0facef0b48d5abce59139a9e4de9",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"所有工具返回中没有任何对 relocation/offer_terms.md 或工作区文件的读取，材料中完全没有出现 7,500 美元批准额度、超额度需书面批准等内容，该要点无任何依据。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中未读取 relocation/审批记录.md，也未出现任何审批记录内容，无法确认存在且仅存在一条 7,500 美元已批准记录。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 10,\n          \"tool_call_id\": \"call_-7101070091348862622\",\n          \"quote\": \"\\\"subject\\\": \\\"Yusuf relocation confirmation\\\", \\\"timestamp\\\": \\\"2026-11-03T15:20:00+08:00\\\", \\\"is_read\\\": false, \\\"starred\\\": false, \\\"attachments\\\": [], \\\"version\\\": 1, \\\"categories\\\": [], \\\"importance\\\": \\\"normal\\\", \\\"thread_id\\\": \\\"thread-e4e5b15868314ce9a0d964eb60916682\\\"\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 10,\n          \"tool_call_id\": \"call_-7101070091348862622\",\n          \"quote\": \"\\\"body\\\": \\\"Yusuf 的 relocation 报价 14,200 美元，请确认后我们安排排期。\\\"\"\n        }\n      ],\n      \"reason\": \"m_np 邮件（来自 ops@northpoint.example.test，主题 Yusuf relocation confirmation）正文明写报价 14,200 美元并要求确认后安排排期，与要点完全一致。\"\n    }\n  ],\n  \"summary\": \"Northpoint 邮件中确有 14,200 美元报价并要求确认后排期（要点3有据）。但材料中未读取 relocation/offer_terms.md 与审批记录，7,500 美元额度上限、超额需书面批准及审批记录情况均无任何材料支持，因此要点1、2不成立。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "We need to judge the three key facts against the materials. The tool results only show email searches and reading the email. No file reads of relocation/offer_terms.md or 审批记录.md. So key facts 1 and 2 are unsupported. Key fact 3 is supported by the read_email body: \"Yusuf 的 relocation 报价 14,200 美元，请确认后我们安排排期。\" and subject.\n\nLet me produce JSON."
+      }
+    }
+  ],
+  "created": 1794319601,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 682,
+    "prompt_tokens": 6713,
+    "total_tokens": 7395,
+    "completion_tokens_details": {
+      "reasoning_tokens": 101
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 6656
+    }
+  }
+}

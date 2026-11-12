@@ -1,0 +1,41 @@
+{
+  "status": "scored",
+  "fingerprint": "8caeb471d55c080eb24716cdde22bbce3bb49ec6c351b29c59227cd23d4728b7",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_-7101066208698430679",
+            "quote": "\"captured_at\": \"2025-11-18T14:32:10Z\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_-7101071431378661945",
+            "quote": "\\\"request_id\\\": \\\"req_8f2c41d7\\\", \\\"captured_at\\\": \\\"2025-11-18T14:32:10Z\\\", \\\"status\\\": 400"
+          }
+        ],
+        "reason": "示例文件 pagination_error.json 的内容明确包含 captured_at 为 2025-11-18T14:32:10Z；后续读取（message 12）确认该字段在文件中仍然存在，日期为 2025-11-18。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_-7101066208698430679",
+            "quote": "Pagination errors now use a top-level `errors` array. Each item carries `code` and `message`; the old `error.envelope` shape is deprecated and may be removed."
+          }
+        ],
+        "reason": "docs/halcyon_guide_2026.md 正文明确说明分页错误改用顶层 errors 数组，且旧的 error.envelope 形态已弃用、可能被移除，与要点完全一致。"
+      }
+    ],
+    "summary": "两条要点均有材料直接支持：示例文件中 captured_at 为 2025-11-18（两次读取均可见）；2026 指南原文明确分页错误改用顶层 errors 数组并弃用 error.envelope。"
+  }
+}

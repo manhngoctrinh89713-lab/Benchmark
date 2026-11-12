@@ -1,0 +1,36 @@
+{
+  "name": "create_chat",
+  "description": "创建 direct 私聊或 group 群聊，自动包含自己。选择未拉黑好友；私聊两人并复用已有会话，新建群至少三人，自己成为群主。省略群名称时根据成员昵称生成。",
+  "inputSchema": {
+    "properties": {
+      "member_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Member Ids",
+        "type": "array"
+      },
+      "name": {
+        "default": "",
+        "title": "Name",
+        "type": "string"
+      },
+      "chat_type": {
+        "default": "group",
+        "title": "Chat Type",
+        "type": "string"
+      }
+    },
+    "required": [
+      "member_ids"
+    ],
+    "title": "create_chatArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

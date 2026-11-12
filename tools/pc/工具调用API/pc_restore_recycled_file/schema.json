@@ -1,0 +1,35 @@
+{
+  "name": "pc_restore_recycled_file",
+  "description": "从回收站恢复文件，已有目标不覆盖。",
+  "inputSchema": {
+    "properties": {
+      "item_id": {
+        "title": "Item Id",
+        "type": "string"
+      },
+      "destination": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Destination"
+      }
+    },
+    "required": [
+      "item_id"
+    ],
+    "title": "pc_restore_recycled_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

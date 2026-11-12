@@ -1,0 +1,38 @@
+{
+  "name": "subscribe_plan",
+  "description": "以当前方案条款建立订阅合同；有试用期时在试用结束后开始扣款。",
+  "inputSchema": {
+    "properties": {
+      "plan_id": {
+        "title": "Plan Id",
+        "type": "string"
+      },
+      "payment_method_id": {
+        "title": "Payment Method Id",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      },
+      "quantity": {
+        "default": 1,
+        "title": "Quantity",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "plan_id",
+      "payment_method_id",
+      "idempotency_key"
+    ],
+    "title": "subscribe_planArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

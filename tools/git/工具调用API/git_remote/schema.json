@@ -1,0 +1,57 @@
+{
+  "name": "git_remote",
+  "description": "列出、添加或移除本地模拟远程；只保存 URL 和引用，不联网。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "operation": {
+        "default": "list",
+        "enum": [
+          "list",
+          "add",
+          "remove"
+        ],
+        "title": "Operation",
+        "type": "string"
+      },
+      "name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Name"
+      },
+      "url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Url"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_remoteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

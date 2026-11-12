@@ -1,0 +1,23 @@
+{
+  "name": "cancel_subscription_change",
+  "description": "清除尚未生效的订阅方案变更。",
+  "inputSchema": {
+    "properties": {
+      "subscription_id": {
+        "title": "Subscription Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "subscription_id"
+    ],
+    "title": "cancel_subscription_changeArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

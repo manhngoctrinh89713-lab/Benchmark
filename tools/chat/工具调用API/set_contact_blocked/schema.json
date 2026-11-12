@@ -1,0 +1,40 @@
+{
+  "name": "set_contact_blocked",
+  "description": "设置或解除自己的联系人拉黑状态；影响双方私聊投递，不影响共同群中的消息。expected_version 使用关系版本。",
+  "inputSchema": {
+    "properties": {
+      "user_id": {
+        "title": "User Id",
+        "type": "string"
+      },
+      "blocked": {
+        "title": "Blocked",
+        "type": "boolean"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "user_id",
+      "blocked"
+    ],
+    "title": "set_contact_blockedArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

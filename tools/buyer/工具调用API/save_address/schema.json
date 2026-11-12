@@ -1,0 +1,101 @@
+{
+  "name": "save_address",
+  "description": "新增或修改地址；已保存的报价和订单继续使用原有地址快照。",
+  "inputSchema": {
+    "$defs": {
+      "Address": {
+        "additionalProperties": false,
+        "properties": {
+          "address_line_1": {
+            "title": "Address Line 1",
+            "type": "string"
+          },
+          "country_code": {
+            "title": "Country Code",
+            "type": "string"
+          },
+          "address_line_2": {
+            "title": "Address Line 2",
+            "type": "string"
+          },
+          "admin_area_1": {
+            "title": "Admin Area 1",
+            "type": "string"
+          },
+          "admin_area_2": {
+            "title": "Admin Area 2",
+            "type": "string"
+          },
+          "postal_code": {
+            "title": "Postal Code",
+            "type": "string"
+          },
+          "recipient": {
+            "title": "Recipient",
+            "type": "string"
+          },
+          "phone": {
+            "title": "Phone",
+            "type": "string"
+          }
+        },
+        "required": [
+          "address_line_1",
+          "country_code"
+        ],
+        "title": "Address",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "label": {
+        "title": "Label",
+        "type": "string"
+      },
+      "address": {
+        "$ref": "#/$defs/Address"
+      },
+      "address_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Address Id"
+      },
+      "make_default": {
+        "default": false,
+        "title": "Make Default",
+        "type": "boolean"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "label",
+      "address"
+    ],
+    "title": "save_addressArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

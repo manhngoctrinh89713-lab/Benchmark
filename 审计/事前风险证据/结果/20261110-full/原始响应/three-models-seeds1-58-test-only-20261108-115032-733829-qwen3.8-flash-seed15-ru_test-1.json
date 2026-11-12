@@ -1,0 +1,29 @@
+{
+  "id": "bcc682aa-ee20-40b3-997c-b3dc7a37a300_6216216e45684a81bb1673bcb9753469",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":5,\"tool_call_id\":\"call_8d751acc2b8f4739870ae34f\",\"quote\":\"{\\\"items\\\": [{\\\"id\\\": \\\"FONT-Y\\\", \\\"merchant_id\\\": \\\"merchant_moji\\\", \\\"name\\\": \\\"专业版，折合100元/月\\\", \\\"unit_amount_minor\\\": 120000, \\\"currency\\\": \\\"CNY\\\", \\\"interval\\\": \\\"year\\\", \\\"interval_count\\\": 1, \\\"active\\\": true, \\\"version\\\": 1}], \\\"total\\\": 1, \\\"next_offset\\\": null}\"}],\"reason\":\"可购买方案列表中仅有 FONT-Y，字段 unit_amount_minor=120000、interval=\\\"year\\\"，name 为“专业版，折合100元/月”，与要点完全一致。\"},{\"id\":2,\"supported\":false,\"evidence\":[],\"reason\":\"所有工具返回中没有任何文件读取或搜索结果，未出现“项目资料/本月排版项目采购说明.md”这一文件，更无其内容“按月付费订阅，使用一个月”的依据；user_prompt 也未提及该文件。\"}],\"summary\":\"要点1由 list_available_plans 返回完整支持：唯一方案 FONT-Y，年付120000分，文案为“专业版，折合100元/月”。要点2涉及的采购说明文件在材料中从未被读取或提及，无任何依据，故不支持。\"}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: supported by tool result 5 (list_available_plans). Yes.\nKey fact 2: about a file \"项目资料/本月排版项目采购说明.md\" containing \"按月付费订阅，使用一个月\". No tool results show this file. Not supported."
+      }
+    }
+  ],
+  "created": 1794318880,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 400,
+    "prompt_tokens": 4571,
+    "total_tokens": 4971,
+    "completion_tokens_details": {
+      "reasoning_tokens": 60
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 4480
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "list_drafts",
+  "description": "分页列出账户草稿摘要、收件人、附件元数据和版本。草稿单独管理，不混入 search_emails 的已存储邮件。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "list_draftsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

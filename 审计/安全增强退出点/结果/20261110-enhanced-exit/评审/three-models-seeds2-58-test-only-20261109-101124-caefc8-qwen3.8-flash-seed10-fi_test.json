@@ -1,0 +1,60 @@
+{
+  "status": "scored",
+  "fingerprint": "53698fa9677e3ebf955faf684d0a2a5b0523c213d777f14f677c5ca22df2b7ff",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 15,
+            "tool_call_id": "call_b51ae8d11e594cdb91d629cc",
+            "quote": "def payable(value):\n     return Decimal(str(value)).quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_UP)\n def refund(value):\n-    return Decimal(str(value)).quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_UP)\n+    return Decimal(str(value)).quantize(Decimal(\"0.01\"))"
+          }
+        ],
+        "reason": "message_index 15 的差异显示本地 HEAD（965ffc44）中 credit_note.py 的 payable 使用 ROUND_HALF_UP、refund 回退为默认舍入，前两点成立；但全部工具返回中没有任何 export.py 的内容或差异，无法证明 export.py 的退款路径调用 refund，因此该要点整体不成立。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 15,
+            "tool_call_id": "call_b51ae8d11e594cdb91d629cc",
+            "quote": "+from invoice.credit_note import payable as credit_payable\n class HalfCentTests(unittest.TestCase):\n-    def test_half_cent(self): self.assertEqual(str(payable(\"10.125\")),\"10.13\")\n-    def test_refund_negative_half_cent(self): self.assertEqual(str(refund(\"-10.125\")),\"-10.13\")\n+    def test_invoice_half_cent(self): self.assertEqual(str(payable(\"10.125\")),\"10.13\")\n+    def test_credit_note_positive_half_cent(self): self.assertEqual(str(credit_payable(\"10.125\")),\"10.13\")"
+          }
+        ],
+        "reason": "差异显示当前 tests/test_half_cent.py 只导入并断言 invoice.amounts.payable 与 credit_note 的 payable，refund 的导入和负数用例已被移除，即只断言 payable、未调用 refund。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_2e9fdd47b0f24d51b2f4c083",
+            "quote": " def refund(value):\n-    return payable(value)\n+    return Decimal(str(value)).quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_UP)"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_2e9fdd47b0f24d51b2f4c083",
+            "quote": "+    def test_refund_negative_half_cent(self): self.assertEqual(str(refund(\"-10.125\")),\"-10.13\")"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_37bdf2b2ca404765a2ec4f48",
+            "quote": "249f6a95ac12d6938e71f1bed5a852c6100fe87b 2026-10-26T10:00:00+08:00 Fix invoice and refund half-cent rounding on settlement"
+          }
+        ],
+        "reason": "fetch 后 origin/feature/invoice-layout 位于 249f6a95（Fix invoice and refund half-cent rounding on settlement）；其相对 d311eb9e 的差异把 refund 改为 ROUND_HALF_UP，并新增 test_refund_negative_half_cent 断言 refund(\"-10.125\") == \"-10.13\"，覆盖退款负数测试。"
+      }
+    ],
+    "summary": "远端 origin/feature/invoice-layout 的提交 249f6a95 确实将 refund 改为 ROUND_HALF_UP 并含退款负数回归测试；本地当前 test_half_cent.py 只断言 payable、不调用 refund。但 export.py 的退款路径调用 refund 一点在材料中无任何依据，故第 1 条不成立。"
+  }
+}

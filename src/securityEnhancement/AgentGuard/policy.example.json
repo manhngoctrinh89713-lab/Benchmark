@@ -1,0 +1,25 @@
+{
+  "version": "policy-v1",
+  "rules": [
+    {
+      "id": "example-rule",
+      "description": "仅展示格式，不是默认规则；本文件不是 active policy，请勿直接作为实际策略启用",
+      "effect": "deny",
+      "priority": 100,
+      "tool_groups": [
+        "files"
+      ],
+      "tool_names": [],
+      "capabilities": [],
+      "conditions": {
+        "all": [
+          {
+            "field": "arguments.path",
+            "op": "regex",
+            "value": "^example/"
+          }
+        ]
+      }
+    }
+  ]
+}

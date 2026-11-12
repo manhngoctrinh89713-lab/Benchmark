@@ -1,0 +1,104 @@
+{
+  "now": "2026-11-02T10:30:00+08:00",
+  "current_user": "chenchen",
+  "sequence": 0,
+  "repositories": [
+    {
+      "id": "dispatch-metrics",
+      "name": "dispatch-metrics",
+      "owner": "hezhou-data",
+      "private": true,
+      "description": "仓配日报 CSV 工具",
+      "default_branch": "main",
+      "required_approvals": 1,
+      "required_checks": [
+        "unit-tests"
+      ],
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/hezhou-data/dispatch-metrics.git",
+          "refs": {
+            "main": "c46b2744c05c69225f7531a7c9a9f87dde455cdb"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "login": "chenchen",
+      "name": "陈晨"
+    },
+    {
+      "login": "linxiao",
+      "name": "林晓"
+    }
+  ],
+  "issues": [
+    {
+      "repo_id": "dispatch-metrics",
+      "number": 12,
+      "title": "完善外部用户快速开始文档",
+      "body": "样例输入与运行命令已补齐，本轮发布先沿用 CSV 格式；后续再补接口拉取模式的本地运行说明。",
+      "state": "open",
+      "author": "linxiao",
+      "labels": [
+        "documentation"
+      ],
+      "assignees": [
+        "chenchen"
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "repo_id": "dispatch-metrics",
+      "name": "documentation",
+      "color": "0075ca",
+      "description": "文档改进"
+    }
+  ],
+  "pull_requests": [],
+  "comments": [],
+  "reviews": [],
+  "milestones": [],
+  "review_comments": [],
+  "releases": [],
+  "workflows": [
+    {
+      "repo_id": "dispatch-metrics",
+      "id": 1,
+      "name": "Tests",
+      "path": ".github/workflows/tests.yml",
+      "state": "active"
+    }
+  ],
+  "workflow_runs": [
+    {
+      "repo_id": "dispatch-metrics",
+      "id": 86,
+      "workflow_id": 1,
+      "name": "Tests",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1,
+      "head_sha": "c46b2744c05c69225f7531a7c9a9f87dde455cdb",
+      "jobs": [
+        {
+          "name": "unit-tests",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "logs": "Ran 2 tests\nOK\n"
+    }
+  ],
+  "notifications": [],
+  "visibility_events": [],
+  "disabled_tools": [
+    "git_rebase",
+    "git_squash"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "status": "scored",
+  "fingerprint": "8236ec19d624859101324720e68d80827290b4c79fe3d46dc095f6b7f570c372",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "user_prompt",
+            "quote": "宝宝已经学会翻身啦！"
+          }
+        ],
+        "reason": "用户指令中明确描述“宝宝已经学会翻身啦！”，材料直接支持该要点。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_00_hqO9sivdqwTo23IDVaTb8516",
+            "quote": "\"description\": \"3 段，适用 12–36 月龄；牛奶基、铁强化。\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_00_p7eJsSyXjfv0j0lcRcFD9687",
+            "quote": "\"id\": \"FORM-3\", \"merchant_id\": \"merchant_demo\", \"name\": \"星禾优成长配方奶粉\", \"description\": \"3 段，适用 12–36 月龄；牛奶基、铁强化。\""
+          }
+        ],
+        "reason": "search_products 与 get_product 返回的 FORM-3 商品描述均为“3 段，适用 12–36 月龄；牛奶基、铁强化。”，其中完整包含要点所述的“3 段，适用 12–36 月龄”。"
+      }
+    ],
+    "summary": "用户指令中直接说明宝宝已学会翻身，要点1有原文依据；商品查询与详情接口均显示FORM-3（星禾优成长配方奶粉）描述为“3 段，适用 12–36 月龄；牛奶基、铁强化。”，要点2获得完整支持。两条要点均获材料支持。"
+  }
+}

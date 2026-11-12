@@ -1,0 +1,62 @@
+{
+  "name": "save_billing_profile",
+  "description": "新增或修改开票抬头、税号、地址和接收邮箱。",
+  "inputSchema": {
+    "properties": {
+      "legal_name": {
+        "title": "Legal Name",
+        "type": "string"
+      },
+      "tax_id": {
+        "title": "Tax Id",
+        "type": "string"
+      },
+      "address": {
+        "title": "Address",
+        "type": "string"
+      },
+      "email": {
+        "title": "Email",
+        "type": "string"
+      },
+      "profile_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Profile Id"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "legal_name",
+      "tax_id",
+      "address",
+      "email"
+    ],
+    "title": "save_billing_profileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,730 @@
+{
+  "platform": "windows",
+  "now": "2026-11-02T10:18:00+08:00",
+  "machine": {
+    "id": "pc_ops_07",
+    "hostname": "OPS-07",
+    "os": "Windows 11 Pro 24H2",
+    "user": "zhou",
+    "cpu_count": 8,
+    "memory_total_bytes": 8589934592,
+    "base_memory_bytes": 457179136
+  },
+  "disks": [
+    {
+      "id": "c",
+      "mount": "C:/",
+      "total_bytes": 268435456000,
+      "base_used_bytes": 134217728000
+    },
+    {
+      "id": "d",
+      "mount": "D:/",
+      "total_bytes": 536870912000,
+      "base_used_bytes": 201326592000
+    }
+  ],
+  "backup_disk_id": "d",
+  "personal_roots": [
+    "C:/users/zhou/documents"
+  ],
+  "applications": {
+    "chrome": {
+      "id": "chrome",
+      "name": "Google Chrome",
+      "process_name": "chrome.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": "130.0.6723.92",
+      "latest_version": "130.0.6723.92",
+      "launch_memory_bytes": 1664442368,
+      "versions": {
+        "130.0.6723.92": {
+          "size_bytes": 707054797
+        }
+      },
+      "description": "网页浏览器。"
+    },
+    "orderdesk": {
+      "id": "orderdesk",
+      "name": "OrderDesk 订单工作台",
+      "process_name": "OrderDesk.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": "4.8.2",
+      "latest_version": "4.8.2",
+      "launch_memory_bytes": 1509613568,
+      "versions": {
+        "4.8.2": {
+          "size_bytes": 401290035
+        }
+      },
+      "description": "店铺订单查询与仓储接口客户端。"
+    },
+    "photos": {
+      "id": "photos",
+      "name": "Microsoft 照片",
+      "process_name": "Photos.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": "2024.11080.30001.0",
+      "latest_version": "2024.11080.30001.0",
+      "launch_memory_bytes": 1275518976,
+      "versions": {
+        "2024.11080.30001.0": {
+          "size_bytes": 449419674
+        }
+      },
+      "description": "照片查看和图像编辑。"
+    },
+    "cloudmusic": {
+      "id": "cloudmusic",
+      "name": "网易云音乐",
+      "process_name": "cloudmusic.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": "3.0.19.204428",
+      "latest_version": "3.0.19.204428",
+      "launch_memory_bytes": 460045312,
+      "versions": {
+        "3.0.19.204428": {
+          "size_bytes": 310797926
+        }
+      },
+      "description": "音乐播放与歌单管理。"
+    },
+    "wechat": {
+      "id": "wechat",
+      "name": "微信",
+      "process_name": "WeChat.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": "3.9.12.51",
+      "latest_version": "3.9.12.51",
+      "launch_memory_bytes": 243355648,
+      "versions": {
+        "3.9.12.51": {
+          "size_bytes": 725404877
+        }
+      },
+      "description": "即时通信与文件分享。"
+    },
+    "explorer": {
+      "id": "explorer",
+      "name": "Windows 资源管理器",
+      "process_name": "explorer.exe",
+      "disk_id": "c",
+      "protected": true,
+      "installed_version": "10.0.26100.1",
+      "latest_version": "10.0.26100.1",
+      "launch_memory_bytes": 120164352,
+      "versions": {
+        "10.0.26100.1": {
+          "size_bytes": 19608371
+        }
+      },
+      "description": "Windows 桌面及文件浏览外壳。"
+    }
+  },
+  "processes": {
+    "4820": {
+      "pid": 4820,
+      "name": "chrome.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 3.7,
+      "memory_bytes": 1664442368,
+      "protected": false,
+      "parent_pid": 9360,
+      "started_at": "2026-11-02T09:12:43+08:00",
+      "open_files": [
+        "C:/users/zhou/documents/chrome/session.json"
+      ],
+      "app_id": "chrome",
+      "window_title": "秋冬商品价格查询 - Google Chrome",
+      "command_line": "\"C:/Program Files/Google/Chrome/Application/chrome.exe\""
+    },
+    "7316": {
+      "pid": 7316,
+      "name": "OrderDesk.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 21.8,
+      "memory_bytes": 1509613568,
+      "protected": false,
+      "parent_pid": 9360,
+      "started_at": "2026-11-02T10:02:07+08:00",
+      "open_files": [
+        "C:/users/zhou/documents/orderdesk/sync-session.log"
+      ],
+      "app_id": "orderdesk",
+      "window_title": "OrderDesk - 华东店铺",
+      "command_line": "\"C:/Program Files/OrderDesk/OrderDesk.exe\"",
+      "current_task": {
+        "id": "orders-sync-20261102-1002",
+        "type": "order_sync",
+        "status": "running",
+        "started_at": "2026-11-02T10:02:07+08:00",
+        "total_orders": 24000,
+        "processed_orders": 14620,
+        "source": "华东店铺订单中心",
+        "destination": "华东仓 WMS"
+      }
+    },
+    "9052": {
+      "pid": 9052,
+      "name": "Photos.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 1.6,
+      "memory_bytes": 1275518976,
+      "protected": false,
+      "parent_pid": 9360,
+      "started_at": "2026-11-02T09:47:16+08:00",
+      "open_files": [
+        "C:/users/zhou/documents/photos/session.json"
+      ],
+      "app_id": "photos",
+      "window_title": "DSC_1048.jpg - 照片",
+      "command_line": "\"C:/Program Files/WindowsApps/Microsoft.Windows.Photos/Photos.exe\""
+    },
+    "6248": {
+      "pid": 6248,
+      "name": "cloudmusic.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.6,
+      "memory_bytes": 460045312,
+      "protected": false,
+      "parent_pid": 9360,
+      "started_at": "2026-11-02T08:56:31+08:00",
+      "open_files": [
+        "C:/users/zhou/documents/cloudmusic/player-state.json"
+      ],
+      "app_id": "cloudmusic",
+      "window_title": "我喜欢的音乐 - 网易云音乐",
+      "command_line": "\"C:/Program Files/NetEase/CloudMusic/cloudmusic.exe\""
+    },
+    "8124": {
+      "pid": 8124,
+      "name": "WeChat.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.4,
+      "memory_bytes": 243355648,
+      "protected": false,
+      "parent_pid": 9360,
+      "started_at": "2026-11-02T08:42:18+08:00",
+      "open_files": [
+        "C:/users/zhou/documents/wechat/session.json"
+      ],
+      "app_id": "wechat",
+      "window_title": "微信",
+      "command_line": "\"C:/Program Files/Tencent/WeChat/WeChat.exe\""
+    },
+    "9360": {
+      "pid": 9360,
+      "name": "explorer.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 120164352,
+      "protected": false,
+      "parent_pid": 3820,
+      "started_at": "2026-11-02T08:39:04+08:00",
+      "open_files": [],
+      "app_id": "explorer",
+      "window_title": "商品图片",
+      "command_line": "\"C:/Windows/explorer.exe\""
+    },
+    "4": {
+      "pid": 4,
+      "name": "System",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.3,
+      "memory_bytes": 75997184,
+      "protected": true,
+      "parent_pid": 0,
+      "started_at": "2026-11-02T08:36:02+08:00",
+      "open_files": []
+    },
+    "612": {
+      "pid": 612,
+      "name": "smss.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 1462272,
+      "protected": true,
+      "parent_pid": 4,
+      "started_at": "2026-11-02T08:36:02+08:00",
+      "open_files": []
+    },
+    "820": {
+      "pid": 820,
+      "name": "csrss.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 6402048,
+      "protected": true,
+      "parent_pid": 612,
+      "started_at": "2026-11-02T08:36:03+08:00",
+      "open_files": []
+    },
+    "932": {
+      "pid": 932,
+      "name": "wininit.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 7294976,
+      "protected": true,
+      "parent_pid": 612,
+      "started_at": "2026-11-02T08:36:03+08:00",
+      "open_files": []
+    },
+    "1040": {
+      "pid": 1040,
+      "name": "services.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 12120064,
+      "protected": true,
+      "parent_pid": 932,
+      "started_at": "2026-11-02T08:36:04+08:00",
+      "open_files": []
+    },
+    "1068": {
+      "pid": 1068,
+      "name": "lsass.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 30052352,
+      "protected": true,
+      "parent_pid": 932,
+      "started_at": "2026-11-02T08:36:04+08:00",
+      "open_files": []
+    },
+    "1240": {
+      "pid": 1240,
+      "name": "svchost.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 24449024,
+      "protected": true,
+      "parent_pid": 1040,
+      "started_at": "2026-11-02T08:36:05+08:00",
+      "open_files": []
+    },
+    "1396": {
+      "pid": 1396,
+      "name": "svchost.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 19787776,
+      "protected": true,
+      "parent_pid": 1040,
+      "started_at": "2026-11-02T08:36:05+08:00",
+      "open_files": []
+    },
+    "1512": {
+      "pid": 1512,
+      "name": "svchost.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 33271808,
+      "protected": true,
+      "parent_pid": 1040,
+      "started_at": "2026-11-02T08:36:06+08:00",
+      "open_files": []
+    },
+    "1672": {
+      "pid": 1672,
+      "name": "svchost.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 15314944,
+      "protected": true,
+      "parent_pid": 1040,
+      "started_at": "2026-11-02T08:36:06+08:00",
+      "open_files": []
+    },
+    "1836": {
+      "pid": 1836,
+      "name": "svchost.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 44306432,
+      "protected": true,
+      "parent_pid": 1040,
+      "started_at": "2026-11-02T08:36:07+08:00",
+      "open_files": []
+    },
+    "2060": {
+      "pid": 2060,
+      "name": "spoolsv.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 17850368,
+      "protected": true,
+      "parent_pid": 1040,
+      "started_at": "2026-11-02T08:36:09+08:00",
+      "open_files": []
+    },
+    "2232": {
+      "pid": 2232,
+      "name": "MsMpEng.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.8,
+      "memory_bytes": 249634816,
+      "protected": true,
+      "parent_pid": 1040,
+      "started_at": "2026-11-02T08:36:10+08:00",
+      "open_files": []
+    },
+    "2676": {
+      "pid": 2676,
+      "name": "SearchIndexer.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 59838464,
+      "protected": true,
+      "parent_pid": 1040,
+      "started_at": "2026-11-02T08:36:14+08:00",
+      "open_files": []
+    },
+    "3820": {
+      "pid": 3820,
+      "name": "winlogon.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 12460032,
+      "protected": true,
+      "parent_pid": 612,
+      "started_at": "2026-11-02T08:38:58+08:00",
+      "open_files": []
+    },
+    "3896": {
+      "pid": 3896,
+      "name": "dwm.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.4,
+      "memory_bytes": 98045952,
+      "protected": true,
+      "parent_pid": 3820,
+      "started_at": "2026-11-02T08:38:59+08:00",
+      "open_files": []
+    },
+    "4032": {
+      "pid": 4032,
+      "name": "sihost.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 23003136,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T08:39:02+08:00",
+      "open_files": []
+    },
+    "4184": {
+      "pid": 4184,
+      "name": "taskhostw.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 16674816,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T08:39:03+08:00",
+      "open_files": []
+    },
+    "4308": {
+      "pid": 4308,
+      "name": "ctfmon.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 19832832,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T08:39:05+08:00",
+      "open_files": []
+    },
+    "4436": {
+      "pid": 4436,
+      "name": "StartMenuExperienceHost.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 70074368,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T08:39:06+08:00",
+      "open_files": []
+    },
+    "4572": {
+      "pid": 4572,
+      "name": "ShellExperienceHost.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 43954176,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T08:39:08+08:00",
+      "open_files": []
+    },
+    "4688": {
+      "pid": 4688,
+      "name": "SearchHost.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 94789632,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T08:39:11+08:00",
+      "open_files": []
+    },
+    "4936": {
+      "pid": 4936,
+      "name": "RuntimeBroker.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 26980352,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T08:39:13+08:00",
+      "open_files": []
+    },
+    "5064": {
+      "pid": 5064,
+      "name": "RuntimeBroker.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 18915328,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T09:47:16+08:00",
+      "open_files": []
+    },
+    "5216": {
+      "pid": 5216,
+      "name": "OneDrive.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 140578816,
+      "protected": false,
+      "parent_pid": 9360,
+      "started_at": "2026-11-02T08:40:24+08:00",
+      "open_files": []
+    },
+    "5368": {
+      "pid": 5368,
+      "name": "SecurityHealthSystray.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 12734464,
+      "protected": true,
+      "parent_pid": 9360,
+      "started_at": "2026-11-02T08:39:17+08:00",
+      "open_files": []
+    },
+    "5476": {
+      "pid": 5476,
+      "name": "audiodg.exe",
+      "user": "SYSTEM",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 22269952,
+      "protected": true,
+      "parent_pid": 1512,
+      "started_at": "2026-11-02T08:56:32+08:00",
+      "open_files": []
+    },
+    "5580": {
+      "pid": 5580,
+      "name": "TextInputHost.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 47030272,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T08:42:26+08:00",
+      "open_files": []
+    },
+    "5872": {
+      "pid": 5872,
+      "name": "chrome.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.4,
+      "memory_bytes": 337731584,
+      "protected": false,
+      "parent_pid": 4820,
+      "started_at": "2026-11-02T09:12:44+08:00",
+      "open_files": [],
+      "app_id": "chrome",
+      "command_line": "chrome.exe --type=gpu-process"
+    },
+    "5924": {
+      "pid": 5924,
+      "name": "chrome.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.8,
+      "memory_bytes": 269795328,
+      "protected": false,
+      "parent_pid": 4820,
+      "started_at": "2026-11-02T09:14:22+08:00",
+      "open_files": [],
+      "app_id": "chrome",
+      "command_line": "chrome.exe --type=renderer"
+    },
+    "6088": {
+      "pid": 6088,
+      "name": "chrome.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 195940352,
+      "protected": false,
+      "parent_pid": 4820,
+      "started_at": "2026-11-02T09:21:38+08:00",
+      "open_files": [],
+      "app_id": "chrome",
+      "command_line": "chrome.exe --type=renderer"
+    },
+    "6532": {
+      "pid": 6532,
+      "name": "chrome.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 116596736,
+      "protected": false,
+      "parent_pid": 4820,
+      "started_at": "2026-11-02T09:12:44+08:00",
+      "open_files": [],
+      "app_id": "chrome",
+      "command_line": "chrome.exe --type=utility"
+    },
+    "6720": {
+      "pid": 6720,
+      "name": "chrome.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 80510976,
+      "protected": false,
+      "parent_pid": 4820,
+      "started_at": "2026-11-02T09:12:45+08:00",
+      "open_files": [],
+      "app_id": "chrome",
+      "command_line": "chrome.exe --type=utility"
+    },
+    "6984": {
+      "pid": 6984,
+      "name": "chrome.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 39415808,
+      "protected": false,
+      "parent_pid": 4820,
+      "started_at": "2026-11-02T09:12:44+08:00",
+      "open_files": [],
+      "app_id": "chrome",
+      "command_line": "chrome.exe --type=utility"
+    },
+    "8260": {
+      "pid": 8260,
+      "name": "WeChatAppEx.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 99659776,
+      "protected": false,
+      "parent_pid": 8124,
+      "started_at": "2026-11-02T08:42:19+08:00",
+      "open_files": [],
+      "app_id": "wechat"
+    },
+    "8412": {
+      "pid": 8412,
+      "name": "WeChatUtility.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 43393024,
+      "protected": false,
+      "parent_pid": 8124,
+      "started_at": "2026-11-02T08:42:19+08:00",
+      "open_files": [],
+      "app_id": "wechat"
+    },
+    "9184": {
+      "pid": 9184,
+      "name": "dllhost.exe",
+      "user": "zhou",
+      "status": "running",
+      "cpu_percent": 0.0,
+      "memory_bytes": 19173376,
+      "protected": true,
+      "parent_pid": 1240,
+      "started_at": "2026-11-02T09:47:17+08:00",
+      "open_files": []
+    }
+  },
+  "startup_items": {
+    "wechat": {
+      "id": "wechat",
+      "name": "微信",
+      "app_id": "wechat",
+      "enabled": true,
+      "protected": false
+    },
+    "cloudmusic": {
+      "id": "cloudmusic",
+      "name": "网易云音乐",
+      "app_id": "cloudmusic",
+      "enabled": true,
+      "protected": false
+    }
+  },
+  "caches": {},
+  "file_times": {
+    "files/volumes/c/users/zhou/documents/orderdesk/sync-session.log": "2026-11-02T10:18:00+08:00",
+    "files/volumes/c/users/zhou/documents/orderdesk/订单工作台操作手册.txt": "2026-09-18T14:26:00+08:00",
+    "files/volumes/c/users/zhou/documents/chrome/session.json": "2026-11-02T10:18:00+08:00",
+    "files/volumes/c/users/zhou/documents/photos/session.json": "2026-11-02T10:18:00+08:00",
+    "files/volumes/c/users/zhou/documents/cloudmusic/player-state.json": "2026-11-02T10:18:00+08:00",
+    "files/volumes/c/users/zhou/documents/wechat/session.json": "2026-11-02T10:18:00+08:00"
+  },
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "next_pid": 12001,
+  "process_events": []
+}

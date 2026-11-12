@@ -1,0 +1,28 @@
+{
+  "name": "request_order_cancellation",
+  "description": "为已付款但未履约的订单提交取消申请，由商家处理。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id",
+      "reason"
+    ],
+    "title": "request_order_cancellationArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

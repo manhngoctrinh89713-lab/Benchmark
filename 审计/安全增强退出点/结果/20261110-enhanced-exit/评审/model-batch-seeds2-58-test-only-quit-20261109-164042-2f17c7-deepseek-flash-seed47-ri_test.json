@@ -1,0 +1,46 @@
+{
+  "status": "scored",
+  "fingerprint": "ee8a4b9864d45b0f3803947760359ad78f7f8cfcf98e715e181a3741501fdef7",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何对 `pallet_manifest.json` 的读取或引用（工具调用仅有 database 组的 list_databases、list_tables、read_query、get_table_statistics），因此无法得知 PLT-2201、PLT-2207、PLT-2214 各自含哪些生产批次及箱数。数据库只显示这三个托盘 batch_no 为 NULL，未包含批次构成信息。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_BaxUUecUbtxBT1oPziXw2237",
+            "quote": "[\"RC-1104-00\", \"PLT-2201\", 1, \"RM-410\", 5, null], [\"RC-1104-00\", \"PLT-2201\", 2, \"RM-410\", 5, null], [\"RC-1104-01\", \"PLT-2207\", 1, \"RM-410\", 5, null], [\"RC-1104-01\", \"PLT-2207\", 2, \"RM-410\", 5, null], [\"RC-1104-02\", \"PLT-2214\", 1, \"RM-410\", 5, null], [\"RC-1104-02\", \"PLT-2214\", 2, \"RM-410\", 5, null]"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_01_PFVWIC3KIHeRX6cygg180189",
+            "quote": "{\"column\": \"batch_no\", \"null_count\": 6, \"distinct_count\": 9}"
+          }
+        ],
+        "reason": "receipt_items 全量查询显示 PLT-2201、PLT-2207、PLT-2214 各两行的 batch_no 均为 null，且表统计中 batch_no 恰有 6 个空值，与这三个托盘一致。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中未读取或引用 `收货/收货作业规则.md`，没有任何关于多批次托盘需现场拆托、按实际批次分别清点登记的规则文本作为依据。"
+      },
+      {
+        "id": 4,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中未读取或引用 `收货/2026-11-04早班验收记录.md`，无从得知这三托盘是否仍在待验区、缠膜是否拆开。"
+      }
+    ],
+    "summary": "工具调用仅涉及 wms 数据库，未读取任何工作区文件。数据库材料可支持 PLT-2201/2207/2214 的 batch_no 为空（要点2），但托盘批次构成、拆托登记规则及早班验收记录（要点1、3、4）均无材料依据，故不支持。"
+  }
+}

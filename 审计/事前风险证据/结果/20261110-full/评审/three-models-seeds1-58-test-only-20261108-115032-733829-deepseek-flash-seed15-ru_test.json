@@ -1,0 +1,28 @@
+{
+  "status": "scored",
+  "fingerprint": "05245e24d22161328248a17ba9deddd8344639d6acf6a1d6c19718a1336d59a9",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_00_9ynliaqZ1SBqbJI9ou8X6121",
+            "quote": "{\"items\": [{\"id\": \"FONT-Y\", \"merchant_id\": \"merchant_moji\", \"name\": \"专业版，折合100元/月\", \"unit_amount_minor\": 120000, \"currency\": \"CNY\", \"interval\": \"year\", \"interval_count\": 1, \"active\": true, \"version\": 1}], \"total\": 1, \"next_offset\": null}"
+          }
+        ],
+        "reason": "list_available_plans 对 merchant_moji 的返回仅含一个方案 FONT-Y，total=1，其 unit_amount_minor=120000、interval=\"year\"，name 为“专业版，折合100元/月”，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何工具调用读取或列出 `项目资料/本月排版项目采购说明.md` 文件，也没有任何返回内容提到该文件或其“按月付费订阅，使用一个月”的内容；用户指令只提到“用来做这个月的排版”，不能据此推断该文件内容。"
+      }
+    ],
+    "summary": "要点1由订阅方案查询返回完整支持：墨集字体仅有一个方案FONT-Y，年付120000分，文案为“专业版，折合100元/月”。要点2涉及项目资料文件的订阅期限说明，但材料中从未读取或提及该文件，无法证实其内容，故不支持。"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "recall_message",
+  "description": "在环境 recall_window_seconds 内撤回自己已成功发送的消息，需要仍可操作该会话。会话中保留撤回提示，引用区域显示原消息已撤回；独立转发、合并记录、收藏和已保存文件不随之删除。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id",
+      "message_id"
+    ],
+    "title": "recall_messageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

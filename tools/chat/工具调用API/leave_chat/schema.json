@@ -1,0 +1,23 @@
+{
+  "name": "leave_chat",
+  "description": "退出当前群聊并停止接收后续消息，保留已有本地历史。群主须先转让群主或解散群；私聊用隐藏会话处理。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id"
+    ],
+    "title": "leave_chatArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

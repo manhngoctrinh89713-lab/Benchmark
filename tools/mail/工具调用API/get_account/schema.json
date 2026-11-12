@@ -1,0 +1,23 @@
+{
+  "name": "get_account",
+  "description": "查询账户身份、当前操作者及 read/write/send_as/send_on_behalf/manage 权限。发送身份只能选主地址或别名。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "account_name"
+    ],
+    "title": "get_accountArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "git_stash",
+  "description": "保存、列出、查看、应用、弹出或删除 stash。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "operation": {
+        "default": "list",
+        "title": "Operation",
+        "type": "string"
+      },
+      "stash": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Stash"
+      },
+      "message": {
+        "default": "",
+        "title": "Message",
+        "type": "string"
+      },
+      "include_untracked": {
+        "default": false,
+        "title": "Include Untracked",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_stashArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

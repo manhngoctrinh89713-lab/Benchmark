@@ -1,0 +1,15 @@
+{
+  "name": "get_buyer_profile",
+  "description": "读取当前买家的资料、默认地址及已绑定支付方式。",
+  "inputSchema": {
+    "properties": {},
+    "title": "get_buyer_profileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

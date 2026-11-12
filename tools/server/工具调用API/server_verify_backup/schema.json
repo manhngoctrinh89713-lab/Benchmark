@@ -1,0 +1,23 @@
+{
+  "name": "server_verify_backup",
+  "description": "验证ZIP整体及逐文件哈希、机器身份和恢复路径。",
+  "inputSchema": {
+    "properties": {
+      "backup_id": {
+        "title": "Backup Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "backup_id"
+    ],
+    "title": "server_verify_backupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

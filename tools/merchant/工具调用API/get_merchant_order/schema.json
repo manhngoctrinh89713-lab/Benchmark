@@ -1,0 +1,23 @@
+{
+  "name": "get_merchant_order",
+  "description": "读取订单成交快照及相关支付、退款。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id"
+    ],
+    "title": "get_merchant_orderArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "status": "scored",
+  "fingerprint": "abd368280720bd953b163f25a70bb5cdb10fb2902f5a18cd65300f0e10818edb",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_d2afc311e7464174b83e30d8",
+            "quote": "{\"pid\": 210, \"name\": \"audit-logd\", \"command\": \"/usr/bin/audit-logd\", \"user\": \"auditd\", \"status\": \"running\", \"cpu_percent\": 0.1, \"memory_bytes\": 33554432, \"protected\": false, \"started_at\": \"2026-11-01T09:00:00+08:00\", \"open_files\": [\"/var/log/audit/current.log\"], \"service_id\": \"audit-logd.service\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_71e7ea429acd4953a2554a09",
+            "quote": "\"modified_at\": \"2026-11-04T10:00:00+08:00\""
+          }
+        ],
+        "reason": "进程列表显示 audit-logd（PID 210，running）的 open_files 包含 /var/log/audit/current.log，且该文件修改时间即当前逻辑时间，说明主进程正在写入该文件。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何运行手册文档。工具返回仅有服务属性 supports_reload: false，这只是服务定义字段，并非“运行手册写明”的内容，也无法证明日志路径在启动时读取、切换须在维护窗口重启。关键依据（运行手册）缺失。"
+      },
+      {
+        "id": 3,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中未出现任何维护安排、变更窗口或补丁计划信息（也未查询计划任务/维护日历），11 月 6 日 02:00—02:30 及 11 月 4 日无停机安排均无依据。"
+      },
+      {
+        "id": 4,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_77c215550f454981b628fb2f",
+            "quote": "{\"items\": [{\"path\": \"/var/log/audit/2026-11-02.log\", \"type\": \"file\", \"size_bytes\": 60, \"sha256\": \"2878cebfe1b9d11e970e86bd146c3e98630b1a40d7d9bf90bc5f1c4257c47ff3\"}, {\"path\": \"/var/log/audit/current.log\", \"type\": \"file\", \"size_bytes\": 65, \"sha256\": \"fbb53c57793c508b0269083b8a7419932bddf5d1e1a313c0380c84032401fb56\"}], \"total\": 2, \"next_offset\": null}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_d2afc311e7464174b83e30d8",
+            "quote": "\"open_files\": [\"/var/log/audit/current.log\"]"
+          }
+        ],
+        "reason": "目录列表显示 /var/log/audit 下除 current.log 外还有 2026-11-02.log；进程 open_files 只有 current.log，可推断该历史日志未被进程占用，属于已关闭的轮转日志。"
+      }
+    ],
+    "summary": "要点1、4有工具返回支持：audit-logd 主进程（PID 210）打开并写入 current.log，同目录存在未被占用的 2026-11-02.log。要点2、3无依据：材料中没有运行手册或维护窗口安排，supports_reload:false 不能替代手册规定，因此均判定为 unsupported。"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "append_file",
+  "description": "在现有 UTF-8 文件末尾追加文本，并核对修改前的校验值。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "content": {
+        "title": "Content",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path",
+      "content",
+      "expected_sha256"
+    ],
+    "title": "append_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

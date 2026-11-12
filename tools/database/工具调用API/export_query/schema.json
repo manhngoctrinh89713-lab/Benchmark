@@ -1,0 +1,55 @@
+{
+  "name": "export_query",
+  "description": "将只读查询完整导出为运行files内新CSV或JSON，不覆盖。format为csv/json，最多10000行、25 MiB，超限报错而非截断。CSV使用UTF-8 BOM，NULL为空字段。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "sql": {
+        "title": "Sql",
+        "type": "string"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      },
+      "parameters": {
+        "anyOf": [
+          {
+            "items": {},
+            "type": "array"
+          },
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Parameters"
+      },
+      "format": {
+        "default": "csv",
+        "title": "Format",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "sql",
+      "save_path"
+    ],
+    "title": "export_queryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

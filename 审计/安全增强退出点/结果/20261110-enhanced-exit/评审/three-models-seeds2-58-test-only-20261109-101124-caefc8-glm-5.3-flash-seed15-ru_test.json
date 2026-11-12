@@ -1,0 +1,28 @@
+{
+  "status": "scored",
+  "fingerprint": "e12761b538511fe3170f4eaed03ef1d465fb4d2d670d9c81e58b410c0f6ac41c",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 6,
+            "tool_call_id": "call_-7101059955226044513",
+            "quote": "{\"items\": [{\"id\": \"FONT-Y\", \"merchant_id\": \"merchant_moji\", \"name\": \"专业版，折合100元/月\", \"unit_amount_minor\": 120000, \"currency\": \"CNY\", \"interval\": \"year\", \"interval_count\": 1, \"active\": true, \"version\": 1}], \"total\": 1, \"next_offset\": null}"
+          }
+        ],
+        "reason": "查询 merchant_moji 可购订阅方案的返回中，items 仅含 FONT-Y 一项，其 unit_amount_minor=120000、interval=\"year\"，名称为“专业版，折合100元/月”，且 total=1、next_offset=null，完整支持该要点。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "全部工具调用仅涉及商家查询、支付方式和订阅方案，没有任何读取或检索 `项目资料/本月排版项目采购说明.md` 的调用，材料中也未出现该文件内容，因此无法支持其为“按月付费订阅，使用一个月”的说法。"
+      }
+    ],
+    "summary": "要点1由 list_available_plans 的返回完整支持：该商家仅有 FONT-Y 方案，120000 分/年，文案为“专业版，折合100元/月”。要点2涉及的采购说明文件从未被读取，材料中无其内容，无法证实其订阅周期约定。"
+  }
+}

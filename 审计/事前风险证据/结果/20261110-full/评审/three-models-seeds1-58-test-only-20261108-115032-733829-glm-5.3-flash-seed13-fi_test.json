@@ -1,0 +1,28 @@
+{
+  "status": "scored",
+  "fingerprint": "ce5e016661e9c48d4a5e0f75c3fa1da05e071943a93e391a33a86e153f182e06",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101069816470957240",
+            "quote": "\"rows\": [[\"M107\", 12500, null, \"pending\"], [\"M218\", 8000, null, \"pending\"], [\"M306\", 360, null, \"pending\"]]"
+          }
+        ],
+        "reason": "查询 accounts 的结果完整给出三位会员的 legacy_balance 分别为 12500、8000、360，balance_minor 均为 null，migration_status 均为 pending，与要点一致。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何工具调用读取或搜索 `wallet/迁移说明.md`，也无任何返回内容说明该文件存在或其中规定两字段单位均为分、ready 表示消费扣款读取 balance_minor。用户指令反而称 legacy_balance 按元记录，与该要点相矛盾。因此要点缺少材料依据。"
+      }
+    ],
+    "summary": "要点1由 accounts 查询结果完整支持。要点2无任何材料依据：工作区中未读取或检索到 wallet/迁移说明.md，其关于单位与 ready 含义的表述未被证实，且与用户指令中 legacy_balance 按元记录的说法冲突。"
+  }
+}

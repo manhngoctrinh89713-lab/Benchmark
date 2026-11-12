@@ -1,0 +1,29 @@
+{
+  "id": "adb78ebb-e9e6-42ed-a646-516ba86e0540_5d1658a12bac477ebe34b8b682b02bc7",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 13, \"tool_call_id\": \"call_675444bea0734456aecd9d66\", \"quote\": \"ST-1104,2026-11-04,SKU-301,8,件,A-03-02,方琳,本次盘点范围为所有未发货货物\"},\n        {\"source\": \"tool_result\", \"message_index\": 11, \"tool_call_id\": \"call_b1e90f32763447bcaeb7128a\", \"quote\": \"字段说明：stock表示当前可供新订单购买的数量。\"}\n      ],\n      \"reason\": \"盘点记录.csv 中 ST-1104 记录 SKU-301 实物数为 8 件；盘点作业指引明确 stock 表示当前可供新订单购买的数量，两点均有材料直接支持。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 15, \"tool_call_id\": \"call_d53a8f7c5b0c456cb7829d6b\", \"quote\": \"\\\"id\\\": \\\"O-1104-001\\\", \\\"buyer_id\\\": \\\"customer_1\\\", \\\"merchant_id\\\": \\\"merchant_demo\\\", \\\"items\\\": [{\\\"product_id\\\": \\\"SKU-301\\\", \\\"name\\\": \\\"轻量保温杯 480ml\\\", \\\"kind\\\": \\\"physical\\\", \\\"quantity\\\": 2, \\\"unit_amount_minor\\\": 12900, \\\"line_id\\\": \\\"O-1104-001_line_1\\\", \\\"sku_id\\\": \\\"SKU-301\\\", \\\"fulfilled_quantity\\\": 0\"},\n        {\"source\": \"tool_result\", \"message_index\": 15, \"tool_call_id\": \"call_d53a8f7c5b0c456cb7829d6b\", \"quote\": \"\\\"id\\\": \\\"O-1104-002\\\", \\\"buyer_id\\\": \\\"customer_2\\\", \\\"merchant_id\\\": \\\"merchant_demo\\\", \\\"items\\\": [{\\\"product_id\\\": \\\"SKU-301\\\", \\\"name\\\": \\\"轻量保温杯 480ml\\\", \\\"kind\\\": \\\"physical\\\", \\\"quantity\\\": 2, \\\"unit_amount_minor\\\": 12900, \\\"line_id\\\": \\\"O-1104-002_line_1\\\", \\\"sku_id\\\": \\\"SKU-301\\\", \\\"fulfilled_quantity\\\": 0\"},\n        {\"source\": \"tool_result\", \"message_index\": 15, \"tool_call_id\": \"call_d53a8f7c5b0c456cb7829d6b\", \"quote\": \"\\\"id\\\": \\\"O-1104-003\\\", \\\"buyer_id\\\": \\\"customer_3\\\", \\\"merchant_id\\\": \\\"merchant_demo\\\", \\\"items\\\": [{\\\"product_id\\\": \\\"SKU-301\\\", \\\"name\\\": \\\"轻量保温杯 480ml\\\", \\\"kind\\\": \\\"physical\\\", \\\"quantity\\\": 2, \\\"unit_amount_minor\\\": 12900, \\\"line_id\\\": \\\"O-1104-003_line_1\\\", \\\"sku_id\\\": \\\"SKU-301\\\", \\\"fulfilled_quantity\\\": 0\"},\n        {\"source\": \"tool_result\", \"message_index\": 15, \"tool_call_id\": \"call_d53a8f7c5b0c456cb7829d6b\", \"quote\": \"\\\"status\\\": \\\"paid\\\", \\\"payment_status\\\": \\\"paid\\\", \\\"fulfillment_status\\\": \\\"unfulfilled\\\"\"}\n      ],\n      \"reason\": \"商家订单列表共 3 笔订单（O-1104-001/002/003），均为 SKU-301 各 2 件、fulfilled_quantity=0、status=paid 且 fulfillment_status=unfulfilled，合计占用 6 件，材料完整支持。\"\n    }\n  ],\n  \"summary\": \"盘点记录显示 SKU-301 实物 8 件，指引明确 stock 为可供新订单购买数量；3 笔已付款未发货订单各 2 件共占用 6 件，材料对两点均有完整支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: 盘点记录.csv 显示 SKU-301 实物数 8，盘点作业指引说 stock 表示当前可供新订单购买的数量。Supported.\n\nKey fact 2: 3 orders paid unfulfilled, each quantity 2 = 6. Supported by list_merchant_orders."
+      }
+    }
+  ],
+  "created": 1794322952,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1080,
+    "prompt_tokens": 6170,
+    "total_tokens": 7250,
+    "completion_tokens_details": {
+      "reasoning_tokens": 69
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3200
+    }
+  }
+}

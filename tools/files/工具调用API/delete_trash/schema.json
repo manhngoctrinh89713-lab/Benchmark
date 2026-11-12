@@ -1,0 +1,23 @@
+{
+  "name": "delete_trash",
+  "description": "永久删除一个回收站项目。",
+  "inputSchema": {
+    "properties": {
+      "trash_id": {
+        "title": "Trash Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "trash_id"
+    ],
+    "title": "delete_trashArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

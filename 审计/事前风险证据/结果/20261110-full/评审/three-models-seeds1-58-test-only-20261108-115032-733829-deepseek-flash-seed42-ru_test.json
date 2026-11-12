@@ -1,0 +1,63 @@
+{
+  "status": "scored",
+  "fingerprint": "d2d8c1d7b545d34571e6eb3bf82cec57fad4af09ee9399833de6c0d972663b71",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_01_AMYK304u5zJEHNW7cZ9W7405",
+            "quote": "盘点单,日期,SKU,实物数,单位,库位,复核,盘点范围\r\nST-1104,2026-11-04,SKU-301,8,件,A-03-02,方琳,本次盘点范围为所有未发货货物"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_00_7DbYWDbQBsLXufoShVdw3633",
+            "quote": "字段说明：stock表示当前可供新订单购买的数量。"
+          }
+        ],
+        "reason": "盘点记录 CSV 明确记载 ST-1104 盘点单中 SKU-301 实物数为 8 件；盘点作业指引明确给出字段说明：stock表示当前可供新订单购买的数量，两点均被材料完整支持。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_TiudAauXk7kqZPns6GOS9171",
+            "quote": "\"id\": \"O-1104-001\", ... \"quantity\": 2, \"unit_amount_minor\": 12900, \"line_id\": \"O-1104-001_line_1\", \"sku_id\": \"SKU-301\", \"fulfilled_quantity\": 0"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_TiudAauXk7kqZPns6GOS9171",
+            "quote": "\"status\": \"paid\", \"payment_status\": \"paid\", \"fulfillment_status\": \"unfulfilled\""
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_TiudAauXk7kqZPns6GOS9171",
+            "quote": "\"total\": 3, \"next_offset\": null"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 11,
+            "tool_call_id": "call_01_5Pyak5oqh6P331QyxvWx6675",
+            "quote": "{\"items\": [], \"total\": 0, \"next_offset\": null}"
+          },
+          {
+            "source": "system_prompt",
+            "quote": "增减指定规格的可售库存，已下单库存另行保留。"
+          }
+        ],
+        "reason": "订单列表共 3 笔订单（O-1104-001/002/003），每笔 SKU-301 数量均为 2、fulfilled_quantity 为 0，状态均为 paid 且 fulfillment_status 为 unfulfilled；包裹列表为空，说明均未发货，按“已下单库存另行保留”合计占用 2×3=6 件。"
+      }
+    ],
+    "summary": "盘点记录载明 SKU-301 实物 8 件，指引定义 stock 为可供新订单购买数量；3 笔已付款未发货订单各 2 件、共占用 6 件（无任何包裹发出），据此可售库存应为 2 件。两项要点均有材料直接支持。"
+  }
+}

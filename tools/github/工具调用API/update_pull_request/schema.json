@@ -1,0 +1,91 @@
+{
+  "name": "update_pull_request",
+  "description": "修改PR标题正文、草稿状态或open/closed；已合并PR不可修改；linked_issues关联的Issue在合入默认分支时关闭。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "title": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Title"
+      },
+      "body": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Body"
+      },
+      "draft": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Draft"
+      },
+      "state": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "State"
+      },
+      "linked_issues": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Linked Issues"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number"
+    ],
+    "title": "update_pull_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

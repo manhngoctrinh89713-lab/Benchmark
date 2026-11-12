@@ -1,0 +1,62 @@
+{
+  "name": "update_favorite",
+  "description": "修改自己收藏的标题或标签，未传字段保留，空标签列表清空；不改写保存的原消息内容。",
+  "inputSchema": {
+    "properties": {
+      "favorite_id": {
+        "title": "Favorite Id",
+        "type": "string"
+      },
+      "title": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Title"
+      },
+      "tags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Tags"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "favorite_id"
+    ],
+    "title": "update_favoriteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

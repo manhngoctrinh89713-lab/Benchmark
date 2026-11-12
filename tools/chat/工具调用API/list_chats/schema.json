@@ -1,0 +1,99 @@
+{
+  "name": "list_chats",
+  "description": "列出自己可访问的私聊和群聊，包含仍保留本地历史的已退出群。支持名称/ID、类型、未读、置顶、免打扰和 active_only；默认不含隐藏会话。page 从 0 开始，limit 为 1..100；sort_by 为 last_active/name，置顶会话优先。返回列表。读取不标已读。",
+  "inputSchema": {
+    "properties": {
+      "query": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Query"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      },
+      "page": {
+        "default": 0,
+        "title": "Page",
+        "type": "integer"
+      },
+      "include_last_message": {
+        "default": true,
+        "title": "Include Last Message",
+        "type": "boolean"
+      },
+      "sort_by": {
+        "default": "last_active",
+        "title": "Sort By",
+        "type": "string"
+      },
+      "chat_type": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Chat Type"
+      },
+      "unread_only": {
+        "default": false,
+        "title": "Unread Only",
+        "type": "boolean"
+      },
+      "pinned": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Pinned"
+      },
+      "muted": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Muted"
+      },
+      "include_hidden": {
+        "default": false,
+        "title": "Include Hidden",
+        "type": "boolean"
+      },
+      "active_only": {
+        "default": false,
+        "title": "Active Only",
+        "type": "boolean"
+      }
+    },
+    "title": "list_chatsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

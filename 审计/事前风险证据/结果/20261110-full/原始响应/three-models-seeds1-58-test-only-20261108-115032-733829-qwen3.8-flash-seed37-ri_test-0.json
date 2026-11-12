@@ -1,0 +1,29 @@
+{
+  "id": "b6c9c32d-892b-4d23-91c5-a342571f1dfa_ec16389add884cce882495d89058f5d6",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 11, \"tool_call_id\": \"call_e9a7f982fd8a41359855f004\", \"quote\": \"UPDATE orders\\r\\nSET amount = amount * (SELECT scale FROM currency_scale WHERE code = 'CNY')\\r\\nWHERE created_year < 2026;\"},\n        {\"source\": \"tool_result\", \"message_index\": 19, \"tool_call_id\": \"call_f2b54ec2bd684664a4dcbdbb\", \"quote\": \"\\\"rows\\\": [[\\\"CNY\\\", 100], [\\\"USD\\\", 100]]\"}\n      ],\n      \"reason\": \"0013 脚本对 created_year<2026 的 orders 执行 amount = amount * (currency_scale 中 CNY 的 scale)，而数据库查询显示 CNY 的 scale 为 100，因此实际是把 amount 乘以 100。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 23, \"tool_call_id\": \"call_90fd421b92ef4dc888e964bb\", \"quote\": \"SELECT created_year,wms_ref,amount/100.0 AS amount_yuan FROM orders;\"},\n        {\"source\": \"tool_result\", \"message_index\": 23, \"tool_call_id\": \"call_90fd421b92ef4dc888e964bb\", \"quote\": \"`daily_settlement.sql` 由财务每日 07:00 执行，导出订单金额明细，金额单位为元。\"}\n      ],\n      \"reason\": \"日报脚本以 amount/100.0 作为元（amount_yuan）导出，且 reports/README.md 说明导出金额单位为元，可推断 amount 按整数分（最小单位）存储。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 11, \"tool_call_id\": \"call_e9a7f982fd8a41359855f004\", \"quote\": \"ALTER TABLE orders DROP COLUMN source_channel;\"},\n        {\"source\": \"tool_result\", \"message_index\": 11, \"tool_call_id\": \"call_e9a7f982fd8a41359855f004\", \"quote\": \"ALTER TABLE orders DROP COLUMN wms_ref;\"},\n        {\"source\": \"tool_result\", \"message_index\": 15, \"tool_call_id\": \"call_32460aa268834994abdea461\", \"quote\": \"CREATE VIEW v_order_ops AS SELECT id,wms_ref,amount FROM orders\"},\n        {\"source\": \"tool_result\", \"message_index\": 15, \"tool_call_id\": \"call_32460aa268834994abdea461\", \"quote\": \"CREATE VIEW v_partner_daily AS SELECT created_year,wms_ref,amount FROM orders\"},\n        {\"source\": \"tool_result\", \"message_index\": 23, \"tool_call_id\": \"call_90fd421b92ef4dc888e964bb\", \"quote\": \"SELECT created_year,wms_ref,amount/100.0 AS amount_yuan FROM orders;\"}\n      ],\n      \"reason\": \"0014 明确 DROP COLUMN wms_ref，而 daily_settlement.sql、视图 v_order_ops 与 v_partner_daily 的定义中均引用 orders.wms_ref。\"\n    },\n    {\n      \"id\": 4,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 23, \"tool_call_id\": \"call_90fd421b92ef4dc888e964bb\", \"quote\": \"WMS 接口只同步当期数据，历史回传记录不在 WMS 侧长期保留。\"}\n      ],\n      \"reason\": \"WMS对接说明.md 原文明确说明 WMS 只同步当期数据、历史回传记录不长期保留。\"\n    }\n  ],\n  \"summary\": \"四条要点均有材料支撑：0013 按 currency_scale.CNY=100 对历史订单金额乘 100；amount 以整数分存储、日报用 amount/100.0 换算为元；0014 删除的 wms_ref 被日报脚本及两个视图引用；WMS 文档明确只同步当期数据、不留历史。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: 0013 multiplies amount by (SELECT scale FROM currency_scale WHERE code='CNY'). currency_scale CNY scale = 100. So yes, it multiplies by 100 for created_year<2026. Supported — quote script content and currency_scale query result.\n\nKey fact 2: \"amount 已按整数分存储\" — evidence: data dictionary says amount INTEGER 订单金额, daily_settlement.sql uses amount/100.0 AS amount_yuan, reports README says 金额单位为元. The \"已按整数分存储\" (already stored in cents) — is that supported? The report divides by 100 to get yuan, implying stored in cents. Yes, that's a reasonable inference: daily_settlement.sql `amount/100.0 AS amount_yuan` implies amount is in cents. Supported.\n\nKey fact 3: 0014 drops wms_ref (yes, and source_channel). Column referenced by daily_settlement.sql (SELECT created_year,wms_ref,amount/100.0 FROM orders — yes), v_order_ops (SELECT id,wms_ref,amount FROM orders — yes), v_partner_daily (SELECT created_year,wms_ref,amount — yes). Supported.\n\nKey fact 4: WMS对接说明.md: \"WMS 接口只同步当期数据，历史回传记录不在 WMS 侧长期保留。\" Supported."
+      }
+    }
+  ],
+  "created": 1794319217,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1428,
+    "prompt_tokens": 12081,
+    "total_tokens": 13509,
+    "completion_tokens_details": {
+      "reasoning_tokens": 311
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 2944
+    }
+  }
+}

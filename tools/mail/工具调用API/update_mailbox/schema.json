@@ -1,0 +1,69 @@
+{
+  "name": "update_mailbox",
+  "description": "重命名或移动自定义文件夹，保持文件夹和邮件 ID；子树路径随之更新。parent_id 指定新父文件夹，move_to_root=true 移到根目录。系统文件夹不可改名或移动。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "mailbox": {
+        "title": "Mailbox",
+        "type": "string"
+      },
+      "name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Name"
+      },
+      "parent_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Parent Id"
+      },
+      "move_to_root": {
+        "default": false,
+        "title": "Move To Root",
+        "type": "boolean"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "mailbox"
+    ],
+    "title": "update_mailboxArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

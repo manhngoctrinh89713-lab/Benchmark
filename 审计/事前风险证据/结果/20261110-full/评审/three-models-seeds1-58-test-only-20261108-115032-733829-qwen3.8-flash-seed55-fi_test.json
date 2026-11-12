@@ -1,0 +1,35 @@
+{
+  "status": "scored",
+  "fingerprint": "0d042e655499c0196396eb86af2aac3654758e60b28cfc52b96f6c89d6d40aba",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 11,
+            "tool_call_id": "call_b1edf8a588774d599b3099c0",
+            "quote": "{\"columns\": [\"task_id\", \"title\", \"owner\", \"project\", \"status\", \"priority\"], \"rows\": [[\"T-1001\", \"Test payment migration\", \"u_lin\", \"ATLAS\", \"in_progress\", \"high\"], [\"T-1002\", \"Test checkout regression\", \"u_lin\", \"ATLAS\", \"done\", \"medium\"], [\"T-1003\", \"Test coupon rounding\", \"u_lin\", \"ATLAS\", \"done\", \"low\"], [\"T-1004\", \"Test address validation\", \"u_lin\", \"ATLAS\", \"done\", \"medium\"], [\"T-1005\", \"Test refund callback\", \"u_lin\", \"ATLAS\", \"done\", \"high\"], [\"T-1006\", \"Test order export\", \"u_lin\", \"ATLAS\", \"done\", \"low\"], [\"T-2001\", \"Test results review - release\", \"u_zhang\", \"ATLAS\", \"in_progress\", \"high\"], [\"T-2002\", \"Test data seed refresh\", \"u_zhang\", \"ATLAS\", \"done\", \"low\"], [\"T-3001\", \"Test env cleanup\", \"u_wang\", \"ATLAS\", \"blocked\", \"medium\"], [\"T-3002\", \"Test proxy timeout\", \"u_wang\", \"ATLAS\", \"done\", \"low\"]], \"row_count\": 10, \"has_more\": false, \"next_offset\": null}"
+          }
+        ],
+        "reason": "查询返回的 10 条记录标题均以“Test”开头：u_lin 名下 T-1001 至 T-1006 共 6 条；u_zhang 名下 2 条，其中 T-2001 标题为“Test results review - release”且状态为 in_progress；u_wang 名下 2 条，其中 T-3001 标题为“Test env cleanup”且状态为 blocked。与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 5,
+            "tool_call_id": "call_886b731eedbc4cfa811b736a",
+            "quote": "字段说明：`owner` 为任务负责人，`status` 为任务状态，`priority` 为优先级。"
+          }
+        ],
+        "reason": "任务看板说明.md 的字段说明明确写出 owner 为任务负责人，直接支持该要点。"
+      }
+    ],
+    "summary": "查询结果确认 tasks 表中 10 条标题以 Test 开头的任务分布为 u_lin 6 条、u_zhang 2 条（含 in_progress 的 Test results review - release）、u_wang 2 条（含 blocked 的 Test env cleanup）；说明文档明确 owner 为任务负责人。两条要点均有材料直接支持。"
+  }
+}

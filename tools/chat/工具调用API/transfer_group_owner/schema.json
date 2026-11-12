@@ -1,0 +1,40 @@
+{
+  "name": "transfer_group_owner",
+  "description": "群主将所有权转给另一名当前成员；原群主成为普通成员，新群主不再同时占管理员角色。expected_version 使用群版本。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "user_id": {
+        "title": "User Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "chat_id",
+      "user_id"
+    ],
+    "title": "transfer_group_ownerArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

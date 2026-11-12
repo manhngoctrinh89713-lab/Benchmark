@@ -1,0 +1,48 @@
+{
+  "name": "find_references",
+  "description": "仅Python：用Jedi静态分析查找光标符号在项目内的引用和定义，排除文本中的字符串与注释。line从1、column按字符从0开始。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "line": {
+        "title": "Line",
+        "type": "integer"
+      },
+      "column": {
+        "title": "Column",
+        "type": "integer"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 50,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "project_id",
+      "path",
+      "line",
+      "column"
+    ],
+    "title": "find_referencesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,2400 @@
+{
+  "now": "2026-11-02T16:30:00+08:00",
+  "current_user_id": "u_me",
+  "contacts": [
+    {
+      "id": "u_me",
+      "name": "陈晨",
+      "organization": "禾舟科技",
+      "remark": "招聘运营",
+      "version": 1
+    },
+    {
+      "id": "u_hr",
+      "name": "徐敏",
+      "organization": "禾舟科技",
+      "remark": "招聘负责人",
+      "version": 1
+    },
+    {
+      "id": "u_tech",
+      "name": "赵凯",
+      "organization": "禾舟科技",
+      "remark": "数据平台面试官",
+      "version": 1
+    },
+    {
+      "id": "u_mgr",
+      "name": "刘畅",
+      "organization": "禾舟科技",
+      "remark": "用人经理",
+      "version": 1
+    },
+    {
+      "id": "u_front",
+      "name": "杨帆",
+      "organization": "禾舟科技",
+      "remark": "行政前台",
+      "version": 1
+    },
+    {
+      "id": "u_other",
+      "name": "吴青",
+      "organization": "禾舟科技",
+      "remark": "产品面试官",
+      "version": 1
+    },
+    {
+      "id": "u_c0",
+      "name": "林悦",
+      "organization": "",
+      "remark": "10月27日内推联系",
+      "version": 1
+    },
+    {
+      "id": "u_c1",
+      "name": "周宁",
+      "organization": "",
+      "remark": "周宁 / 产品运营应聘",
+      "version": 1
+    },
+    {
+      "id": "u_c2",
+      "name": "许安",
+      "organization": "",
+      "remark": "许安 / 数据平台工程师应聘",
+      "version": 1
+    },
+    {
+      "id": "u_c3",
+      "name": "沈嘉",
+      "organization": "",
+      "remark": "沈嘉 / 产品运营应聘",
+      "version": 1
+    },
+    {
+      "id": "u_c4",
+      "name": "宋远",
+      "organization": "",
+      "remark": "宋远 / 数据平台工程师应聘",
+      "version": 1
+    },
+    {
+      "id": "u_c5",
+      "name": "何珊",
+      "organization": "",
+      "remark": "何珊 / 产品运营应聘",
+      "version": 1
+    },
+    {
+      "id": "u_c6",
+      "name": "顾航",
+      "organization": "",
+      "remark": "顾航 / 数据平台工程师应聘",
+      "version": 1
+    },
+    {
+      "id": "u_c7",
+      "name": "唐颖",
+      "organization": "",
+      "remark": "唐颖 / 产品运营应聘",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "c_tomorrow",
+      "name": "次日面试协调",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr",
+        "u_c0"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_hr",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_tech",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_mgr",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_c0",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_hiring",
+      "name": "数据平台招聘讨论",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_hr",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_tech",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_mgr",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_recruit",
+      "name": "招聘运营日常",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_hr",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_other",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_front",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_rooms",
+      "name": "会议室与访客",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_front",
+        "u_hr"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_hr",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_front",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_product",
+      "name": "周宁面试协调",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_other",
+        "u_hr",
+        "u_c1"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_hr",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_other",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_c1",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_shen",
+      "name": "沈嘉",
+      "type": "direct",
+      "member_ids": [
+        "u_me",
+        "u_c3"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_me",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_c3",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_hr",
+      "name": "徐敏",
+      "type": "direct",
+      "member_ids": [
+        "u_me",
+        "u_hr"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_hr",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_hr",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_lin",
+      "name": "林悦",
+      "type": "direct",
+      "member_ids": [
+        "u_me",
+        "u_c0"
+      ],
+      "admin_ids": [],
+      "owner_id": "u_me",
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_c0",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "m029",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "周宁简历已补到目录，作品集她今晚发。",
+      "timestamp": "2026-10-28T09:18:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m030",
+      "chat_id": "c_recruit",
+      "sender_id": "u_other",
+      "text": "收到，周五下午我先做电话初面。",
+      "timestamp": "2026-10-28T09:26:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "吴青"
+    },
+    {
+      "id": "m031",
+      "chat_id": "c_rooms",
+      "sender_id": "u_front",
+      "text": "听雨间投屏线接触不太好，今天先用桌上的备用线。",
+      "timestamp": "2026-10-28T11:42:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_front",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "杨帆"
+    },
+    {
+      "id": "m032",
+      "chat_id": "c_recruit",
+      "sender_id": "u_hr",
+      "text": "宋远周五技术初面，赵凯记得留一下反馈。",
+      "timestamp": "2026-10-28T14:07:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m033",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "何珊已确认明天下午电话聊，联系方式核对过了。",
+      "timestamp": "2026-10-28T16:21:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m048",
+      "chat_id": "c_product",
+      "sender_id": "u_me",
+      "text": "周宁你好，作品集收到了，周五先电话聊一下经历，约14点方便吗？",
+      "timestamp": "2026-10-29T09:05:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_other",
+        "u_hr",
+        "u_c1"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m049",
+      "chat_id": "c_product",
+      "sender_id": "u_c1",
+      "text": "可以。作品集第二个案例是我负责的，另外一个是团队项目，我在里面做渠道和复盘。",
+      "timestamp": "2026-10-29T09:24:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_other",
+        "u_hr",
+        "u_c1"
+      ],
+      "sequence": 0,
+      "sender_name": "周宁"
+    },
+    {
+      "id": "m050",
+      "chat_id": "c_product",
+      "sender_id": "u_other",
+      "text": "好，先聊第二个案例，周五我来联系。",
+      "timestamp": "2026-10-29T09:31:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_other",
+        "u_hr",
+        "u_c1"
+      ],
+      "sequence": 0,
+      "sender_name": "吴青"
+    },
+    {
+      "id": "m034",
+      "chat_id": "c_hiring",
+      "sender_id": "u_tech",
+      "text": "林悦下午技术复试，案例材料我看过了。",
+      "timestamp": "2026-10-29T09:33:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "赵凯"
+    },
+    {
+      "id": "m035",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "顾航刚回，说当前项目上线前没法请假，先暂停。",
+      "timestamp": "2026-10-29T10:16:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m036",
+      "chat_id": "c_recruit",
+      "sender_id": "u_hr",
+      "text": "好的，标记暂缓，等他月底项目结束再联系。",
+      "timestamp": "2026-10-29T10:49:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m037",
+      "chat_id": "c_recruit",
+      "sender_id": "u_other",
+      "text": "何珊电话聊完了，先约下周二现场，作品复盘再详细看。",
+      "timestamp": "2026-10-29T14:32:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "吴青"
+    },
+    {
+      "id": "m038",
+      "chat_id": "c_hiring",
+      "sender_id": "u_tech",
+      "text": "林悦复试结束，晚些把案例讨论的要点补进记录。",
+      "timestamp": "2026-10-29T15:54:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "赵凯"
+    },
+    {
+      "id": "m039",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "唐颖简历收到，之前做过商家活动运营，等徐敏筛一下。",
+      "timestamp": "2026-10-29T17:08:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m040",
+      "chat_id": "c_recruit",
+      "sender_id": "u_hr",
+      "text": "唐颖可以电话聊，先了解她想换方向的原因。",
+      "timestamp": "2026-10-30T09:12:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m051",
+      "chat_id": "c_lin",
+      "sender_id": "u_me",
+      "text": "下周二现场可以吗？赵凯还想看一下你讲的告警排查过程。",
+      "timestamp": "2026-10-30T10:05:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m052",
+      "chat_id": "c_lin",
+      "sender_id": "u_c0",
+      "text": "可以，下午更方便。我会把演示数据换成脱敏样例。",
+      "timestamp": "2026-10-30T10:22:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "林悦"
+    },
+    {
+      "id": "m041",
+      "chat_id": "c_rooms",
+      "sender_id": "u_front",
+      "text": "听雨间线已经换了，刚试过可以投屏。",
+      "timestamp": "2026-10-30T10:28:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_front",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "杨帆"
+    },
+    {
+      "id": "m053",
+      "chat_id": "c_lin",
+      "sender_id": "u_me",
+      "text": "收到，我先协调下午，确认后发安排。",
+      "timestamp": "2026-10-30T10:35:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m042",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "沈嘉初面时间还没定，她说周一才能确认出差安排。",
+      "timestamp": "2026-10-30T11:06:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m054",
+      "chat_id": "c_shen",
+      "sender_id": "u_me",
+      "text": "沈嘉你好，下周四可以先留一个初面时间吗？",
+      "timestamp": "2026-10-30T11:18:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c3"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m055",
+      "chat_id": "c_shen",
+      "sender_id": "u_c3",
+      "text": "我可能要出差，周一才能定下来，先别帮我占会议室。",
+      "timestamp": "2026-10-30T11:42:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c3"
+      ],
+      "sequence": 0,
+      "sender_name": "沈嘉"
+    },
+    {
+      "id": "m056",
+      "chat_id": "c_shen",
+      "sender_id": "u_me",
+      "text": "好的，等你行程确定我们再约。",
+      "timestamp": "2026-10-30T11:48:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c3"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m043",
+      "chat_id": "c_recruit",
+      "sender_id": "u_other",
+      "text": "周宁电话初面结束，可以约下一轮作品交流。",
+      "timestamp": "2026-10-30T14:17:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "吴青"
+    },
+    {
+      "id": "m044",
+      "chat_id": "c_hiring",
+      "sender_id": "u_tech",
+      "text": "宋远今天的反馈我整理一下，下周看项目组有没有合适的交流时间。",
+      "timestamp": "2026-10-30T15:36:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "赵凯"
+    },
+    {
+      "id": "m045",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "许安下周三下午可以到现场，简历项目附件还差一个。",
+      "timestamp": "2026-10-30T16:09:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m062",
+      "chat_id": "c_recruit",
+      "sender_id": "u_other",
+      "text": "何珊的复盘不用再做整套幻灯，带现有排期表就行，我主要想聊第一天物料没到齐时怎么处理。",
+      "timestamp": "2026-10-30T16:23:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "吴青"
+    },
+    {
+      "id": "m063",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "好，已经转告，她会在原来的复盘提纲里补一下处理顺序。",
+      "timestamp": "2026-10-30T16:38:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m046",
+      "chat_id": "c_recruit",
+      "sender_id": "u_hr",
+      "text": "先把时间留住，材料周一跟进就好。",
+      "timestamp": "2026-10-30T16:42:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m047",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "何珊确认了下周二11点；接待信息周一发给前台。",
+      "timestamp": "2026-10-30T17:15:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m057",
+      "chat_id": "c_hr",
+      "sender_id": "u_me",
+      "text": "周四培训这次按30分钟排吗？赵凯那边还有项目例会。",
+      "timestamp": "2026-11-02T09:16:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m058",
+      "chat_id": "c_hr",
+      "sender_id": "u_hr",
+      "text": "按30分钟，先讲反馈怎么写，面试题讨论挪到下次。",
+      "timestamp": "2026-11-02T09:23:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m059",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "周宁的作品集文字版已归档到RC-26043/材料，渠道报名表没放进去，她现场用汇总页讲。",
+      "timestamp": "2026-11-02T09:41:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m018",
+      "chat_id": "c_product",
+      "sender_id": "u_other",
+      "text": "周宁下一轮周四10点，在听雨间聊作品。",
+      "timestamp": "2026-11-02T10:05:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_other",
+        "u_hr",
+        "u_c1"
+      ],
+      "sequence": 0,
+      "sender_name": "吴青"
+    },
+    {
+      "id": "m019",
+      "chat_id": "c_product",
+      "sender_id": "u_c1",
+      "text": "收到，我会带作品集。",
+      "timestamp": "2026-11-02T10:06:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_other",
+        "u_hr",
+        "u_c1"
+      ],
+      "sequence": 0,
+      "sender_name": "周宁"
+    },
+    {
+      "id": "m020",
+      "chat_id": "c_product",
+      "sender_id": "u_me",
+      "text": "安排已回填，周四到8楼前台报姓名就好。",
+      "timestamp": "2026-11-02T10:19:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_other",
+        "u_hr",
+        "u_c1"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m060",
+      "chat_id": "c_hiring",
+      "sender_id": "u_tech",
+      "text": "许安项目说明看到了，想让他讲一次补数失败怎么定位，不用额外做演示。",
+      "timestamp": "2026-11-02T10:32:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "赵凯"
+    },
+    {
+      "id": "m061",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "唐颖可电话沟通时间已问，等回复；顾航按11月底回访，不排进这周。",
+      "timestamp": "2026-11-02T10:46:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m011",
+      "chat_id": "c_recruit",
+      "sender_id": "u_hr",
+      "text": "本周共8位在流程中，台账按轮次更新。",
+      "timestamp": "2026-11-02T11:10:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m012",
+      "chat_id": "c_recruit",
+      "sender_id": "u_other",
+      "text": "周宁周四上午可以。",
+      "timestamp": "2026-11-02T11:18:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "吴青"
+    },
+    {
+      "id": "m013",
+      "chat_id": "c_recruit",
+      "sender_id": "u_me",
+      "text": "许安的项目说明已收，放在他的材料目录了。",
+      "timestamp": "2026-11-02T11:22:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m014",
+      "chat_id": "c_recruit",
+      "sender_id": "u_hr",
+      "text": "周五前把未定时间再跟一下。",
+      "timestamp": "2026-11-02T11:33:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_other",
+        "u_front"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m021",
+      "chat_id": "c_shen",
+      "sender_id": "u_c3",
+      "text": "这周四临时要出差，能改到下周吗？",
+      "timestamp": "2026-11-02T11:35:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c3"
+      ],
+      "sequence": 0,
+      "sender_name": "沈嘉"
+    },
+    {
+      "id": "m022",
+      "chat_id": "c_shen",
+      "sender_id": "u_me",
+      "text": "可以，你方便的话发两个时间段，我再和吴青对一下。",
+      "timestamp": "2026-11-02T11:42:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c3"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m023",
+      "chat_id": "c_shen",
+      "sender_id": "u_c3",
+      "text": "我今晚看下行程再回复。",
+      "timestamp": "2026-11-02T12:01:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c3"
+      ],
+      "sequence": 0,
+      "sender_name": "沈嘉"
+    },
+    {
+      "id": "m027",
+      "chat_id": "c_lin",
+      "sender_id": "u_c0",
+      "text": "明天去现场需要带电脑吗？",
+      "timestamp": "2026-11-02T12:15:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "林悦"
+    },
+    {
+      "id": "m028",
+      "chat_id": "c_lin",
+      "sender_id": "u_me",
+      "text": "带上方便演示项目，前台可凭姓名登记。",
+      "timestamp": "2026-11-02T12:21:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m015",
+      "chat_id": "c_rooms",
+      "sender_id": "u_front",
+      "text": "青岚间明天下午已预留。",
+      "timestamp": "2026-11-02T13:35:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_front",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "杨帆"
+    },
+    {
+      "id": "m016",
+      "chat_id": "c_rooms",
+      "sender_id": "u_me",
+      "text": "访客到前台报禾舟科技和姓名即可。",
+      "timestamp": "2026-11-02T13:39:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_front",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m017",
+      "chat_id": "c_rooms",
+      "sender_id": "u_front",
+      "text": "投屏转接头在会议室桌面抽屉。",
+      "timestamp": "2026-11-02T13:51:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_front",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "杨帆"
+    },
+    {
+      "id": "m000",
+      "chat_id": "c_tomorrow",
+      "sender_id": "u_hr",
+      "text": "拉个小群对一下明天的安排。",
+      "timestamp": "2026-11-02T14:05:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m001",
+      "chat_id": "c_tomorrow",
+      "sender_id": "u_c0",
+      "text": "明天下午可以。",
+      "timestamp": "2026-11-02T14:07:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "林悦"
+    },
+    {
+      "id": "m002",
+      "chat_id": "c_tomorrow",
+      "sender_id": "u_tech",
+      "text": "我预留了14点，会议室麻烦协调一下。",
+      "timestamp": "2026-11-02T14:14:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "赵凯"
+    },
+    {
+      "id": "m003",
+      "chat_id": "c_tomorrow",
+      "sender_id": "u_me",
+      "text": "原定松涛间被占用，换青岚间。",
+      "timestamp": "2026-11-02T14:26:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m004",
+      "chat_id": "c_tomorrow",
+      "sender_id": "u_mgr",
+      "text": "我接15点的交流。",
+      "timestamp": "2026-11-02T14:29:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "刘畅"
+    },
+    {
+      "id": "m005",
+      "chat_id": "c_tomorrow",
+      "sender_id": "u_c0",
+      "text": "收到。",
+      "timestamp": "2026-11-02T14:37:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "林悦"
+    },
+    {
+      "id": "m006",
+      "chat_id": "c_tomorrow",
+      "sender_id": "u_hr",
+      "text": "时间就按这个排，陈晨核完接待信息后更新招聘记录，下午同步一下。",
+      "timestamp": "2026-11-02T14:44:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr",
+        "u_c0"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m064",
+      "chat_id": "c_rooms",
+      "sender_id": "u_me",
+      "text": "林悦明天13:50到，赵凯接待。电脑自带，青岚的转接头麻烦留在屋里。",
+      "timestamp": "2026-11-02T14:52:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_front",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m065",
+      "chat_id": "c_rooms",
+      "sender_id": "u_front",
+      "text": "记好了。青岚已经试过投屏，明天前台直接联系赵凯。",
+      "timestamp": "2026-11-02T15:07:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_front",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "杨帆"
+    },
+    {
+      "id": "m066",
+      "chat_id": "c_hiring",
+      "sender_id": "u_tech",
+      "text": "宋远补数那段我已写进反馈，刘畅有空先看下。不急着约下一轮，我还想确认平台开发这块能分多少工作给他。",
+      "timestamp": "2026-11-02T15:28:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "赵凯"
+    },
+    {
+      "id": "m067",
+      "chat_id": "c_hiring",
+      "sender_id": "u_mgr",
+      "text": "我周三和项目组核一下分工，再回复你们。先别让他为现场面试请假。",
+      "timestamp": "2026-11-02T15:37:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "刘畅"
+    },
+    {
+      "id": "m007",
+      "chat_id": "c_hiring",
+      "sender_id": "u_hr",
+      "text": "本周数据平台岗位继续推进两位人选。",
+      "timestamp": "2026-11-02T15:45:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m008",
+      "chat_id": "c_hiring",
+      "sender_id": "u_tech",
+      "text": "林悦的技术复试反馈已填。",
+      "timestamp": "2026-11-02T15:51:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "赵凯"
+    },
+    {
+      "id": "m009",
+      "chat_id": "c_hiring",
+      "sender_id": "u_mgr",
+      "text": "我明天15点聊团队协作和入职后的工作方向，项目案例由赵凯先聊。",
+      "timestamp": "2026-11-02T15:58:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "刘畅"
+    },
+    {
+      "id": "m024",
+      "chat_id": "c_hr",
+      "sender_id": "u_hr",
+      "text": "本周面试官培训名单帮我核一下。",
+      "timestamp": "2026-11-02T16:00:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m010",
+      "chat_id": "c_hiring",
+      "sender_id": "u_hr",
+      "text": "记录在 招聘/候选人/LY-26041/招聘记录.md，安排单也已更新。",
+      "timestamp": "2026-11-02T16:04:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr",
+        "u_tech",
+        "u_mgr"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    },
+    {
+      "id": "m025",
+      "chat_id": "c_hr",
+      "sender_id": "u_me",
+      "text": "已约好周四下午。",
+      "timestamp": "2026-11-02T16:04:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "陈晨"
+    },
+    {
+      "id": "m026",
+      "chat_id": "c_hr",
+      "sender_id": "u_hr",
+      "text": "林悦的面试记录今天有更新，按最新版对时间。",
+      "timestamp": "2026-11-02T16:12:00+08:00",
+      "read_by": [],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_hr"
+      ],
+      "sequence": 0,
+      "sender_name": "徐敏"
+    }
+  ],
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "delivery_events": [],
+  "sequence": 0,
+  "relations": [
+    {
+      "owner_id": "u_me",
+      "user_id": "u_hr",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "招聘负责人",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_hr",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_tech",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "数据平台面试官",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_tech",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_mgr",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "用人经理",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_mgr",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_front",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "行政前台",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_front",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_other",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "产品面试官",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_other",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_c0",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "10月27日内推联系",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_c0",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_c1",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "周宁 / 产品运营应聘",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_c1",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_c2",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "许安 / 数据平台工程师应聘",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_c2",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_c3",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "沈嘉 / 产品运营应聘",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_c3",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_c4",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "宋远 / 数据平台工程师应聘",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_c4",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_c5",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "何珊 / 产品运营应聘",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_c5",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_c6",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "顾航 / 数据平台工程师应聘",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_c6",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_c7",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "唐颖 / 产品运营应聘",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_c7",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "events": [],
+  "member_events": []
+}

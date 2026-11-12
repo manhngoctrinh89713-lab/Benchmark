@@ -1,0 +1,48 @@
+{
+  "name": "create_pull_request",
+  "description": "为本地head/base分支创建模拟PR，head须有超出base的提交，重复未关闭PR报错。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "title": {
+        "title": "Title",
+        "type": "string"
+      },
+      "head": {
+        "title": "Head",
+        "type": "string"
+      },
+      "base": {
+        "default": "main",
+        "title": "Base",
+        "type": "string"
+      },
+      "body": {
+        "default": "",
+        "title": "Body",
+        "type": "string"
+      },
+      "draft": {
+        "default": false,
+        "title": "Draft",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "repo_id",
+      "title",
+      "head"
+    ],
+    "title": "create_pull_requestArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

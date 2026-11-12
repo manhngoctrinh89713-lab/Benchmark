@@ -1,0 +1,31 @@
+{
+  "name": "delete_messages",
+  "description": "批量删除自己本地的最多 500 条消息；逐项返回成功或失败，不撤回或删除对方副本。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "message_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Message Ids",
+        "type": "array"
+      }
+    },
+    "required": [
+      "chat_id",
+      "message_ids"
+    ],
+    "title": "delete_messagesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

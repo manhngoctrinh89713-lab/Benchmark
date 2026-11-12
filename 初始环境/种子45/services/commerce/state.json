@@ -1,0 +1,145 @@
+{
+  "now": "2027-03-10T10:30:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "屿咖啡烘焙工坊",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_demo"
+    }
+  },
+  "products": {
+    "COF-V": {
+      "id": "COF-V",
+      "merchant_id": "merchant_demo",
+      "name": "春季活动兑换券",
+      "description": "购买门店标准手冲咖啡电子兑换券，每张兑换一杯。\n正式使用规则\n1. 本券适用于购买门店的标准手冲咖啡，每张兑换一杯，不兑换现金。\n2. 核销截止时间：2027-03-19T23:59:59+08:00。逾期作废，不支持延期。\n3. 到店出示电子券码，由吧台核销后制作；一经核销不可重复使用。\n4. 同一订单可购买多张，电子券可分次出示；具体出杯顺序以现场安排为准。\n5. 售价包含标准杯具，特殊豆种与加料需现场另付差价。\n",
+      "unit_amount_minor": 2200,
+      "currency": "CNY",
+      "stock": 200,
+      "kind": "digital",
+      "active": true,
+      "policies": {
+        "returnable": false,
+        "exchangeable": false,
+        "return_days": 0,
+        "cancellation_allowed": false,
+        "terms": "正式使用规则\n1. 本券适用于购买门店的标准手冲咖啡，每张兑换一杯，不兑换现金。\n2. 核销截止时间：2027-03-19T23:59:59+08:00。逾期作废，不支持延期。\n3. 到店出示电子券码，由吧台核销后制作；一经核销不可重复使用。\n4. 同一订单可购买多张，电子券可分次出示；具体出杯顺序以现场安排为准。\n5. 售价包含标准杯具，特殊豆种与加料需现场另付差价。\n",
+        "delivery_countries": []
+      },
+      "version": 1,
+      "category": ""
+    },
+    "COF-P": {
+      "id": "COF-P",
+      "merchant_id": "merchant_demo",
+      "name": "咖啡预付储值卡",
+      "description": "无有效期，按杯核销，可用于本店各门店",
+      "unit_amount_minor": 2400,
+      "currency": "CNY",
+      "stock": 200,
+      "kind": "digital",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "mutation_events": [],
+  "skus": {
+    "COF-V": {
+      "id": "COF-V",
+      "product_id": "COF-V",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 2200,
+      "stock": 200,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "COF-P": {
+      "id": "COF-P",
+      "product_id": "COF-P",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 2400,
+      "stock": 200,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

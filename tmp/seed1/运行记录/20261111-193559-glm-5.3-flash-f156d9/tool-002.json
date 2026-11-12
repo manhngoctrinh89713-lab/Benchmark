@@ -1,0 +1,16 @@
+{
+  "id": "call_-7086069316772163427",
+  "name": "buyer__search_products",
+  "arguments": "{\"merchant_id\":\"merchant_a\",\"query\":\"人体工学椅\"}",
+  "started_at": "2026-11-11T19:36:08.991761+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"items\": [], \"total\": 0, \"next_offset\": null}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:36:08.998445+08:00"
+}

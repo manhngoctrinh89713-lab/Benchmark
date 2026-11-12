@@ -1,0 +1,86 @@
+{
+  "name": "send_card",
+  "description": "发送 link/contact/location 卡片。link 使用 http(s) URL、标题和描述；contact 使用可见用户的 user_id，分享公开名片；location 使用静态纬度和经度、标题及描述。各类型只使用对应字段，不上传本地路径或自动下载链接目标。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "kind": {
+        "title": "Kind",
+        "type": "string"
+      },
+      "title": {
+        "default": "",
+        "title": "Title",
+        "type": "string"
+      },
+      "description": {
+        "default": "",
+        "title": "Description",
+        "type": "string"
+      },
+      "url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Url"
+      },
+      "user_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "User Id"
+      },
+      "latitude": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Latitude"
+      },
+      "longitude": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Longitude"
+      }
+    },
+    "required": [
+      "chat_id",
+      "kind"
+    ],
+    "title": "send_cardArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+        "mcp-email-server": {
+            "command": "{{ ENTRYPOINT }}",
+            "args": ["stdio"]
+        }
+    }
+}

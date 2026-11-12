@@ -1,0 +1,35 @@
+{
+  "name": "list_shipping_options",
+  "description": "列出商家当前可用的配送方式、费用和预计时效。",
+  "inputSchema": {
+    "properties": {
+      "merchant_id": {
+        "title": "Merchant Id",
+        "type": "string"
+      },
+      "country_code": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Country Code"
+      }
+    },
+    "required": [
+      "merchant_id"
+    ],
+    "title": "list_shipping_optionsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

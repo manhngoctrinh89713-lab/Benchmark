@@ -1,0 +1,28 @@
+{
+  "name": "get_diagnostics",
+  "description": "返回真实语法诊断。Python编译但不执行代码；其他支持语言使用Tree-sitter。不是类型检查、lint或测试结果。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "project_id",
+      "path"
+    ],
+    "title": "get_diagnosticsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

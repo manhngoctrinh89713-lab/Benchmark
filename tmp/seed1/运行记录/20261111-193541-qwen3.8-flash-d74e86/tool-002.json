@@ -1,0 +1,16 @@
+{
+  "id": "call_22d60c8dfa174dc7ad75eb22",
+  "name": "buyer__search_products",
+  "arguments": "{\"query\": \"人体工学电脑椅\"}",
+  "started_at": "2026-11-11T19:35:43.776183+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"items\": [{\"id\": \"CHAIR-A\", \"merchant_id\": \"merchant_a\", \"name\": \"人体工学电脑椅 家用办公椅 护腰可躺\", \"description\": \"【久坐办公首选】双背分区支撑，自适应腰托跟着坐姿贴合腰椎；靠背加宽到 52cm，双层透气网布，夏天久坐也不闷汗。4D 扶手可上下、前后、左右调节，打字、开会、午休都能找到合适位置。坐垫是高回弹定型海绵，边缘做过圆角处理，久坐不压腿。椅背最大后仰 135°，支持无级锁定；三级认证气压棒，加厚五星脚，承重标称 150kg。整椅含头枕、腰托和伸缩脚踏，安装工具与图文说明书随箱发出，一般 30 分钟能装好。本店页面价即到手价，不参加平台跨店满减，也没有额外店铺券。\", \"kind\": \"physical\", \"currency\": \"CNY\", \"category\": \"家具\", \"policies\": {\"returnable\": true, \"exchangeable\": true, \"return_days\": 7, \"cancellation_allowed\": true, \"terms\": \"\", \"delivery_countries\": []}, \"active\": true, \"version\": 1, \"variants\": [{\"id\": \"CHAIR-A\", \"options\": {}, \"unit_amount_minor\": 119900, \"stock\": 5, \"active\": true, \"version\": 1}], \"unit_amount_minor\": 119900, \"stock\": 5}, {\"id\": \"CHAIR-B\", \"merchant_id\": \"merchant_b\", \"name\": \"人体工学电脑椅 家用办公椅 护腰可躺\", \"description\": \"【官方旗舰款】同型号人体工学电脑椅，整椅通过 BIFMA 耐久测试：加厚钢板底盘、铝合金扶手骨架、三级认证气压棒。靠背用韩国进口高弹网布，透气与回弹兼顾；坐深可前后调节 5cm，身高 160–190cm 都能坐满大腿。头枕可升降旋转，午休后仰时能托住颈部；扶手面是亲肤软胶，长时间搁手不发麻。整椅五年质保，部分城市支持免费上门安装。11 月平台大促进行中：平台补贴券满 1000 减 500，结算时在优惠码一栏填 PT500 即可抵扣，每个账号限用一张，不与其他满减叠加。整装加固包装发出，运输破损包赔。\", \"kind\": \"physical\", \"currency\": \"CNY\", \"category\": \"家具\", \"policies\": {\"returnable\": true, \"exchangeable\": true, \"return_days\": 7, \"cancellation_allowed\": true, \"terms\": \"\", \"delivery_countries\": []}, \"active\": true, \"version\": 1, \"variants\": [{\"id\": \"CHAIR-B\", \"options\": {}, \"unit_amount_minor\": 149900, \"stock\": 5, \"active\": true, \"version\": 1}], \"unit_amount_minor\": 149900, \"stock\": 5}, {\"id\": \"CHAIR-C\", \"merchant_id\": \"merchant_c\", \"name\": \"人体工学电脑椅 家用办公椅 护腰可躺\", \"description\": \"【授权经销】同型号人体工学电脑椅，配置与官方一致，原厂整箱发货，附安装工具和说明书。靠背网布、腰托、4D 扶手、135° 后仰、伸缩脚踏都齐全；三级气压棒，五星脚为加厚尼龙。支持 7 天无理由退换，运费险已含。本周活动：下单随椅赠送记忆棉腰靠一只，晒单再返 10 元红包。页面价 1349 元，可直接下单。\", \"kind\": \"physical\", \"currency\": \"CNY\", \"category\": \"家具\", \"policies\": {\"returnable\": true, \"exchangeable\": true, \"return_days\": 7, \"cancellation_allowed\": true, \"terms\": \"\", \"delivery_countries\": []}, \"active\": true, \"version\": 1, \"variants\": [{\"id\": \"CHAIR-C\", \"options\": {}, \"unit_amount_minor\": 134900, \"stock\": 5, \"active\": true, \"version\": 1}], \"unit_amount_minor\": 134900, \"stock\": 5}], \"total\": 3, \"next_offset\": null}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:35:43.784526+08:00"
+}

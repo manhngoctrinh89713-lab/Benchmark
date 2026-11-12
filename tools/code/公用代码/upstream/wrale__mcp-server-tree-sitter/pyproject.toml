@@ -1,0 +1,96 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-server-tree-sitter"
+version = "0.7.0"
+description = "MCP Server for Tree-sitter code analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Wrale LTD", email = "contact@wrale.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "mcp[cli]>=1.23.0",
+    # Pinned below 0.25 deliberately: 0.25 changed Parser.parse() to require
+    # str instead of bytes, which breaks the entire test suite. The migration
+    # is tracked separately; until then, CI must use 0.24.x to stay green.
+    "tree-sitter>=0.24.0,<0.25",
+    "tree-sitter-language-pack>=0.6.1",
+    "pyyaml>=6.0",
+    "pydantic>=2.0.0",
+    "types-pyyaml>=6.0.12.20241230",
+    # Transitive dep floors for security (see dependabot alerts)
+    "h11>=0.16.0",
+    "starlette>=0.49.1",
+    "pygments>=2.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.0.262",
+    "mypy>=1.2.0",
+]
+# Language support (now included via tree-sitter-language-pack)
+languages = [
+    # No individual languages needed as tree-sitter-language-pack provides all
+]
+
+[project.urls]
+"Homepage" = "https://github.com/wrale/mcp-server-tree-sitter"
+"Bug Tracker" = "https://github.com/wrale/mcp-server-tree-sitter/issues"
+
+[project.scripts]
+mcp-server-tree-sitter = "mcp_server_tree_sitter.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_server_tree_sitter"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+markers = [
+    "diagnostic: mark test as producing diagnostic information",
+]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[[tool.mypy.overrides]]
+module = "tree_sitter.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = false
+warn_return_any = false
+warn_no_return = false
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B"]

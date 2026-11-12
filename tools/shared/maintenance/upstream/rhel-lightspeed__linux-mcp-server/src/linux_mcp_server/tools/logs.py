@@ -1,0 +1,288 @@
+"""Log and audit tools."""
+
+import typing as t
+
+from pathlib import Path
+
+from fastmcp.exceptions import ToolError
+from mcp.types import ToolAnnotations
+from pydantic import Field
+from pydantic.functional_validators import BeforeValidator
+
+from linux_mcp_server.commands import get_command
+from linux_mcp_server.config import CONFIG
+from linux_mcp_server.models import LogEntries
+from linux_mcp_server.server import mcp
+from linux_mcp_server.utils import StrEnum
+from linux_mcp_server.utils.types import Host
+from linux_mcp_server.utils.types import LOCALHOST
+from linux_mcp_server.utils.validation import is_empty_output
+from linux_mcp_server.utils.validation import validate_path
+
+
+class Transport(StrEnum):
+    """Valid journalctl transport types for filtering journal entries.
+
+    Transports identify the source/mechanism that submitted log messages to the journal.
+
+    AUDIT - Linux audit subsystem messages (security events, syscall auditing)
+    DRIVER - Kernel driver messages logged via dev_printk().
+    JOURNAL - Messages logged directly to the journal via sd_journal_* APIs.
+    KERNEL - Kernel ring buffer messages (dmesg/printk).
+    STDOUT - stdout/stderr from services with StandardOutput/StandardError=journal.
+    SYSLOG - Messages received via the syslog socket (/dev/log).
+    """
+
+    AUDIT = "audit"
+    DRIVER = "driver"
+    JOURNAL = "journal"
+    KERNEL = "kernel"
+    STDOUT = "stdout"
+    SYSLOG = "syslog"
+
+
+async def _get_journal_logs(
+    *,
+    host: Host,
+    first_lines: int | None = None,
+    last_lines: int | None = None,
+    unit: str | None = None,
+    priority: str | None = None,
+    since: str | None = None,
+    transport: Transport | None = None,
+) -> tuple[int, str, str]:
+    """Execute journalctl command with optional filters.
+
+    Args:
+        first_lines: Number of first log lines to retrieve (using -n +N).
+        last_lines: Number of last log lines to retrieve (using -n N).
+        host: Host to get the logs from; LOCALHOST reads the local journal.
+        unit: Filter by systemd unit name.
+        priority: Filter by priority level.
+        since: Filter entries since specified time.
+        transport: Filter by journal transport.
+
+    Returns:
+        Tuple of (returncode, stdout, stderr) from the command execution.
+
+    Raises:
+        FileNotFoundError: If journalctl command is not available.
+    """
+
+    cmd = get_command("journal_logs")
+    return await cmd.run(
+        host=host,
+        first_lines=first_lines,
+        last_lines=last_lines,
+        unit=unit,
+        priority=priority,
+        since=since,
+        transport=transport,
+    )
+
+
+@mcp.tool(
+    title="Get journal logs",
+    description="Get systemd journal logs.",
+    tags={"fixed", "journal", "logs", "systemd", "troubleshooting"},
+    annotations=ToolAnnotations(readOnlyHint=True),
+)
+async def get_journal_logs(
+    unit: t.Annotated[
+        str,
+        Field(
+            description="Filter by systemd unit name or pattern",
+            examples=["sshd.service", "nginx", "httpd", "systemd-*", "audit*"],
+        ),
+    ] = "",
+    priority: t.Annotated[
+        str,
+        Field(
+            description="Filter by syslog priority level (0-7), name, or range",
+            examples=["err", "warning", "info", "debug", "3", "err..warning"],
+        ),
+    ] = "",
+    since: t.Annotated[
+        str,
+        Field(
+            description="Filter entries since specified time (absolute or relative)",
+            examples=["today", "yesterday", "-1h", "-30m", "-7d", "2025-01-15 10:00:00"],
+        ),
+    ] = "",
+    transport: t.Annotated[
+        Transport | None,
+        "Filter by journal transport (e.g., 'audit' for audit logs, 'kernel' for kernel messages, 'syslog' for syslog messages)",
+    ] = None,
+    first_lines: t.Annotated[
+        int | None,
+        Field(
+            description="Number of first log lines to retrieve after applying filters (journalctl -n +N). Mutually exclusive with last_lines.",
+            ge=1,
+            le=10_000,
+        ),
+    ] = None,
+    last_lines: t.Annotated[
+        int | None,
+        Field(
+            description="Number of last log lines to retrieve after applying filters (journalctl -n N). Default: 100. Mutually exclusive with first_lines.",
+            ge=1,
+            le=10_000,
+        ),
+    ] = None,
+    *,
+    host: Host,
+) -> LogEntries:
+    """Get systemd journal logs.
+
+    Retrieves entries from the systemd journal with optional filtering by unit,
+    priority level, time range, and transport. Returns timestamped log messages.
+
+    Use first_lines to get the first N lines (e.g., with --since to get early entries).
+    Use last_lines to get the last N lines (default behavior if neither is specified).
+
+    To get audit logs, use transport='audit'.
+    """
+    # Validate mutually exclusive parameters
+    if first_lines is not None and last_lines is not None:
+        raise ToolError("Parameters 'first_lines' and 'last_lines' are mutually exclusive.")
+
+    # Default to last_lines=100 if neither is specified
+    if first_lines is None and last_lines is None:
+        last_lines = 100
+
+    returncode, stdout, stderr = await _get_journal_logs(
+        first_lines=first_lines,
+        last_lines=last_lines,
+        host=host,
+        unit=unit,
+        priority=priority,
+        since=since,
+        transport=transport,
+    )
+
+    if returncode != 0:
+        raise ToolError(f"Error reading journal logs: {stderr}")
+
+    if is_empty_output(stdout):
+        raise ToolError("No journal entries found matching the criteria.")
+
+    entries = [line for line in stdout.strip().splitlines() if line]
+
+    return LogEntries(
+        entries=entries,
+        unit=unit,
+    )
+
+
+@mcp.tool(
+    title="Read log file",
+    description="Read a specific log file.",
+    tags={"fixed", "files", "logs", "troubleshooting"},
+    annotations=ToolAnnotations(readOnlyHint=True),
+)
+async def read_log_file(  # noqa: C901
+    log_path: t.Annotated[
+        Path,
+        BeforeValidator(validate_path),
+        Field(
+            description="Absolute path to the log file (must be in allowed list)",
+            examples=["/var/log/messages", "/var/log/secure", "/var/log/audit/audit.log", "/var/log/dnf.log"],
+        ),
+    ],
+    first_lines: t.Annotated[
+        int | None,
+        Field(
+            description="Number of first lines to retrieve from the log file. Mutually exclusive with last_lines.",
+            ge=1,
+            le=10_000,
+        ),
+    ] = None,
+    last_lines: t.Annotated[
+        int | None,
+        Field(
+            description="Number of last lines to retrieve from the log file. Default: 100. Mutually exclusive with first_lines.",
+            ge=1,
+            le=10_000,
+        ),
+    ] = None,
+    *,
+    host: Host,
+) -> LogEntries:
+    """Read a specific log file.
+
+    Retrieves lines from a log file. The file path must be in the
+    allowed list configured via LINUX_MCP_ALLOWED_LOG_PATHS environment variable.
+
+    Use first_lines to get the first N lines from the beginning of the file.
+    Use last_lines to get the last N lines from the end (default behavior).
+    """
+    # Validate mutually exclusive parameters
+    if first_lines is not None and last_lines is not None:
+        raise ToolError(
+            "Parameters 'first_lines' and 'last_lines' are mutually exclusive. "
+            "Use 'first_lines' to get the first N lines or 'last_lines' to get the last N lines, but not both."
+        )
+
+    # Default to last_lines=100 if neither is specified
+    if first_lines is None and last_lines is None:
+        last_lines = 100
+
+    # Determine which tail/head command to use
+    lines_value = first_lines if first_lines is not None else last_lines
+    use_head = first_lines is not None
+    # Get allowed log paths from environment variable
+    allowed_paths_env = CONFIG.allowed_log_paths
+
+    if not allowed_paths_env:
+        raise ToolError(
+            "No log files are allowed. Set LINUX_MCP_ALLOWED_LOG_PATHS environment variable "
+            "with comma-separated list of allowed log file paths."
+        )
+
+    allowed_paths = [Path(p.strip()) for p in allowed_paths_env.split(",") if p.strip()]
+
+    if host == LOCALHOST:
+        # For local execution, resolve and check against allowlist
+        requested_path = log_path.resolve()
+
+        is_allowed = False
+        for allowed_path in allowed_paths:
+            allowed_resolved = Path(allowed_path).resolve()
+            if requested_path == allowed_resolved:
+                is_allowed = True
+                break
+
+        if not is_allowed:
+            raise ToolError(f"Access to log file '{log_path}' is not allowed.")
+
+        if not requested_path.exists():
+            raise ToolError(f"Log file not found: {log_path}")
+
+        if not requested_path.is_file():
+            raise ToolError(f"Path is not a file: {log_path}")
+
+        log_path_str = str(requested_path)
+    else:
+        # For remote execution, check against allowlist without resolving
+        if log_path not in allowed_paths:
+            raise ToolError(f"Access to log file '{log_path}' is not allowed.")
+
+        log_path_str = str(log_path)
+
+    # Use head for first_lines, tail for last_lines
+    subcommand = "head" if use_head else "tail"
+    cmd = get_command("read_log_file", subcommand)
+    returncode, stdout, stderr = await cmd.run(host=host, lines=lines_value, log_path=log_path_str)
+
+    if returncode != 0:
+        if "Permission denied" in stderr:
+            raise ToolError(f"Permission denied reading log file: {log_path}")
+
+        raise ToolError(f"Error reading log file: {stderr}")
+
+    if is_empty_output(stdout):
+        raise ToolError(f"Log file is empty: {log_path}")
+
+    entries = [line for line in stdout.strip().splitlines() if line]
+
+    return LogEntries(entries=entries, path=log_path)

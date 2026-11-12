@@ -1,0 +1,31 @@
+{
+  "name": "git_unstage",
+  "description": "撤销指定路径的暂存，保留工作区修改。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "paths": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Paths",
+        "type": "array"
+      }
+    },
+    "required": [
+      "repo_id",
+      "paths"
+    ],
+    "title": "git_unstageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

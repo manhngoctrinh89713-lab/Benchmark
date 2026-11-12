@@ -1,0 +1,106 @@
+[
+  {
+    "repo": "modelcontextprotocol/servers",
+    "commit": "194cc86e3ae6400958555bd4116849d822d69263",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/modelcontextprotocol__servers/LICENSE",
+        "sha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a"
+      },
+      {
+        "path": "upstream/modelcontextprotocol__servers/src/filesystem/README.md",
+        "sha256": "29c91673b2c0eae97c40f71a76971ec6478a5cbbd4ade63fa5cce84cc50b39e8"
+      },
+      {
+        "path": "upstream/modelcontextprotocol__servers/src/filesystem/index.ts",
+        "sha256": "13cc40839afb7063d237b096da9db917c245eeb7f0bc9ce8c605309dc2f4a3fe"
+      },
+      {
+        "path": "upstream/modelcontextprotocol__servers/src/filesystem/lib.ts",
+        "sha256": "a22dea03adb1dedc11ad188c6c00234c3246b7e65ebfe4c1f4104e4b2298fe19"
+      },
+      {
+        "path": "upstream/modelcontextprotocol__servers/src/filesystem/path-utils.ts",
+        "sha256": "a49fdacfa37b75d852d93348fbaad62b463da3b27e1b43c5aed24fe45f64b64a"
+      },
+      {
+        "path": "upstream/modelcontextprotocol__servers/src/filesystem/package.json",
+        "sha256": "42ddd58e3f5580d07af425bc7394d78496db410c3a522c73c174ea108a051771"
+      }
+    ],
+    "stars_display": "约91.7k（整个servers仓库）",
+    "evidence": "GitHub repository page display snapshot, not individual server popularity"
+  },
+  {
+    "repo": "microsoft/markitdown",
+    "commit": "7482c092d9c0074a89803c9fdb63a969e7fe17fc",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/microsoft__markitdown/LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      },
+      {
+        "path": "upstream/microsoft__markitdown/README.md",
+        "sha256": "cd5ba48d320fedd4f5f2845a97968491b557d39d8afe264eb423d5c6906adf09"
+      },
+      {
+        "path": "upstream/microsoft__markitdown/packages/markitdown-mcp/README.md",
+        "sha256": "6967e98a8c7bc2215cfe26fc8b71e0b6938718f6f29c4a48d4e2bb97b6d88012"
+      },
+      {
+        "path": "upstream/microsoft__markitdown/packages/markitdown-mcp/src/markitdown_mcp/__main__.py",
+        "sha256": "d4db28dfbe2aa7358f59591639a5296c1d20934a9c31c060addc88281dbd66fe"
+      },
+      {
+        "path": "upstream/microsoft__markitdown/packages/markitdown/pyproject.toml",
+        "sha256": "6b353e793a4277ab121c6c4433b181882bef5dcdad3fc30e65878bd4dd2041f5"
+      }
+    ],
+    "stars_display": "约193k（整个转换库仓库）",
+    "evidence": "GitHub repository page display snapshot, not individual server popularity"
+  },
+  {
+    "repo": "wonderwhy-er/DesktopCommanderMCP",
+    "commit": "9a171d1dae74de94bf07e6e13878006fb69fa600",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/README.md",
+        "sha256": "a3feea8354f8552d52f9cafb10c552b72108f500ae97329f280d223e2c9467bd"
+      },
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/LICENSE",
+        "sha256": "e77cff545e0506903bf6a4bf29169fa40911eb76d70d239267df10c5c59370dd"
+      },
+      {
+        "path": "upstream/wonderwhy-er__DesktopCommanderMCP/package.json",
+        "sha256": "478981a544106e2529c53d43134b6033689bddc3d4cadee0ebb94be914089657"
+      }
+    ],
+    "stars_display": "约10.2k",
+    "evidence": "GitHub repository page display snapshot, not individual server popularity"
+  },
+  {
+    "repo": "isaacphi/mcp-gdrive",
+    "commit": "5a94bdcb751975f9f6552d261da35314baf89c43",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/isaacphi__mcp-gdrive/README.md",
+        "sha256": "fa7bfbfcb0d0bcb5b4449bb66430902db4e05dd34ef7eb149052aa950ee5579f"
+      },
+      {
+        "path": "upstream/isaacphi__mcp-gdrive/LICENSE",
+        "sha256": "d2509352bfade9542b7268f190ea375e4a8a3f5749acc7c82717ba6847024c0f"
+      },
+      {
+        "path": "upstream/isaacphi__mcp-gdrive/index.ts",
+        "sha256": "dd52248db9f0631aa26cdbd538d5f2f43308b3487a599ccf51278c5b540d8226"
+      }
+    ],
+    "stars_display": "282",
+    "evidence": "GitHub repository page display snapshot, not individual server popularity"
+  }
+]

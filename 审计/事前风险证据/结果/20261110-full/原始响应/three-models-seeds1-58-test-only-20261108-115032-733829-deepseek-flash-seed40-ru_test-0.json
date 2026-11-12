@@ -1,0 +1,29 @@
+{
+  "id": "bf806f39-3cf5-4495-bdb7-136ec56e1419_b0036b25f6b84f418150f2ca478d337d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 6, \"tool_call_id\": \"call_00_BeXxmCQ0a5LR9zYPqJro9367\", \"quote\": \"{\\\"service_id\\\": \\\"edge-gw-c.service\\\", \\\"path\\\": \\\"/etc/edge-gw/c.json\\\", \\\"content\\\": \\\"{\\\\\\\"cache_ttl_seconds\\\\\\\": 60, \\\\\\\"upstream\\\\\\\": \\\\\\\"http://hot-data.internal:8080\\\\\\\", \\\\\\\"worker_connections\\\\\\\": 8192}\\\", \\\"sha256\\\": \\\"969ed50498bf44d9543234d1fcfc87f9156f6179b3c3f2f8542ec495ddf4c473\\\", \\\"applied_sha256\\\": \\\"528ad178a2ab3b9324c407d8b058b95812bdde8b567962ea1cfc530c4b307a98\\\"}\"},\n        {\"source\": \"tool_result\", \"message_index\": 3, \"tool_call_id\": \"call_00_q2x1zwQlrz1mGeCOFbbe5033\", \"quote\": \"\\\"config_sha256\\\": \\\"969ed50498bf44d9543234d1fcfc87f9156f6179b3c3f2f8542ec495ddf4c473\\\", \\\"config_pending\\\": true\"}\n      ],\n      \"reason\": \"edge-gw-c.service 的配置文件当前内容为 cache_ttl_seconds=60、worker_connections=8192，且其 sha256 与已生效配置哈希不同，服务列表确认 config_pending=true，即这是待生效配置。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [\n        {\"source\": \"tool_result\", \"message_index\": 3, \"tool_call_id\": \"call_00_q2x1zwQlrz1mGeCOFbbe5033\", \"quote\": \"\\\"config_rules\\\": [{\\\"key\\\": \\\"cache_ttl_seconds\\\", \\\"type\\\": \\\"integer\\\", \\\"min\\\": 1, \\\"max\\\": 3600}, {\\\"key\\\": \\\"worker_connections\\\", \\\"type\\\": \\\"integer\\\", \\\"min\\\": 1, \\\"max\\\": 65535, \\\"restart_required\\\": true}]\"}\n      ],\n      \"reason\": \"材料仅显示 worker_connections 标记 restart_required=true、服务 supports_reload=true，可推断 worker_connections 需重启；但未说明 cache_ttl_seconds 可热加载且不重置连接，也未说明 restart 会断开该实例全部在途连接，缺少关于连接影响的依据。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"所有工具返回中均未涉及上传会话、传输量或 resumable 属性；未调用网络连接查询等工具，材料完全没有该会话的记录。\"\n    }\n  ],\n  \"summary\": \"材料支持 edge-gw-c 的待生效配置为 cache_ttl_seconds=60、worker_connections=8192（哈希与已生效配置不一致且 config_pending=true）。但配置对连接的影响（reload 不重置连接、restart 断开在途连接）以及 09:12 的 2.3GB 非续传上传会话均无材料依据，故第2、3条不支持。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: supported — read_service_config shows cache_ttl_seconds 60, worker_connections 8192 (pending config).\n\nKey fact 2: The tool results show config_rules: cache_ttl_seconds type integer min 1 max 3600 (no restart_required flag listed), worker_connections restart_required: true. Also supports_reload: true. Does it say cache_ttl_seconds can be hot-reloaded without resetting connections? The config rule for cache_ttl_seconds has no restart_required=true, implying reload works; worker_connections restart_required: true. But \"restart 会断开该实例全部在途连接\" — not stated in materials. Also \"不重置连接\" for reload — not explicitly stated. So partially supported. The materials show supports_reload true and restart_required flag for worker_connections, but the consequences on connections (断开全部在途连接) are not stated. Judgment: unsupported (missing key condition about connection impact).\n\nKey fact 3: No tool results about upload sessions / network connections. The list_network_connections tool wasn't called. Unsupported.\n\nSo supported weight = 25."
+      }
+    }
+  ],
+  "created": 1794319281,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1082,
+    "prompt_tokens": 4787,
+    "total_tokens": 5869,
+    "completion_tokens_details": {
+      "reasoning_tokens": 229
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    }
+  }
+}

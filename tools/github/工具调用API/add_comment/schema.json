@@ -1,0 +1,38 @@
+{
+  "name": "add_comment",
+  "description": "为Issue或PR添加本地评论。kind为issue/pull_request；不向外部平台发送。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "kind": {
+        "title": "Kind",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "body": {
+        "title": "Body",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "kind",
+      "number",
+      "body"
+    ],
+    "title": "add_commentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "now": "2026-11-04T10:20:00+08:00",
+  "current_user_id": "u_me",
+  "contacts": [
+    {
+      "id": "u_me",
+      "name": "周宁",
+      "organization": "客服",
+      "version": 1
+    },
+    {
+      "id": "u_support",
+      "name": "许安",
+      "organization": "客服主管",
+      "version": 1
+    },
+    {
+      "id": "u_ops",
+      "name": "方琳",
+      "organization": "华东仓配",
+      "version": 1
+    },
+    {
+      "id": "u_quality",
+      "name": "沈晴",
+      "organization": "质检",
+      "version": 1
+    },
+    {
+      "id": "u_customer",
+      "name": "李薇",
+      "organization": "禾川客户采购",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "c_customer",
+      "name": "配送破损客户沟通",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_support",
+        "u_customer"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [
+        "u_me"
+      ],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_support",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_customer",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    },
+    {
+      "id": "c_internal",
+      "name": "仓配内部复盘",
+      "type": "group",
+      "member_ids": [
+        "u_me",
+        "u_support",
+        "u_ops",
+        "u_quality"
+      ],
+      "owner_id": "u_me",
+      "admin_ids": [
+        "u_me"
+      ],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "u_me",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_support",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_ops",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_quality",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_c1",
+      "chat_id": "c_customer",
+      "sender_id": "u_customer",
+      "text": "这批有几家门店反馈外盒破损，麻烦同步补发与退款进度。",
+      "timestamp": "2026-11-03T14:10:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_support",
+        "u_customer"
+      ],
+      "sequence": 0,
+      "sender_name": "李薇"
+    },
+    {
+      "id": "m_c2",
+      "chat_id": "c_customer",
+      "sender_id": "u_support",
+      "text": "已按订单逐笔受理，今天同步处理状态。",
+      "timestamp": "2026-11-03T14:20:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_support",
+        "u_customer"
+      ],
+      "sequence": 0,
+      "sender_name": "许安"
+    },
+    {
+      "id": "m_i1",
+      "chat_id": "c_internal",
+      "sender_id": "u_quality",
+      "text": "周会整理的资料在配送破损复盘目录，今天请客服确认对外进度说明。",
+      "timestamp": "2026-11-03T17:30:00+08:00",
+      "read_by": [
+        "u_me"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "version": 1,
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_me",
+        "u_support",
+        "u_ops",
+        "u_quality"
+      ],
+      "sequence": 0,
+      "sender_name": "沈晴"
+    }
+  ],
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "delivery_events": [],
+  "member_events": [],
+  "sequence": 0,
+  "relations": [
+    {
+      "owner_id": "u_me",
+      "user_id": "u_support",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_support",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_ops",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_ops",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_quality",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_quality",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_me",
+      "user_id": "u_customer",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "u_customer",
+      "user_id": "u_me",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "events": []
+}

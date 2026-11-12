@@ -1,0 +1,15 @@
+{
+  "name": "list_repositories",
+  "description": "查询可操作的模拟仓库和对应运行路径。",
+  "inputSchema": {
+    "properties": {},
+    "title": "list_repositoriesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

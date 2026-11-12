@@ -1,0 +1,35 @@
+{
+  "name": "export_orders",
+  "description": "将筛选后的商家订单导出为 CSV。",
+  "inputSchema": {
+    "properties": {
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      },
+      "status": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Status"
+      }
+    },
+    "required": [
+      "save_path"
+    ],
+    "title": "export_ordersArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "status": "scored",
+  "fingerprint": "f452fc7818580c666c550557dcdec4e740a4a37f59d618589cb97fce8eb70390",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "工具返回中只有 backups/orders/ 目录列表和两次删除操作记录，未读取 `ops/archive-worker/runs/2026-11-01.json`，也没有任何关于备份类型（incremental）或父备份指向 orders_2026-10-31_0200.bak 的信息，材料完全不支持该要点。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何 `runs/*.json` 文件的内容，未出现备份类型 full/incremental 或父子备份链的信息；目录列表仅含 .bak 文件名与大小，无法据此推断备份类型和父备份关系。"
+      }
+    ],
+    "summary": "材料仅包含 backups/orders/ 的文件列表（含 2026-10-11 至 2026-11-01 的 .bak 文件与 catalog.json）以及删除 10-11、10-12 两个备份的记录，完全没有 ops/archive-worker/runs/ 下任何运行记录的内容，因此两条关于备份类型与父备份链的关键事实均无材料依据。"
+  }
+}

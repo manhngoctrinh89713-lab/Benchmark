@@ -1,0 +1,66 @@
+{
+  "status": "scored",
+  "fingerprint": "9a39b3988925f9d5d66d28f604284b6b811dff9437e49a2cd9f0f724ce0a1284",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 14,
+            "tool_call_id": "call_00_TNdN7JBWCgbiU9wFyRqD7367",
+            "quote": "diff --git a/src/payment_notice.py b/src/payment_notice.py\nindex ec9fd5d..b3de4a0 100644\n--- a/src/payment_notice.py\n+++ b/src/payment_notice.py\n@@ -1,10 +1,11 @@\n import json\n-from .internal_verify import check_notice\n+from .internal_verify import verify_notice\n+from .notice_policy import applies_to_order\n \n def handle_notice(raw_body, headers, orders):\n     notice = json.loads(raw_body)\n-    notice[\"signature\"] = headers.get(\"X-Pay-Signature\", \"\")\n-    if check_notice(notice):\n+    if (verify_notice(raw_body, headers.get(\"X-Pay-Signature\", \"\"))\n+            and applies_to_order(notice)):"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 14,
+            "tool_call_id": "call_00_TNdN7JBWCgbiU9wFyRqD7367",
+            "quote": "APPLICABLE_EVENTS = frozenset({\"payment.succeeded\"})\n+ \n+ \n+def applies_to_order(notice):\n+    return notice.get(\"event_type\") in APPLICABLE_EVENTS"
+          }
+        ],
+        "reason": "git__git_show(main) 显示 main 的 handle_notice 在 verify_notice 通过后再调用 applies_to_order(notice)，且 main 新增的 src/notice_policy.py 中 APPLICABLE_EVENTS 只含 payment.succeeded，故只放行该事件。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 15,
+            "tool_call_id": "call_01_yzJBABwkk3xjcIroyOty8270",
+            "quote": "-    if check_notice(notice):\n+    if verify_notice(raw_body, headers.get(\"X-Pay-Signature\", \"\")):\n         orders.mark_paid(notice[\"order_id\"])\n         return True\n     return False"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_02_4CVWARcvjibp86PtUkF73649",
+            "quote": "diff --git a/src/notice_policy.py b/src/notice_policy.py\ndeleted file mode 100644\nindex 38d55fe..0000000"
+          }
+        ],
+        "reason": "feature 分支提交将 handle_notice 改为仅 verify_notice 通过即调用 orders.mark_paid，无事件过滤；main..feature 的差异显示 src/notice_policy.py 被删除（deleted file mode 100644）。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_02_4CVWARcvjibp86PtUkF73649",
+            "quote": "diff --git a/src/internal_verify.py b/src/internal_verify.py"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 21,
+            "tool_call_id": "call_00_w0q161Zf7VWmb6Kvuz6A8261",
+            "quote": "class NoticeTests(unittest.TestCase):\r\n    def test_successful_payment_marks_paid(self):"
+          }
+        ],
+        "reason": "main 与 feature/verify-adapter 的 refs 差异只涉及 src 下三个文件，未包含 tests/test_notice.py，说明该测试文件两分支一致；测试类中仅有 test_successful_payment_marks_paid 一个用例，只覆盖成功支付场景。"
+      }
+    ],
+    "summary": "main 在 verify_notice 后用 applies_to_order 仅放行 payment.succeeded；feature 分支只验签即 mark_paid 并删除 notice_policy.py，冲突源于此。测试文件两分支一致且仅含成功支付用例，未覆盖被删除的事件过滤语义。"
+  }
+}

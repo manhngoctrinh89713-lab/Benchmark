@@ -1,0 +1,23 @@
+{
+  "name": "get_product",
+  "description": "读取商品当前规格、价格、库存和销售退换政策。",
+  "inputSchema": {
+    "properties": {
+      "product_id": {
+        "title": "Product Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "product_id"
+    ],
+    "title": "get_productArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "now": "2026-11-04T10:20:00+08:00",
+  "accounts": [
+    {
+      "account_name": "work",
+      "email_address": "operations@company.example.test",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "owner_id": "local-user",
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-d39c35953de040adb0f7cb53a710d695",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-56948f53e8f6479987720159a2965c0b",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-9a7ba6adecb54868b6568cf84d80b7a3",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-9654f146779a4273833b98696150c0e0",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-6a24e0997fcc4e09a3977785cd649701",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-00f8c221c13f428c900ede40895bb2f4",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ct_np",
+      "name": "Northpoint 对接人",
+      "emails": [
+        "ops@northpoint.example.test"
+      ],
+      "organization": "Northpoint Relocation",
+      "notes": "Yusuf relocation 供应商",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_np",
+      "message_id": "<m_np@mail.example.test>",
+      "account_name": "work",
+      "mailbox": "INBOX",
+      "from": "ops@northpoint.example.test",
+      "to": [
+        "operations@company.example.test"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Yusuf relocation confirmation",
+      "body": "Yusuf 的 relocation 报价 14,200 美元，请确认后我们安排排期。",
+      "timestamp": "2026-11-03T15:20:00+08:00",
+      "is_read": false,
+      "starred": false,
+      "attachments": [],
+      "version": 1,
+      "categories": [],
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-e4e5b15868314ce9a0d964eb60916682"
+    }
+  ],
+  "sent_events": [],
+  "current_actor": "local-user",
+  "sequence": 0,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "actors": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

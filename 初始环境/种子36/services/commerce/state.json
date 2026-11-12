@@ -1,0 +1,145 @@
+{
+  "now": "2026-12-10T10:30:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_demo": {
+      "id": "merchant_demo",
+      "name": "麦丘冷冻烘焙",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_demo"
+    }
+  },
+  "products": {
+    "CRS-L": {
+      "id": "CRS-L",
+      "merchant_id": "merchant_demo",
+      "name": "冷冻面团可颂",
+      "description": "冷冻面团可颂，需全程 -18℃ 冷链运输；到店后冷冻保存，解冻后不可再次冷冻。",
+      "unit_amount_minor": 790,
+      "currency": "CNY",
+      "stock": 60,
+      "kind": "physical",
+      "active": true,
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "terms": "请按包装提示收货并及时转入冷冻柜；未按要求冷冻保存可能影响起发品质。支持7天内退换。",
+        "delivery_countries": []
+      },
+      "version": 1,
+      "category": ""
+    },
+    "CRS-A": {
+      "id": "CRS-A",
+      "merchant_id": "merchant_demo",
+      "name": "常温预烤可颂",
+      "description": "常温配送，到店可直接食用或复烤",
+      "unit_amount_minor": 760,
+      "currency": "CNY",
+      "stock": 60,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "mutation_events": [],
+  "skus": {
+    "CRS-L": {
+      "id": "CRS-L",
+      "product_id": "CRS-L",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 790,
+      "stock": 60,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "CRS-A": {
+      "id": "CRS-A",
+      "product_id": "CRS-A",
+      "merchant_id": "merchant_demo",
+      "options": {},
+      "unit_amount_minor": 760,
+      "stock": 60,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_demo": {
+      "id": "shipping_merchant_demo",
+      "merchant_id": "merchant_demo",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

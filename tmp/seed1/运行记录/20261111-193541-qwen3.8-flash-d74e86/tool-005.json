@@ -1,0 +1,16 @@
+{
+  "id": "call_57b8a44018434923bd7d837e",
+  "name": "buyer__list_addresses",
+  "arguments": "{}",
+  "started_at": "2026-11-11T19:35:46.220778+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"items\": [{\"id\": \"addr_demo\", \"buyer_id\": \"buyer_demo\", \"label\": \"行政部\", \"address\": {\"recipient\": \"王倩\", \"phone\": \"13800001234\", \"address_line_1\": \"云锦路688号8楼行政部\", \"admin_area_1\": \"上海市\", \"admin_area_2\": \"上海市\", \"postal_code\": \"200232\", \"country_code\": \"CN\"}, \"version\": 1}], \"total\": 1, \"next_offset\": null}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:35:46.224957+08:00"
+}

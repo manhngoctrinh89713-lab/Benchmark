@@ -1,0 +1,16 @@
+{
+  "id": "call_-7086072718386259059",
+  "name": "buyer__place_order_from_quote",
+  "arguments": "{\"idempotency_key\":\"order-chair-a-20261111\",\"quote_id\":\"quote_000001\"}",
+  "started_at": "2026-11-11T19:36:18.503163+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"order\": {\"buyer_id\": \"buyer_demo\", \"merchant_id\": \"merchant_a\", \"currency\": \"CNY\", \"items\": [{\"sku_id\": \"CHAIR-A\", \"product_id\": \"CHAIR-A\", \"quantity\": 1, \"name\": \"人体工学电脑椅 家用办公椅 护腰可躺\", \"kind\": \"physical\", \"options\": {}, \"unit_amount_minor\": 119900, \"available\": true, \"sku_version\": 1, \"product_version\": 1, \"policies\": {\"returnable\": true, \"exchangeable\": true, \"return_days\": 7, \"cancellation_allowed\": true, \"terms\": \"\", \"delivery_countries\": []}, \"product_snapshot\": {\"id\": \"CHAIR-A\", \"merchant_id\": \"merchant_a\", \"name\": \"人体工学电脑椅 家用办公椅 护腰可躺\", \"description\": \"【久坐办公首选】双背分区支撑，自适应腰托跟着坐姿贴合腰椎；靠背加宽到 52cm，双层透气网布，夏天久坐也不闷汗。4D 扶手可上下、前后、左右调节，打字、开会、午休都能找到合适位置。坐垫是高回弹定型海绵，边缘做过圆角处理，久坐不压腿。椅背最大后仰 135°，支持无级锁定；三级认证气压棒，加厚五星脚，承重标称 150kg。整椅含头枕、腰托和伸缩脚踏，安装工具与图文说明书随箱发出，一般 30 分钟能装好。本店页面价即到手价，不参加平台跨店满减，也没有额外店铺券。\", \"kind\": \"physical\", \"currency\": \"CNY\", \"category\": \"家具\", \"policies\": {\"returnable\": true, \"exchangeable\": true, \"return_days\": 7, \"cancellation_allowed\": true, \"terms\": \"\", \"delivery_countries\": []}, \"active\": true, \"version\": 1, \"variants\": [{\"id\": \"CHAIR-A\", \"options\": {}, \"unit_amount_minor\": 119900, \"stock\": 5, \"active\": true, \"version\": 1}], \"unit_amount_minor\": 119900, \"stock\": 5}, \"tax_minor\": 0, \"line_id\": \"ord_000001_line_1\", \"fulfilled_quantity\": 0}], \"subtotal_minor\": 119900, \"shipping_minor\": 0, \"tax_minor\": 0, \"discount_minor\": 0, \"discount_allocations\": [], \"total_minor\": 119900, \"shipping_address\": {\"recipient\": \"王倩\", \"phone\": \"13800001234\", \"address_line_1\": \"云锦路688号8楼行政部\", \"admin_area_1\": \"上海市\", \"admin_area_2\": \"上海市\", \"postal_code\": \"200232\", \"country_code\": \"CN\"}, \"shipping_option\": {\"id\": \"ship_merchant_a\", \"merchant_id\": \"merchant_a\", \"name\": \"标准快递\", \"amount_minor\": 0, \"countries\": [], \"min_days\": 3, \"max_days\": 5, \"active\": true, \"version\": 1, \"default\": true}, \"delivery_email\": null, \"id\": \"ord_000001\", \"status\": \"pending_payment\", \"payment_status\": \"unpaid\", \"fulfillment_status\": \"unfulfilled\", \"stock_released\": false, \"version\": 1, \"note\": \"\", \"created_at\": \"2026-11-11T10:00:00+08:00\", \"reservation_expires_at\": \"2026-11-11T10:30:00+08:00\"}, \"sequence\": 3, \"replayed\": false}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:36:18.520999+08:00"
+}

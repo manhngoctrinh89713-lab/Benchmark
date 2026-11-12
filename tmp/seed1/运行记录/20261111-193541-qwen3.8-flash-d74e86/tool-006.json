@@ -1,0 +1,16 @@
+{
+  "id": "call_9edfeca90a214173bce17f35",
+  "name": "buyer__create_checkout_quote",
+  "arguments": "{\"merchant_id\": \"merchant_a\", \"sku_ids\": \n[\"CHAIR-A\"]\n\n, \"address_id\": \"addr_demo\", \"shipping_option_id\": \"ship_merchant_a\"}",
+  "started_at": "2026-11-11T19:35:47.755716+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Error executing tool create_checkout_quote: Select nonempty unique cart SKU IDs"
+      }
+    ],
+    "isError": true
+  },
+  "finished_at": "2026-11-11T19:35:47.763592+08:00"
+}

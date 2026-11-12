@@ -1,0 +1,103 @@
+{
+  "name": "forward_email",
+  "description": "转发选定邮件，默认保存草稿；as_draft=false 立即发送。可内联转发或以 .eml 附件转发；include_attachments 控制是否保留原附件。地址、正文和保留的附件形成新快照。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "email_id": {
+        "title": "Email Id",
+        "type": "string"
+      },
+      "recipients": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Recipients",
+        "type": "array"
+      },
+      "body": {
+        "default": "",
+        "title": "Body",
+        "type": "string"
+      },
+      "cc": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Cc"
+      },
+      "bcc": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Bcc"
+      },
+      "include_attachments": {
+        "default": true,
+        "title": "Include Attachments",
+        "type": "boolean"
+      },
+      "as_attachment": {
+        "default": false,
+        "title": "As Attachment",
+        "type": "boolean"
+      },
+      "as_draft": {
+        "default": true,
+        "title": "As Draft",
+        "type": "boolean"
+      },
+      "send_mode": {
+        "default": "send_as",
+        "title": "Send Mode",
+        "type": "string"
+      },
+      "from_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "From Address"
+      }
+    },
+    "required": [
+      "account_name",
+      "email_id",
+      "recipients"
+    ],
+    "title": "forward_emailArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

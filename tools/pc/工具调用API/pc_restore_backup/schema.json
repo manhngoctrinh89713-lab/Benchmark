@@ -1,0 +1,33 @@
+{
+  "name": "pc_restore_backup",
+  "description": "从已校验ZIP恢复原个人文件；默认拒绝覆盖，可幂等重试。",
+  "inputSchema": {
+    "properties": {
+      "backup_id": {
+        "title": "Backup Id",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      },
+      "overwrite": {
+        "default": false,
+        "title": "Overwrite",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "backup_id",
+      "idempotency_key"
+    ],
+    "title": "pc_restore_backupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "read_repository_file",
+  "description": "读取UTF-8代码文件，省略revision读取工作区，否则读取指定提交版本；不允许访问.git。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "revision": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Revision"
+      }
+    },
+    "required": [
+      "repo_id",
+      "path"
+    ],
+    "title": "read_repository_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "request_refund",
+  "description": "向商家申请退还指定支付的部分或全部可退金额。",
+  "inputSchema": {
+    "properties": {
+      "payment_id": {
+        "title": "Payment Id",
+        "type": "string"
+      },
+      "amount_minor": {
+        "title": "Amount Minor",
+        "type": "integer"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "payment_id",
+      "amount_minor",
+      "reason",
+      "idempotency_key"
+    ],
+    "title": "request_refundArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

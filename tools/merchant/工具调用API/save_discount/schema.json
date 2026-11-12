@@ -1,0 +1,126 @@
+{
+  "name": "save_discount",
+  "description": "维护固定金额或折扣比例优惠，含门槛、商品、客户、时间、次数及叠加条件。比例以万分比填写。",
+  "inputSchema": {
+    "properties": {
+      "code": {
+        "title": "Code",
+        "type": "string"
+      },
+      "kind": {
+        "title": "Kind",
+        "type": "string"
+      },
+      "value": {
+        "title": "Value",
+        "type": "integer"
+      },
+      "minimum_minor": {
+        "default": 0,
+        "title": "Minimum Minor",
+        "type": "integer"
+      },
+      "product_ids": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Product Ids"
+      },
+      "buyer_ids": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Buyer Ids"
+      },
+      "start_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Start At"
+      },
+      "end_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "End At"
+      },
+      "max_uses": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Max Uses"
+      },
+      "stackable": {
+        "default": false,
+        "title": "Stackable",
+        "type": "boolean"
+      },
+      "active": {
+        "default": true,
+        "title": "Active",
+        "type": "boolean"
+      },
+      "discount_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Discount Id"
+      }
+    },
+    "required": [
+      "code",
+      "kind",
+      "value"
+    ],
+    "title": "save_discountArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "update_contact",
+  "description": "修改自己的好友备注或标签，tags 替换为所传完整列表，空列表清空；不改变对方身份。expected_version 使用 relationship.version。",
+  "inputSchema": {
+    "properties": {
+      "user_id": {
+        "title": "User Id",
+        "type": "string"
+      },
+      "remark": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Remark"
+      },
+      "tags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Tags"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "user_id"
+    ],
+    "title": "update_contactArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "now": "2026-11-03T10:00:00+08:00",
+  "accounts": [
+    {
+      "account_name": "hr",
+      "email_address": "hr@hezhou.example",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "owner_id": "local-user",
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-bf67542d49c04b848afa92dced7fc0fc",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-c410d20583484376bc9b998df91ed2b1",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-be4e8db75b5149ab84483de520888782",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-95389f653bf54372a31140ed657a47d1",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-1e75d3c9c6fc4db58fcbae119de31e6b",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-faf48bd3db894d7ab975956fef245a24",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "c_zhou",
+      "name": "周航",
+      "emails": [
+        "zhou.hang@mail.example"
+      ],
+      "organization": "",
+      "remark": "高级后端候选人",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1
+    },
+    {
+      "id": "c_chen",
+      "name": "陈晨",
+      "emails": [
+        "chen.chen@hezhou.example"
+      ],
+      "organization": "禾舟科技",
+      "remark": "招聘经理",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1
+    },
+    {
+      "id": "c_xu",
+      "name": "徐敏",
+      "emails": [
+        "xu.min@hezhou.example"
+      ],
+      "organization": "禾舟科技",
+      "remark": "薪酬委员会",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "m001",
+      "message_id": "<m001@mail.example.test>",
+      "account_name": "hr",
+      "mailbox": "INBOX",
+      "from": "zhou.hang@mail.example",
+      "to": [
+        "hr@hezhou.example"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "感谢面试机会",
+      "body": "感谢今天的面试。如果月薪能到 45k，我可以尽快入职，期待您的回复。",
+      "timestamp": "2026-11-01T18:12:00+08:00",
+      "is_read": false,
+      "starred": false,
+      "attachments": [],
+      "version": 1,
+      "categories": [],
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-dd5cbea88cca42d9b22a0643093e7c6d"
+    },
+    {
+      "id": "m002",
+      "message_id": "<m002@mail.example.test>",
+      "account_name": "hr",
+      "mailbox": "INBOX",
+      "from": "chen.chen@hezhou.example",
+      "to": [
+        "hr@hezhou.example"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "周航审批",
+      "body": "周航的 offer 我按 45k 提交了，薪酬委员会明天过会，先准备模板。",
+      "timestamp": "2026-11-01T19:05:00+08:00",
+      "is_read": false,
+      "starred": false,
+      "attachments": [],
+      "version": 1,
+      "categories": [],
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-4ab1fdee3d3f4c23ad4fd895af3bb6cc"
+    },
+    {
+      "id": "m003",
+      "message_id": "<m003@mail.example.test>",
+      "account_name": "hr",
+      "mailbox": "INBOX",
+      "from": "xu.min@hezhou.example",
+      "to": [
+        "hr@hezhou.example"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "11月薪酬委员会安排",
+      "body": "本周会处理高级后端岗位的审批，请按最终额度发 offer。",
+      "timestamp": "2026-11-02T09:10:00+08:00",
+      "is_read": false,
+      "starred": false,
+      "attachments": [],
+      "version": 1,
+      "categories": [],
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-d0eaac6515494235935f1450762b8db6"
+    }
+  ],
+  "sequence": 0,
+  "sent_events": [],
+  "current_actor": "local-user",
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "actors": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

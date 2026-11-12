@@ -1,0 +1,1 @@
+{"watch": "/var/log/order-svc/", "destination": "central-log.company.example", "audiences": ["\u8ba2\u5355\u652f\u6301\u7ec4", "\u5916\u5305\u8fd0\u7ef4"], "transport": "TLS"}

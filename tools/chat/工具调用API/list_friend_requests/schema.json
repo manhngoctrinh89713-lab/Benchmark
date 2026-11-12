@@ -1,0 +1,43 @@
+{
+  "name": "list_friend_requests",
+  "description": "分页查询自己的好友申请；direction 为 incoming/outgoing，status 为 pending/accepted/rejected，null 查询全部。",
+  "inputSchema": {
+    "properties": {
+      "direction": {
+        "default": "incoming",
+        "title": "Direction",
+        "type": "string"
+      },
+      "status": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "pending",
+        "title": "Status"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "list_friend_requestsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

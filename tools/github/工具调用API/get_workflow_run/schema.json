@@ -1,0 +1,28 @@
+{
+  "name": "get_workflow_run",
+  "description": "读取预置Actions运行状态、结论、提交SHA及任务信息，不执行CI。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "run_id": {
+        "title": "Run Id",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "run_id"
+    ],
+    "title": "get_workflow_runArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

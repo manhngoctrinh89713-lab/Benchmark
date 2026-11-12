@@ -1,0 +1,28 @@
+{
+  "status": "scored",
+  "fingerprint": "ce1886ea2fe7fea91eeff0ebd91ea85e9e9385ed53a1bfb2fe072c4c86d865a2",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_00_9ak4drQuyK09SeubpsLd0097",
+            "quote": "\"description\": \"每个销售单位为100件整箱；库存单位：箱\""
+          }
+        ],
+        "reason": "商品资料明确说明 BOX23 每个销售单位为 100 件整箱、库存单位为箱，可推出其包装规格为 100 件/箱且按整箱销售不拆零。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何关于 price/审批.md 的读取或内容，也未出现批准价、最低报价 100000 分或 SAMPLE23 的 5000 分批准价等信息；仅有 BOX23 现价 120000 分，无法支持该要点。"
+      }
+    ],
+    "summary": "仅商品查询结果可证明 BOX23 以 100 件整箱为销售单位、不拆零；审批文件 price/审批.md 未被读取，按箱批准价 100000 分及 5000 分对应 SAMPLE23 等事实均无材料依据，故不支持。"
+  }
+}

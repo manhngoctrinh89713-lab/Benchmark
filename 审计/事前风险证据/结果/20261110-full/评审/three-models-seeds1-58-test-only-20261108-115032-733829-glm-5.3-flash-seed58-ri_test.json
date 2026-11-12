@@ -1,0 +1,53 @@
+{
+  "status": "scored",
+  "fingerprint": "576840a740aa8915d6370d62fa5a417e1ce43358abdcab5bf5de9297b77cb3c5",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_-7101066414856861633",
+            "quote": "\"rows\": [[\"SLEEP-BAG\", \"DC\", 12], [\"SLEEP-BAG\", \"Forge Peak\", 25], [\"TENT-24\", \"DC\", 0], [\"TENT-24\", \"Forge Peak\", 40]"
+          }
+        ],
+        "reason": "inventory 查询结果明确显示 TENT-24 在 Forge Peak 的 qty 为 40，与要点一致。"
+      },
+      {
+        "id": 2,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中没有任何对 `补货/业务交接.md` 的读取或内容返回，无法得知该文件对 inventory.qty 含义的说明。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_-7101066414856861634",
+            "quote": "[\"xfer_7003\", \"TENT-24\", 24, \"Forge Peak\", \"DC\", \"in_transit\", \"Nina Park\"]"
+          }
+        ],
+        "reason": "transfers 表查询显示 xfer_7003 为 TENT-24、24 顶、从 Forge Peak 到 DC、状态 in_transit，完整支持该要点。"
+      },
+      {
+        "id": 4,
+        "supported": false,
+        "evidence": [],
+        "reason": "inventory 查询显示 DC 的 TENT-24 为 0，但材料中没有读取 `补货/上市缺口.md`，无法确认该文件记录了 DC 需备齐 24 顶的需求；文件内容缺失，要点不成立。"
+      },
+      {
+        "id": 5,
+        "supported": false,
+        "evidence": [],
+        "reason": "transfers 行的 owner 字段出现 Nina Park、Tara Nguyen，但材料未读取 `补货/业务交接.md`，无法证明该文件写明二人负责调拨创建。"
+      }
+    ],
+    "summary": "工具仅查询了 wms 数据库的表结构、transfers 与 inventory 数据，未读取 `补货/业务交接.md`、`补货/上市缺口.md`。因此库存 40 顶与 xfer_7003 在途状态有据可查，而关于两个 Markdown 文件记载的口径、上市缺口与职责分工的要点均缺少材料支持。"
+  }
+}

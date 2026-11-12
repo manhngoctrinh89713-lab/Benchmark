@@ -1,0 +1,33 @@
+{
+  "name": "git_create_branch",
+  "description": "从已有提交创建本地分支，不切换。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "branch": {
+        "title": "Branch",
+        "type": "string"
+      },
+      "base": {
+        "default": "HEAD",
+        "title": "Base",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "branch"
+    ],
+    "title": "git_create_branchArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

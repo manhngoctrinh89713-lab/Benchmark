@@ -1,0 +1,43 @@
+{
+  "name": "favorite_message",
+  "description": "把自己可见消息保存为独立收藏，支持文本、媒体、卡片和合并记录，保留原内容副本；可设置标题和标签。原消息后续撤回或删除不改变收藏。系统通知不可收藏。",
+  "inputSchema": {
+    "properties": {
+      "message_id": {
+        "title": "Message Id",
+        "type": "string"
+      },
+      "title": {
+        "default": "",
+        "title": "Title",
+        "type": "string"
+      },
+      "tags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Tags"
+      }
+    },
+    "required": [
+      "message_id"
+    ],
+    "title": "favorite_messageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

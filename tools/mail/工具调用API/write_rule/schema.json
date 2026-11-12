@@ -1,0 +1,219 @@
+{
+  "name": "write_rule",
+  "description": "创建或替换有限收件规则；conditions 全部成立且 exceptions 无一成立时匹配。条件采用 field/op/value，与邮件搜索一致，不检查 Bcc。actions 按顺序执行：move+mailbox、mark_read/star+value、add_category+category_id、trash、forward+recipients。priority 越小越先执行，stop_processing 停止后续规则。单条规则动作整体成功或回滚并留失败记录。仅新入站触发；自动转发/回复不再触发自动发送。传 rule_id 修改。",
+  "inputSchema": {
+    "$defs": {
+      "Condition": {
+        "additionalProperties": false,
+        "properties": {
+          "field": {
+            "enum": [
+              "subject",
+              "body",
+              "from",
+              "to",
+              "cc",
+              "bcc",
+              "timestamp",
+              "is_read",
+              "starred",
+              "mailbox",
+              "categories",
+              "has_attachment",
+              "attachment_name",
+              "size",
+              "thread_id",
+              "importance"
+            ],
+            "title": "Field",
+            "type": "string"
+          },
+          "op": {
+            "enum": [
+              "eq",
+              "contains",
+              "in",
+              "lt",
+              "lte",
+              "gt",
+              "gte",
+              "exists"
+            ],
+            "title": "Op",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "boolean"
+                    }
+                  ]
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "field",
+          "op",
+          "value"
+        ],
+        "title": "Condition",
+        "type": "object"
+      },
+      "RuleAction": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "move",
+              "mark_read",
+              "star",
+              "add_category",
+              "trash",
+              "forward"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "mailbox": {
+            "title": "Mailbox",
+            "type": "string"
+          },
+          "category_id": {
+            "title": "Category Id",
+            "type": "string"
+          },
+          "recipients": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Recipients",
+            "type": "array"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "RuleAction",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "conditions": {
+        "items": {
+          "$ref": "#/$defs/Condition"
+        },
+        "title": "Conditions",
+        "type": "array"
+      },
+      "actions": {
+        "items": {
+          "$ref": "#/$defs/RuleAction"
+        },
+        "title": "Actions",
+        "type": "array"
+      },
+      "rule_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Rule Id"
+      },
+      "exceptions": {
+        "anyOf": [
+          {
+            "items": {
+              "$ref": "#/$defs/Condition"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Exceptions"
+      },
+      "priority": {
+        "default": 100,
+        "title": "Priority",
+        "type": "integer"
+      },
+      "enabled": {
+        "default": true,
+        "title": "Enabled",
+        "type": "boolean"
+      },
+      "stop_processing": {
+        "default": false,
+        "title": "Stop Processing",
+        "type": "boolean"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "name",
+      "conditions",
+      "actions"
+    ],
+    "title": "write_ruleArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

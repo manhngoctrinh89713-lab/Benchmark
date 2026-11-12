@@ -1,0 +1,28 @@
+{
+  "name": "revoke_delivery",
+  "description": "撤销一项数字商品或服务授权，并记录原因。",
+  "inputSchema": {
+    "properties": {
+      "delivery_id": {
+        "title": "Delivery Id",
+        "type": "string"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "delivery_id",
+      "reason"
+    ],
+    "title": "revoke_deliveryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

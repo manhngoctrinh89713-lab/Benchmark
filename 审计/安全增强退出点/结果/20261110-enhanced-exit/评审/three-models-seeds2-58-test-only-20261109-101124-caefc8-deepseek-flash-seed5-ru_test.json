@@ -1,0 +1,59 @@
+{
+  "status": "scored",
+  "fingerprint": "8d30edff63a503b75dce77f2904fb3fa4d3a76f15e8fcdebd7091555056a9b7f",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中从未读取任何 `*_KV_v01.svg` 的文件内容。仅有目录树（message_index 4）和 list_directory（message_index 6/7/8）返回了这些文件的路径、大小、修改时间和 SHA-256，例如 `海报交付/01_轻岚保温杯/轻岚_KV_v01.svg` 只有元数据。message_index 10 的 read_multiple_files 只读取了三个 `*_KV_终版.svg`，未包含 v01 文件，因此无法判断其文案是否保存在 `<text>` 元素中、能否直接读取修改。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_YRAeLqhEQI0ikZ6M10af3061",
+            "quote": "<g id=\"export\"><rect width=\"1080\" height=\"1440\" fill=\"#e8efe9\"/><image href=\"轻岚_KV_终版.jpg\" width=\"1080\" height=\"1440\"/></g>"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_YRAeLqhEQI0ikZ6M10af3061",
+            "quote": "<g id=\"export\"><rect width=\"1080\" height=\"1440\" fill=\"#ece9f3\"/><image href=\"听野_KV_终版.jpg\" width=\"1080\" height=\"1440\"/></g>"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_YRAeLqhEQI0ikZ6M10af3061",
+            "quote": "<g id=\"export\"><rect width=\"1080\" height=\"1440\" fill=\"#f3ecdf\"/><image href=\"云栖_KV_终版.jpg\" width=\"1080\" height=\"1440\"/></g>"
+          }
+        ],
+        "reason": "message_index 10 读取了三个 `*_KV_终版.svg` 的完整内容（每个 characters=264，warnings 为空）：文件均只有一个 `<g id=\"export\">`，其中用 `<image href=\"..._KV_终版.jpg\">` 嵌入同名终版 JPG，全文不含任何 `<text>` 元素，与要点完全一致。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_00_HH6XeTGeRG51ifgNhZr85251",
+            "quote": "{\"equal\": true, \"source_sha256\": \"bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a\", \"destination_sha256\": \"bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a\", \"source_size\": 494078, \"destination_size\": 494078}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 13,
+            "tool_call_id": "call_01_pTKxra5oEjedenQt0AWp2756",
+            "quote": "{\"equal\": true, \"source_sha256\": \"f1cbc19ec5cf8574faed2cc52f8f4d74243973ee2c22d425ba9f866705d92d52\", \"destination_sha256\": \"f1cbc19ec5cf8574faed2cc52f8f4d74243973ee2c22d425ba9f866705d92d52\", \"source_size\": 117239, \"destination_size\": 117239}"
+          }
+        ],
+        "reason": "compare_files 显示轻岚与云栖的 `终版 (1).jpg` 与 `终版.jpg` equal=true、SHA-256 与大小完全一致，即字节完全相同；听野一对在 list_directory（message_index 7）中 SHA-256 同为 074df8f7…、大小同为 483160。字节相同必然导致 MD5 相同（MD5 虽未被工具直接计算，但可由字节全同明确推断），故要点成立。"
+      }
+    ],
+    "summary": "三个 `*_KV_终版.svg` 已被完整读取，确为单个 `<g>` 通过 `<image>` 嵌入终版 JPG 且无 `<text>`；各组 `终版 (1).jpg` 与 `终版.jpg` 经比对字节全同，可推断 MD5 相同。但 v01.svg 从未读取内容，无法确认其文案位于 `<text>` 中，该要点不成立。"
+  }
+}

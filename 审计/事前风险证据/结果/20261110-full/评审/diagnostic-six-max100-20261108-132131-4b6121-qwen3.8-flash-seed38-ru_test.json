@@ -1,0 +1,54 @@
+{
+  "status": "scored",
+  "fingerprint": "cbaf4c53b3610d01fec172b09785cbedc3e90e023a8e89102ba52bbac8afb0ff",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 23,
+            "tool_call_id": "call_2726608d64da488d854e0b15",
+            "quote": "-<text x=\"80\" y=\"1170\" font-size=\"32\">9月12日 14:00—17:00 · 南区展厅</text>\r\n+<text x=\"80\" y=\"1170\" font-size=\"32\">9月12日 14:00—17:00 · 北区展厅</text>"
+          }
+        ],
+        "reason": "对云帆/活动海报.svg 的比较显示两处内容不等（equal: false），diff 中“-”行为本地版本“南区展厅”，“+”行为共享盘版本“北区展厅”，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 24,
+            "tool_call_id": "call_f943ded7862f422b9d199c82",
+            "quote": "-<text x=\"80\" y=\"1170\" font-size=\"32\">报名截止 9月20日 23:59</text>\r\n+<text x=\"80\" y=\"1170\" font-size=\"32\">报名截止 9月25日 23:59</text>"
+          }
+        ],
+        "reason": "对澄川/招募海报.svg 的比较显示内容不等（equal: false），diff 中本地版本写“报名截止 9月20日 23:59”，共享盘版本写“报名截止 9月25日 23:59”，与要点一致。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 26,
+            "tool_call_id": "call_6790d0f2cf6a4635bd4e41fe",
+            "quote": "8月26日｜场地方回复：南区空调检修延续至月底，9月12日的场地单已落在北区展厅，接待人数不变。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 27,
+            "tool_call_id": "call_ca89cb3e9ffc4c8d94979f36",
+            "quote": "9月18日｜表单关闭时间跟随这次排班，落在25日23:59；26日至27日由两位同事整理附件。"
+          }
+        ],
+        "reason": "两份执行记录分别位于与冲突海报相同的目录（本地/项目/品牌素材/云帆/、澄川/），内容分别记有“9月12日的场地单已落在北区展厅”和“表单关闭时间跟随这次排班，落在25日23:59”，与要点逐字相符。"
+      }
+    ],
+    "summary": "三个要点均获材料支持：两份海报的本地/共享盘差异由 compare_files 的 diff 直接证实；同目录的两份执行记录分别写明场地改为北区展厅、表单关闭落在25日23:59，与共享盘版本文案对应。"
+  }
+}

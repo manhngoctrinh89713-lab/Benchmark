@@ -1,0 +1,60 @@
+{
+  "name": "send_message",
+  "description": "发送文本，可引用同会话消息、@当前群成员；mention_all=true 需群主/管理员。@仅提醒，整条消息仍发送给全群。quote_message_id 引用普通时间线消息，不创建讨论线程。重复调用会重复发送。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "text": {
+        "title": "Text",
+        "type": "string"
+      },
+      "quote_message_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Quote Message Id"
+      },
+      "mention_ids": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Mention Ids"
+      },
+      "mention_all": {
+        "default": false,
+        "title": "Mention All",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "chat_id",
+      "text"
+    ],
+    "title": "send_messageArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

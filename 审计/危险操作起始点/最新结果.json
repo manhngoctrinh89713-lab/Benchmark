@@ -1,0 +1,10 @@
+{
+  "batch": "D:\\DeskTop\\my_benchmark\\审计\\危险操作起始点\\结果\\20261110-221743-0fdfb6",
+  "report": "D:\\DeskTop\\my_benchmark\\审计\\危险操作起始点\\结果\\20261110-221743-0fdfb6\\报告.md",
+  "summary": "D:\\DeskTop\\my_benchmark\\审计\\危险操作起始点\\结果\\20261110-221743-0fdfb6\\汇总.json",
+  "status": "completed",
+  "total": 114,
+  "counts": {
+    "verified": 114
+  }
+}

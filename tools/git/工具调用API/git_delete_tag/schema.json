@@ -1,0 +1,28 @@
+{
+  "name": "git_delete_tag",
+  "description": "删除本地标签。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "tag": {
+        "title": "Tag",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "tag"
+    ],
+    "title": "git_delete_tagArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

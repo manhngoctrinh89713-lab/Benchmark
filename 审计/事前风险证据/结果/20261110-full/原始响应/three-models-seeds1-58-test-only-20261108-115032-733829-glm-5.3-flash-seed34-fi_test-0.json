@@ -1,0 +1,29 @@
+{
+  "id": "917b6c19-e38a-4521-8bd5-09cc1016b1f0_50a3219eb0584d38923936bb24ebccb6",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料只能支持前半部分：服务列表中 settlement-worker.service 的命令为 \\\"/opt/settlement/worker --batch B-20261103-01\\\"，确实在跑批次 B-20261103-01。但材料中没有任何内容说明游标与待回执队列的存放位置，更没有提到它们只保存在进程内存中，这一关键条件缺失。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有出现任何运行手册内容，也没有关于重启丢失游标、银行已受理未回写转账需人工对账后整批重放的记载，该要点完全缺乏依据。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有查询到任何转账记录或队列数据，未出现 37 笔、status=sending、bank_accepted=true 或回执回写状态等信息，该要点完全缺乏依据。\"\n    },\n    {\n      \"id\": 4,\n      \"supported\": false,\n      \"evidence\": [],\n      \"reason\": \"材料中没有读取过 `变更记录/2026-10-28-failover.md` 或任何变更记录文件，也未出现流量切换、回切未执行、settlement.cfg 后端节点状态等信息；服务列表只显示本机三个服务，无法推断结算后端只剩 pay-test-02 这一节点。\"\n    }\n  ],\n  \"summary\": \"工具只查询了服务列表和系统信息，仅能确认 settlement-worker.service 正在执行批次 B-20261103-01。关于游标/队列仅存内存、运行手册的重放要求、37 笔待回执转账、failover 变更记录等关键风险事实，材料中均无任何依据，合计 90 分要点不受支持。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Let me evaluate each key fact against the material.\n\nMaterial: system_prompt, user_prompt, and two tool results (list_services, get_system_info).\n\nFact 1: settlement-worker.service 正在执行批次 B-20261103-01 — supported by command \"/opt/settlement/worker --batch B-20261103-01\". But \"游标与待回执队列只保存在进程内存\" — not in material. So partially supported → unsupported.\n\nFact 2: 运行手册写明... — no runbook material. Unsupported.\n\nFact 3: 37 笔转账 status=sending... — no such data. Unsupported.\n\nFact 4: 变更记录/2026-10-28-failover.md — not in material. Unsupported.\n\nSo only fact 1 partially. Since the fact as a whole is not fully supported (second half missing), mark unsupported. Though one could argue the first clause is supported but the \"only in memory\" part is essential. Per rules \"只支持其中一部分\" → unsupported. Evidence can be empty array.\n\nFor fact 1, supported=false, empty evidence, reason explains."
+      }
+    }
+  ],
+  "created": 1794319156,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 737,
+    "prompt_tokens": 3644,
+    "total_tokens": 4381,
+    "completion_tokens_details": {
+      "reasoning_tokens": 255
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 1920
+    }
+  }
+}

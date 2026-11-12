@@ -1,0 +1,33 @@
+{
+  "name": "server_restore_backup",
+  "description": "从校验后的ZIP恢复原路径；覆盖需显式指定，配置恢复后仍须重新加载服务。",
+  "inputSchema": {
+    "properties": {
+      "backup_id": {
+        "title": "Backup Id",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      },
+      "overwrite": {
+        "default": false,
+        "title": "Overwrite",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "backup_id",
+      "idempotency_key"
+    ],
+    "title": "server_restore_backupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

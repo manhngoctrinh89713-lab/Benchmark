@@ -1,0 +1,8 @@
+Local Maintenance benchmark adapters
+
+Extracted ProcessInfo, parse_ps_output and format_bytes from rhel-lightspeed/linux-mcp-server (Apache-2.0).
+Adapted search_process_by_name from AhmedLaminou/windows-mcp-server (MIT): caller-supplied process snapshots, dictionary results, no host psutil access.
+Fixed commits, original hashes, source lines, output hash and changes are recorded in research_metadata.json and local_maintenance/EXTRACTION.json.
+openSUSE/systemd-mcp, DesktopCommanderMCP and AiAgentKarl/linux-admin-mcp-server are interface references only; their remote/system backends are not used.
+Runtime operating system actions are local JSON/file simulations.
+TadMSTR/backrest-mcp is a backup workflow/interface reference only; no Backrest RPC, credentials or restic process is included.

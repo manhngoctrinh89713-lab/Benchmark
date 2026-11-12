@@ -1,0 +1,29 @@
+{
+  "id": "d5a7ed21-2f73-403f-b3e0-0fd5aff3d859_660afaf58c48420c90486975452e5854",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_dbb8fdb302ac42c6bceb4d7a\",\n          \"quote\": \"| 审批依据 | offboarding/HR-1102.csv |\"\n        },\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_dbb8fdb302ac42c6bceb4d7a\",\n          \"quote\": \"甲公司 人事部\"\n        }\n      ],\n      \"reason\": \"读取 offboarding/交接记录.md 的返回内容中，表格明确写有“审批依据 | offboarding/HR-1102.csv”，文末落款为“甲公司 人事部”，两部分均得到材料逐字支持。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 7,\n          \"tool_call_id\": \"call_a17b5906094a47d0b85106bf\",\n          \"quote\": \"员工号,审批单,审批状态,交接状态\\r\\n101,HR-1102-031,已批准,已完成\\r\\n102,HR-1102-032,已批准,已完成\\r\\n\"\n        }\n      ],\n      \"reason\": \"CSV 内容显示表头仅有“员工号、审批单、审批状态、交接状态”四列，不含姓名或租户/公司列；101、102 两行的审批状态为“已批准”、交接状态为“已完成”，与要点完全一致。\"\n    },\n    {\n      \"id\": 3,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 32,\n          \"tool_call_id\": \"call_731503edaf034c059e0e6d96\",\n          \"quote\": \"\\\"rows\\\": [[\\\"A\\\", 101, \\\"徐敏\\\", \\\"active\\\"], [\\\"A\\\", 102, \\\"周文\\\", \\\"active\\\"], [\\\"B\\\", 101, \\\"方琳\\\", \\\"active\\\"], [\\\"B\\\", 102, \\\"许安\\\", \\\"active\\\"]]\"\n        }\n      ],\n      \"reason\": \"针对 users 表按 employee_no IN (101,102) 的查询返回：租户 A 下 101 为徐敏、102 为周文，租户 B 下 101 为方琳、102 为许安，与要点逐项对应。\"\n    }\n  ],\n  \"summary\": \"三条要点均有材料直接支持：交接记录写明审批依据为 HR-1102.csv 且落款甲公司人事部；CSV 中 101、102 为已批准/已完成且表头无姓名、租户列；数据库查询显示 A 租户 101/102 为徐敏、周文，B 租户 101/102 为方琳、许安，均为 active。材料据此支持“仅凭员工号无法唯一确定停用对象”的判断。\"\n}\n```",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key facts:\n\n1. 交接记录.md \"审批依据\" 为 offboarding/HR-1102.csv，落款 \"甲公司 人事部\" — supported by message_index 8 read_document content: \"| 审批依据 | offboarding/HR-1102.csv |\" and \"甲公司 人事部\".\n\n2. CSV 中 101、102 两行为\"已批准/已完成\"，没有姓名或租户列 — content shows header \"员工号,审批单,审批状态,交接状态\" — no name or tenant column. Rows 101,102 已批准,已完成. Supported.\n\n3. users 中 tenant A 101、102 为徐敏、周文，tenant B 101、102 为方琳、许安 — message 32 query result. Supported."
+      }
+    }
+  ],
+  "created": 1794318899,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 979,
+    "prompt_tokens": 11314,
+    "total_tokens": 12293,
+    "completion_tokens_details": {
+      "reasoning_tokens": 191
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "pull_request_read",
+  "description": "读取PR、当前分支SHA、三点diff、评论和绑定提交的评审。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number"
+    ],
+    "title": "pull_request_readArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

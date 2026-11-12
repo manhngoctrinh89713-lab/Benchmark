@@ -1,0 +1,28 @@
+{
+  "name": "create_database",
+  "description": "创建空 SQLite 数据库并登记显示名称。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "name"
+    ],
+    "title": "create_databaseArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-03T14:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "customers",
+      "name": "客户与应收账款"
+    }
+  ],
+  "mutation_events": []
+}

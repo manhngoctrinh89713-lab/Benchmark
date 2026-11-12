@@ -1,0 +1,23 @@
+{
+  "name": "pc_delete_startup_item",
+  "description": "删除一个非系统保护的开机启动项。",
+  "inputSchema": {
+    "properties": {
+      "item_id": {
+        "title": "Item Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "item_id"
+    ],
+    "title": "pc_delete_startup_itemArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

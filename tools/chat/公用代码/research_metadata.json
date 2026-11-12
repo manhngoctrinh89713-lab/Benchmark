@@ -1,0 +1,417 @@
+[
+  {
+    "repo": "lharries/whatsapp-mcp",
+    "commit": "7d6a06dcdce1f01dfb24f60e1030d5efba9f3b88",
+    "files": [
+      {
+        "path": "upstream/lharries__whatsapp-mcp/LICENSE",
+        "sha256": "86861f8ef4b108e301646f0f599eda922838d14c20303115c243338a70f9c3a0"
+      },
+      {
+        "path": "upstream/lharries__whatsapp-mcp/README.md",
+        "sha256": "ad3e4cc17892d2ec2ad7c2ad989a174c076f8991fad305c63feb8a72b957a0cb"
+      },
+      {
+        "path": "upstream/lharries__whatsapp-mcp/whatsapp-mcp-server/main.py",
+        "sha256": "5c9c59adcab09d6ee0bedfe2e9eb68c3dca47616cb669f096d16f714ad78f3a3"
+      },
+      {
+        "path": "upstream/lharries__whatsapp-mcp/whatsapp-mcp-server/whatsapp.py",
+        "sha256": "dc0e013ece15aab71c53433d8bdcaa84912c4a5f5b98df727914e7ef01b5ed1b"
+      }
+    ],
+    "observed_date": "2026-11-01",
+    "stars_display": "约6.8k",
+    "evidence": "GitHub repository page; stars are rounded display snapshots, not a ranking"
+  },
+  {
+    "repo": "chigwell/telegram-mcp",
+    "commit": "0246df8c3c99818d68f50e8591b2d3dda8363f81",
+    "files": [
+      {
+        "path": "upstream/chigwell__telegram-mcp/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/main.py",
+        "sha256": "68c4a3b43cf51c07e717d560d5e2c76392a2f77d79dbd69421b262065ac7b27e"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/README.md",
+        "sha256": "a800092c6685096020eacc5d5369202d238cee0bb48505d2aaa333db8661db36"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/__init__.py",
+        "sha256": "682c7ddf5e1a58f1a5ca5ef67cb1ee1b0918a3cdddf08a6d231fbdf6d5a2e228"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/account_labels.py",
+        "sha256": "b158aeb579b4fba6307edb9aa3c5a6cd02ffb23d15d6fdd663c7827bdeec8f1c"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/client_identity.py",
+        "sha256": "17aefd189bec4b03e0f14af17737a61b4d421d3ccff593ae4bfe0c547218f3fa"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/contact_sheet.py",
+        "sha256": "c5c2402f1c7fe9ff232a096caa1e7c5770000b4884f469eb2acf606ae322145f"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/install_guard.py",
+        "sha256": "4f8ba256ecb80d974cfff0a8764f494750e2065cd488f833fa497fd40404d04b"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/keyboards.py",
+        "sha256": "028211198d13bf7cb1140eb9aacbe1992dfb65c24b9f5cd271e16350439cd522"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/photo_source.py",
+        "sha256": "d0c23cd5678e3e5f5eb030cbc2c5e55ce856777674c067b845f9f52831559a31"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/runner.py",
+        "sha256": "a5bd82a22faa4336cc2d4b715108cd30017aebe5e0a8ee20476e193000acc511"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/runtime.py",
+        "sha256": "c38c1883c2966cfe06093b5e8f5107bdbfd2a3e8f967067d04f8eb230167f5e6"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/server.py",
+        "sha256": "acbd858b0f79dc7b51dcef66b5fc1aa6a43cc4e67ba0b152e20d9303f2b9fc81"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/singleton.py",
+        "sha256": "560df43f6153dbf14be6e34572b1231b0eb45bfabf2a05fdfdf991a1c470c4f7"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/__init__.py",
+        "sha256": "86322d023358b440030920082004e692a520436f6cf8908f8f3d1e9a6582460c"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/accounts.py",
+        "sha256": "7049b52498b843fcc5e82cd52370152096546a8b31134adc7ccbe3c585010b43"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/chats.py",
+        "sha256": "ae7c40319b3c1da9e08089cf35a1c92f576d0bdd6a6831e05b2907650edfc616"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/contacts.py",
+        "sha256": "37baf764794c49cd6aa72c150e9f8bf0e8e592ea0552bdbf28bc4c034f0617e8"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/custom_emoji.py",
+        "sha256": "af23245a38aa3ccb3222a287177529b335467d6416c3eb32399fbbe2873312f5"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/events.py",
+        "sha256": "7d38db4be4271946aa9b98e1d2fb7f6b0172cce8454a85858532409793eefa0f"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/folders.py",
+        "sha256": "545ef096d3f1e4d6efb28501789a0cb2accafcb972e59e2eca7310abf01371e2"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/groups.py",
+        "sha256": "2055e4578c339d25d9a62db3a102f076c8221132b1ac9a9de0c30d58c07ed74b"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/media.py",
+        "sha256": "62ee0bdc8d2fe2b249dfe01d0965257a122eb69c141db169e67a94f48806ad30"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/messages.py",
+        "sha256": "81f789f2ac685efcc6f801a71faf7811aa70a899fc9356c3daed41d6fbfff6a1"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/profile.py",
+        "sha256": "81a9db9f0617865d5f5d297eb497397d07fb5d9a7c475a3cc6e8adf2b00e9650"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/tools/stickers.py",
+        "sha256": "7fe442d5575b56a4e7aaa840b5051d1f1eaaf7cbd7679cac1e52a1bd7cfd113b"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/transcription.py",
+        "sha256": "692a0daafbbe6349c6d7a1a37be3a04969bebcf8ac2396488ff8c89a9b40dd3f"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/transport/__init__.py",
+        "sha256": "974cca3c5f207e507f3718da1b2e15fc7da4bb2ba2ae068a0c9253c2b1cbd1c3"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/transport/http.py",
+        "sha256": "45052387a39fad6aa706091349680f05bf91684dad4de04846f5e9cb7f430bcf"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/transport/protocol.py",
+        "sha256": "e1e9d9a61a0946ed71f5149e408d9f15252a1d32f4adae74390a2af54bdf0a9f"
+      },
+      {
+        "path": "upstream/chigwell__telegram-mcp/telegram_mcp/transport/stdio.py",
+        "sha256": "71de8dafaaa3b307da9036b0c609e0607d229d2fcb2a4f6ed39d4cc3626ab4c2"
+      }
+    ],
+    "observed_date": "2026-11-01",
+    "stars_display": "约1.9k",
+    "evidence": "GitHub repository page; stars are rounded display snapshots, not a ranking"
+  },
+  {
+    "repo": "korotovsky/slack-mcp-server",
+    "commit": "b88c0de3f706f4f07337c9eda7133c736d1c9524",
+    "files": [
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/LICENSE",
+        "sha256": "c9c83612abe6c352b95a2fc1146638accdd5b348b21cdef333cc78f756e22397"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/handler/channels.go",
+        "sha256": "266ee66d2897a0dd1fbaa48e11cafa02d14dc0a95323b23313124e1ff466ac3a"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/handler/channels_test.go",
+        "sha256": "93aadc15574688aac7e9bfb51cc0162fad8698446f34aadb95539dc58e0624a6"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/handler/conversations.go",
+        "sha256": "5648585ec2fc73e86b33574a2a3dc641540e3376ed46da95f96a8692ce09bb98"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/handler/conversations_test.go",
+        "sha256": "22762152d16590170690b86bc98ac54a41c17e86320bddbb764999ea14e62d97"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/handler/saved.go",
+        "sha256": "6368b548544d3577d308537e5a94bf745b1897fead8a174c451d5eb2a98f6176"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/handler/saved_test.go",
+        "sha256": "99fa723452f5694d9651d0445d36682e02d2075bcd71aa5aeb6690f6abbb1992"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/handler/slack_error_test.go",
+        "sha256": "0c33e63060faba733ab7a6ceac756c79dc6925c593ddbd1ff613076487e2add3"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/handler/usergroups.go",
+        "sha256": "8bb3bfa98cae269450db24a081a90d65880926d0c6e9f5e3b9e6fb29e644f800"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/limiter/limits.go",
+        "sha256": "2b6f36d65ce0fb8d9e8c5c70c9fc5619a7667cb2f89a6410e8593de6a0b78776"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/limiter/retry.go",
+        "sha256": "4330dd20526c2c2100a40b95c64c32f47ed41f5444fb5bdec6a8bdec907babab"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/limiter/retry_test.go",
+        "sha256": "89021f031c5da9628c25d99d63f599a6e9f5a4a0526c429fb332954933780cfc"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/api.go",
+        "sha256": "cbb9ca09d0eeb4887c42d40809f2ea485c4ff972a9f65a38a645cb1d4758f419"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/api_cache_test.go",
+        "sha256": "e7b9b39671e7e440dfe23e30edac6d959c19a6bbc4e94cbe1416dea18e64debd"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/api_channels_test.go",
+        "sha256": "8f1ab2e5973cb67cee99088ff48c65c0264bc6f7e3bc5fde3895f202005c8aa1"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/api_edge_fallback_test.go",
+        "sha256": "b6f0a8fa7a591e8bd0700c033ba43129f28c5473afc23c09e15f9c9a943ea9c4"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/api_patch_test.go",
+        "sha256": "03815e86117ddcc5409dd618205f022eb76f0776388aa1386726b67142bbd8e5"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/cache_test.go",
+        "sha256": "41cbed385b53864a41f5b04034fc25968319489e8776b895eef727c4b954f2ed"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/client.go",
+        "sha256": "33579a7b0b636e71e9072a73b572b2f5f1122060f147519bb7e9240f45467b37"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/client_boot.go",
+        "sha256": "eb875dfcee44b9e6158db255ca1dfc6b5b296b81fc129c18dcf716b5c5cbcf92"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/conversations.go",
+        "sha256": "7c0cefe57da07d336f0d361b4d075e65855f72dc46026516b53514e98ecd6fb8"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/dms.go",
+        "sha256": "340affd5debe23ae6d55e6089054fff5a98643ea67da97255c90327cec6ffc6d"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/edge.go",
+        "sha256": "62c3fb60cbdc9b3c17d90c533035752973c236c82bfe9abef381396875d71c6a"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/fasttime/fasttime.go",
+        "sha256": "927a061b32e5e97d369a32ed84160f40e43abf10b705468a08cac95bd9ff455a"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/fasttime/fasttime_386.go",
+        "sha256": "5c697988c7b01e67ca0cf6363c137722b25f1d490eedc964417a5f67da72e6ad"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/fasttime/fasttime_test.go",
+        "sha256": "96fe675d8b20cabe5dedf350520117f4b5f9db7014a7f2df729dd9d6c52dc86a"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/fasttime/fasttime_x64.go",
+        "sha256": "1679471fb9d3237c605838865d1dc9ee8d426070aaccf1ea45f1bf511adfbd77"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/prefs.go",
+        "sha256": "957bb0ad8555f7f593ea68c2e49f5fe814654ca61d44c5a18fe127ba08f35d02"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/saved.go",
+        "sha256": "81726f85cc13ba4e591c1c8dcfc58fea957f3c88d6b5aa027a7d6fff9e97c1da"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/search.go",
+        "sha256": "5aae1d88098a4c7199fa20ecab85f02acad26fa6ba85cd0fa32eb29c27bcadaf"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/slacker.go",
+        "sha256": "9151d33f4d8c4edcfd33958335cde9fb7bb50f81e2f62d6cab83b12af44d04a3"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/slacker_test.go",
+        "sha256": "dfdf10e04440bd477fd6ceec043e0217c34a1dd0c8f69046b2b7035cb4815f9b"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/userlist.go",
+        "sha256": "845b128aa9ec68894d28ca227785067b329f713476e31c93f6720c4a99dfbff0"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/provider/edge/users.go",
+        "sha256": "c197ace3885c6afd0e00bb790f2e5f6e435ce1d87ae1be8b81165f3a54c00fe4"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/server/auth/sse_auth.go",
+        "sha256": "c1558d625741f719dac94d187cd663c4d0363943f7c61c62d0323e7a917b07ea"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/server/server.go",
+        "sha256": "8f6c70f6721e6978547cb3a7a1b7a909cae8ec133dcb9edcbcf8c1771b9aa543"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/server/server_test.go",
+        "sha256": "659d822d31d372a5e1de7019b135722158b04e88aff17f55e8824daf5d6b42ec"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/test/util/mcp.go",
+        "sha256": "f73d266f9e2d4321d9142594e4dbf5f1889103fbdea59e2882ba364e24980ad3"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/test/util/ngrok.go",
+        "sha256": "1720fe821321f0a412329d034f66fac403fa41bd6ae9991ed19babac7c3f9d30"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/text/text_processor.go",
+        "sha256": "16035590a36bf2f690a2e1770fda8413b8bf7186bf5ff74455c978d30caaedf7"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/text/text_processor_test.go",
+        "sha256": "2e77d2b7a793b9b2bee21b211b7a08442f5e62e77cce793245d6dfe3ba4ff188"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/transport/transport.go",
+        "sha256": "b4bc40974b6584e5c0c94b3dbbe923f0f8d3fe1c97ec7fc43e5ad2a11fc2face"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/pkg/version/version.go",
+        "sha256": "aeab1889011d6d6162d488ae32df1a6aea03108241e0c9a76fabbd62520e2709"
+      },
+      {
+        "path": "upstream/korotovsky__slack-mcp-server/README.md",
+        "sha256": "fe5c4cb415eaa4cab4c52dd679214defa2067cc2550bf9b0e7fc39dac9595efd"
+      }
+    ],
+    "observed_date": "2026-11-01",
+    "stars_display": "约1.9k",
+    "evidence": "GitHub repository page; stars are rounded display snapshots, not a ranking"
+  },
+  {
+    "repo": "v-3/discordmcp",
+    "commit": "39622af0333bcd324e811a2390146927517fb03d",
+    "files": [
+      {
+        "path": "upstream/v-3__discordmcp/package.json",
+        "sha256": "52ed653cfe50472eb5ce88f37a3a53aa895f8b4d10c1323ce2668e7408abd552"
+      },
+      {
+        "path": "upstream/v-3__discordmcp/README.md",
+        "sha256": "acc4574bd57eb622a489535772e897f9e8db9592ee5b1883a8a4ed28b5b300d3"
+      }
+    ],
+    "observed_date": "2026-11-01",
+    "stars_display": "242",
+    "evidence": "GitHub repository page; stars are rounded display snapshots, not a ranking"
+  },
+  {
+    "repo": "larksuite/lark-openapi-mcp",
+    "commit": "21920354ec6e3966b52e89152620c5085e496b55",
+    "observed_date": "2026-11-01",
+    "stars_display": "852",
+    "evidence": "GitHub repository page; stars are rounded display snapshots, not a ranking",
+    "files": [
+      {
+        "path": "upstream/larksuite__lark-openapi-mcp/LICENSE",
+        "sha256": "fa401c84c29a45df067f325734b4f77e66c2df8c040dc4965fcb718e9d21c02e"
+      },
+      {
+        "path": "upstream/larksuite__lark-openapi-mcp/README.md",
+        "sha256": "8dc28a2fd6b3ad2cf219830a76d6c8d85c6148249ccc5c0c6c651bf80657af60"
+      }
+    ]
+  },
+  {
+    "repo": "xerlxzx/Wechat-MCP",
+    "commit": "f6c99a6c25dedc08d47cbfb4044f22197547c81c",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/xerlxzx__Wechat-MCP/README.md",
+        "sha256": "2051abc4d22b6a0355bf1ded84051cfc6f750a4125c79d87c38280339d445dfa"
+      },
+      {
+        "path": "upstream/xerlxzx__Wechat-MCP/LICENSE",
+        "sha256": "f628826ec7e8f681c581de165ccd9df0d66da5061a0fb7cd912a7f1674fe8e9e"
+      },
+      {
+        "path": "upstream/xerlxzx__Wechat-MCP/docs/mcp.md",
+        "sha256": "c408be7f11f761d24553fd8df9f2b3669e6d643c8ba4f3409a0f184742003f18"
+      }
+    ]
+  },
+  {
+    "repo": "lw396/wechat-mcp",
+    "commit": "7fe3ebb8d92e8efb4d53e6857947b7fbfa6f247b",
+    "observed_date": "2026-11-01",
+    "files": [
+      {
+        "path": "upstream/lw396__wechat-mcp/README.md",
+        "sha256": "f484d465d7b6a869e9c717c536af2158811c1851277b0041f4b80470fd4bbd53"
+      },
+      {
+        "path": "upstream/lw396__wechat-mcp/LICENSE",
+        "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b"
+      },
+      {
+        "path": "upstream/lw396__wechat-mcp/mcp_server.go",
+        "sha256": "84f824f15cbfccf6ab9f744b059df092a5e51a60e7264c0faa9b9492067bea75"
+      }
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "name": "request_tax_invoice",
+  "description": "为成功支付申请税务发票，固定当次开票资料。",
+  "inputSchema": {
+    "properties": {
+      "payment_id": {
+        "title": "Payment Id",
+        "type": "string"
+      },
+      "profile_id": {
+        "title": "Profile Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "payment_id",
+      "profile_id"
+    ],
+    "title": "request_tax_invoiceArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

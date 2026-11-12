@@ -1,0 +1,48 @@
+{
+  "name": "add_pull_request_review_comment",
+  "description": "在PR差异的RIGHT侧代码行添加本地评审评论，绑定预期head SHA；行号从1开始。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      },
+      "number": {
+        "title": "Number",
+        "type": "integer"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "line": {
+        "title": "Line",
+        "type": "integer"
+      },
+      "body": {
+        "title": "Body",
+        "type": "string"
+      },
+      "expected_head_sha": {
+        "title": "Expected Head Sha",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id",
+      "number",
+      "path",
+      "line",
+      "body",
+      "expected_head_sha"
+    ],
+    "title": "add_pull_request_review_commentArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

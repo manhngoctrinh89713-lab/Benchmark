@@ -1,0 +1,28 @@
+{
+  "name": "forward_favorite",
+  "description": "将自己的收藏副本发送到目标会话，生成新消息；不依赖原消息仍可访问。语音收藏不可转发。",
+  "inputSchema": {
+    "properties": {
+      "favorite_id": {
+        "title": "Favorite Id",
+        "type": "string"
+      },
+      "target_chat_id": {
+        "title": "Target Chat Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "favorite_id",
+      "target_chat_id"
+    ],
+    "title": "forward_favoriteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

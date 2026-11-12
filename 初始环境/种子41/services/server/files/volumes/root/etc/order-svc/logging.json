@@ -1,0 +1,1 @@
+{"log_level": "info", "mask_fields": false, "collect_logs": true, "sample_request_ids": [], "log_path": "/var/log/order-svc/debug.jsonl"}

@@ -1,0 +1,23 @@
+{
+  "name": "git_operation_status",
+  "description": "查询当前merge/rebase操作、未解决冲突文件、当前分支、HEAD及工作区状态；operation=null表示没有进行中的操作。冲突路径相对于所选仓库。",
+  "inputSchema": {
+    "properties": {
+      "repo_id": {
+        "title": "Repo Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "repo_id"
+    ],
+    "title": "git_operation_statusArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

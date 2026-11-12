@@ -1,0 +1,82 @@
+{
+  "platform": "linux",
+  "now": "2026-11-04T10:00:00+08:00",
+  "machine": {
+    "id": "audit-prod-01",
+    "hostname": "audit-prod-01",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 80000000000
+    },
+    {
+      "id": "data",
+      "mount": "/data",
+      "total_bytes": 500000000000,
+      "base_used_bytes": 1000000000
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/var/log",
+    "/srv",
+    "/etc",
+    "/data"
+  ],
+  "journal_path": "/var/log/journal.jsonl",
+  "services": {
+    "audit-logd.service": {
+      "id": "audit-logd.service",
+      "description": "审计采集",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 210,
+      "config_format": "json",
+      "config_path": "/etc/audit/logd.json",
+      "process_name": "audit-logd",
+      "command": "/usr/bin/audit-logd",
+      "user": "auditd",
+      "memory_bytes": 33554432,
+      "requires": [],
+      "protected": false,
+      "supports_reload": false,
+      "config_rules": [],
+      "applied_config_sha256": "7ed78d8d44bcc3256c9cf3351e794ae89b38773c8c88186ab1f6e9dde07cf1bc"
+    }
+  },
+  "processes": {
+    "210": {
+      "pid": 210,
+      "name": "audit-logd",
+      "command": "/usr/bin/audit-logd",
+      "user": "auditd",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 33554432,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [
+        "/var/log/audit/current.log"
+      ],
+      "service_id": "audit-logd.service"
+    }
+  },
+  "next_pid": 400,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {},
+  "server_workspace_mount": "server"
+}

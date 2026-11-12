@@ -1,0 +1,3 @@
+{"timestamp": "2026-11-02T09:01:00+08:00", "service_id": "meal-distribution.service", "priority": 3, "message": "batch=MEAL-11 step=credit status=writing records=2"}
+{"timestamp": "2026-11-02T09:01:01+08:00", "service_id": "meal-distribution.service", "priority": 3, "message": "batch=MEAL-11 step=archive status=failed code=EIO target=/srv/meal/archive.json"}
+{"timestamp": "2026-11-02T09:01:01+08:00", "service_id": "meal-distribution.service", "priority": 3, "message": "batch=MEAL-11 exit=1"}

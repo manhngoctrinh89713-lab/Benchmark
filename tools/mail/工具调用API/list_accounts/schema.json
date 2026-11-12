@@ -1,0 +1,15 @@
+{
+  "name": "list_accounts",
+  "description": "列出当前操作者可访问的账户、主地址、别名和实际权限。共享邮箱也是独立账户。",
+  "inputSchema": {
+    "properties": {},
+    "title": "list_accountsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

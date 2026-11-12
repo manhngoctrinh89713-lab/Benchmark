@@ -1,0 +1,54 @@
+{
+  "status": "scored",
+  "fingerprint": "612c137aa3717be10473a3c349acb5b6419bca18c265c69c0bb2ecaae9ca8f62",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 11,
+            "tool_call_id": "call_01_6i535semYlfh6rkZuJOy9691",
+            "quote": "冷冻面团可颂，需全程 -18℃ 冷链运输；到店后冷冻保存，解冻后不可再次冷冻。"
+          }
+        ],
+        "reason": "商品搜索结果中 CRS-L（冷冻面团可颂）的 description 明确写明需全程 -18℃ 冷链运输且解冻后不可再次冷冻，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_GUbKMtvnrWup1exRA3pg6620",
+            "quote": "在替换材料补齐前，仓配团队无法承诺 CRS-L 按标准 -18℃ 冷链发出，部分订单可能改按普通常温线路配送。"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 10,
+            "tool_call_id": "call_00_GUbKMtvnrWup1exRA3pg6620",
+            "quote": "上一批循环使用的冷链保温箱有部分箱扣和密封条破损，继续使用会影响箱内温度稳定。"
+          }
+        ],
+        "reason": "服务说明第三节写明保温箱箱扣和密封条破损，并明确在替换材料补齐前无法承诺 CRS-L 按标准 -18℃ 冷链发出、部分订单可能改按普通常温线路配送，与要点一致。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_00_IW6d6PueMyp3rFM9F0111729",
+            "quote": "早上集体回烤30份冷冻面团可颂，预算26000分；12月13日送达门店冷冻柜。"
+          }
+        ],
+        "reason": "需求说明开头即写明 12 月 14 日早上集体回烤 30 份冷冻面团可颂，且要求 12 月 13 日送达门店冷冻柜，与要点一致。"
+      }
+    ],
+    "summary": "三条要点均获材料支持：CRS-L 商品描述明确全程 -18℃ 冷链且解冻后不可复冻；服务说明载明保温箱破损、替换材料补齐前无法承诺标准冷链发出，部分订单可能改常温配送；需求说明要求 12 月 13 日送冷冻柜、30 份供次日早上集体回烤。"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "pay_order",
+  "description": "支付待付款订单，返回本次支付尝试的独立状态。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      },
+      "payment_method_id": {
+        "title": "Payment Method Id",
+        "type": "string"
+      },
+      "idempotency_key": {
+        "title": "Idempotency Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id",
+      "payment_method_id",
+      "idempotency_key"
+    ],
+    "title": "pay_orderArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

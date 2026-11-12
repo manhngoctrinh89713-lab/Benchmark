@@ -1,0 +1,45 @@
+{
+  "name": "write_binary_file",
+  "description": "将 Base64 内容写入文件，支持按已有文件校验值覆盖。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "content_base64": {
+        "title": "Content Base64",
+        "type": "string"
+      },
+      "overwrite": {
+        "default": false,
+        "title": "Overwrite",
+        "type": "boolean"
+      },
+      "expected_sha256": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Sha256"
+      }
+    },
+    "required": [
+      "path",
+      "content_base64"
+    ],
+    "title": "write_binary_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

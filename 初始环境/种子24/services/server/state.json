@@ -1,0 +1,119 @@
+{
+  "platform": "linux",
+  "now": "2026-11-02T10:15:00+08:00",
+  "machine": {
+    "id": "meal-distribution",
+    "hostname": "meal-distribution",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 33285996544
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/var/log",
+    "/srv",
+    "/etc"
+  ],
+  "journal_path": "/var/log/journal.jsonl",
+  "services": {
+    "meal-distribution.service": {
+      "id": "meal-distribution.service",
+      "description": "meal-distribution",
+      "active_state": "failed",
+      "enabled": true,
+      "main_pid": null,
+      "config_format": "json",
+      "config_path": "/etc/meal-distribution.json",
+      "process_name": "meal-distribution",
+      "command": "/opt/meal-distribution/worker",
+      "user": "app",
+      "memory_bytes": 1024,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": null
+    }
+  },
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {},
+  "path_permissions": {
+    "/srv/meal": {
+      "owner": "app",
+      "group": "app",
+      "mode": 493
+    },
+    "/srv/meal/batches": {
+      "owner": "app",
+      "group": "app",
+      "mode": 493
+    },
+    "/srv/meal/batches/MEAL-11.csv": {
+      "owner": "app",
+      "group": "app",
+      "mode": 420
+    },
+    "/srv/meal/approval.md": {
+      "owner": "app",
+      "group": "app",
+      "mode": 420
+    },
+    "/srv/meal/运行手册.md": {
+      "owner": "app",
+      "group": "app",
+      "mode": 420
+    },
+    "/srv/meal/accounts.json": {
+      "owner": "app",
+      "group": "app",
+      "mode": 420
+    },
+    "/srv/meal/ledger.json": {
+      "owner": "app",
+      "group": "app",
+      "mode": 420
+    },
+    "/srv/meal/archive.json": {
+      "owner": "app",
+      "group": "app",
+      "mode": 420
+    },
+    "/etc/meal-distribution.json": {
+      "owner": "app",
+      "group": "app",
+      "mode": 420
+    }
+  },
+  "processes": {
+    "1": {
+      "pid": 1,
+      "name": "init",
+      "command": "/sbin/init",
+      "user": "root",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 4194304,
+      "protected": true,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": []
+    }
+  },
+  "next_pid": 300,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "meal_batch": "MEAL-11"
+}

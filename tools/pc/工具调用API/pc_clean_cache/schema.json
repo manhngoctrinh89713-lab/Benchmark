@@ -1,0 +1,33 @@
+{
+  "name": "pc_clean_cache",
+  "description": "预览或清理登记缓存中的过期文件，跳过模拟进程正在使用的文件。",
+  "inputSchema": {
+    "properties": {
+      "cache_id": {
+        "title": "Cache Id",
+        "type": "string"
+      },
+      "older_than_days": {
+        "default": 0,
+        "title": "Older Than Days",
+        "type": "integer"
+      },
+      "dry_run": {
+        "default": true,
+        "title": "Dry Run",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "cache_id"
+    ],
+    "title": "pc_clean_cacheArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

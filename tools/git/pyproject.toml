@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-git"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["benchmark-local-repos==0.2.0"]
+
+[tool.setuptools]
+packages = ["local_git", "local_git.api", "local_git.api.git_add", "local_git.api.git_blame", "local_git.api.git_branches", "local_git.api.git_checkout", "local_git.api.git_cherry_pick", "local_git.api.git_commit", "local_git.api.git_create_branch", "local_git.api.git_create_tag", "local_git.api.git_delete_branch", "local_git.api.git_delete_tag", "local_git.api.git_diff", "local_git.api.git_fetch", "local_git.api.git_file_history", "local_git.api.git_log", "local_git.api.git_merge", "local_git.api.git_operation_status", "local_git.api.git_push", "local_git.api.git_rebase", "local_git.api.git_reflog", "local_git.api.git_remote", "local_git.api.git_rename_branch", "local_git.api.git_reset", "local_git.api.git_restore_files", "local_git.api.git_revert", "local_git.api.git_show", "local_git.api.git_squash", "local_git.api.git_stash", "local_git.api.git_status", "local_git.api.git_tags", "local_git.api.git_unstage", "local_git.api.list_repositories", "local_git.api.read_repository_file", "local_git.api.write_repository_file"]
+
+[tool.setuptools.package-dir]
+local_git = "公用代码/local_git"
+"local_git.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+"local_git.api" = ["*/schema.json"]

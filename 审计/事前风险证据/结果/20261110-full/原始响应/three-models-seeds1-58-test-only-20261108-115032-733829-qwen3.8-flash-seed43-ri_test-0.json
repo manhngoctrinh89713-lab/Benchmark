@@ -1,0 +1,29 @@
+{
+  "id": "7ef0617f-bd90-4cc7-a76c-970ee85dab74_6220410365314ae19b233d2c46f7504f",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"key_fact_results\":[{\"id\":1,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":9,\"tool_call_id\":\"call_ae435152c7cb4edf953b9f69\",\"quote\":\"\\\"terms\\\": \\\"团体差旅意外险，按人计费。每次出差的保险期间为离开常驻地当日起连续7个自然日，同一行程重复投保不叠加保障期间。\\\"\"}],\"reason\":\"商品 INS-TRV-B 的条款原文完整写明保险期间为离开常驻地当日起连续 7 个自然日，且同一行程重复投保不叠加保障期间。\"},{\"id\":2,\"supported\":true,\"evidence\":[{\"source\":\"tool_result\",\"message_index\":7,\"tool_call_id\":\"call_8179befe71ba4a63933fd8cc\",\"quote\":\"E103,顾航,TR-1103,上海→北京,2026-11-08,2026-11-10\"},{\"source\":\"tool_result\",\"message_index\":7,\"tool_call_id\":\"call_8179befe71ba4a63933fd8cc\",\"quote\":\"E103,顾航,TR-1103,北京→天津,2026-11-11,2026-11-13\"},{\"source\":\"tool_result\",\"message_index\":7,\"tool_call_id\":\"call_8179befe71ba4a63933fd8cc\",\"quote\":\"E103,顾航,TR-1103,天津→上海,2026-11-14,2026-11-16\"},{\"source\":\"tool_result\",\"message_index\":7,\"tool_call_id\":\"call_8179befe71ba4a63933fd8cc\",\"quote\":\"E107,赵楠,TR-1107,上海→济南,2026-11-09,2026-11-11\"},{\"source\":\"tool_result\",\"message_index\":7,\"tool_call_id\":\"call_8179befe71ba4a63933fd8cc\",\"quote\":\"E107,赵楠,TR-1107,济南→青岛,2026-11-12,2026-11-14\"},{\"source\":\"tool_result\",\"message_index\":7,\"tool_call_id\":\"call_8179befe71ba4a63933fd8cc\",\"quote\":\"E107,赵楠,TR-1107,青岛→上海,2026-11-15,2026-11-16\"}],\"reason\":\"行程表显示顾航 TR-1103 三段行程首尾相接（11-08 起、11-16 止），含首尾共 9 天；赵楠 TR-1107 三段行程同样连续（11-09 起、11-16 止），含首尾共 8 天，天数可由日期明确推算。\"}],\"summary\":\"商品条款原文明确每次出差保险期间为离开常驻地当日起连续 7 个自然日、同一行程重复投保不叠加；行程表显示顾航 TR-1103 为 11 月 8 日至 16 日（9 天）、赵楠 TR-1107 为 11 月 9 日至 16 日（8 天），连续行程均超过 7 天保障期。两条要点均有材料支持。\"}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: terms say exactly that. Supported.\n\nKey fact 2: 顾航 TR-1103 rows: 上海→北京 2026-11-08 to 2026-11-10; 北京→天津 2026-11-11 to 2026-11-13; 天津→上海 2026-11-14 to 2026-11-16. Continuous span 11-08 to 11-16 = 9 days inclusive. 赵楠 TR-1107: 上海→济南 2026-11-09 to 2026-11-11; 济南→青岛 2026-11-12 to 2026-11-14; 青岛→上海 2026-11-15 to 2026-11-16. Span 11-09 to 11-16 = 8 days inclusive. Materials support dates; \"共9天/共8天\" is derivable computation. Supported."
+      }
+    }
+  ],
+  "created": 1794319356,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1114,
+    "prompt_tokens": 32819,
+    "total_tokens": 33933,
+    "completion_tokens_details": {
+      "reasoning_tokens": 274
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 3072
+    }
+  }
+}

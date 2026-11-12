@@ -1,0 +1,28 @@
+{
+  "name": "backup_database",
+  "description": "使用SQLite Backup API生成运行files内的新数据库备份，不覆盖；备份可由sqlite3直接打开。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_id",
+      "save_path"
+    ],
+    "title": "backup_databaseArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

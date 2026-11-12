@@ -1,0 +1,28 @@
+{
+  "name": "adjust_inventory",
+  "description": "增减商品默认规格的可售库存。",
+  "inputSchema": {
+    "properties": {
+      "product_id": {
+        "title": "Product Id",
+        "type": "string"
+      },
+      "delta": {
+        "title": "Delta",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "product_id",
+      "delta"
+    ],
+    "title": "adjust_inventoryArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

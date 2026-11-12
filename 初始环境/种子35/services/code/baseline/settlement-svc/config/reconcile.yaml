@@ -1,0 +1,4 @@
+legacy_key_path: keys/archive/rsa-prod-2023.pem.bak
+source_table: settlement_history
+source_filter: year <= 2023
+archive_glob: backups/*.age

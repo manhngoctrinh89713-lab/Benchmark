@@ -1,0 +1,36 @@
+{
+  "name": "update_chat_members",
+  "description": "邀请或移除群成员，action 为 add/remove。普通成员邀请自己的好友；开启邀请确认时生成 pending 申请，群主/管理员可直接邀请。移除需群主/管理员，管理员不能移除其他管理员；群主不可被移除，自己退出使用 leave_chat。新成员仅接收加入后的消息。返回会话详情和待审批 ID。",
+  "inputSchema": {
+    "properties": {
+      "chat_id": {
+        "title": "Chat Id",
+        "type": "string"
+      },
+      "member_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Member Ids",
+        "type": "array"
+      },
+      "action": {
+        "title": "Action",
+        "type": "string"
+      }
+    },
+    "required": [
+      "chat_id",
+      "member_ids",
+      "action"
+    ],
+    "title": "update_chat_membersArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

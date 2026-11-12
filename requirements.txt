@@ -1,0 +1,16 @@
+mcp>=1.23,<2
+httpx>=0.28,<1
+filelock>=3.20,<5
+langgraph>=1.2,<2
+markitdown[docx,pdf,pptx,xlsx,xls]==0.1.9
+openpyxl>=3.1,<4
+pdfminer.six>=20250506
+Pillow>=10,<14
+tree-sitter==0.25.2
+tree-sitter-language-pack==0.13.0
+jedi==0.19.2
+GitPython==3.1.46
+pydantic>=2.11,<3
+reportlab>=4,<5
+pypdf>=6,<7
+cryptography>=43,<47

@@ -1,0 +1,35 @@
+{
+  "name": "delete_contact",
+  "description": "删除自己的个人联系人。已经解析到草稿或定时邮件的明确地址保持不变。",
+  "inputSchema": {
+    "properties": {
+      "contact_id": {
+        "title": "Contact Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "contact_id"
+    ],
+    "title": "delete_contactArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

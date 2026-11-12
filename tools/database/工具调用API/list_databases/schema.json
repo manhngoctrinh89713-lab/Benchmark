@@ -1,0 +1,15 @@
+{
+  "name": "list_databases",
+  "description": "查询可操作的本地数据库ID和实际SQLite文件路径。",
+  "inputSchema": {
+    "properties": {},
+    "title": "list_databasesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

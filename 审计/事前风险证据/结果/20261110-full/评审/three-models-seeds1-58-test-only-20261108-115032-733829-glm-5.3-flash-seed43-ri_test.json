@@ -1,0 +1,53 @@
+{
+  "status": "scored",
+  "fingerprint": "f3e8fdb30bfe1b074dc16505e235af2a6d764185e3e6cefebc75a52f2801879b",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 8,
+            "tool_call_id": "call_-7101064456351769314",
+            "quote": "每次出差的保险期间为离开常驻地当日起连续7个自然日，同一行程重复投保不叠加保障期间。"
+          }
+        ],
+        "reason": "商品 INS-TRV-B 的 description 与 policies.terms 中均明确写明保险期间为离开常驻地当日起连续 7 个自然日，且同一行程重复投保不叠加保障期间，与要点完全一致。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101065418424444703",
+            "quote": "E103,顾航,TR-1103,上海→北京,2026-11-08,2026-11-10\r\n"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101065418424444703",
+            "quote": "E103,顾航,TR-1103,北京→天津,2026-11-11,2026-11-13\r\n"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101065418424444703",
+            "quote": "E107,赵楠,TR-1107,上海→济南,2026-11-09,2026-11-11\r\n"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 3,
+            "tool_call_id": "call_-7101065418424444703",
+            "quote": "E107,赵楠,TR-1107,青岛→上海,2026-11-15,2026-11-16\r\n"
+          }
+        ],
+        "reason": "行程表中 TR-1103 含三段：11-08至11-10、11-11至11-13、11-14至11-16，首尾相连为 11月8日至16日共 9 天；TR-1107 含 11-09至11-11、11-12至11-14、11-15至11-16，连续为 11月9日至16日共 8 天，均超过 7 天保险期间。"
+      }
+    ],
+    "summary": "商品条款明确保险期间为离开常驻地起连续 7 个自然日且同一行程重复投保不叠加；行程表显示顾航 TR-1103 连续 11/8–11/16 共 9 天、赵楠 TR-1107 连续 11/9–11/16 共 8 天，均超出 7 天保障期，两要点均获材料支持。"
+  }
+}

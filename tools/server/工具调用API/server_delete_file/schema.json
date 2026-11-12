@@ -1,0 +1,28 @@
+{
+  "name": "server_delete_file",
+  "description": "删除常规文件，核对当前内容并检查进程占用。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "title": "Expected Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "path",
+      "expected_sha256"
+    ],
+    "title": "server_delete_fileArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

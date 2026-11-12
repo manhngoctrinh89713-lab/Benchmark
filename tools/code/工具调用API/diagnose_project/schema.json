@@ -1,0 +1,38 @@
+{
+  "name": "diagnose_project",
+  "description": "对匹配文件分页进行静态语法诊断，不运行项目代码。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "pattern": {
+        "default": "*",
+        "title": "Pattern",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "project_id"
+    ],
+    "title": "diagnose_projectArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

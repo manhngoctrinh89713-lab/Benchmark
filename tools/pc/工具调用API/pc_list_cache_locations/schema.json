@@ -1,0 +1,15 @@
+{
+  "name": "pc_list_cache_locations",
+  "description": "列出可清理的登记缓存位置、实际文件数量和占用。",
+  "inputSchema": {
+    "properties": {},
+    "title": "pc_list_cache_locationsArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

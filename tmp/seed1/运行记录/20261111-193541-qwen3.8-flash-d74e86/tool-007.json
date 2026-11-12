@@ -1,0 +1,16 @@
+{
+  "id": "call_7d5b7ec9564348ca83bcd934",
+  "name": "buyer__get_cart",
+  "arguments": "{\"merchant_id\": \"merchant_a\"}",
+  "started_at": "2026-11-11T19:35:48.613140+08:00",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"cart\": {\"id\": \"buyer_demo__merchant_a\", \"buyer_id\": \"buyer_demo\", \"merchant_id\": \"merchant_a\", \"items\": [], \"version\": 0, \"currency\": \"CNY\", \"subtotal_minor\": 0, \"shipping_minor\": 0, \"total_minor\": 0, \"available\": true}}"
+      }
+    ],
+    "isError": false
+  },
+  "finished_at": "2026-11-11T19:35:48.617180+08:00"
+}

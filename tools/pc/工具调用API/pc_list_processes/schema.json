@@ -1,0 +1,41 @@
+{
+  "name": "pc_list_processes",
+  "description": "按名称搜索当前进程并按内存、CPU或PID排序；使用提取的上游进程过滤逻辑。",
+  "inputSchema": {
+    "properties": {
+      "query": {
+        "default": "",
+        "title": "Query",
+        "type": "string"
+      },
+      "sort_by": {
+        "default": "memory",
+        "enum": [
+          "memory",
+          "cpu",
+          "pid"
+        ],
+        "title": "Sort By",
+        "type": "string"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "pc_list_processesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

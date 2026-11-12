@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-03T14:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "billing",
+      "name": "账单与申报"
+    }
+  ],
+  "mutation_events": []
+}

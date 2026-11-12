@@ -1,0 +1,51 @@
+{
+  "name": "search_files",
+  "description": "递归按文件名或相对搜索起点的路径匹配glob；忽略大小写，支持*、?和字符组。*可跨目录分隔符，无特殊**语义。排除命中的目录不再遍历。",
+  "inputSchema": {
+    "properties": {
+      "path": {
+        "default": ".",
+        "title": "Path",
+        "type": "string"
+      },
+      "pattern": {
+        "default": "*",
+        "title": "Pattern",
+        "type": "string"
+      },
+      "exclude_patterns": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Exclude Patterns"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 100,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "search_filesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

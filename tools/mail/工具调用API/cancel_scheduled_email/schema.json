@@ -1,0 +1,40 @@
+{
+  "name": "cancel_scheduled_email",
+  "description": "取消 pending 定时邮件；需账户 write 权限。取消后保留记录，不产生发送，也不自动恢复原草稿。",
+  "inputSchema": {
+    "properties": {
+      "account_name": {
+        "title": "Account Name",
+        "type": "string"
+      },
+      "scheduled_id": {
+        "title": "Scheduled Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "account_name",
+      "scheduled_id"
+    ],
+    "title": "cancel_scheduled_emailArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

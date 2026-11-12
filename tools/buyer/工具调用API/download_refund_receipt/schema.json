@@ -1,0 +1,28 @@
+{
+  "name": "download_refund_receipt",
+  "description": "将已成功到账退款的凭证保存为 JSON 文件。",
+  "inputSchema": {
+    "properties": {
+      "refund_id": {
+        "title": "Refund Id",
+        "type": "string"
+      },
+      "save_path": {
+        "title": "Save Path",
+        "type": "string"
+      }
+    },
+    "required": [
+      "refund_id",
+      "save_path"
+    ],
+    "title": "download_refund_receiptArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

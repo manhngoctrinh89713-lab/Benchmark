@@ -1,0 +1,31 @@
+{
+  "name": "list_subscription_plans",
+  "description": "查询商家订阅方案，可包含已停售方案。",
+  "inputSchema": {
+    "properties": {
+      "include_inactive": {
+        "default": true,
+        "title": "Include Inactive",
+        "type": "boolean"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "title": "list_subscription_plansArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

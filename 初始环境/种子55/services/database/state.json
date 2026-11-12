@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-04T10:20:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "team-db",
+      "name": "ATLAS 任务看板"
+    }
+  ],
+  "mutation_events": []
+}

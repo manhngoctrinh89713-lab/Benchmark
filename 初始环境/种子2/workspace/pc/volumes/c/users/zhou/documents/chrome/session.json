@@ -1,0 +1,19 @@
+{
+  "updated_at": "2026-11-02T10:18:00+08:00",
+  "profile": "Default",
+  "tabs": [
+    {
+      "title": "秋冬商品价格查询",
+      "url": "https://catalog.example.com/search?q=autumn",
+      "loading": false
+    },
+    {
+      "title": "行业资讯",
+      "url": "https://news.example.com/retail",
+      "loading": false
+    }
+  ],
+  "downloads": [],
+  "form_recovery_entries": [],
+  "last_navigation_at": "2026-11-02T10:14:32+08:00"
+}

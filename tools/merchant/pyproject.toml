@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark-local-merchant"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["benchmark-local-commerce==0.2.0"]
+
+[tool.setuptools]
+packages = ["local_merchant", "local_merchant.api", "local_merchant.api.adjust_inventory", "local_merchant.api.adjust_sku_inventory", "local_merchant.api.cancel_merchant_order", "local_merchant.api.change_merchant_subscription", "local_merchant.api.complete_aftersale", "local_merchant.api.create_product", "local_merchant.api.create_shipment", "local_merchant.api.create_sku", "local_merchant.api.create_subscription_plan", "local_merchant.api.deliver_order_item", "local_merchant.api.download_aftersale_evidence", "local_merchant.api.export_orders", "local_merchant.api.fulfill_order", "local_merchant.api.get_merchant_order", "local_merchant.api.get_merchant_profile", "local_merchant.api.get_sales_summary", "local_merchant.api.list_aftersales", "local_merchant.api.list_cancellation_requests", "local_merchant.api.list_discounts", "local_merchant.api.list_merchant_orders", "local_merchant.api.list_merchant_subscriptions", "local_merchant.api.list_payments", "local_merchant.api.list_products", "local_merchant.api.list_refund_requests", "local_merchant.api.list_refunds", "local_merchant.api.list_shipments", "local_merchant.api.list_shipping_options", "local_merchant.api.list_subscription_plans", "local_merchant.api.list_tax_invoice_requests", "local_merchant.api.receive_return", "local_merchant.api.refund_payment", "local_merchant.api.resolve_aftersale", "local_merchant.api.resolve_cancellation_request", "local_merchant.api.resolve_refund_request", "local_merchant.api.resolve_tax_invoice_request", "local_merchant.api.revoke_delivery", "local_merchant.api.save_discount", "local_merchant.api.save_shipping_option", "local_merchant.api.update_product", "local_merchant.api.update_sku", "local_merchant.api.update_subscription_plan"]
+
+[tool.setuptools.package-dir]
+local_merchant = "公用代码/local_merchant"
+"local_merchant.api" = "工具调用API"
+
+[tool.setuptools.package-data]
+"local_merchant.api" = ["*/schema.json"]

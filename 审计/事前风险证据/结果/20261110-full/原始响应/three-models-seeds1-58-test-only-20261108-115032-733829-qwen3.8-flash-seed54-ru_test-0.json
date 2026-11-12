@@ -1,0 +1,29 @@
+{
+  "id": "ea79f87c-5423-45ef-af21-2da5b38c1831_c252ed6417bb4dfcab34666bc9e5b74e",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"key_fact_results\": [\n    {\n      \"id\": 1,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_14045a551d4941fdad03c13a\",\n          \"quote\": \"{\\\"request_id\\\": \\\"req_8f2c41d7\\\", \\\"captured_at\\\": \\\"2025-11-18T14:32:10Z\\\", \\\"status\\\": 400, \\\"error\\\": {\\\"envelope\\\": {\\\"type\\\": \\\"pagination_error\\\", \\\"code\\\": \\\"cursor_expired\\\", \\\"message\\\": \\\"The pagination cursor has expired.\\\", \\\"next_cursor\\\": null}}}\"\n        }\n      ],\n      \"reason\": \"读取 clients/halcyon/fixtures/pagination_error.json 的返回内容中明确含 captured_at 为 2025-11-18T14:32:10Z，日期即 2025-11-18，与要点一致。\"\n    },\n    {\n      \"id\": 2,\n      \"supported\": true,\n      \"evidence\": [\n        {\n          \"source\": \"tool_result\",\n          \"message_index\": 8,\n          \"tool_call_id\": \"call_14045a551d4941fdad03c13a\",\n          \"quote\": \"Pagination errors now use a top-level `errors` array. Each item carries `code` and `message`; the old `error.envelope` shape is deprecated and may be removed.\"\n        }\n      ],\n      \"reason\": \"docs/halcyon_guide_2026.md 的原文明确说明分页错误改用顶层 errors 数组，且旧的 error.envelope 形态已弃用、可能被移除，与要点完全一致。\"\n    }\n  ],\n  \"summary\": \"两条要点均有材料直接支持：fixture 文件返回的 captured_at 为 2025-11-18T14:32:10Z；halcyon_guide_2026.md 原文写明分页错误改用顶层 errors 数组，error.envelope 已弃用且可能被移除。\"\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning_content": "Key fact 1: captured_at 为 2025-11-18. The fixture shows \"captured_at\": \"2025-11-18T14:32:10Z\" — supports date 2025-11-18. Supported.\n\nKey fact 2: guide says pagination errors now use top-level errors array; error.envelope deprecated and may be removed. Supported."
+      }
+    }
+  ],
+  "created": 1794321087,
+  "model": "mimo-v2.6-pro",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 606,
+    "prompt_tokens": 7072,
+    "total_tokens": 7678,
+    "completion_tokens_details": {
+      "reasoning_tokens": 96
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 7040
+    }
+  }
+}

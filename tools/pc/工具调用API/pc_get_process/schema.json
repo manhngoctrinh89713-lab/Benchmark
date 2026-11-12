@@ -1,0 +1,23 @@
+{
+  "name": "pc_get_process",
+  "description": "读取指定场景PID的状态、应用关联、资源和打开文件；含已终止记录。",
+  "inputSchema": {
+    "properties": {
+      "pid": {
+        "title": "Pid",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "pid"
+    ],
+    "title": "pc_get_processArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "server_reboot",
+  "description": "模拟重启整机：停止本机服务并记录重启事件。",
+  "inputSchema": {
+    "properties": {
+      "reason": {
+        "default": "",
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "title": "server_rebootArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

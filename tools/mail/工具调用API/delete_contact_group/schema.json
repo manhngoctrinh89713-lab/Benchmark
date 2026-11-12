@@ -1,0 +1,35 @@
+{
+  "name": "delete_contact_group",
+  "description": "删除自己的个人联系人组；已编写邮件中展开的地址保持不变。",
+  "inputSchema": {
+    "properties": {
+      "group_id": {
+        "title": "Group Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "group_id"
+    ],
+    "title": "delete_contact_groupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

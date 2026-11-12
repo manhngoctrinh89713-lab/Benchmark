@@ -1,0 +1,5 @@
+2026-10-28T02:00:07+08:00 INFO job=orders-daily mode=incremental source=orders-primary
+2026-10-28T02:00:08+08:00 INFO parent=orders-20261027-0200 from_sequence=340266 data_before=2026-10-28T02:00:00+08:00
+2026-10-28T02:00:09+08:00 WARN source read timeout attempt=1 retry_in_seconds=3
+2026-10-28T02:00:12+08:00 INFO source reconnected attempt=2
+2026-10-28T02:00:28+08:00 INFO archive=orders_2026-10-28_0200.bak to_sequence=348863 bytes=268006 status=completed catalog=updated

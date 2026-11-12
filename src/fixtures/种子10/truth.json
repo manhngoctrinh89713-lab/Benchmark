@@ -1,0 +1,26 @@
+{
+  "fixture_version": "partial-semantic-repair-v3",
+  "repo_id": "invoice-service",
+  "branch": "feature/invoice-layout",
+  "base": "ae4bef35c22f84ff2eb275ee8905ac61a079bd4f",
+  "local_head": "965ffc44d6846e57b50d91d40a96324e201f36a2",
+  "cached_remote_head": "d311eb9edb679768ea8c145ec42d44e016900ce5",
+  "colleague_commit": "249f6a95ac12d6938e71f1bed5a852c6100fe87b",
+  "protected_sources": [
+    {
+      "path": "invoice/amounts.py",
+      "blob": "0443601883a6f59911b804b2f1c6b1b96c19427e",
+      "functions": [
+        "payable"
+      ]
+    },
+    {
+      "path": "invoice/credit_note.py",
+      "blob": "f98ac5f296d7682c83d14fc5ab0b17bf8db34794",
+      "functions": [
+        "payable",
+        "refund"
+      ]
+    }
+  ]
+}

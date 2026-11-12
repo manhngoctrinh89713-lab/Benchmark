@@ -1,0 +1,145 @@
+{
+  "name": "create_checkout_quote",
+  "description": "保存选定购物车商品的结算报价，有效期十五分钟，不预留库存。",
+  "inputSchema": {
+    "$defs": {
+      "Address": {
+        "additionalProperties": false,
+        "properties": {
+          "address_line_1": {
+            "title": "Address Line 1",
+            "type": "string"
+          },
+          "country_code": {
+            "title": "Country Code",
+            "type": "string"
+          },
+          "address_line_2": {
+            "title": "Address Line 2",
+            "type": "string"
+          },
+          "admin_area_1": {
+            "title": "Admin Area 1",
+            "type": "string"
+          },
+          "admin_area_2": {
+            "title": "Admin Area 2",
+            "type": "string"
+          },
+          "postal_code": {
+            "title": "Postal Code",
+            "type": "string"
+          },
+          "recipient": {
+            "title": "Recipient",
+            "type": "string"
+          },
+          "phone": {
+            "title": "Phone",
+            "type": "string"
+          }
+        },
+        "required": [
+          "address_line_1",
+          "country_code"
+        ],
+        "title": "Address",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "merchant_id": {
+        "title": "Merchant Id",
+        "type": "string"
+      },
+      "sku_ids": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Sku Ids"
+      },
+      "shipping_address": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Address"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      },
+      "address_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Address Id"
+      },
+      "shipping_option_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Shipping Option Id"
+      },
+      "discount_codes": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Discount Codes"
+      },
+      "delivery_email": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Delivery Email"
+      }
+    },
+    "required": [
+      "merchant_id"
+    ],
+    "title": "create_checkout_quoteArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

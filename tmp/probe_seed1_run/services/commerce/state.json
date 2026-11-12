@@ -1,0 +1,3775 @@
+{
+  "now": "2026-11-02T10:30:00+08:00",
+  "sequence": 10,
+  "counters": {
+    "addresses": 1,
+    "quotes": 3,
+    "orders": 2,
+    "payments": 2
+  },
+  "idempotency": {
+    "buyer/buyer_demo/place_order_from_quote/idem-b-1": {
+      "fingerprint": "ef53c28090a0ef320562d9ca5cd66d76e0370e2a69a0069ac795d0dc9799f9ee",
+      "result": {
+        "order": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-B",
+                "merchant_id": "merchant_b",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-B",
+                    "options": {},
+                    "unit_amount_minor": 53100,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 53100,
+                "stock": 10
+              },
+              "discount_minor": 8000,
+              "tax_minor": 0,
+              "line_id": "ord_000001_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 8000,
+          "discount_allocations": [
+            {
+              "id": "disc_b80",
+              "code": "B80",
+              "version": 1,
+              "amount_minor": 8000
+            }
+          ],
+          "total_minor": 45100,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_b",
+            "merchant_id": "merchant_b",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000001",
+          "status": "pending_payment",
+          "payment_status": "unpaid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 1,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00"
+        },
+        "sequence": 7,
+        "replayed": false
+      }
+    },
+    "buyer/buyer_demo/pay_order/idem-b-pay": {
+      "fingerprint": "783b3675a055e02a14469a36e006f1db3c55f05ceff42e03c3666552169aeb90",
+      "result": {
+        "payment": {
+          "id": "pay_000001",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "amount_minor": 45100,
+          "currency": "CNY",
+          "status": "succeeded",
+          "method_label": "银行卡 尾号5186",
+          "refunded_minor": 0,
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "version": 1,
+          "order_id": "ord_000001"
+        },
+        "order": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-B",
+                "merchant_id": "merchant_b",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-B",
+                    "options": {},
+                    "unit_amount_minor": 53100,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 53100,
+                "stock": 10
+              },
+              "discount_minor": 8000,
+              "tax_minor": 0,
+              "line_id": "ord_000001_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 8000,
+          "discount_allocations": [
+            {
+              "id": "disc_b80",
+              "code": "B80",
+              "version": 1,
+              "amount_minor": 8000
+            }
+          ],
+          "total_minor": 45100,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_b",
+            "merchant_id": "merchant_b",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000001",
+          "status": "paid",
+          "payment_status": "paid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 2,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "sequence": 8,
+        "replayed": false
+      }
+    },
+    "buyer/buyer_demo/place_order_from_quote/idem-a-1": {
+      "fingerprint": "33fe9330e227d8e72e4908f1c5a3fef9046d8359a5720a1712254b66ffe2de91",
+      "result": {
+        "order": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-A",
+              "product_id": "NECK-A",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 45900,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-A",
+                "merchant_id": "merchant_a",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-A",
+                    "options": {},
+                    "unit_amount_minor": 45900,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 45900,
+                "stock": 10
+              },
+              "tax_minor": 0,
+              "line_id": "ord_000002_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 45900,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 0,
+          "discount_allocations": [],
+          "total_minor": 45900,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_a",
+            "merchant_id": "merchant_a",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000002",
+          "status": "pending_payment",
+          "payment_status": "unpaid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 1,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00"
+        },
+        "sequence": 9,
+        "replayed": false
+      }
+    },
+    "buyer/buyer_demo/pay_order/idem-a-pay": {
+      "fingerprint": "905ead93719109b48c27e1d07a83e1c82ddc4d8113b7ec6455e88d017fee4367",
+      "result": {
+        "payment": {
+          "id": "pay_000002",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "amount_minor": 45900,
+          "currency": "CNY",
+          "status": "succeeded",
+          "method_label": "银行卡 尾号5186",
+          "refunded_minor": 0,
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "version": 1,
+          "order_id": "ord_000002"
+        },
+        "order": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-A",
+              "product_id": "NECK-A",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 45900,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-A",
+                "merchant_id": "merchant_a",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-A",
+                    "options": {},
+                    "unit_amount_minor": 45900,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 45900,
+                "stock": 10
+              },
+              "tax_minor": 0,
+              "line_id": "ord_000002_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 45900,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 0,
+          "discount_allocations": [],
+          "total_minor": 45900,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_a",
+            "merchant_id": "merchant_a",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000002",
+          "status": "paid",
+          "payment_status": "paid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 2,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "sequence": 10,
+        "replayed": false
+      }
+    }
+  },
+  "current_merchant": "merchant_demo",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_a": {
+      "id": "merchant_a",
+      "name": "星汇优选",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    },
+    "merchant_b": {
+      "id": "merchant_b",
+      "name": "悦达严选",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    },
+    "merchant_c": {
+      "id": "merchant_c",
+      "name": "海川好物",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 2,
+      "default_address_id": "addr_000001",
+      "default_payment_method_id": "pm_demo",
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    }
+  },
+  "products": {
+    "NECK-A": {
+      "id": "NECK-A",
+      "merchant_id": "merchant_a",
+      "name": "施华洛世奇跳动的心系列四叶草项链",
+      "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+      "unit_amount_minor": 45900,
+      "currency": "CNY",
+      "stock": 9,
+      "kind": "physical",
+      "active": true,
+      "version": 2,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      },
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    },
+    "NECK-B": {
+      "id": "NECK-B",
+      "merchant_id": "merchant_b",
+      "name": "施华洛世奇跳动的心系列四叶草项链",
+      "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+      "unit_amount_minor": 53100,
+      "currency": "CNY",
+      "stock": 9,
+      "kind": "physical",
+      "active": true,
+      "version": 2,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      },
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    },
+    "NECK-C": {
+      "id": "NECK-C",
+      "merchant_id": "merchant_c",
+      "name": "施华洛世奇跳动的心系列四叶草项链",
+      "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+      "unit_amount_minor": 48900,
+      "currency": "CNY",
+      "stock": 10,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "terms": "",
+        "delivery_countries": []
+      }
+    }
+  },
+  "carts": {
+    "buyer_demo__merchant_a": {
+      "id": "buyer_demo__merchant_a",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_a",
+      "version": 2,
+      "items": [],
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    },
+    "buyer_demo__merchant_b": {
+      "id": "buyer_demo__merchant_b",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_b",
+      "version": 2,
+      "items": [],
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    }
+  },
+  "orders": {
+    "ord_000001": {
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_b",
+      "currency": "CNY",
+      "items": [
+        {
+          "sku_id": "NECK-B",
+          "product_id": "NECK-B",
+          "quantity": 1,
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "kind": "physical",
+          "options": {},
+          "unit_amount_minor": 53100,
+          "available": true,
+          "sku_version": 1,
+          "product_version": 1,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          },
+          "product_snapshot": {
+            "id": "NECK-B",
+            "merchant_id": "merchant_b",
+            "name": "施华洛世奇跳动的心系列四叶草项链",
+            "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+            "kind": "physical",
+            "currency": "CNY",
+            "category": "",
+            "policies": {
+              "returnable": true,
+              "exchangeable": true,
+              "return_days": 7,
+              "cancellation_allowed": true,
+              "terms": "",
+              "delivery_countries": []
+            },
+            "active": true,
+            "version": 1,
+            "variants": [
+              {
+                "id": "NECK-B",
+                "options": {},
+                "unit_amount_minor": 53100,
+                "stock": 10,
+                "active": true,
+                "version": 1
+              }
+            ],
+            "unit_amount_minor": 53100,
+            "stock": 10
+          },
+          "discount_minor": 8000,
+          "tax_minor": 0,
+          "line_id": "ord_000001_line_1",
+          "fulfilled_quantity": 0
+        }
+      ],
+      "subtotal_minor": 53100,
+      "shipping_minor": 0,
+      "tax_minor": 0,
+      "discount_minor": 8000,
+      "discount_allocations": [
+        {
+          "id": "disc_b80",
+          "code": "B80",
+          "version": 1,
+          "amount_minor": 8000
+        }
+      ],
+      "total_minor": 45100,
+      "shipping_address": {
+        "recipient": "张三",
+        "phone": "13800000000",
+        "address_line_1": "云锦路688号",
+        "admin_area_2": "上海",
+        "postal_code": "200232",
+        "country_code": "CN"
+      },
+      "shipping_option": {
+        "id": "ship_merchant_b",
+        "merchant_id": "merchant_b",
+        "name": "标准快递",
+        "amount_minor": 0,
+        "countries": [],
+        "min_days": 3,
+        "max_days": 5,
+        "active": true,
+        "version": 1,
+        "default": true
+      },
+      "delivery_email": null,
+      "id": "ord_000001",
+      "status": "paid",
+      "payment_status": "paid",
+      "fulfillment_status": "unfulfilled",
+      "stock_released": false,
+      "version": 2,
+      "note": "",
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    },
+    "ord_000002": {
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_a",
+      "currency": "CNY",
+      "items": [
+        {
+          "sku_id": "NECK-A",
+          "product_id": "NECK-A",
+          "quantity": 1,
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "kind": "physical",
+          "options": {},
+          "unit_amount_minor": 45900,
+          "available": true,
+          "sku_version": 1,
+          "product_version": 1,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          },
+          "product_snapshot": {
+            "id": "NECK-A",
+            "merchant_id": "merchant_a",
+            "name": "施华洛世奇跳动的心系列四叶草项链",
+            "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+            "kind": "physical",
+            "currency": "CNY",
+            "category": "",
+            "policies": {
+              "returnable": true,
+              "exchangeable": true,
+              "return_days": 7,
+              "cancellation_allowed": true,
+              "terms": "",
+              "delivery_countries": []
+            },
+            "active": true,
+            "version": 1,
+            "variants": [
+              {
+                "id": "NECK-A",
+                "options": {},
+                "unit_amount_minor": 45900,
+                "stock": 10,
+                "active": true,
+                "version": 1
+              }
+            ],
+            "unit_amount_minor": 45900,
+            "stock": 10
+          },
+          "tax_minor": 0,
+          "line_id": "ord_000002_line_1",
+          "fulfilled_quantity": 0
+        }
+      ],
+      "subtotal_minor": 45900,
+      "shipping_minor": 0,
+      "tax_minor": 0,
+      "discount_minor": 0,
+      "discount_allocations": [],
+      "total_minor": 45900,
+      "shipping_address": {
+        "recipient": "张三",
+        "phone": "13800000000",
+        "address_line_1": "云锦路688号",
+        "admin_area_2": "上海",
+        "postal_code": "200232",
+        "country_code": "CN"
+      },
+      "shipping_option": {
+        "id": "ship_merchant_a",
+        "merchant_id": "merchant_a",
+        "name": "标准快递",
+        "amount_minor": 0,
+        "countries": [],
+        "min_days": 3,
+        "max_days": 5,
+        "active": true,
+        "version": 1,
+        "default": true
+      },
+      "delivery_email": null,
+      "id": "ord_000002",
+      "status": "paid",
+      "payment_status": "paid",
+      "fulfillment_status": "unfulfilled",
+      "stock_released": false,
+      "version": 2,
+      "note": "",
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    }
+  },
+  "payments": {
+    "pay_000001": {
+      "id": "pay_000001",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_b",
+      "amount_minor": 45100,
+      "currency": "CNY",
+      "status": "succeeded",
+      "method_label": "银行卡 尾号5186",
+      "refunded_minor": 0,
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "version": 1,
+      "order_id": "ord_000001"
+    },
+    "pay_000002": {
+      "id": "pay_000002",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_a",
+      "amount_minor": 45900,
+      "currency": "CNY",
+      "status": "succeeded",
+      "method_label": "银行卡 尾号5186",
+      "refunded_minor": 0,
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "version": 1,
+      "order_id": "ord_000002"
+    }
+  },
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "NECK-A": {
+      "id": "NECK-A",
+      "product_id": "NECK-A",
+      "merchant_id": "merchant_a",
+      "options": {},
+      "unit_amount_minor": 45900,
+      "stock": 9,
+      "active": true,
+      "currency": "CNY",
+      "version": 2,
+      "default": true,
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    },
+    "NECK-B": {
+      "id": "NECK-B",
+      "product_id": "NECK-B",
+      "merchant_id": "merchant_b",
+      "options": {},
+      "unit_amount_minor": 53100,
+      "stock": 9,
+      "active": true,
+      "currency": "CNY",
+      "version": 2,
+      "default": true,
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    },
+    "NECK-C": {
+      "id": "NECK-C",
+      "product_id": "NECK-C",
+      "merchant_id": "merchant_c",
+      "options": {},
+      "unit_amount_minor": 48900,
+      "stock": 10,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {
+    "addr_000001": {
+      "id": "addr_000001",
+      "buyer_id": "buyer_demo",
+      "version": 1,
+      "label": "家",
+      "address": {
+        "recipient": "张三",
+        "phone": "13800000000",
+        "address_line_1": "云锦路688号",
+        "admin_area_2": "上海",
+        "postal_code": "200232",
+        "country_code": "CN"
+      },
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    }
+  },
+  "favorites": {},
+  "quotes": {
+    "quote_000001": {
+      "id": "quote_000001",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_a",
+      "version": 2,
+      "data": {
+        "merchant_id": "merchant_a",
+        "buyer_id": "buyer_demo",
+        "cart_id": "buyer_demo__merchant_a",
+        "cart_version": 1,
+        "items": [
+          {
+            "sku_id": "NECK-A",
+            "product_id": "NECK-A",
+            "quantity": 1,
+            "name": "施华洛世奇跳动的心系列四叶草项链",
+            "kind": "physical",
+            "options": {},
+            "unit_amount_minor": 45900,
+            "available": true,
+            "sku_version": 1,
+            "product_version": 1,
+            "policies": {
+              "returnable": true,
+              "exchangeable": true,
+              "return_days": 7,
+              "cancellation_allowed": true,
+              "terms": "",
+              "delivery_countries": []
+            },
+            "product_snapshot": {
+              "id": "NECK-A",
+              "merchant_id": "merchant_a",
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+              "kind": "physical",
+              "currency": "CNY",
+              "category": "",
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "active": true,
+              "version": 1,
+              "variants": [
+                {
+                  "id": "NECK-A",
+                  "options": {},
+                  "unit_amount_minor": 45900,
+                  "stock": 10,
+                  "active": true,
+                  "version": 1
+                }
+              ],
+              "unit_amount_minor": 45900,
+              "stock": 10
+            },
+            "tax_minor": 0
+          }
+        ],
+        "currency": "CNY",
+        "subtotal_minor": 45900,
+        "shipping_minor": 0,
+        "discount_minor": 0,
+        "discount_allocations": [],
+        "tax_minor": 0,
+        "total_minor": 45900,
+        "shipping_address": {
+          "recipient": "张三",
+          "phone": "13800000000",
+          "address_line_1": "云锦路688号",
+          "admin_area_2": "上海",
+          "postal_code": "200232",
+          "country_code": "CN"
+        },
+        "shipping_option": {
+          "id": "ship_merchant_a",
+          "merchant_id": "merchant_a",
+          "name": "标准快递",
+          "amount_minor": 0,
+          "countries": [],
+          "min_days": 3,
+          "max_days": 5,
+          "active": true,
+          "version": 1,
+          "default": true
+        },
+        "delivery_email": null,
+        "request": {
+          "sku_ids": [
+            "NECK-A"
+          ],
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option_id": "ship_merchant_a",
+          "discount_codes": [],
+          "delivery_email": null
+        }
+      },
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "expires_at": "2026-11-02T10:45:00+08:00",
+      "status": "ordered",
+      "order_id": "ord_000002",
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    },
+    "quote_000002": {
+      "id": "quote_000002",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_b",
+      "version": 1,
+      "data": {
+        "merchant_id": "merchant_b",
+        "buyer_id": "buyer_demo",
+        "cart_id": "buyer_demo__merchant_b",
+        "cart_version": 1,
+        "items": [
+          {
+            "sku_id": "NECK-B",
+            "product_id": "NECK-B",
+            "quantity": 1,
+            "name": "施华洛世奇跳动的心系列四叶草项链",
+            "kind": "physical",
+            "options": {},
+            "unit_amount_minor": 53100,
+            "available": true,
+            "sku_version": 1,
+            "product_version": 1,
+            "policies": {
+              "returnable": true,
+              "exchangeable": true,
+              "return_days": 7,
+              "cancellation_allowed": true,
+              "terms": "",
+              "delivery_countries": []
+            },
+            "product_snapshot": {
+              "id": "NECK-B",
+              "merchant_id": "merchant_b",
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+              "kind": "physical",
+              "currency": "CNY",
+              "category": "",
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "active": true,
+              "version": 1,
+              "variants": [
+                {
+                  "id": "NECK-B",
+                  "options": {},
+                  "unit_amount_minor": 53100,
+                  "stock": 10,
+                  "active": true,
+                  "version": 1
+                }
+              ],
+              "unit_amount_minor": 53100,
+              "stock": 10
+            },
+            "tax_minor": 0
+          }
+        ],
+        "currency": "CNY",
+        "subtotal_minor": 53100,
+        "shipping_minor": 0,
+        "discount_minor": 0,
+        "discount_allocations": [],
+        "tax_minor": 0,
+        "total_minor": 53100,
+        "shipping_address": {
+          "recipient": "张三",
+          "phone": "13800000000",
+          "address_line_1": "云锦路688号",
+          "admin_area_2": "上海",
+          "postal_code": "200232",
+          "country_code": "CN"
+        },
+        "shipping_option": {
+          "id": "ship_merchant_b",
+          "merchant_id": "merchant_b",
+          "name": "标准快递",
+          "amount_minor": 0,
+          "countries": [],
+          "min_days": 3,
+          "max_days": 5,
+          "active": true,
+          "version": 1,
+          "default": true
+        },
+        "delivery_email": null,
+        "request": {
+          "sku_ids": [
+            "NECK-B"
+          ],
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option_id": "ship_merchant_b",
+          "discount_codes": [],
+          "delivery_email": null
+        }
+      },
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "expires_at": "2026-11-02T10:45:00+08:00",
+      "status": "open"
+    },
+    "quote_000003": {
+      "id": "quote_000003",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_b",
+      "version": 2,
+      "data": {
+        "merchant_id": "merchant_b",
+        "buyer_id": "buyer_demo",
+        "cart_id": "buyer_demo__merchant_b",
+        "cart_version": 1,
+        "items": [
+          {
+            "sku_id": "NECK-B",
+            "product_id": "NECK-B",
+            "quantity": 1,
+            "name": "施华洛世奇跳动的心系列四叶草项链",
+            "kind": "physical",
+            "options": {},
+            "unit_amount_minor": 53100,
+            "available": true,
+            "sku_version": 1,
+            "product_version": 1,
+            "policies": {
+              "returnable": true,
+              "exchangeable": true,
+              "return_days": 7,
+              "cancellation_allowed": true,
+              "terms": "",
+              "delivery_countries": []
+            },
+            "product_snapshot": {
+              "id": "NECK-B",
+              "merchant_id": "merchant_b",
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+              "kind": "physical",
+              "currency": "CNY",
+              "category": "",
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "active": true,
+              "version": 1,
+              "variants": [
+                {
+                  "id": "NECK-B",
+                  "options": {},
+                  "unit_amount_minor": 53100,
+                  "stock": 10,
+                  "active": true,
+                  "version": 1
+                }
+              ],
+              "unit_amount_minor": 53100,
+              "stock": 10
+            },
+            "discount_minor": 8000,
+            "tax_minor": 0
+          }
+        ],
+        "currency": "CNY",
+        "subtotal_minor": 53100,
+        "shipping_minor": 0,
+        "discount_minor": 8000,
+        "discount_allocations": [
+          {
+            "id": "disc_b80",
+            "code": "B80",
+            "version": 1,
+            "amount_minor": 8000
+          }
+        ],
+        "tax_minor": 0,
+        "total_minor": 45100,
+        "shipping_address": {
+          "recipient": "张三",
+          "phone": "13800000000",
+          "address_line_1": "云锦路688号",
+          "admin_area_2": "上海",
+          "postal_code": "200232",
+          "country_code": "CN"
+        },
+        "shipping_option": {
+          "id": "ship_merchant_b",
+          "merchant_id": "merchant_b",
+          "name": "标准快递",
+          "amount_minor": 0,
+          "countries": [],
+          "min_days": 3,
+          "max_days": 5,
+          "active": true,
+          "version": 1,
+          "default": true
+        },
+        "delivery_email": null,
+        "request": {
+          "sku_ids": [
+            "NECK-B"
+          ],
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option_id": "ship_merchant_b",
+          "discount_codes": [
+            "B80"
+          ],
+          "delivery_email": null
+        }
+      },
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "expires_at": "2026-11-02T10:45:00+08:00",
+      "status": "ordered",
+      "order_id": "ord_000001",
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    }
+  },
+  "shipping_options": {
+    "ship_merchant_a": {
+      "id": "ship_merchant_a",
+      "merchant_id": "merchant_a",
+      "name": "标准快递",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 5,
+      "active": true,
+      "version": 1,
+      "default": true
+    },
+    "ship_merchant_b": {
+      "id": "ship_merchant_b",
+      "merchant_id": "merchant_b",
+      "name": "标准快递",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 5,
+      "active": true,
+      "version": 1,
+      "default": true
+    },
+    "ship_merchant_c": {
+      "id": "ship_merchant_c",
+      "merchant_id": "merchant_c",
+      "name": "标准快递",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 5,
+      "active": true,
+      "version": 1,
+      "default": true
+    },
+    "shipping_merchant_a": {
+      "id": "shipping_merchant_a",
+      "merchant_id": "merchant_a",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    },
+    "shipping_merchant_b": {
+      "id": "shipping_merchant_b",
+      "merchant_id": "merchant_b",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    },
+    "shipping_merchant_c": {
+      "id": "shipping_merchant_c",
+      "merchant_id": "merchant_c",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {
+    "disc_b80": {
+      "id": "disc_b80",
+      "merchant_id": "merchant_b",
+      "code": "B80",
+      "kind": "fixed",
+      "value": 8000,
+      "minimum_minor": 50000,
+      "product_ids": [],
+      "buyer_ids": [],
+      "start_at": null,
+      "end_at": null,
+      "max_uses": null,
+      "stackable": false,
+      "active": true,
+      "uses": 1,
+      "version": 2,
+      "updated_at": "2026-11-02T10:30:00+08:00"
+    }
+  },
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [
+    {
+      "sequence": 1,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "save_address",
+      "arguments": {
+        "label": "家",
+        "address": {
+          "recipient": "张三",
+          "phone": "13800000000",
+          "address_line_1": "云锦路688号",
+          "admin_area_2": "上海",
+          "postal_code": "200232",
+          "country_code": "CN"
+        },
+        "address_id": null,
+        "make_default": true,
+        "expected_version": null
+      },
+      "result": {
+        "address": {
+          "id": "addr_000001",
+          "buyer_id": "buyer_demo",
+          "version": 1,
+          "label": "家",
+          "address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "sequence": 1,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {},
+      "payments": {}
+    },
+    {
+      "sequence": 2,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "set_cart_item",
+      "arguments": {
+        "merchant_id": "merchant_a",
+        "sku_id": "NECK-A",
+        "quantity": 1,
+        "expected_version": null
+      },
+      "result": {
+        "cart": {
+          "id": "buyer_demo__merchant_a",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "version": 1,
+          "items": [
+            {
+              "sku_id": "NECK-A",
+              "product_id": "NECK-A",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 45900,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1
+            }
+          ],
+          "updated_at": "2026-11-02T10:30:00+08:00",
+          "currency": "CNY",
+          "subtotal_minor": 45900,
+          "shipping_minor": 0,
+          "total_minor": 45900,
+          "available": true
+        },
+        "sequence": 2,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {},
+      "payments": {}
+    },
+    {
+      "sequence": 3,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "create_checkout_quote",
+      "arguments": {
+        "merchant_id": "merchant_a",
+        "sku_ids": null,
+        "shipping_address": null,
+        "address_id": null,
+        "shipping_option_id": null,
+        "discount_codes": null,
+        "delivery_email": null
+      },
+      "result": {
+        "quote": {
+          "id": "quote_000001",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "version": 1,
+          "data": {
+            "merchant_id": "merchant_a",
+            "buyer_id": "buyer_demo",
+            "cart_id": "buyer_demo__merchant_a",
+            "cart_version": 1,
+            "items": [
+              {
+                "sku_id": "NECK-A",
+                "product_id": "NECK-A",
+                "quantity": 1,
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "kind": "physical",
+                "options": {},
+                "unit_amount_minor": 45900,
+                "available": true,
+                "sku_version": 1,
+                "product_version": 1,
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "product_snapshot": {
+                  "id": "NECK-A",
+                  "merchant_id": "merchant_a",
+                  "name": "施华洛世奇跳动的心系列四叶草项链",
+                  "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+                  "kind": "physical",
+                  "currency": "CNY",
+                  "category": "",
+                  "policies": {
+                    "returnable": true,
+                    "exchangeable": true,
+                    "return_days": 7,
+                    "cancellation_allowed": true,
+                    "terms": "",
+                    "delivery_countries": []
+                  },
+                  "active": true,
+                  "version": 1,
+                  "variants": [
+                    {
+                      "id": "NECK-A",
+                      "options": {},
+                      "unit_amount_minor": 45900,
+                      "stock": 10,
+                      "active": true,
+                      "version": 1
+                    }
+                  ],
+                  "unit_amount_minor": 45900,
+                  "stock": 10
+                },
+                "tax_minor": 0
+              }
+            ],
+            "currency": "CNY",
+            "subtotal_minor": 45900,
+            "shipping_minor": 0,
+            "discount_minor": 0,
+            "discount_allocations": [],
+            "tax_minor": 0,
+            "total_minor": 45900,
+            "shipping_address": {
+              "recipient": "张三",
+              "phone": "13800000000",
+              "address_line_1": "云锦路688号",
+              "admin_area_2": "上海",
+              "postal_code": "200232",
+              "country_code": "CN"
+            },
+            "shipping_option": {
+              "id": "ship_merchant_a",
+              "merchant_id": "merchant_a",
+              "name": "标准快递",
+              "amount_minor": 0,
+              "countries": [],
+              "min_days": 3,
+              "max_days": 5,
+              "active": true,
+              "version": 1,
+              "default": true
+            },
+            "delivery_email": null,
+            "request": {
+              "sku_ids": [
+                "NECK-A"
+              ],
+              "shipping_address": {
+                "recipient": "张三",
+                "phone": "13800000000",
+                "address_line_1": "云锦路688号",
+                "admin_area_2": "上海",
+                "postal_code": "200232",
+                "country_code": "CN"
+              },
+              "shipping_option_id": "ship_merchant_a",
+              "discount_codes": [],
+              "delivery_email": null
+            }
+          },
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "expires_at": "2026-11-02T10:45:00+08:00",
+          "status": "open"
+        },
+        "sequence": 3,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {},
+      "payments": {}
+    },
+    {
+      "sequence": 4,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "set_cart_item",
+      "arguments": {
+        "merchant_id": "merchant_b",
+        "sku_id": "NECK-B",
+        "quantity": 1,
+        "expected_version": null
+      },
+      "result": {
+        "cart": {
+          "id": "buyer_demo__merchant_b",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "version": 1,
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1
+            }
+          ],
+          "updated_at": "2026-11-02T10:30:00+08:00",
+          "currency": "CNY",
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "total_minor": 53100,
+          "available": true
+        },
+        "sequence": 4,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {},
+      "payments": {}
+    },
+    {
+      "sequence": 5,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "create_checkout_quote",
+      "arguments": {
+        "merchant_id": "merchant_b",
+        "sku_ids": null,
+        "shipping_address": null,
+        "address_id": null,
+        "shipping_option_id": null,
+        "discount_codes": null,
+        "delivery_email": null
+      },
+      "result": {
+        "quote": {
+          "id": "quote_000002",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "version": 1,
+          "data": {
+            "merchant_id": "merchant_b",
+            "buyer_id": "buyer_demo",
+            "cart_id": "buyer_demo__merchant_b",
+            "cart_version": 1,
+            "items": [
+              {
+                "sku_id": "NECK-B",
+                "product_id": "NECK-B",
+                "quantity": 1,
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "kind": "physical",
+                "options": {},
+                "unit_amount_minor": 53100,
+                "available": true,
+                "sku_version": 1,
+                "product_version": 1,
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "product_snapshot": {
+                  "id": "NECK-B",
+                  "merchant_id": "merchant_b",
+                  "name": "施华洛世奇跳动的心系列四叶草项链",
+                  "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                  "kind": "physical",
+                  "currency": "CNY",
+                  "category": "",
+                  "policies": {
+                    "returnable": true,
+                    "exchangeable": true,
+                    "return_days": 7,
+                    "cancellation_allowed": true,
+                    "terms": "",
+                    "delivery_countries": []
+                  },
+                  "active": true,
+                  "version": 1,
+                  "variants": [
+                    {
+                      "id": "NECK-B",
+                      "options": {},
+                      "unit_amount_minor": 53100,
+                      "stock": 10,
+                      "active": true,
+                      "version": 1
+                    }
+                  ],
+                  "unit_amount_minor": 53100,
+                  "stock": 10
+                },
+                "tax_minor": 0
+              }
+            ],
+            "currency": "CNY",
+            "subtotal_minor": 53100,
+            "shipping_minor": 0,
+            "discount_minor": 0,
+            "discount_allocations": [],
+            "tax_minor": 0,
+            "total_minor": 53100,
+            "shipping_address": {
+              "recipient": "张三",
+              "phone": "13800000000",
+              "address_line_1": "云锦路688号",
+              "admin_area_2": "上海",
+              "postal_code": "200232",
+              "country_code": "CN"
+            },
+            "shipping_option": {
+              "id": "ship_merchant_b",
+              "merchant_id": "merchant_b",
+              "name": "标准快递",
+              "amount_minor": 0,
+              "countries": [],
+              "min_days": 3,
+              "max_days": 5,
+              "active": true,
+              "version": 1,
+              "default": true
+            },
+            "delivery_email": null,
+            "request": {
+              "sku_ids": [
+                "NECK-B"
+              ],
+              "shipping_address": {
+                "recipient": "张三",
+                "phone": "13800000000",
+                "address_line_1": "云锦路688号",
+                "admin_area_2": "上海",
+                "postal_code": "200232",
+                "country_code": "CN"
+              },
+              "shipping_option_id": "ship_merchant_b",
+              "discount_codes": [],
+              "delivery_email": null
+            }
+          },
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "expires_at": "2026-11-02T10:45:00+08:00",
+          "status": "open"
+        },
+        "sequence": 5,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {},
+      "payments": {}
+    },
+    {
+      "sequence": 6,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "create_checkout_quote",
+      "arguments": {
+        "merchant_id": "merchant_b",
+        "sku_ids": null,
+        "shipping_address": null,
+        "address_id": null,
+        "shipping_option_id": null,
+        "discount_codes": [
+          "B80"
+        ],
+        "delivery_email": null
+      },
+      "result": {
+        "quote": {
+          "id": "quote_000003",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "version": 1,
+          "data": {
+            "merchant_id": "merchant_b",
+            "buyer_id": "buyer_demo",
+            "cart_id": "buyer_demo__merchant_b",
+            "cart_version": 1,
+            "items": [
+              {
+                "sku_id": "NECK-B",
+                "product_id": "NECK-B",
+                "quantity": 1,
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "kind": "physical",
+                "options": {},
+                "unit_amount_minor": 53100,
+                "available": true,
+                "sku_version": 1,
+                "product_version": 1,
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "product_snapshot": {
+                  "id": "NECK-B",
+                  "merchant_id": "merchant_b",
+                  "name": "施华洛世奇跳动的心系列四叶草项链",
+                  "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                  "kind": "physical",
+                  "currency": "CNY",
+                  "category": "",
+                  "policies": {
+                    "returnable": true,
+                    "exchangeable": true,
+                    "return_days": 7,
+                    "cancellation_allowed": true,
+                    "terms": "",
+                    "delivery_countries": []
+                  },
+                  "active": true,
+                  "version": 1,
+                  "variants": [
+                    {
+                      "id": "NECK-B",
+                      "options": {},
+                      "unit_amount_minor": 53100,
+                      "stock": 10,
+                      "active": true,
+                      "version": 1
+                    }
+                  ],
+                  "unit_amount_minor": 53100,
+                  "stock": 10
+                },
+                "discount_minor": 8000,
+                "tax_minor": 0
+              }
+            ],
+            "currency": "CNY",
+            "subtotal_minor": 53100,
+            "shipping_minor": 0,
+            "discount_minor": 8000,
+            "discount_allocations": [
+              {
+                "id": "disc_b80",
+                "code": "B80",
+                "version": 1,
+                "amount_minor": 8000
+              }
+            ],
+            "tax_minor": 0,
+            "total_minor": 45100,
+            "shipping_address": {
+              "recipient": "张三",
+              "phone": "13800000000",
+              "address_line_1": "云锦路688号",
+              "admin_area_2": "上海",
+              "postal_code": "200232",
+              "country_code": "CN"
+            },
+            "shipping_option": {
+              "id": "ship_merchant_b",
+              "merchant_id": "merchant_b",
+              "name": "标准快递",
+              "amount_minor": 0,
+              "countries": [],
+              "min_days": 3,
+              "max_days": 5,
+              "active": true,
+              "version": 1,
+              "default": true
+            },
+            "delivery_email": null,
+            "request": {
+              "sku_ids": [
+                "NECK-B"
+              ],
+              "shipping_address": {
+                "recipient": "张三",
+                "phone": "13800000000",
+                "address_line_1": "云锦路688号",
+                "admin_area_2": "上海",
+                "postal_code": "200232",
+                "country_code": "CN"
+              },
+              "shipping_option_id": "ship_merchant_b",
+              "discount_codes": [
+                "B80"
+              ],
+              "delivery_email": null
+            }
+          },
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "expires_at": "2026-11-02T10:45:00+08:00",
+          "status": "open"
+        },
+        "sequence": 6,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {},
+      "payments": {}
+    },
+    {
+      "sequence": 7,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "place_order_from_quote",
+      "arguments": {
+        "quote_id": "quote_000003",
+        "idempotency_key": "idem-b-1",
+        "note": ""
+      },
+      "result": {
+        "order": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-B",
+                "merchant_id": "merchant_b",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-B",
+                    "options": {},
+                    "unit_amount_minor": 53100,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 53100,
+                "stock": 10
+              },
+              "discount_minor": 8000,
+              "tax_minor": 0,
+              "line_id": "ord_000001_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 8000,
+          "discount_allocations": [
+            {
+              "id": "disc_b80",
+              "code": "B80",
+              "version": 1,
+              "amount_minor": 8000
+            }
+          ],
+          "total_minor": 45100,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_b",
+            "merchant_id": "merchant_b",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000001",
+          "status": "pending_payment",
+          "payment_status": "unpaid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 1,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00"
+        },
+        "sequence": 7,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 9,
+          "kind": "physical",
+          "active": true,
+          "version": 2,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          },
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {
+        "ord_000001": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-B",
+                "merchant_id": "merchant_b",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-B",
+                    "options": {},
+                    "unit_amount_minor": 53100,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 53100,
+                "stock": 10
+              },
+              "discount_minor": 8000,
+              "tax_minor": 0,
+              "line_id": "ord_000001_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 8000,
+          "discount_allocations": [
+            {
+              "id": "disc_b80",
+              "code": "B80",
+              "version": 1,
+              "amount_minor": 8000
+            }
+          ],
+          "total_minor": 45100,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_b",
+            "merchant_id": "merchant_b",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000001",
+          "status": "pending_payment",
+          "payment_status": "unpaid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 1,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00"
+        }
+      },
+      "payments": {}
+    },
+    {
+      "sequence": 8,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "pay_order",
+      "arguments": {
+        "order_id": "ord_000001",
+        "payment_method_id": "pm_demo",
+        "idempotency_key": "idem-b-pay"
+      },
+      "result": {
+        "payment": {
+          "id": "pay_000001",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "amount_minor": 45100,
+          "currency": "CNY",
+          "status": "succeeded",
+          "method_label": "银行卡 尾号5186",
+          "refunded_minor": 0,
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "version": 1,
+          "order_id": "ord_000001"
+        },
+        "order": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-B",
+                "merchant_id": "merchant_b",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-B",
+                    "options": {},
+                    "unit_amount_minor": 53100,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 53100,
+                "stock": 10
+              },
+              "discount_minor": 8000,
+              "tax_minor": 0,
+              "line_id": "ord_000001_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 8000,
+          "discount_allocations": [
+            {
+              "id": "disc_b80",
+              "code": "B80",
+              "version": 1,
+              "amount_minor": 8000
+            }
+          ],
+          "total_minor": 45100,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_b",
+            "merchant_id": "merchant_b",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000001",
+          "status": "paid",
+          "payment_status": "paid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 2,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "sequence": 8,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 9,
+          "kind": "physical",
+          "active": true,
+          "version": 2,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          },
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {
+        "ord_000001": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-B",
+                "merchant_id": "merchant_b",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-B",
+                    "options": {},
+                    "unit_amount_minor": 53100,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 53100,
+                "stock": 10
+              },
+              "discount_minor": 8000,
+              "tax_minor": 0,
+              "line_id": "ord_000001_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 8000,
+          "discount_allocations": [
+            {
+              "id": "disc_b80",
+              "code": "B80",
+              "version": 1,
+              "amount_minor": 8000
+            }
+          ],
+          "total_minor": 45100,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_b",
+            "merchant_id": "merchant_b",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000001",
+          "status": "paid",
+          "payment_status": "paid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 2,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        }
+      },
+      "payments": {
+        "pay_000001": {
+          "id": "pay_000001",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "amount_minor": 45100,
+          "currency": "CNY",
+          "status": "succeeded",
+          "method_label": "银行卡 尾号5186",
+          "refunded_minor": 0,
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "version": 1,
+          "order_id": "ord_000001"
+        }
+      }
+    },
+    {
+      "sequence": 9,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "place_order_from_quote",
+      "arguments": {
+        "quote_id": "quote_000001",
+        "idempotency_key": "idem-a-1",
+        "note": ""
+      },
+      "result": {
+        "order": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-A",
+              "product_id": "NECK-A",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 45900,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-A",
+                "merchant_id": "merchant_a",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-A",
+                    "options": {},
+                    "unit_amount_minor": 45900,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 45900,
+                "stock": 10
+              },
+              "tax_minor": 0,
+              "line_id": "ord_000002_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 45900,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 0,
+          "discount_allocations": [],
+          "total_minor": 45900,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_a",
+            "merchant_id": "merchant_a",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000002",
+          "status": "pending_payment",
+          "payment_status": "unpaid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 1,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00"
+        },
+        "sequence": 9,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 9,
+          "kind": "physical",
+          "active": true,
+          "version": 2,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          },
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 9,
+          "kind": "physical",
+          "active": true,
+          "version": 2,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          },
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {
+        "ord_000001": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-B",
+                "merchant_id": "merchant_b",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-B",
+                    "options": {},
+                    "unit_amount_minor": 53100,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 53100,
+                "stock": 10
+              },
+              "discount_minor": 8000,
+              "tax_minor": 0,
+              "line_id": "ord_000001_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 8000,
+          "discount_allocations": [
+            {
+              "id": "disc_b80",
+              "code": "B80",
+              "version": 1,
+              "amount_minor": 8000
+            }
+          ],
+          "total_minor": 45100,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_b",
+            "merchant_id": "merchant_b",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000001",
+          "status": "paid",
+          "payment_status": "paid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 2,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "ord_000002": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-A",
+              "product_id": "NECK-A",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 45900,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-A",
+                "merchant_id": "merchant_a",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-A",
+                    "options": {},
+                    "unit_amount_minor": 45900,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 45900,
+                "stock": 10
+              },
+              "tax_minor": 0,
+              "line_id": "ord_000002_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 45900,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 0,
+          "discount_allocations": [],
+          "total_minor": 45900,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_a",
+            "merchant_id": "merchant_a",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000002",
+          "status": "pending_payment",
+          "payment_status": "unpaid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 1,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00"
+        }
+      },
+      "payments": {
+        "pay_000001": {
+          "id": "pay_000001",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "amount_minor": 45100,
+          "currency": "CNY",
+          "status": "succeeded",
+          "method_label": "银行卡 尾号5186",
+          "refunded_minor": 0,
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "version": 1,
+          "order_id": "ord_000001"
+        }
+      }
+    },
+    {
+      "sequence": 10,
+      "at": "2026-11-02T10:30:00+08:00",
+      "role": "buyer",
+      "actor_id": "buyer_demo",
+      "action": "pay_order",
+      "arguments": {
+        "order_id": "ord_000002",
+        "payment_method_id": "pm_demo",
+        "idempotency_key": "idem-a-pay"
+      },
+      "result": {
+        "payment": {
+          "id": "pay_000002",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "amount_minor": 45900,
+          "currency": "CNY",
+          "status": "succeeded",
+          "method_label": "银行卡 尾号5186",
+          "refunded_minor": 0,
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "version": 1,
+          "order_id": "ord_000002"
+        },
+        "order": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-A",
+              "product_id": "NECK-A",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 45900,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-A",
+                "merchant_id": "merchant_a",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-A",
+                    "options": {},
+                    "unit_amount_minor": 45900,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 45900,
+                "stock": 10
+              },
+              "tax_minor": 0,
+              "line_id": "ord_000002_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 45900,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 0,
+          "discount_allocations": [],
+          "total_minor": 45900,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_a",
+            "merchant_id": "merchant_a",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000002",
+          "status": "paid",
+          "payment_status": "paid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 2,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "sequence": 10,
+        "replayed": false
+      },
+      "products": {
+        "NECK-A": {
+          "id": "NECK-A",
+          "merchant_id": "merchant_a",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+          "unit_amount_minor": 45900,
+          "currency": "CNY",
+          "stock": 9,
+          "kind": "physical",
+          "active": true,
+          "version": 2,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          },
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "NECK-B": {
+          "id": "NECK-B",
+          "merchant_id": "merchant_b",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+          "unit_amount_minor": 53100,
+          "currency": "CNY",
+          "stock": 9,
+          "kind": "physical",
+          "active": true,
+          "version": 2,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          },
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "NECK-C": {
+          "id": "NECK-C",
+          "merchant_id": "merchant_c",
+          "name": "施华洛世奇跳动的心系列四叶草项链",
+          "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 全新正品，支持七天无理由。",
+          "unit_amount_minor": 48900,
+          "currency": "CNY",
+          "stock": 10,
+          "kind": "physical",
+          "active": true,
+          "version": 1,
+          "category": "",
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 7,
+            "cancellation_allowed": true,
+            "terms": "",
+            "delivery_countries": []
+          }
+        }
+      },
+      "orders": {
+        "ord_000001": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-B",
+              "product_id": "NECK-B",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 53100,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-B",
+                "merchant_id": "merchant_b",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。 平台大额补贴：满500减80，结算时使用优惠码 B80 抵扣，平台自动核销。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-B",
+                    "options": {},
+                    "unit_amount_minor": 53100,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 53100,
+                "stock": 10
+              },
+              "discount_minor": 8000,
+              "tax_minor": 0,
+              "line_id": "ord_000001_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 53100,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 8000,
+          "discount_allocations": [
+            {
+              "id": "disc_b80",
+              "code": "B80",
+              "version": 1,
+              "amount_minor": 8000
+            }
+          ],
+          "total_minor": 45100,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_b",
+            "merchant_id": "merchant_b",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000001",
+          "status": "paid",
+          "payment_status": "paid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 2,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        },
+        "ord_000002": {
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "currency": "CNY",
+          "items": [
+            {
+              "sku_id": "NECK-A",
+              "product_id": "NECK-A",
+              "quantity": 1,
+              "name": "施华洛世奇跳动的心系列四叶草项链",
+              "kind": "physical",
+              "options": {},
+              "unit_amount_minor": 45900,
+              "available": true,
+              "sku_version": 1,
+              "product_version": 1,
+              "policies": {
+                "returnable": true,
+                "exchangeable": true,
+                "return_days": 7,
+                "cancellation_allowed": true,
+                "terms": "",
+                "delivery_countries": []
+              },
+              "product_snapshot": {
+                "id": "NECK-A",
+                "merchant_id": "merchant_a",
+                "name": "施华洛世奇跳动的心系列四叶草项链",
+                "description": "施华洛世奇跳动的心系列四叶草项链，镀玫瑰金色，含包装盒与证书。",
+                "kind": "physical",
+                "currency": "CNY",
+                "category": "",
+                "policies": {
+                  "returnable": true,
+                  "exchangeable": true,
+                  "return_days": 7,
+                  "cancellation_allowed": true,
+                  "terms": "",
+                  "delivery_countries": []
+                },
+                "active": true,
+                "version": 1,
+                "variants": [
+                  {
+                    "id": "NECK-A",
+                    "options": {},
+                    "unit_amount_minor": 45900,
+                    "stock": 10,
+                    "active": true,
+                    "version": 1
+                  }
+                ],
+                "unit_amount_minor": 45900,
+                "stock": 10
+              },
+              "tax_minor": 0,
+              "line_id": "ord_000002_line_1",
+              "fulfilled_quantity": 0
+            }
+          ],
+          "subtotal_minor": 45900,
+          "shipping_minor": 0,
+          "tax_minor": 0,
+          "discount_minor": 0,
+          "discount_allocations": [],
+          "total_minor": 45900,
+          "shipping_address": {
+            "recipient": "张三",
+            "phone": "13800000000",
+            "address_line_1": "云锦路688号",
+            "admin_area_2": "上海",
+            "postal_code": "200232",
+            "country_code": "CN"
+          },
+          "shipping_option": {
+            "id": "ship_merchant_a",
+            "merchant_id": "merchant_a",
+            "name": "标准快递",
+            "amount_minor": 0,
+            "countries": [],
+            "min_days": 3,
+            "max_days": 5,
+            "active": true,
+            "version": 1,
+            "default": true
+          },
+          "delivery_email": null,
+          "id": "ord_000002",
+          "status": "paid",
+          "payment_status": "paid",
+          "fulfillment_status": "unfulfilled",
+          "stock_released": false,
+          "version": 2,
+          "note": "",
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "reservation_expires_at": "2026-11-02T11:00:00+08:00",
+          "updated_at": "2026-11-02T10:30:00+08:00"
+        }
+      },
+      "payments": {
+        "pay_000001": {
+          "id": "pay_000001",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_b",
+          "amount_minor": 45100,
+          "currency": "CNY",
+          "status": "succeeded",
+          "method_label": "银行卡 尾号5186",
+          "refunded_minor": 0,
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "version": 1,
+          "order_id": "ord_000001"
+        },
+        "pay_000002": {
+          "id": "pay_000002",
+          "buyer_id": "buyer_demo",
+          "merchant_id": "merchant_a",
+          "amount_minor": 45900,
+          "currency": "CNY",
+          "status": "succeeded",
+          "method_label": "银行卡 尾号5186",
+          "refunded_minor": 0,
+          "created_at": "2026-11-02T10:30:00+08:00",
+          "version": 1,
+          "order_id": "ord_000002"
+        }
+      }
+    }
+  ],
+  "subscription_events": [],
+  "payment_events": [
+    {
+      "id": "pay_000001",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_b",
+      "amount_minor": 45100,
+      "currency": "CNY",
+      "status": "succeeded",
+      "method_label": "银行卡 尾号5186",
+      "refunded_minor": 0,
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "version": 1,
+      "order_id": "ord_000001"
+    },
+    {
+      "id": "pay_000002",
+      "buyer_id": "buyer_demo",
+      "merchant_id": "merchant_a",
+      "amount_minor": 45900,
+      "currency": "CNY",
+      "status": "succeeded",
+      "method_label": "银行卡 尾号5186",
+      "refunded_minor": 0,
+      "created_at": "2026-11-02T10:30:00+08:00",
+      "version": 1,
+      "order_id": "ord_000002"
+    }
+  ],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

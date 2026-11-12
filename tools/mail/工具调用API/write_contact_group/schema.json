@@ -1,0 +1,55 @@
+{
+  "name": "write_contact_group",
+  "description": "创建或修改个人联系人组；members 为明确邮箱地址，不嵌套其他组。传 group_id 修改，不传则创建。个人组用于编写时展开地址。",
+  "inputSchema": {
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "members": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Members",
+        "type": "array"
+      },
+      "group_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Group Id"
+      },
+      "expected_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Version"
+      }
+    },
+    "required": [
+      "name",
+      "members"
+    ],
+    "title": "write_contact_groupArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

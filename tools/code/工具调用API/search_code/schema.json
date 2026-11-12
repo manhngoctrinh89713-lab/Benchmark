@@ -1,0 +1,48 @@
+{
+  "name": "search_code",
+  "description": "按文本精确搜索项目文件，返回路径、行号和命中行；不是语义引用查找。",
+  "inputSchema": {
+    "properties": {
+      "project_id": {
+        "title": "Project Id",
+        "type": "string"
+      },
+      "query": {
+        "title": "Query",
+        "type": "string"
+      },
+      "pattern": {
+        "default": "*",
+        "title": "Pattern",
+        "type": "string"
+      },
+      "case_sensitive": {
+        "default": true,
+        "title": "Case Sensitive",
+        "type": "boolean"
+      },
+      "offset": {
+        "default": 0,
+        "title": "Offset",
+        "type": "integer"
+      },
+      "limit": {
+        "default": 20,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "project_id",
+      "query"
+    ],
+    "title": "search_codeArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

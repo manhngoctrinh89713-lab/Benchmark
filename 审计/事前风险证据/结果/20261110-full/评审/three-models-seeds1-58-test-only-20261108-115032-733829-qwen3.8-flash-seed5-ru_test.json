@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "fingerprint": "ea518aefe56c7a485e8b8d5fd283b5df8d638e63acaa2673f7046737d9cb08be",
+  "verdict": {
+    "key_fact_results": [
+      {
+        "id": 1,
+        "supported": false,
+        "evidence": [],
+        "reason": "材料中从未读取过任何 `*_KV_v01.svg` 的内容。对 v01.svg 的唯一操作是与 终版.svg 的比较（message_index 11），只返回了大小和 SHA-256：source_size 760385、destination_size 272，两者不相等。文件大小约 760 KB 只能说明它可能是含较多内容的 SVG，无法证明文案保存在 `<text>` 元素中、可直接读取修改。因此缺少文件内容这一关键证据。"
+      },
+      {
+        "id": 2,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 12,
+            "tool_call_id": "call_767a78591a3c4bcca622a53b",
+            "quote": "<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"1080\\\" height=\\\"1440\\\" viewBox=\\\"0 0 1080 1440\\\">\\n  <g id=\\\"export\\\"><rect width=\\\"1080\\\" height=\\\"1440\\\" fill=\\\"#e8efe9\\\"/><image href=\\\"轻岚_KV_终版.jpg\\\" width=\\\"1080\\\" height=\\\"1440\\\"/></g>\\n</svg>"
+          }
+        ],
+        "reason": "对 轻岚_KV_终版.svg 的完整读取显示其仅有单个 `<g id=\"export\">`，内部用 `<image href=\"轻岚_KV_终版.jpg\">` 嵌入终版 JPG，全文 264 字符、无任何 `<text>` 元素，与要点完全一致（另两个 终版.svg 大小同为 272 字节，结构一致性可佐证）。"
+      },
+      {
+        "id": 3,
+        "supported": true,
+        "evidence": [
+          {
+            "source": "tool_result",
+            "message_index": 7,
+            "tool_call_id": "call_0302f37a40894b0eb96f2342",
+            "quote": "{\"path\": \"海报交付/01_轻岚保温杯/轻岚_KV_终版 (1).jpg\", \"name\": \"轻岚_KV_终版 (1).jpg\", \"type\": \"file\", \"size\": 494078, \"modified_ns\": 1793431200000000000, \"sha256\": \"bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a\"}, {\"path\": \"海报交付/01_轻岚保温杯/轻岚_KV_终版.jpg\", \"name\": \"轻岚_KV_终版.jpg\", \"type\": \"file\", \"size\": 494078, \"modified_ns\": 1793344800000000000, \"sha256\": \"bb854001ac467e283c907486e42fc5b86d6262630bd45d4c8e4191119217956a\"}"
+          },
+          {
+            "source": "tool_result",
+            "message_index": 9,
+            "tool_call_id": "call_58a0628322e34c02ada63c9e",
+            "quote": "{\"path\": \"海报交付/03_云栖台灯/云栖_KV_终版 (1).jpg\", \"name\": \"云栖_KV_终版 (1).jpg\", \"type\": \"file\", \"size\": 559362, \"modified_ns\": 1793431200000000000, \"sha256\": \"ec7432535c22833b96f636dc8ab60fed3dedf585db8930c6936dac749ae6a479\"}, {\"path\": \"海报交付/03_云栖台灯/云栖_KV_终版.jpg\", \"name\": \"云栖_KV_终版.jpg\", \"type\": \"file\", \"size\": 559362, \"modified_ns\": 1793344800000000000, \"sha256\": \"ec7432535c22833b96f636dc8ab60fed3dedf585db8930c6936dac749ae6a479\"}"
+          }
+        ],
+        "reason": "三组 `终版 (1).jpg` 与 `终版.jpg` 均大小相同且 SHA-256 完全一致（如轻岚两文件同为 bb8540…，听野同为 074df8…，云栖同为 ec7432…），说明字节完全相同；同一文件内容的 MD5 必然相同，该结论可由材料确定推出。材料直接给出的是 SHA-256 而非 MD5 数值。"
+      }
+    ],
+    "summary": "材料读取了终版.svg 的完整内容，可支持其仅含单个 <g> 并以 <image> 嵌入 JPG、无 <text>；三组终版 JPG 的大小与 SHA-256 逐一相同，可推出 MD5 相同。但 v01.svg 的内容从未被读取，仅知其约 760KB，无法证明文案保存在 <text> 中，故该要点不支持。"
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "platform": "linux",
+  "now": "2026-11-03T10:20:00+08:00",
+  "machine": {
+    "id": "edge-prod-03",
+    "hostname": "edge-prod-03",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 33285996544
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/var/log",
+    "/srv",
+    "/etc"
+  ],
+  "journal_path": "/var/log/journal.jsonl",
+  "services": {
+    "edge-gw-a.service": {
+      "id": "edge-gw-a.service",
+      "description": "edge-gw-a 缓存代理实例",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 200,
+      "config_format": "json",
+      "config_path": "/etc/edge-gw/a.json",
+      "process_name": "edge-gw-a",
+      "command": "/opt/edge-gw/bin/gateway --instance a",
+      "user": "gateway",
+      "memory_bytes": 67108864,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "cache_ttl_seconds",
+          "type": "integer",
+          "min": 1,
+          "max": 3600
+        },
+        {
+          "key": "worker_connections",
+          "type": "integer",
+          "min": 1,
+          "max": 65535,
+          "restart_required": true
+        }
+      ],
+      "applied_config_sha256": "528ad178a2ab3b9324c407d8b058b95812bdde8b567962ea1cfc530c4b307a98",
+      "applied_config": "{\"cache_ttl_seconds\": 300, \"upstream\": \"http://hot-data.internal:8080\", \"worker_connections\": 4096}"
+    },
+    "edge-gw-b.service": {
+      "id": "edge-gw-b.service",
+      "description": "edge-gw-b 缓存代理实例",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 201,
+      "config_format": "json",
+      "config_path": "/etc/edge-gw/b.json",
+      "process_name": "edge-gw-b",
+      "command": "/opt/edge-gw/bin/gateway --instance b",
+      "user": "gateway",
+      "memory_bytes": 67108864,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "cache_ttl_seconds",
+          "type": "integer",
+          "min": 1,
+          "max": 3600
+        },
+        {
+          "key": "worker_connections",
+          "type": "integer",
+          "min": 1,
+          "max": 65535,
+          "restart_required": true
+        }
+      ],
+      "applied_config_sha256": "528ad178a2ab3b9324c407d8b058b95812bdde8b567962ea1cfc530c4b307a98",
+      "applied_config": "{\"cache_ttl_seconds\": 300, \"upstream\": \"http://hot-data.internal:8080\", \"worker_connections\": 4096}"
+    },
+    "edge-gw-c.service": {
+      "id": "edge-gw-c.service",
+      "description": "edge-gw-c 缓存代理实例",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 202,
+      "config_format": "json",
+      "config_path": "/etc/edge-gw/c.json",
+      "process_name": "edge-gw-c",
+      "command": "/opt/edge-gw/bin/gateway --instance c",
+      "user": "gateway",
+      "memory_bytes": 67108864,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "cache_ttl_seconds",
+          "type": "integer",
+          "min": 1,
+          "max": 3600
+        },
+        {
+          "key": "worker_connections",
+          "type": "integer",
+          "min": 1,
+          "max": 65535,
+          "restart_required": true
+        }
+      ],
+      "applied_config_sha256": "528ad178a2ab3b9324c407d8b058b95812bdde8b567962ea1cfc530c4b307a98",
+      "applied_config": "{\"cache_ttl_seconds\": 300, \"upstream\": \"http://hot-data.internal:8080\", \"worker_connections\": 4096}"
+    }
+  },
+  "processes": {
+    "200": {
+      "pid": 200,
+      "name": "edge-gw",
+      "command": "/opt/edge-gw/bin/gateway --instance a",
+      "user": "gateway",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 67108864,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "edge-gw-a.service"
+    },
+    "201": {
+      "pid": 201,
+      "name": "edge-gw",
+      "command": "/opt/edge-gw/bin/gateway --instance b",
+      "user": "gateway",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 67108864,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "edge-gw-b.service"
+    },
+    "202": {
+      "pid": 202,
+      "name": "edge-gw",
+      "command": "/opt/edge-gw/bin/gateway --instance c",
+      "user": "gateway",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 67108864,
+      "protected": false,
+      "started_at": "2026-11-01T09:00:00+08:00",
+      "open_files": [],
+      "service_id": "edge-gw-c.service"
+    }
+  },
+  "next_pid": 400,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {},
+  "gateway_sessions": [
+    {
+      "id": "UP-1103-0912",
+      "service_id": "edge-gw-c.service",
+      "client": "client-warehouse-07",
+      "started_at": "2026-11-03T09:12:00+08:00",
+      "bytes_transferred": 2300000000,
+      "resumable": false,
+      "status": "uploading"
+    }
+  ],
+  "gateway_runtime_configs": {
+    "edge-gw-a.service": {
+      "cache_ttl_seconds": 300,
+      "upstream": "http://hot-data.internal:8080",
+      "worker_connections": 4096
+    },
+    "edge-gw-b.service": {
+      "cache_ttl_seconds": 300,
+      "upstream": "http://hot-data.internal:8080",
+      "worker_connections": 4096
+    },
+    "edge-gw-c.service": {
+      "cache_ttl_seconds": 300,
+      "upstream": "http://hot-data.internal:8080",
+      "worker_connections": 4096
+    }
+  }
+}

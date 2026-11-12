@@ -1,0 +1,35 @@
+{
+  "name": "list_indexes",
+  "description": "查询数据库索引、列顺序和唯一性。",
+  "inputSchema": {
+    "properties": {
+      "db_id": {
+        "title": "Db Id",
+        "type": "string"
+      },
+      "table": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Table"
+      }
+    },
+    "required": [
+      "db_id"
+    ],
+    "title": "list_indexesArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

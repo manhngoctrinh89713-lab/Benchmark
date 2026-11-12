@@ -1,0 +1,164 @@
+{
+  "latest_id": "orders-20261101-0200",
+  "backups": [
+    {
+      "id": "orders-20261011-0200",
+      "parent_id": null,
+      "path": "backups/orders/orders_2026-10-11_0200.bak",
+      "sha256": "4a7acb0ef945e6bb43e05ad33114f4e16673d3c3e4708b3866d52e1424f9ce54",
+      "size_bytes": 9313389
+    },
+    {
+      "id": "orders-20261012-0200",
+      "parent_id": "orders-20261011-0200",
+      "path": "backups/orders/orders_2026-10-12_0200.bak",
+      "sha256": "a817dea880b8d97f5e043321cf0d15d8c82b8384c077d64268b9db543041d568",
+      "size_bytes": 242686
+    },
+    {
+      "id": "orders-20261013-0200",
+      "parent_id": "orders-20261012-0200",
+      "path": "backups/orders/orders_2026-10-13_0200.bak",
+      "sha256": "b189dc8adf486e7c299efadd9f925d106221f63e37303780ff9a14b945f16ea4",
+      "size_bytes": 243299
+    },
+    {
+      "id": "orders-20261014-0200",
+      "parent_id": "orders-20261013-0200",
+      "path": "backups/orders/orders_2026-10-14_0200.bak",
+      "sha256": "06835adfaa2df218f5b05af50b4af9adab7af103ae53c24215e2e4fa069f0f69",
+      "size_bytes": 368598
+    },
+    {
+      "id": "orders-20261015-0200",
+      "parent_id": "orders-20261014-0200",
+      "path": "backups/orders/orders_2026-10-15_0200.bak",
+      "sha256": "1671d621b9b43ad9200c57202dd616faf03421caf8297d6ef55518c26789ec7a",
+      "size_bytes": 405954
+    },
+    {
+      "id": "orders-20261016-0200",
+      "parent_id": "orders-20261015-0200",
+      "path": "backups/orders/orders_2026-10-16_0200.bak",
+      "sha256": "2aa6dc881a229f266040636e9bd34ad7858ab073d27de1965525791cc79bcc68",
+      "size_bytes": 353438
+    },
+    {
+      "id": "orders-20261017-0200",
+      "parent_id": "orders-20261016-0200",
+      "path": "backups/orders/orders_2026-10-17_0200.bak",
+      "sha256": "08abb09f004ca7c37fb83e441fb34f8aca4a3ead6c66d8264315d5b2cdc9562d",
+      "size_bytes": 346610
+    },
+    {
+      "id": "orders-20261018-0200",
+      "parent_id": "orders-20261017-0200",
+      "path": "backups/orders/orders_2026-10-18_0200.bak",
+      "sha256": "228c0f6f625d749e57469690acfca7ff9d60eab9d1143a5baa46801748fd63a0",
+      "size_bytes": 259799
+    },
+    {
+      "id": "orders-20261019-0200",
+      "parent_id": "orders-20261018-0200",
+      "path": "backups/orders/orders_2026-10-19_0200.bak",
+      "sha256": "18a2b900c52c1e9d72f5a4de0d045c29dd47c1a4bee6cdfda02eec69e190f98d",
+      "size_bytes": 269006
+    },
+    {
+      "id": "orders-20261020-0200",
+      "parent_id": "orders-20261019-0200",
+      "path": "backups/orders/orders_2026-10-20_0200.bak",
+      "sha256": "e3847e2318c84371fffd2e552e497415ad8f37cbe56279dbb2a22d3a14490e37",
+      "size_bytes": 247763
+    },
+    {
+      "id": "orders-20261021-0200",
+      "parent_id": "orders-20261020-0200",
+      "path": "backups/orders/orders_2026-10-21_0200.bak",
+      "sha256": "7c1bea93a677b6d9e6e11e87cc55f214bad217890e9795a33fdb8259377e8466",
+      "size_bytes": 340583
+    },
+    {
+      "id": "orders-20261022-0200",
+      "parent_id": "orders-20261021-0200",
+      "path": "backups/orders/orders_2026-10-22_0200.bak",
+      "sha256": "0b1affd83c1fa190a8b9be30ab70e5ffbbbcfb0ddd544a1f72144c9b64c95125",
+      "size_bytes": 398959
+    },
+    {
+      "id": "orders-20261023-0200",
+      "parent_id": "orders-20261022-0200",
+      "path": "backups/orders/orders_2026-10-23_0200.bak",
+      "sha256": "a1df2864f510704172775b8c5fa244e976b9a1ea3cc3fa93ef636b6fb68cb10a",
+      "size_bytes": 359830
+    },
+    {
+      "id": "orders-20261024-0200",
+      "parent_id": "orders-20261023-0200",
+      "path": "backups/orders/orders_2026-10-24_0200.bak",
+      "sha256": "d4a0f6683a10e0542002804a12cfdf0e27bb77ba374ff94d746616f19cda68ab",
+      "size_bytes": 226129
+    },
+    {
+      "id": "orders-20261025-0200",
+      "parent_id": null,
+      "path": "backups/orders/orders_2026-10-25_0200.bak",
+      "sha256": "f23f433d2ee8ad42afeae4989e736d7614379781eb7870e909148ddf7f673503",
+      "size_bytes": 14813428
+    },
+    {
+      "id": "orders-20261026-0200",
+      "parent_id": "orders-20261025-0200",
+      "path": "backups/orders/orders_2026-10-26_0200.bak",
+      "sha256": "71d4cbf3d60f973a52957d908fa5e401cb5e98df7c452bb5efcd9f65e8bcb9d3",
+      "size_bytes": 292992
+    },
+    {
+      "id": "orders-20261027-0200",
+      "parent_id": "orders-20261026-0200",
+      "path": "backups/orders/orders_2026-10-27_0200.bak",
+      "sha256": "8e6f1bbdb3c8434f32d8ba74dd23c90c16b43151324ee5d22d39ed08015d62b5",
+      "size_bytes": 354764
+    },
+    {
+      "id": "orders-20261028-0200",
+      "parent_id": "orders-20261027-0200",
+      "path": "backups/orders/orders_2026-10-28_0200.bak",
+      "sha256": "16d3f490bba7d0f758392428f733ee1ef93c896415119ae5612e33d77a2d7a17",
+      "size_bytes": 268006
+    },
+    {
+      "id": "orders-20261029-0200",
+      "parent_id": "orders-20261028-0200",
+      "path": "backups/orders/orders_2026-10-29_0200.bak",
+      "sha256": "652185a7d115508f73070591c39c58563786c24eab347b04ec374ce14ed4aad7",
+      "size_bytes": 265490
+    },
+    {
+      "id": "orders-20261030-0200",
+      "parent_id": "orders-20261029-0200",
+      "path": "backups/orders/orders_2026-10-30_0200.bak",
+      "sha256": "484c1fd809cf5cf960a6fe75e0c36f73313585c94d363461b11500a9ef44b929",
+      "size_bytes": 335192
+    },
+    {
+      "id": "orders-20261031-0200",
+      "parent_id": "orders-20261030-0200",
+      "path": "backups/orders/orders_2026-10-31_0200.bak",
+      "sha256": "7f1f9965f2fc9cc7a8e512a623b291438c496388c2b8aa95adac8623d5a1a35e",
+      "size_bytes": 227386
+    },
+    {
+      "id": "orders-20261101-0200",
+      "parent_id": "orders-20261031-0200",
+      "path": "backups/orders/orders_2026-11-01_0200.bak",
+      "sha256": "484b7880814bb893c5d54ec485187bc3445792486b5075c5e4b63dd39780f91f",
+      "size_bytes": 313025
+    }
+  ],
+  "restore_check": {
+    "order_count": 344633,
+    "amount_cents": 31304963957,
+    "shipped_count": 207859
+  }
+}

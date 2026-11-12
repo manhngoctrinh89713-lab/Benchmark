@@ -1,0 +1,33 @@
+{
+  "name": "fulfill_order",
+  "description": "将订单尚未发出的全部实物商品创建为一个包裹。",
+  "inputSchema": {
+    "properties": {
+      "order_id": {
+        "title": "Order Id",
+        "type": "string"
+      },
+      "carrier": {
+        "title": "Carrier",
+        "type": "string"
+      },
+      "tracking_number": {
+        "title": "Tracking Number",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id",
+      "carrier",
+      "tracking_number"
+    ],
+    "title": "fulfill_orderArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

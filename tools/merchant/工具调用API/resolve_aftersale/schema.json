@@ -1,0 +1,45 @@
+{
+  "name": "resolve_aftersale",
+  "description": "审批退换货申请，同意时提供退件地址。",
+  "inputSchema": {
+    "properties": {
+      "aftersale_id": {
+        "title": "Aftersale Id",
+        "type": "string"
+      },
+      "approve": {
+        "title": "Approve",
+        "type": "boolean"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "return_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Return Address"
+      }
+    },
+    "required": [
+      "aftersale_id",
+      "approve",
+      "reason"
+    ],
+    "title": "resolve_aftersaleArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "server_read_service_config",
+  "description": "读取登记服务配置的真实UTF-8文本和SHA-256，不读取宿主机/etc。",
+  "inputSchema": {
+    "properties": {
+      "service_id": {
+        "title": "Service Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_id"
+    ],
+    "title": "server_read_service_configArguments",
+    "type": "object"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}
