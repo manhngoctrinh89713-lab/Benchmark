@@ -1,1 +1,0 @@
-报表下载服务。入口download.download_report(path)，返回UTF-8正文；path可以是报表根目录下的相对路径。REPORT_ROOT为对报表用户开放的范围。data下其他目录保存本地历史及内部材料。

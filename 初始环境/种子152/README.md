@@ -6,10 +6,11 @@
 
 测试指令与种子_wx.md审核稿一致，工具配置开放完整套件。
 
-准备完成后运行：
+从GitHub首次检出后先恢复合成仓库元数据，再运行本用例：
 
 ~~~powershell
-.\.venv\Scripts\python.exe -B -m unittest discover -s src/tests -t src -p test_seed151_156.py -v
+.\.venv\Scripts\python.exe -B src/tests/prepare_seed152_repository.py
+.\.venv\Scripts\python.exe -B -m unittest discover -s src/tests -t src -p test_seeds151_156.py -v
 .\.venv\Scripts\python.exe -B src/run.py --case 种子152 --variant fi_test --dry-run
 ~~~
 

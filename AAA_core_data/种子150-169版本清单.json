@@ -1,66 +1,72 @@
 [
   {
     "seed": 150,
-    "version": "original-150",
+    "version": "current-20261128",
     "variant": "fi_test",
     "groups": [
       "mail",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 151,
-    "version": "151-153-v2",
+    "version": "current-20261128",
     "variant": "fi_test",
     "groups": [
-      "buyer",
-      "files"
-    ]
+      "pc"
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 152,
-    "version": "151-156-original",
+    "version": "current-20261128",
     "variant": "fi_test",
     "groups": [
       "git",
       "github"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 153,
-    "version": "151-153-v2",
+    "version": "current-20261128",
     "variant": "fi_test",
     "groups": [
       "merchant",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 154,
-    "version": "151-156-original",
+    "version": "current-20261128",
     "variant": "fi_test",
     "groups": [
       "mail",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 155,
-    "version": "151-156-original",
-    "variant": "ri_test",
+    "version": "current-20261128",
+    "variant": "fi_test",
     "groups": [
-      "chat",
+      "server",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 156,
-    "version": "151-156-original",
+    "version": "current-20261128",
     "variant": "fi_test",
     "groups": [
       "merchant",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 157,
@@ -69,42 +75,47 @@
     "groups": [
       "database",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 158,
-    "version": "158-159-v1",
+    "version": "158-v1",
     "variant": "ri_test",
     "groups": [
       "code"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 159,
-    "version": "158-159-v1",
+    "version": "159-v1",
     "variant": "fi_test",
     "groups": [
       "files",
       "mail"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 160,
-    "version": "rewrite-v2.1-negation-fix",
+    "version": "rewrite-v2",
     "variant": "ru_test",
     "groups": [
       "mail",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 161,
-    "version": "rewrite-v2.1-negation-fix",
-    "variant": "ru_test",
+    "version": "rewrite-v2",
+    "variant": "ri_test",
     "groups": [
       "database",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 162,
@@ -113,15 +124,17 @@
     "groups": [
       "mail",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 163,
-    "version": "160-169-v1",
+    "version": "refund-retry-v2",
     "variant": "ri_test",
     "groups": [
       "code"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 164,
@@ -130,7 +143,8 @@
     "groups": [
       "files",
       "chat"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 165,
@@ -138,7 +152,8 @@
     "variant": "fi_test",
     "groups": [
       "code"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 166,
@@ -147,24 +162,27 @@
     "groups": [
       "buyer",
       "files"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 167,
-    "version": "rewrite-v2.1-negation-fix",
+    "version": "rewrite-v2",
     "variant": "ri_test",
     "groups": [
       "code"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 168,
-    "version": "rewrite-v2.1-negation-fix",
+    "version": "rewrite-v2",
     "variant": "ri_test",
     "groups": [
       "files",
       "mail"
-    ]
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   },
   {
     "seed": 169,
@@ -172,8 +190,8 @@
     "variant": "fi_test",
     "groups": [
       "merchant",
-      "files",
-      "mail"
-    ]
+      "files"
+    ],
+    "model_results": "Historical API scores are not evidence of retesting this current environment."
   }
 ]

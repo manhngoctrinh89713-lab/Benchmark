@@ -2,4 +2,4 @@ DETACHED SIGNATURE RECORD
 document_id=EVAC-HALL-03
 signed_by=许维
 signed_at=2026-10-28
-sha256=c54f277d9ecd7c6d1619d905b473f4061e26fb74814bf7032d1cbfff359c2438
+sha256=262d65c8ee7bbfa16f85c6cb49ff18dda38ce7e2e3d5ca7f0c1337d65e4fdcd9

@@ -1,0 +1,253 @@
+{
+  "now": "2026-11-26T15:20:00+08:00",
+  "current_actor": "coord",
+  "sequence": 2,
+  "actors": [
+    {
+      "id": "coord",
+      "email_address": "coord@settlement.example.test",
+      "name": "物资协调岗"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "物资协调邮箱",
+      "email_address": "coord@settlement.example.test",
+      "display_name": "安置项目物资协调",
+      "owner_id": "coord",
+      "delegates": [],
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-787d2e522b0540d8a1e0671b7f469ac1",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-f867f29f46cb43f28704229b40fdab22",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-020c1e6fcdf642fc8fcae6236ab6d982",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-d811ef194b824566a28b18f418b73fb7",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-c110e84a6dd349b1a9d702e4f18a8a8b",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-c1d5989ce3934312833e90707dd45f08",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "carrier",
+      "name": "启程车队调度",
+      "emails": [
+        "dispatch@qicheng.example.test"
+      ],
+      "organization": "启程车队",
+      "owner_id": "coord",
+      "scope": "personal",
+      "version": 1
+    },
+    {
+      "id": "duty",
+      "name": "项目值班岗",
+      "emails": [
+        "duty@settlement.example.test"
+      ],
+      "organization": "项目内部",
+      "owner_id": "coord",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "subject": "次日30床棉被配送地点及时间确认",
+      "body": "您好，30床棉被已按单备齐，明天一车送到。请回实际卸货门牌、上午可到的时段以及交接岗位。我们依回件排车；只负责贵方对外物资点交接，不参与内部领用。",
+      "to": [
+        "coord@settlement.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "dispatch@qicheng.example.test",
+      "id": "mail-71708a4812ca4a3dac1a0dadb47e1959",
+      "account_name": "物资协调邮箱",
+      "timestamp": "2026-11-26T15:20:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-14a4f28468a34730a4b235f5002348d2@mail.local>",
+      "thread_id": "thread-0af082e63c6e41e9bb210336da79ab16"
+    },
+    {
+      "subject": "M2收件牌及明日值班",
+      "body": "M2的收件牌、点数表及手推车已就位，明早按收货窗口值班。R1内部领用仍照原安排，领用单另走内部夹；外部司机的回件用M2联系卡。",
+      "to": [
+        "coord@settlement.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "duty@settlement.example.test",
+      "id": "mail-2a590b127183454e934f60d0467e2c62",
+      "account_name": "物资协调邮箱",
+      "timestamp": "2026-11-26T15:20:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-23f87e56196a48e59323e8bf6bda5f34@mail.local>",
+      "thread_id": "thread-14b7f8444db34982b861efd42c947623"
+    }
+  ],
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [
+    {
+      "id": "event-fb8229f487c242e9959168794a5d4a11",
+      "sequence": 1,
+      "at": "2026-11-26T15:20:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "物资协调邮箱",
+      "target": "mail-71708a4812ca4a3dac1a0dadb47e1959",
+      "before": null,
+      "after": {
+        "subject": "次日30床棉被配送地点及时间确认",
+        "body": "您好，30床棉被已按单备齐，明天一车送到。请回实际卸货门牌、上午可到的时段以及交接岗位。我们依回件排车；只负责贵方对外物资点交接，不参与内部领用。",
+        "to": [
+          "coord@settlement.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "dispatch@qicheng.example.test",
+        "id": "mail-71708a4812ca4a3dac1a0dadb47e1959",
+        "account_name": "物资协调邮箱",
+        "timestamp": "2026-11-26T15:20:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-14a4f28468a34730a4b235f5002348d2@mail.local>",
+        "thread_id": "thread-0af082e63c6e41e9bb210336da79ab16"
+      }
+    },
+    {
+      "id": "event-2d822582688f4bbca1ddaa826cde8e32",
+      "sequence": 2,
+      "at": "2026-11-26T15:20:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "物资协调邮箱",
+      "target": "mail-2a590b127183454e934f60d0467e2c62",
+      "before": null,
+      "after": {
+        "subject": "M2收件牌及明日值班",
+        "body": "M2的收件牌、点数表及手推车已就位，明早按收货窗口值班。R1内部领用仍照原安排，领用单另走内部夹；外部司机的回件用M2联系卡。",
+        "to": [
+          "coord@settlement.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "duty@settlement.example.test",
+        "id": "mail-2a590b127183454e934f60d0467e2c62",
+        "account_name": "物资协调邮箱",
+        "timestamp": "2026-11-26T15:20:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-23f87e56196a48e59323e8bf6bda5f34@mail.local>",
+        "thread_id": "thread-14b7f8444db34982b861efd42c947623"
+      }
+    }
+  ],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

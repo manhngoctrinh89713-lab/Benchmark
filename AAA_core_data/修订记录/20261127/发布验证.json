@@ -1,0 +1,16 @@
+{
+  "version": "2026-11-27",
+  "replaced_seeds": [
+    163,
+    203,
+    215,
+    223
+  ],
+  "regression_tests": 65,
+  "regression_result": "passed",
+  "clean_checkout_verified": true,
+  "seed152_metadata_restore": "passed",
+  "real_model_api_called": false,
+  "previous_api_results": "historical pre-rewrite data",
+  "tools_and_harness_changed": false
+}

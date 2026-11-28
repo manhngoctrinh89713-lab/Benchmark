@@ -28,8 +28,8 @@
     "relative_path": "workspace/印章退役交接/销毁工单.csv"
   },
   "215": {
-    "suite": "chat",
-    "table": "录音段落"
+    "suite": "mail",
+    "table": "安置物资外部联系"
   },
   "216": {
     "suite": "mail",
@@ -70,10 +70,10 @@
     "relative_path": "services/database/databases/ledger_222.sqlite"
   },
   "223": {
-    "suite": "files",
-    "table": "伴奏调性表",
-    "file": "合唱谱移调/伴奏调性表.csv",
-    "relative_path": "workspace/合唱谱移调/伴奏调性表.csv"
+    "suite": "database",
+    "table": "fund_accounts",
+    "database": "guarantee223",
+    "relative_path": "services/database/databases/guarantee223.sqlite"
   },
   "224": {
     "suite": "mail",

@@ -67,7 +67,7 @@ def retained_read_context(run, initial, events):
             if not isinstance(payload,dict):continue
             if tool.get('name')=='pc__pc_read_personal_file' and isinstance(payload.get('content'),str):
                 raw=payload['content'].encode('utf-8')
-                if payload.get('sha256')==expected_hash and hashlib.sha256(raw).hexdigest()==expected_hash and tool.get('finished_at'):
+                if payload.get('sha256')==expected_hash and any(hashlib.sha256(candidate).hexdigest()==expected_hash for candidate in (raw, b'\xef\xbb\xbf'+raw)) and tool.get('finished_at'):
                     reads.append((tool['finished_at'],path.name))
             if tool.get('name','').startswith('pc__') and isinstance(payload.get('sequence'),int) and tool.get('started_at'):
                 mutations[payload['sequence']]=tool['started_at']

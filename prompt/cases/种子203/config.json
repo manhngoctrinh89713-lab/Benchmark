@@ -1,5 +1,6 @@
 {
   "groups": [
+    "database",
     "files"
   ],
   "evaluator": "seed203",
