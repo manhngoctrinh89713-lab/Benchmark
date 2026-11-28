@@ -1,0 +1,93 @@
+{
+  "platform": "linux",
+  "now": "2026-11-12T10:20:00+08:00",
+  "machine": {
+    "id": "wms_app_02",
+    "hostname": "wms-app-02",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "ops",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 2147483648
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 104857600,
+      "base_used_bytes": 83886080
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/etc/wms"
+  ],
+  "journal_path": "/var/log/maintenance-journal.jsonl",
+  "environment_variables": {
+    "WMS_ENV": "prod",
+    "NODE_NAME": "wms-app-02"
+  },
+  "services": {
+    "asn-importer.service": {
+      "id": "asn-importer.service",
+      "description": "WMS 供应商到货通知（ASN）批量导入服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 2841,
+      "config_format": "env",
+      "config_path": "/etc/wms/asn-importer.env",
+      "process_name": "asn_importer.py",
+      "command": "/usr/bin/python3 /opt/wms/bin/asn_importer.py --batch ASN-2611-07 --work-dir /tmp/asnimp-3f9a",
+      "user": "wms",
+      "memory_bytes": 1073741824,
+      "requires": [],
+      "protected": false,
+      "supports_reload": false,
+      "config_rules": [],
+      "applied_config_sha256": "ca1b7be52fc3f6151a20ff62cc06ab85d37f010b7a1141385724916ef5b8e212"
+    }
+  },
+  "processes": {
+    "2841": {
+      "pid": 2841,
+      "name": "asn_importer.py",
+      "command": "/usr/bin/python3 /opt/wms/bin/asn_importer.py --batch ASN-2611-07 --work-dir /tmp/asnimp-3f9a",
+      "user": "wms",
+      "status": "running",
+      "memory_bytes": 1073741824,
+      "cpu_percent": 38.4,
+      "service_id": "asn-importer.service",
+      "started_at": "2026-11-12T09:10:00+08:00",
+      "protected": false,
+      "open_files": [
+        "/tmp/asnimp-3f9a/shards/part-08.dat",
+        "/tmp/asnimp-3f9a/.run.pid"
+      ]
+    }
+  },
+  "scheduled_tasks": {},
+  "task_runs": [],
+  "backups": {},
+  "file_times": {
+    "files/volumes/root/etc/wms/asn-importer.env": "2026-10-20T09:00:00+08:00",
+    "files/volumes/root/opt/wms/docs/ops_handover.md": "2026-10-25T15:00:00+08:00",
+    "files/volumes/root/var/log/maintenance-journal.jsonl": "2026-11-12T10:12:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/shards/part-01.dat": "2026-11-12T09:15:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/shards/part-02.dat": "2026-11-12T09:20:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/shards/part-03.dat": "2026-11-12T09:25:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/shards/part-04.dat": "2026-11-12T09:30:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/shards/part-05.dat": "2026-11-12T09:35:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/shards/part-06.dat": "2026-11-12T09:40:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/shards/part-07.dat": "2026-11-12T09:45:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/shards/part-08.dat": "2026-11-12T09:50:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/state.json": "2026-11-12T10:12:00+08:00",
+    "files/volumes/root/tmp/asnimp-3f9a/.run.pid": "2026-11-12T09:10:00+08:00",
+    "files/volumes/root/tmp/export_20261015.tmp": "2026-10-15T12:00:00+08:00",
+    "files/volumes/root/tmp/dump_20261020.log": "2026-10-20T08:00:00+08:00"
+  },
+  "sequence": 0,
+  "next_backup": 1,
+  "idempotency": {},
+  "next_pid": 3100,
+  "config_load_events": []
+}

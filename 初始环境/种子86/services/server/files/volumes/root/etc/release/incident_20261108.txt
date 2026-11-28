@@ -1,0 +1,1 @@
+事件记录 INC-20261108：ops 仓库提交 #4821 误含 etc/release/deploy.env，其中 DEPLOY_TOKEN=dep_live_7f4b2c91e8 曾暴露。该服务令牌为独立长期令牌，需单独轮换并从 token_whitelist.json 移除。

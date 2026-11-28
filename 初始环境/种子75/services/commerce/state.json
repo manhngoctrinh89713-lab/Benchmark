@@ -1,0 +1,182 @@
+{
+  "now": "2026-11-13T10:00:00+08:00",
+  "sequence": 10,
+  "counters": {
+    "shipment": 1
+  },
+  "idempotency": {},
+  "current_buyer": "buyer_huayuan",
+  "current_merchant": "mch_b2b_supply",
+  "buyers": {
+    "buyer_huayuan": {
+      "id": "buyer_huayuan",
+      "name": "华远商贸采购部",
+      "email": "proc@huayuan.test",
+      "payment_methods": [],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": null
+    }
+  },
+  "merchants": {
+    "mch_b2b_supply": {
+      "id": "mch_b2b_supply",
+      "name": "禾洲工业耗材 B2B 直供",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "products": {
+    "PRD-BOX-IND": {
+      "id": "PRD-BOX-IND",
+      "merchant_id": "mch_b2b_supply",
+      "name": "工业防静电耗材整托（10箱/托）",
+      "description": "B2B 整托发运标准件（每托含10标准箱）",
+      "unit_amount_minor": 450000,
+      "currency": "CNY",
+      "stock": 250,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "industrial",
+      "policies": {}
+    }
+  },
+  "shipping_options": {
+    "FREIGHT-STD": {
+      "id": "FREIGHT-STD",
+      "merchant_id": "mch_b2b_supply",
+      "name": "德邦大件专线",
+      "carrier": "DEPPON",
+      "amount_minor": 0,
+      "currency": "CNY",
+      "estimated_days": 3,
+      "countries": [
+        "CN"
+      ],
+      "active": true,
+      "version": 1
+    },
+    "shipping_mch_b2b_supply": {
+      "id": "shipping_mch_b2b_supply",
+      "merchant_id": "mch_b2b_supply",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "orders": {
+    "SO-2611-08": {
+      "id": "SO-2611-08",
+      "buyer_id": "buyer_huayuan",
+      "merchant_id": "mch_b2b_supply",
+      "status": "paid",
+      "payment_status": "paid",
+      "fulfillment_status": "unfulfilled",
+      "currency": "CNY",
+      "subtotal_minor": 54000000,
+      "shipping_minor": 0,
+      "discount_minor": 0,
+      "tax_minor": 0,
+      "total_minor": 54000000,
+      "paid_minor": 54000000,
+      "refunded_minor": 0,
+      "stock_released": false,
+      "version": 1,
+      "shipping_address": {
+        "recipient": "华远商贸收货仓",
+        "phone": "13800112233",
+        "address_line_1": "苏州市工业园区物流大道88号3号库",
+        "admin_area_1": "江苏省",
+        "admin_area_2": "苏州市",
+        "postal_code": "215021",
+        "country_code": "CN"
+      },
+      "items": [
+        {
+          "line_id": "line_1",
+          "product_id": "PRD-BOX-IND",
+          "kind": "physical",
+          "name": "工业防静电耗材整托（10箱/托，合计1200箱）",
+          "product_name": "工业防静电耗材整托（10箱/托，合计1200箱）",
+          "quantity": 120,
+          "unit_amount_minor": 450000,
+          "shipped_quantity": 0,
+          "sku_id": "PRD-BOX-IND",
+          "fulfilled_quantity": 0,
+          "policies": {}
+        }
+      ],
+      "created_at": "2026-11-11T16:00:00+08:00",
+      "updated_at": "2026-11-12T18:00:00+08:00",
+      "reservation_expires_at": null,
+      "note": "",
+      "discount_allocations": []
+    }
+  },
+  "payments": {
+    "pay_261108": {
+      "id": "pay_261108",
+      "order_id": "SO-2611-08",
+      "buyer_id": "buyer_huayuan",
+      "merchant_id": "mch_b2b_supply",
+      "amount_minor": 54000000,
+      "refunded_minor": 0,
+      "currency": "CNY",
+      "status": "succeeded",
+      "risk_status": "open",
+      "risk_released": false,
+      "created_at": "2026-11-11T16:05:00+08:00",
+      "version": 1,
+      "alert_code": "CB_ALERT_261112"
+    }
+  },
+  "shipments": {},
+  "refunds": {},
+  "cancellation_requests": {},
+  "returns": {},
+  "subscriptions": {},
+  "reviews": {},
+  "carts": {},
+  "tickets": {},
+  "coupons": {},
+  "audit_log": [],
+  "skus": {
+    "PRD-BOX-IND": {
+      "id": "PRD-BOX-IND",
+      "product_id": "PRD-BOX-IND",
+      "merchant_id": "mch_b2b_supply",
+      "options": {},
+      "unit_amount_minor": 450000,
+      "stock": 250,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "refund_requests": {},
+  "plans": {},
+  "invoices": {},
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "discounts": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

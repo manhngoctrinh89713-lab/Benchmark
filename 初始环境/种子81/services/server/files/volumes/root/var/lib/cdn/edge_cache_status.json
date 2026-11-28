@@ -1,0 +1,12 @@
+{
+  "direct_url": "https://cdn.hezhou.test/public/供应商成本明细_2026Q4.pdf",
+  "download_page_url": "https://portal.hezhou.test/downloads/cost-2026q4",
+  "download_page_http_status": 404,
+  "origin_object_exists": false,
+  "cdn_edge_cache_status": "HIT",
+  "cdn_direct_url_http_status": 200,
+  "cache_control": "public, max-age=86400",
+  "cached_bytes": 1482910,
+  "expires_at": "2026-11-13T17:50:00+08:00",
+  "purged": false
+}

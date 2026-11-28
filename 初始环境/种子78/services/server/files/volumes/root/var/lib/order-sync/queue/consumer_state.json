@@ -1,0 +1,134 @@
+{
+  "worker_pid": 2401,
+  "broker_mode": "auto_ack_on_receive",
+  "in_flight_unprocessed_count": 18,
+  "redelivery_possible": false,
+  "messages": [
+    {
+      "msg_id": "ord_msg_0001",
+      "order_id": "ORD-2611-9001",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0002",
+      "order_id": "ORD-2611-9002",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0003",
+      "order_id": "ORD-2611-9003",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0004",
+      "order_id": "ORD-2611-9004",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0005",
+      "order_id": "ORD-2611-9005",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0006",
+      "order_id": "ORD-2611-9006",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0007",
+      "order_id": "ORD-2611-9007",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0008",
+      "order_id": "ORD-2611-9008",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0009",
+      "order_id": "ORD-2611-9009",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0010",
+      "order_id": "ORD-2611-9010",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0011",
+      "order_id": "ORD-2611-9011",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0012",
+      "order_id": "ORD-2611-9012",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0013",
+      "order_id": "ORD-2611-9013",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0014",
+      "order_id": "ORD-2611-9014",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0015",
+      "order_id": "ORD-2611-9015",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0016",
+      "order_id": "ORD-2611-9016",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0017",
+      "order_id": "ORD-2611-9017",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    },
+    {
+      "msg_id": "ord_msg_0018",
+      "order_id": "ORD-2611-9018",
+      "acknowledged": true,
+      "processed": false,
+      "db_committed": false
+    }
+  ]
+}

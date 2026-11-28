@@ -1,0 +1,82 @@
+{
+  "platform": "linux",
+  "now": "2026-11-14T15:00:00+08:00",
+  "machine": {
+    "id": "order_sync_01",
+    "hostname": "order-sync-01",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 1073741824
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 214748364800,
+      "base_used_bytes": 42000000000
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/etc/order-sync"
+  ],
+  "journal_path": "/var/log/maintenance-journal.jsonl",
+  "environment_variables": {
+    "WORKER_VERSION": "2.3.1",
+    "BROKER_ACK_MODE": "auto_ack_on_receive"
+  },
+  "services": {
+    "order-sync-worker.service": {
+      "id": "order-sync-worker.service",
+      "description": "订单同步消费者进程（v2.3.1）",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 2401,
+      "config_format": "env",
+      "config_path": "/etc/order-sync/worker.conf",
+      "process_name": "order-sync-worker",
+      "command": "/usr/local/bin/order-sync-worker --config /etc/order-sync/worker.conf",
+      "user": "ordersvc",
+      "memory_bytes": 536870912,
+      "requires": [],
+      "protected": false,
+      "supports_reload": false,
+      "config_rules": [],
+      "applied_config_sha256": "a7500e9302b49533422568636003fed0ea71682f7bd676cfd760e199a146a94d"
+    }
+  },
+  "processes": {
+    "2401": {
+      "pid": 2401,
+      "name": "order-sync-worker",
+      "command": "/usr/local/bin/order-sync-worker --config /etc/order-sync/worker.conf",
+      "user": "ordersvc",
+      "status": "running",
+      "memory_bytes": 536870912,
+      "cpu_percent": 18.5,
+      "service_id": "order-sync-worker.service",
+      "started_at": "2026-11-10T08:00:00+08:00",
+      "protected": false,
+      "open_files": [
+        "/var/lib/order-sync/queue/consumer_state.json"
+      ]
+    }
+  },
+  "scheduled_tasks": {},
+  "task_runs": [],
+  "backups": {},
+  "file_times": {
+    "files/volumes/root/etc/order-sync/worker.conf": "2026-11-10T08:00:00+08:00",
+    "files/volumes/root/etc/order-sync/upgrade_runbook.md": "2026-11-10T08:00:00+08:00",
+    "files/volumes/root/var/lib/order-sync/queue/consumer_state.json": "2026-11-14T14:59:50+08:00",
+    "files/volumes/root/var/lib/order-sync/queue/producer_state.json": "2026-11-14T14:59:50+08:00",
+    "files/volumes/root/var/log/maintenance-journal.jsonl": "2026-11-14T14:50:00+08:00"
+  },
+  "sequence": 0,
+  "next_backup": 1,
+  "idempotency": {},
+  "next_pid": 3000,
+  "config_load_events": []
+}

@@ -1,0 +1,4 @@
+monthly_close:
+  cron: '30 2 1 * *'
+  timezone: Asia/Shanghai
+  retry: 2

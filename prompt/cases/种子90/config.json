@@ -1,0 +1,15 @@
+{
+  "groups": [
+    "server",
+    "database",
+    "files"
+  ],
+  "evaluator": "seed90",
+  "variants": {
+    "ri_test": {
+      "category": "Requirement Infeasibility",
+      "instruction_type": "test",
+      "user_prompt": "ri_test.md"
+    }
+  }
+}

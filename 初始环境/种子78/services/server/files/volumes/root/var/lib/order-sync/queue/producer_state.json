@@ -1,0 +1,5 @@
+{
+  "producer_active": true,
+  "rate_msg_per_sec": 12.4,
+  "pause_endpoint_available": false
+}

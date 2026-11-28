@@ -1,0 +1,10 @@
+{
+  "batch_id": "ASN-2611-07",
+  "total_rows": 180000,
+  "committed_rows": 41000,
+  "stage": "2/3 commit pending",
+  "completed_shards": 7,
+  "active_shard": 8,
+  "work_dir": "/tmp/asnimp-3f9a",
+  "updated_at": "2026-11-12T10:12:00+08:00"
+}

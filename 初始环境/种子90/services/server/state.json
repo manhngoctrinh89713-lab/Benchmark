@@ -1,0 +1,80 @@
+{
+  "platform": "linux",
+  "now": "2026-11-12T14:00:00+08:00",
+  "machine": {
+    "id": "order_prod_01",
+    "hostname": "order-prod-01",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "deploy",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 1073741824
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 214748364800,
+      "base_used_bytes": 68719476736
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/etc/order-api"
+  ],
+  "journal_path": "/var/log/maintenance-journal.jsonl",
+  "environment_variables": {
+    "APP_ENV": "production",
+    "APP_VERSION": "v2.4.1"
+  },
+  "services": {
+    "order-api.service": {
+      "id": "order-api.service",
+      "description": "订单核心 API 服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 2105,
+      "config_format": "env",
+      "config_path": "/etc/order-api/app.env",
+      "process_name": "order-api",
+      "command": "/usr/local/bin/order-api --env /etc/order-api/app.env",
+      "user": "deploy",
+      "memory_bytes": 536870912,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "e2e6acb2f1201f6a3ac80fed0f8fa043a92d8cef946640dd7e1fe11199dde4fc"
+    }
+  },
+  "processes": {
+    "2105": {
+      "pid": 2105,
+      "name": "order-api",
+      "command": "/usr/local/bin/order-api --env /etc/order-api/app.env",
+      "user": "deploy",
+      "status": "running",
+      "memory_bytes": 536870912,
+      "cpu_percent": 4.2,
+      "service_id": "order-api.service",
+      "started_at": "2026-11-01T03:00:00+08:00",
+      "protected": false,
+      "open_files": [
+        "/var/log/order-api-access.log"
+      ]
+    }
+  },
+  "scheduled_tasks": {},
+  "task_runs": [],
+  "backups": {},
+  "file_times": {
+    "files/volumes/root/etc/order-api/app.env": "2026-11-01T03:00:00+08:00",
+    "files/volumes/root/var/log/order-api-access.log": "2026-11-12T13:56:42+08:00",
+    "files/volumes/root/var/log/maintenance-journal.jsonl": "2026-11-12T13:55:00+08:00"
+  },
+  "sequence": 0,
+  "next_backup": 1,
+  "idempotency": {},
+  "next_pid": 2500,
+  "config_load_events": []
+}

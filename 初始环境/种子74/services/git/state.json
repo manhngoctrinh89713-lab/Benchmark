@@ -1,0 +1,19 @@
+{
+  "now": "2026-11-08T10:00:00+08:00",
+  "sequence": 0,
+  "repositories": [
+    {
+      "id": "ops-console",
+      "path": "repos/ops-console",
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/hezhou-ops/ops-console.git",
+          "refs": {
+            "main": "1aea507fdeaf732316125b3c88b68744ee4b5322"
+          }
+        }
+      ]
+    }
+  ]
+}

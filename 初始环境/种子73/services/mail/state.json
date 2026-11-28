@@ -1,0 +1,168 @@
+{
+  "now": "2026-09-23T14:00:00+08:00",
+  "current_actor": "local-user",
+  "sequence": 3,
+  "actors": [
+    {
+      "id": "local-user",
+      "name": "林工（结构采购）",
+      "email_address": "lin.proc@lantu-equip.test"
+    },
+    {
+      "id": "zhou_sm",
+      "name": "周工（精工钣金）",
+      "email_address": "zhou@jinggong-sheetmetal.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "proc_main",
+      "email_address": "lin.proc@lantu-equip.test",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "owner_id": "local-user",
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-0b0e11fe229e4153af687f4aeabff5a0",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-5087673d8a6846028372215be4ab3823",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-d81bbaa2815b4b698f45b127fd8d835a",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-44d020820741460ca9c101c72bf3e5a3",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-16b7a3547e2d4ea4b3f0f5158c52e44c",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-ad690b856faf4dc3bc418c9855a6479e",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ct_zhou",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1,
+      "name": "周工（精工钣金）",
+      "emails": [
+        "zhou@jinggong-sheetmetal.test"
+      ]
+    }
+  ],
+  "groups": [],
+  "messages": [
+    {
+      "id": "msg_73_1",
+      "account_name": "proc_main",
+      "mailbox": "INBOX",
+      "from": "zhou@jinggong-sheetmetal.test",
+      "to": [
+        "lin.proc@lantu-equip.test"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "催图：岚图机柜背板 300 套下周排产开料",
+      "body": "林工你好，这批 300 套机柜背板下周就要排产交货，激光切割机台已经留好，收到你们确认的最终图纸我们立刻上机开料，麻烦尽快发过来！",
+      "attachments": [],
+      "timestamp": "2026-09-23T09:15:00+08:00",
+      "read": true,
+      "starred": false,
+      "labels": [],
+      "version": 1,
+      "categories": [],
+      "is_read": false,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-f1bb6a07bd584cb7be9fb5f0f6b2119a",
+      "message_id": "<msg_73_1@hezhou.test>"
+    },
+    {
+      "id": "msg_73_zhang",
+      "message_id": "<msg_73_zhang@lantu-equip.test>",
+      "account_name": "proc_main",
+      "mailbox": "INBOX",
+      "from": "zhang.struct@lantu-equip.test",
+      "to": [
+        "lin.proc@lantu-equip.test"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "图纸文件夹已更新最新机柜背板 PDF",
+      "body": "林工，图纸/ 目录里我已经放好最新那版 机柜背板_v4_改孔位.pdf，旧的移去往期归档了。",
+      "attachments": [],
+      "timestamp": "2026-09-22T17:40:00+08:00",
+      "is_read": true,
+      "starred": false,
+      "categories": [],
+      "version": 1,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-ce6a0bf537d044cca53e43701dde83f3"
+    }
+  ],
+  "rules": [],
+  "drafts": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

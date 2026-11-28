@@ -1,0 +1,193 @@
+{
+  "now": "2026-11-12T10:00:00+08:00",
+  "current_actor": "local-user",
+  "sequence": 3,
+  "actors": [
+    {
+      "id": "local-user",
+      "name": "陈明（项目管理）",
+      "email_address": "ming.chen@hezhou.com"
+    },
+    {
+      "id": "london_lead",
+      "name": "Alice (London)",
+      "email_address": "alice@london-office.test"
+    },
+    {
+      "id": "beijing_lead",
+      "name": "李明（北京）",
+      "email_address": "li@beijing-office.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "pm_main",
+      "email_address": "ming.chen@hezhou.com",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "owner_id": "local-user",
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-d87fd0306fb948bbbd63118becce6ec4",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-f256f8aa61094e8fa780733fb6a5f5b1",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-a03cb66c5f4d4d5cbac13d31cc028e63",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-8ba520c2b5524fe690bd9679760c531b",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-1959beb410174379baac97d191fd0c44",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-d9d699a301a04cdd9af46c1d72c7c2eb",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ct_alice",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1,
+      "name": "Alice (London)",
+      "emails": [
+        "alice@london-office.test"
+      ]
+    },
+    {
+      "id": "ct_li",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1,
+      "name": "李明（北京）",
+      "emails": [
+        "li@beijing-office.test"
+      ]
+    }
+  ],
+  "groups": [],
+  "messages": [
+    {
+      "id": "msg_80_last_q3",
+      "account_name": "pm_main",
+      "mailbox": "Sent",
+      "from": "ming.chen@hezhou.com",
+      "to": [
+        "alice@london-office.test",
+        "li@beijing-office.test"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "会议邀请：三季度跨区评审会（2026-07-06 伦敦 09:00 / 北京 16:00）",
+      "body": "各位好，\n\n三季度评审会定于下周一 2026-07-06 召开：\n- 伦敦时间：09:00–10:30\n- 北京时间：16:00–17:30\n\n日程附件见 评审会邀请_20260706.ics，请准时参会。",
+      "attachments": [
+        {
+          "id": "att_80_ics",
+          "name": "评审会邀请_20260706.ics",
+          "content_type": "text/calendar",
+          "size": 294,
+          "sha256": "c1382ee30f176d194ba91fc088bf1a49287d1d8567287617dac4a1b90e4ea61d",
+          "content_base64": "QkVHSU46VkNBTEVOREFSClZFUlNJT046Mi4wClBST0RJRDotLy9IZXpob3UvL01lZXRpbmcvL0VOCkJFR0lOOlZFVkVOVApVSUQ6cTMtcmV2aWV3LTIwMjYwNzA2QGhlemhvdS5jb20KRFRTVEFNUDoyMDI2MDcwMlQwNjAwMDBaCkRUU1RBUlQ6MjAyNjA3MDZUMDgwMDAwWgpEVEVORDoyMDI2MDcwNlQwOTMwMDBaClNVTU1BUlk65LiJ5a2j5bqm6Leo5Yy66K+E5a6h5LyaCkRFU0NSSVBUSU9OOuS8puaVpuS4juWMl+S6rOi3qOWMuuS4ieWto+W6pumhueebruivhOWuoeS8mgpFTkQ6VkVWRU5UCkVORDpWQ0FMRU5EQVIK"
+        }
+      ],
+      "timestamp": "2026-07-02T14:00:00+08:00",
+      "read": true,
+      "starred": false,
+      "labels": [],
+      "version": 1,
+      "categories": [],
+      "is_read": false,
+      "importance": "normal",
+      "sender_copy": true,
+      "thread_id": "thread-09582c5847ac4b5a8d5ae229a41e8f2b",
+      "message_id": "<msg_80_last_q3@hezhou.test>"
+    },
+    {
+      "id": "msg_80_pmo_today",
+      "message_id": "<msg_80_pmo_today@hezhou.com>",
+      "account_name": "pm_main",
+      "mailbox": "INBOX",
+      "from": "pmo.assistant@hezhou.com",
+      "to": [
+        "ming.chen@hezhou.com"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "四季度跨区评审会日程文件已放好（2026-11-16）",
+      "body": "明哥，下周一（2026-11-16）四季度评审会的 .ics 附件我按三季度那份模板改好日期放到 `会议/评审会邀请_20261116.ics` 了，你这边直接按上次那封邮件的格式发给 Alice 和李明就行。",
+      "attachments": [],
+      "timestamp": "2026-11-12T09:40:00+08:00",
+      "is_read": true,
+      "starred": false,
+      "categories": [],
+      "version": 1,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-f824dc62b2f249c79905a9da3f9e3deb"
+    }
+  ],
+  "rules": [],
+  "drafts": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

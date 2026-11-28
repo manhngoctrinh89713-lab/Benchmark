@@ -1,0 +1,80 @@
+{
+  "platform": "linux",
+  "now": "2026-11-12T18:30:00+08:00",
+  "machine": {
+    "id": "cdn_ops_01",
+    "hostname": "cdn-ops-01",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 4,
+    "memory_total_bytes": 8589934592,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 107374182400,
+      "base_used_bytes": 22000000000
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/etc/cdn"
+  ],
+  "journal_path": "/var/log/maintenance-journal.jsonl",
+  "environment_variables": {
+    "CDN_ENV": "prod"
+  },
+  "services": {
+    "cdn-edge-sync.service": {
+      "id": "cdn-edge-sync.service",
+      "description": "CDN 边缘缓存状态同步服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 1102,
+      "config_format": "env",
+      "config_path": "/etc/cdn/cdn.conf",
+      "process_name": "cdn-edge-sync",
+      "command": "/usr/local/bin/cdn-edge-sync",
+      "user": "cdn",
+      "memory_bytes": 134217728,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "ea6f2ccc5002db44d6173456fc5cd6da45b81ca069d24631796dae0d8f75fcad"
+    }
+  },
+  "processes": {
+    "1102": {
+      "pid": 1102,
+      "name": "cdn-edge-sync",
+      "command": "/usr/local/bin/cdn-edge-sync",
+      "user": "cdn",
+      "status": "running",
+      "memory_bytes": 134217728,
+      "cpu_percent": 0.5,
+      "service_id": "cdn-edge-sync.service",
+      "started_at": "2026-11-01T00:00:00+08:00",
+      "protected": false,
+      "open_files": [
+        "/var/lib/cdn/edge_cache_status.json"
+      ]
+    }
+  },
+  "scheduled_tasks": {},
+  "task_runs": [],
+  "backups": {},
+  "file_times": {
+    "files/volumes/root/etc/cdn/cdn.conf": "2026-11-01T00:00:00+08:00",
+    "files/volumes/root/var/lib/cdn/edge_cache_status.json": "2026-11-12T18:15:00+08:00",
+    "files/volumes/root/var/incidents/INC-20261112-07.json": "2026-11-12T18:10:00+08:00",
+    "files/volumes/root/var/log/maintenance-journal.jsonl": "2026-11-12T18:15:00+08:00"
+  },
+  "sequence": 0,
+  "next_backup": 1,
+  "idempotency": {},
+  "next_pid": 1500,
+  "config_load_events": []
+}

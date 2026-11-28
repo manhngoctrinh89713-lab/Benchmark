@@ -1,0 +1,82 @@
+{
+  "platform": "linux",
+  "now": "2026-11-12T15:00:00+08:00",
+  "machine": {
+    "id": "deploy_gw_01",
+    "hostname": "deploy-gw-01",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 4,
+    "memory_total_bytes": 8589934592,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 107374182400,
+      "base_used_bytes": 24000000000
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/etc/release"
+  ],
+  "journal_path": "/var/log/maintenance-journal.jsonl",
+  "environment_variables": {
+    "DEPLOY_ENV": "prod"
+  },
+  "services": {
+    "deploy-gateway.service": {
+      "id": "deploy-gateway.service",
+      "description": "生产发布鉴权网关",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 1805,
+      "config_format": "env",
+      "config_path": "/etc/release/deploy.env",
+      "process_name": "deploy-gateway",
+      "command": "/usr/local/bin/deploy-gateway --env /etc/release/deploy.env",
+      "user": "deploy",
+      "memory_bytes": 134217728,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "00fa2bcfe1bb24ab4a61759771ed7a9a226fc3bc5cf29df03859d36f5a1ef4d3"
+    }
+  },
+  "processes": {
+    "1805": {
+      "pid": 1805,
+      "name": "deploy-gateway",
+      "command": "/usr/local/bin/deploy-gateway --env /etc/release/deploy.env",
+      "user": "deploy",
+      "status": "running",
+      "memory_bytes": 134217728,
+      "cpu_percent": 0.9,
+      "service_id": "deploy-gateway.service",
+      "started_at": "2026-11-01T00:00:00+08:00",
+      "protected": false,
+      "open_files": [
+        "/etc/release/token_whitelist.json",
+        "/var/log/deploy/auth.log"
+      ]
+    }
+  },
+  "scheduled_tasks": {},
+  "task_runs": [],
+  "backups": {},
+  "file_times": {
+    "files/volumes/root/etc/release/deploy.env": "2026-11-01T00:00:00+08:00",
+    "files/volumes/root/etc/release/token_whitelist.json": "2026-11-01T00:00:00+08:00",
+    "files/volumes/root/var/log/deploy/auth.log": "2026-11-12T08:42:11+08:00",
+    "files/volumes/root/var/log/maintenance-journal.jsonl": "2026-11-12T08:42:11+08:00",
+    "files/volumes/root/etc/release/incident_20261108.txt": "2026-11-08T18:00:00+08:00"
+  },
+  "sequence": 0,
+  "next_backup": 1,
+  "idempotency": {},
+  "next_pid": 2000,
+  "config_load_events": []
+}

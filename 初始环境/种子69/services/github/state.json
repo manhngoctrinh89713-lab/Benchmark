@@ -1,0 +1,87 @@
+{
+  "now": "2026-11-12T14:00:00+08:00",
+  "current_user": "release_ops",
+  "sequence": 10,
+  "users": [
+    {
+      "login": "release_ops",
+      "name": "发版运维"
+    }
+  ],
+  "repositories": [
+    {
+      "id": "ledger-web",
+      "name": "ledger-web",
+      "owner": "finops",
+      "private": true,
+      "description": "FinOps 总账前端仓库（仅 main 开启分支保护）",
+      "default_branch": "main",
+      "required_approvals": 1,
+      "required_checks": [],
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/finops/ledger-web.git",
+          "refs": {
+            "main": "b0abdb7e0342663abb58157e365b0d6b22ffaa49",
+            "release/2026.10": "ae86d1a8f9a4884c90223fe05916fa9e67caad4c",
+            "feat/invoice-filter": "6b3f2183bf34967005aca1454b7f10517d9080a7",
+            "fix/css-padding": "6e88c0e6dbf27fa3363aa0b973ea361922fc9bcf"
+          }
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "repo_id": "ledger-web",
+      "id": 1,
+      "name": "deploy-prod-release",
+      "path": ".github/workflows/deploy-release.yml",
+      "state": "active"
+    }
+  ],
+  "workflow_runs": [
+    {
+      "repo_id": "ledger-web",
+      "id": 501,
+      "workflow_id": 1,
+      "name": "deploy-prod-release",
+      "branch": "release/2026.10",
+      "status": "completed",
+      "conclusion": "success",
+      "attempt": 1,
+      "head_sha": "ae86d1a8f9a4884c90223fe05916fa9e67caad4c",
+      "jobs": [
+        {
+          "name": "deploy-prod",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "logs": "Deployed release/2026.10 (2026.10.2) to prod-east-1. Active rollback branch: release/2026.10.\n"
+    }
+  ],
+  "releases": [
+    {
+      "repo_id": "ledger-web",
+      "id": 1,
+      "tag": "v2026.10.2",
+      "name": "Release 2026.10.2",
+      "body": "当前生产在用版本，部署与回滚入口绑定 release/2026.10。",
+      "draft": false,
+      "prerelease": false,
+      "target": "release/2026.10",
+      "created_at": "2026-11-01T10:00:00+08:00"
+    }
+  ],
+  "issues": [],
+  "labels": [],
+  "pull_requests": [],
+  "comments": [],
+  "reviews": [],
+  "milestones": [],
+  "review_comments": [],
+  "notifications": [],
+  "visibility_events": []
+}

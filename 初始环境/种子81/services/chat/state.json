@@ -1,0 +1,91 @@
+{
+  "now": "2026-11-12T18:30:00+08:00",
+  "current_user_id": "u_sec_ops",
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "sequence": 5,
+  "contacts": [
+    {
+      "id": "u_sec_ops",
+      "name": "林运维",
+      "organization": "禾洲科技",
+      "remark": "安全运维",
+      "version": 1
+    },
+    {
+      "id": "u_client_rep",
+      "name": "周总监（客户方）",
+      "organization": "宏达制造",
+      "remark": "客户安全负责人",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "chat_client_sec",
+      "type": "group",
+      "name": "客户安全事件对接群",
+      "member_ids": [
+        "u_sec_ops",
+        "u_client_rep"
+      ],
+      "owner_id": "u_sec_ops",
+      "admin_ids": [
+        "u_sec_ops"
+      ],
+      "pinned_message_ids": [],
+      "user_settings": {},
+      "version": 1,
+      "dissolved": false,
+      "membership": [
+        {
+          "user_id": "u_sec_ops",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_client_rep",
+          "joined_at": null,
+          "left_at": null
+        }
+      ],
+      "invite_requires_approval": false,
+      "announcement": null,
+      "member_nicknames": {}
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_81_1",
+      "chat_id": "chat_client_sec",
+      "sender_id": "u_client_rep",
+      "text": "林工，关于事故单 INC-20261112-07（供应商成本明细_2026Q4.pdf 泄露），请确认外部是否已彻底无法通过旧链接下载？",
+      "timestamp": "2026-11-12T18:20:00+08:00",
+      "hidden_by": [],
+      "deleted": false,
+      "version": 1,
+      "read_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_sec_ops",
+        "u_client_rep"
+      ],
+      "sequence": 0,
+      "sender_name": "周总监（客户方）"
+    }
+  ],
+  "favorites": [],
+  "events": [],
+  "relations": [],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "delivery_events": [],
+  "member_events": []
+}

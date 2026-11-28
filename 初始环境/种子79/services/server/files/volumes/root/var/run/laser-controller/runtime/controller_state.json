@@ -1,0 +1,14 @@
+{
+  "workpiece_id": "PANEL-A-0921",
+  "job_file": "/srv/laser/jobs/panel-a.gcode",
+  "status": "paused_on_interlock",
+  "progress_percent": 61,
+  "current_line": 1220,
+  "total_lines": 2000,
+  "coords_in_memory_only": true,
+  "offset_mm": {
+    "x": 14.28,
+    "y": -6.54
+  },
+  "power_compensation": 1.08
+}

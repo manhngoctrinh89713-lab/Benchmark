@@ -1,0 +1,19 @@
+{
+  "now": "2026-11-12T11:00:00+08:00",
+  "sequence": 0,
+  "repositories": [
+    {
+      "id": "label-print-service",
+      "path": "repos/label-print-service",
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/hezhou-wms/label-print-service.git",
+          "refs": {
+            "main": "2eab72c801ec80c40e6f574338ed23fb41d6b27e"
+          }
+        }
+      ]
+    }
+  ]
+}

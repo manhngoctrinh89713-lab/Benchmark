@@ -1,0 +1,133 @@
+{
+  "now": "2026-11-10T16:00:00+08:00",
+  "sequence": 6,
+  "counters": {},
+  "idempotency": {},
+  "current_buyer": "buyer_demo",
+  "current_merchant": "mch_yunling",
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "测试买家",
+      "email": "b@example.test",
+      "payment_methods": [],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": null
+    }
+  },
+  "merchants": {
+    "mch_yunling": {
+      "id": "mch_yunling",
+      "name": "云岭山泉官方旗舰店",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "products": {
+    "PRD-WATER-550": {
+      "id": "PRD-WATER-550",
+      "merchant_id": "mch_yunling",
+      "name": "云岭山泉 550ml 饮用天然水（24瓶整箱）",
+      "description": "按生产批次独立管理 SKU；8 月批次下架备注：依据 2026-11-06《云岭山泉厂家召回函_20261106.pdf》停售。",
+      "unit_amount_minor": 3600,
+      "currency": "CNY",
+      "stock": 0,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "beverages",
+      "policies": {}
+    }
+  },
+  "skus": {
+    "SKU-WATER-0812": {
+      "id": "SKU-WATER-0812",
+      "product_id": "PRD-WATER-550",
+      "merchant_id": "mch_yunling",
+      "name": "2026-08-12 批次（24瓶/箱）",
+      "unit_amount_minor": 3600,
+      "currency": "CNY",
+      "stock": 0,
+      "active": false,
+      "default": false,
+      "version": 2,
+      "attributes": {
+        "batch": "20260812",
+        "off_shelf_note": "按 2026-11-06 厂家召回函下架"
+      }
+    },
+    "SKU-WATER-0905": {
+      "id": "SKU-WATER-0905",
+      "product_id": "PRD-WATER-550",
+      "merchant_id": "mch_yunling",
+      "name": "2026-09-05 批次（24瓶/箱）",
+      "unit_amount_minor": 3600,
+      "currency": "CNY",
+      "stock": 0,
+      "active": false,
+      "default": true,
+      "version": 1,
+      "attributes": {
+        "batch": "20260905"
+      }
+    },
+    "PRD-WATER-550": {
+      "id": "PRD-WATER-550",
+      "product_id": "PRD-WATER-550",
+      "merchant_id": "mch_yunling",
+      "options": {},
+      "unit_amount_minor": 3600,
+      "stock": 0,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "orders": {},
+  "payments": {},
+  "shipments": {},
+  "refunds": {},
+  "cancellation_requests": {},
+  "returns": {},
+  "subscriptions": {},
+  "reviews": {},
+  "carts": {},
+  "tickets": {},
+  "coupons": {},
+  "audit_log": [],
+  "refund_requests": {},
+  "plans": {},
+  "invoices": {},
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_mch_yunling": {
+      "id": "shipping_mch_yunling",
+      "merchant_id": "mch_yunling",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

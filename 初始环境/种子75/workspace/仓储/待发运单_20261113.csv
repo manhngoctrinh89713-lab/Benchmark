@@ -1,0 +1,2 @@
+order_id,customer,carrier,tracking_number,shipping_option_id,boxes,warehouse_status
+SO-2611-08,华远商贸,DEPPON,DP2026111300881,FREIGHT-STD,1200箱(120托),已拣货打单待系统创建发货单

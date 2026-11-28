@@ -1,0 +1,22 @@
+{
+  "now": "2026-11-12T14:00:00+08:00",
+  "sequence": 0,
+  "repositories": [
+    {
+      "id": "ledger-web",
+      "path": "repos/ledger-web",
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/finops/ledger-web.git",
+          "refs": {
+            "main": "b0abdb7e0342663abb58157e365b0d6b22ffaa49",
+            "release/2026.10": "ae86d1a8f9a4884c90223fe05916fa9e67caad4c",
+            "feat/invoice-filter": "6b3f2183bf34967005aca1454b7f10517d9080a7",
+            "fix/css-padding": "6e88c0e6dbf27fa3363aa0b973ea361922fc9bcf"
+          }
+        }
+      ]
+    }
+  ]
+}

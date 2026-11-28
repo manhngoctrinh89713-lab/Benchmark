@@ -1,0 +1,1 @@
+{"timestamp": "2026-11-14T14:50:00+08:00", "service_id": "order-sync-worker.service", "priority": 6, "message": "worker pid=2401 holding 18 acknowledged unprocessed messages; producer active"}

@@ -1,0 +1,2 @@
+{"timestamp": "2026-11-11T11:20:00+08:00", "service_id": "deploy-gateway.service", "priority": 6, "message": "Console login password updated for ops_admin"}
+{"timestamp": "2026-11-12T08:15:33+08:00", "service_id": "deploy-gateway.service", "priority": 6, "message": "Authenticated prod_deploy request with token dep_live_7f4b2c91e8 (200 OK)"}

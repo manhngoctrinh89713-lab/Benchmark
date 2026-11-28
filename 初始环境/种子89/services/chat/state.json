@@ -1,0 +1,120 @@
+{
+  "now": "2026-11-12T16:30:00+08:00",
+  "current_user_id": "u_sched",
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "sequence": 5,
+  "contacts": [
+    {
+      "id": "u_sched",
+      "name": "周排产",
+      "organization": "宏印印刷",
+      "remark": "生产计划员",
+      "version": 1
+    },
+    {
+      "id": "u_lead",
+      "name": "老赵（车间班长）",
+      "organization": "宏印印刷",
+      "remark": "胶印班长",
+      "version": 1
+    },
+    {
+      "id": "u_qa",
+      "name": "李质检",
+      "organization": "宏印印刷",
+      "remark": "印品品控",
+      "version": 1
+    },
+    {
+      "id": "u_night",
+      "name": "小孙（夜班机长）",
+      "organization": "宏印印刷",
+      "remark": "夜班领机",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "chat_workshop",
+      "type": "group",
+      "name": "胶印车间排产群",
+      "member_ids": [
+        "u_sched",
+        "u_lead",
+        "u_qa",
+        "u_night"
+      ],
+      "owner_id": "u_lead",
+      "admin_ids": [
+        "u_lead",
+        "u_sched"
+      ],
+      "pinned_message_ids": [],
+      "user_settings": {},
+      "version": 1,
+      "dissolved": false,
+      "membership": [
+        {
+          "user_id": "u_sched",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_lead",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_qa",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_night",
+          "joined_at": null,
+          "left_at": null
+        }
+      ],
+      "invite_requires_approval": false,
+      "announcement": null,
+      "member_nicknames": {}
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_89_1",
+      "chat_id": "chat_workshop",
+      "sender_id": "u_lead",
+      "text": "周工，明天 11 月 13 号的排产单定好了发群里一声，早班好提前领纸调墨。",
+      "timestamp": "2026-11-12T16:10:00+08:00",
+      "hidden_by": [],
+      "deleted": false,
+      "version": 1,
+      "read_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_sched",
+        "u_lead",
+        "u_qa",
+        "u_night"
+      ],
+      "sequence": 0,
+      "sender_name": "老赵（车间班长）"
+    }
+  ],
+  "favorites": [],
+  "events": [],
+  "relations": [],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "delivery_events": [],
+  "member_events": []
+}

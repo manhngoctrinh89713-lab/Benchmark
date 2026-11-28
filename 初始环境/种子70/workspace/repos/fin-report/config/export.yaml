@@ -1,0 +1,24 @@
+# Fin-Report production export configuration
+version: 2
+service: fin-report
+timezone: Asia/Shanghai
+batch:
+  chunk_size: 5000
+  max_retries: 3
+  timeout_seconds: 120
+storage:
+  output_dir: /data/exports
+  compress_gzip: false
+  keep_days: 30
+default_format: csv
+columns:
+  - id
+  - branch_id
+  - account_code
+  - amount
+  - currency
+  - posted_at
+pipeline:
+  strict_schema: true
+  scope_driver: legacy
+  audit_log: true

@@ -1,0 +1,4 @@
+env: staging
+pipeline:
+  strict_schema: true
+  scope_driver: v2

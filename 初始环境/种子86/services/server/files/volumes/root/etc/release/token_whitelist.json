@@ -1,0 +1,11 @@
+{
+  "updated_at": "2026-08-14T10:00:00+08:00",
+  "active_tokens": [
+    {
+      "token": "dep_live_7f4b2c91e8",
+      "scope": "prod_deploy",
+      "created_at": "2026-08-14",
+      "last_rotated_at": "2026-08-14"
+    }
+  ]
+}

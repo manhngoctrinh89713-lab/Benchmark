@@ -1,0 +1,4 @@
+version: 1
+root:
+  level: INFO
+  handlers: [stdout]

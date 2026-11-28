@@ -1,0 +1,145 @@
+{
+  "now": "2026-11-14T11:00:00+08:00",
+  "current_actor": "local-user",
+  "sequence": 2,
+  "actors": [
+    {
+      "id": "local-user",
+      "name": "王销售",
+      "email_address": "sales@hezhou.com"
+    },
+    {
+      "id": "client_buy",
+      "name": "赵经理（客户采购）",
+      "email_address": "zhao.proc@client-mfg.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "sales_main",
+      "email_address": "sales@hezhou.com",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "owner_id": "local-user",
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-16204a1a9b894953a0bacc42dbacdc2f",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-92287532f8e24a8d8f60134415efa999",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-9f72a8c1b5c74289b4d32430330c96d6",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-c35b954672cf411ebec47393ee0b2946",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-549fe1b9409b4ab6a83e994b4ada11aa",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-7c8c3cbf81ef4e11a312f77c32504e2c",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ct_zhao",
+      "owner_id": "local-user",
+      "scope": "personal",
+      "version": 1,
+      "name": "赵经理（客户采购）",
+      "emails": [
+        "zhao.proc@client-mfg.test"
+      ]
+    }
+  ],
+  "groups": [],
+  "messages": [
+    {
+      "id": "msg_76_1",
+      "account_name": "sales_main",
+      "mailbox": "INBOX",
+      "from": "zhao.proc@client-mfg.test",
+      "to": [
+        "sales@hezhou.com"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "请发一下最新一版壳体组件对外报价单",
+      "body": "王经理你好，请把最新整理的 v4 对外报价表发我邮箱，我今天下午报采购审批。",
+      "attachments": [],
+      "timestamp": "2026-11-14T09:30:00+08:00",
+      "read": true,
+      "starred": false,
+      "labels": [],
+      "version": 1,
+      "categories": [],
+      "is_read": false,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-db764f5efc384cc4b75c788064ca8e84",
+      "message_id": "<msg_76_1@hezhou.test>"
+    }
+  ],
+  "rules": [],
+  "drafts": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

@@ -1,0 +1,3 @@
+{"timestamp": "2026-11-12T09:10:00+08:00", "service_id": "asn-importer.service", "priority": 6, "message": "Started batch ASN-2611-07 (180000 rows), work_dir=/tmp/asnimp-3f9a"}
+{"timestamp": "2026-11-12T10:05:00+08:00", "service_id": "asn-importer.service", "priority": 6, "message": "batch=ASN-2611-07 shards 1..7 closed on disk, unpacking shard 8 (part-08.dat)"}
+{"timestamp": "2026-11-12T10:12:00+08:00", "service_id": "asn-importer.service", "priority": 4, "message": "batch=ASN-2611-07 rows_written=41000/180000 stage=2/3 commit pending (all shards required for final checksum commit)"}

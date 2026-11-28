@@ -1,0 +1,3 @@
+2026-11-12T13:45:11+08:00 GET /orders/export?date=2026-11-12 200 cols=order_id,status,legacy_status
+2026-11-12T13:51:04+08:00 POST /orders/legacy-sync 200 read_column=orders.legacy_status rows=128
+2026-11-12T13:56:42+08:00 GET /api/v1/orders/ORD-20261112-002 200 client=App/2.3.1 read_column=orders.legacy_status

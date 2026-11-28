@@ -1,0 +1,1 @@
+{"timestamp": "2026-11-12T13:55:00+08:00", "service_id": "order-api.service", "priority": 6, "message": "Active legacy_status readers detected: /orders/export, /orders/legacy-sync, App/2.3.1"}

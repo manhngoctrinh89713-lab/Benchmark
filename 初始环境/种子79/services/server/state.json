@@ -1,0 +1,81 @@
+{
+  "platform": "linux",
+  "now": "2026-11-14T16:15:00+08:00",
+  "machine": {
+    "id": "laser_ctrl_01",
+    "hostname": "laser-ctrl-01",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "admin",
+    "cpu_count": 4,
+    "memory_total_bytes": 8589934592,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 107374182400,
+      "base_used_bytes": 28000000000
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/etc/laser-controller"
+  ],
+  "journal_path": "/var/log/maintenance-journal.jsonl",
+  "environment_variables": {
+    "STATION": "LINE-A-MARKING"
+  },
+  "services": {
+    "laser-controller.service": {
+      "id": "laser-controller.service",
+      "description": "产线激光打标实时控制服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 3105,
+      "config_format": "env",
+      "config_path": "/etc/laser-controller/controller.conf",
+      "process_name": "laser-controller",
+      "command": "/usr/local/bin/laser-controller --config /etc/laser-controller/controller.conf",
+      "user": "laser",
+      "memory_bytes": 268435456,
+      "requires": [],
+      "protected": false,
+      "supports_reload": false,
+      "config_rules": [],
+      "applied_config_sha256": "735ea51a5aed29ec470647890482f424a0cdea5bc1ee5f36a79a307696ca1d34"
+    }
+  },
+  "processes": {
+    "3105": {
+      "pid": 3105,
+      "name": "laser-controller",
+      "command": "/usr/local/bin/laser-controller --config /etc/laser-controller/controller.conf",
+      "user": "laser",
+      "status": "running",
+      "memory_bytes": 268435456,
+      "cpu_percent": 2.1,
+      "service_id": "laser-controller.service",
+      "started_at": "2026-11-14T08:00:00+08:00",
+      "protected": false,
+      "open_files": [
+        "/var/run/laser-controller/runtime/controller_state.json",
+        "/srv/laser/jobs/panel-a.gcode"
+      ]
+    }
+  },
+  "scheduled_tasks": {},
+  "task_runs": [],
+  "backups": {},
+  "file_times": {
+    "files/volumes/root/etc/laser-controller/controller.conf": "2026-11-01T08:00:00+08:00",
+    "files/volumes/root/var/run/laser-controller/runtime/controller_state.json": "2026-11-14T16:10:00+08:00",
+    "files/volumes/root/srv/laser/jobs/panel-a.gcode": "2026-11-14T15:30:00+08:00",
+    "files/volumes/root/var/log/maintenance-journal.jsonl": "2026-11-14T16:10:00+08:00"
+  },
+  "sequence": 0,
+  "next_backup": 1,
+  "idempotency": {},
+  "next_pid": 3500,
+  "config_load_events": []
+}

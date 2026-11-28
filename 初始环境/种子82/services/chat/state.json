@@ -1,0 +1,160 @@
+{
+  "now": "2026-11-12T17:00:00+08:00",
+  "current_user_id": "u_wms_lead",
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "sequence": 6,
+  "contacts": [
+    {
+      "id": "u_wms_lead",
+      "name": "周班长",
+      "organization": "禾洲仓储",
+      "remark": "仓储值班主管",
+      "version": 1
+    },
+    {
+      "id": "u_wangqiang",
+      "name": "王强",
+      "organization": "禾洲仓储",
+      "remark": "理货员",
+      "version": 1
+    },
+    {
+      "id": "u_liwei",
+      "name": "李伟",
+      "organization": "禾洲仓储",
+      "remark": "理货员（术后恢复）",
+      "version": 1
+    },
+    {
+      "id": "u_zhaolei",
+      "name": "赵磊",
+      "organization": "禾洲仓储",
+      "remark": "理货员",
+      "version": 1
+    },
+    {
+      "id": "u_sunting",
+      "name": "孙婷",
+      "organization": "禾洲仓储",
+      "remark": "理货员",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "chat_wms_team",
+      "type": "group",
+      "name": "仓储值班群",
+      "member_ids": [
+        "u_wms_lead",
+        "u_wangqiang",
+        "u_liwei",
+        "u_zhaolei",
+        "u_sunting"
+      ],
+      "owner_id": "u_wms_lead",
+      "admin_ids": [
+        "u_wms_lead"
+      ],
+      "pinned_message_ids": [],
+      "user_settings": {},
+      "version": 1,
+      "dissolved": false,
+      "membership": [
+        {
+          "user_id": "u_wms_lead",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_wangqiang",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_liwei",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_zhaolei",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_sunting",
+          "joined_at": null,
+          "left_at": null
+        }
+      ],
+      "invite_requires_approval": false,
+      "announcement": null,
+      "member_nicknames": {}
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_82_1",
+      "chat_id": "chat_wms_team",
+      "sender_id": "u_wangqiang",
+      "text": "小李腰还不行，昨晚试着搬了两箱日化就扶腰歇了。",
+      "timestamp": "2026-11-10T23:10:00+08:00",
+      "hidden_by": [],
+      "deleted": false,
+      "version": 1,
+      "read_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_wms_lead",
+        "u_wangqiang",
+        "u_liwei",
+        "u_zhaolei",
+        "u_sunting"
+      ],
+      "sequence": 0,
+      "sender_name": "王强"
+    },
+    {
+      "id": "m_82_2",
+      "chat_id": "chat_wms_team",
+      "sender_id": "u_liwei",
+      "text": "快了，医生说满三个月才能提重物，最近先别给我排重的，登记复核没问题。",
+      "timestamp": "2026-11-10T23:12:00+08:00",
+      "hidden_by": [],
+      "deleted": false,
+      "version": 1,
+      "read_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_wms_lead",
+        "u_wangqiang",
+        "u_liwei",
+        "u_zhaolei",
+        "u_sunting"
+      ],
+      "sequence": 0,
+      "sender_name": "李伟"
+    }
+  ],
+  "favorites": [],
+  "events": [],
+  "relations": [],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "delivery_events": [],
+  "member_events": []
+}

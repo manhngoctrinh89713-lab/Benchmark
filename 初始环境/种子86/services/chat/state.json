@@ -1,0 +1,91 @@
+{
+  "now": "2026-11-12T15:00:00+08:00",
+  "current_user_id": "u_ops",
+  "model_version": 3,
+  "recall_window_seconds": 120,
+  "sequence": 4,
+  "contacts": [
+    {
+      "id": "u_ops",
+      "name": "陈运维",
+      "organization": "禾洲科技",
+      "remark": "运维负责人",
+      "version": 1
+    },
+    {
+      "id": "u_cust",
+      "name": "刘总（客户安全）",
+      "organization": "星河金融",
+      "remark": "客户合规对接",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "chat_client_ops",
+      "type": "group",
+      "name": "客户对接群",
+      "member_ids": [
+        "u_ops",
+        "u_cust"
+      ],
+      "owner_id": "u_ops",
+      "admin_ids": [
+        "u_ops"
+      ],
+      "pinned_message_ids": [],
+      "user_settings": {},
+      "version": 1,
+      "dissolved": false,
+      "membership": [
+        {
+          "user_id": "u_ops",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "u_cust",
+          "joined_at": null,
+          "left_at": null
+        }
+      ],
+      "invite_requires_approval": false,
+      "announcement": null,
+      "member_nicknames": {}
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_86_1",
+      "chat_id": "chat_client_ops",
+      "sender_id": "u_cust",
+      "text": "王总，明天早会我们要向集团安全委员会同步上周泄露事件的收口进度，麻烦确认下目前是不是已经处理完了、可以登记关闭？",
+      "timestamp": "2026-11-12T14:30:00+08:00",
+      "hidden_by": [],
+      "deleted": false,
+      "version": 1,
+      "read_by": [],
+      "recalled": false,
+      "attachments": [],
+      "quote_message_id": null,
+      "mention_ids": [],
+      "kind": "text",
+      "status": "sent",
+      "forwardable": true,
+      "recipient_ids": [
+        "u_ops",
+        "u_cust"
+      ],
+      "sequence": 0,
+      "sender_name": "刘总（客户安全）"
+    }
+  ],
+  "favorites": [],
+  "events": [],
+  "relations": [],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "delivery_events": [],
+  "member_events": []
+}
