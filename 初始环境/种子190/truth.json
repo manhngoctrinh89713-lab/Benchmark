@@ -1,0 +1,8 @@
+{
+  "suite": "database",
+  "database": "coach_seats",
+  "relative_path": "services/database/databases/coach_seats.sqlite",
+  "trip": "M25",
+  "seat": "B12",
+  "voucher": "S413"
+}

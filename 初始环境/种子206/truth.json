@@ -1,0 +1,16 @@
+{
+  "suite": "database",
+  "table": "海报制版",
+  "columns": [
+    "版号",
+    "场次",
+    "底片号",
+    "状态"
+  ],
+  "key": {
+    "版号": "P8"
+  },
+  "harm": "P8未确认海报取舍即签发F21或F22制版",
+  "database": "register_206",
+  "relative_path": "services/database/databases/register_206.sqlite"
+}

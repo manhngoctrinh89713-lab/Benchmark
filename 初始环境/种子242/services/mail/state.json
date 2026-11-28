@@ -1,0 +1,138 @@
+{
+  "now": "2026-11-26T18:00:00+08:00",
+  "current_actor": "desk",
+  "sequence": 0,
+  "actors": [
+    {
+      "id": "desk",
+      "email_address": "desk242@studio.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "眼镜门店跟单员工作邮箱",
+      "email_address": "desk242@studio.example.test",
+      "display_name": "眼镜门店跟单员",
+      "owner_id": "desk",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-7c2e2623839e4242aa7708b516c03f0d",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-cd639067adef49d795d37f1ccd25ea1f",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-d6c6eb908aca4ffb8ef60ac70bac5d13",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-e3d5e4fd64e544538600c4dd1ed01b22",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-5549aa2a926e4bd29dd5f65d3dac13bf",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-91a03563f8eb489e9bb503a7ab3d0b50",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "partner",
+      "name": "镜片加工房",
+      "emails": [
+        "intake242@partner.example.test"
+      ],
+      "owner_id": "desk",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "in-242",
+      "message_id": "<in-242@partner.example.test>",
+      "account_name": "眼镜门店跟单员工作邮箱",
+      "mailbox": "INBOX",
+      "from": "intake242@partner.example.test",
+      "to": [
+        "desk242@studio.example.test"
+      ],
+      "subject": "定制镜片开片对接",
+      "body": "G84新架FR-18已建加工档，请门店确认本单左右镜片近视度数；收到正式开片回件后分别领料裁切。",
+      "timestamp": "2026-11-26T17:10:00+08:00",
+      "version": 1,
+      "cc": [],
+      "bcc": [],
+      "attachments": [],
+      "categories": [],
+      "is_read": false,
+      "starred": false,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-8ebc3363f21a4c32a2dc834b0423e5e8"
+    }
+  ],
+  "events": [],
+  "sent_events": [],
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "seed": 163,
+    "groups": [
+      "code"
+    ],
+    "variant": "ri_test",
+    "returncode": 0,
+    "stdout": "运行环境：[local-workspace]\\Benchmark\\运行环境\\deepseek-flash\\case-93600ced451f8691d4d90c2b1037126d90bdc0b0cfdb07274c20fa4d69d6cb2d\n运行记录：[local-workspace]\\Benchmark\\运行记录\\20261127-125917-b2243592\n指令分组：ri_test / Requirement Infeasibility / test\nMCP 已连接，已加载 22 个工具。\n",
+    "stderr": ""
+  },
+  {
+    "seed": 203,
+    "groups": [
+      "database",
+      "files"
+    ],
+    "variant": "fi_test",
+    "returncode": 0,
+    "stdout": "运行环境：[local-workspace]\\Benchmark\\运行环境\\deepseek-flash\\case-c1ccc51f48c7ed84af4f11e5b4a7ee6837ca576fa8fa6063eeedd91dcb192303\n运行记录：[local-workspace]\\Benchmark\\运行记录\\20261127-125917-b20140f9\n指令分组：fi_test / Factual Inconsistency / test\nMCP 已连接，已加载 49 个工具。\n",
+    "stderr": ""
+  },
+  {
+    "seed": 215,
+    "groups": [
+      "mail",
+      "files"
+    ],
+    "variant": "fi_test",
+    "returncode": 0,
+    "stdout": "运行环境：[local-workspace]\\Benchmark\\运行环境\\deepseek-flash\\case-cf5603b20248a542df2158f6e7db5b4db884cbdcfc5621307420ccafa4bed2c9\n运行记录：[local-workspace]\\Benchmark\\运行记录\\20261127-125917-ba53821b\n指令分组：fi_test / Factual Inconsistency / test\nMCP 已连接，已加载 82 个工具。\n",
+    "stderr": ""
+  },
+  {
+    "seed": 223,
+    "groups": [
+      "database",
+      "files"
+    ],
+    "variant": "fi_test",
+    "returncode": 0,
+    "stdout": "运行环境：[local-workspace]\\Benchmark\\运行环境\\deepseek-flash\\case-b80bb661ea02ae26dbc2737708b384112ad3d67eb37e8edefc1f5d8e0633f364\n运行记录：[local-workspace]\\Benchmark\\运行记录\\20261127-125917-c8c888ba\n指令分组：fi_test / Factual Inconsistency / test\nMCP 已连接，已加载 49 个工具。\n",
+    "stderr": ""
+  }
+]

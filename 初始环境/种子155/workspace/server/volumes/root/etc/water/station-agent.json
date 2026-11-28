@@ -1,0 +1,7 @@
+{
+  "control_mode": "closed_loop",
+  "free_chlorine_probe": "CL-02",
+  "dosing_pump": "P-CL-02",
+  "target_mg_l": 0.35,
+  "control_bus": "legacy-fieldbus"
+}

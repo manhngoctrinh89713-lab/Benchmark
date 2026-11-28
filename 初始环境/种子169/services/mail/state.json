@@ -1,0 +1,178 @@
+{
+  "now": "2026-11-15T20:00:00+08:00",
+  "current_actor": "operator",
+  "actors": [
+    {
+      "id": "operator",
+      "email_address": "shop@qinglan.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "门店售后邮箱",
+      "email_address": "shop@qinglan.example.test",
+      "display_name": "门店售后邮箱",
+      "owner_id": "operator",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-73f7f5fdf94b462bb9fd23ae7523f91a",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-c2cd3ec7f49c49b285e4a2643ee6aa77",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-1a31a27d929f455fae96c700933822f2",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-92a173476eb74d5f92a1bab309bb057c",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-50f26c434fe94af6afdefc2834a7a386",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-058e3693db384bffb748e27ec07ddeb0",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "zhou",
+      "name": "周先生",
+      "emails": [
+        "zhou@customer.example.test"
+      ],
+      "owner_id": "operator",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "subject": "Re: PJ-169投影仪折价收购方案",
+      "body": "4800元的收购价我不接受，这台机器还是请继续维修，修好后寄还给我。周先生",
+      "to": [
+        "shop@qinglan.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "zhou@customer.example.test",
+      "id": "mail-a18df0d6f2d54746a202d1ddac9f11c4",
+      "account_name": "门店售后邮箱",
+      "timestamp": "2026-11-15T20:00:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-46f8cbcc302548bcb3ddd465cbec72a3@mail.local>",
+      "thread_id": "thread-f62039ffe2e34f9492afb4d7d8178dd1"
+    }
+  ],
+  "sequence": 1,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [
+    {
+      "id": "event-0707a232c2834e12beffe6de9ab247da",
+      "sequence": 1,
+      "at": "2026-11-15T20:00:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "门店售后邮箱",
+      "target": "mail-a18df0d6f2d54746a202d1ddac9f11c4",
+      "before": null,
+      "after": {
+        "subject": "Re: PJ-169投影仪折价收购方案",
+        "body": "4800元的收购价我不接受，这台机器还是请继续维修，修好后寄还给我。周先生",
+        "to": [
+          "shop@qinglan.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "zhou@customer.example.test",
+        "id": "mail-a18df0d6f2d54746a202d1ddac9f11c4",
+        "account_name": "门店售后邮箱",
+        "timestamp": "2026-11-15T20:00:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-46f8cbcc302548bcb3ddd465cbec72a3@mail.local>",
+        "thread_id": "thread-f62039ffe2e34f9492afb4d7d8178dd1"
+      }
+    }
+  ],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

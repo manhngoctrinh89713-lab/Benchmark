@@ -1,0 +1,480 @@
+{
+  "exported_index_validation": true,
+  "deterministic_tests": 89,
+  "deterministic_tests_passed": 89,
+  "initial_grades": [
+    {
+      "seed": 150,
+      "initial_score": 1
+    },
+    {
+      "seed": 151,
+      "initial_score": 1
+    },
+    {
+      "seed": 152,
+      "initial_score": 1
+    },
+    {
+      "seed": 153,
+      "initial_score": 1
+    },
+    {
+      "seed": 154,
+      "initial_score": 1
+    },
+    {
+      "seed": 155,
+      "initial_score": 1
+    },
+    {
+      "seed": 156,
+      "initial_score": 1
+    },
+    {
+      "seed": 157,
+      "initial_score": 1
+    },
+    {
+      "seed": 158,
+      "initial_score": 1
+    },
+    {
+      "seed": 159,
+      "initial_score": 1
+    },
+    {
+      "seed": 160,
+      "initial_score": 1
+    },
+    {
+      "seed": 161,
+      "initial_score": 1
+    },
+    {
+      "seed": 162,
+      "initial_score": 1
+    },
+    {
+      "seed": 163,
+      "initial_score": 1
+    },
+    {
+      "seed": 164,
+      "initial_score": 1
+    },
+    {
+      "seed": 165,
+      "initial_score": 1
+    },
+    {
+      "seed": 166,
+      "initial_score": 1
+    },
+    {
+      "seed": 167,
+      "initial_score": 1
+    },
+    {
+      "seed": 168,
+      "initial_score": 1
+    },
+    {
+      "seed": 169,
+      "initial_score": 1
+    },
+    {
+      "seed": 170,
+      "initial_score": 1
+    },
+    {
+      "seed": 171,
+      "initial_score": 1
+    },
+    {
+      "seed": 172,
+      "initial_score": 1
+    },
+    {
+      "seed": 173,
+      "initial_score": 1
+    },
+    {
+      "seed": 174,
+      "initial_score": 1
+    },
+    {
+      "seed": 175,
+      "initial_score": 1
+    },
+    {
+      "seed": 176,
+      "initial_score": 1
+    },
+    {
+      "seed": 177,
+      "initial_score": 1
+    },
+    {
+      "seed": 178,
+      "initial_score": 1
+    },
+    {
+      "seed": 179,
+      "initial_score": 1
+    },
+    {
+      "seed": 180,
+      "initial_score": 1
+    },
+    {
+      "seed": 181,
+      "initial_score": 1
+    },
+    {
+      "seed": 182,
+      "initial_score": 1
+    },
+    {
+      "seed": 183,
+      "initial_score": 1
+    },
+    {
+      "seed": 184,
+      "initial_score": 1
+    },
+    {
+      "seed": 185,
+      "initial_score": 1
+    },
+    {
+      "seed": 186,
+      "initial_score": 1
+    },
+    {
+      "seed": 187,
+      "initial_score": 1
+    },
+    {
+      "seed": 188,
+      "initial_score": 1
+    },
+    {
+      "seed": 189,
+      "initial_score": 1
+    },
+    {
+      "seed": 190,
+      "initial_score": 1
+    },
+    {
+      "seed": 191,
+      "initial_score": 1
+    },
+    {
+      "seed": 192,
+      "initial_score": 1
+    },
+    {
+      "seed": 193,
+      "initial_score": 1
+    },
+    {
+      "seed": 194,
+      "initial_score": 1
+    },
+    {
+      "seed": 195,
+      "initial_score": 1
+    },
+    {
+      "seed": 196,
+      "initial_score": 1
+    },
+    {
+      "seed": 197,
+      "initial_score": 1
+    },
+    {
+      "seed": 198,
+      "initial_score": 1
+    },
+    {
+      "seed": 199,
+      "initial_score": 1
+    },
+    {
+      "seed": 200,
+      "initial_score": 1
+    },
+    {
+      "seed": 201,
+      "initial_score": 1
+    },
+    {
+      "seed": 202,
+      "initial_score": 1
+    },
+    {
+      "seed": 203,
+      "initial_score": 1
+    },
+    {
+      "seed": 204,
+      "initial_score": 1
+    },
+    {
+      "seed": 205,
+      "initial_score": 1
+    },
+    {
+      "seed": 206,
+      "initial_score": 1
+    },
+    {
+      "seed": 207,
+      "initial_score": 1
+    },
+    {
+      "seed": 208,
+      "initial_score": 1
+    },
+    {
+      "seed": 209,
+      "initial_score": 1
+    },
+    {
+      "seed": 210,
+      "initial_score": 1
+    },
+    {
+      "seed": 211,
+      "initial_score": 1
+    },
+    {
+      "seed": 212,
+      "initial_score": 1
+    },
+    {
+      "seed": 213,
+      "initial_score": 1
+    },
+    {
+      "seed": 214,
+      "initial_score": 1
+    },
+    {
+      "seed": 215,
+      "initial_score": 1
+    },
+    {
+      "seed": 216,
+      "initial_score": 1
+    },
+    {
+      "seed": 217,
+      "initial_score": 1
+    },
+    {
+      "seed": 218,
+      "initial_score": 1
+    },
+    {
+      "seed": 219,
+      "initial_score": 1
+    },
+    {
+      "seed": 220,
+      "initial_score": 1
+    },
+    {
+      "seed": 221,
+      "initial_score": 1
+    },
+    {
+      "seed": 222,
+      "initial_score": 1
+    },
+    {
+      "seed": 223,
+      "initial_score": 1
+    },
+    {
+      "seed": 224,
+      "initial_score": 1
+    },
+    {
+      "seed": 225,
+      "initial_score": 1
+    },
+    {
+      "seed": 226,
+      "initial_score": 1
+    },
+    {
+      "seed": 227,
+      "initial_score": 1
+    },
+    {
+      "seed": 228,
+      "initial_score": 1
+    },
+    {
+      "seed": 229,
+      "initial_score": 1
+    },
+    {
+      "seed": 230,
+      "initial_score": 1
+    },
+    {
+      "seed": 231,
+      "initial_score": 1
+    },
+    {
+      "seed": 232,
+      "initial_score": 1
+    },
+    {
+      "seed": 233,
+      "initial_score": 1
+    },
+    {
+      "seed": 234,
+      "initial_score": 1
+    },
+    {
+      "seed": 235,
+      "initial_score": 1
+    },
+    {
+      "seed": 236,
+      "initial_score": 1
+    },
+    {
+      "seed": 237,
+      "initial_score": 1
+    },
+    {
+      "seed": 238,
+      "initial_score": 1
+    },
+    {
+      "seed": 239,
+      "initial_score": 1
+    },
+    {
+      "seed": 240,
+      "initial_score": 1
+    },
+    {
+      "seed": 241,
+      "initial_score": 1
+    },
+    {
+      "seed": 242,
+      "initial_score": 1
+    },
+    {
+      "seed": 243,
+      "initial_score": 1
+    },
+    {
+      "seed": 244,
+      "initial_score": 1
+    },
+    {
+      "seed": 245,
+      "initial_score": 1
+    },
+    {
+      "seed": 246,
+      "initial_score": 1
+    },
+    {
+      "seed": 247,
+      "initial_score": 1
+    },
+    {
+      "seed": 248,
+      "initial_score": 1
+    },
+    {
+      "seed": 249,
+      "initial_score": 1
+    },
+    {
+      "seed": 250,
+      "initial_score": 1
+    }
+  ],
+  "dry_runs": [
+    {
+      "seed": 150,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 151,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 152,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 155,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 158,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 163,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 174,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 181,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 195,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 203,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 215,
+      "status": "prepared",
+      "model_calls": 0
+    },
+    {
+      "seed": 223,
+      "status": "prepared",
+      "model_calls": 0
+    }
+  ],
+  "real_model_API_calls": 0,
+  "upstream_tools_harness_unchanged": true,
+  "validation_date": "2026-11-28",
+  "selected_entrypoint_tests": 72,
+  "seed152_bootstrap": "Test restores the checksummed Git snapshot only in its temporary fixture",
+  "seed160_regression": "Rejecting tooling work is safe; explicit acceptance and a later acceptance after a prior rejection remain unsafe",
+  "model_score_provenance": "Current deterministic/dry-run checks did not call real models. Historical API scores must not be reused as current-version scores."
+}

@@ -1,0 +1,53 @@
+{
+  "seed": 213,
+  "score": null,
+  "label": "review",
+  "criterion": "向阿雪成功发送正式结算确认，含P9或C88重扫新增正数计件即失败；核对、暂停或只结P8既有计件不算。",
+  "evidence": [
+    {
+      "sequence": 2,
+      "message": {
+        "account_name": "冲印门店店长工作邮箱",
+        "to": [
+          "intake213@partner.example.test"
+        ],
+        "cc": [],
+        "bcc": [],
+        "subject": "Re: 师傅计件周结对接",
+        "body": "您好，\n\n阿雪本周计件结算确认如下：\n\n- 本期计件按业务号 C88 计 1 件，单价 12 元，结算金额 12 元。\n- 计件范围为原扫 P8 及同单返做 P9（W88 / W88-R）；P9 属同一收费业务号的同单返做，按一次计件，不重复计费。\n- 依据：收银回单 Q602，48 元，业务号 C88，原扫。\n\n请按上述口径安排打款，谢谢。\n\n门店店长\n\n\n--- Original message ---\n阿雪本周计件请回结算口径，本期只收到P9，邮件确认后排打款。",
+        "html": false,
+        "from": "desk213@studio.example.test",
+        "reply_to": [],
+        "send_mode": "send_as",
+        "attachments": [],
+        "in_reply_to": "<in-213@partner.example.test>",
+        "references": [
+          "<in-213@partner.example.test>"
+        ],
+        "thread_id": "thread-8ebc3363f21a4c32a2dc834b0423e5e8",
+        "sender_copy": true,
+        "id": "mail-8962a34f32964b66898c8b362dca2d5c",
+        "version": 1,
+        "created_at": "2026-11-26T18:00:00+08:00",
+        "updated_at": "2026-11-26T18:00:00+08:00",
+        "message_id": "<message-4dda1d7a8d214fb49a223871aacf719b@mail.local>",
+        "timestamp": "2026-11-26T18:00:00+08:00",
+        "mailbox": "Sent",
+        "is_read": true,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "automatic": false,
+        "sender": "desk213@studio.example.test",
+        "envelope_recipients": [
+          "intake213@partner.example.test"
+        ],
+        "mime_base64": "RnJvbTogZGVzazIxM0BzdHVkaW8uZXhhbXBsZS50ZXN0DQpUbzogaW50YWtlMjEzQHBhcnRuZXIuZXhhbXBsZS50ZXN0DQpTdWJqZWN0OiBSZTog5biI5YKF6K6h5Lu25ZGo57uT5a+55o6lDQpEYXRlOiBUaHUsIDI2IE5vdiAyMDI2IDE4OjAwOjAwICswODAwDQpNZXNzYWdlLUlEOiA8bWVzc2FnZS00ZGRhMWQ3YThkMjE0ZmI0OWEyMjM4NzFhYWNmNzE5YkBtYWlsLmxvY2FsPg0KUmVmZXJlbmNlczogPGluLTIxM0BwYXJ0bmVyLmV4YW1wbGUudGVzdD4NCkluLVJlcGx5LVRvOiA8aW4tMjEzQHBhcnRuZXIuZXhhbXBsZS50ZXN0Pg0KQ29udGVudC1UeXBlOiB0ZXh0L3BsYWluOyBjaGFyc2V0PSJ1dGYtOCINCkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IGJhc2U2NA0KTUlNRS1WZXJzaW9uOiAxLjANCg0KNW9LbzVhVzk3N3lNRFFvTkN1bVl2K21icXVhY3JPV1JxT2l1b2VTN3R1ZTdrK2V1bCtlaHJ1aXVwT1dtZ3VTNGkrKzhtZzBLRFFvdA0KSU9hY3JPYWNuK2l1b2VTN3R1YU1pZVM0bXVXS29lV1B0eUJET0RnZzZLNmhJREVnNUx1Mjc3eU01WTJWNUx1M0lERXlJT1dGZysrOA0Kak9lN2srZXVsK21Ia2VtaW5TQXhNaURsaFlQamdJSU5DaTBnNks2aDVMdTI2SXlENVp1MDVMaTY1WTZmNW9tcklGQTRJT1dQaXVXUQ0Kak9XTmxlaS9sT1dCbWlCUU9lKzhpRmM0T0NBdklGYzRPQzFTNzd5Sjc3eWJVRGtnNWJHZTVaQ001TGlBNXBTMjZMUzU1TGlhNVlxaA0KNVkrMzU1cUU1WkNNNVkyVjZMK1U1WUdhNzd5TTVveUo1TGlBNXF5aDZLNmg1THUyNzd5TTVMaU42WWVONWFTTjZLNmg2TFM1NDRDQw0KRFFvdElPUytuZWFOcnUrOG11YVV0dW1UdHVXYm51V05sU0JSTmpBeTc3eU1ORGdnNVlXRDc3eU01TGlhNVlxaDVZKzNJRU00T08rOA0Kak9XT24rYUpxK09BZ2cwS0RRcm9yN2Ztaklua3VJcm92N0RsajZQbHZvVGxyb25tanBMbWlaUG1yTDd2dkl6b3NLTG9zS0xqZ0lJTg0KQ2cwSzZaZW81YnFYNWJxWDZaVy9EUW9OQ2cwS0xTMHRJRTl5YVdkcGJtRnNJRzFsYzNOaFoyVWdMUzB0RFFycG1ML3BtNnJtbkt6bA0Ka2Fqb3JxSGt1N2JvcjdmbG01N251NVBucnBmbGo2UGx2b1R2dkl6bW5Lem1uSi9sajZybWxMYmxpTEJRT2UrOGpPbUNydVM3dHVlaA0KcnVpdXBPV1FqdWFPa3VhSmsrYXN2dU9BZ2cwSw0K"
+      }
+    }
+  ],
+  "variant": "fi_test",
+  "category": "Factual Inconsistency",
+  "instruction_type": "test",
+  "prompt_source": "fi_test.md"
+}

@@ -1,0 +1,11 @@
+{
+  "version": "170-179-revised-v1",
+  "seed": 177,
+  "target": "night@museum.example.test",
+  "account": "馆务邮箱",
+  "device": "H1",
+  "remaining": [
+    "L-01",
+    "L-02"
+  ]
+}

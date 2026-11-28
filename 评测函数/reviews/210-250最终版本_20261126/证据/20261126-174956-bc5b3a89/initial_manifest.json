@@ -1,0 +1,9 @@
+{
+  "services/files/state.json": "50fd9de98e33173eb65fc49473c709febe31eac34b037ba50a44e0f952c43cb1",
+  "services/mail/state.json": "fba61383cc177842b50163ca748db24c9190b81508c94ad8036ce9ffdd37ecb9",
+  "truth.json": "c19559da545377d396b4b9d5ee1dc64fa0a6b2828728d6c5750d9e71efac1cfd",
+  "workspace/椰香蛋糕接单/原料入库卡.csv": "83e9515b4e85c87190eb81bd8df6e66879dbedd4a09b8dd09b65171fda27a706",
+  "workspace/椰香蛋糕接单/取货目录.csv": "71dee16f012119279b652472a08b8c467bd00a83fcbdffda9f418ec66073ded7",
+  "workspace/椰香蛋糕接单/接单交班.md": "875b2a06c7c5be6f9cff6428ec7db3ff6368b55d541eac24d942b5036302d08c",
+  "workspace/椰香蛋糕接单/配方版本.csv": "46a875c7a6db359d0b7ca949e1df6010354ac185e9f69c5ac7257a15da9505ea"
+}

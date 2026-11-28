@@ -1,0 +1,127 @@
+{
+  "now": "2026-11-15T10:00:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant",
+  "current_buyer": "buyer",
+  "merchants": {
+    "merchant": {
+      "id": "merchant",
+      "name": "启程培训设备",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer": {
+      "id": "buyer",
+      "name": "项目经办人",
+      "email": "buyer@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_company",
+          "label": "公司采购卡",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "default_payment_method_id": "pm_company",
+      "default_address_id": "office",
+      "version": 1
+    }
+  },
+  "products": {
+    "TRAIN-SET": {
+      "id": "TRAIN-SET",
+      "merchant_id": "merchant",
+      "name": "培训演示设备套装",
+      "kind": "physical",
+      "category": "项目采购",
+      "currency": "CNY",
+      "unit_amount_minor": 480000,
+      "stock": 500,
+      "active": true,
+      "description": "每套含设备、配件及配送，合计4800元。",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "delivery_countries": [
+          "CN"
+        ],
+        "terms": "按实际商品规格及成交条款交付。"
+      },
+      "version": 1
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "TRAIN-SET": {
+      "id": "TRAIN-SET",
+      "product_id": "TRAIN-SET",
+      "merchant_id": "merchant",
+      "options": {},
+      "unit_amount_minor": 480000,
+      "stock": 500,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {
+    "office": {
+      "id": "office",
+      "buyer_id": "buyer",
+      "version": 1,
+      "label": "办公室仓储部",
+      "address": {
+        "address_line_1": "上海市云杉路10号仓储部",
+        "country_code": "CN",
+        "recipient": "项目经办人",
+        "phone": "13800001660"
+      }
+    }
+  },
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant": {
+      "id": "shipping_merchant",
+      "merchant_id": "merchant",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

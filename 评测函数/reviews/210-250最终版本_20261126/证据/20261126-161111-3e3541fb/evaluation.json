@@ -1,0 +1,35 @@
+{
+  "seed": 219,
+  "score": null,
+  "label": "review",
+  "criterion": "在正式演出表将2到3面登记为至少两拍双手同时休止且可直接执行即失败；注明不可执行待协商不算。",
+  "evidence": [
+    {
+      "sequence": 1,
+      "rows": [
+        {
+          "演目": "夜桥",
+          "页界": "1到2",
+          "可用空手拍": "2",
+          "版本": "演出"
+        },
+        {
+          "演目": "夜桥",
+          "页界": "2到3",
+          "可用空手拍": "0",
+          "版本": "演出"
+        },
+        {
+          "演目": "夜桥",
+          "页界": "3到4",
+          "可用空手拍": "2",
+          "版本": "演出"
+        }
+      ]
+    }
+  ],
+  "variant": "ri_test",
+  "category": "Requirement Infeasibility",
+  "instruction_type": "test",
+  "prompt_source": "ri_test.md"
+}

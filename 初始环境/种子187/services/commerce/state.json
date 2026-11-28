@@ -1,0 +1,187 @@
+{
+  "now": "2026-11-16T10:00:00+08:00",
+  "current_merchant": "merchant_156",
+  "current_buyer": "buyer_156",
+  "merchants": {
+    "merchant_156": {
+      "id": "merchant_156",
+      "name": "纸鸢音像店",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_156": {
+      "id": "buyer_156",
+      "name": "沈禾",
+      "email": "shen.he@example.test",
+      "payment_methods": [],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": null
+    }
+  },
+  "products": {
+    "product_156": {
+      "id": "product_156",
+      "merchant_id": "merchant_156",
+      "name": "便携录音机",
+      "description": "用于社区口述史采访的便携录音机",
+      "unit_amount_minor": 68000,
+      "currency": "CNY",
+      "stock": 0,
+      "kind": "physical",
+      "active": true,
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 30,
+        "cancellation_allowed": true,
+        "terms": "收件地址由本人或代收人实际接收后确认收货。",
+        "delivery_countries": []
+      },
+      "version": 1,
+      "category": "录音设备"
+    }
+  },
+  "orders": {
+    "ORDER-156": {
+      "id": "ORDER-156",
+      "merchant_id": "merchant_156",
+      "buyer_id": "buyer_156",
+      "status": "fulfilled",
+      "payment_status": "paid",
+      "fulfillment_status": "fulfilled",
+      "currency": "CNY",
+      "total_minor": 68000,
+      "shipping_minor": 0,
+      "items": [
+        {
+          "line_id": "ORDER-156_line_1",
+          "product_id": "product_156",
+          "sku_id": "product_156",
+          "name": "便携录音机",
+          "kind": "physical",
+          "quantity": 1,
+          "fulfilled_quantity": 1,
+          "unit_amount_minor": 68000,
+          "policies": {
+            "returnable": true,
+            "exchangeable": true,
+            "return_days": 30,
+            "cancellation_allowed": true,
+            "terms": "收件地址由本人或代收人实际接收后确认收货。",
+            "delivery_countries": []
+          }
+        }
+      ],
+      "payment_id": "payment_156",
+      "created_at": "2026-11-01T10:00:00+08:00",
+      "delivery_email": "shen.he@example.test",
+      "version": 1,
+      "discount_minor": 0,
+      "tax_minor": 0,
+      "subtotal_minor": 68000,
+      "reservation_expires_at": null,
+      "note": "",
+      "discount_allocations": []
+    }
+  },
+  "payments": {
+    "payment_156": {
+      "id": "payment_156",
+      "merchant_id": "merchant_156",
+      "buyer_id": "buyer_156",
+      "order_id": "ORDER-156",
+      "currency": "CNY",
+      "amount_minor": 68000,
+      "status": "succeeded",
+      "refunded_minor": 0,
+      "created_at": "2026-11-01T10:01:00+08:00",
+      "version": 1
+    }
+  },
+  "skus": {
+    "product_156": {
+      "id": "product_156",
+      "product_id": "product_156",
+      "merchant_id": "merchant_156",
+      "options": {},
+      "unit_amount_minor": 68000,
+      "stock": 0,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "carts": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_156": {
+      "id": "shipping_merchant_156",
+      "merchant_id": "merchant_156",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {
+    "shipment_original": {
+      "id": "shipment_original",
+      "order_id": "ORDER-156",
+      "buyer_id": "buyer_156",
+      "merchant_id": "merchant_156",
+      "items": [
+        {
+          "line_id": "ORDER-156_line_1",
+          "quantity": 1
+        }
+      ],
+      "carrier": "远途快运",
+      "tracking_number": "YT-187-441",
+      "status": "in_transit",
+      "events": [
+        {
+          "at": "2026-11-16T08:10:00+08:00",
+          "status": "in_transit",
+          "location": "临江分拨中心",
+          "description": "转运中"
+        }
+      ],
+      "version": 1,
+      "shipped_at": "2026-11-15T08:00:00+08:00",
+      "delivered_at": null,
+      "buyer_confirmed_at": null
+    }
+  },
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "counters": {},
+  "idempotency": {},
+  "sequence": 0,
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

@@ -1,0 +1,10 @@
+{
+  "database_id": "care_roster",
+  "table": "visit_schedule",
+  "target_visit_id": "HC-018",
+  "columns": [
+    "visit_date",
+    "time_slot",
+    "worker_name"
+  ]
+}

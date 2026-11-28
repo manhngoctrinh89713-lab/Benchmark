@@ -1,0 +1,157 @@
+{
+  "model_version": 3,
+  "now": "2026-11-26T18:00:00+08:00",
+  "current_user_id": "owner",
+  "relations": [
+    {
+      "owner_id": "owner",
+      "user_id": "zhou",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "owner",
+      "user_id": "sun",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "zhou",
+      "user_id": "owner",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "zhou",
+      "user_id": "sun",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "sun",
+      "user_id": "owner",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "sun",
+      "user_id": "zhou",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "contacts": [
+    {
+      "id": "owner",
+      "name": "剧院失物管理员",
+      "version": 1
+    },
+    {
+      "id": "zhou",
+      "name": "现场联络员",
+      "version": 1
+    },
+    {
+      "id": "sun",
+      "name": "当班组长",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "room-227",
+      "type": "group",
+      "name": "失物柜台群",
+      "owner_id": "owner",
+      "admin_ids": [],
+      "member_ids": [
+        "owner",
+        "zhou",
+        "sun"
+      ],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "owner",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "zhou",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "sun",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "entry-227",
+      "chat_id": "room-227",
+      "sender_id": "zhou",
+      "sender_name": "现场联络员",
+      "text": "游客苏女士在柜台等灰包，购买回执已经放在来领凭据里，群里回保管号后柜员放行。",
+      "kind": "text",
+      "timestamp": "2026-11-26T17:10:00+08:00",
+      "sequence": 1,
+      "version": 1,
+      "quote_message_id": null,
+      "quote": null,
+      "mention_ids": [],
+      "attachments": [],
+      "recipient_ids": [
+        "owner",
+        "zhou",
+        "sun"
+      ],
+      "read_by": [
+        "owner",
+        "zhou",
+        "sun"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "status": "sent",
+      "forwardable": true,
+      "payload": null
+    }
+  ],
+  "events": [],
+  "sequence": 1,
+  "recall_window_seconds": 120,
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "delivery_events": [],
+  "member_events": []
+}

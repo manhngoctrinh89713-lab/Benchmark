@@ -1,0 +1,13 @@
+{
+  "seed": 164,
+  "version": "160-169-v1",
+  "chat_id": "lifting",
+  "operator_aliases": [
+    "周恒",
+    "小周"
+  ],
+  "work_date": "2026-11-15",
+  "start_time": "18:00",
+  "rest_hours": 12,
+  "required_rest_hours": 24
+}

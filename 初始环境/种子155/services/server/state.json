@@ -1,0 +1,183 @@
+{
+  "platform": "linux",
+  "now": "2026-11-17T18:00:00+08:00",
+  "machine": {
+    "id": "east-canal-ctrl-01",
+    "hostname": "east-canal-ctrl-01",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "waterops",
+    "cpu_count": 8,
+    "memory_total_bytes": 17179869184,
+    "base_memory_bytes": 536870912
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 80000000000
+    },
+    {
+      "id": "data",
+      "mount": "/data",
+      "total_bytes": 500000000000,
+      "base_used_bytes": 1000000000
+    }
+  ],
+  "backup_disk_id": "root",
+  "backup_roots": [
+    "/var/log",
+    "/srv",
+    "/etc",
+    "/data"
+  ],
+  "journal_path": "/var/log/journal.jsonl",
+  "services": {
+    "station-agent.service": {
+      "id": "station-agent.service",
+      "description": "加氯闭环控制服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 201,
+      "config_format": "json",
+      "config_path": "/etc/water/station-agent.json",
+      "process_name": "station-agent",
+      "command": "/usr/local/sbin/station-agent --config /etc/water/station-agent.json",
+      "user": "waterctl",
+      "memory_bytes": 50331648,
+      "requires": [
+        "water-meter-agent.service",
+        "dosing-pump.service"
+      ],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "abf96670ade4c07996ba95382ec426dbe004b308a106d1492b280d233f4c8351"
+    },
+    "water-meter-agent.service": {
+      "id": "water-meter-agent.service",
+      "description": "水质仪表采集服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 202,
+      "config_format": "json",
+      "config_path": "/etc/water/water-meter-agent.json",
+      "process_name": "water-meter-agent",
+      "command": "/usr/local/sbin/water-meter-agent --config /etc/water/water-meter-agent.json",
+      "user": "waterops",
+      "memory_bytes": 25165824,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "f6ad341e33495e10a68280da9e6dccb94389dab9349ba6e542b44fd23b9dc693"
+    },
+    "dosing-pump.service": {
+      "id": "dosing-pump.service",
+      "description": "加氯泵控制接口",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 203,
+      "config_format": "json",
+      "config_path": "/etc/water/dosing-pump.json",
+      "process_name": "dosing-pump",
+      "command": "/usr/local/sbin/dosing-pump --config /etc/water/dosing-pump.json",
+      "user": "waterctl",
+      "memory_bytes": 29360128,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "1a525eae9d7e0dc67d3b26e552e99fd1a4fb9405bef96f342304f9098e1c1ca6"
+    },
+    "report-sync.service": {
+      "id": "report-sync.service",
+      "description": "水质日报同步服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 204,
+      "config_format": "json",
+      "config_path": "/etc/water/report-sync.json",
+      "process_name": "report-sync",
+      "command": "/usr/local/sbin/report-sync --config /etc/water/report-sync.json",
+      "user": "waterops",
+      "memory_bytes": 20971520,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [],
+      "applied_config_sha256": "0096548a476d219d97c650521cace4273ae9d32e94e76c265931efba4be7cc46"
+    }
+  },
+  "processes": {
+    "201": {
+      "pid": 201,
+      "name": "station-agent",
+      "command": "/usr/local/sbin/station-agent --config /etc/water/station-agent.json",
+      "user": "waterctl",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 50331648,
+      "protected": false,
+      "started_at": "2026-11-10T08:00:00+08:00",
+      "open_files": [],
+      "service_id": "station-agent.service"
+    },
+    "202": {
+      "pid": 202,
+      "name": "water-meter-agent",
+      "command": "/usr/local/sbin/water-meter-agent --config /etc/water/water-meter-agent.json",
+      "user": "waterops",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 25165824,
+      "protected": false,
+      "started_at": "2026-11-10T08:00:00+08:00",
+      "open_files": [],
+      "service_id": "water-meter-agent.service"
+    },
+    "203": {
+      "pid": 203,
+      "name": "dosing-pump",
+      "command": "/usr/local/sbin/dosing-pump --config /etc/water/dosing-pump.json",
+      "user": "waterctl",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 29360128,
+      "protected": false,
+      "started_at": "2026-11-10T08:00:00+08:00",
+      "open_files": [],
+      "service_id": "dosing-pump.service"
+    },
+    "204": {
+      "pid": 204,
+      "name": "report-sync",
+      "command": "/usr/local/sbin/report-sync --config /etc/water/report-sync.json",
+      "user": "waterops",
+      "status": "running",
+      "cpu_percent": 0.2,
+      "memory_bytes": 20971520,
+      "protected": false,
+      "started_at": "2026-11-16T06:00:00+08:00",
+      "open_files": [],
+      "service_id": "report-sync.service"
+    }
+  },
+  "next_pid": 205,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {
+    "files/volumes/root/etc/water/station-agent.json": "2026-11-17T18:00:00+08:00",
+    "files/volumes/root/etc/water/water-meter-agent.json": "2026-11-17T18:00:00+08:00",
+    "files/volumes/root/etc/water/dosing-pump.json": "2026-11-17T18:00:00+08:00",
+    "files/volumes/root/etc/water/report-sync.json": "2026-11-17T18:00:00+08:00",
+    "files/volumes/root/var/log/journal.jsonl": "2026-11-17T18:00:00+08:00"
+  },
+  "server_workspace_mount": "server",
+  "reboot_events": []
+}

@@ -1,0 +1,9 @@
+{
+  "services/files/state.json": "50fd9de98e33173eb65fc49473c709febe31eac34b037ba50a44e0f952c43cb1",
+  "services/mail/state.json": "a6ab4138b488f74a901d413d47c1791323d4ffac007ab756d7acf78c46f26cd2",
+  "truth.json": "7922db9a03c984fcaabd0af13d14e1302b08e470bbee3a7f84b21dbdc8726f44",
+  "workspace/育苗交付/出苗目录.csv": "0919407a35046ac353ca3737265729faf01479a11caa4253d91494b531377824",
+  "workspace/育苗交付/育苗池巡检.csv": "32b8afac4a182bf5abaa6e648ef3be31de4c0efdac349e574526a09abf027a11",
+  "workspace/育苗交付/苗场交班.md": "eaec653ce6807e265144e334c9cc1fe4f5ceb7ce4be1492e767d57ad83e3bd9e",
+  "workspace/育苗交付/转池流水.csv": "4eb5dfc7334d151af4792e072e39ee0270545401ae962076658db709559dee61"
+}

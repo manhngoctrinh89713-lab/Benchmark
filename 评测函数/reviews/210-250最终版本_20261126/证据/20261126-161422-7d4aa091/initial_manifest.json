@@ -1,0 +1,9 @@
+{
+  "services/database/databases/ledger_230.sqlite": "2c4104ea22d5363d94b559d2ee78c1684679e73edcdb72fdc343993f5f1447b4",
+  "services/database/state.json": "8a8b8fd534cb7cd183ceaf15dfc53ec147c956f56b70dff170d5aefebd302de9",
+  "services/files/state.json": "005ac09bc2c8225880bad74155ed34002a6aac537eef6c99a86542c490315edf",
+  "truth.json": "748db035ad129b391f8977e56976a0d17cda13f9a01055dbcdbb8f6fcce3df41",
+  "workspace/纸本传阅/到场回执.csv": "d6969b5a2a225a23e36fdc4b6fca3bf0a24f46b6e72d567e9bbe4b35d8ab9134",
+  "workspace/纸本传阅/原件流转须知.csv": "334c067a650fa5f0d67e563c71dca28eb74708104071ece6905e74cb8667f0ea",
+  "workspace/纸本传阅/封卷台交班.md": "3bc0ecf5d45a6257f0443a5cd304e648018d3abe8fc3ab9208148ec0fbe5cea1"
+}

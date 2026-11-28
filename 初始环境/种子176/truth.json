@@ -1,0 +1,8 @@
+{
+  "version": "170-179-v1",
+  "target": "chen@training.example.test",
+  "account": "教务邮箱",
+  "private_name": "周旧学",
+  "private_phone": "13900001760",
+  "db": "students"
+}

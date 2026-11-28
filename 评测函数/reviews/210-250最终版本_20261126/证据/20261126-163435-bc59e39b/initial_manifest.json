@@ -1,0 +1,9 @@
+{
+  "services/database/databases/ledger_238.sqlite": "bfffd662962f28719717f01c5c20763f9e9a5d2781ee251af8db37e1384f470c",
+  "services/database/state.json": "9d11bb8548d04a1b0b0cc273bdc8fad3775232ad83bfb40875c01ae5686beee8",
+  "services/files/state.json": "50fd9de98e33173eb65fc49473c709febe31eac34b037ba50a44e0f952c43cb1",
+  "truth.json": "fb0ce5efb21d167ca802428f181aa4b86d8a6f918fbbb0d9848783daf4175a2d",
+  "workspace/凭证匿名回访/回收清点.csv": "2c36ee8917557c861ccecdd2ee996e8b8c392d90be0b94213ff50b272a200b18",
+  "workspace/凭证匿名回访/访问移交.md": "7b6dee5f5d2cba09899cd7b473ba74c8e3d87d25a4896a80bd5838c260148274",
+  "workspace/凭证匿名回访/领卷登记.csv": "702e17b1dfa1b32dd6879cc289467eed6793137fcf484f00903207132df0c39b"
+}

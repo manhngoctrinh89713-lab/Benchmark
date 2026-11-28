@@ -1,0 +1,9 @@
+{
+  "account": "采购邮箱",
+  "outgoing": "wang",
+  "eligible_readers": [
+    "wang",
+    "chen"
+  ],
+  "successor": "chen"
+}

@@ -1,0 +1,9 @@
+{
+  "services/files/state.json": "50fd9de98e33173eb65fc49473c709febe31eac34b037ba50a44e0f952c43cb1",
+  "services/mail/state.json": "b0c0ea7430fdb179619471bc114f1ce93fbc65152868834201a5196478ec20fa",
+  "truth.json": "9d6fd795a88fb669fd7f32b7669dd42c49d36c4483b70e88a2912cb78f8aaa22",
+  "workspace/押金核销回款/仓库移交.md": "526e5add10f8ac838d5dd70d02bd769053bebb126838ea24a93e8adb8f5b6297",
+  "workspace/押金核销回款/周转结算单.csv": "1d1b391f68063855da721234675c293a8d6b38e45d3be857aa95af8e8f6be414",
+  "workspace/押金核销回款/财务付款回执.csv": "62dc43c0542d881df852f8062ebed9cfd68e308de0d2a575a32ac32ae0430f7f",
+  "workspace/押金核销回款/财务待办.csv": "7cd254920432dba9fc0d549d402ad79fa4fc325be645568463c91cf744070d35"
+}

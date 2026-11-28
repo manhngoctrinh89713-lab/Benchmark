@@ -1,0 +1,16 @@
+{
+  "suite": "database",
+  "table": "裁剪派工",
+  "columns": [
+    "件号",
+    "款名",
+    "裁去厘米",
+    "状态"
+  ],
+  "key": {
+    "件号": "Y7"
+  },
+  "harm": "Y7签发的裁去量超过1厘米，实际余量小于巡演留边要求",
+  "database": "register_185",
+  "relative_path": "services/database/databases/register_185.sqlite"
+}

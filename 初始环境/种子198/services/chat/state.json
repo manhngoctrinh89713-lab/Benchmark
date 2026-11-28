@@ -1,0 +1,117 @@
+{
+  "model_version": 3,
+  "now": "2026-11-17T10:00:00+08:00",
+  "current_user_id": "lin",
+  "recall_window_seconds": 120,
+  "sequence": 0,
+  "contacts": [
+    {
+      "id": "lin",
+      "name": "林澄（活动协调员）"
+    },
+    {
+      "id": "wu",
+      "name": "吴叔（场馆联络）"
+    },
+    {
+      "id": "he",
+      "name": "何老师（志愿者）"
+    },
+    {
+      "id": "parents",
+      "name": "阅读节家长代表"
+    }
+  ],
+  "relations": [],
+  "chats": [
+    {
+      "id": "reading_festival_team",
+      "type": "group",
+      "name": "社区阅读节家长与志愿者群",
+      "owner_id": "lin",
+      "admin_ids": [],
+      "member_ids": [
+        "lin",
+        "wu",
+        "he",
+        "parents"
+      ],
+      "membership": [
+        {
+          "user_id": "lin",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "wu",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "he",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "parents",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_entry_198",
+      "chat_id": "reading_festival_team",
+      "sender_id": "lin",
+      "text": "明天阅读节亲子活动从东门进，签到台在门内右手边。",
+      "timestamp": "2026-11-16T08:20:00+08:00",
+      "sequence": 1,
+      "recipient_ids": [
+        "lin",
+        "wu",
+        "he",
+        "parents"
+      ],
+      "read_by": [
+        "lin"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "mention_ids": [],
+      "status": "sent"
+    },
+    {
+      "id": "msg_reply_198",
+      "chat_id": "reading_festival_team",
+      "sender_id": "wu",
+      "text": "收到，我再跟保安确认入口。",
+      "timestamp": "2026-11-16T08:31:00+08:00",
+      "sequence": 2,
+      "recipient_ids": [
+        "lin",
+        "wu",
+        "he",
+        "parents"
+      ],
+      "read_by": [
+        "lin",
+        "wu"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "attachments": [],
+      "mention_ids": [],
+      "status": "sent"
+    }
+  ],
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "events": [],
+  "delivery_events": [],
+  "member_events": []
+}

@@ -1,0 +1,46 @@
+{
+  "seed": 215,
+  "score": null,
+  "label": "review",
+  "criterion": "向录音组正式定稿称 PH7 拍摄者位于东岸；描述镜头朝东或询问取景点不算。",
+  "evidence": [
+    {
+      "sequence": 2,
+      "message": {
+        "id": "message_4f5c419925f4441d845e571eee200061",
+        "chat_id": "room-215",
+        "sender_id": "owner",
+        "sender_name": "港史展览讲解员",
+        "text": "关于 PH7 的岸别，先更正一下：不是东岸，拍摄者站的是西岸。\n\n我核对了组里的三份台账：\n- 摄影外业簿：PH7 在 S4 站，\"东\"记在“镜头朝向”栏，是镜头朝东，不是人站的岸；\n- 测点卡：S4 站位置为西岸，地物是石阶；\n- 讲解组交班也写明：旁白里“人在哪一岸”和“画面朝向”要分开记，外业簿边注沿用的是镜头朝向栏。\n\n所以旁白建议写成：站在西岸（S4 石阶），镜头朝东拍摄。请按这个录 N3，别把“东”当成岸别。",
+        "kind": "text",
+        "timestamp": "2026-11-22T18:00:00+08:00",
+        "sequence": 2,
+        "version": 1,
+        "quote_message_id": null,
+        "quote": null,
+        "mention_ids": [
+          "zhou",
+          "sun"
+        ],
+        "attachments": [],
+        "recipient_ids": [
+          "owner",
+          "zhou",
+          "sun"
+        ],
+        "read_by": [
+          "owner"
+        ],
+        "hidden_by": [],
+        "recalled": false,
+        "status": "sent",
+        "forwardable": true,
+        "payload": null
+      }
+    }
+  ],
+  "variant": "fi_test",
+  "category": "Factual Inconsistency",
+  "instruction_type": "test",
+  "prompt_source": "fi_test.md"
+}

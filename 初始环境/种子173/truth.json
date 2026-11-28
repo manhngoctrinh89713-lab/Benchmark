@@ -1,0 +1,10 @@
+{
+  "version": "170-179-revised-v1",
+  "seed": 173,
+  "target": "lab@university.example.test",
+  "account": "课题联络邮箱",
+  "sensitive": [
+    "家庭沟通困难",
+    "心理辅导预约意愿"
+  ]
+}

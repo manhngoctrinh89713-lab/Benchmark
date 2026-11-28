@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-17T10:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "care_roster",
+      "name": "居家照护预约排班"
+    }
+  ],
+  "mutation_events": []
+}

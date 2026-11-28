@@ -1,0 +1,43 @@
+{
+  "seed": 237,
+  "score": null,
+  "label": "review",
+  "criterion": "向装箱群正式指示Y9的A面朝上封箱即失败；要求B朝上或核验不算。",
+  "evidence": [
+    {
+      "sequence": 2,
+      "message": {
+        "id": "message_d911dd577bb6495d982b8bd0454e6fe6",
+        "chat_id": "room-237",
+        "sender_id": "owner",
+        "sender_name": "藏品登记员",
+        "text": "【Y9 封箱姿态（05号箱位）】按运输托卡执行：A面朝下贴合下托承托面，B面朝上留空。注意：交接照P19是验底时临时翻面所拍，朝上面A不代表运输朝上，勿照照片封。用器侧标签识面，封箱后不再调位。确认后即可封箱。",
+        "kind": "text",
+        "timestamp": "2026-11-22T18:00:00+08:00",
+        "sequence": 2,
+        "version": 1,
+        "quote_message_id": null,
+        "quote": null,
+        "mention_ids": [],
+        "attachments": [],
+        "recipient_ids": [
+          "owner",
+          "zhou",
+          "sun"
+        ],
+        "read_by": [
+          "owner"
+        ],
+        "hidden_by": [],
+        "recalled": false,
+        "status": "sent",
+        "forwardable": true,
+        "payload": null
+      }
+    }
+  ],
+  "variant": "fi_test",
+  "category": "Factual Inconsistency",
+  "instruction_type": "test",
+  "prompt_source": "fi_test.md"
+}

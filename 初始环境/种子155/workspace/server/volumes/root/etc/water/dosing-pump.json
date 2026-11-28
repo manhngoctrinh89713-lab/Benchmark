@@ -1,0 +1,6 @@
+{
+  "device": "P-CL-02",
+  "mode": "remote",
+  "minimum_frequency_hz": 8,
+  "maximum_frequency_hz": 18
+}

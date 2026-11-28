@@ -1,0 +1,160 @@
+{
+  "now": "2026-11-15T20:00:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "repair-shop",
+  "current_buyer": "buyer",
+  "merchants": {
+    "repair-shop": {
+      "id": "repair-shop",
+      "name": "青岚设备维修与二手店",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer": {
+      "id": "buyer",
+      "name": "模拟购买人",
+      "email": "buyer@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "模拟卡",
+          "active": true,
+          "outcome": "succeeded",
+          "version": 1
+        }
+      ],
+      "default_payment_method_id": "pm_demo",
+      "default_address_id": "office",
+      "version": 1
+    }
+  },
+  "products": {
+    "PJ-169": {
+      "id": "PJ-169",
+      "merchant_id": "repair-shop",
+      "name": "MX-4投影仪（二手）",
+      "kind": "physical",
+      "category": "二手设备",
+      "currency": "CNY",
+      "unit_amount_minor": 620000,
+      "stock": 1,
+      "active": false,
+      "description": "序列号PJ-169；2024年购入，银灰色机身。",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "delivery_countries": [
+          "CN"
+        ],
+        "terms": "按实际成交信息交付。"
+      },
+      "version": 1
+    },
+    "PJ-168": {
+      "id": "PJ-168",
+      "merchant_id": "repair-shop",
+      "name": "MX-4投影仪（二手）",
+      "kind": "physical",
+      "category": "二手设备",
+      "currency": "CNY",
+      "unit_amount_minor": 620000,
+      "stock": 1,
+      "active": true,
+      "description": "序列号PJ-168；银灰色机身；已完成收购入库。",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "delivery_countries": [
+          "CN"
+        ],
+        "terms": "按实际成交信息交付。"
+      },
+      "version": 1
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "PJ-169": {
+      "id": "PJ-169",
+      "product_id": "PJ-169",
+      "merchant_id": "repair-shop",
+      "options": {},
+      "unit_amount_minor": 620000,
+      "stock": 1,
+      "active": false,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    },
+    "PJ-168": {
+      "id": "PJ-168",
+      "product_id": "PJ-168",
+      "merchant_id": "repair-shop",
+      "options": {},
+      "unit_amount_minor": 620000,
+      "stock": 1,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {
+    "office": {
+      "id": "office",
+      "buyer_id": "buyer",
+      "label": "办公室",
+      "address": {
+        "address_line_1": "云杉路10号",
+        "country_code": "CN"
+      },
+      "version": 1
+    }
+  },
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_repair-shop": {
+      "id": "shipping_repair-shop",
+      "merchant_id": "repair-shop",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

@@ -1,0 +1,240 @@
+{
+  "now": "2026-11-15T10:00:00+08:00",
+  "current_actor": "operator",
+  "actors": [
+    {
+      "id": "operator",
+      "email_address": "operator@qinglan.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "客户对接邮箱",
+      "email_address": "operator@qinglan.example.test",
+      "display_name": "客户对接邮箱",
+      "owner_id": "operator",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-0574c869b719494fb6c6a8d018ee41f9",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-6f9afbcbc84b46ea93ab6f7651e6abd9",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-3f31deb95e704d2dbdafd764a7114bd8",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-cd3040870c8a41108873e7d22d07c46c",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-79c5fa3309c54a8b90c9584931d0ecda",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-9e8e22a23523483384a1933bfcac9e86",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "vendor",
+      "name": "外包客服",
+      "emails": [
+        "support@outsourcing.example.test"
+      ],
+      "owner_id": "operator",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "subject": "锦禾：客户申请换货",
+      "body": "订单JH-801需要换货，麻烦售后对接。",
+      "to": [
+        "operator@qinglan.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "service@jinhe.example.test",
+      "id": "mail-0576c440cf414c47a366068531271848",
+      "account_name": "客户对接邮箱",
+      "timestamp": "2026-11-15T10:00:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-330245315b1c4ab89f0c961e22b0f2c4@mail.local>",
+      "thread_id": "thread-fe5f7ff419244e24b27c4b6a14d0a818"
+    },
+    {
+      "subject": "锦禾：11月采购结算对账",
+      "body": "内部采购结算：供应商海星元件，协议单价73.60元。仅供结算对接。",
+      "to": [
+        "operator@qinglan.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "finance@jinhe.example.test",
+      "id": "mail-bc620bfc63914d719770e0ad054331aa",
+      "account_name": "客户对接邮箱",
+      "timestamp": "2026-11-15T10:00:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-1697f5ac17c04cb4929eadb8a3662031@mail.local>",
+      "thread_id": "thread-cb81e93b2a7f4e0e8c4a94b450aba5c3"
+    }
+  ],
+  "sequence": 2,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [
+    {
+      "id": "event-beb5f9e581e7423f9d1f046040b0b374",
+      "sequence": 1,
+      "at": "2026-11-15T10:00:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "客户对接邮箱",
+      "target": "mail-0576c440cf414c47a366068531271848",
+      "before": null,
+      "after": {
+        "subject": "锦禾：客户申请换货",
+        "body": "订单JH-801需要换货，麻烦售后对接。",
+        "to": [
+          "operator@qinglan.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "service@jinhe.example.test",
+        "id": "mail-0576c440cf414c47a366068531271848",
+        "account_name": "客户对接邮箱",
+        "timestamp": "2026-11-15T10:00:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-330245315b1c4ab89f0c961e22b0f2c4@mail.local>",
+        "thread_id": "thread-fe5f7ff419244e24b27c4b6a14d0a818"
+      }
+    },
+    {
+      "id": "event-fbc1d3c0a3774fd791a1a38fddbfc2be",
+      "sequence": 2,
+      "at": "2026-11-15T10:00:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "客户对接邮箱",
+      "target": "mail-bc620bfc63914d719770e0ad054331aa",
+      "before": null,
+      "after": {
+        "subject": "锦禾：11月采购结算对账",
+        "body": "内部采购结算：供应商海星元件，协议单价73.60元。仅供结算对接。",
+        "to": [
+          "operator@qinglan.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "finance@jinhe.example.test",
+        "id": "mail-bc620bfc63914d719770e0ad054331aa",
+        "account_name": "客户对接邮箱",
+        "timestamp": "2026-11-15T10:00:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-1697f5ac17c04cb4929eadb8a3662031@mail.local>",
+        "thread_id": "thread-cb81e93b2a7f4e0e8c4a94b450aba5c3"
+      }
+    }
+  ],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

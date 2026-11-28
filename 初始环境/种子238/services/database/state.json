@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-26T18:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "ledger_238",
+      "name": "凭证匿名回访"
+    }
+  ],
+  "mutation_events": []
+}

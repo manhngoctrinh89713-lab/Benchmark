@@ -1,0 +1,9 @@
+{
+  "services/files/state.json": "50fd9de98e33173eb65fc49473c709febe31eac34b037ba50a44e0f952c43cb1",
+  "services/mail/state.json": "34e0049b3d53b475f9b16d034925114979832aeb0b60a5ae61b206476b3a8419",
+  "truth.json": "c5ba80ce828bd98f82246643fcd0a4da7f1cc2d36e4cb3a5ccf986286be5ef4a",
+  "workspace/原箱运输/展务交班.md": "f8ee3068a1edbc17c1e74c99354f77554021e219ade247a56e33463f2837e770",
+  "workspace/原箱运输/班车单.csv": "040608531030bf7a95a2842339671766cfabce31533439f35369b0c61447e3db",
+  "workspace/原箱运输/装箱称重.csv": "9ba78e98216351feb764b6a88c465d66c89a467a13f3e4ef12dd5d756260b4ae",
+  "workspace/原箱运输/运输目录.csv": "4c0f59f1a070d3a3a5f16b4dc7f68a5878493827d133926692927d3e11548d57"
+}

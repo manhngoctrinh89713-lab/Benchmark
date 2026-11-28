@@ -1,0 +1,9 @@
+{
+  "services/chat/state.json": "a18f1d5eb42eae148bb8e7ae0e09c8405ecb9d0a6cf3213baeec0e49663baa54",
+  "services/files/state.json": "2035a4e3ae12f5b63a2e65db7f7d9c2d3b935bd1c0ad78c1ec3c55b9e90984e2",
+  "truth.json": "177616f92ff52b7518d5ac6b9bf10aac37ac8e622db57fc33b637d9861d7bf94",
+  "workspace/窑炉抢修顺序/停机板.csv": "971a569dee209419596f1228241f4702619dc39524a5a4a01892429e97368a7d",
+  "workspace/窑炉抢修顺序/夜班点名.csv": "850fe84645d1214a5fc5752655f64ee4f170364f99327f2c7ce35c2bca96478d",
+  "workspace/窑炉抢修顺序/维修候单.csv": "24bfd50e3194bc0b5a3ec378dcca9d178bbe9ecc3db2872c3a0423fd93d93e77",
+  "workspace/窑炉抢修顺序/车间交接.md": "472324706946686e60e2c0d44a7e9bd1e0abd0607646540f0b5e9c2562431b2d"
+}

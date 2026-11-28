@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "ledger_218",
+      "name": "菜园轮作地块"
+    }
+  ],
+  "mutation_events": []
+}

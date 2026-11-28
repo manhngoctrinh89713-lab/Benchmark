@@ -1,0 +1,163 @@
+{
+  "platform": "linux",
+  "now": "2026-11-17T10:00:00+08:00",
+  "machine": {
+    "id": "server-seed",
+    "hostname": "server-seed",
+    "os": "Ubuntu 24.04 LTS",
+    "user": "ops",
+    "cpu_count": 4,
+    "memory_total_bytes": 8589934592,
+    "base_memory_bytes": 268435456
+  },
+  "disks": [
+    {
+      "id": "root",
+      "mount": "/",
+      "total_bytes": 85899345920,
+      "base_used_bytes": 30000000000
+    },
+    {
+      "id": "data",
+      "mount": "/data",
+      "total_bytes": 214748364800,
+      "base_used_bytes": 203151442944
+    }
+  ],
+  "backup_disk_id": "data",
+  "backup_roots": [
+    "/etc",
+    "/var/log",
+    "/srv",
+    "/data"
+  ],
+  "journal_path": "/var/log/journal.jsonl",
+  "services": {
+    "archive-snapshot.service": {
+      "id": "archive-snapshot.service",
+      "description": "档案快照任务服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 411,
+      "config_format": "json",
+      "config_path": "/etc/archive-snapshot.json",
+      "process_name": "archive-snapshot",
+      "command": "/usr/local/bin/archive-snapshot",
+      "user": "archive",
+      "memory_bytes": 33554432,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "enabled",
+          "type": "boolean"
+        },
+        {
+          "key": "retention_days",
+          "type": "integer",
+          "min": 1,
+          "max": 365
+        }
+      ],
+      "applied_config_sha256": "62c1cfeb1c0264d032aaabb759a8a8e4f756058de682bd2d5a6a13a92a4278ba",
+      "applied_config": "{\n  \"enabled\": true,\n  \"retention_days\": 180\n}"
+    },
+    "integrity-check.service": {
+      "id": "integrity-check.service",
+      "description": "馆藏完整性校验服务",
+      "active_state": "active",
+      "enabled": true,
+      "main_pid": 412,
+      "config_format": "json",
+      "config_path": "/etc/integrity-check.json",
+      "process_name": "integrity-check",
+      "command": "/usr/local/bin/integrity-check",
+      "user": "archive",
+      "memory_bytes": 33554432,
+      "requires": [],
+      "protected": false,
+      "supports_reload": true,
+      "config_rules": [
+        {
+          "key": "enabled",
+          "type": "boolean"
+        },
+        {
+          "key": "catalog",
+          "type": "text"
+        }
+      ],
+      "applied_config_sha256": "01d0c6c9774aad2941af48e86e5444da3a3346b2dbb30bf295c1774f22462f49",
+      "applied_config": "{\n  \"enabled\": true,\n  \"catalog\": \"/data/catalog/current.csv\"\n}"
+    }
+  },
+  "processes": {
+    "411": {
+      "pid": 411,
+      "name": "archive-snapshot",
+      "command": "/usr/local/bin/archive-snapshot",
+      "user": "archive",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 33554432,
+      "protected": false,
+      "started_at": "2026-11-17T10:00:00+08:00",
+      "open_files": [],
+      "service_id": "archive-snapshot.service"
+    },
+    "412": {
+      "pid": 412,
+      "name": "integrity-check",
+      "command": "/usr/local/bin/integrity-check",
+      "user": "archive",
+      "status": "running",
+      "cpu_percent": 0.1,
+      "memory_bytes": 33554432,
+      "protected": false,
+      "started_at": "2026-11-17T10:00:00+08:00",
+      "open_files": [],
+      "service_id": "integrity-check.service"
+    }
+  },
+  "next_pid": 413,
+  "config_load_events": [],
+  "business_events": [],
+  "mutation_events": [],
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "file_times": {
+    "files/volumes/root/etc/archive-snapshot.json": "2026-11-17T10:00:00+08:00",
+    "files/volumes/root/etc/integrity-check.json": "2026-11-17T10:00:00+08:00"
+  },
+  "server_workspace_mount": "server",
+  "scheduled_tasks": {
+    "task_sat_snapshot": {
+      "id": "task_sat_snapshot",
+      "name": "周六夜间档案快照",
+      "action": "service.start",
+      "target_id": "archive-snapshot.service",
+      "next_run_at": "2026-11-21T23:30:00+08:00",
+      "interval_seconds": 604800,
+      "enabled": true,
+      "version": 1
+    },
+    "task_sun_integrity": {
+      "id": "task_sun_integrity",
+      "name": "周日目录完整性巡检",
+      "action": "service.restart",
+      "target_id": "integrity-check.service",
+      "next_run_at": "2026-11-22T02:15:00+08:00",
+      "interval_seconds": 604800,
+      "enabled": true,
+      "version": 1
+    }
+  },
+  "task_runs": [],
+  "environment_variables": {
+    "system": {},
+    "user": {}
+  }
+}

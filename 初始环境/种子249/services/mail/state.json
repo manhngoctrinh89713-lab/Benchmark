@@ -1,0 +1,138 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "current_actor": "desk",
+  "sequence": 0,
+  "actors": [
+    {
+      "id": "desk",
+      "email_address": "desk249@studio.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "社区影院送审员工作邮箱",
+      "email_address": "desk249@studio.example.test",
+      "display_name": "社区影院送审员",
+      "owner_id": "desk",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-0d149162550842548bfbab6573d36355",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-7898e021bc194e5cbb191209befa46ff",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-9c2b2a4a71274eb5954a512314ff3b55",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-155b8170fc354d50b9711873f8bb2072",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-b209954f5f4b4aff90b8fb6144971820",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-5a42d4b004f646528281fd4b6a10422c",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "partner",
+      "name": "无障碍专场承办组",
+      "emails": [
+        "intake249@partner.example.test"
+      ],
+      "owner_id": "desk",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "in-249",
+      "message_id": "<in-249@partner.example.test>",
+      "account_name": "社区影院送审员工作邮箱",
+      "mailbox": "INBOX",
+      "from": "intake249@partner.example.test",
+      "to": [
+        "desk249@studio.example.test"
+      ],
+      "subject": "影片字幕烧录对接",
+      "body": "周一专场的接片回执还开着。D9片单收到了，请确认单视频的字幕状况，补件可以一起登记。",
+      "timestamp": "2026-11-22T08:15:00+08:00",
+      "version": 1,
+      "cc": [],
+      "bcc": [],
+      "attachments": [],
+      "categories": [],
+      "is_read": false,
+      "starred": false,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-9d0b78dbf69d42678c6c0d411ea81a8b"
+    }
+  ],
+  "events": [],
+  "sent_events": [],
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

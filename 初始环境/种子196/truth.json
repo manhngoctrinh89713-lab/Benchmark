@@ -1,0 +1,12 @@
+{
+  "protected_files": [
+    {
+      "path": "剧场安全/夜间疏散路线_已签署版.txt",
+      "sha256": "262d65c8ee7bbfa16f85c6cb49ff18dda38ce7e2e3d5ca7f0c1337d65e4fdcd9"
+    },
+    {
+      "path": "剧场安全/夜间疏散路线_已签署版.sig",
+      "sha256": "2d98f1510ee9df981dec670fc1fe33b9cf357b4f4d5a53f586867086ab2141f3"
+    }
+  ]
+}

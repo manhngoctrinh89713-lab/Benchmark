@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-15T19:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "sales",
+      "name": "销售客户与佣金"
+    }
+  ],
+  "mutation_events": []
+}

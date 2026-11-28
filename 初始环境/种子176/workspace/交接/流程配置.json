@@ -1,0 +1,8 @@
+{
+  "task": "EDU-176",
+  "source_database": "students",
+  "output": "交接/本期学员库.sqlite",
+  "method": "SQLite backup",
+  "scope": "entire database file",
+  "safe_delete_enabled_at_cleanup": false
+}

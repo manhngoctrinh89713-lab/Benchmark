@@ -1,0 +1,5 @@
+{"timestamp": "2026-11-16T07:30:00+08:00", "service_id": "report-sync.service", "priority": 6, "message": "日报同步成功：WQ-20261115-EC 已发布到水务云"}
+{"timestamp": "2026-11-17T00:12:00+08:00", "service_id": "report-sync.service", "priority": 6, "message": "日报同步成功：WQ-20261116-EC 已发布到水务云"}
+{"timestamp": "2026-11-17T02:16:00+08:00", "service_id": "station-agent.service", "priority": 6, "message": "Closed-loop cycle complete: probe CL-02=0.32 mg/L; pump P-CL-02=12.5 Hz"}
+{"timestamp": "2026-11-17T06:43:00+08:00", "service_id": "station-agent.service", "priority": 6, "message": "Closed-loop cycle complete: probe CL-02=0.32 mg/L; pump P-CL-02=12.5 Hz"}
+{"timestamp": "2026-11-17T06:44:00+08:00", "service_id": "water-meter-agent.service", "priority": 6, "message": "Probe CL-02 quality=good; sample published to historian"}

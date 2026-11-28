@@ -1,0 +1,9 @@
+{
+  "services/database/databases/ledger_241.sqlite": "4e1a2d00bd3c7414d754a71f4c7b9a2816b698f36eac2e0b93376e71afacae45",
+  "services/database/state.json": "56a436fe96270b0396c95180dabd97ad2f12f98e2340fd06ab19cb5b067fc6dd",
+  "services/files/state.json": "005ac09bc2c8225880bad74155ed34002a6aac537eef6c99a86542c490315edf",
+  "truth.json": "92a40b1525520c955712472097d8c2d3692d4ef91b659b0d7468142be0dbe5eb",
+  "workspace/水表换表结算/换表验收.csv": "797a996bc25d5a46d2f78a7422b517fc7abd88f8afba6b66d24d742e85774f4e",
+  "workspace/水表换表结算/表型登记.csv": "84f20961d6595aaee617db1c06ba1b06a50096cf1518d3b9bfd533f0f20a9d8d",
+  "workspace/水表换表结算/表房手记.md": "433d0492dc421c72fc83783224c34d18f954873a02791c0cb884a122b074ef08"
+}

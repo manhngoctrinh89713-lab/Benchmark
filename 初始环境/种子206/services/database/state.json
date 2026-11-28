@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-21T12:00:00+08:00",
+  "sequence": 0,
+  "mutation_events": [],
+  "databases": [
+    {
+      "id": "register_206",
+      "name": "剧照选片业务台账"
+    }
+  ]
+}

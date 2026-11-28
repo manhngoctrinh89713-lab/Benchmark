@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "ledger_247",
+      "name": "戏票寄售"
+    }
+  ],
+  "mutation_events": []
+}

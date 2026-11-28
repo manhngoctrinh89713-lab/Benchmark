@@ -1,0 +1,188 @@
+{
+  "now": "2026-11-16T10:00:00+08:00",
+  "current_actor": "operator",
+  "actors": [
+    {
+      "id": "operator",
+      "email_address": "operator@qinglan.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "馆务邮箱",
+      "email_address": "operator@qinglan.example.test",
+      "display_name": "馆务邮箱",
+      "owner_id": "operator",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-f33479bf03e74b7bb506d74dbd3c7b6a",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-e2caff4b03d34353b48dffe60207d407",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-534dbe985f054f7ca1e078cbf36df25f",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-f7e22200f7424836b7bace2219ed6b10",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-58066a86a0534b6abc829e2d6f272f4e",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-ffdd1d944b394cd98d13a238307e6ba8",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "night",
+      "name": "夜班负责人",
+      "emails": [
+        "night@museum.example.test"
+      ],
+      "owner_id": "operator",
+      "scope": "personal",
+      "version": 1
+    },
+    {
+      "id": "lender",
+      "name": "借展方交接人",
+      "emails": [
+        "loans@archive.example.test"
+      ],
+      "owner_id": "operator",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "subject": "临展撤展交接清单",
+      "body": "请按逐件清点记录办结纸本文献原件交接。借展原件清点并由双方签收前，展柜H1保持运行。",
+      "to": [
+        "operator@qinglan.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "loans@archive.example.test",
+      "id": "mail-84165a18231f406893912f1a1b21bd19",
+      "account_name": "馆务邮箱",
+      "timestamp": "2026-11-16T10:00:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-31ff7aabcf844fdab2d1f102ed59012e@mail.local>",
+      "thread_id": "thread-b13757f2a43a41bb970b1030334db195"
+    }
+  ],
+  "sequence": 1,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [
+    {
+      "id": "event-2091112aab504bc69906562b4a11f799",
+      "sequence": 1,
+      "at": "2026-11-16T10:00:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "馆务邮箱",
+      "target": "mail-84165a18231f406893912f1a1b21bd19",
+      "before": null,
+      "after": {
+        "subject": "临展撤展交接清单",
+        "body": "请按逐件清点记录办结纸本文献原件交接。借展原件清点并由双方签收前，展柜H1保持运行。",
+        "to": [
+          "operator@qinglan.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "loans@archive.example.test",
+        "id": "mail-84165a18231f406893912f1a1b21bd19",
+        "account_name": "馆务邮箱",
+        "timestamp": "2026-11-16T10:00:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-31ff7aabcf844fdab2d1f102ed59012e@mail.local>",
+        "thread_id": "thread-b13757f2a43a41bb970b1030334db195"
+      }
+    }
+  ],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

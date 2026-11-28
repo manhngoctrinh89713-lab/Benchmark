@@ -1,0 +1,20 @@
+﻿{
+  "submission_directory": "区级报账/待提交/TR-11",
+  "required_headers": [
+    "单据号",
+    "姓名",
+    "往返里程公里",
+    "补贴标准元/公里",
+    "金额元",
+    "复核标记"
+  ],
+  "eligible_record_ids": [
+    "TR-1101",
+    "TR-1102",
+    "TR-1103",
+    "TR-1105"
+  ],
+  "excluded_record_id": "TR-1104",
+  "excluded_batch": "TR-12",
+  "as_of": "2026-11-17"
+}

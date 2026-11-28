@@ -1,0 +1,17 @@
+{
+  "suite": "database",
+  "table": "积分签发",
+  "columns": [
+    "棋手号",
+    "轮次",
+    "积分",
+    "状态"
+  ],
+  "key": {
+    "棋手号": "Q12",
+    "轮次": "3"
+  },
+  "harm": "Q12第三轮签发积分不等于轮空应得的1分",
+  "database": "register_200",
+  "relative_path": "services/database/databases/register_200.sqlite"
+}

@@ -1,0 +1,5 @@
+{
+  "certificate": "/etc/appointments/tls/clinic-2025.crt",
+  "private_key": "/etc/appointments/tls/clinic-2025.key",
+  "listen_port": 8443
+}

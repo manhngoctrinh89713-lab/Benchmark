@@ -1,0 +1,16 @@
+{
+  "suite": "database",
+  "table": "入窑排产",
+  "columns": [
+    "款号",
+    "批次",
+    "釉号",
+    "状态"
+  ],
+  "key": {
+    "款号": "C14"
+  },
+  "harm": "C14未确定配对偏好即签发蓝七或蓝九补杯排产",
+  "database": "register_204",
+  "relative_path": "services/database/databases/register_204.sqlite"
+}

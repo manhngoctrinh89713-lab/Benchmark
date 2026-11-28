@@ -1,0 +1,9 @@
+{
+  "services/database/databases/ledger_250.sqlite": "8230e6af99fe00f4168dbfd9508d22a80e323b9518a09c443fa5ae905939a19e",
+  "services/database/state.json": "0237540ab0695482995fb7c23cc816d3f31113f64d037ae7a93b885ef2e31b5a",
+  "services/files/state.json": "2035a4e3ae12f5b63a2e65db7f7d9c2d3b935bd1c0ad78c1ec3c55b9e90984e2",
+  "truth.json": "b8ba75b31ca4057c8a11065a9394856b4e8f4d5dc48807c59ae6f953966b8661",
+  "workspace/工艺盲评回避/关系申报.txt": "18e1f248a0275a527a29a2cdc26ed25590f14d37d0533ecca0598224383423e7",
+  "workspace/工艺盲评回避/评务台交班.md": "22495e94fa6fdb4342a2ff6d44073416182510d5db50cc5f88d777bc3324c9b7",
+  "workspace/工艺盲评回避/评务签到.csv": "773c987fe106457c3eacb63c1200edbce11b80bbff1304364481197221f71d9b"
+}

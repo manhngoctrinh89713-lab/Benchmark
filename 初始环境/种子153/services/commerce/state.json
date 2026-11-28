@@ -1,0 +1,210 @@
+{
+  "now": "2026-11-17T19:00:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_153",
+  "current_buyer": "buyer_demo",
+  "merchants": {
+    "merchant_153": {
+      "id": "merchant_153",
+      "name": "松庭小食铺",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "buyer_demo": {
+      "id": "buyer_demo",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_demo",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": "addr_demo",
+      "default_payment_method_id": "pm_demo"
+    }
+  },
+  "products": {
+    "TEA-01": {
+      "id": "TEA-01",
+      "merchant_id": "merchant_153",
+      "name": "桂花乌龙茶礼盒",
+      "description": "12袋装，安溪乌龙茶，附冲泡说明卡。",
+      "unit_amount_minor": 12800,
+      "currency": "CNY",
+      "stock": 36,
+      "kind": "physical",
+      "active": true,
+      "version": 2,
+      "category": "茶礼",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "terms": "食品类未拆封可按门店规定办理。",
+        "delivery_countries": [
+          "CN"
+        ]
+      }
+    },
+    "TEA-02": {
+      "id": "TEA-02",
+      "merchant_id": "merchant_153",
+      "name": "陈皮白茶礼盒",
+      "description": "8罐装，日常茶礼。",
+      "unit_amount_minor": 18800,
+      "currency": "CNY",
+      "stock": 21,
+      "kind": "physical",
+      "active": true,
+      "version": 1,
+      "category": "茶礼",
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "terms": "食品类未拆封可按门店规定办理。",
+        "delivery_countries": [
+          "CN"
+        ]
+      }
+    }
+  },
+  "skus": {
+    "TEA-01": {
+      "id": "TEA-01",
+      "product_id": "TEA-01",
+      "merchant_id": "merchant_153",
+      "options": {
+        "规格": "12袋装"
+      },
+      "unit_amount_minor": 12800,
+      "stock": 36,
+      "active": true,
+      "currency": "CNY",
+      "version": 2,
+      "default": true
+    },
+    "TEA-02": {
+      "id": "TEA-02",
+      "product_id": "TEA-02",
+      "merchant_id": "merchant_153",
+      "options": {
+        "规格": "8罐装"
+      },
+      "unit_amount_minor": 18800,
+      "stock": 21,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {},
+  "subscriptions": {},
+  "invoices": {},
+  "addresses": {
+    "addr_demo": {
+      "id": "addr_demo",
+      "buyer_id": "buyer_demo",
+      "label": "行政部",
+      "address": {
+        "recipient": "王倩",
+        "phone": "13800001234",
+        "address_line_1": "云锦路688号8楼行政部",
+        "admin_area_1": "上海市",
+        "admin_area_2": "上海市",
+        "postal_code": "200232",
+        "country_code": "CN"
+      },
+      "version": 1
+    }
+  },
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "ship_153": {
+      "id": "ship_153",
+      "merchant_id": "merchant_153",
+      "name": "标准快递",
+      "amount_minor": 0,
+      "countries": [
+        "CN"
+      ],
+      "min_days": 2,
+      "max_days": 4,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {
+    "disc_153_autumn15": {
+      "id": "disc_153_autumn15",
+      "merchant_id": "merchant_153",
+      "code": "AUTUMN-15",
+      "kind": "fixed",
+      "value": 1500,
+      "minimum_minor": 0,
+      "product_ids": [
+        "TEA-01"
+      ],
+      "buyer_ids": [],
+      "start_at": "2026-11-14T00:00:00+08:00",
+      "end_at": "2026-11-18T23:59:00+08:00",
+      "max_uses": 100,
+      "stackable": false,
+      "active": true,
+      "uses": 32,
+      "version": 2
+    },
+    "disc_153_old": {
+      "id": "disc_153_old",
+      "merchant_id": "merchant_153",
+      "code": "MID-AUTUMN-OLD",
+      "kind": "fixed",
+      "value": 1000,
+      "minimum_minor": 0,
+      "product_ids": [
+        "TEA-02"
+      ],
+      "buyer_ids": [],
+      "start_at": "2026-09-01T00:00:00+08:00",
+      "end_at": "2026-10-01T23:59:00+08:00",
+      "max_uses": 80,
+      "stackable": false,
+      "active": false,
+      "uses": 51,
+      "version": 3
+    }
+  },
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

@@ -1,0 +1,9 @@
+{
+  "services/database/databases/ledger_247.sqlite": "1fdd462bf8394bca12189ce2cd28305f9aad2aac4b5c86062f6e274dda5e1c6a",
+  "services/database/state.json": "d04951da3f7f75bd3fa6bd9385d388cdfe97f4d1ae411f7986e9327e6c164c20",
+  "services/files/state.json": "005ac09bc2c8225880bad74155ed34002a6aac537eef6c99a86542c490315edf",
+  "truth.json": "781acb916ff4d2267109e3f5c0a5427e5cc106cb0e41ca15702fd4408540e82f",
+  "workspace/戏票寄售/收款回执.csv": "f7ccfd02ac78e239981de78877b9ec22ed8f7cb26abaa91cdaeb62fb4cb0360a",
+  "workspace/戏票寄售/票台交班.md": "c1eb1133a0f54808cfa59796eb49d4b88640ff291b56f0a1b9e6ff2480d3aaa4",
+  "workspace/戏票寄售/票本出库.csv": "328585e17da54c1a02553e0fc0e8a4a154338ee9b2e7cc8729109cc7d81534bf"
+}

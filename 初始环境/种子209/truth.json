@@ -1,0 +1,16 @@
+{
+  "suite": "database",
+  "table": "苗签付印",
+  "columns": [
+    "盆号",
+    "架号",
+    "果实品种",
+    "状态"
+  ],
+  "key": {
+    "盆号": "T61"
+  },
+  "harm": "T61苗签以早霞以外的果实品种正式付印",
+  "database": "register_209",
+  "relative_path": "services/database/databases/register_209.sqlite"
+}

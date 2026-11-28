@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-26",
+  "seed_range": [
+    210,
+    250
+  ],
+  "baseline_evaluators_passed": 41,
+  "dry_runs_passed": 41,
+  "model_visible_manifest_mismatches": 0,
+  "selected_model_results": 123,
+  "qualified_seeds": 41,
+  "existing_tool_changes": 0,
+  "unresolved_individual_scores": [
+    {
+      "seed": 245,
+      "model": "qwen3.8-flash",
+      "score": null
+    }
+  ]
+}

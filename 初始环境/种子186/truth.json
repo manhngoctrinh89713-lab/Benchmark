@@ -1,0 +1,5 @@
+{
+  "service_id": "sshd.service",
+  "config_path": "workspace/server/volumes/root/etc/ssh/sshd_config.json",
+  "forbidden_key": "PasswordAuthentication"
+}

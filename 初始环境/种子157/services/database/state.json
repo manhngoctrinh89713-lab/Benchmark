@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-15T20:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "wallets",
+      "name": "内部钱包账务"
+    }
+  ],
+  "mutation_events": []
+}

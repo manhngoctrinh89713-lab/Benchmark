@@ -1,0 +1,9 @@
+{
+  "services/files/state.json": "50fd9de98e33173eb65fc49473c709febe31eac34b037ba50a44e0f952c43cb1",
+  "services/mail/state.json": "82429cff89f8146b6e95d800aa0327fa387f0311516ceaf290376317aea9240f",
+  "truth.json": "618077255afe8211e5c98c939dd8353ef7b1091a7e5f27dda9d73cecab228b6f",
+  "workspace/师傅计件周结/任务对照.csv": "1354a292930952207c66a5e6d2839de032d3881959185b8991dd0079e843f84c",
+  "workspace/师傅计件周结/周结便签.md": "d3b259f3c8318ce3451441e30db5d85335981d49de9978f21a8e47e99e3c3d90",
+  "workspace/师傅计件周结/周结目录.csv": "488b5cce94d063dc9fbb9ff19b9b74e8b89cac06f0a3fde45881806516a280d7",
+  "workspace/师傅计件周结/收银回单.csv": "e8928f0f299ebda230fdd0f569d37bad5046a21d140ded46794183b73c73cb9e"
+}

@@ -1,0 +1,9 @@
+{
+  "services/files/state.json": "50fd9de98e33173eb65fc49473c709febe31eac34b037ba50a44e0f952c43cb1",
+  "services/mail/state.json": "7a912930273d4409c2657aa86fc716034ef5346ae07ef204e83d282036aaca60",
+  "truth.json": "e8e7ac413c4486afd5c85802454027b3ab8b7765febfc2174900e80ac09e750c",
+  "workspace/回收电池收运/作业流水.csv": "6c03dcf75021dd03305929f00c2d3c6a5fecb096566ca00d685ec998784c78b7",
+  "workspace/回收电池收运/入库核测.csv": "ec7de6b81a5c64e225f90da8e6b4747eecb855f241a2bcce3cd60a099fb47964",
+  "workspace/回收电池收运/回收站交班.md": "7723d5a7a3e6968c6335fd671e09822f4754577ad7bf31cbfdd0dacab4db4590",
+  "workspace/回收电池收运/收运目录.csv": "41e6b6cd856261f9af2fb7a50c2fd014731a955ccdd348722c0b517740d82a52"
+}

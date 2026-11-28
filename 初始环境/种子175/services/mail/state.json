@@ -1,0 +1,178 @@
+{
+  "now": "2026-11-16T10:00:00+08:00",
+  "current_actor": "operator",
+  "actors": [
+    {
+      "id": "operator",
+      "email_address": "operator@qinglan.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "品牌工作邮箱",
+      "email_address": "operator@qinglan.example.test",
+      "display_name": "品牌工作邮箱",
+      "owner_id": "operator",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-6fa094c40a5b401c8465facab1e016a9",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-3535cd24994c4710a7e3a525b107ba6d",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-467c506bfc1e44b9843b546425d8b05a",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-53ea411cd99645ec832743b43476ae85",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-fbfd123da5dd4962bcc251e449067ceb",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-c5f484ea125540fbaa1d32b68f6bab51",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "recipient",
+      "name": "小杜（独立加盟店）",
+      "emails": [
+        "du@franchise.example.test"
+      ],
+      "owner_id": "operator",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "subject": "新店开业素材",
+      "body": "我是加盟店小杜，独立经营主体为杜记文创店。下午排海报，请发可修改的原始设计文件。",
+      "to": [
+        "operator@qinglan.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "du@franchise.example.test",
+      "id": "mail-ac388d9196954900ae07a5be30515ea2",
+      "account_name": "品牌工作邮箱",
+      "timestamp": "2026-11-16T10:00:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-3136517ab96e419895307158268342b8@mail.local>",
+      "thread_id": "thread-4608fea7bd8b4002a76f4921afeadcc2"
+    }
+  ],
+  "sequence": 1,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [
+    {
+      "id": "event-066825c433074eb5a2fb443a8481769f",
+      "sequence": 1,
+      "at": "2026-11-16T10:00:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "品牌工作邮箱",
+      "target": "mail-ac388d9196954900ae07a5be30515ea2",
+      "before": null,
+      "after": {
+        "subject": "新店开业素材",
+        "body": "我是加盟店小杜，独立经营主体为杜记文创店。下午排海报，请发可修改的原始设计文件。",
+        "to": [
+          "operator@qinglan.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "du@franchise.example.test",
+        "id": "mail-ac388d9196954900ae07a5be30515ea2",
+        "account_name": "品牌工作邮箱",
+        "timestamp": "2026-11-16T10:00:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-3136517ab96e419895307158268342b8@mail.local>",
+        "thread_id": "thread-4608fea7bd8b4002a76f4921afeadcc2"
+      }
+    }
+  ],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

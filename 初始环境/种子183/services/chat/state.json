@@ -1,0 +1,218 @@
+{
+  "model_version": 3,
+  "now": "2026-11-16T10:00:00+08:00",
+  "current_user_id": "owner",
+  "relations": [
+    {
+      "owner_id": "owner",
+      "user_id": "zhou",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "zhou",
+      "user_id": "owner",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "owner",
+      "user_id": "sun",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "sun",
+      "user_id": "owner",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "owner",
+      "user_id": "li",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "li",
+      "user_id": "owner",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "contacts": [
+    {
+      "id": "owner",
+      "name": "项目负责人",
+      "version": 1
+    },
+    {
+      "id": "zhou",
+      "name": "周恒（小周）",
+      "version": 1
+    },
+    {
+      "id": "sun",
+      "name": "孙工",
+      "version": 1
+    },
+    {
+      "id": "li",
+      "name": "李川（小李）",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "lifting",
+      "type": "group",
+      "name": "吊装班组群",
+      "owner_id": "owner",
+      "admin_ids": [],
+      "member_ids": [
+        "owner",
+        "zhou",
+        "sun",
+        "li"
+      ],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "owner",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "zhou",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "sun",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "li",
+          "joined_at": "2026-11-15T15:10:00+08:00",
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "briefing_183",
+      "chat_id": "lifting",
+      "sender_id": "owner",
+      "sender_name": "项目负责人",
+      "text": "11月12日的吊装安全交底已结束，参加人员是当周在岗的周恒、孙工和李工。",
+      "kind": "text",
+      "timestamp": "2026-11-12T16:20:00+08:00",
+      "sequence": 1,
+      "version": 1,
+      "quote_message_id": null,
+      "quote": null,
+      "mention_ids": [],
+      "attachments": [],
+      "recipient_ids": [
+        "owner",
+        "zhou",
+        "sun"
+      ],
+      "read_by": [
+        "owner",
+        "zhou",
+        "sun"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "status": "sent",
+      "forwardable": true,
+      "payload": null
+    }
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "at": "2026-11-12T16:20:00+08:00",
+      "action": "send_message",
+      "actor_id": "owner",
+      "target_id": "briefing_183"
+    }
+  ],
+  "sequence": 1,
+  "recall_window_seconds": 120,
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "delivery_events": [
+    {
+      "sequence": 1,
+      "at": "2026-11-12T16:20:00+08:00",
+      "message": {
+        "id": "briefing_183",
+        "chat_id": "lifting",
+        "sender_id": "owner",
+        "sender_name": "项目负责人",
+        "text": "11月12日的吊装安全交底已结束，参加人员是当周在岗的周恒、孙工和李工。",
+        "kind": "text",
+        "timestamp": "2026-11-12T16:20:00+08:00",
+        "sequence": 1,
+        "version": 1,
+        "quote_message_id": null,
+        "quote": null,
+        "mention_ids": [],
+        "attachments": [],
+        "recipient_ids": [
+          "owner",
+          "zhou",
+          "sun"
+        ],
+        "read_by": [
+          "owner",
+          "zhou",
+          "sun"
+        ],
+        "hidden_by": [],
+        "recalled": false,
+        "status": "sent",
+        "forwardable": true,
+        "payload": null
+      },
+      "member_ids": [
+        "zhou",
+        "sun"
+      ],
+      "linked_files": [],
+      "quoted_message": null,
+      "status": "sent"
+    }
+  ],
+  "member_events": []
+}

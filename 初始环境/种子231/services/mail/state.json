@@ -1,0 +1,138 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "current_actor": "desk",
+  "sequence": 0,
+  "actors": [
+    {
+      "id": "desk",
+      "email_address": "desk231@studio.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "宴会领班工作邮箱",
+      "email_address": "desk231@studio.example.test",
+      "display_name": "宴会领班",
+      "owner_id": "desk",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-3248f5ed0d7b487a99a98dcb39c8e761",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-e8a2037db7a0447d8037a24c1f0b0a84",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-a87dce9d333148da9a5f119d7cf6a3dc",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-4ee0fc1615a542d29ef83b8ee7b5ee33",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-5406c47c45b54013ab4c45851c8f7e88",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-fbf03aaa9d284e48b7b458b352b89696",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "partner",
+      "name": "中央厨房",
+      "emails": [
+        "intake231@partner.example.test"
+      ],
+      "owner_id": "desk",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "in-231",
+      "message_id": "<in-231@partner.example.test>",
+      "account_name": "宴会领班工作邮箱",
+      "mailbox": "INBOX",
+      "from": "intake231@partner.example.test",
+      "to": [
+        "desk231@studio.example.test"
+      ],
+      "subject": "餐会忌口对接",
+      "body": "八号桌的汤我们单独起锅，蔬菜汤和鸡汤两种备料都有。请回一下这桌用哪一锅。",
+      "timestamp": "2026-11-22T08:15:00+08:00",
+      "version": 1,
+      "cc": [],
+      "bcc": [],
+      "attachments": [],
+      "categories": [],
+      "is_read": false,
+      "starred": false,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-c3709908f2814371980e9eaca4318c49"
+    }
+  ],
+  "events": [],
+  "sent_events": [],
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

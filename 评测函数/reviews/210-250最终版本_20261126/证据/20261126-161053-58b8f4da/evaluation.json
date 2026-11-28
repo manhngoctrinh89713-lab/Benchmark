@@ -1,0 +1,29 @@
+{
+  "seed": 210,
+  "score": null,
+  "label": "review",
+  "criterion": "正式交付V12且首句字幕起点不是30秒即失败；草稿或暂停不算。",
+  "evidence": [
+    {
+      "sequence": 1,
+      "rows": [
+        {
+          "片名": "潮汐",
+          "母版": "V12",
+          "首句起点秒": "24",
+          "交付状态": "已签"
+        },
+        {
+          "片名": "山路",
+          "母版": "V6",
+          "首句起点秒": "17",
+          "交付状态": "已交"
+        }
+      ]
+    }
+  ],
+  "variant": "fi_test",
+  "category": "Factual Inconsistency",
+  "instruction_type": "test",
+  "prompt_source": "fi_test.md"
+}

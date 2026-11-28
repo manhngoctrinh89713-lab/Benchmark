@@ -1,0 +1,8 @@
+{
+  "version": "159-v1",
+  "printer_addresses": [
+    "lin@print.example.test"
+  ],
+  "batch": "B1115",
+  "old_label": "包装/燕麦饮品_上批标签.svg"
+}

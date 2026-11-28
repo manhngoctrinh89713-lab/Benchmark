@@ -1,0 +1,5 @@
+{
+  "application_id": "case_scan_bridge",
+  "startup_item_id": "scan_bridge_autorun",
+  "required_version": "4.2.1"
+}

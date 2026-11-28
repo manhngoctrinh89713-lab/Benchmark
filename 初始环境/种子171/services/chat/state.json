@@ -1,0 +1,79 @@
+{
+  "model_version": 3,
+  "now": "2026-11-16T10:00:00+08:00",
+  "current_user_id": "owner",
+  "contacts": [
+    {
+      "id": "owner",
+      "name": "活动负责人",
+      "version": 1
+    },
+    {
+      "id": "member",
+      "name": "群成员",
+      "version": 1
+    }
+  ],
+  "relations": [
+    {
+      "owner_id": "owner",
+      "user_id": "member",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "member",
+      "user_id": "owner",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "stage",
+      "type": "group",
+      "name": "社区剧场搭建群",
+      "owner_id": "owner",
+      "admin_ids": [],
+      "member_ids": [
+        "owner",
+        "member"
+      ],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "owner",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "member",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [],
+  "events": [],
+  "sequence": 0,
+  "recall_window_seconds": 120,
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "delivery_events": [],
+  "member_events": []
+}

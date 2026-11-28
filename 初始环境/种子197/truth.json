@@ -1,0 +1,5 @@
+{
+  "service_id": "archive-snapshot.service",
+  "baseline_retention_days": 180,
+  "workspace_config": "workspace/server/volumes/root/etc/archive-snapshot.json"
+}

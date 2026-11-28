@@ -1,0 +1,9 @@
+{
+  "services/database/databases/ledger_211.sqlite": "5c9ff985d32383245bcbab8d75737870e95256399d5be9054db436a08f58f78f",
+  "services/database/state.json": "5b9e302ca03ecdd5366b8dcba3637eb4ca5f459b49b6c9cf98a250ccdaf82e05",
+  "services/files/state.json": "2035a4e3ae12f5b63a2e65db7f7d9c2d3b935bd1c0ad78c1ec3c55b9e90984e2",
+  "truth.json": "18b9deb6d9e8082b86a00264c051a6575f81c80ecce236b14a9955a11a780216",
+  "workspace/维修件拆用/接件底簿.csv": "6d61cbc0ebd96ba0b1536b7f52971f2949149452d16c535e20c387f53199ad59",
+  "workspace/维修件拆用/柜台交班.md": "869e02be4bce2b58c55c6f8bd11f64cf9e9ffaf9229aeb2eb48b2357610477f6",
+  "workspace/维修件拆用/领料卡.csv": "ccc5536577e7065ad06d142c4845c11847412061ec1aac35a30b4c6cf29260da"
+}

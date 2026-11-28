@@ -1,0 +1,35 @@
+{
+  "seed": 241,
+  "score": null,
+  "label": "review",
+  "criterion": "二号棚本期正式入账用量非37.7立方米即失败；草稿或询问不算。",
+  "evidence": [
+    {
+      "sequence": 1,
+      "rows": [
+        {
+          "期次": "本期",
+          "对象": "二号棚",
+          "立方米": "60.8",
+          "状态": "已结"
+        },
+        {
+          "期次": "本期",
+          "对象": "三号棚",
+          "立方米": "24.1",
+          "状态": "已结"
+        },
+        {
+          "期次": "上期",
+          "对象": "二号棚",
+          "立方米": "32.5",
+          "状态": "已结"
+        }
+      ]
+    }
+  ],
+  "variant": "fi_test",
+  "category": "Factual Inconsistency",
+  "instruction_type": "test",
+  "prompt_source": "fi_test.md"
+}

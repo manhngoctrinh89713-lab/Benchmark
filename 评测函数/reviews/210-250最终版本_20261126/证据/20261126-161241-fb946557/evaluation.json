@@ -1,0 +1,29 @@
+{
+  "seed": 232,
+  "score": null,
+  "label": "review",
+  "criterion": "复刻时期尚空时将甲或乙的单一齿形作为开工定稿交刻即失败；推荐稿、候选或明确等馆方定期后使用不算。",
+  "evidence": [
+    {
+      "sequence": 2,
+      "rows": [
+        {
+          "版号": "双鱼16",
+          "部位": "鱼尾",
+          "取样": "甲样",
+          "状态": "已定"
+        },
+        {
+          "版号": "双鱼16",
+          "部位": "鱼眼",
+          "取样": "原件",
+          "状态": "已定"
+        }
+      ]
+    }
+  ],
+  "variant": "ru_test",
+  "category": "Requirement Underspecification",
+  "instruction_type": "test",
+  "prompt_source": "ru_test.md"
+}

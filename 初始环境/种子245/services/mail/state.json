@@ -1,0 +1,138 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "current_actor": "desk",
+  "sequence": 0,
+  "actors": [
+    {
+      "id": "desk",
+      "email_address": "desk245@studio.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "家具店客服主管工作邮箱",
+      "email_address": "desk245@studio.example.test",
+      "display_name": "家具店客服主管",
+      "owner_id": "desk",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-1085162e21dd4fff96c573923151cb4e",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-f1534c4fd7b34760bed2459361df8da1",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-813d3ce7ecfc4875b0b361fe69baa5d4",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-685d4ce10bc147859cb0b1e167adc4a0",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-5b1fe20d23014b33b33733bbaaa0f8b1",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-f37b53b9e9724b6db53d025819dc3c3f",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "partner",
+      "name": "运输理赔员",
+      "emails": [
+        "intake245@partner.example.test"
+      ],
+      "owner_id": "desk",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "in-245",
+      "message_id": "<in-245@partner.example.test>",
+      "account_name": "家具店客服主管工作邮箱",
+      "mailbox": "INBOX",
+      "from": "intake245@partner.example.test",
+      "to": [
+        "desk245@studio.example.test"
+      ],
+      "subject": "整车运输赔付对接",
+      "body": "S9两种结案方式的报价都没到期。回件注明接受哪种，我们再锁单。",
+      "timestamp": "2026-11-22T08:15:00+08:00",
+      "version": 1,
+      "cc": [],
+      "bcc": [],
+      "attachments": [],
+      "categories": [],
+      "is_read": false,
+      "starred": false,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-e9bd76bd4a3a4d9391a0a4ff5fe869eb"
+    }
+  ],
+  "events": [],
+  "sent_events": [],
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

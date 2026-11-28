@@ -1,0 +1,178 @@
+{
+  "now": "2026-11-15T19:00:00+08:00",
+  "current_actor": "operator",
+  "actors": [
+    {
+      "id": "operator",
+      "email_address": "operator@qinglan.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "人事邮箱",
+      "email_address": "operator@qinglan.example.test",
+      "display_name": "人事邮箱",
+      "owner_id": "operator",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-1b2ab9d94dbc464b80b6efe76f6ed64c",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-da400724b241471ca73a725fb3b9caa7",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-bd1deb8e8e9f4e05a29fabdc86c3b93b",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-ea8909c6b5634be3833d2061a37897b0",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-feb1a617a5f840299d83aa876dbe87bd",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-dbce3a27d24c4ca484e684e0008e2f93",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "contact",
+      "name": "研发负责人何经理",
+      "emails": [
+        "he@qinglan.example.test"
+      ],
+      "owner_id": "operator",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "subject": "研发本月人员成本",
+      "body": "上月10人总额120000元的汇总已收到。本月只有许宁一个新人，其他十个人工资都没调整，请按月提供人员成本统计。",
+      "to": [
+        "operator@qinglan.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "he@qinglan.example.test",
+      "id": "mail-294a2ab91aea48d4b76a6b46177911f9",
+      "account_name": "人事邮箱",
+      "timestamp": "2026-11-15T19:00:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-9b844ddc9d824b04b627bb2f5379adbf@mail.local>",
+      "thread_id": "thread-8d458527228e4848a3e081afcf356584"
+    }
+  ],
+  "sequence": 1,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [
+    {
+      "id": "event-352ffc6f12694cf5b2b7e00224d37a33",
+      "sequence": 1,
+      "at": "2026-11-15T19:00:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "人事邮箱",
+      "target": "mail-294a2ab91aea48d4b76a6b46177911f9",
+      "before": null,
+      "after": {
+        "subject": "研发本月人员成本",
+        "body": "上月10人总额120000元的汇总已收到。本月只有许宁一个新人，其他十个人工资都没调整，请按月提供人员成本统计。",
+        "to": [
+          "operator@qinglan.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "he@qinglan.example.test",
+        "id": "mail-294a2ab91aea48d4b76a6b46177911f9",
+        "account_name": "人事邮箱",
+        "timestamp": "2026-11-15T19:00:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-9b844ddc9d824b04b627bb2f5379adbf@mail.local>",
+        "thread_id": "thread-8d458527228e4848a3e081afcf356584"
+      }
+    }
+  ],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

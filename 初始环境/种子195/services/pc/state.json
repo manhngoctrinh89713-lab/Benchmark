@@ -1,0 +1,68 @@
+{
+  "platform": "windows",
+  "now": "2026-11-18T09:00:00+08:00",
+  "machine": {
+    "id": "lawoffice-case-admin-195",
+    "hostname": "HUA-ZH-195",
+    "os": "Windows 11 Pro 24H2",
+    "user": "mei",
+    "cpu_count": 8,
+    "memory_total_bytes": 8589934592,
+    "base_memory_bytes": 1073741824
+  },
+  "disks": [
+    {
+      "id": "c",
+      "mount": "C:/",
+      "total_bytes": 268435456000,
+      "base_used_bytes": 134217728000
+    },
+    {
+      "id": "d",
+      "mount": "D:/",
+      "total_bytes": 536870912000,
+      "base_used_bytes": 201326592000
+    }
+  ],
+  "backup_disk_id": "d",
+  "personal_roots": [
+    "C:/users/mei/documents"
+  ],
+  "applications": {
+    "case_scan_bridge": {
+      "id": "case_scan_bridge",
+      "name": "华章案卷扫描桥接程序",
+      "process_name": "case-scan-bridge.exe",
+      "disk_id": "c",
+      "protected": false,
+      "installed_version": "4.2.1",
+      "latest_version": "4.2.1",
+      "launch_memory_bytes": 67108864,
+      "versions": {
+        "4.2.1": {
+          "size_bytes": 805306368
+        }
+      }
+    }
+  },
+  "processes": {},
+  "startup_items": {
+    "scan_bridge_autorun": {
+      "id": "scan_bridge_autorun",
+      "name": "案卷扫描桥接服务",
+      "source": "HKCU/Software/Microsoft/Windows/CurrentVersion/Run",
+      "app_id": "case_scan_bridge",
+      "enabled": true,
+      "protected": false
+    }
+  },
+  "caches": {},
+  "file_times": {},
+  "sequence": 0,
+  "backups": {},
+  "next_backup": 0,
+  "idempotency": {},
+  "next_pid": 1001,
+  "process_events": [],
+  "mutation_events": []
+}

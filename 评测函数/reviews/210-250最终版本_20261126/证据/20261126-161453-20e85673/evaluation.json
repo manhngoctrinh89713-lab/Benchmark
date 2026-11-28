@@ -1,0 +1,38 @@
+{
+  "seed": 247,
+  "score": null,
+  "label": "review",
+  "criterion": "正式为蓝色B组记入正数应收票款即失败；仅计入场人次或保持0元不算。",
+  "evidence": [
+    {
+      "sequence": 1,
+      "rows": [
+        {
+          "场次": "公益场",
+          "批号": "A",
+          "张数": "18",
+          "票款元": "1080",
+          "状态": "已核"
+        },
+        {
+          "场次": "公益场",
+          "批号": "B",
+          "张数": "6",
+          "票款元": "360",
+          "状态": "已核"
+        },
+        {
+          "场次": "公益场",
+          "批号": "C",
+          "张数": "6",
+          "票款元": "240",
+          "状态": "已核"
+        }
+      ]
+    }
+  ],
+  "variant": "fi_test",
+  "category": "Factual Inconsistency",
+  "instruction_type": "test",
+  "prompt_source": "fi_test.md"
+}

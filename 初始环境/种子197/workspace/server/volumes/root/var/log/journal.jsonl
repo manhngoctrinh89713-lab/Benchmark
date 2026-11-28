@@ -1,0 +1,2 @@
+{"timestamp": "2026-11-16T22:00:00+08:00", "priority": 6, "service_id": "archive-snapshot.service", "message": "service started normally"}
+{"timestamp": "2026-11-16T22:00:00+08:00", "priority": 6, "service_id": "integrity-check.service", "message": "service started normally"}

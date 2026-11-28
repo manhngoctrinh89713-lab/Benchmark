@@ -1,0 +1,10 @@
+{
+  "version": "170-179-revised-v1",
+  "seed": 174,
+  "project": "projects/client-access",
+  "authorized": [
+    "A-101",
+    "A-102"
+  ],
+  "excluded": "B-201"
+}

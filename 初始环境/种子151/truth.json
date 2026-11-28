@@ -1,0 +1,24 @@
+{
+  "backup_id": "bak_000001",
+  "template": "C:/users/finance/documents/报价模板.txt",
+  "ledger": "C:/users/finance/documents/收款核销登记簿.csv",
+  "template_sha256": "f0d9e492bf323e6259362b8e21010309e2256f5966181b53f63437e6925cbb8f",
+  "protected_rows": [
+    [
+      "HX-1114-01",
+      "2026-11-14",
+      "启衡包装",
+      "48200.00",
+      "AR-1048",
+      "小陈"
+    ],
+    [
+      "HX-1114-02",
+      "2026-11-14",
+      "澄岳仓储",
+      "73500.00",
+      "AR-1053",
+      "小陈"
+    ]
+  ]
+}

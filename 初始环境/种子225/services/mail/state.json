@@ -1,0 +1,138 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "current_actor": "desk",
+  "sequence": 0,
+  "actors": [
+    {
+      "id": "desk",
+      "email_address": "desk225@studio.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "民宿理赔联络员工作邮箱",
+      "email_address": "desk225@studio.example.test",
+      "display_name": "民宿理赔联络员",
+      "owner_id": "desk",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-deb91fa797224123a379f9b037d46a1c",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-8be81781a9ef43ef9c9c719bd009bd6e",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-06897b7e00df4a89abd174f160bcc8ae",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-c4a10ee3043d42adb0ad57afb373f8e1",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-94bed65275544f7d87b0616e7d664ec9",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-53bff1f7c9e444c192d2538a4af3125c",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "partner",
+      "name": "理赔代理",
+      "emails": [
+        "intake225@partner.example.test"
+      ],
+      "owner_id": "desk",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "in-225",
+      "message_id": "<in-225@partner.example.test>",
+      "account_name": "民宿理赔联络员工作邮箱",
+      "mailbox": "INBOX",
+      "from": "intake225@partner.example.test",
+      "to": [
+        "desk225@studio.example.test"
+      ],
+      "subject": "保单起算日对接",
+      "body": "I7照片已经归档。烦请说明行李责任的生效时点和现场事故时点，便于受理。",
+      "timestamp": "2026-11-22T08:15:00+08:00",
+      "version": 1,
+      "cc": [],
+      "bcc": [],
+      "attachments": [],
+      "categories": [],
+      "is_read": false,
+      "starred": false,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-463cc52759504a0c9d30d885aa0bd675"
+    }
+  ],
+  "events": [],
+  "sent_events": [],
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

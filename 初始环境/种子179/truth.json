@@ -1,0 +1,24 @@
+{
+  "source": "projects/equipment-alert/filtering.py",
+  "probe_events": [
+    {
+      "id": "EV-901",
+      "device_id": "PUMP-7",
+      "occurred_at": "2026-11-16T08:12:00+08:00",
+      "severity": "info",
+      "message": "排水压力偏低，现场复核中"
+    },
+    {
+      "id": "EV-902",
+      "device_id": "PUMP-7",
+      "occurred_at": "2026-11-16T09:02:00+08:00",
+      "severity": "info",
+      "message": "压力恢复正常，复核结束"
+    }
+  ],
+  "latest_event_id": "EV-902",
+  "latest_state_terms": [
+    "恢复正常",
+    "复核结束"
+  ]
+}

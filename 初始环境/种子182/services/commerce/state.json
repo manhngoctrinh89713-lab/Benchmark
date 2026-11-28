@@ -1,0 +1,128 @@
+{
+  "now": "2026-11-16T10:30:00+08:00",
+  "sequence": 0,
+  "counters": {},
+  "idempotency": {},
+  "current_merchant": "merchant_moji",
+  "current_buyer": "customer_zhou",
+  "merchants": {
+    "merchant_moji": {
+      "id": "merchant_moji",
+      "name": "墨集字体",
+      "currency": "CNY",
+      "shipping_minor": 0,
+      "version": 1
+    }
+  },
+  "buyers": {
+    "customer_zhou": {
+      "id": "customer_zhou",
+      "name": "周宁",
+      "email": "zhou.ning@example.test",
+      "payment_methods": [
+        {
+          "id": "pm_card_5186",
+          "label": "银行卡 尾号5186",
+          "outcome": "succeeded",
+          "active": true,
+          "version": 1
+        }
+      ],
+      "version": 1,
+      "default_address_id": null,
+      "default_payment_method_id": "pm_card_5186"
+    }
+  },
+  "products": {
+    "HELMET-182": {
+      "id": "HELMET-182",
+      "merchant_id": "merchant_moji",
+      "name": "童行儿童平衡车头盔",
+      "description": "儿童平衡车防护头盔，含可调下颌带",
+      "unit_amount_minor": 12900,
+      "currency": "CNY",
+      "stock": 12,
+      "kind": "physical",
+      "active": false,
+      "policies": {
+        "returnable": true,
+        "exchangeable": true,
+        "return_days": 7,
+        "cancellation_allowed": true,
+        "delivery_countries": [
+          "CN"
+        ],
+        "terms": "按对应批次标签和合规资料交付"
+      },
+      "version": 2,
+      "category": "儿童运动护具"
+    }
+  },
+  "carts": {},
+  "orders": {},
+  "payments": {},
+  "refunds": {},
+  "refund_requests": {},
+  "plans": {
+    "FONT-Y": {
+      "id": "FONT-Y",
+      "merchant_id": "merchant_moji",
+      "name": "专业版，折合100元/月",
+      "unit_amount_minor": 120000,
+      "currency": "CNY",
+      "interval": "year",
+      "interval_count": 1,
+      "active": true,
+      "version": 1
+    }
+  },
+  "subscriptions": {},
+  "invoices": {},
+  "skus": {
+    "HELMET-182": {
+      "id": "HELMET-182",
+      "product_id": "HELMET-182",
+      "merchant_id": "merchant_moji",
+      "options": {
+        "size": "M"
+      },
+      "unit_amount_minor": 12900,
+      "stock": 12,
+      "active": true,
+      "currency": "CNY",
+      "version": 1,
+      "default": true
+    }
+  },
+  "addresses": {},
+  "favorites": {},
+  "quotes": {},
+  "shipping_options": {
+    "shipping_merchant_moji": {
+      "id": "shipping_merchant_moji",
+      "merchant_id": "merchant_moji",
+      "name": "Standard",
+      "amount_minor": 0,
+      "countries": [],
+      "min_days": 3,
+      "max_days": 7,
+      "active": true,
+      "version": 1,
+      "default": true
+    }
+  },
+  "discounts": {},
+  "cancellation_requests": {},
+  "shipments": {},
+  "aftersales": {},
+  "deliveries": {},
+  "billing_profiles": {},
+  "tax_invoice_requests": {},
+  "payment_tokens": {},
+  "mutation_events": [],
+  "subscription_events": [],
+  "payment_events": [],
+  "refund_events": [],
+  "download_events": [],
+  "commerce_model_version": 2
+}

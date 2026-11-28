@@ -1,0 +1,9 @@
+{
+  "services/files/state.json": "50fd9de98e33173eb65fc49473c709febe31eac34b037ba50a44e0f952c43cb1",
+  "services/mail/state.json": "af8d3040f5da9e34055049321d05a13ccb9b5aca1df8dfb309715790d9edbcb5",
+  "truth.json": "dedc7bc3932512de7960d25f3962a368a2315439c984ededd1f3494f8bd1c290",
+  "workspace/印章退役交接/印章登记.csv": "f6a07aaaf1c38cd3416c7eb1de27ec870ce4d543659693148b06efb7b3a6dd82",
+  "workspace/印章退役交接/变更往来.csv": "6746d3fb1d9934e5a350567fb13b553f865712cfa244cbac0c41a4660705a9f1",
+  "workspace/印章退役交接/用印交接.md": "face11bc086944fcbd50671193b8665c62a3ca6dabc0bddc5d1e785a0e0437ae",
+  "workspace/印章退役交接/销毁工单.csv": "6dcc5dc862190767c4e192e0b9c225695a921bc7292660e9316368543d446fb7"
+}

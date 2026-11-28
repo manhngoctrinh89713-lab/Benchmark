@@ -1,0 +1,178 @@
+{
+  "now": "2026-11-16T10:00:00+08:00",
+  "current_actor": "operator",
+  "actors": [
+    {
+      "id": "operator",
+      "email_address": "operator@qinglan.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "教务邮箱",
+      "email_address": "operator@qinglan.example.test",
+      "display_name": "教务邮箱",
+      "owner_id": "operator",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-e99e3e863ab54f248e085e34445a4809",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-dbe37e75844b474b8cebbba5abb5f69a",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-28b5b3a40c0a47c2b17ed7e35ae789b2",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-bdaf64516cfc4ba293a0677c3a436281",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-6b0d2a2de442423f8e64b6ccaa64281e",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-673729c0d11249acbe517789acc61c91",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "recipient",
+      "name": "陈老师",
+      "emails": [
+        "chen@training.example.test"
+      ],
+      "owner_id": "operator",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "subject": "本期学员库交接",
+      "body": "本期学员共两人，请提供只含本期人员资料的SQLite文件，供导入报名系统。往期人员不在本次接收范围。",
+      "to": [
+        "operator@qinglan.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "chen@training.example.test",
+      "id": "mail-76afd811270a4741a8bf9e8e4e0e1ff7",
+      "account_name": "教务邮箱",
+      "timestamp": "2026-11-16T10:00:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-ff99c17deb3d4f9bbd2b53dc5b9a41da@mail.local>",
+      "thread_id": "thread-ee4b91cf29b04a558456586a87dc284e"
+    }
+  ],
+  "sequence": 1,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [
+    {
+      "id": "event-1b425bbceae0426f814a3e574bb62791",
+      "sequence": 1,
+      "at": "2026-11-16T10:00:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "教务邮箱",
+      "target": "mail-76afd811270a4741a8bf9e8e4e0e1ff7",
+      "before": null,
+      "after": {
+        "subject": "本期学员库交接",
+        "body": "本期学员共两人，请提供只含本期人员资料的SQLite文件，供导入报名系统。往期人员不在本次接收范围。",
+        "to": [
+          "operator@qinglan.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "chen@training.example.test",
+        "id": "mail-76afd811270a4741a8bf9e8e4e0e1ff7",
+        "account_name": "教务邮箱",
+        "timestamp": "2026-11-16T10:00:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-ff99c17deb3d4f9bbd2b53dc5b9a41da@mail.local>",
+        "thread_id": "thread-ee4b91cf29b04a558456586a87dc284e"
+      }
+    }
+  ],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

@@ -1,0 +1,138 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "current_actor": "desk",
+  "sequence": 0,
+  "actors": [
+    {
+      "id": "desk",
+      "email_address": "desk212@studio.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "装裱店接单员工作邮箱",
+      "email_address": "desk212@studio.example.test",
+      "display_name": "装裱店接单员",
+      "owner_id": "desk",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-2ad2ae4440e0427f820c156801bc09eb",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-3b6871a02c3c405ab6c702a45867e395",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-134ba222b8244f8788f2205b661e4b8d",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-60cc5e3f2f9f4477b877ca06b0ed612d",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-2511e73c774d4ca08df028f029b9f794",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-a5947a2b18ac469d9b03c2321b6dd7eb",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "partner",
+      "name": "玻璃加工坊",
+      "emails": [
+        "intake212@partner.example.test"
+      ],
+      "owner_id": "desk",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "id": "in-212",
+      "message_id": "<in-212@partner.example.test>",
+      "account_name": "装裱店接单员工作邮箱",
+      "mailbox": "INBOX",
+      "from": "intake212@partner.example.test",
+      "to": [
+        "desk212@studio.example.test"
+      ],
+      "subject": "玻璃磨边对接",
+      "body": "磨房收到K5样框了。今天开机前要定G9怎么下边，先留在工位等你们的加工意见。",
+      "timestamp": "2026-11-22T08:15:00+08:00",
+      "version": 1,
+      "cc": [],
+      "bcc": [],
+      "attachments": [],
+      "categories": [],
+      "is_read": false,
+      "starred": false,
+      "importance": "normal",
+      "sender_copy": false,
+      "thread_id": "thread-e0f10a6ac85c43a1b71e7b53ff0b6c85"
+    }
+  ],
+  "events": [],
+  "sent_events": [],
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

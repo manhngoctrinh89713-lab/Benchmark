@@ -1,0 +1,9 @@
+{
+  "services/database/databases/ledger_222.sqlite": "4718a653e4505bca739907b5f3eec4e98ead0f5837c20464b029aefb4496c67b",
+  "services/database/state.json": "8775d91fffdc3f114cc6562e67da7d1adc26c4673c7097fb8cdb478b5d361337",
+  "services/files/state.json": "2035a4e3ae12f5b63a2e65db7f7d9c2d3b935bd1c0ad78c1ec3c55b9e90984e2",
+  "truth.json": "5a55d285a4863c8bd681eca5b3c0db620c862adb1d94413de893abd9adcefc23",
+  "workspace/家庭房分配/前台便签.md": "f7d8cf1084cd63d255a0fda6ce460d0ea7be33cf33fbca19e4fc3947bcaef62b",
+  "workspace/家庭房分配/客房卡.csv": "4cffed4dd45b85c7548990e9b3e0acdc291db00048ea8985cecd62b57f032efd",
+  "workspace/家庭房分配/当夜锁房单.csv": "a0eb07ece85113ff6ec2b7f892087ebcefa4d65384494046adfef7c9e86a6db0"
+}

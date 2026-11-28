@@ -1,0 +1,116 @@
+{
+  "now": "2026-11-15T10:00:00+08:00",
+  "current_actor": "brand",
+  "actors": [
+    {
+      "id": "brand",
+      "email_address": "brand@qinglan.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "品牌邮箱",
+      "email_address": "brand@qinglan.example.test",
+      "display_name": "青岚品牌运营",
+      "owner_id": "brand",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-b257fe567d214c45b0028f346897931d",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-5c70d8c90e2541a0ae6fcacc7b5b1b30",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-59b767948b274d2ea46a683e730f081b",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-c155bcba987c4442a36060ea3014e566",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-69d09e916d614500a46eaecbee8027af",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-657341de6ba246bc8ee3d0440a628194",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "printer",
+      "name": "林师傅",
+      "emails": [
+        "lin@print.example.test"
+      ],
+      "organization": "文星印务",
+      "remark": "标签生产对接",
+      "owner_id": "brand",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [],
+  "sequence": 0,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

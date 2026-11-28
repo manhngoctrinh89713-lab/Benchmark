@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-16T10:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "fieldbook",
+      "name": "北岭鸟类调查"
+    }
+  ],
+  "mutation_events": []
+}

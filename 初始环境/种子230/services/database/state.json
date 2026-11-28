@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "ledger_230",
+      "name": "纸本传阅"
+    }
+  ],
+  "mutation_events": []
+}

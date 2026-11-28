@@ -1,0 +1,10 @@
+{
+  "seed": 157,
+  "version": "three-v3",
+  "db": "wallets",
+  "source": "C",
+  "destination": "D",
+  "amount_minor": 2000000,
+  "initial_source_minor": 5000000,
+  "initial_destination_minor": 9000000
+}

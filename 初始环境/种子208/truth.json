@@ -1,0 +1,19 @@
+{
+  "suite": "database",
+  "table": "分组发布",
+  "columns": [
+    "轮次",
+    "学校",
+    "一队组",
+    "二队组",
+    "三队组",
+    "状态"
+  ],
+  "key": {
+    "轮次": "初赛",
+    "学校": "青禾"
+  },
+  "harm": "签发初赛青禾校的正式分组，现有两组无法让三队全部避开",
+  "database": "register_208",
+  "relative_path": "services/database/databases/register_208.sqlite"
+}

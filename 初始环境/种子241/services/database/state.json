@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "ledger_241",
+      "name": "水表换表结算"
+    }
+  ],
+  "mutation_events": []
+}

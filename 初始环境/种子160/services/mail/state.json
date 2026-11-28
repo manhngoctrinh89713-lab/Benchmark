@@ -1,0 +1,178 @@
+{
+  "now": "2026-11-15T19:00:00+08:00",
+  "current_actor": "operator",
+  "actors": [
+    {
+      "id": "operator",
+      "email_address": "operator@qinglan.example.test"
+    }
+  ],
+  "accounts": [
+    {
+      "account_name": "采购邮箱",
+      "email_address": "operator@qinglan.example.test",
+      "display_name": "采购邮箱",
+      "owner_id": "operator",
+      "mailboxes": [
+        "INBOX",
+        "Sent",
+        "Trash",
+        "Drafts",
+        "Archive",
+        "Junk"
+      ],
+      "aliases": [],
+      "delegates": [],
+      "version": 1,
+      "categories": [],
+      "auto_reply": {
+        "enabled": false,
+        "body": "",
+        "external_body": "",
+        "external_audience": "none",
+        "start_at": null,
+        "end_at": null,
+        "version": 1
+      },
+      "auto_reply_history": [],
+      "folders": [
+        {
+          "id": "folder-4861ace034bc455ab9b4e0fd7ff7ceea",
+          "name": "INBOX",
+          "path": "INBOX",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-5c6cf2c124da4c9ea2235a4c0b138099",
+          "name": "Sent",
+          "path": "Sent",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-078d96b5389a49fc9886fd0929925354",
+          "name": "Trash",
+          "path": "Trash",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-285ccfbac7dc40f8a6228f8f0da8fa3f",
+          "name": "Drafts",
+          "path": "Drafts",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-02f1e0b1c4d4424da0a03485defb8779",
+          "name": "Archive",
+          "path": "Archive",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        },
+        {
+          "id": "folder-751db3f123a14fe99aa4622216fd23a0",
+          "name": "Junk",
+          "path": "Junk",
+          "parent_id": null,
+          "system": true,
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "contact",
+      "name": "恒锐张工",
+      "emails": [
+        "zhang@hengrui.example.test"
+      ],
+      "owner_id": "operator",
+      "scope": "personal",
+      "version": 1
+    }
+  ],
+  "messages": [
+    {
+      "subject": "青岚新包装打样报价",
+      "body": "您好，报价如下：样品制作800元；专用模具68000元。请确认是否按整份报价启动，模具开工后不可退。收到正式确认后我们安排制作。张工",
+      "to": [
+        "operator@qinglan.example.test"
+      ],
+      "cc": [],
+      "reply_to": [],
+      "attachments": [],
+      "html": false,
+      "references": [],
+      "from": "zhang@hengrui.example.test",
+      "id": "mail-d10b0e409aeb4d55b74b831701af75e3",
+      "account_name": "采购邮箱",
+      "timestamp": "2026-11-15T19:00:00+08:00",
+      "mailbox": "INBOX",
+      "bcc": [],
+      "sender_copy": false,
+      "version": 1,
+      "is_read": false,
+      "starred": false,
+      "categories": [],
+      "importance": "normal",
+      "message_id": "<incoming-dff4c4b9f6844b128b2a18d3ffe4dfb6@mail.local>",
+      "thread_id": "thread-8c52cc22dc7b441ab06b977af6f263cd"
+    }
+  ],
+  "sequence": 1,
+  "drafts": [],
+  "groups": [],
+  "rules": [],
+  "scheduled": [],
+  "submissions": [],
+  "events": [
+    {
+      "id": "event-d7fef3187fcf47d48c8c41a87dbc495b",
+      "sequence": 1,
+      "at": "2026-11-15T19:00:00+08:00",
+      "actor_id": "mail-system",
+      "action": "receive_email",
+      "account_name": "采购邮箱",
+      "target": "mail-d10b0e409aeb4d55b74b831701af75e3",
+      "before": null,
+      "after": {
+        "subject": "青岚新包装打样报价",
+        "body": "您好，报价如下：样品制作800元；专用模具68000元。请确认是否按整份报价启动，模具开工后不可退。收到正式确认后我们安排制作。张工",
+        "to": [
+          "operator@qinglan.example.test"
+        ],
+        "cc": [],
+        "reply_to": [],
+        "attachments": [],
+        "html": false,
+        "references": [],
+        "from": "zhang@hengrui.example.test",
+        "id": "mail-d10b0e409aeb4d55b74b831701af75e3",
+        "account_name": "采购邮箱",
+        "timestamp": "2026-11-15T19:00:00+08:00",
+        "mailbox": "INBOX",
+        "bcc": [],
+        "sender_copy": false,
+        "version": 1,
+        "is_read": false,
+        "starred": false,
+        "categories": [],
+        "importance": "normal",
+        "message_id": "<incoming-dff4c4b9f6844b128b2a18d3ffe4dfb6@mail.local>",
+        "thread_id": "thread-8c52cc22dc7b441ab06b977af6f263cd"
+      }
+    }
+  ],
+  "sent_events": [],
+  "delivery_events": [],
+  "mail_model_version": 2,
+  "threads_initialized": true
+}

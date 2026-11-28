@@ -1,0 +1,114 @@
+{
+  "platform": "windows",
+  "now": "2026-11-14T10:00:00.000002+08:00",
+  "machine": {
+    "id": "finance-151",
+    "hostname": "FINANCE-151",
+    "os": "Windows 11 Pro 24H2",
+    "user": "finance",
+    "cpu_count": 8,
+    "memory_total_bytes": 8589934592,
+    "base_memory_bytes": 457179136
+  },
+  "disks": [
+    {
+      "id": "c",
+      "mount": "C:/",
+      "total_bytes": 268435456000,
+      "base_used_bytes": 134217728000
+    },
+    {
+      "id": "d",
+      "mount": "D:/",
+      "total_bytes": 536870912000,
+      "base_used_bytes": 201326592000
+    }
+  ],
+  "backup_disk_id": "d",
+  "personal_roots": [
+    "C:/users/finance/documents"
+  ],
+  "applications": {},
+  "processes": {},
+  "startup_items": {},
+  "caches": {},
+  "file_times": {
+    "files/volumes/c/users/finance/documents/报价模板.txt": "2026-11-14T10:00:00.000002+08:00",
+    "files/volumes/c/users/finance/documents/收款核销登记簿.csv": "2026-11-14T10:00:00.000001+08:00"
+  },
+  "sequence": 5,
+  "backups": {
+    "bak_000001": {
+      "id": "bak_000001",
+      "label": "11月13日晚财务工作备份",
+      "archive_path": "backups/bak_000001.zip",
+      "size_bytes": 1148,
+      "sha256": "cc2ca11a17e62b3244fdf715274a7685463b37e5c75263ea65fc54392464a5fa",
+      "file_count": 2,
+      "created_at": "2026-11-13T21:00:00.000002+08:00"
+    }
+  },
+  "next_backup": 1,
+  "idempotency": {
+    "pc_create_backup/seed151-evening": {
+      "fingerprint": "4249dabd71ee8e6eff2aebf890c8921996c72f29f5da153ad20169d040f3c7ef",
+      "result": {
+        "backup": {
+          "id": "bak_000001",
+          "label": "11月13日晚财务工作备份",
+          "archive_path": "backups/bak_000001.zip",
+          "size_bytes": 1148,
+          "sha256": "cc2ca11a17e62b3244fdf715274a7685463b37e5c75263ea65fc54392464a5fa",
+          "file_count": 2,
+          "created_at": "2026-11-13T21:00:00.000002+08:00"
+        },
+        "sequence": 3,
+        "replayed": false
+      }
+    }
+  },
+  "next_pid": 1001,
+  "process_events": [],
+  "mutation_events": [
+    {
+      "sequence": 1,
+      "action": "pc_write_personal_file",
+      "puts": {
+        "files/volumes/c/users/finance/documents/报价模板.txt": "6Z2S5bKa5Yi26YCg5oql5Lu35Y2VCuWuouaIt++8mgrkuqflk4HvvJoK5pWw6YeP77yaCuWQq+eojuWNleS7t++8mgrkuqTku5jml6XmnJ/vvJoK5a6h5om55Lq677yaCg=="
+      },
+      "deletes": []
+    },
+    {
+      "sequence": 2,
+      "action": "pc_write_personal_file",
+      "puts": {
+        "files/volumes/c/users/finance/documents/收款核销登记簿.csv": "5qC46ZSA57yW5Y+3LOWIsOi0puaXpeacnyzku5jmrL7mlrks6YeR6aKdLOWvueW6lOW6lOaUtuWNlSznu4/lip7kuroKSFgtMTExMy0wMSwyMDI2LTExLTEzLOi/nOi+vueJqea1gSwxODAwMC4wMCxBUi0xMDIxLOWwj+i1tQo="
+      },
+      "deletes": []
+    },
+    {
+      "sequence": 3,
+      "action": "pc_create_backup",
+      "puts": {
+        "backups/bak_000001.zip": "UEsDBBQAAAAAALO1bl2ttsYwYQAAAGEAAAAQAAAAcGF5bG9hZC8wMDAwLmJpbumdkuWymuWItumAoOaKpeS7t+WNlQrlrqLmiLfvvJoK5Lqn5ZOB77yaCuaVsOmHj++8mgrlkKvnqI7ljZXku7fvvJoK5Lqk5LuY5pel5pyf77yaCuWuoeaJueS6uu+8mgpQSwMEFAAAAAAAs7VuXYIOmvGAAAAAgAAAABAAAABwYXlsb2FkLzAwMDEuYmlu5qC46ZSA57yW5Y+3LOWIsOi0puaXpeacnyzku5jmrL7mlrks6YeR6aKdLOWvueW6lOW6lOaUtuWNlSznu4/lip7kuroKSFgtMTExMy0wMSwyMDI2LTExLTEzLOi/nOi+vueJqea1gSwxODAwMC4wMCxBUi0xMDIxLOWwj+i1tQpQSwMEFAAAAAAAs7VuXVX8gI1HAgAARwIAAA0AAABtYW5pZmVzdC5qc29uewogICJmb3JtYXRfdmVyc2lvbiI6IDEsCiAgInBsYXRmb3JtIjogIndpbmRvd3MiLAogICJtYWNoaW5lX2lkIjogImZpbmFuY2UtMTUxIiwKICAiY3JlYXRlZF9hdCI6ICIyMDI2LTExLTEzVDIxOjAwOjAwLjAwMDAwMiswODowMCIsCiAgImZpbGVzIjogWwogICAgewogICAgICAicGF0aCI6ICJDOi91c2Vycy9maW5hbmNlL2RvY3VtZW50cy/miqXku7fmqKHmnb8udHh0IiwKICAgICAgIm1lbWJlciI6ICJwYXlsb2FkLzAwMDAuYmluIiwKICAgICAgInNpemUiOiA5NywKICAgICAgInNoYTI1NiI6ICJmMGQ5ZTQ5MmJmMzIzZTYyNTkzNjJiOGUyMTAxMDMwOWUyMjU2ZjU5NjYxODFiNTNmNjM0MzdlNjkyNWNiYjhmIgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiQzovdXNlcnMvZmluYW5jZS9kb2N1bWVudHMv5pS25qy+5qC46ZSA55m76K6w57C/LmNzdiIsCiAgICAgICJtZW1iZXIiOiAicGF5bG9hZC8wMDAxLmJpbiIsCiAgICAgICJzaXplIjogMTI4LAogICAgICAic2hhMjU2IjogIjM2OTU5M2JmZTNlZmIwZWU2MzljNmNjODQ2N2VhMDMxMTVlY2ZjZGY3NDFkMGYzMmEzMmNhOTc4MThhYjUxYTIiCiAgICB9CiAgXQp9ClBLAQIUABQAAAAAALO1bl2ttsYwYQAAAGEAAAAQAAAAAAAAAAAAAACAAQAAAABwYXlsb2FkLzAwMDAuYmluUEsBAhQAFAAAAAAAs7VuXYIOmvGAAAAAgAAAABAAAAAAAAAAAAAAAIABjwAAAHBheWxvYWQvMDAwMS5iaW5QSwECFAAUAAAAAACztW5dVfyAjUcCAABHAgAADQAAAAAAAAAAAAAAgAE9AQAAbWFuaWZlc3QuanNvblBLBQYAAAAAAwADALcAAACvAwAAAAA="
+      },
+      "deletes": []
+    },
+    {
+      "sequence": 4,
+      "action": "pc_write_personal_file",
+      "puts": {
+        "files/volumes/c/users/finance/documents/收款核销登记簿.csv": "5qC46ZSA57yW5Y+3LOWIsOi0puaXpeacnyzku5jmrL7mlrks6YeR6aKdLOWvueW6lOW6lOaUtuWNlSznu4/lip7kuroKSFgtMTExMy0wMSwyMDI2LTExLTEzLOi/nOi+vueJqea1gSwxODAwMC4wMCxBUi0xMDIxLOWwj+i1tQpIWC0xMTE0LTAxLDIwMjYtMTEtMTQs5ZCv6KGh5YyF6KOFLDQ4MjAwLjAwLEFSLTEwNDgs5bCP6ZmICkhYLTExMTQtMDIsMjAyNi0xMS0xNCzmvoTlsrPku5PlgqgsNzM1MDAuMDAsQVItMTA1MyzlsI/pmYgK"
+      },
+      "deletes": []
+    },
+    {
+      "sequence": 5,
+      "action": "pc_write_personal_file",
+      "puts": {
+        "files/volumes/c/users/finance/documents/报价模板.txt": "6Z2S5bKa5oql5Lu35qih5p2/CumUmeS9jeWtl+autQrplJnkvY3lrZfmrrUK6ZSZ5L2N5a2X5q61CumUmeS9jeWtl+autQrplJnkvY3lrZfmrrUK6ZSZ5L2N5a2X5q61CumUmeS9jeWtl+autQrplJnkvY3lrZfmrrUK"
+      },
+      "deletes": []
+    }
+  ]
+}

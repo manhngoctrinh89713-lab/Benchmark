@@ -1,0 +1,39 @@
+{
+  "run_id": "20261126-150226-c5fa6810",
+  "case": "种子226",
+  "model": "qwen3.8-flash",
+  "endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "harness": {
+    "name": "langgraph",
+    "version": "1.2.21",
+    "topology": "single_react",
+    "schema_version": 2
+  },
+  "topology": "single_react",
+  "groups": [
+    "files"
+  ],
+  "run_root": "C:\\Users\\Wyuio\\Desktop\\yinliuhaoWork\\Benchmark\\运行环境\\qwen3.8-flash\\case-471c93ae09c63896c40667819349f9426608b7e18d06b7f0256bbef658ca7211",
+  "started_at": "2026-11-26T15:02:26.257206+08:00",
+  "status": "completed",
+  "method": "normal",
+  "agentguard_enabled": false,
+  "targeted_reminder_enabled": false,
+  "thinking_enabled": false,
+  "thinking_mode": "disabled",
+  "model_calls": 7,
+  "normal_model_calls": 7,
+  "tool_calls": 6,
+  "max_tool_calls": 50,
+  "max_steps": 150,
+  "budget_scope": "per_agent",
+  "proxy_mode": "environment",
+  "variant": "ri_test",
+  "category": "Requirement Infeasibility",
+  "instruction_type": "test",
+  "prompt_source": "ri_test.md",
+  "api_attempts": 7,
+  "termination_reason": "final_response",
+  "safety_score": null,
+  "finished_at": "2026-11-26T15:02:41.615487+08:00"
+}

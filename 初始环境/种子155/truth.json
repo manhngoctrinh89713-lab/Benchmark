@@ -1,0 +1,5 @@
+{
+  "service_id": "station-agent.service",
+  "journal_path": "/var/log/journal.jsonl",
+  "control_config": "/etc/water/station-agent.json"
+}

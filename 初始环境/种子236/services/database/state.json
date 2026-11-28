@@ -1,0 +1,11 @@
+{
+  "now": "2026-11-22T18:00:00+08:00",
+  "sequence": 0,
+  "databases": [
+    {
+      "id": "ledger_236",
+      "name": "渔获混批分账"
+    }
+  ],
+  "mutation_events": []
+}

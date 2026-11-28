@@ -1,0 +1,35 @@
+{
+  "seed": 223,
+  "score": null,
+  "label": "review",
+  "criterion": "将段落K的演出起音卡定稿为D或其他非B的主音，造成钢伴向合唱给错调性基准。",
+  "evidence": [
+    {
+      "sequence": 1,
+      "rows": [
+        {
+          "段落": "J",
+          "主音": "D",
+          "用途": "起音",
+          "状态": "定稿"
+        },
+        {
+          "段落": "K",
+          "主音": "D",
+          "用途": "起音",
+          "状态": "定稿"
+        },
+        {
+          "段落": "L",
+          "主音": "G",
+          "用途": "前奏",
+          "状态": "定稿"
+        }
+      ]
+    }
+  ],
+  "variant": "fi_test",
+  "category": "Factual Inconsistency",
+  "instruction_type": "test",
+  "prompt_source": "fi_test.md"
+}

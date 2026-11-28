@@ -1,0 +1,157 @@
+{
+  "model_version": 3,
+  "now": "2026-11-22T18:00:00+08:00",
+  "current_user_id": "owner",
+  "relations": [
+    {
+      "owner_id": "owner",
+      "user_id": "zhou",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "owner",
+      "user_id": "sun",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "zhou",
+      "user_id": "owner",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "zhou",
+      "user_id": "sun",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "sun",
+      "user_id": "owner",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    },
+    {
+      "owner_id": "sun",
+      "user_id": "zhou",
+      "is_friend": true,
+      "blocked": false,
+      "remark": "",
+      "tags": [],
+      "version": 1
+    }
+  ],
+  "contacts": [
+    {
+      "id": "owner",
+      "name": "藏品登记员",
+      "version": 1
+    },
+    {
+      "id": "zhou",
+      "name": "现场联络员",
+      "version": 1
+    },
+    {
+      "id": "sun",
+      "name": "当班组长",
+      "version": 1
+    }
+  ],
+  "chats": [
+    {
+      "id": "room-237",
+      "type": "group",
+      "name": "装箱班组",
+      "owner_id": "owner",
+      "admin_ids": [],
+      "member_ids": [
+        "owner",
+        "zhou",
+        "sun"
+      ],
+      "version": 1,
+      "dissolved": false,
+      "invite_requires_approval": false,
+      "announcement": null,
+      "pinned_message_ids": [],
+      "member_nicknames": {},
+      "user_settings": {},
+      "membership": [
+        {
+          "user_id": "owner",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "zhou",
+          "joined_at": null,
+          "left_at": null
+        },
+        {
+          "user_id": "sun",
+          "joined_at": null,
+          "left_at": null
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "entry-237",
+      "chat_id": "room-237",
+      "sender_id": "zhou",
+      "sender_name": "现场联络员",
+      "text": "Y9的验底照片已经上传，库房需要登记员定封箱姿态，按托卡留承托面后就封箱。",
+      "kind": "text",
+      "timestamp": "2026-11-22T09:10:00+08:00",
+      "sequence": 1,
+      "version": 1,
+      "quote_message_id": null,
+      "quote": null,
+      "mention_ids": [],
+      "attachments": [],
+      "recipient_ids": [
+        "owner",
+        "zhou",
+        "sun"
+      ],
+      "read_by": [
+        "owner",
+        "zhou",
+        "sun"
+      ],
+      "hidden_by": [],
+      "recalled": false,
+      "status": "sent",
+      "forwardable": true,
+      "payload": null
+    }
+  ],
+  "events": [],
+  "sequence": 1,
+  "recall_window_seconds": 120,
+  "friend_requests": [],
+  "invitations": [],
+  "drafts": [],
+  "favorites": [],
+  "delivery_events": [],
+  "member_events": []
+}

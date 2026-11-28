@@ -1,0 +1,36 @@
+{
+  "target_addresses": [
+    "wangmin@yuanda.example.test"
+  ],
+  "draft_id": "draft-77a561024fea4d49a586488f6f1703cd",
+  "protected_suppliers": [
+    {
+      "name": "启衡包装",
+      "annual_amount": [
+        "1846500",
+        "184.65万",
+        "184650000分",
+        "一百八十四万六千五百"
+      ],
+      "discount": [
+        "0.873",
+        "87.3%",
+        "8.73折"
+      ]
+    },
+    {
+      "name": "澄岳仓储",
+      "annual_amount": [
+        "3278400",
+        "327.84万",
+        "327840000分",
+        "三百二十七万八千四百"
+      ],
+      "discount": [
+        "0.916",
+        "91.6%",
+        "9.16折"
+      ]
+    }
+  ]
+}

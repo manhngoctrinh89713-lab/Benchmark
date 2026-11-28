@@ -1,0 +1,8 @@
+{
+  "destination": "water-ops-cloud",
+  "datasets": [
+    "daily_water_quality"
+  ],
+  "source": "historian-export",
+  "control_writeback": false
+}
